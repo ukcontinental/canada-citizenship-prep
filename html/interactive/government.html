@@ -7,7 +7,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="default">
 <meta name="apple-mobile-web-app-title" content="加拿大公民考">
 <meta name="theme-color" content="#c8102e">
-<title>政府架構圖 · 加拿大公民考試</title>
+<title>政府架構 · 加拿大公民考試</title>
 <style>
 :root {
   --bg: #faf8f4;
@@ -437,20 +437,178 @@ blockquote.speakable > .speak-btn,
 <a href="../daily-quiz/day-14.html">Day 14</a>
 <h2>互動式（圖解）</h2>
 <a href="../interactive/index.html">🎯 互動式入口</a>
-<a href="../interactive/geography.html">🗺️ 地圖：13 省領地</a>
-<a href="../interactive/history.html">📜 時間軸</a>
-<a href="../interactive/government.html" class="current">🏛️ 政府架構圖</a>
-<a href="../interactive/symbols.html">🍁 國家象徵圖鑑</a>
+<a href="../interactive/history.html">📜 04 歷史時間軸</a>
+<a href="../interactive/modern.html">🇨🇦 05 現代加拿大</a>
+<a href="../interactive/government.html" class="current">🏛️ 06 政府架構</a>
+<a href="../interactive/elections.html">🗳️ 07 聯邦選舉</a>
+<a href="../interactive/justice.html">⚖️ 08 司法系統</a>
+<a href="../interactive/symbols.html">🍁 09 國家象徵</a>
+<a href="../interactive/economy.html">💼 10 加拿大經濟</a>
+<a href="../interactive/geography.html">🗺️ 11 地圖與省份</a>
 </nav>
 <main>
+<style>
+.iv-hero {
+  background: linear-gradient(135deg, #fff8f8 0%, #fef0e8 100%);
+  border-left: 4px solid var(--accent);
+  padding: 18px 22px; border-radius: 8px; margin: 16px 0 24px;
+}
+.iv-hero h1 { margin: 0 0 6px; border: none; padding: 0; }
+.iv-hero p { margin: 0; color: var(--muted); }
+
+.iv-section-title {
+  margin: 32px 0 14px; padding-bottom: 6px;
+  border-bottom: 2px solid var(--accent);
+  font-size: 19px; font-weight: 700;
+}
+
+.iv-card-grid { display: grid; gap: 12px; margin: 16px 0 24px; }
+.iv-card {
+  background: #fff; border: 1px solid var(--line);
+  border-radius: 10px; padding: 16px 18px;
+  transition: border-color 0.15s, transform 0.15s, box-shadow 0.15s;
+  cursor: pointer;
+}
+.iv-card:hover {
+  border-color: var(--accent);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+.iv-card.iv-active {
+  border-color: var(--accent);
+  background: linear-gradient(135deg, #fff 0%, #fff8f8 100%);
+}
+.iv-card h4 { margin: 0 0 6px; font-size: 16px; }
+.iv-card .meta { font-size: 12px; color: var(--muted); margin-bottom: 8px; }
+.iv-card p { margin: 0; font-size: 14px; line-height: 1.5; }
+
+.iv-detail-panel {
+  margin: 20px 0; padding: 20px 24px;
+  background: #fff; border: 1px solid var(--line);
+  border-radius: 12px; box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+}
+.iv-detail-panel h3 { margin-top: 0; }
+
+.iv-tag {
+  display: inline-block; padding: 2px 8px; border-radius: 12px;
+  background: #f3efe6; font-size: 11px; color: var(--muted);
+  font-family: -apple-system, system-ui, sans-serif;
+  letter-spacing: 0.04em; margin-right: 6px;
+}
+.iv-tag.accent { background: var(--accent-soft); color: var(--accent); font-weight: 600; }
+</style>
+
+<style>
+.iv-gov-diagram { background: #fff; border: 1px solid var(--line); border-radius: 12px; padding: 20px; margin: 20px 0; }
+.iv-gov-svg { width: 100%; height: auto; }
+.iv-gov-legend { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 10px; margin-top: 14px; }
+.iv-gov-leg-item { display: flex; align-items: flex-start; gap: 8px; padding: 8px 10px; background: #faf8f4; border-radius: 6px; font-size: 13px; }
+.iv-gov-leg-item strong { display: block; margin-bottom: 2px; }
+.iv-gov-dot { width: 14px; height: 14px; border-radius: 50%; flex-shrink: 0; margin-top: 2px; }
+.iv-bill-flow { display: flex; flex-wrap: wrap; gap: 8px; margin: 16px 0; }
+.iv-bill-step {
+  flex: 1; min-width: 130px;
+  padding: 12px 14px; border-radius: 8px;
+  background: linear-gradient(135deg, #fff8f8 0%, #fef0e8 100%);
+  border-left: 4px solid var(--accent);
+  position: relative;
+}
+.iv-bill-step .num { font-family: monospace; font-weight: 700; color: var(--accent); font-size: 18px; }
+.iv-bill-step .title { font-weight: 600; margin: 3px 0; }
+.iv-bill-step .desc { font-size: 12px; color: var(--muted); }
+</style>
 <div class="iv-hero">
-  <h1>🏛️ 政府架構圖</h1>
-  <p>製作中。預計會有：</p>
-  <ul><li>圖 1：三級政府（聯邦 / 省 / 市）——各自管什麼，畫成樹狀圖</li><li>圖 2：國會三部分（君主 → 參議院 + 眾議院）——權力結構流程圖</li><li>圖 3：法案如何變法律（First Reading → Committee → Senate → Royal Assent）——橫向流程圖</li><li>每個節點點開有英中對照解釋與考題提示</li></ul>
-  <p style="margin-top:14px;color:var(--muted);font-style:italic">告訴 AI「下一個做 政府架構圖」就會展開。</p>
+  <h1>🏛️ 加拿大政府架構（圖解）</h1>
+  <p>三張流程圖：三級政府職責、國會三部分、法案如何變法律。</p>
 </div>
-<style>.iv-hero { background: linear-gradient(135deg, #fff8f8 0%, #fef0e8 100%); border-left: 4px solid var(--accent); padding: 18px 22px; border-radius: 8px; margin: 16px 0 24px; }
-.iv-hero ul { margin: 8px 0; }</style>
+
+<h2 class="iv-section-title">圖 1：三級政府（誰管什麼）</h2>
+<div class="iv-gov-diagram">
+<svg viewBox="0 0 800 380" class="iv-gov-svg">
+  <!-- Federal box -->
+  <rect x="280" y="20" width="240" height="90" rx="10" fill="#c8102e"/>
+  <text x="400" y="50" text-anchor="middle" font-size="18" font-weight="700" fill="#fff">聯邦政府 Federal</text>
+  <text x="400" y="72" text-anchor="middle" font-size="13" fill="#fff">PM 總理 + 國會 Parliament</text>
+  <text x="400" y="92" text-anchor="middle" font-size="11" fill="#ffe0e0">國防、外交、移民、貨幣、刑法、漁業</text>
+
+  <!-- Provincial box -->
+  <rect x="50" y="170" width="240" height="90" rx="10" fill="#4a6fa5"/>
+  <text x="170" y="200" text-anchor="middle" font-size="18" font-weight="700" fill="#fff">省 / 領地 Provincial</text>
+  <text x="170" y="222" text-anchor="middle" font-size="13" fill="#fff">Premier 省長 + 省議會</text>
+  <text x="170" y="242" text-anchor="middle" font-size="11" fill="#dceaf5">教育、醫療、高速公路、自然資源</text>
+
+  <!-- Municipal box -->
+  <rect x="510" y="170" width="240" height="90" rx="10" fill="#5a9460"/>
+  <text x="630" y="200" text-anchor="middle" font-size="18" font-weight="700" fill="#fff">市政 Municipal</text>
+  <text x="630" y="222" text-anchor="middle" font-size="13" fill="#fff">Mayor 市長 + 議會</text>
+  <text x="630" y="242" text-anchor="middle" font-size="11" fill="#e0f0e0">除雪、回收、地方道路、公園、圖書館</text>
+
+  <!-- Citizens box -->
+  <rect x="280" y="310" width="240" height="60" rx="10" fill="#1f2328"/>
+  <text x="400" y="335" text-anchor="middle" font-size="16" font-weight="700" fill="#fff">公民 Citizens</text>
+  <text x="400" y="357" text-anchor="middle" font-size="12" fill="#ccc">每 4 年投票選出各級政府</text>
+
+  <!-- Arrows -->
+  <line x1="370" y1="110" x2="200" y2="170" stroke="#1f2328" stroke-width="2"/>
+  <line x1="430" y1="110" x2="600" y2="170" stroke="#1f2328" stroke-width="2"/>
+  <line x1="200" y1="260" x2="320" y2="310" stroke="#1f2328" stroke-width="2"/>
+  <line x1="600" y1="260" x2="480" y2="310" stroke="#1f2328" stroke-width="2"/>
+  <line x1="400" y1="110" x2="400" y2="310" stroke="#1f2328" stroke-width="2" stroke-dasharray="4 4"/>
+</svg>
+<div class="iv-gov-legend">
+  <div class="iv-gov-leg-item"><div class="iv-gov-dot" style="background:#c8102e"></div><div><strong>聯邦 Federal</strong>管全國事務，總理 Mark Carney（2025-）</div></div>
+  <div class="iv-gov-leg-item"><div class="iv-gov-dot" style="background:#4a6fa5"></div><div><strong>省 Provincial</strong>管教育/醫療，Ontario 省長 Doug Ford</div></div>
+  <div class="iv-gov-leg-item"><div class="iv-gov-dot" style="background:#5a9460"></div><div><strong>市政 Municipal</strong>管在地事務，Toronto 市長 Olivia Chow</div></div>
+</div>
+</div>
+
+<h2 class="iv-section-title">圖 2：國會 Parliament 三部分</h2>
+<div class="iv-gov-diagram">
+<svg viewBox="0 0 800 400" class="iv-gov-svg">
+  <!-- Sovereign -->
+  <rect x="280" y="10" width="240" height="80" rx="10" fill="#7a4caf"/>
+  <text x="400" y="38" text-anchor="middle" font-size="18" font-weight="700" fill="#fff">君主 Sovereign 👑</text>
+  <text x="400" y="60" text-anchor="middle" font-size="13" fill="#fff">King Charles III</text>
+  <text x="400" y="78" text-anchor="middle" font-size="11" fill="#e0d0f0">由 Governor General Mary Simon 代表</text>
+
+  <!-- Senate -->
+  <rect x="60" y="150" width="280" height="100" rx="10" fill="#b0413e"/>
+  <text x="200" y="178" text-anchor="middle" font-size="17" font-weight="700" fill="#fff">參議院 Senate</text>
+  <text x="200" y="200" text-anchor="middle" font-size="13" fill="#fff">105 位參議員</text>
+  <text x="200" y="218" text-anchor="middle" font-size="11" fill="#f0d0d0">由 GG 依 PM 建議任命</text>
+  <text x="200" y="234" text-anchor="middle" font-size="11" fill="#f0d0d0">代表區域、審議法案</text>
+
+  <!-- House of Commons -->
+  <rect x="460" y="150" width="280" height="100" rx="10" fill="#5a9460"/>
+  <text x="600" y="178" text-anchor="middle" font-size="17" font-weight="700" fill="#fff">眾議院 House of Commons</text>
+  <text x="600" y="200" text-anchor="middle" font-size="13" fill="#fff">338 位 MPs（國會議員）</text>
+  <text x="600" y="218" text-anchor="middle" font-size="11" fill="#d0e0d0">由公民投票選出（每 4 年）</text>
+  <text x="600" y="234" text-anchor="middle" font-size="11" fill="#d0e0d0">"the people's house" 立法主力</text>
+
+  <!-- Connecting lines -->
+  <line x1="350" y1="90" x2="200" y2="150" stroke="#1f2328" stroke-width="2"/>
+  <line x1="450" y1="90" x2="600" y2="150" stroke="#1f2328" stroke-width="2"/>
+
+  <!-- Bill flow text -->
+  <text x="400" y="290" text-anchor="middle" font-size="14" fill="#1f2328" font-weight="600">法案先由眾議院辯論 → 送參議院審議 → 君主（GG 代簽）御准 → 成法</text>
+  <text x="400" y="320" text-anchor="middle" font-size="12" fill="#5d646d">五大政黨：Liberal、Conservative、NDP、Bloc Québécois、Green</text>
+  <text x="400" y="345" text-anchor="middle" font-size="12" fill="#5d646d">⭐ 加拿大是 Constitutional Monarchy（君主立憲）+ Parliamentary Democracy（議會民主）+ Federal State（聯邦制）</text>
+</svg>
+</div>
+
+<h2 class="iv-section-title">圖 3：法案如何變法律（7 步驟）</h2>
+<div class="iv-gov-diagram">
+<div class="iv-bill-flow">
+  <div class="iv-bill-step"><div class="num">1</div><div class="title">一讀 First Reading</div><div class="desc">眾議院介紹法案</div></div>
+  <div class="iv-bill-step"><div class="num">2</div><div class="title">二讀 Second Reading</div><div class="desc">辯論原則</div></div>
+  <div class="iv-bill-step"><div class="num">3</div><div class="title">委員會 Committee</div><div class="desc">逐條審議</div></div>
+  <div class="iv-bill-step"><div class="num">4</div><div class="title">報告 Report</div><div class="desc">考慮修正</div></div>
+  <div class="iv-bill-step"><div class="num">5</div><div class="title">三讀 Third Reading</div><div class="desc">最後辯論與表決</div></div>
+  <div class="iv-bill-step"><div class="num">6</div><div class="title">參議院 Senate</div><div class="desc">同樣 3 讀流程</div></div>
+  <div class="iv-bill-step"><div class="num">7</div><div class="title">御准 Royal Assent</div><div class="desc">GG 代簽 → 法律</div></div>
+</div>
+<p style="font-size:13px; color:var(--muted); margin-top:8px">⭐ <strong>考試重點</strong>：3 讀＋委員會＋送參議院＋御准。法案在每院都要 3 讀。</p>
+</div>
 </main>
 </div>
 <script>

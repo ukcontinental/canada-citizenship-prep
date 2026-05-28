@@ -7,7 +7,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="default">
 <meta name="apple-mobile-web-app-title" content="加拿大公民考">
 <meta name="theme-color" content="#c8102e">
-<title>Day 8：政府架構 How Canadians Govern Themselves · 加拿大公民考試</title>
+<title>司法系統 · 加拿大公民考試</title>
 <style>
 :root {
   --bg: #faf8f4;
@@ -428,7 +428,7 @@ blockquote.speakable > .speak-btn,
 <a href="../daily-quiz/day-05.html">Day 05</a>
 <a href="../daily-quiz/day-06.html">Day 06</a>
 <a href="../daily-quiz/day-07.html">Day 07</a>
-<a href="../daily-quiz/day-08.html" class="current">Day 08</a>
+<a href="../daily-quiz/day-08.html">Day 08</a>
 <a href="../daily-quiz/day-09.html">Day 09</a>
 <a href="../daily-quiz/day-10.html">Day 10</a>
 <a href="../daily-quiz/day-11.html">Day 11</a>
@@ -441,193 +441,133 @@ blockquote.speakable > .speak-btn,
 <a href="../interactive/modern.html">🇨🇦 05 現代加拿大</a>
 <a href="../interactive/government.html">🏛️ 06 政府架構</a>
 <a href="../interactive/elections.html">🗳️ 07 聯邦選舉</a>
-<a href="../interactive/justice.html">⚖️ 08 司法系統</a>
+<a href="../interactive/justice.html" class="current">⚖️ 08 司法系統</a>
 <a href="../interactive/symbols.html">🍁 09 國家象徵</a>
 <a href="../interactive/economy.html">💼 10 加拿大經濟</a>
 <a href="../interactive/geography.html">🗺️ 11 地圖與省份</a>
 </nav>
-<main><h1>Day 8：政府架構 How Canadians Govern Themselves</h1>
-<p>對應官方章節：<strong>How Canadians Govern Themselves</strong>
-建議閱讀：PDF p.29–p.32</p>
-<hr>
-<h2>今日重點</h2>
-<h3>1. 加拿大的政體：3 個關鍵詞（<strong>必背！</strong>）</h3>
-<blockquote class="speakable"><button class="speak-btn" type="button" aria-label="朗讀英文" title="朗讀英文 / Read aloud" data-state="idle"><span class="speak-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 10v4h4l5 4V6L7 10H3zm12.5 2c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM13 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg></span><span class="speak-label">朗讀</span></button>
-<p><strong>Canada is a constitutional monarchy, a parliamentary democracy, and a federal state.</strong></p>
-</blockquote>
+<main>
+<style>
+.iv-hero {
+  background: linear-gradient(135deg, #fff8f8 0%, #fef0e8 100%);
+  border-left: 4px solid var(--accent);
+  padding: 18px 22px; border-radius: 8px; margin: 16px 0 24px;
+}
+.iv-hero h1 { margin: 0 0 6px; border: none; padding: 0; }
+.iv-hero p { margin: 0; color: var(--muted); }
+
+.iv-section-title {
+  margin: 32px 0 14px; padding-bottom: 6px;
+  border-bottom: 2px solid var(--accent);
+  font-size: 19px; font-weight: 700;
+}
+
+.iv-card-grid { display: grid; gap: 12px; margin: 16px 0 24px; }
+.iv-card {
+  background: #fff; border: 1px solid var(--line);
+  border-radius: 10px; padding: 16px 18px;
+  transition: border-color 0.15s, transform 0.15s, box-shadow 0.15s;
+  cursor: pointer;
+}
+.iv-card:hover {
+  border-color: var(--accent);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+.iv-card.iv-active {
+  border-color: var(--accent);
+  background: linear-gradient(135deg, #fff 0%, #fff8f8 100%);
+}
+.iv-card h4 { margin: 0 0 6px; font-size: 16px; }
+.iv-card .meta { font-size: 12px; color: var(--muted); margin-bottom: 8px; }
+.iv-card p { margin: 0; font-size: 14px; line-height: 1.5; }
+
+.iv-detail-panel {
+  margin: 20px 0; padding: 20px 24px;
+  background: #fff; border: 1px solid var(--line);
+  border-radius: 12px; box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+}
+.iv-detail-panel h3 { margin-top: 0; }
+
+.iv-tag {
+  display: inline-block; padding: 2px 8px; border-radius: 12px;
+  background: #f3efe6; font-size: 11px; color: var(--muted);
+  font-family: -apple-system, system-ui, sans-serif;
+  letter-spacing: 0.04em; margin-right: 6px;
+}
+.iv-tag.accent { background: var(--accent-soft); color: var(--accent); font-weight: 600; }
+</style>
+
+<style>
+.iv-court-hierarchy { background: #fff; border: 1px solid var(--line); border-radius: 12px; padding: 20px; margin: 16px 0; }
+.iv-court-svg { width: 100%; height: auto; }
+.iv-principles-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; margin: 16px 0; }
+.iv-principle { background: #fff; border-left: 4px solid var(--accent); padding: 12px 16px; border-radius: 6px; }
+.iv-principle h4 { margin: 0 0 2px; font-size: 15px; }
+.iv-principle .en { font-size: 12px; color: var(--muted); font-style: italic; margin-bottom: 6px; }
+.iv-principle p { margin: 0; font-size: 13px; }
+.iv-rcmp { background: linear-gradient(135deg, #fff8f8 0%, #fef0e8 100%); padding: 20px 24px; border-radius: 10px; margin: 16px 0; }
+.iv-rcmp h3 { margin: 0 0 8px; }
+.iv-rcmp ul { margin: 8px 0 0; padding-left: 20px; font-size: 14px; }
+</style>
+<div class="iv-hero">
+  <h1>⚖️ 加拿大司法系統</h1>
+  <p>5 大法律原則 + 4 級法院階層 + RCMP 角色。</p>
+</div>
+
+<h2 class="iv-section-title">5 大法律原則</h2>
+<div class="iv-principles-grid"><div class="iv-principle"><h4>法治</h4><div class="en">Rule of Law</div><p>沒人凌駕於法律之上，包括政府</p></div><div class="iv-principle"><h4>無罪推定</h4><div class="en">Presumption of Innocence</div><p>被告在被定罪前推定無罪</p></div><div class="iv-principle"><h4>人身保護令</h4><div class="en">Habeas Corpus</div><p>防止任意拘禁，被拘留者可請求出庭</p></div><div class="iv-principle"><h4>公平審判</h4><div class="en">Fair Trial</div><p>公開、獨立、公正、由陪審團或法官審理</p></div><div class="iv-principle"><h4>法律之前人人平等</h4><div class="en">Equality before the Law</div><p>Charter 第 15 條</p></div></div>
+
+<h2 class="iv-section-title">4 級法院階層（金字塔）</h2>
+<div class="iv-court-hierarchy">
+<svg viewBox="0 0 800 480" class="iv-court-svg">
+  <!-- Top: Supreme Court -->
+  <rect x="280" y="20" width="240" height="80" rx="10" fill="#c8102e"/>
+  <text x="400" y="48" text-anchor="middle" font-size="18" font-weight="700" fill="#fff">Supreme Court of Canada</text>
+  <text x="400" y="70" text-anchor="middle" font-size="13" fill="#fff">最高法院（9 位法官）</text>
+  <text x="400" y="90" text-anchor="middle" font-size="11" fill="#ffe0e0">最終裁判，憲法解釋</text>
+
+  <!-- Level 2: Appeals -->
+  <rect x="180" y="140" width="440" height="70" rx="10" fill="#b0413e"/>
+  <text x="400" y="168" text-anchor="middle" font-size="16" font-weight="700" fill="#fff">Provincial Courts of Appeal</text>
+  <text x="400" y="190" text-anchor="middle" font-size="12" fill="#fff">省上訴法院 / Federal Court of Appeal</text>
+
+  <!-- Level 3: Superior -->
+  <rect x="120" y="250" width="560" height="70" rx="10" fill="#7a8c5c"/>
+  <text x="400" y="278" text-anchor="middle" font-size="16" font-weight="700" fill="#fff">Provincial / Superior Courts</text>
+  <text x="400" y="300" text-anchor="middle" font-size="12" fill="#fff">省高等法院（嚴重刑事、民事大案）</text>
+
+  <!-- Level 4: Provincial -->
+  <rect x="60" y="360" width="680" height="70" rx="10" fill="#4a6fa5"/>
+  <text x="400" y="388" text-anchor="middle" font-size="16" font-weight="700" fill="#fff">Provincial Courts</text>
+  <text x="400" y="410" text-anchor="middle" font-size="12" fill="#fff">省級地方法院（最多日常案件、輕罪、交通）</text>
+
+  <!-- Arrows -->
+  <line x1="400" y1="430" x2="400" y2="100" stroke="#1f2328" stroke-width="2" marker-end="url(#arr)"/>
+  <text x="430" y="450" font-size="11" fill="var(--muted)">↑ 上訴方向</text>
+
+  <defs>
+    <marker id="arr" markerWidth="10" markerHeight="10" refX="0" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#1f2328"/>
+    </marker>
+  </defs>
+</svg>
+<p style="font-size:13px; color:var(--muted); margin-top:12px">⭐ <strong>考試重點</strong>：四級法院、Supreme Court 9 位法官、最高法院判決最終。</p>
+</div>
+
+<h2 class="iv-section-title">皇家騎警 RCMP（Royal Canadian Mounted Police）</h2>
+<div class="iv-rcmp">
+<h3>🐎 加拿大國家警察</h3>
 <ul>
-<li><strong>Constitutional Monarchy 君主立憲制</strong>：國王是元首，但須遵憲法</li>
-<li><strong>Parliamentary Democracy 議會民主</strong>：民選代表組成國會、由國會多數黨組政府</li>
-<li><strong>Federal State 聯邦制</strong>：聯邦 + 省 + 領地 + 市政府分權</li>
+  <li><strong>聯邦警察</strong>：執行聯邦法律（毒品、洗錢、跨省犯罪）</li>
+  <li><strong>省/地方警察</strong>：8 省與 3 領地外包 RCMP 為省警（Ontario 跟 Quebec 例外有自己的省警）</li>
+  <li><strong>市政警察</strong>：少數小鎮外包 RCMP</li>
+  <li><strong>象徵</strong>：紅色制服 Red Serge、Stetson 帽、Musical Ride 表演</li>
+  <li><strong>歷史</strong>：1873 成立為 North-West Mounted Police</li>
+  <li><strong>總部</strong>：Ottawa</li>
 </ul>
-<h3>2. 政府的 3 個層級</h3>
-<table>
-<thead>
-<tr>
-<th>層級</th>
-<th>範圍</th>
-<th>例子</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Federal 聯邦</strong></td>
-<td>全國事務</td>
-<td>國防、外交、貨幣、移民、刑法</td>
-</tr>
-<tr>
-<td><strong>Provincial 省 / Territorial 領地</strong></td>
-<td>各省事務</td>
-<td>教育、健保、自然資源、財產法</td>
-</tr>
-<tr>
-<td><strong>Municipal 市政 / Local</strong></td>
-<td>地方事務</td>
-<td>公車、垃圾、警消、地方稅</td>
-</tr>
-</tbody>
-</table>
-<p>10 個省 + 3 個領地 + 數千個市政府。</p>
-<h3>3. 國會 Parliament 的 3 部分（<strong>超常考！</strong>）</h3>
-<blockquote class="speakable"><button class="speak-btn" type="button" aria-label="朗讀英文" title="朗讀英文 / Read aloud" data-state="idle"><span class="speak-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 10v4h4l5 4V6L7 10H3zm12.5 2c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM13 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg></span><span class="speak-label">朗讀</span></button>
-<p><strong>The Sovereign（君主）、the Senate（參議院）、the House of Commons（眾議院）</strong></p>
-</blockquote>
-<h4>a) The Sovereign 君主</h4>
-<ul>
-<li>現任：<strong>King Charles III</strong></li>
-<li>在加拿大由 <strong>Governor General 總督</strong> 代表</li>
-<li>現任總督：<strong>Mary Simon</strong>（<strong>史上首位原住民總督</strong>，2021 上任）</li>
-<li>任期 <strong>約 5 年</strong></li>
-</ul>
-<h4>b) The Senate 參議院</h4>
-<ul>
-<li><strong>約 105 名</strong> <strong>Senators 參議員</strong></li>
-<li><strong>由總理提名 → 總督任命</strong>（非民選）</li>
-<li>任期至 <strong>75 歲</strong></li>
-<li>代表 <strong>地區、少數族裔、不同利益</strong></li>
-<li>通常被稱為「<strong>Chamber of Sober Second Thought 冷靜複審之院</strong>」</li>
-</ul>
-<h4>c) The House of Commons 眾議院</h4>
-<ul>
-<li><strong>338 個席次</strong>（2026 年數字；席次按人口）</li>
-<li><strong>由人民直接選舉</strong></li>
-<li>任期最多 <strong>4 年</strong></li>
-<li>議員稱 <strong>MP（Member of Parliament）</strong></li>
-<li>多數黨黨魁 → <strong>Prime Minister 總理</strong></li>
-</ul>
-<h3>4. 立法流程：一個法案怎麼變法律（必背）</h3>
-<ol>
-<li><strong>First Reading 一讀</strong>：在眾議院提案</li>
-<li><strong>Second Reading 二讀</strong>：辯論原則</li>
-<li><strong>Committee Stage 委員會審查</strong>：逐條檢視</li>
-<li><strong>Report Stage</strong>：報告修改</li>
-<li><strong>Third Reading 三讀</strong>：投票</li>
-<li><strong>送 Senate 參議院重複以上</strong></li>
-<li><strong>Royal Assent 御准</strong>：由總督代表君主簽署</li>
-<li><strong>正式成為法律 Law of Canada</strong></li>
-</ol>
-<h3>5. 行政分支</h3>
-<ul>
-<li><strong>Prime Minister 總理 PM</strong>：政府首長，<strong>多數黨黨魁</strong></li>
-<li><strong>Cabinet 內閣</strong>：總理任命，多為 MP</li>
-<li><strong>Cabinet Ministers</strong>：負責特定部會</li>
-<li><strong>Public Service 公務員體系</strong>：服務政府</li>
-</ul>
-<h3>6. 司法分支：見 Day 10</h3>
-<h3>7. 省級政府架構（並行對照）</h3>
-<table>
-<thead>
-<tr>
-<th>聯邦</th>
-<th>省</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>君主 → Governor General 總督</td>
-<td>君主 → Lieutenant Governor 省督</td>
-</tr>
-<tr>
-<td>Prime Minister 總理</td>
-<td>Premier 省長</td>
-</tr>
-<tr>
-<td>House of Commons</td>
-<td>Legislative Assembly（多數省）/ National Assembly（Quebec）</td>
-</tr>
-<tr>
-<td>MP（聯邦議員）</td>
-<td>MLA / MPP（Ontario）/ MNA（Quebec）</td>
-</tr>
-</tbody>
-</table>
-<h3>8. Ontario 重點（你的省份）</h3>
-<ul>
-<li><strong>首府 Capital</strong>：Toronto</li>
-<li><strong>省督 Lieutenant Governor</strong>：<strong>Edith Dumont</strong>（2023 起，<strong>首位 Franco-Ontarian 法裔安省人</strong> 出任）</li>
-<li><strong>省長 Premier</strong>：<strong>Doug Ford</strong>（Progressive Conservative，2018 起，2022、2025 連任）</li>
-<li><strong>省議會</strong>：Legislative Assembly of Ontario，<strong>MPP</strong> 是議員</li>
-<li><strong>執政黨</strong>：Progressive Conservative Party of Ontario（PC）</li>
-<li><strong>官方反對黨黨魁</strong>：Marit Stiles（NDP，2023 起）</li>
-</ul>
-<blockquote>
-<p><strong>臨考前一週請上 ontario.ca 再核對最新人物變動。</strong></p>
-</blockquote>
-<hr>
-<h2>今日驗收題（20 題）</h2>
-<ol>
-<li>用一句英文形容加拿大政體（含三個關鍵詞）。</li>
-<li>加拿大政府有哪 3 個層級？</li>
-<li>醫療屬於聯邦還是省的管轄？</li>
-<li>移民屬於聯邦還是省的管轄？</li>
-<li>加拿大國會 Parliament 的 3 部分是？</li>
-<li>加拿大現任君主是誰？</li>
-<li>在加拿大，誰代表君主行使日常職權？</li>
-<li>現任加拿大總督是誰？她的歷史意義？</li>
-<li>加拿大參議員如何產生？任期到幾歲？</li>
-<li>眾議院總共多少席？任期最多幾年？</li>
-<li>眾議員的英文簡稱？</li>
-<li>一個法案要經歷哪幾個主要階段才變成法律？</li>
-<li>「Royal Assent」中文意思是？由誰代為簽署？</li>
-<li>加拿大總理是怎麼產生的？</li>
-<li>在 Ontario，省君主代表稱為什麼職位？</li>
-<li>在 Ontario，省議員稱為什麼縮寫？</li>
-<li>Ontario 的首府是？</li>
-<li>Ontario 現任省長是誰？哪一黨？</li>
-<li>Ontario 現任省督是誰？她的歷史意義？</li>
-<li>Quebec 的省議會與其他省名稱有何不同？</li>
-</ol>
-<hr>
-<details class="answers"><summary>答案與解析（點擊展開）</summary><div class="answers-body"><ol>
-<li><strong>Canada is a constitutional monarchy, a parliamentary democracy, and a federal state.</strong></li>
-<li><strong>Federal（聯邦）、Provincial/Territorial（省/領地）、Municipal（市政）</strong>。</li>
-<li><strong>省 Provincial</strong>。</li>
-<li><strong>聯邦 Federal</strong>。</li>
-<li><strong>The Sovereign（君主）、Senate（參議院）、House of Commons（眾議院）</strong>。</li>
-<li><strong>King Charles III</strong>。</li>
-<li><strong>Governor General 總督</strong>。</li>
-<li><strong>Mary Simon</strong>，<strong>史上首位原住民總督</strong>（2021 上任）。</li>
-<li><strong>由總理提名、總督任命</strong>；任期至 <strong>75 歲</strong>。</li>
-<li><strong>338 席</strong>；最多 <strong>4 年</strong>。</li>
-<li><strong>MP（Member of Parliament）</strong>。</li>
-<li>一讀 → 二讀 → 委員會 → 報告 → 三讀 → 參議院重複 → <strong>Royal Assent 御准</strong>。</li>
-<li><strong>御准</strong>；由 <strong>總督 Governor General</strong> 代表君主簽署。</li>
-<li><strong>由多數黨黨魁出任</strong>（多數黨 = 眾議院席次最多的政黨）。</li>
-<li><strong>Lieutenant Governor（省督）</strong>。</li>
-<li><strong>MPP（Member of Provincial Parliament）</strong>。</li>
-<li><strong>Toronto</strong>。</li>
-<li><strong>Doug Ford</strong>，<strong>Progressive Conservative（PC，安省進步保守黨）</strong>。</li>
-<li><strong>Edith Dumont</strong>，<strong>首位 Franco-Ontarian（法裔安省人）省督</strong>（2023 起）。</li>
-<li>Quebec 叫 <strong>National Assembly（國民議會）</strong>，議員稱 <strong>MNA</strong>；其他省叫 <strong>Legislative Assembly</strong>。</li>
-</ol>
-<hr></div></details>
-<h2>今日自評</h2>
-<ul>
-<li>[ ] 答對 ≥ 15/20</li>
-<li>[ ] 能背出政體 3 個關鍵詞那一句英文</li>
-<li>[ ] 記得國會 3 部分（<strong>Sovereign / Senate / House of Commons</strong>）</li>
-<li>[ ] 能說出 Ontario Premier、Lt. Governor、首府</li>
-</ul></main>
+</div>
+</main>
 </div>
 <script>
 (function() {

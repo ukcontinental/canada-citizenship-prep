@@ -7,7 +7,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="default">
 <meta name="apple-mobile-web-app-title" content="加拿大公民考">
 <meta name="theme-color" content="#c8102e">
-<title>國家象徵圖鑑 · 加拿大公民考試</title>
+<title>國家象徵 · 加拿大公民考試</title>
 <style>
 :root {
   --bg: #faf8f4;
@@ -437,20 +437,169 @@ blockquote.speakable > .speak-btn,
 <a href="../daily-quiz/day-14.html">Day 14</a>
 <h2>互動式（圖解）</h2>
 <a href="../interactive/index.html">🎯 互動式入口</a>
-<a href="../interactive/geography.html">🗺️ 地圖：13 省領地</a>
-<a href="../interactive/history.html">📜 時間軸</a>
-<a href="../interactive/government.html">🏛️ 政府架構圖</a>
-<a href="../interactive/symbols.html" class="current">🍁 國家象徵圖鑑</a>
+<a href="../interactive/history.html">📜 04 歷史時間軸</a>
+<a href="../interactive/modern.html">🇨🇦 05 現代加拿大</a>
+<a href="../interactive/government.html">🏛️ 06 政府架構</a>
+<a href="../interactive/elections.html">🗳️ 07 聯邦選舉</a>
+<a href="../interactive/justice.html">⚖️ 08 司法系統</a>
+<a href="../interactive/symbols.html" class="current">🍁 09 國家象徵</a>
+<a href="../interactive/economy.html">💼 10 加拿大經濟</a>
+<a href="../interactive/geography.html">🗺️ 11 地圖與省份</a>
 </nav>
 <main>
+<style>
+.iv-hero {
+  background: linear-gradient(135deg, #fff8f8 0%, #fef0e8 100%);
+  border-left: 4px solid var(--accent);
+  padding: 18px 22px; border-radius: 8px; margin: 16px 0 24px;
+}
+.iv-hero h1 { margin: 0 0 6px; border: none; padding: 0; }
+.iv-hero p { margin: 0; color: var(--muted); }
+
+.iv-section-title {
+  margin: 32px 0 14px; padding-bottom: 6px;
+  border-bottom: 2px solid var(--accent);
+  font-size: 19px; font-weight: 700;
+}
+
+.iv-card-grid { display: grid; gap: 12px; margin: 16px 0 24px; }
+.iv-card {
+  background: #fff; border: 1px solid var(--line);
+  border-radius: 10px; padding: 16px 18px;
+  transition: border-color 0.15s, transform 0.15s, box-shadow 0.15s;
+  cursor: pointer;
+}
+.iv-card:hover {
+  border-color: var(--accent);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+.iv-card.iv-active {
+  border-color: var(--accent);
+  background: linear-gradient(135deg, #fff 0%, #fff8f8 100%);
+}
+.iv-card h4 { margin: 0 0 6px; font-size: 16px; }
+.iv-card .meta { font-size: 12px; color: var(--muted); margin-bottom: 8px; }
+.iv-card p { margin: 0; font-size: 14px; line-height: 1.5; }
+
+.iv-detail-panel {
+  margin: 20px 0; padding: 20px 24px;
+  background: #fff; border: 1px solid var(--line);
+  border-radius: 12px; box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+}
+.iv-detail-panel h3 { margin-top: 0; }
+
+.iv-tag {
+  display: inline-block; padding: 2px 8px; border-radius: 12px;
+  background: #f3efe6; font-size: 11px; color: var(--muted);
+  font-family: -apple-system, system-ui, sans-serif;
+  letter-spacing: 0.04em; margin-right: 6px;
+}
+.iv-tag.accent { background: var(--accent-soft); color: var(--accent); font-weight: 600; }
+</style>
+
+<style>
+.iv-sym-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 14px; margin: 16px 0; }
+.iv-sym-card { background: #fff; border: 1px solid var(--line); border-radius: 10px; padding: 14px 16px; }
+.iv-sym-emoji { font-size: 40px; line-height: 1; }
+.iv-sym-card h3 { margin: 8px 0 4px; font-size: 16px; }
+.iv-sym-card h3 .en { color: var(--muted); font-weight: 400; font-size: 13px; font-style: italic; }
+.iv-sym-card .brief { font-size: 13px; color: var(--muted); margin: 0 0 8px; }
+.iv-sym-card ul { margin: 0; padding-left: 18px; font-size: 13px; }
+.iv-sym-card ul li { margin: 3px 0; }
+.iv-bill-row { display: grid; grid-template-columns: 70px 1fr 2fr; gap: 14px; padding: 10px 0; border-bottom: 1px dashed var(--line); align-items: center; font-size: 14px; }
+.iv-bill-row .denom { font-family: monospace; font-weight: 700; font-size: 20px; color: var(--accent); }
+.iv-bill-row .zh { font-size: 12px; color: var(--muted); }
+.iv-bill-row .note { font-size: 13px; }
+.iv-hol-row { display: grid; grid-template-columns: 130px 1fr 1fr; gap: 10px; padding: 6px 10px; border-bottom: 1px dashed var(--line); font-size: 13px; align-items: center; }
+.iv-hol-row.star { background: linear-gradient(90deg, #fff8e8 0%, transparent 100%); border-radius: 4px; }
+.iv-hol-row .date { font-family: monospace; font-size: 12px; color: var(--muted); }
+.iv-hol-row .hol-en { font-weight: 600; }
+.iv-hol-row .hol-zh { color: var(--muted); }
+</style>
 <div class="iv-hero">
-  <h1>🍁 國家象徵圖鑑</h1>
-  <p>製作中。預計會有：</p>
-  <ul><li>國旗（1965 楓葉旗）、楓葉、河狸、皇冠、皇家紋章</li><li>鈔票人物：$5 Laurier、$10 Viola Desmond（2018 起，首位非白人女性）、$20 女王伊麗莎白二世、$50 Mackenzie King、$100 Borden</li><li>硬幣：1¢ Maple Leaf、5¢ Beaver、10¢ Bluenose、25¢ Caribou、$1 Loon（Loonie）、$2 Polar Bear（Toonie）</li><li>國徽、皇家騎警 RCMP 制服、Order of Canada 楓葉勳章</li><li>每張圖配上「為什麼考」「2026 最新狀態」</li></ul>
-  <p style="margin-top:14px;color:var(--muted);font-style:italic">告訴 AI「下一個做 國家象徵圖鑑」就會展開。</p>
+  <h1>🍁 加拿大國家象徵圖鑑</h1>
+  <p>象徵、鈔票、硬幣、國定假日——視覺整理一次到位。</p>
 </div>
-<style>.iv-hero { background: linear-gradient(135deg, #fff8f8 0%, #fef0e8 100%); border-left: 4px solid var(--accent); padding: 18px 22px; border-radius: 8px; margin: 16px 0 24px; }
-.iv-hero ul { margin: 8px 0; }</style>
+
+<h2 class="iv-section-title">10 大國家象徵</h2>
+<div class="iv-sym-grid">
+<div class="iv-sym-card">
+  <div class="iv-sym-emoji">🍁</div>
+  <h3>楓葉 <span class="en">Maple Leaf</span></h3>
+  <p class="brief">國家象徵植物，國旗中心</p>
+  <ul><li>1965 楓葉旗誕生</li><li>11 個葉尖代表 10 省 3 領地的整體</li><li>硬幣 1¢ 圖案</li></ul>
+</div>
+<div class="iv-sym-card">
+  <div class="iv-sym-emoji">🚩</div>
+  <h3>國旗 <span class="en">National Flag</span></h3>
+  <p class="brief">紅白楓葉旗</p>
+  <ul><li>**1965 年 2 月 15 日**首次升起</li><li>Pearson 總理推動</li><li>**2/15 = National Flag Day**</li><li>前身是 Red Ensign（含 Union Jack）</li></ul>
+</div>
+<div class="iv-sym-card">
+  <div class="iv-sym-emoji">👑</div>
+  <h3>皇冠 / 君主 <span class="en">The Crown</span></h3>
+  <p class="brief">King Charles III</p>
+  <ul><li>**2022 年 9 月 8 日 Elizabeth II 過世，Charles III 即位**</li><li>加拿大是 Constitutional Monarchy</li><li>Governor General Mary Simon 代表</li></ul>
+</div>
+<div class="iv-sym-card">
+  <div class="iv-sym-emoji">🦫</div>
+  <h3>河狸 <span class="en">Beaver</span></h3>
+  <p class="brief">國家動物，5 分硬幣圖案</p>
+  <ul><li>毛皮貿易歷史核心</li><li>Hudson's Bay Company 早期主要交易商品</li><li>1975 正式列為國家象徵</li></ul>
+</div>
+<div class="iv-sym-card">
+  <div class="iv-sym-emoji">🛡️</div>
+  <h3>皇家紋章 <span class="en">Coat of Arms</span></h3>
+  <p class="brief">1921 採用，加拿大政府正式徽記</p>
+  <ul><li>四等分顯示英、蘇、愛、法歷史血脈</li><li>獅與獨角獸守護</li><li>底部楓葉與 'A Mari Usque Ad Mare'（from sea to sea）</li></ul>
+</div>
+<div class="iv-sym-card">
+  <div class="iv-sym-emoji">🎵</div>
+  <h3>國歌 <span class="en">O Canada</span></h3>
+  <p class="brief">1980 正式國歌</p>
+  <ul><li>1880 由 Calixa Lavallée 譜曲（英法雙詞）</li><li>**2018 改 'in all of us command'**（去性別化）</li><li>皇室國歌仍是 'God Save the King'</li></ul>
+</div>
+<div class="iv-sym-card">
+  <div class="iv-sym-emoji">🌹</div>
+  <h3>Vimy Ridge <span class="en">Vimy Ridge</span></h3>
+  <p class="brief">1917 加拿大關鍵戰役</p>
+  <ul><li>四師團首次合作</li><li>民族認同的關鍵時刻</li><li>法國 Vimy 有加拿大紀念碑</li></ul>
+</div>
+<div class="iv-sym-card">
+  <div class="iv-sym-emoji">🪶</div>
+  <h3>Order of Canada <span class="en">楓葉勳章</span></h3>
+  <p class="brief">1967 設立的最高榮譽制度</p>
+  <ul><li>3 級：Companion、Officer、Member</li><li>格言：'Desiderantes meliorem patriam'（願望更好的祖國）</li></ul>
+</div>
+<div class="iv-sym-card">
+  <div class="iv-sym-emoji">💰</div>
+  <h3>Loonie & Toonie <span class="en">1元、2元硬幣</span></h3>
+  <p class="brief">Loonie 1987、Toonie 1996</p>
+  <ul><li>Loonie：1 元，刻 Loon 潛鳥</li><li>Toonie：2 元，刻 Polar Bear 北極熊</li><li>都是 1987 後設計</li></ul>
+</div>
+<div class="iv-sym-card">
+  <div class="iv-sym-emoji">📜</div>
+  <h3>Magna Carta <span class="en">大憲章 1215</span></h3>
+  <p class="brief">權利傳統 800 年起源</p>
+  <ul><li>雖在英國，但影響加拿大法律</li><li>**Habeas Corpus** 源於此</li><li>Charter 序言提及</li></ul>
+</div></div>
+
+<h2 class="iv-section-title">鈔票上的人物</h2>
+<div><div class="iv-bill-row"><div class="denom">$5</div><div class="figure"><strong>Wilfrid Laurier</strong><div class="zh">勞瑞葉</div></div><div class="note">第一位法裔總理</div></div><div class="iv-bill-row"><div class="denom">$10</div><div class="figure"><strong>Viola Desmond ⭐</strong><div class="zh">Viola Desmond</div></div><div class="note">**2018 起首位非白人女性**——民權運動先驅</div></div><div class="iv-bill-row"><div class="denom">$20</div><div class="figure"><strong>Queen Elizabeth II</strong><div class="zh">伊莉莎白二世</div></div><div class="note">（2024 起印新版可能換 Charles III）</div></div><div class="iv-bill-row"><div class="denom">$50</div><div class="figure"><strong>Mackenzie King</strong><div class="zh">麥肯齊·金</div></div><div class="note">任期最長的總理</div></div><div class="iv-bill-row"><div class="denom">$100</div><div class="figure"><strong>Robert Borden</strong><div class="zh">波頓爵士</div></div><div class="note">WWI 期間總理</div></div></div>
+
+<h2 class="iv-section-title">硬幣上的動物</h2>
+<div class="iv-card-grid" style="grid-template-columns:repeat(auto-fit,minmax(140px,1fr))">
+  <div class="iv-card"><strong>1¢</strong> Maple Leaf 楓葉<br><span class="meta">已停產 2013</span></div>
+  <div class="iv-card"><strong>5¢</strong> Beaver 河狸 🦫</div>
+  <div class="iv-card"><strong>10¢</strong> Bluenose 帆船 ⛵</div>
+  <div class="iv-card"><strong>25¢</strong> Caribou 馴鹿 🦌</div>
+  <div class="iv-card"><strong>$1 Loonie</strong> Loon 潛鳥</div>
+  <div class="iv-card"><strong>$2 Toonie</strong> Polar Bear 北極熊 🐻‍❄️</div>
+</div>
+
+<h2 class="iv-section-title">12 個國定/重要假日</h2>
+<div><div class="iv-hol-row "><div class="date">1/1</div><div class="hol-en">New Year's Day</div><div class="hol-zh">元旦</div></div><div class="iv-hol-row "><div class="date">4 月</div><div class="hol-en">Good Friday & Easter Monday</div><div class="hol-zh">復活節週五與週一</div></div><div class="iv-hol-row "><div class="date">5 月 月底週一</div><div class="hol-en">Victoria Day</div><div class="hol-zh">維多利亞日（女王生日）</div></div><div class="iv-hol-row "><div class="date">6/24</div><div class="hol-en">Saint-Jean-Baptiste Day（QC only）</div><div class="hol-zh">聖讓巴蒂斯特日（魁省）</div></div><div class="iv-hol-row star"><div class="date">7/1 ⭐</div><div class="hol-en">Canada Day</div><div class="hol-zh">加拿大國慶日（邦聯 1867）</div></div><div class="iv-hol-row "><div class="date">8 月 第一個週一</div><div class="hol-en">Civic Holiday（多省）</div><div class="hol-zh">公民日</div></div><div class="iv-hol-row "><div class="date">9 月 第一個週一</div><div class="hol-en">Labour Day</div><div class="hol-zh">勞動節</div></div><div class="iv-hol-row star"><div class="date">9/30 ⭐</div><div class="hol-en">Truth and Reconciliation Day</div><div class="hol-zh">真相與和解日（2021 起）</div></div><div class="iv-hol-row "><div class="date">10 月 第二個週一</div><div class="hol-en">Thanksgiving</div><div class="hol-zh">感恩節</div></div><div class="iv-hol-row "><div class="date">11/11</div><div class="hol-en">Remembrance Day</div><div class="hol-zh">陣亡將士紀念日（戴紅罌粟）</div></div><div class="iv-hol-row "><div class="date">12/25</div><div class="hol-en">Christmas Day</div><div class="hol-zh">聖誕節</div></div><div class="iv-hol-row "><div class="date">12/26</div><div class="hol-en">Boxing Day</div><div class="hol-zh">節禮日</div></div></div>
 </main>
 </div>
 <script>

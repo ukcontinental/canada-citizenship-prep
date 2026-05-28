@@ -450,10 +450,14 @@ nav.sidebar a[href="#home"] { /* no-op, kept for future */ }
 <a href="#daily-quiz-day-14">Day 14</a>
 <h2>互動式（圖解）</h2>
 <a href="#interactive-index">🎯 互動式入口</a>
-<a href="#interactive-geography">🗺️ 地圖</a>
-<a href="#interactive-history">📜 時間軸</a>
-<a href="#interactive-government">🏛️ 政府架構</a>
-<a href="#interactive-symbols">🍁 象徵圖鑑</a>
+<a href="#interactive-history">📜 04 歷史時間軸</a>
+<a href="#interactive-modern">🇨🇦 05 現代加拿大</a>
+<a href="#interactive-government">🏛️ 06 政府架構</a>
+<a href="#interactive-elections">🗳️ 07 聯邦選舉</a>
+<a href="#interactive-justice">⚖️ 08 司法系統</a>
+<a href="#interactive-symbols">🍁 09 國家象徵</a>
+<a href="#interactive-economy">💼 10 加拿大經濟</a>
+<a href="#interactive-geography">🗺️ 11 地圖</a>
 </nav>
 <main>
 <section id="home" class="page">
@@ -6415,12 +6419,11 @@ God save the King!</p></div><div class="zh"><span class="label">中文</span><p>
   border-left: 4px solid var(--accent);
   padding: 22px 26px; border-radius: 10px; margin: 16px 0 28px;
 }
-.iv-hub-hero h1 { margin: 0 0 6px; font-size: 26px; }
+.iv-hub-hero h1 { margin: 0 0 6px; font-size: 26px; border: none; padding: 0; }
 .iv-hub-hero p { margin: 0; color: var(--muted); font-size: 15px; }
-
-.iv-hub-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; margin: 24px 0; }
+.iv-hub-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px; margin: 24px 0; }
 .iv-hub-card {
-  display: block; padding: 22px 24px; background: #fff;
+  display: block; padding: 18px 20px; background: #fff;
   border: 1px solid var(--line); border-radius: 12px;
   text-decoration: none; color: var(--ink);
   transition: border-color 0.15s, transform 0.15s, box-shadow 0.15s;
@@ -6431,56 +6434,1491 @@ God save the King!</p></div><div class="zh"><span class="label">中文</span><p>
   box-shadow: 0 4px 12px rgba(0,0,0,0.06);
   text-decoration: none;
 }
-.iv-hub-emoji { font-size: 36px; line-height: 1; display: block; margin-bottom: 10px; }
-.iv-hub-title { font-weight: 700; font-size: 18px; margin-bottom: 4px; }
+.iv-hub-emoji { font-size: 36px; line-height: 1; display: block; margin-bottom: 8px; }
+.iv-hub-chap { font-size: 11px; color: var(--accent); font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; font-family: -apple-system, system-ui, sans-serif; }
+.iv-hub-title { font-weight: 700; font-size: 17px; margin: 4px 0; }
 .iv-hub-desc { font-size: 13px; color: var(--muted); line-height: 1.5; }
-.iv-hub-status {
-  display: inline-block; margin-top: 10px; padding: 2px 8px;
-  border-radius: 4px; font-size: 11px; font-family: -apple-system, system-ui, sans-serif;
-  letter-spacing: 0.04em; text-transform: uppercase;
-}
-.iv-hub-status.ready { background: #e8f5e8; color: #2d7a2d; }
-.iv-hub-status.wip { background: #fff8e1; color: #b08400; }
 </style>
 
 <div class="iv-hub-hero">
   <h1>🎯 互動式學習中心</h1>
-  <p>把抽象的考試內容變成圖、地圖、流程——用視覺記憶取代死背。</p>
+  <p>把抽象的考試內容變成圖、地圖、時間軸、流程——用視覺記憶取代死背。對應教材 04~11 章。</p>
 </div>
 
 <div class="iv-hub-grid">
-  <a href="#interactive-geography" class="iv-hub-card">
-    <span class="iv-hub-emoji">🗺️</span>
-    <div class="iv-hub-title">地圖：13 省領地</div>
-    <div class="iv-hub-desc">點省份看首府、省長、產業；Ontario 重點加大版面（你考試會被問）。</div>
-    <span class="iv-hub-status ready">已完成</span>
-  </a>
-
   <a href="#interactive-history" class="iv-hub-card">
     <span class="iv-hub-emoji">📜</span>
+    <div class="iv-hub-chap">04 章</div>
     <div class="iv-hub-title">歷史時間軸</div>
-    <div class="iv-hub-desc">1497 Cabot → 2021 TRC Day，按時代色標分區、每個事件點開有解說。</div>
-    <span class="iv-hub-status wip">製作中</span>
+    <div class="iv-hub-desc">1497 → 2021，41 事件，5 時代色標、可篩選</div>
   </a>
-
+  <a href="#interactive-modern" class="iv-hub-card">
+    <span class="iv-hub-emoji">🇨🇦</span>
+    <div class="iv-hub-chap">05 章</div>
+    <div class="iv-hub-title">現代加拿大</div>
+    <div class="iv-hub-desc">14 位總理畫廊 + 11 件現代里程碑</div>
+  </a>
   <a href="#interactive-government" class="iv-hub-card">
     <span class="iv-hub-emoji">🏛️</span>
+    <div class="iv-hub-chap">06 章</div>
     <div class="iv-hub-title">政府架構圖</div>
-    <div class="iv-hub-desc">3 張流程圖：三級政府、國會三部分、法案三讀流程。</div>
-    <span class="iv-hub-status wip">製作中</span>
+    <div class="iv-hub-desc">3 張圖：三級政府、國會三部分、法案 7 步驟</div>
   </a>
-
+  <a href="#interactive-elections" class="iv-hub-card">
+    <span class="iv-hub-emoji">🗳️</span>
+    <div class="iv-hub-chap">07 章</div>
+    <div class="iv-hub-title">聯邦選舉</div>
+    <div class="iv-hub-desc">5 大政黨卡 + 投票流程 + 5 必考重點</div>
+  </a>
+  <a href="#interactive-justice" class="iv-hub-card">
+    <span class="iv-hub-emoji">⚖️</span>
+    <div class="iv-hub-chap">08 章</div>
+    <div class="iv-hub-title">司法系統</div>
+    <div class="iv-hub-desc">5 原則 + 4 級法院金字塔 + RCMP</div>
+  </a>
   <a href="#interactive-symbols" class="iv-hub-card">
     <span class="iv-hub-emoji">🍁</span>
+    <div class="iv-hub-chap">09 章</div>
     <div class="iv-hub-title">國家象徵圖鑑</div>
-    <div class="iv-hub-desc">國旗、楓葉、河狸、鈔票人物、硬幣動物——全部視覺整理。</div>
-    <span class="iv-hub-status wip">製作中</span>
+    <div class="iv-hub-desc">10 象徵 + 鈔票人物 + 硬幣動物 + 12 假日</div>
+  </a>
+  <a href="#interactive-economy" class="iv-hub-card">
+    <span class="iv-hub-emoji">💼</span>
+    <div class="iv-hub-chap">10 章</div>
+    <div class="iv-hub-title">加拿大經濟</div>
+    <div class="iv-hub-desc">三大產業圓餅圖 + 5 必考經濟事實</div>
+  </a>
+  <a href="#interactive-geography" class="iv-hub-card">
+    <span class="iv-hub-emoji">🗺️</span>
+    <div class="iv-hub-chap">11 章</div>
+    <div class="iv-hub-title">地圖與省份</div>
+    <div class="iv-hub-desc">13 省領地互動地圖 + Ontario 重點</div>
   </a>
 </div>
 
 <p style="color: var(--muted); font-size: 14px;">
-  進度條 ✓：覺得地圖頁好用嗎？告訴 AI「下一個做 [時間軸 / 政府架構 / 國家象徵]」就會展開。
+  💡 學習建議：先看互動式抓住整體結構（圖／時間軸／流程），再回中英對照精讀文字、daily-quiz 驗收。
 </p>
+</section>
+<section id="interactive-history" class="page">
+<style>
+.iv-hero {
+  background: linear-gradient(135deg, #fff8f8 0%, #fef0e8 100%);
+  border-left: 4px solid var(--accent);
+  padding: 18px 22px; border-radius: 8px; margin: 16px 0 24px;
+}
+.iv-hero h1 { margin: 0 0 6px; border: none; padding: 0; }
+.iv-hero p { margin: 0; color: var(--muted); }
+
+.iv-section-title {
+  margin: 32px 0 14px; padding-bottom: 6px;
+  border-bottom: 2px solid var(--accent);
+  font-size: 19px; font-weight: 700;
+}
+
+.iv-card-grid { display: grid; gap: 12px; margin: 16px 0 24px; }
+.iv-card {
+  background: #fff; border: 1px solid var(--line);
+  border-radius: 10px; padding: 16px 18px;
+  transition: border-color 0.15s, transform 0.15s, box-shadow 0.15s;
+  cursor: pointer;
+}
+.iv-card:hover {
+  border-color: var(--accent);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+.iv-card.iv-active {
+  border-color: var(--accent);
+  background: linear-gradient(135deg, #fff 0%, #fff8f8 100%);
+}
+.iv-card h4 { margin: 0 0 6px; font-size: 16px; }
+.iv-card .meta { font-size: 12px; color: var(--muted); margin-bottom: 8px; }
+.iv-card p { margin: 0; font-size: 14px; line-height: 1.5; }
+
+.iv-detail-panel {
+  margin: 20px 0; padding: 20px 24px;
+  background: #fff; border: 1px solid var(--line);
+  border-radius: 12px; box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+}
+.iv-detail-panel h3 { margin-top: 0; }
+
+.iv-tag {
+  display: inline-block; padding: 2px 8px; border-radius: 12px;
+  background: #f3efe6; font-size: 11px; color: var(--muted);
+  font-family: -apple-system, system-ui, sans-serif;
+  letter-spacing: 0.04em; margin-right: 6px;
+}
+.iv-tag.accent { background: var(--accent-soft); color: var(--accent); font-weight: 600; }
+</style>
+
+<style>
+.iv-era-filter { display: flex; flex-wrap: wrap; gap: 8px; margin: 16px 0 24px; }
+.iv-era-btn {
+  appearance: none; padding: 6px 12px; border-radius: 20px;
+  background: #fff; border: 2px solid var(--era-color);
+  color: var(--era-color); cursor: pointer; font-size: 13px; font-weight: 600;
+  font-family: -apple-system, system-ui, sans-serif;
+  transition: all 0.15s;
+}
+.iv-era-btn.iv-active { background: var(--era-color); color: #fff; }
+.iv-tl { position: relative; padding: 12px 0; }
+.iv-tl::before {
+  content: ''; position: absolute; left: 88px; top: 0; bottom: 0;
+  width: 3px; background: linear-gradient(to bottom, #4a6fa5 0%, #b0413e 20%, #c8a040 40%, #7a8c5c 65%, #5a9460 85%, #5a9460 100%);
+  border-radius: 2px;
+}
+.iv-tl-event {
+  display: grid; grid-template-columns: 80px 30px 1fr;
+  align-items: start; gap: 10px; padding: 10px 0;
+  position: relative;
+}
+.iv-tl-event.iv-hidden { display: none; }
+.iv-tl-year {
+  text-align: right; font-weight: 700; font-family: monospace;
+  font-size: 14px; padding-top: 12px; color: var(--ink);
+}
+.iv-tl-marker {
+  width: 14px; height: 14px; border-radius: 50%;
+  border: 3px solid #fff; box-shadow: 0 0 0 2px currentColor;
+  margin: 14px 8px 0;
+}
+.iv-tl-content {
+  background: #fff; border: 1px solid var(--line); border-radius: 8px;
+  padding: 12px 16px; transition: all 0.15s;
+}
+.iv-tl-event:hover .iv-tl-content {
+  border-color: var(--accent); box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+.iv-tl-star .iv-tl-content {
+  background: linear-gradient(135deg, #fff 0%, #fff8e8 100%);
+  border-color: #d4a943;
+}
+.iv-tl-title { margin: 0 0 2px; font-size: 16px; }
+.iv-tl-en { font-size: 12px; color: var(--muted); font-style: italic; margin-bottom: 6px; }
+.iv-tl-brief { margin: 0 0 8px; font-size: 14px; }
+.iv-tl-details { margin: 6px 0 0; padding-left: 18px; font-size: 13px; color: var(--muted); }
+.iv-tl-details li { margin: 3px 0; }
+@media (max-width: 600px) {
+  .iv-tl::before { left: 60px; }
+  .iv-tl-event { grid-template-columns: 55px 24px 1fr; gap: 6px; }
+  .iv-tl-year { font-size: 12px; }
+}
+</style>
+<div class="iv-hero">
+  <h1>📜 加拿大歷史時間軸</h1>
+  <p>1497 → 2021 共 41 件考試重點事件。按時代色標分區，⭐ = 高頻考點。點時代按鈕篩選。</p>
+</div>
+<div class="iv-era-filter">
+  <button class="iv-era-btn iv-active" data-era="all" style="--era-color:#1f2328">全部</button>
+  <button class="iv-era-btn" data-era="new-france" style="--era-color:#4a6fa5">新法蘭西時期 (1497-1763)</button><button class="iv-era-btn" data-era="british" style="--era-color:#b0413e">英屬北美 (1763-1867)</button><button class="iv-era-btn" data-era="confederation" style="--era-color:#c8a040">邦聯時代 (1867-1914)</button><button class="iv-era-btn" data-era="wars" style="--era-color:#7a8c5c">兩戰與改革 (1914-1949)</button><button class="iv-era-btn" data-era="modern" style="--era-color:#5a9460">現代加拿大 (1949-至今)</button>
+</div>
+<div class="iv-tl">
+
+<div class="iv-tl-event " data-era="new-france">
+  <div class="iv-tl-marker" style="background:#4a6fa5"></div>
+  <div class="iv-tl-year">1497</div>
+  <div class="iv-tl-content">
+    <h3 class="iv-tl-title">John Cabot 抵達加拿大東岸</h3>
+    <div class="iv-tl-en">John Cabot reaches Atlantic shores</div>
+    <p class="iv-tl-brief">為英王 Henry VII 宣稱大西洋岸土地，是歐洲人首次有記錄登陸加東</p>
+    <ul class='iv-tl-details'><li>威尼斯航海家受英王委派</li><li>登陸地點可能是 Newfoundland</li><li>為日後英國對加宣稱主權奠基</li></ul>
+  </div>
+</div>
+<div class="iv-tl-event " data-era="new-france">
+  <div class="iv-tl-marker" style="background:#4a6fa5"></div>
+  <div class="iv-tl-year">1534</div>
+  <div class="iv-tl-content">
+    <h3 class="iv-tl-title">Cartier 命名 'Canada'</h3>
+    <div class="iv-tl-en">Cartier names 'Canada'</div>
+    <p class="iv-tl-brief">Jacques Cartier 第一次航行，從原住民 Iroquois 學到 'kanata'（村莊）一詞</p>
+    <ul class='iv-tl-details'><li>第一次航行 1534、第二次 1535、第三次 1541</li><li>為法王 François I 宣稱聖羅倫斯地區</li><li>'Canada' 名字源自 Iroquois 語 'kanata'（kanata = 村莊/居住地）</li></ul>
+  </div>
+</div>
+<div class="iv-tl-event " data-era="new-france">
+  <div class="iv-tl-marker" style="background:#4a6fa5"></div>
+  <div class="iv-tl-year">1604</div>
+  <div class="iv-tl-content">
+    <h3 class="iv-tl-title">首座歐洲永久定居 Port-Royal</h3>
+    <div class="iv-tl-en">Port-Royal — first permanent settlement</div>
+    <p class="iv-tl-brief">Pierre du Gua de Monts 與 Samuel de Champlain 在 Acadia 建立</p>
+    <ul class='iv-tl-details'><li>位於今日 Nova Scotia</li><li>1605 年是北美第一個永久歐洲殖民地</li><li>Acadia 文化由此開始</li></ul>
+  </div>
+</div>
+<div class="iv-tl-event " data-era="new-france">
+  <div class="iv-tl-marker" style="background:#4a6fa5"></div>
+  <div class="iv-tl-year">1608</div>
+  <div class="iv-tl-content">
+    <h3 class="iv-tl-title">Champlain 建立 Québec City</h3>
+    <div class="iv-tl-en">Champlain founds Quebec City</div>
+    <p class="iv-tl-brief">Samuel de Champlain 在聖羅倫斯河岸建立 Québec City，'Father of New France'</p>
+    <ul class='iv-tl-details'><li>這是 New France 的首都</li><li>Champlain 與原住民結盟貿易毛皮</li><li>為法屬北美奠定基石</li></ul>
+  </div>
+</div>
+<div class="iv-tl-event " data-era="new-france">
+  <div class="iv-tl-marker" style="background:#4a6fa5"></div>
+  <div class="iv-tl-year">1670</div>
+  <div class="iv-tl-content">
+    <h3 class="iv-tl-title">Hudson's Bay Company 成立</h3>
+    <div class="iv-tl-en">Hudson's Bay Company chartered</div>
+    <p class="iv-tl-brief">英王 Charles II 給予 HBC 對 Hudson Bay 流域的貿易壟斷權</p>
+    <ul class='iv-tl-details'><li>HBC 是現存最古老的商業公司之一</li><li>推動英國在北方的擴張</li><li>與法國的毛皮貿易競爭白熱化</li></ul>
+  </div>
+</div>
+<div class="iv-tl-event " data-era="new-france">
+  <div class="iv-tl-marker" style="background:#4a6fa5"></div>
+  <div class="iv-tl-year">1701</div>
+  <div class="iv-tl-content">
+    <h3 class="iv-tl-title">Great Peace of Montreal</h3>
+    <div class="iv-tl-en">Great Peace of Montreal</div>
+    <p class="iv-tl-brief">法國與 39 個原住民族在 Montreal 簽訂大和平條約</p>
+    <ul class='iv-tl-details'><li>結束 Iroquois 與法國/盟友的戰爭</li><li>新法蘭西進入和平擴張期</li></ul>
+  </div>
+</div>
+<div class="iv-tl-event " data-era="new-france">
+  <div class="iv-tl-marker" style="background:#4a6fa5"></div>
+  <div class="iv-tl-year">1755</div>
+  <div class="iv-tl-content">
+    <h3 class="iv-tl-title">Acadian 大流亡</h3>
+    <div class="iv-tl-en">Acadian Deportation</div>
+    <p class="iv-tl-brief">英國驅逐 Acadia 地區法裔居民（約 1 萬人）</p>
+    <ul class='iv-tl-details'><li>稱為 'Le Grand Dérangement'</li><li>部分人流亡到 Louisiana（後來變成 Cajun）</li><li>部分人返回成為今日的 Acadian</li></ul>
+  </div>
+</div>
+<div class="iv-tl-event " data-era="british">
+  <div class="iv-tl-marker" style="background:#b0413e"></div>
+  <div class="iv-tl-year">1759</div>
+  <div class="iv-tl-content">
+    <h3 class="iv-tl-title">Plains of Abraham 之戰 ⚔️</h3>
+    <div class="iv-tl-en">Battle of the Plains of Abraham</div>
+    <p class="iv-tl-brief">**英軍 James Wolfe vs. 法軍 Montcalm**，英軍奪下 Québec City，新法蘭西結束</p>
+    <ul class='iv-tl-details'><li>**考試重點戰役**</li><li>兩位將軍都陣亡</li><li>1763 Paris 條約正式將北美交給英國</li></ul>
+  </div>
+</div>
+<div class="iv-tl-event " data-era="british">
+  <div class="iv-tl-marker" style="background:#b0413e"></div>
+  <div class="iv-tl-year">1763</div>
+  <div class="iv-tl-content">
+    <h3 class="iv-tl-title">Treaty of Paris：法割讓北美</h3>
+    <div class="iv-tl-en">Treaty of Paris</div>
+    <p class="iv-tl-brief">七年戰爭結束，法國將北美除聖皮埃爾與密克隆外全部割讓給英國</p>
+    <ul class='iv-tl-details'><li>新法蘭西成為英國殖民地 'Province of Quebec'</li><li>Royal Proclamation 1763 承認原住民權利</li></ul>
+  </div>
+</div>
+<div class="iv-tl-event " data-era="british">
+  <div class="iv-tl-marker" style="background:#b0413e"></div>
+  <div class="iv-tl-year">1774</div>
+  <div class="iv-tl-content">
+    <h3 class="iv-tl-title">Quebec Act 保障法裔權利</h3>
+    <div class="iv-tl-en">Quebec Act</div>
+    <p class="iv-tl-brief">英國保障 Québec 法裔居民的天主教信仰、法國民法、語言</p>
+    <ul class='iv-tl-details'><li>保留 French Civil Law（民事）</li><li>保留天主教</li><li>**為 Québec 法語文化存續的關鍵法案**</li></ul>
+  </div>
+</div>
+<div class="iv-tl-event " data-era="british">
+  <div class="iv-tl-marker" style="background:#b0413e"></div>
+  <div class="iv-tl-year">1776-83</div>
+  <div class="iv-tl-content">
+    <h3 class="iv-tl-title">美國革命，Loyalists 北逃</h3>
+    <div class="iv-tl-en">American Revolution — Loyalists flee north</div>
+    <p class="iv-tl-brief">約 4 萬 'United Empire Loyalists' 從美國逃到英屬北美</p>
+    <ul class='iv-tl-details'><li>大量英裔人口湧入加拿大</li><li>在 Nova Scotia、New Brunswick、Ontario 建立新社區</li><li>1791 Constitutional Act 將 Quebec 分為 Upper / Lower Canada</li></ul>
+  </div>
+</div>
+<div class="iv-tl-event " data-era="british">
+  <div class="iv-tl-marker" style="background:#b0413e"></div>
+  <div class="iv-tl-year">1812-14</div>
+  <div class="iv-tl-content">
+    <h3 class="iv-tl-title">1812 戰爭 — 加拿大守住了 ⚔️</h3>
+    <div class="iv-tl-en">War of 1812 — Canada survives</div>
+    <p class="iv-tl-brief">美國入侵英屬北美，**加拿大、英軍、原住民聯軍擊退美軍**</p>
+    <ul class='iv-tl-details'><li>**考試重點**</li><li>Sir Isaac Brock 在 Queenston Heights 陣亡（英雄）</li><li>原住民領袖 Tecumseh 也陣亡</li><li>Laura Secord 徒步通報英軍美軍動向</li><li>1814 英軍燒了 Washington 白宮</li></ul>
+  </div>
+</div>
+<div class="iv-tl-event " data-era="british">
+  <div class="iv-tl-marker" style="background:#b0413e"></div>
+  <div class="iv-tl-year">1837-38</div>
+  <div class="iv-tl-content">
+    <h3 class="iv-tl-title">Upper / Lower Canada 叛亂</h3>
+    <div class="iv-tl-en">Rebellions of 1837-38</div>
+    <p class="iv-tl-brief">改革派要求 'responsible government' 起義被鎮壓但促成改革</p>
+    <ul class='iv-tl-details'><li>Upper Canada（今 Ontario）：William Lyon Mackenzie</li><li>Lower Canada（今 Quebec）：Louis-Joseph Papineau</li><li>促成 Lord Durham 報告 → 1840 Act of Union</li></ul>
+  </div>
+</div>
+<div class="iv-tl-event " data-era="british">
+  <div class="iv-tl-marker" style="background:#b0413e"></div>
+  <div class="iv-tl-year">1840</div>
+  <div class="iv-tl-content">
+    <h3 class="iv-tl-title">Act of Union 統一兩 Canada</h3>
+    <div class="iv-tl-en">Act of Union</div>
+    <p class="iv-tl-brief">Upper + Lower Canada 合併為 'Province of Canada'</p>
+    <ul class='iv-tl-details'><li>Durham 報告建議責任政府</li><li>1848 'Responsible Government' 實現於 Nova Scotia 與 Canada</li></ul>
+  </div>
+</div>
+<div class="iv-tl-event " data-era="confederation">
+  <div class="iv-tl-marker" style="background:#c8a040"></div>
+  <div class="iv-tl-year">1864</div>
+  <div class="iv-tl-content">
+    <h3 class="iv-tl-title">Charlottetown Conference</h3>
+    <div class="iv-tl-en">Charlottetown Conference</div>
+    <p class="iv-tl-brief">Confederation 規劃會議在 PEI Charlottetown 舉行</p>
+    <ul class='iv-tl-details'><li>**'Birthplace of Confederation'**</li><li>PEI 因此被稱為邦聯發源地</li><li>與會者後稱 'Fathers of Confederation'</li></ul>
+  </div>
+</div>
+<div class="iv-tl-event iv-tl-star" data-era="confederation">
+  <div class="iv-tl-marker" style="background:#c8a040"></div>
+  <div class="iv-tl-year">1867 ⭐</div>
+  <div class="iv-tl-content">
+    <h3 class="iv-tl-title">邦聯誕生 — Dominion of Canada</h3>
+    <div class="iv-tl-en">Confederation — Dominion of Canada</div>
+    <p class="iv-tl-brief">**英國國會通過 British North America Act**，加拿大成為英聯邦下的 Dominion</p>
+    <ul class='iv-tl-details'><li>**考試最重要日期之一**</li><li>成立四省：Ontario、Quebec、Nova Scotia、New Brunswick</li><li>**首任總理 Sir John A. Macdonald**（保守黨）</li><li>George-Étienne Cartier 是法裔共同創建者</li><li>7 月 1 日 = **Canada Day**</li></ul>
+  </div>
+</div>
+<div class="iv-tl-event " data-era="confederation">
+  <div class="iv-tl-marker" style="background:#c8a040"></div>
+  <div class="iv-tl-year">1869-70</div>
+  <div class="iv-tl-content">
+    <h3 class="iv-tl-title">Manitoba 加入 + Riel 起義</h3>
+    <div class="iv-tl-en">Manitoba joins + Riel Rebellion</div>
+    <p class="iv-tl-brief">Métis 領袖 Louis Riel 起義，Manitoba 隨後加入聯邦</p>
+    <ul class='iv-tl-details'><li>1870 Manitoba 加入（第 5 省）</li><li>Louis Riel 是 Métis 民族英雄</li><li>1885 Riel 第二次起義（North-West Rebellion）後被處決</li></ul>
+  </div>
+</div>
+<div class="iv-tl-event " data-era="confederation">
+  <div class="iv-tl-marker" style="background:#c8a040"></div>
+  <div class="iv-tl-year">1871</div>
+  <div class="iv-tl-content">
+    <h3 class="iv-tl-title">British Columbia 加入</h3>
+    <div class="iv-tl-en">British Columbia joins</div>
+    <p class="iv-tl-brief">BC 同意加入聯邦，條件是建一條橫貫鐵路</p>
+    
+  </div>
+</div>
+<div class="iv-tl-event " data-era="confederation">
+  <div class="iv-tl-marker" style="background:#c8a040"></div>
+  <div class="iv-tl-year">1873</div>
+  <div class="iv-tl-content">
+    <h3 class="iv-tl-title">Prince Edward Island 加入</h3>
+    <div class="iv-tl-en">PEI joins</div>
+    <p class="iv-tl-brief">PEI 1873 加入</p>
+    
+  </div>
+</div>
+<div class="iv-tl-event " data-era="confederation">
+  <div class="iv-tl-marker" style="background:#c8a040"></div>
+  <div class="iv-tl-year">1885</div>
+  <div class="iv-tl-content">
+    <h3 class="iv-tl-title">太平洋鐵路完成 🚂</h3>
+    <div class="iv-tl-en">Canadian Pacific Railway completed</div>
+    <p class="iv-tl-brief">鐵路橫貫加拿大東西，把 BC 連入聯邦</p>
+    <ul class='iv-tl-details'><li>**Last Spike** 在 BC Craigellachie 釘下</li><li>華工大量參與築路（許多人罹難）</li><li>為加拿大統一的物理象徵</li></ul>
+  </div>
+</div>
+<div class="iv-tl-event " data-era="confederation">
+  <div class="iv-tl-marker" style="background:#c8a040"></div>
+  <div class="iv-tl-year">1898</div>
+  <div class="iv-tl-content">
+    <h3 class="iv-tl-title">Yukon Territory 與 Klondike 淘金潮</h3>
+    <div class="iv-tl-en">Yukon Territory & Klondike Gold Rush</div>
+    <p class="iv-tl-brief">Klondike 淘金潮帶來人口爆炸，Yukon 正式成為 territory</p>
+    
+  </div>
+</div>
+<div class="iv-tl-event " data-era="confederation">
+  <div class="iv-tl-marker" style="background:#c8a040"></div>
+  <div class="iv-tl-year">1905</div>
+  <div class="iv-tl-content">
+    <h3 class="iv-tl-title">Alberta、Saskatchewan 加入</h3>
+    <div class="iv-tl-en">Alberta & Saskatchewan join</div>
+    <p class="iv-tl-brief">兩省同時從 North-West Territories 切出</p>
+    
+  </div>
+</div>
+<div class="iv-tl-event " data-era="wars">
+  <div class="iv-tl-marker" style="background:#7a8c5c"></div>
+  <div class="iv-tl-year">1914-18</div>
+  <div class="iv-tl-content">
+    <h3 class="iv-tl-title">WWI — Vimy Ridge 🌹</h3>
+    <div class="iv-tl-en">WWI — Vimy Ridge</div>
+    <p class="iv-tl-brief">**1917 加拿大四師團首次合作攻下 Vimy Ridge**——加拿大民族認同的關鍵時刻</p>
+    <ul class='iv-tl-details'><li>**考試重點**</li><li>Vimy Ridge：1917 年 4 月，攻下英法都打不下的據點</li><li>Passchendaele、Somme 也是慘烈戰役</li><li>全國陣亡 ~6 萬</li><li>1918 第一次世界大戰結束</li></ul>
+  </div>
+</div>
+<div class="iv-tl-event " data-era="wars">
+  <div class="iv-tl-marker" style="background:#7a8c5c"></div>
+  <div class="iv-tl-year">1916-18</div>
+  <div class="iv-tl-content">
+    <h3 class="iv-tl-title">婦女選舉權</h3>
+    <div class="iv-tl-en">Women's suffrage</div>
+    <p class="iv-tl-brief">Manitoba 1916 首先給女性投票權，聯邦 1918 跟進</p>
+    <ul class='iv-tl-details'><li>Nellie McClung 等 'Famous Five' 推動</li><li>**Manitoba 1916 = 第一個給女性投票權的省**</li></ul>
+  </div>
+</div>
+<div class="iv-tl-event " data-era="wars">
+  <div class="iv-tl-marker" style="background:#7a8c5c"></div>
+  <div class="iv-tl-year">1929</div>
+  <div class="iv-tl-content">
+    <h3 class="iv-tl-title">Persons Case — 女性是 'persons'</h3>
+    <div class="iv-tl-en">Persons Case — women as legal persons</div>
+    <p class="iv-tl-brief">Privy Council 裁定加拿大女性在法律上是 'persons'，可被任命為參議員</p>
+    <ul class='iv-tl-details'><li>**Famous Five**：Emily Murphy 等 5 位女性推動</li><li>勝訴後 Cairine Wilson 1930 成為首位女參議員</li></ul>
+  </div>
+</div>
+<div class="iv-tl-event " data-era="wars">
+  <div class="iv-tl-marker" style="background:#7a8c5c"></div>
+  <div class="iv-tl-year">1931</div>
+  <div class="iv-tl-content">
+    <h3 class="iv-tl-title">Statute of Westminster</h3>
+    <div class="iv-tl-en">Statute of Westminster</div>
+    <p class="iv-tl-brief">英國國會確認加拿大等 Dominion 在外交與立法上完全自主</p>
+    <ul class='iv-tl-details'><li>加拿大實質獨立的法律基礎</li></ul>
+  </div>
+</div>
+<div class="iv-tl-event " data-era="wars">
+  <div class="iv-tl-marker" style="background:#7a8c5c"></div>
+  <div class="iv-tl-year">1939-45</div>
+  <div class="iv-tl-content">
+    <h3 class="iv-tl-title">WWII — D-Day Juno Beach</h3>
+    <div class="iv-tl-en">WWII — D-Day at Juno Beach</div>
+    <p class="iv-tl-brief">加軍在 D-Day（1944/6/6）登陸 Juno Beach，意大利戰役也激烈</p>
+    <ul class='iv-tl-details'><li>**考試重點**</li><li>Juno Beach 是五個 D-Day 灘頭之一（加拿大負責）</li><li>全國陣亡 ~4 萬</li><li>二戰結束後加拿大成為世界第 4 大空軍</li></ul>
+  </div>
+</div>
+<div class="iv-tl-event " data-era="wars">
+  <div class="iv-tl-marker" style="background:#7a8c5c"></div>
+  <div class="iv-tl-year">1947</div>
+  <div class="iv-tl-content">
+    <h3 class="iv-tl-title">Canadian Citizenship Act 通過</h3>
+    <div class="iv-tl-en">Canadian Citizenship Act</div>
+    <p class="iv-tl-brief">**加拿大公民身份首次法定**——之前是英國臣民</p>
+    <ul class='iv-tl-details'><li>**考試重點**：首次有 'Canadian citizen' 這個身份</li><li>首任公民身份證頒給總理 Mackenzie King</li></ul>
+  </div>
+</div>
+<div class="iv-tl-event " data-era="wars">
+  <div class="iv-tl-marker" style="background:#7a8c5c"></div>
+  <div class="iv-tl-year">1949</div>
+  <div class="iv-tl-content">
+    <h3 class="iv-tl-title">Newfoundland 加入（最後一省）</h3>
+    <div class="iv-tl-en">Newfoundland joins (last province)</div>
+    <p class="iv-tl-brief">公投通過後 Newfoundland 1949 加入聯邦，完成 10 省版圖</p>
+    <ul class='iv-tl-details'><li>**考試重點**</li><li>之前是英國自治領</li></ul>
+  </div>
+</div>
+<div class="iv-tl-event " data-era="modern">
+  <div class="iv-tl-marker" style="background:#5a9460"></div>
+  <div class="iv-tl-year">1960</div>
+  <div class="iv-tl-content">
+    <h3 class="iv-tl-title">原住民獲聯邦投票權</h3>
+    <div class="iv-tl-en">Indigenous federal vote</div>
+    <p class="iv-tl-brief">Status Indians 終於可以在聯邦選舉投票（不必放棄身份）</p>
+    
+  </div>
+</div>
+<div class="iv-tl-event iv-tl-star" data-era="modern">
+  <div class="iv-tl-marker" style="background:#5a9460"></div>
+  <div class="iv-tl-year">1965 ⭐</div>
+  <div class="iv-tl-content">
+    <h3 class="iv-tl-title">楓葉旗誕生</h3>
+    <div class="iv-tl-en">Maple Leaf flag adopted</div>
+    <p class="iv-tl-brief">**2 月 15 日新國旗首次升起**——紅白楓葉旗取代英國 Red Ensign</p>
+    <ul class='iv-tl-details'><li>**考試重點**</li><li>Lester B. Pearson 總理推動</li><li>**2 月 15 日 = National Flag of Canada Day**</li></ul>
+  </div>
+</div>
+<div class="iv-tl-event " data-era="modern">
+  <div class="iv-tl-marker" style="background:#5a9460"></div>
+  <div class="iv-tl-year">1967</div>
+  <div class="iv-tl-content">
+    <h3 class="iv-tl-title">Centennial / Expo '67</h3>
+    <div class="iv-tl-en">Centennial / Expo '67</div>
+    <p class="iv-tl-brief">聯邦 100 週年慶 + Montreal 世博會，是加拿大現代認同的形成期</p>
+    <ul class='iv-tl-details'><li>Bobby Gimby 名曲 'Ca-na-da'</li><li>Pierre Trudeau 1968 上任</li></ul>
+  </div>
+</div>
+<div class="iv-tl-event " data-era="modern">
+  <div class="iv-tl-marker" style="background:#5a9460"></div>
+  <div class="iv-tl-year">1969</div>
+  <div class="iv-tl-content">
+    <h3 class="iv-tl-title">Official Languages Act</h3>
+    <div class="iv-tl-en">Official Languages Act</div>
+    <p class="iv-tl-brief">聯邦政府所有服務必須英法雙語</p>
+    <ul class='iv-tl-details'><li>**考試重點**</li><li>Pierre Trudeau 推動</li><li>聯邦政府工作必須提供雙語服務</li></ul>
+  </div>
+</div>
+<div class="iv-tl-event " data-era="modern">
+  <div class="iv-tl-marker" style="background:#5a9460"></div>
+  <div class="iv-tl-year">1971</div>
+  <div class="iv-tl-content">
+    <h3 class="iv-tl-title">多元文化主義政策</h3>
+    <div class="iv-tl-en">Multiculturalism policy</div>
+    <p class="iv-tl-brief">**加拿大成為世界第一個正式採取多元文化主義為國策**</p>
+    <ul class='iv-tl-details'><li>1988 Canadian Multiculturalism Act 入法</li><li>**'Mosaic' 而不是 'Melting Pot'**</li></ul>
+  </div>
+</div>
+<div class="iv-tl-event " data-era="modern">
+  <div class="iv-tl-marker" style="background:#5a9460"></div>
+  <div class="iv-tl-year">1976</div>
+  <div class="iv-tl-content">
+    <h3 class="iv-tl-title">Quebec PQ 上台 + 1980 公投</h3>
+    <div class="iv-tl-en">Quebec PQ + 1980 referendum</div>
+    <p class="iv-tl-brief">Parti Québécois 1976 上台，1980 第一次主權公投（59.6% No）</p>
+    
+  </div>
+</div>
+<div class="iv-tl-event iv-tl-star" data-era="modern">
+  <div class="iv-tl-marker" style="background:#5a9460"></div>
+  <div class="iv-tl-year">1982 ⭐</div>
+  <div class="iv-tl-content">
+    <h3 class="iv-tl-title">Constitution Act / Charter</h3>
+    <div class="iv-tl-en">Constitution Act + Charter</div>
+    <p class="iv-tl-brief">**Constitution Act 1982**：憲法回到加拿大，含《加拿大權利與自由憲章》</p>
+    <ul class='iv-tl-details'><li>**考試最重要日期**</li><li>Pierre Trudeau 推動</li><li>**Charter of Rights and Freedoms 保障：4 大自由、6 項權利、Aboriginal、Mobility、Official Language**</li><li>Queen Elizabeth II 在 Ottawa 簽署</li></ul>
+  </div>
+</div>
+<div class="iv-tl-event " data-era="modern">
+  <div class="iv-tl-marker" style="background:#5a9460"></div>
+  <div class="iv-tl-year">1995</div>
+  <div class="iv-tl-content">
+    <h3 class="iv-tl-title">第二次 Quebec 公投</h3>
+    <div class="iv-tl-en">Second Quebec referendum</div>
+    <p class="iv-tl-brief">**50.58% No vs 49.42% Yes** — 差 5 萬票</p>
+    <ul class='iv-tl-details'><li>1999 Clarity Act 規範未來公投程序</li></ul>
+  </div>
+</div>
+<div class="iv-tl-event " data-era="modern">
+  <div class="iv-tl-marker" style="background:#5a9460"></div>
+  <div class="iv-tl-year">1999</div>
+  <div class="iv-tl-content">
+    <h3 class="iv-tl-title">Nunavut 從 NT 分出</h3>
+    <div class="iv-tl-en">Nunavut created</div>
+    <p class="iv-tl-brief">**第三個 territory**，從 Northwest Territories 切出</p>
+    <ul class='iv-tl-details'><li>**考試重點**：Nunavut 1999 年成立</li><li>Inuit 為多數人口</li><li>首府 Iqaluit</li></ul>
+  </div>
+</div>
+<div class="iv-tl-event " data-era="modern">
+  <div class="iv-tl-marker" style="background:#5a9460"></div>
+  <div class="iv-tl-year">2008</div>
+  <div class="iv-tl-content">
+    <h3 class="iv-tl-title">PM Harper 為寄宿學校道歉</h3>
+    <div class="iv-tl-en">Harper apologizes for residential schools</div>
+    <p class="iv-tl-brief">Stephen Harper 代表加拿大政府對 Indian Residential Schools 倖存者正式道歉</p>
+    
+  </div>
+</div>
+<div class="iv-tl-event " data-era="modern">
+  <div class="iv-tl-marker" style="background:#5a9460"></div>
+  <div class="iv-tl-year">2015</div>
+  <div class="iv-tl-content">
+    <h3 class="iv-tl-title">TRC 真相與和解報告</h3>
+    <div class="iv-tl-en">TRC report</div>
+    <p class="iv-tl-brief">Truth and Reconciliation Commission 發表報告與 94 項行動呼籲</p>
+    <ul class='iv-tl-details'><li>揭露寄宿學校系統性暴力與文化滅絕</li></ul>
+  </div>
+</div>
+<div class="iv-tl-event iv-tl-star" data-era="modern">
+  <div class="iv-tl-marker" style="background:#5a9460"></div>
+  <div class="iv-tl-year">2021 ⭐</div>
+  <div class="iv-tl-content">
+    <h3 class="iv-tl-title">TRC Day 國定假日</h3>
+    <div class="iv-tl-en">TRC Day becomes national holiday</div>
+    <p class="iv-tl-brief">**National Day for Truth and Reconciliation（9/30）正式列為國定假日**</p>
+    <ul class='iv-tl-details'><li>**考試重點**：Truth and Reconciliation Day = 9 月 30 日</li><li>穿橘色衣（Orange Shirt Day）紀念寄宿學校受害者</li></ul>
+  </div>
+</div>
+</div>
+<script>
+(function() {
+  var buttons = document.querySelectorAll('.iv-era-btn');
+  var events = document.querySelectorAll('.iv-tl-event');
+  buttons.forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      buttons.forEach(function(b){ b.classList.remove('iv-active'); });
+      btn.classList.add('iv-active');
+      var era = btn.dataset.era;
+      events.forEach(function(ev) {
+        if (era === 'all' || ev.dataset.era === era) ev.classList.remove('iv-hidden');
+        else ev.classList.add('iv-hidden');
+      });
+    });
+  });
+})();
+</script></section>
+<section id="interactive-modern" class="page">
+<style>
+.iv-hero {
+  background: linear-gradient(135deg, #fff8f8 0%, #fef0e8 100%);
+  border-left: 4px solid var(--accent);
+  padding: 18px 22px; border-radius: 8px; margin: 16px 0 24px;
+}
+.iv-hero h1 { margin: 0 0 6px; border: none; padding: 0; }
+.iv-hero p { margin: 0; color: var(--muted); }
+
+.iv-section-title {
+  margin: 32px 0 14px; padding-bottom: 6px;
+  border-bottom: 2px solid var(--accent);
+  font-size: 19px; font-weight: 700;
+}
+
+.iv-card-grid { display: grid; gap: 12px; margin: 16px 0 24px; }
+.iv-card {
+  background: #fff; border: 1px solid var(--line);
+  border-radius: 10px; padding: 16px 18px;
+  transition: border-color 0.15s, transform 0.15s, box-shadow 0.15s;
+  cursor: pointer;
+}
+.iv-card:hover {
+  border-color: var(--accent);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+.iv-card.iv-active {
+  border-color: var(--accent);
+  background: linear-gradient(135deg, #fff 0%, #fff8f8 100%);
+}
+.iv-card h4 { margin: 0 0 6px; font-size: 16px; }
+.iv-card .meta { font-size: 12px; color: var(--muted); margin-bottom: 8px; }
+.iv-card p { margin: 0; font-size: 14px; line-height: 1.5; }
+
+.iv-detail-panel {
+  margin: 20px 0; padding: 20px 24px;
+  background: #fff; border: 1px solid var(--line);
+  border-radius: 12px; box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+}
+.iv-detail-panel h3 { margin-top: 0; }
+
+.iv-tag {
+  display: inline-block; padding: 2px 8px; border-radius: 12px;
+  background: #f3efe6; font-size: 11px; color: var(--muted);
+  font-family: -apple-system, system-ui, sans-serif;
+  letter-spacing: 0.04em; margin-right: 6px;
+}
+.iv-tag.accent { background: var(--accent-soft); color: var(--accent); font-weight: 600; }
+</style>
+
+<style>
+.iv-pm-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 14px; margin: 16px 0; }
+.iv-pm-card { background: #fff; border: 1px solid var(--line); border-radius: 10px; padding: 14px 16px; }
+.iv-pm-card:hover { border-color: var(--accent); }
+.iv-pm-head { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin-bottom: 4px; }
+.iv-pm-head h3 { margin: 0; font-size: 16px; flex: 1; min-width: 200px; }
+.iv-pm-zh { color: var(--muted); font-size: 14px; }
+.iv-pm-party { display: inline-block; padding: 2px 8px; border-radius: 10px; font-size: 10px; color: #fff; letter-spacing: 0.04em; font-family: -apple-system, system-ui, sans-serif; }
+.iv-pm-years { font-family: monospace; font-size: 12px; color: var(--muted); margin-bottom: 8px; }
+.iv-pm-facts { margin: 0; padding-left: 18px; font-size: 13px; }
+.iv-pm-facts li { margin: 3px 0; }
+.iv-milestones { background: #faf8f4; border-radius: 10px; padding: 12px 16px; margin: 16px 0; }
+.iv-ms { display: grid; grid-template-columns: 70px 1fr 1.5fr; gap: 10px; padding: 6px 0; border-bottom: 1px dashed var(--line); align-items: center; }
+.iv-ms:last-child { border-bottom: none; }
+.iv-ms-year { font-family: monospace; font-weight: 700; color: var(--accent); }
+.iv-ms-zh { font-weight: 600; font-size: 14px; }
+.iv-ms-en { color: var(--muted); font-size: 13px; font-style: italic; }
+</style>
+<div class="iv-hero">
+  <h1>🇨🇦 現代加拿大（PM 與里程碑）</h1>
+  <p>14 位戰後總理畫廊 + 11 件現代加拿大關鍵法案／事件。⭐ = 考試重點。</p>
+</div>
+<h2 class="iv-section-title">歷任總理（建國至今 14 位重要人物）</h2>
+<div class="iv-pm-grid">
+<div class="iv-pm-card">
+  <div class="iv-pm-head">
+    <h3>Sir John A. Macdonald</h3>
+    <span class="iv-pm-zh">麥當勞爵士</span>
+    <span class="iv-pm-party" style="background:#1A4782">Conservative</span>
+  </div>
+  <div class="iv-pm-years">1867-1873, 1878-1891</div>
+  <ul class="iv-pm-facts"><li>**首任總理（建國之父）**</li><li>推動 Confederation 與太平洋鐵路</li><li>Kingston ON 紀念雕像</li></ul>
+</div>
+<div class="iv-pm-card">
+  <div class="iv-pm-head">
+    <h3>Wilfrid Laurier</h3>
+    <span class="iv-pm-zh">勞瑞葉</span>
+    <span class="iv-pm-party" style="background:#d71920">Liberal</span>
+  </div>
+  <div class="iv-pm-years">1896-1911</div>
+  <ul class="iv-pm-facts"><li>**第一位法裔總理**</li><li>推動 Alberta、Saskatchewan 1905 加入</li><li>$5 鈔票人物</li></ul>
+</div>
+<div class="iv-pm-card">
+  <div class="iv-pm-head">
+    <h3>Sir Robert Borden</h3>
+    <span class="iv-pm-zh">波頓爵士</span>
+    <span class="iv-pm-party" style="background:#1A4782">Conservative</span>
+  </div>
+  <div class="iv-pm-years">1911-1920</div>
+  <ul class="iv-pm-facts"><li>帶領加拿大度過 WWI</li><li>**Vimy Ridge 1917** 期間任內</li><li>$100 鈔票人物</li></ul>
+</div>
+<div class="iv-pm-card">
+  <div class="iv-pm-head">
+    <h3>William Lyon Mackenzie King</h3>
+    <span class="iv-pm-zh">麥肯齊·金</span>
+    <span class="iv-pm-party" style="background:#d71920">Liberal</span>
+  </div>
+  <div class="iv-pm-years">1921-1930, 1935-1948</div>
+  <ul class="iv-pm-facts"><li>**任期最長的總理**（22 年）</li><li>**1947 Canadian Citizenship Act** 首位公民身份證得主</li><li>$50 鈔票人物</li></ul>
+</div>
+<div class="iv-pm-card">
+  <div class="iv-pm-head">
+    <h3>Louis St-Laurent</h3>
+    <span class="iv-pm-zh">聖羅倫</span>
+    <span class="iv-pm-party" style="background:#d71920">Liberal</span>
+  </div>
+  <div class="iv-pm-years">1948-1957</div>
+  <ul class="iv-pm-facts"><li>推動 Newfoundland 1949 加入</li><li>創建 NATO 北約</li><li>建立 Trans-Canada Highway</li></ul>
+</div>
+<div class="iv-pm-card">
+  <div class="iv-pm-head">
+    <h3>John Diefenbaker</h3>
+    <span class="iv-pm-zh">迪芬貝克</span>
+    <span class="iv-pm-party" style="background:#1A4782">Progressive Conservative</span>
+  </div>
+  <div class="iv-pm-years">1957-1963</div>
+  <ul class="iv-pm-facts"><li>**1960 通過 Canadian Bill of Rights**</li><li>**1960 給原住民聯邦投票權**</li><li>Saskatchewan 出身</li></ul>
+</div>
+<div class="iv-pm-card">
+  <div class="iv-pm-head">
+    <h3>Lester B. Pearson</h3>
+    <span class="iv-pm-zh">皮爾遜</span>
+    <span class="iv-pm-party" style="background:#d71920">Liberal</span>
+  </div>
+  <div class="iv-pm-years">1963-1968</div>
+  <ul class="iv-pm-facts"><li>**諾貝爾和平獎得主**（1957，推動 UN 維和）</li><li>**1965 推動楓葉旗誕生**</li><li>**1966 全民健保 Medicare** 立法</li><li>Toronto Pearson 機場以他命名</li></ul>
+</div>
+<div class="iv-pm-card">
+  <div class="iv-pm-head">
+    <h3>Pierre Trudeau</h3>
+    <span class="iv-pm-zh">老杜魯道</span>
+    <span class="iv-pm-party" style="background:#d71920">Liberal</span>
+  </div>
+  <div class="iv-pm-years">1968-1979, 1980-1984</div>
+  <ul class="iv-pm-facts"><li>**1969 Official Languages Act**</li><li>**1971 多元文化主義**</li><li>**1982 Constitution Act + Charter ⭐**</li><li>魅力型總理</li></ul>
+</div>
+<div class="iv-pm-card">
+  <div class="iv-pm-head">
+    <h3>Brian Mulroney</h3>
+    <span class="iv-pm-zh">穆隆尼</span>
+    <span class="iv-pm-party" style="background:#1A4782">Progressive Conservative</span>
+  </div>
+  <div class="iv-pm-years">1984-1993</div>
+  <ul class="iv-pm-facts"><li>1988 **Multiculturalism Act 入法**</li><li>**1989 USFTA 自由貿易協定**（後 NAFTA、CUSMA）</li><li>1991 GST 消費稅</li></ul>
+</div>
+<div class="iv-pm-card">
+  <div class="iv-pm-head">
+    <h3>Jean Chrétien</h3>
+    <span class="iv-pm-zh">克雷蒂安</span>
+    <span class="iv-pm-party" style="background:#d71920">Liberal</span>
+  </div>
+  <div class="iv-pm-years">1993-2003</div>
+  <ul class="iv-pm-facts"><li>**1995 第二次 Quebec 公投**期間任內</li><li>1999 創建 Nunavut</li><li>拒絕加入 2003 伊拉克戰爭</li></ul>
+</div>
+<div class="iv-pm-card">
+  <div class="iv-pm-head">
+    <h3>Paul Martin</h3>
+    <span class="iv-pm-zh">馬丁</span>
+    <span class="iv-pm-party" style="background:#d71920">Liberal</span>
+  </div>
+  <div class="iv-pm-years">2003-2006</div>
+  <ul class="iv-pm-facts"><li>前財政部長，被譽為平衡預算之父</li><li>短暫任期</li></ul>
+</div>
+<div class="iv-pm-card">
+  <div class="iv-pm-head">
+    <h3>Stephen Harper</h3>
+    <span class="iv-pm-zh">哈珀</span>
+    <span class="iv-pm-party" style="background:#1A4782">Conservative</span>
+  </div>
+  <div class="iv-pm-years">2006-2015</div>
+  <ul class="iv-pm-facts"><li>**2008 為寄宿學校道歉 ⭐**</li><li>Alberta 出身</li><li>推動經濟保守政策</li></ul>
+</div>
+<div class="iv-pm-card">
+  <div class="iv-pm-head">
+    <h3>Justin Trudeau</h3>
+    <span class="iv-pm-zh">小杜魯道</span>
+    <span class="iv-pm-party" style="background:#d71920">Liberal</span>
+  </div>
+  <div class="iv-pm-years">2015-2025</div>
+  <ul class="iv-pm-facts"><li>**老杜魯道之子**</li><li>**2021 TRC Day 國定假日 ⭐**</li><li>推動大麻合法化（2018）</li><li>**多次原住民和解政策**</li></ul>
+</div>
+<div class="iv-pm-card">
+  <div class="iv-pm-head">
+    <h3>Mark Carney</h3>
+    <span class="iv-pm-zh">卡尼</span>
+    <span class="iv-pm-party" style="background:#d71920">Liberal</span>
+  </div>
+  <div class="iv-pm-years">2025-至今</div>
+  <ul class="iv-pm-facts"><li>**前 Bank of Canada 與 Bank of England 行長**</li><li>**2025 春季就任，2026 大選後續任**</li><li>金融專業背景</li></ul>
+</div></div>
+<h2 class="iv-section-title">現代加拿大里程碑</h2>
+<div class="iv-milestones"><div class="iv-ms"><span class="iv-ms-year">1947</span><span class="iv-ms-zh">公民身份法案</span><span class="iv-ms-en">Canadian Citizenship Act</span></div><div class="iv-ms"><span class="iv-ms-year">1965</span><span class="iv-ms-zh">楓葉旗</span><span class="iv-ms-en">Maple Leaf Flag</span></div><div class="iv-ms"><span class="iv-ms-year">1969</span><span class="iv-ms-zh">雙語法</span><span class="iv-ms-en">Official Languages Act</span></div><div class="iv-ms"><span class="iv-ms-year">1971</span><span class="iv-ms-zh">多元文化政策</span><span class="iv-ms-en">Multiculturalism Policy</span></div><div class="iv-ms"><span class="iv-ms-year">1982</span><span class="iv-ms-zh">權利與自由憲章</span><span class="iv-ms-en">Charter of Rights & Freedoms</span></div><div class="iv-ms"><span class="iv-ms-year">1988</span><span class="iv-ms-zh">多元文化法案</span><span class="iv-ms-en">Multiculturalism Act</span></div><div class="iv-ms"><span class="iv-ms-year">1989</span><span class="iv-ms-zh">美加自由貿易協定</span><span class="iv-ms-en">USFTA → NAFTA → CUSMA</span></div><div class="iv-ms"><span class="iv-ms-year">1999</span><span class="iv-ms-zh">Nunavut 成立</span><span class="iv-ms-en">Nunavut created</span></div><div class="iv-ms"><span class="iv-ms-year">2008</span><span class="iv-ms-zh">寄宿學校道歉</span><span class="iv-ms-en">Residential schools apology</span></div><div class="iv-ms"><span class="iv-ms-year">2018</span><span class="iv-ms-zh">10 元換 Viola Desmond</span><span class="iv-ms-en">$10 bill = Viola Desmond</span></div><div class="iv-ms"><span class="iv-ms-year">2021</span><span class="iv-ms-zh">TRC Day 9/30</span><span class="iv-ms-en">Truth & Reconciliation Day</span></div></div>
+</section>
+<section id="interactive-government" class="page">
+<style>
+.iv-hero {
+  background: linear-gradient(135deg, #fff8f8 0%, #fef0e8 100%);
+  border-left: 4px solid var(--accent);
+  padding: 18px 22px; border-radius: 8px; margin: 16px 0 24px;
+}
+.iv-hero h1 { margin: 0 0 6px; border: none; padding: 0; }
+.iv-hero p { margin: 0; color: var(--muted); }
+
+.iv-section-title {
+  margin: 32px 0 14px; padding-bottom: 6px;
+  border-bottom: 2px solid var(--accent);
+  font-size: 19px; font-weight: 700;
+}
+
+.iv-card-grid { display: grid; gap: 12px; margin: 16px 0 24px; }
+.iv-card {
+  background: #fff; border: 1px solid var(--line);
+  border-radius: 10px; padding: 16px 18px;
+  transition: border-color 0.15s, transform 0.15s, box-shadow 0.15s;
+  cursor: pointer;
+}
+.iv-card:hover {
+  border-color: var(--accent);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+.iv-card.iv-active {
+  border-color: var(--accent);
+  background: linear-gradient(135deg, #fff 0%, #fff8f8 100%);
+}
+.iv-card h4 { margin: 0 0 6px; font-size: 16px; }
+.iv-card .meta { font-size: 12px; color: var(--muted); margin-bottom: 8px; }
+.iv-card p { margin: 0; font-size: 14px; line-height: 1.5; }
+
+.iv-detail-panel {
+  margin: 20px 0; padding: 20px 24px;
+  background: #fff; border: 1px solid var(--line);
+  border-radius: 12px; box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+}
+.iv-detail-panel h3 { margin-top: 0; }
+
+.iv-tag {
+  display: inline-block; padding: 2px 8px; border-radius: 12px;
+  background: #f3efe6; font-size: 11px; color: var(--muted);
+  font-family: -apple-system, system-ui, sans-serif;
+  letter-spacing: 0.04em; margin-right: 6px;
+}
+.iv-tag.accent { background: var(--accent-soft); color: var(--accent); font-weight: 600; }
+</style>
+
+<style>
+.iv-gov-diagram { background: #fff; border: 1px solid var(--line); border-radius: 12px; padding: 20px; margin: 20px 0; }
+.iv-gov-svg { width: 100%; height: auto; }
+.iv-gov-legend { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 10px; margin-top: 14px; }
+.iv-gov-leg-item { display: flex; align-items: flex-start; gap: 8px; padding: 8px 10px; background: #faf8f4; border-radius: 6px; font-size: 13px; }
+.iv-gov-leg-item strong { display: block; margin-bottom: 2px; }
+.iv-gov-dot { width: 14px; height: 14px; border-radius: 50%; flex-shrink: 0; margin-top: 2px; }
+.iv-bill-flow { display: flex; flex-wrap: wrap; gap: 8px; margin: 16px 0; }
+.iv-bill-step {
+  flex: 1; min-width: 130px;
+  padding: 12px 14px; border-radius: 8px;
+  background: linear-gradient(135deg, #fff8f8 0%, #fef0e8 100%);
+  border-left: 4px solid var(--accent);
+  position: relative;
+}
+.iv-bill-step .num { font-family: monospace; font-weight: 700; color: var(--accent); font-size: 18px; }
+.iv-bill-step .title { font-weight: 600; margin: 3px 0; }
+.iv-bill-step .desc { font-size: 12px; color: var(--muted); }
+</style>
+<div class="iv-hero">
+  <h1>🏛️ 加拿大政府架構（圖解）</h1>
+  <p>三張流程圖：三級政府職責、國會三部分、法案如何變法律。</p>
+</div>
+
+<h2 class="iv-section-title">圖 1：三級政府（誰管什麼）</h2>
+<div class="iv-gov-diagram">
+<svg viewBox="0 0 800 380" class="iv-gov-svg">
+  <!-- Federal box -->
+  <rect x="280" y="20" width="240" height="90" rx="10" fill="#c8102e"/>
+  <text x="400" y="50" text-anchor="middle" font-size="18" font-weight="700" fill="#fff">聯邦政府 Federal</text>
+  <text x="400" y="72" text-anchor="middle" font-size="13" fill="#fff">PM 總理 + 國會 Parliament</text>
+  <text x="400" y="92" text-anchor="middle" font-size="11" fill="#ffe0e0">國防、外交、移民、貨幣、刑法、漁業</text>
+
+  <!-- Provincial box -->
+  <rect x="50" y="170" width="240" height="90" rx="10" fill="#4a6fa5"/>
+  <text x="170" y="200" text-anchor="middle" font-size="18" font-weight="700" fill="#fff">省 / 領地 Provincial</text>
+  <text x="170" y="222" text-anchor="middle" font-size="13" fill="#fff">Premier 省長 + 省議會</text>
+  <text x="170" y="242" text-anchor="middle" font-size="11" fill="#dceaf5">教育、醫療、高速公路、自然資源</text>
+
+  <!-- Municipal box -->
+  <rect x="510" y="170" width="240" height="90" rx="10" fill="#5a9460"/>
+  <text x="630" y="200" text-anchor="middle" font-size="18" font-weight="700" fill="#fff">市政 Municipal</text>
+  <text x="630" y="222" text-anchor="middle" font-size="13" fill="#fff">Mayor 市長 + 議會</text>
+  <text x="630" y="242" text-anchor="middle" font-size="11" fill="#e0f0e0">除雪、回收、地方道路、公園、圖書館</text>
+
+  <!-- Citizens box -->
+  <rect x="280" y="310" width="240" height="60" rx="10" fill="#1f2328"/>
+  <text x="400" y="335" text-anchor="middle" font-size="16" font-weight="700" fill="#fff">公民 Citizens</text>
+  <text x="400" y="357" text-anchor="middle" font-size="12" fill="#ccc">每 4 年投票選出各級政府</text>
+
+  <!-- Arrows -->
+  <line x1="370" y1="110" x2="200" y2="170" stroke="#1f2328" stroke-width="2"/>
+  <line x1="430" y1="110" x2="600" y2="170" stroke="#1f2328" stroke-width="2"/>
+  <line x1="200" y1="260" x2="320" y2="310" stroke="#1f2328" stroke-width="2"/>
+  <line x1="600" y1="260" x2="480" y2="310" stroke="#1f2328" stroke-width="2"/>
+  <line x1="400" y1="110" x2="400" y2="310" stroke="#1f2328" stroke-width="2" stroke-dasharray="4 4"/>
+</svg>
+<div class="iv-gov-legend">
+  <div class="iv-gov-leg-item"><div class="iv-gov-dot" style="background:#c8102e"></div><div><strong>聯邦 Federal</strong>管全國事務，總理 Mark Carney（2025-）</div></div>
+  <div class="iv-gov-leg-item"><div class="iv-gov-dot" style="background:#4a6fa5"></div><div><strong>省 Provincial</strong>管教育/醫療，Ontario 省長 Doug Ford</div></div>
+  <div class="iv-gov-leg-item"><div class="iv-gov-dot" style="background:#5a9460"></div><div><strong>市政 Municipal</strong>管在地事務，Toronto 市長 Olivia Chow</div></div>
+</div>
+</div>
+
+<h2 class="iv-section-title">圖 2：國會 Parliament 三部分</h2>
+<div class="iv-gov-diagram">
+<svg viewBox="0 0 800 400" class="iv-gov-svg">
+  <!-- Sovereign -->
+  <rect x="280" y="10" width="240" height="80" rx="10" fill="#7a4caf"/>
+  <text x="400" y="38" text-anchor="middle" font-size="18" font-weight="700" fill="#fff">君主 Sovereign 👑</text>
+  <text x="400" y="60" text-anchor="middle" font-size="13" fill="#fff">King Charles III</text>
+  <text x="400" y="78" text-anchor="middle" font-size="11" fill="#e0d0f0">由 Governor General Mary Simon 代表</text>
+
+  <!-- Senate -->
+  <rect x="60" y="150" width="280" height="100" rx="10" fill="#b0413e"/>
+  <text x="200" y="178" text-anchor="middle" font-size="17" font-weight="700" fill="#fff">參議院 Senate</text>
+  <text x="200" y="200" text-anchor="middle" font-size="13" fill="#fff">105 位參議員</text>
+  <text x="200" y="218" text-anchor="middle" font-size="11" fill="#f0d0d0">由 GG 依 PM 建議任命</text>
+  <text x="200" y="234" text-anchor="middle" font-size="11" fill="#f0d0d0">代表區域、審議法案</text>
+
+  <!-- House of Commons -->
+  <rect x="460" y="150" width="280" height="100" rx="10" fill="#5a9460"/>
+  <text x="600" y="178" text-anchor="middle" font-size="17" font-weight="700" fill="#fff">眾議院 House of Commons</text>
+  <text x="600" y="200" text-anchor="middle" font-size="13" fill="#fff">338 位 MPs（國會議員）</text>
+  <text x="600" y="218" text-anchor="middle" font-size="11" fill="#d0e0d0">由公民投票選出（每 4 年）</text>
+  <text x="600" y="234" text-anchor="middle" font-size="11" fill="#d0e0d0">"the people's house" 立法主力</text>
+
+  <!-- Connecting lines -->
+  <line x1="350" y1="90" x2="200" y2="150" stroke="#1f2328" stroke-width="2"/>
+  <line x1="450" y1="90" x2="600" y2="150" stroke="#1f2328" stroke-width="2"/>
+
+  <!-- Bill flow text -->
+  <text x="400" y="290" text-anchor="middle" font-size="14" fill="#1f2328" font-weight="600">法案先由眾議院辯論 → 送參議院審議 → 君主（GG 代簽）御准 → 成法</text>
+  <text x="400" y="320" text-anchor="middle" font-size="12" fill="#5d646d">五大政黨：Liberal、Conservative、NDP、Bloc Québécois、Green</text>
+  <text x="400" y="345" text-anchor="middle" font-size="12" fill="#5d646d">⭐ 加拿大是 Constitutional Monarchy（君主立憲）+ Parliamentary Democracy（議會民主）+ Federal State（聯邦制）</text>
+</svg>
+</div>
+
+<h2 class="iv-section-title">圖 3：法案如何變法律（7 步驟）</h2>
+<div class="iv-gov-diagram">
+<div class="iv-bill-flow">
+  <div class="iv-bill-step"><div class="num">1</div><div class="title">一讀 First Reading</div><div class="desc">眾議院介紹法案</div></div>
+  <div class="iv-bill-step"><div class="num">2</div><div class="title">二讀 Second Reading</div><div class="desc">辯論原則</div></div>
+  <div class="iv-bill-step"><div class="num">3</div><div class="title">委員會 Committee</div><div class="desc">逐條審議</div></div>
+  <div class="iv-bill-step"><div class="num">4</div><div class="title">報告 Report</div><div class="desc">考慮修正</div></div>
+  <div class="iv-bill-step"><div class="num">5</div><div class="title">三讀 Third Reading</div><div class="desc">最後辯論與表決</div></div>
+  <div class="iv-bill-step"><div class="num">6</div><div class="title">參議院 Senate</div><div class="desc">同樣 3 讀流程</div></div>
+  <div class="iv-bill-step"><div class="num">7</div><div class="title">御准 Royal Assent</div><div class="desc">GG 代簽 → 法律</div></div>
+</div>
+<p style="font-size:13px; color:var(--muted); margin-top:8px">⭐ <strong>考試重點</strong>：3 讀＋委員會＋送參議院＋御准。法案在每院都要 3 讀。</p>
+</div>
+</section>
+<section id="interactive-elections" class="page">
+<style>
+.iv-hero {
+  background: linear-gradient(135deg, #fff8f8 0%, #fef0e8 100%);
+  border-left: 4px solid var(--accent);
+  padding: 18px 22px; border-radius: 8px; margin: 16px 0 24px;
+}
+.iv-hero h1 { margin: 0 0 6px; border: none; padding: 0; }
+.iv-hero p { margin: 0; color: var(--muted); }
+
+.iv-section-title {
+  margin: 32px 0 14px; padding-bottom: 6px;
+  border-bottom: 2px solid var(--accent);
+  font-size: 19px; font-weight: 700;
+}
+
+.iv-card-grid { display: grid; gap: 12px; margin: 16px 0 24px; }
+.iv-card {
+  background: #fff; border: 1px solid var(--line);
+  border-radius: 10px; padding: 16px 18px;
+  transition: border-color 0.15s, transform 0.15s, box-shadow 0.15s;
+  cursor: pointer;
+}
+.iv-card:hover {
+  border-color: var(--accent);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+.iv-card.iv-active {
+  border-color: var(--accent);
+  background: linear-gradient(135deg, #fff 0%, #fff8f8 100%);
+}
+.iv-card h4 { margin: 0 0 6px; font-size: 16px; }
+.iv-card .meta { font-size: 12px; color: var(--muted); margin-bottom: 8px; }
+.iv-card p { margin: 0; font-size: 14px; line-height: 1.5; }
+
+.iv-detail-panel {
+  margin: 20px 0; padding: 20px 24px;
+  background: #fff; border: 1px solid var(--line);
+  border-radius: 12px; box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+}
+.iv-detail-panel h3 { margin-top: 0; }
+
+.iv-tag {
+  display: inline-block; padding: 2px 8px; border-radius: 12px;
+  background: #f3efe6; font-size: 11px; color: var(--muted);
+  font-family: -apple-system, system-ui, sans-serif;
+  letter-spacing: 0.04em; margin-right: 6px;
+}
+.iv-tag.accent { background: var(--accent-soft); color: var(--accent); font-weight: 600; }
+</style>
+
+<style>
+.iv-party-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px; margin: 16px 0; }
+.iv-party-card { background: #fff; border: 1px solid var(--line); border-top-width: 4px; border-radius: 10px; padding: 14px 16px; }
+.iv-party-name { font-weight: 700; font-size: 15px; }
+.iv-party-zh { color: var(--muted); font-size: 13px; margin-bottom: 6px; }
+.iv-party-leader { font-size: 13px; margin: 8px 0 4px; }
+.iv-party-status { font-size: 12px; color: var(--muted); font-style: italic; margin-bottom: 8px; }
+.iv-party-facts { margin: 0; padding-left: 18px; font-size: 13px; }
+.iv-vote-steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 10px; margin: 16px 0; }
+.iv-vote-step { background: linear-gradient(135deg, #fff8f8 0%, #fef0e8 100%); padding: 14px 16px; border-radius: 8px; border-left: 4px solid var(--accent); }
+.iv-vote-step .icon { font-size: 24px; }
+.iv-vote-step strong { display: block; margin: 4px 0; }
+.iv-vote-step p { margin: 0; font-size: 12px; color: var(--muted); }
+.iv-fact-row { display: grid; grid-template-columns: 180px 1fr; gap: 10px; padding: 8px 0; border-bottom: 1px dashed var(--line); font-size: 14px; }
+.iv-fact-row strong { color: var(--accent); }
+</style>
+<div class="iv-hero">
+  <h1>🗳️ 加拿大聯邦選舉</h1>
+  <p>5 大政黨 + 投票資格 + 選舉流程 + 5 個必考重點。</p>
+</div>
+
+<h2 class="iv-section-title">5 大主要政黨</h2>
+<div class="iv-party-grid">
+<div class="iv-party-card" style="border-top-color:#d71920">
+  <div class="iv-party-name">Liberal Party</div>
+  <div class="iv-party-zh">自由黨</div>
+  <div class="iv-party-leader">領袖：<strong>Mark Carney</strong></div>
+  <div class="iv-party-status">現執政黨（2025-）</div>
+  <ul class="iv-party-facts"><li>中間偏左</li><li>支持多元文化、社會福利</li><li>現任 PM 政黨</li></ul>
+</div>
+<div class="iv-party-card" style="border-top-color:#1A4782">
+  <div class="iv-party-name">Conservative Party</div>
+  <div class="iv-party-zh">保守黨</div>
+  <div class="iv-party-leader">領袖：<strong>Pierre Poilievre</strong></div>
+  <div class="iv-party-status">主要在野黨</div>
+  <ul class="iv-party-facts"><li>中間偏右</li><li>支持經濟自由、傳統價值</li><li>前身 PC 黨於 2003 與聯盟黨合併</li></ul>
+</div>
+<div class="iv-party-card" style="border-top-color:#F58220">
+  <div class="iv-party-name">New Democratic Party (NDP)</div>
+  <div class="iv-party-zh">新民主黨</div>
+  <div class="iv-party-leader">領袖：<strong>Don Davies (interim, 2025)</strong></div>
+  <div class="iv-party-status">第三大黨</div>
+  <ul class="iv-party-facts"><li>左派、勞工</li><li>推動社會醫療與社福</li></ul>
+</div>
+<div class="iv-party-card" style="border-top-color:#0088CE">
+  <div class="iv-party-name">Bloc Québécois</div>
+  <div class="iv-party-zh">魁北克集團</div>
+  <div class="iv-party-leader">領袖：<strong>Yves-François Blanchet</strong></div>
+  <div class="iv-party-status">只在魁北克省競選</div>
+  <ul class="iv-party-facts"><li>主張魁北克利益與獨立可能</li><li>只在 Quebec 推候選人</li></ul>
+</div>
+<div class="iv-party-card" style="border-top-color:#3D9B35">
+  <div class="iv-party-name">Green Party</div>
+  <div class="iv-party-zh">綠黨</div>
+  <div class="iv-party-leader">領袖：<strong>Jonathan Pedneault & Elizabeth May</strong></div>
+  <div class="iv-party-status">環保政黨</div>
+  <ul class="iv-party-facts"><li>氣候變遷、永續政策</li><li>規模較小但在西岸有支持</li></ul>
+</div></div>
+
+<h2 class="iv-section-title">投票資格 & 流程</h2>
+<div class="iv-vote-steps">
+  <div class="iv-vote-step"><div class="icon">🇨🇦</div><strong>1. 公民身份</strong><p>必須是 Canadian Citizen（永久居民不能投）</p></div>
+  <div class="iv-vote-step"><div class="icon">🎂</div><strong>2. 年滿 18 歲</strong><p>投票日當天滿 18</p></div>
+  <div class="iv-vote-step"><div class="icon">📬</div><strong>3. 收 Voter Card</strong><p>Elections Canada 寄出</p></div>
+  <div class="iv-vote-step"><div class="icon">🏠</div><strong>4. 到指定投票所</strong><p>帶身份證明 + 地址證明</p></div>
+  <div class="iv-vote-step"><div class="icon">✏️</div><strong>5. 圈選候選人</strong><p>選你選區（Riding）的 MP 候選人</p></div>
+</div>
+
+<h2 class="iv-section-title">考試 5 大必背重點</h2>
+<div class="iv-facts">
+  <div class="iv-fact-row"><strong>選舉週期</strong><span>每 <strong>4 年</strong>最長一次（PM 可提早解散）</span></div>
+  <div class="iv-fact-row"><strong>眾議院席次</strong><span>共 <strong>338 位 MP</strong>（每個選區 Riding 一位）</span></div>
+  <div class="iv-fact-row"><strong>誰當總理 PM</strong><span>眾議院席次最多政黨的領袖通常成為 PM</span></div>
+  <div class="iv-fact-row"><strong>誰能投票</strong><span>公民 + 18 歲 + 在 Voter List 上</span></div>
+  <div class="iv-fact-row"><strong>Ontario 你的選區</strong><span>記住你的 <strong>MP（聯邦）</strong>和 <strong>MPP（省議員）</strong>姓名</span></div>
+</div>
+</section>
+<section id="interactive-justice" class="page">
+<style>
+.iv-hero {
+  background: linear-gradient(135deg, #fff8f8 0%, #fef0e8 100%);
+  border-left: 4px solid var(--accent);
+  padding: 18px 22px; border-radius: 8px; margin: 16px 0 24px;
+}
+.iv-hero h1 { margin: 0 0 6px; border: none; padding: 0; }
+.iv-hero p { margin: 0; color: var(--muted); }
+
+.iv-section-title {
+  margin: 32px 0 14px; padding-bottom: 6px;
+  border-bottom: 2px solid var(--accent);
+  font-size: 19px; font-weight: 700;
+}
+
+.iv-card-grid { display: grid; gap: 12px; margin: 16px 0 24px; }
+.iv-card {
+  background: #fff; border: 1px solid var(--line);
+  border-radius: 10px; padding: 16px 18px;
+  transition: border-color 0.15s, transform 0.15s, box-shadow 0.15s;
+  cursor: pointer;
+}
+.iv-card:hover {
+  border-color: var(--accent);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+.iv-card.iv-active {
+  border-color: var(--accent);
+  background: linear-gradient(135deg, #fff 0%, #fff8f8 100%);
+}
+.iv-card h4 { margin: 0 0 6px; font-size: 16px; }
+.iv-card .meta { font-size: 12px; color: var(--muted); margin-bottom: 8px; }
+.iv-card p { margin: 0; font-size: 14px; line-height: 1.5; }
+
+.iv-detail-panel {
+  margin: 20px 0; padding: 20px 24px;
+  background: #fff; border: 1px solid var(--line);
+  border-radius: 12px; box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+}
+.iv-detail-panel h3 { margin-top: 0; }
+
+.iv-tag {
+  display: inline-block; padding: 2px 8px; border-radius: 12px;
+  background: #f3efe6; font-size: 11px; color: var(--muted);
+  font-family: -apple-system, system-ui, sans-serif;
+  letter-spacing: 0.04em; margin-right: 6px;
+}
+.iv-tag.accent { background: var(--accent-soft); color: var(--accent); font-weight: 600; }
+</style>
+
+<style>
+.iv-court-hierarchy { background: #fff; border: 1px solid var(--line); border-radius: 12px; padding: 20px; margin: 16px 0; }
+.iv-court-svg { width: 100%; height: auto; }
+.iv-principles-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; margin: 16px 0; }
+.iv-principle { background: #fff; border-left: 4px solid var(--accent); padding: 12px 16px; border-radius: 6px; }
+.iv-principle h4 { margin: 0 0 2px; font-size: 15px; }
+.iv-principle .en { font-size: 12px; color: var(--muted); font-style: italic; margin-bottom: 6px; }
+.iv-principle p { margin: 0; font-size: 13px; }
+.iv-rcmp { background: linear-gradient(135deg, #fff8f8 0%, #fef0e8 100%); padding: 20px 24px; border-radius: 10px; margin: 16px 0; }
+.iv-rcmp h3 { margin: 0 0 8px; }
+.iv-rcmp ul { margin: 8px 0 0; padding-left: 20px; font-size: 14px; }
+</style>
+<div class="iv-hero">
+  <h1>⚖️ 加拿大司法系統</h1>
+  <p>5 大法律原則 + 4 級法院階層 + RCMP 角色。</p>
+</div>
+
+<h2 class="iv-section-title">5 大法律原則</h2>
+<div class="iv-principles-grid"><div class="iv-principle"><h4>法治</h4><div class="en">Rule of Law</div><p>沒人凌駕於法律之上，包括政府</p></div><div class="iv-principle"><h4>無罪推定</h4><div class="en">Presumption of Innocence</div><p>被告在被定罪前推定無罪</p></div><div class="iv-principle"><h4>人身保護令</h4><div class="en">Habeas Corpus</div><p>防止任意拘禁，被拘留者可請求出庭</p></div><div class="iv-principle"><h4>公平審判</h4><div class="en">Fair Trial</div><p>公開、獨立、公正、由陪審團或法官審理</p></div><div class="iv-principle"><h4>法律之前人人平等</h4><div class="en">Equality before the Law</div><p>Charter 第 15 條</p></div></div>
+
+<h2 class="iv-section-title">4 級法院階層（金字塔）</h2>
+<div class="iv-court-hierarchy">
+<svg viewBox="0 0 800 480" class="iv-court-svg">
+  <!-- Top: Supreme Court -->
+  <rect x="280" y="20" width="240" height="80" rx="10" fill="#c8102e"/>
+  <text x="400" y="48" text-anchor="middle" font-size="18" font-weight="700" fill="#fff">Supreme Court of Canada</text>
+  <text x="400" y="70" text-anchor="middle" font-size="13" fill="#fff">最高法院（9 位法官）</text>
+  <text x="400" y="90" text-anchor="middle" font-size="11" fill="#ffe0e0">最終裁判，憲法解釋</text>
+
+  <!-- Level 2: Appeals -->
+  <rect x="180" y="140" width="440" height="70" rx="10" fill="#b0413e"/>
+  <text x="400" y="168" text-anchor="middle" font-size="16" font-weight="700" fill="#fff">Provincial Courts of Appeal</text>
+  <text x="400" y="190" text-anchor="middle" font-size="12" fill="#fff">省上訴法院 / Federal Court of Appeal</text>
+
+  <!-- Level 3: Superior -->
+  <rect x="120" y="250" width="560" height="70" rx="10" fill="#7a8c5c"/>
+  <text x="400" y="278" text-anchor="middle" font-size="16" font-weight="700" fill="#fff">Provincial / Superior Courts</text>
+  <text x="400" y="300" text-anchor="middle" font-size="12" fill="#fff">省高等法院（嚴重刑事、民事大案）</text>
+
+  <!-- Level 4: Provincial -->
+  <rect x="60" y="360" width="680" height="70" rx="10" fill="#4a6fa5"/>
+  <text x="400" y="388" text-anchor="middle" font-size="16" font-weight="700" fill="#fff">Provincial Courts</text>
+  <text x="400" y="410" text-anchor="middle" font-size="12" fill="#fff">省級地方法院（最多日常案件、輕罪、交通）</text>
+
+  <!-- Arrows -->
+  <line x1="400" y1="430" x2="400" y2="100" stroke="#1f2328" stroke-width="2" marker-end="url(#arr)"/>
+  <text x="430" y="450" font-size="11" fill="var(--muted)">↑ 上訴方向</text>
+
+  <defs>
+    <marker id="arr" markerWidth="10" markerHeight="10" refX="0" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#1f2328"/>
+    </marker>
+  </defs>
+</svg>
+<p style="font-size:13px; color:var(--muted); margin-top:12px">⭐ <strong>考試重點</strong>：四級法院、Supreme Court 9 位法官、最高法院判決最終。</p>
+</div>
+
+<h2 class="iv-section-title">皇家騎警 RCMP（Royal Canadian Mounted Police）</h2>
+<div class="iv-rcmp">
+<h3>🐎 加拿大國家警察</h3>
+<ul>
+  <li><strong>聯邦警察</strong>：執行聯邦法律（毒品、洗錢、跨省犯罪）</li>
+  <li><strong>省/地方警察</strong>：8 省與 3 領地外包 RCMP 為省警（Ontario 跟 Quebec 例外有自己的省警）</li>
+  <li><strong>市政警察</strong>：少數小鎮外包 RCMP</li>
+  <li><strong>象徵</strong>：紅色制服 Red Serge、Stetson 帽、Musical Ride 表演</li>
+  <li><strong>歷史</strong>：1873 成立為 North-West Mounted Police</li>
+  <li><strong>總部</strong>：Ottawa</li>
+</ul>
+</div>
+</section>
+<section id="interactive-symbols" class="page">
+<style>
+.iv-hero {
+  background: linear-gradient(135deg, #fff8f8 0%, #fef0e8 100%);
+  border-left: 4px solid var(--accent);
+  padding: 18px 22px; border-radius: 8px; margin: 16px 0 24px;
+}
+.iv-hero h1 { margin: 0 0 6px; border: none; padding: 0; }
+.iv-hero p { margin: 0; color: var(--muted); }
+
+.iv-section-title {
+  margin: 32px 0 14px; padding-bottom: 6px;
+  border-bottom: 2px solid var(--accent);
+  font-size: 19px; font-weight: 700;
+}
+
+.iv-card-grid { display: grid; gap: 12px; margin: 16px 0 24px; }
+.iv-card {
+  background: #fff; border: 1px solid var(--line);
+  border-radius: 10px; padding: 16px 18px;
+  transition: border-color 0.15s, transform 0.15s, box-shadow 0.15s;
+  cursor: pointer;
+}
+.iv-card:hover {
+  border-color: var(--accent);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+.iv-card.iv-active {
+  border-color: var(--accent);
+  background: linear-gradient(135deg, #fff 0%, #fff8f8 100%);
+}
+.iv-card h4 { margin: 0 0 6px; font-size: 16px; }
+.iv-card .meta { font-size: 12px; color: var(--muted); margin-bottom: 8px; }
+.iv-card p { margin: 0; font-size: 14px; line-height: 1.5; }
+
+.iv-detail-panel {
+  margin: 20px 0; padding: 20px 24px;
+  background: #fff; border: 1px solid var(--line);
+  border-radius: 12px; box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+}
+.iv-detail-panel h3 { margin-top: 0; }
+
+.iv-tag {
+  display: inline-block; padding: 2px 8px; border-radius: 12px;
+  background: #f3efe6; font-size: 11px; color: var(--muted);
+  font-family: -apple-system, system-ui, sans-serif;
+  letter-spacing: 0.04em; margin-right: 6px;
+}
+.iv-tag.accent { background: var(--accent-soft); color: var(--accent); font-weight: 600; }
+</style>
+
+<style>
+.iv-sym-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 14px; margin: 16px 0; }
+.iv-sym-card { background: #fff; border: 1px solid var(--line); border-radius: 10px; padding: 14px 16px; }
+.iv-sym-emoji { font-size: 40px; line-height: 1; }
+.iv-sym-card h3 { margin: 8px 0 4px; font-size: 16px; }
+.iv-sym-card h3 .en { color: var(--muted); font-weight: 400; font-size: 13px; font-style: italic; }
+.iv-sym-card .brief { font-size: 13px; color: var(--muted); margin: 0 0 8px; }
+.iv-sym-card ul { margin: 0; padding-left: 18px; font-size: 13px; }
+.iv-sym-card ul li { margin: 3px 0; }
+.iv-bill-row { display: grid; grid-template-columns: 70px 1fr 2fr; gap: 14px; padding: 10px 0; border-bottom: 1px dashed var(--line); align-items: center; font-size: 14px; }
+.iv-bill-row .denom { font-family: monospace; font-weight: 700; font-size: 20px; color: var(--accent); }
+.iv-bill-row .zh { font-size: 12px; color: var(--muted); }
+.iv-bill-row .note { font-size: 13px; }
+.iv-hol-row { display: grid; grid-template-columns: 130px 1fr 1fr; gap: 10px; padding: 6px 10px; border-bottom: 1px dashed var(--line); font-size: 13px; align-items: center; }
+.iv-hol-row.star { background: linear-gradient(90deg, #fff8e8 0%, transparent 100%); border-radius: 4px; }
+.iv-hol-row .date { font-family: monospace; font-size: 12px; color: var(--muted); }
+.iv-hol-row .hol-en { font-weight: 600; }
+.iv-hol-row .hol-zh { color: var(--muted); }
+</style>
+<div class="iv-hero">
+  <h1>🍁 加拿大國家象徵圖鑑</h1>
+  <p>象徵、鈔票、硬幣、國定假日——視覺整理一次到位。</p>
+</div>
+
+<h2 class="iv-section-title">10 大國家象徵</h2>
+<div class="iv-sym-grid">
+<div class="iv-sym-card">
+  <div class="iv-sym-emoji">🍁</div>
+  <h3>楓葉 <span class="en">Maple Leaf</span></h3>
+  <p class="brief">國家象徵植物，國旗中心</p>
+  <ul><li>1965 楓葉旗誕生</li><li>11 個葉尖代表 10 省 3 領地的整體</li><li>硬幣 1¢ 圖案</li></ul>
+</div>
+<div class="iv-sym-card">
+  <div class="iv-sym-emoji">🚩</div>
+  <h3>國旗 <span class="en">National Flag</span></h3>
+  <p class="brief">紅白楓葉旗</p>
+  <ul><li>**1965 年 2 月 15 日**首次升起</li><li>Pearson 總理推動</li><li>**2/15 = National Flag Day**</li><li>前身是 Red Ensign（含 Union Jack）</li></ul>
+</div>
+<div class="iv-sym-card">
+  <div class="iv-sym-emoji">👑</div>
+  <h3>皇冠 / 君主 <span class="en">The Crown</span></h3>
+  <p class="brief">King Charles III</p>
+  <ul><li>**2022 年 9 月 8 日 Elizabeth II 過世，Charles III 即位**</li><li>加拿大是 Constitutional Monarchy</li><li>Governor General Mary Simon 代表</li></ul>
+</div>
+<div class="iv-sym-card">
+  <div class="iv-sym-emoji">🦫</div>
+  <h3>河狸 <span class="en">Beaver</span></h3>
+  <p class="brief">國家動物，5 分硬幣圖案</p>
+  <ul><li>毛皮貿易歷史核心</li><li>Hudson's Bay Company 早期主要交易商品</li><li>1975 正式列為國家象徵</li></ul>
+</div>
+<div class="iv-sym-card">
+  <div class="iv-sym-emoji">🛡️</div>
+  <h3>皇家紋章 <span class="en">Coat of Arms</span></h3>
+  <p class="brief">1921 採用，加拿大政府正式徽記</p>
+  <ul><li>四等分顯示英、蘇、愛、法歷史血脈</li><li>獅與獨角獸守護</li><li>底部楓葉與 'A Mari Usque Ad Mare'（from sea to sea）</li></ul>
+</div>
+<div class="iv-sym-card">
+  <div class="iv-sym-emoji">🎵</div>
+  <h3>國歌 <span class="en">O Canada</span></h3>
+  <p class="brief">1980 正式國歌</p>
+  <ul><li>1880 由 Calixa Lavallée 譜曲（英法雙詞）</li><li>**2018 改 'in all of us command'**（去性別化）</li><li>皇室國歌仍是 'God Save the King'</li></ul>
+</div>
+<div class="iv-sym-card">
+  <div class="iv-sym-emoji">🌹</div>
+  <h3>Vimy Ridge <span class="en">Vimy Ridge</span></h3>
+  <p class="brief">1917 加拿大關鍵戰役</p>
+  <ul><li>四師團首次合作</li><li>民族認同的關鍵時刻</li><li>法國 Vimy 有加拿大紀念碑</li></ul>
+</div>
+<div class="iv-sym-card">
+  <div class="iv-sym-emoji">🪶</div>
+  <h3>Order of Canada <span class="en">楓葉勳章</span></h3>
+  <p class="brief">1967 設立的最高榮譽制度</p>
+  <ul><li>3 級：Companion、Officer、Member</li><li>格言：'Desiderantes meliorem patriam'（願望更好的祖國）</li></ul>
+</div>
+<div class="iv-sym-card">
+  <div class="iv-sym-emoji">💰</div>
+  <h3>Loonie & Toonie <span class="en">1元、2元硬幣</span></h3>
+  <p class="brief">Loonie 1987、Toonie 1996</p>
+  <ul><li>Loonie：1 元，刻 Loon 潛鳥</li><li>Toonie：2 元，刻 Polar Bear 北極熊</li><li>都是 1987 後設計</li></ul>
+</div>
+<div class="iv-sym-card">
+  <div class="iv-sym-emoji">📜</div>
+  <h3>Magna Carta <span class="en">大憲章 1215</span></h3>
+  <p class="brief">權利傳統 800 年起源</p>
+  <ul><li>雖在英國，但影響加拿大法律</li><li>**Habeas Corpus** 源於此</li><li>Charter 序言提及</li></ul>
+</div></div>
+
+<h2 class="iv-section-title">鈔票上的人物</h2>
+<div><div class="iv-bill-row"><div class="denom">$5</div><div class="figure"><strong>Wilfrid Laurier</strong><div class="zh">勞瑞葉</div></div><div class="note">第一位法裔總理</div></div><div class="iv-bill-row"><div class="denom">$10</div><div class="figure"><strong>Viola Desmond ⭐</strong><div class="zh">Viola Desmond</div></div><div class="note">**2018 起首位非白人女性**——民權運動先驅</div></div><div class="iv-bill-row"><div class="denom">$20</div><div class="figure"><strong>Queen Elizabeth II</strong><div class="zh">伊莉莎白二世</div></div><div class="note">（2024 起印新版可能換 Charles III）</div></div><div class="iv-bill-row"><div class="denom">$50</div><div class="figure"><strong>Mackenzie King</strong><div class="zh">麥肯齊·金</div></div><div class="note">任期最長的總理</div></div><div class="iv-bill-row"><div class="denom">$100</div><div class="figure"><strong>Robert Borden</strong><div class="zh">波頓爵士</div></div><div class="note">WWI 期間總理</div></div></div>
+
+<h2 class="iv-section-title">硬幣上的動物</h2>
+<div class="iv-card-grid" style="grid-template-columns:repeat(auto-fit,minmax(140px,1fr))">
+  <div class="iv-card"><strong>1¢</strong> Maple Leaf 楓葉<br><span class="meta">已停產 2013</span></div>
+  <div class="iv-card"><strong>5¢</strong> Beaver 河狸 🦫</div>
+  <div class="iv-card"><strong>10¢</strong> Bluenose 帆船 ⛵</div>
+  <div class="iv-card"><strong>25¢</strong> Caribou 馴鹿 🦌</div>
+  <div class="iv-card"><strong>$1 Loonie</strong> Loon 潛鳥</div>
+  <div class="iv-card"><strong>$2 Toonie</strong> Polar Bear 北極熊 🐻‍❄️</div>
+</div>
+
+<h2 class="iv-section-title">12 個國定/重要假日</h2>
+<div><div class="iv-hol-row "><div class="date">1/1</div><div class="hol-en">New Year's Day</div><div class="hol-zh">元旦</div></div><div class="iv-hol-row "><div class="date">4 月</div><div class="hol-en">Good Friday & Easter Monday</div><div class="hol-zh">復活節週五與週一</div></div><div class="iv-hol-row "><div class="date">5 月 月底週一</div><div class="hol-en">Victoria Day</div><div class="hol-zh">維多利亞日（女王生日）</div></div><div class="iv-hol-row "><div class="date">6/24</div><div class="hol-en">Saint-Jean-Baptiste Day（QC only）</div><div class="hol-zh">聖讓巴蒂斯特日（魁省）</div></div><div class="iv-hol-row star"><div class="date">7/1 ⭐</div><div class="hol-en">Canada Day</div><div class="hol-zh">加拿大國慶日（邦聯 1867）</div></div><div class="iv-hol-row "><div class="date">8 月 第一個週一</div><div class="hol-en">Civic Holiday（多省）</div><div class="hol-zh">公民日</div></div><div class="iv-hol-row "><div class="date">9 月 第一個週一</div><div class="hol-en">Labour Day</div><div class="hol-zh">勞動節</div></div><div class="iv-hol-row star"><div class="date">9/30 ⭐</div><div class="hol-en">Truth and Reconciliation Day</div><div class="hol-zh">真相與和解日（2021 起）</div></div><div class="iv-hol-row "><div class="date">10 月 第二個週一</div><div class="hol-en">Thanksgiving</div><div class="hol-zh">感恩節</div></div><div class="iv-hol-row "><div class="date">11/11</div><div class="hol-en">Remembrance Day</div><div class="hol-zh">陣亡將士紀念日（戴紅罌粟）</div></div><div class="iv-hol-row "><div class="date">12/25</div><div class="hol-en">Christmas Day</div><div class="hol-zh">聖誕節</div></div><div class="iv-hol-row "><div class="date">12/26</div><div class="hol-en">Boxing Day</div><div class="hol-zh">節禮日</div></div></div>
+</section>
+<section id="interactive-economy" class="page">
+<style>
+.iv-hero {
+  background: linear-gradient(135deg, #fff8f8 0%, #fef0e8 100%);
+  border-left: 4px solid var(--accent);
+  padding: 18px 22px; border-radius: 8px; margin: 16px 0 24px;
+}
+.iv-hero h1 { margin: 0 0 6px; border: none; padding: 0; }
+.iv-hero p { margin: 0; color: var(--muted); }
+
+.iv-section-title {
+  margin: 32px 0 14px; padding-bottom: 6px;
+  border-bottom: 2px solid var(--accent);
+  font-size: 19px; font-weight: 700;
+}
+
+.iv-card-grid { display: grid; gap: 12px; margin: 16px 0 24px; }
+.iv-card {
+  background: #fff; border: 1px solid var(--line);
+  border-radius: 10px; padding: 16px 18px;
+  transition: border-color 0.15s, transform 0.15s, box-shadow 0.15s;
+  cursor: pointer;
+}
+.iv-card:hover {
+  border-color: var(--accent);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+.iv-card.iv-active {
+  border-color: var(--accent);
+  background: linear-gradient(135deg, #fff 0%, #fff8f8 100%);
+}
+.iv-card h4 { margin: 0 0 6px; font-size: 16px; }
+.iv-card .meta { font-size: 12px; color: var(--muted); margin-bottom: 8px; }
+.iv-card p { margin: 0; font-size: 14px; line-height: 1.5; }
+
+.iv-detail-panel {
+  margin: 20px 0; padding: 20px 24px;
+  background: #fff; border: 1px solid var(--line);
+  border-radius: 12px; box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+}
+.iv-detail-panel h3 { margin-top: 0; }
+
+.iv-tag {
+  display: inline-block; padding: 2px 8px; border-radius: 12px;
+  background: #f3efe6; font-size: 11px; color: var(--muted);
+  font-family: -apple-system, system-ui, sans-serif;
+  letter-spacing: 0.04em; margin-right: 6px;
+}
+.iv-tag.accent { background: var(--accent-soft); color: var(--accent); font-weight: 600; }
+</style>
+
+<style>
+.iv-pie-wrap { display: flex; flex-wrap: wrap; gap: 24px; align-items: center; margin: 16px 0; }
+.iv-pie { width: 300px; max-width: 100%; }
+.iv-ind-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; flex: 1; min-width: 280px; }
+.iv-ind-card { background: #fff; border: 1px solid var(--line); border-top-width: 4px; border-radius: 10px; padding: 14px 16px; }
+.iv-ind-pct { font-size: 28px; font-weight: 700; font-family: monospace; }
+.iv-ind-card h4 { margin: 4px 0; font-size: 16px; }
+.iv-ind-card .en { font-size: 12px; color: var(--muted); font-style: italic; margin-bottom: 6px; }
+.iv-ind-card p { margin: 0; font-size: 13px; }
+.iv-trade-row { display: grid; grid-template-columns: 160px 1fr; gap: 16px; padding: 10px 0; border-bottom: 1px dashed var(--line); font-size: 14px; }
+.iv-trade-row .key { font-weight: 600; color: var(--accent); }
+.iv-trade-row .note { font-size: 12px; color: var(--muted); margin-top: 2px; }
+</style>
+<div class="iv-hero">
+  <h1>💼 加拿大經濟</h1>
+  <p>三大產業比例 + 5 個必考經濟事實。</p>
+</div>
+
+<h2 class="iv-section-title">三大產業（GDP / 就業比重）</h2>
+<div class="iv-pie-wrap">
+  <svg viewBox="0 0 300 300" class="iv-pie"><path d="M 150 150 L 150.0 30.0 A 120 120 0 1 1 30.0 150.0 Z" fill="#c8102e"/><text x="199" y="199" text-anchor="middle" font-size="18" font-weight="700" fill="#fff">75%</text><path d="M 150 150 L 30.0 150.0 A 120 120 0 0 1 67.9 62.5 Z" fill="#4a6fa5"/><text x="86" y="122" text-anchor="middle" font-size="18" font-weight="700" fill="#fff">13%</text><path d="M 150 150 L 67.9 62.5 A 120 120 0 0 1 150.0 30.0 Z" fill="#5a9460"/><text x="124" y="85" text-anchor="middle" font-size="18" font-weight="700" fill="#fff">12%</text></svg>
+  <div class="iv-ind-cards">
+<div class="iv-ind-card" style="border-top-color:#c8102e">
+  <div class="iv-ind-pct" style="color:#c8102e">75%</div>
+  <h4>服務業</h4>
+  <div class="en">Services Industries</div>
+  <p>金融、零售、教育、醫療、政府、餐飲、IT —— 約四分之三的工作</p>
+</div>
+<div class="iv-ind-card" style="border-top-color:#4a6fa5">
+  <div class="iv-ind-pct" style="color:#4a6fa5">13%</div>
+  <h4>製造業</h4>
+  <div class="en">Manufacturing</div>
+  <p>汽車（Ontario）、航太（Quebec）、鋼鐵、紙業 —— Ontario / Quebec 為主</p>
+</div>
+<div class="iv-ind-card" style="border-top-color:#5a9460">
+  <div class="iv-ind-pct" style="color:#5a9460">12%</div>
+  <h4>天然資源</h4>
+  <div class="en">Natural Resources</div>
+  <p>石油天然氣（AB/SK）、礦業（鈾、鉀、鎳）、林業、漁業 —— 草原省與大西洋</p>
+</div></div>
+</div>
+
+<h2 class="iv-section-title">5 大必背經濟事實</h2>
+<div><div class="iv-trade-row"><div class="key">最大貿易夥伴</div><div class="val"><strong>United States 美國</strong><div class="note">75%+ 的出口都到美國</div></div></div><div class="iv-trade-row"><div class="key">USMCA / CUSMA</div><div class="val"><strong>美加墨自由貿易協定</strong><div class="note">2020 年取代 NAFTA</div></div></div><div class="iv-trade-row"><div class="key">國際組織會員</div><div class="val"><strong>G7、G20、NATO、UN、WTO、APEC、Commonwealth、La Francophonie</strong><div class="note">G7 等於老牌工業大國（從 G8 改回 G7，因 2014 俄羅斯被剔除）</div></div></div><div class="iv-trade-row"><div class="key">貨幣</div><div class="val"><strong>Canadian Dollar（CAD / $）</strong><div class="note">由 Bank of Canada 發行管理</div></div></div><div class="iv-trade-row"><div class="key">經濟體規模</div><div class="val"><strong>全球第 9 大經濟體（GDP 約 $2.2 兆美元）</strong><div class="note">人均高度發達</div></div></div></div>
+
+<div class="iv-hero" style="margin-top:24px">
+<h3 style="margin:0 0 8px">⭐ 考試重點記憶法</h3>
+<p style="margin:0">「<strong>七成五服務、美國買、CUSMA 後 NAFTA、G7 圈、$2 兆 GDP</strong>」一句口訣抓住考試所有問題。</p>
+</div>
 </section>
 <section id="interactive-geography" class="page">
 <style>
@@ -6489,47 +7927,76 @@ God save the King!</p></div><div class="zh"><span class="label">中文</span><p>
   border-left: 4px solid var(--accent);
   padding: 18px 22px; border-radius: 8px; margin: 16px 0 24px;
 }
-.iv-hero h1 { margin: 0 0 6px; }
+.iv-hero h1 { margin: 0 0 6px; border: none; padding: 0; }
 .iv-hero p { margin: 0; color: var(--muted); }
+
+.iv-section-title {
+  margin: 32px 0 14px; padding-bottom: 6px;
+  border-bottom: 2px solid var(--accent);
+  font-size: 19px; font-weight: 700;
+}
+
+.iv-card-grid { display: grid; gap: 12px; margin: 16px 0 24px; }
+.iv-card {
+  background: #fff; border: 1px solid var(--line);
+  border-radius: 10px; padding: 16px 18px;
+  transition: border-color 0.15s, transform 0.15s, box-shadow 0.15s;
+  cursor: pointer;
+}
+.iv-card:hover {
+  border-color: var(--accent);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+.iv-card.iv-active {
+  border-color: var(--accent);
+  background: linear-gradient(135deg, #fff 0%, #fff8f8 100%);
+}
+.iv-card h4 { margin: 0 0 6px; font-size: 16px; }
+.iv-card .meta { font-size: 12px; color: var(--muted); margin-bottom: 8px; }
+.iv-card p { margin: 0; font-size: 14px; line-height: 1.5; }
+
+.iv-detail-panel {
+  margin: 20px 0; padding: 20px 24px;
+  background: #fff; border: 1px solid var(--line);
+  border-radius: 12px; box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+}
+.iv-detail-panel h3 { margin-top: 0; }
+
+.iv-tag {
+  display: inline-block; padding: 2px 8px; border-radius: 12px;
+  background: #f3efe6; font-size: 11px; color: var(--muted);
+  font-family: -apple-system, system-ui, sans-serif;
+  letter-spacing: 0.04em; margin-right: 6px;
+}
+.iv-tag.accent { background: var(--accent-soft); color: var(--accent); font-weight: 600; }
+</style>
+
+<style>
 .iv-map { width: 100%; height: auto; max-width: 100%; }
 .iv-prov { cursor: pointer; transition: filter 0.15s, transform 0.15s; transform-origin: center; transform-box: fill-box; }
 .iv-prov rect { transition: stroke 0.15s, stroke-width 0.15s; stroke: rgba(0,0,0,0.1); stroke-width: 1; }
 .iv-prov:hover rect { stroke: #1f2328; stroke-width: 3; }
 .iv-prov.iv-active rect { stroke: #1f2328; stroke-width: 4; filter: brightness(1.05); }
 .iv-prov-star rect { stroke: #c8102e; stroke-width: 2; stroke-dasharray: 4 2; }
-
-.iv-detail {
-  margin: 20px 0; padding: 22px;
-  background: #fff; border: 1px solid var(--line);
-  border-radius: 12px; box-shadow: 0 1px 3px rgba(0,0,0,0.04);
-}
+.iv-detail { margin: 20px 0; padding: 22px; background: #fff; border: 1px solid var(--line); border-radius: 12px; box-shadow: 0 1px 3px rgba(0,0,0,0.04); }
 .iv-detail-head { display: flex; align-items: baseline; flex-wrap: wrap; gap: 12px; margin-bottom: 14px; }
 .iv-detail-head h2 { margin: 0; border: none; padding: 0; font-size: 22px; }
-.iv-detail-code {
-  display: inline-block; background: var(--accent); color: #fff;
-  padding: 2px 10px; border-radius: 6px; font-family: monospace;
-  font-size: 18px; margin-right: 4px;
-}
+.iv-detail-code { display: inline-block; background: var(--accent); color: #fff; padding: 2px 10px; border-radius: 6px; font-family: monospace; font-size: 18px; margin-right: 4px; }
 .iv-detail-zh { color: var(--muted); font-weight: 400; font-size: 18px; }
-.iv-detail-region {
-  display: inline-block; padding: 3px 10px; border-radius: 12px;
-  background: #f3efe6; font-size: 12px; color: var(--muted);
-  font-family: -apple-system, system-ui, sans-serif;
-}
+.iv-detail-region { display: inline-block; padding: 3px 10px; border-radius: 12px; background: #f3efe6; font-size: 12px; color: var(--muted); }
 .iv-detail-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 12px; margin: 14px 0 20px; }
 .iv-detail-stat { padding: 10px 12px; background: #faf8f4; border-radius: 6px; }
-.iv-detail-stat label { display: block; font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); font-family: -apple-system, system-ui, sans-serif; margin-bottom: 3px; }
+.iv-detail-stat label { display: block; font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); margin-bottom: 3px; }
 .iv-detail-stat span { font-weight: 600; }
 .iv-detail h3 { font-size: 15px; margin: 0 0 8px; }
 .iv-detail-facts { margin: 0; padding-left: 20px; }
 .iv-detail-facts li { margin: 6px 0; }
-
 .iv-region-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 10px; margin: 16px 0 30px; }
 .iv-region-card { padding: 12px 14px; border-radius: 8px; color: #fff; font-size: 14px; }
 .iv-region-card .label { font-size: 11px; text-transform: uppercase; letter-spacing: 0.06em; opacity: 0.85; }
 .iv-region-card .name { font-weight: 700; font-size: 15px; margin: 3px 0 6px; }
 .iv-region-card .codes { font-family: monospace; font-size: 13px; }
-
 table.iv-quick { width: 100%; font-size: 14px; }
 table.iv-quick th { font-size: 12px; }
 .iv-row { cursor: pointer; }
@@ -6537,15 +8004,11 @@ table.iv-quick th { font-size: 12px; }
 .iv-row.iv-active { background: var(--accent-soft); }
 .iv-dot { display: inline-block; width: 10px; height: 10px; border-radius: 50%; margin-right: 8px; vertical-align: middle; }
 </style>
-
 <div class="iv-hero">
   <h1>🗺️ 加拿大地理（互動地圖）</h1>
-  <p>點任何省份看它的首府、省長、產業重點。<strong>Ontario ⭐</strong> 因為是你考試的省題，預設展開、欄位最多。</p>
+  <p>點任何省份看它的首府、省長、產業重點。<strong>Ontario ⭐</strong> 是考試重點省，預設展開。</p>
 </div>
-
 <svg viewBox="0 0 1000 580" class="iv-map" role="img" aria-label="加拿大省份地圖"><g class="iv-prov" data-code="YT"><rect x="50" y="30" width="130" height="130" rx="10" fill="#4a7c9e" /><text x="115.0" y="100.0" text-anchor="middle" font-size="18" font-weight="700" fill="#fff" pointer-events="none">YT 育空地區</text></g><g class="iv-prov" data-code="NT"><rect x="190" y="30" width="180" height="130" rx="10" fill="#4a7c9e" /><text x="280.0" y="100.0" text-anchor="middle" font-size="18" font-weight="700" fill="#fff" pointer-events="none">NT 西北地區</text></g><g class="iv-prov" data-code="NU"><rect x="380" y="30" width="320" height="180" rx="10" fill="#4a7c9e" /><text x="540.0" y="125.0" text-anchor="middle" font-size="18" font-weight="700" fill="#fff" pointer-events="none">NU 努納武特地區</text></g><g class="iv-prov" data-code="BC"><rect x="50" y="180" width="130" height="180" rx="10" fill="#4ea693" /><text x="115.0" y="275.0" text-anchor="middle" font-size="18" font-weight="700" fill="#fff" pointer-events="none">BC 卑詩省</text></g><g class="iv-prov" data-code="AB"><rect x="190" y="180" width="85" height="180" rx="10" fill="#d4a943" /><text x="232.5" y="275.0" text-anchor="middle" font-size="18" font-weight="700" fill="#fff" pointer-events="none">AB 亞伯達省</text></g><g class="iv-prov" data-code="SK"><rect x="285" y="180" width="85" height="180" rx="10" fill="#d4a943" /><text x="327.5" y="275.0" text-anchor="middle" font-size="18" font-weight="700" fill="#fff" pointer-events="none">SK 薩斯喀徹溫省</text></g><g class="iv-prov" data-code="MB"><rect x="380" y="220" width="85" height="140" rx="10" fill="#d4a943" /><text x="422.5" y="295.0" text-anchor="middle" font-size="18" font-weight="700" fill="#fff" pointer-events="none">MB 曼尼托巴省</text></g><g class="iv-prov iv-prov-star" data-code="ON"><rect x="475" y="240" width="170" height="180" rx="10" fill="#c8102e" /><text x="560.0" y="335.0" text-anchor="middle" font-size="18" font-weight="700" fill="#fff" pointer-events="none">ON 安大略省</text><text x="635" y="262" text-anchor="end" font-size="18" fill="#fff100" pointer-events="none">★</text></g><g class="iv-prov" data-code="QC"><rect x="655" y="240" width="170" height="160" rx="10" fill="#c8102e" /><text x="740.0" y="325.0" text-anchor="middle" font-size="18" font-weight="700" fill="#fff" pointer-events="none">QC 魁北克省</text></g><g class="iv-prov" data-code="NL"><rect x="835" y="200" width="130" height="160" rx="10" fill="#5a9460" /><text x="900.0" y="285.0" text-anchor="middle" font-size="18" font-weight="700" fill="#fff" pointer-events="none">NL 紐芬蘭與拉布拉多省</text></g><g class="iv-prov" data-code="NB"><rect x="685" y="430" width="75" height="70" rx="10" fill="#5a9460" /><text x="722.5" y="470.0" text-anchor="middle" font-size="14" font-weight="700" fill="#fff" pointer-events="none">NB</text></g><g class="iv-prov" data-code="PE"><rect x="770" y="430" width="50" height="35" rx="10" fill="#5a9460" /><text x="795.0" y="452.5" text-anchor="middle" font-size="14" font-weight="700" fill="#fff" pointer-events="none">PE</text></g><g class="iv-prov" data-code="NS"><rect x="830" y="430" width="130" height="70" rx="10" fill="#5a9460" /><text x="895.0" y="470.0" text-anchor="middle" font-size="18" font-weight="700" fill="#fff" pointer-events="none">NS 新斯科舍省</text></g><text x="850" y="555" font-size="11" fill="#5a9460" font-weight="600">大西洋四省</text><text x="100" y="555" font-size="11" fill="#4ea693" font-weight="600">西岸</text><text x="305" y="555" font-size="11" fill="#d4a943" font-weight="600">草原三省</text><text x="555" y="555" font-size="11" fill="#c8102e" font-weight="600">中央加拿大</text><text x="380" y="15" font-size="11" fill="#4a7c9e" font-weight="600">北部三領地</text></svg>
-
-
 <div class="iv-detail" id="iv-prov-detail" data-current="ON">
   <div class="iv-detail-head">
     <h2><span class="iv-detail-code">ON</span> Ontario ⭐ <span class="iv-detail-zh">安大略省（安省）</span></h2>
@@ -6554,34 +8017,23 @@ table.iv-quick th { font-size: 12px; }
   <div class="iv-detail-grid">
     <div class="iv-detail-stat"><label>首府 Capital</label><span>Toronto 多倫多</span></div>
     <div class="iv-detail-stat"><label>省長 Premier</label><span>Doug Ford（Progressive Conservative）</span></div>
-    <div class="iv-detail-stat"><label>省督 / 委員</label><span>Edith Dumont（Lt. Governor，**首位法裔安省人，2023 起**）</span></div>
+    <div class="iv-detail-stat"><label>省督 / 委員</label><span>Edith Dumont（Lt. Governor，首位法裔安省人，2023 起）</span></div>
   </div>
   <h3>重點知識</h3>
   <ul class="iv-detail-facts"><li>製造業、金融、服務業、科技</li><li>**國都 Ottawa 渥太華位於此省**（不是 Toronto！）</li><li>人口最多的省（約 1,500 萬，全國 40%）</li><li>主要城市：Toronto、Ottawa、Hamilton、Mississauga、London</li><li>**考試 Ontario 省題重點**：省長 Doug Ford 自 2018 連任至今，省督 Edith Dumont 2023 起</li><li>你的選區記住：聯邦議員 MP & 省議員 MPP</li><li>與美國邊境最長，五大湖區（Great Lakes）</li></ul>
 </div>
-
-
-<h2>5 大區域速記</h2>
-<div class="iv-region-row">
-<div class="iv-region-card" style="background:#4ea693"><div class="label">Region</div><div class="name">西岸</div><div class="codes">BC</div></div><div class="iv-region-card" style="background:#d4a943"><div class="label">Region</div><div class="name">草原三省</div><div class="codes">AB · SK · MB</div></div><div class="iv-region-card" style="background:#c8102e"><div class="label">Region</div><div class="name">中央加拿大</div><div class="codes">ON · QC</div></div><div class="iv-region-card" style="background:#5a9460"><div class="label">Region</div><div class="name">大西洋四省</div><div class="codes">NB · NS · PE · NL</div></div><div class="iv-region-card" style="background:#4a7c9e"><div class="label">Region</div><div class="name">北部三領地</div><div class="codes">YT · NT · NU</div></div>
-</div>
-
-<h2>速查表</h2>
-<table class="iv-quick">
-<thead><tr><th>代碼</th><th>英文名</th><th>中文</th><th>首府</th><th>省長</th></tr></thead>
-<tbody><tr data-code="BC" class="iv-row"><td><span class="iv-dot" style="background:#4ea693"></span>BC</td><td>British Columbia</td><td>卑詩省</td><td>Victoria 維多利亞</td><td>David Eby（NDP）</td></tr><tr data-code="AB" class="iv-row"><td><span class="iv-dot" style="background:#d4a943"></span>AB</td><td>Alberta</td><td>亞伯達省</td><td>Edmonton 愛德蒙頓</td><td>Danielle Smith（UCP）</td></tr><tr data-code="SK" class="iv-row"><td><span class="iv-dot" style="background:#d4a943"></span>SK</td><td>Saskatchewan</td><td>薩斯喀徹溫省</td><td>Regina 雷吉納</td><td>Scott Moe（Sask Party）</td></tr><tr data-code="MB" class="iv-row"><td><span class="iv-dot" style="background:#d4a943"></span>MB</td><td>Manitoba</td><td>曼尼托巴省</td><td>Winnipeg 溫尼伯</td><td>Wab Kinew（NDP，**首位原住民省長**）</td></tr><tr data-code="ON" class="iv-row"><td><span class="iv-dot" style="background:#c8102e"></span>ON</td><td>Ontario ⭐</td><td>安大略省</td><td>Toronto 多倫多</td><td>Doug Ford（Progressive Conservative）</td></tr><tr data-code="QC" class="iv-row"><td><span class="iv-dot" style="background:#c8102e"></span>QC</td><td>Quebec</td><td>魁北克省</td><td>Quebec City 魁北克市</td><td>François Legault（CAQ）</td></tr><tr data-code="NB" class="iv-row"><td><span class="iv-dot" style="background:#5a9460"></span>NB</td><td>New Brunswick</td><td>新布倫瑞克省</td><td>Fredericton 弗雷德里克頓</td><td>Susan Holt（Liberal，2024 起）</td></tr><tr data-code="NS" class="iv-row"><td><span class="iv-dot" style="background:#5a9460"></span>NS</td><td>Nova Scotia</td><td>新斯科舍省</td><td>Halifax 哈利法克斯</td><td>Tim Houston（Progressive Conservative）</td></tr><tr data-code="PE" class="iv-row"><td><span class="iv-dot" style="background:#5a9460"></span>PE</td><td>Prince Edward Island</td><td>愛德華王子島</td><td>Charlottetown 夏洛特鎮</td><td>Rob Lantz（Progressive Conservative，2025 起）</td></tr><tr data-code="NL" class="iv-row"><td><span class="iv-dot" style="background:#5a9460"></span>NL</td><td>Newfoundland and Labrador</td><td>紐芬蘭與拉布拉多省</td><td>St. John's 聖約翰斯</td><td>Andrew Furey（Liberal）</td></tr><tr data-code="YT" class="iv-row"><td><span class="iv-dot" style="background:#4a7c9e"></span>YT</td><td>Yukon</td><td>育空地區</td><td>Whitehorse 白馬市</td><td>Ranj Pillai（Liberal）</td></tr><tr data-code="NT" class="iv-row"><td><span class="iv-dot" style="background:#4a7c9e"></span>NT</td><td>Northwest Territories</td><td>西北地區</td><td>Yellowknife 黃刀鎮</td><td>R.J. Simpson（Independent）</td></tr><tr data-code="NU" class="iv-row"><td><span class="iv-dot" style="background:#4a7c9e"></span>NU</td><td>Nunavut</td><td>努納武特地區</td><td>Iqaluit 伊魁特</td><td>P.J. Akeeagok</td></tr></tbody>
-</table>
-
+<h2 class="iv-section-title">5 大區域速記</h2>
+<div class="iv-region-row"><div class="iv-region-card" style="background:#4ea693"><div class="label">Region</div><div class="name">西岸</div><div class="codes">BC</div></div><div class="iv-region-card" style="background:#d4a943"><div class="label">Region</div><div class="name">草原三省</div><div class="codes">AB · SK · MB</div></div><div class="iv-region-card" style="background:#c8102e"><div class="label">Region</div><div class="name">中央加拿大</div><div class="codes">ON · QC</div></div><div class="iv-region-card" style="background:#5a9460"><div class="label">Region</div><div class="name">大西洋四省</div><div class="codes">NB · NS · PE · NL</div></div><div class="iv-region-card" style="background:#4a7c9e"><div class="label">Region</div><div class="name">北部三領地</div><div class="codes">YT · NT · NU</div></div></div>
+<h2 class="iv-section-title">速查表</h2>
+<table class="iv-quick"><thead><tr><th>代碼</th><th>英文名</th><th>中文</th><th>首府</th><th>省長</th></tr></thead><tbody><tr data-code="BC" class="iv-row"><td><span class="iv-dot" style="background:#4ea693"></span>BC</td><td>British Columbia</td><td>卑詩省</td><td>Victoria 維多利亞</td><td>David Eby（NDP）</td></tr><tr data-code="AB" class="iv-row"><td><span class="iv-dot" style="background:#d4a943"></span>AB</td><td>Alberta</td><td>亞伯達省</td><td>Edmonton 愛德蒙頓</td><td>Danielle Smith（UCP）</td></tr><tr data-code="SK" class="iv-row"><td><span class="iv-dot" style="background:#d4a943"></span>SK</td><td>Saskatchewan</td><td>薩斯喀徹溫省</td><td>Regina 雷吉納</td><td>Scott Moe（Sask Party）</td></tr><tr data-code="MB" class="iv-row"><td><span class="iv-dot" style="background:#d4a943"></span>MB</td><td>Manitoba</td><td>曼尼托巴省</td><td>Winnipeg 溫尼伯</td><td>Wab Kinew（NDP，首位原住民省長）</td></tr><tr data-code="ON" class="iv-row"><td><span class="iv-dot" style="background:#c8102e"></span>ON</td><td>Ontario ⭐</td><td>安大略省</td><td>Toronto 多倫多</td><td>Doug Ford（Progressive Conservative）</td></tr><tr data-code="QC" class="iv-row"><td><span class="iv-dot" style="background:#c8102e"></span>QC</td><td>Quebec</td><td>魁北克省</td><td>Quebec City 魁北克市</td><td>François Legault（CAQ）</td></tr><tr data-code="NB" class="iv-row"><td><span class="iv-dot" style="background:#5a9460"></span>NB</td><td>New Brunswick</td><td>新布倫瑞克省</td><td>Fredericton 弗雷德里克頓</td><td>Susan Holt（Liberal，2024 起）</td></tr><tr data-code="NS" class="iv-row"><td><span class="iv-dot" style="background:#5a9460"></span>NS</td><td>Nova Scotia</td><td>新斯科舍省</td><td>Halifax 哈利法克斯</td><td>Tim Houston (Progressive Conservative)</td></tr><tr data-code="PE" class="iv-row"><td><span class="iv-dot" style="background:#5a9460"></span>PE</td><td>Prince Edward Island</td><td>愛德華王子島</td><td>Charlottetown 夏洛特鎮</td><td>Rob Lantz (PC, 2025 起)</td></tr><tr data-code="NL" class="iv-row"><td><span class="iv-dot" style="background:#5a9460"></span>NL</td><td>Newfoundland and Labrador</td><td>紐芬蘭與拉布拉多省</td><td>St. John's 聖約翰斯</td><td>Andrew Furey (Liberal)</td></tr><tr data-code="YT" class="iv-row"><td><span class="iv-dot" style="background:#4a7c9e"></span>YT</td><td>Yukon</td><td>育空地區</td><td>Whitehorse 白馬市</td><td>Ranj Pillai (Liberal)</td></tr><tr data-code="NT" class="iv-row"><td><span class="iv-dot" style="background:#4a7c9e"></span>NT</td><td>Northwest Territories</td><td>西北地區</td><td>Yellowknife 黃刀鎮</td><td>R.J. Simpson (Independent)</td></tr><tr data-code="NU" class="iv-row"><td><span class="iv-dot" style="background:#4a7c9e"></span>NU</td><td>Nunavut</td><td>努納武特地區</td><td>Iqaluit 伊魁特</td><td>P.J. Akeeagok</td></tr></tbody></table>
 <script>
 (function() {
-  var DATA = {"BC": {"en": "British Columbia", "zh": "卑詩省（不列顛哥倫比亞）", "region": "West Coast", "capital": "Victoria 維多利亞", "premier": "David Eby（NDP）", "lt_gov": "Wendy Cocchia（Lt. Governor）", "facts": ["木材、礦業、鮭魚捕撈、電影業（Hollywood North）", "華人移民歷史悠久，溫哥華是亞太門戶", "Vancouver 是大城，**Victoria** 才是首府（位於溫哥華島）"]}, "AB": {"en": "Alberta", "zh": "亞伯達省", "region": "Prairie Provinces", "capital": "Edmonton 愛德蒙頓", "premier": "Danielle Smith（UCP）", "lt_gov": "Salma Lakhani（Lt. Governor）", "facts": ["石油、天然氣（油砂 Oil Sands）、農業、牛肉", "Rocky Mountains 落磯山脈、Banff/Jasper 國家公園", "**Calgary** 是最大城但 **Edmonton** 才是首府"]}, "SK": {"en": "Saskatchewan", "zh": "薩斯喀徹溫省（沙省）", "region": "Prairie Provinces", "capital": "Regina 雷吉納", "premier": "Scott Moe（Sask Party）", "lt_gov": "Russ Mirasty（Lt. Governor，原住民出身）", "facts": ["小麥（Wheat Province）、鉀礦、鈾礦", "加拿大穀倉、世界最大鉀肥出口", "Saskatoon 是大城但 **Regina** 才是首府"]}, "MB": {"en": "Manitoba", "zh": "曼尼托巴省（曼省）", "region": "Prairie Provinces", "capital": "Winnipeg 溫尼伯", "premier": "Wab Kinew（NDP，**首位原住民省長**）", "lt_gov": "Anita Neville（Lt. Governor）", "facts": ["農業、礦業、水力發電", "Louis Riel 反抗運動的核心地（Métis 文化）", "1870 年加入聯邦（第 5 省）"]}, "ON": {"en": "Ontario ⭐", "zh": "安大略省（安省）", "region": "Central Canada", "capital": "Toronto 多倫多", "premier": "Doug Ford（Progressive Conservative）", "lt_gov": "Edith Dumont（Lt. Governor，**首位法裔安省人，2023 起**）", "facts": ["製造業、金融、服務業、科技", "**國都 Ottawa 渥太華位於此省**（不是 Toronto！）", "人口最多的省（約 1,500 萬，全國 40%）", "主要城市：Toronto、Ottawa、Hamilton、Mississauga、London", "**考試 Ontario 省題重點**：省長 Doug Ford 自 2018 連任至今，省督 Edith Dumont 2023 起", "你的選區記住：聯邦議員 MP & 省議員 MPP", "與美國邊境最長，五大湖區（Great Lakes）"]}, "QC": {"en": "Quebec", "zh": "魁北克省", "region": "Central Canada", "capital": "Quebec City 魁北克市", "premier": "François Legault（CAQ）", "lt_gov": "Manon Jeannotte（Lt. Governor）", "facts": ["航太、水電、礦業、軟體", "**唯一以法語為唯一官方語言的省**", "Montreal 蒙特婁是大城但 **Quebec City** 才是首府", "天主教文化深厚、有獨特民法系統", "1995 公投差點獨立（50.58% 反對）"]}, "NB": {"en": "New Brunswick", "zh": "新布倫瑞克省", "region": "Atlantic Canada", "capital": "Fredericton 弗雷德里克頓", "premier": "Susan Holt（Liberal，2024 起）", "lt_gov": "Louise Imbeault（Lt. Governor）", "facts": ["林業、漁業、食品加工", "**加拿大唯一官方雙語（英＋法）的省份**", "Acadian 文化重鎮（法裔但獨立於魁北克）"]}, "NS": {"en": "Nova Scotia", "zh": "新斯科舍省", "region": "Atlantic Canada", "capital": "Halifax 哈利法克斯", "premier": "Tim Houston（Progressive Conservative）", "lt_gov": "Mike Savage（Lt. Governor）", "facts": ["漁業、造船、旅遊", "**Bluenose 帆船**——10 分硬幣圖案", "**Pier 21** 全國移民登陸博物館", "**Bay of Fundy** 全球最高潮汐", "1605 法國人 Port-Royal 北美第一個歐洲殖民地"]}, "PE": {"en": "Prince Edward Island", "zh": "愛德華王子島（PEI）", "region": "Atlantic Canada", "capital": "Charlottetown 夏洛特鎮", "premier": "Rob Lantz（Progressive Conservative，2025 起）", "lt_gov": "Wassim Salamoun（Lt. Governor）", "facts": ["馬鈴薯（產量全國第一）、觀光業、漁業", "**面積最小的省**", "**Confederation 發源地**——1864 Charlottetown Conference", "《清秀佳人 Anne of Green Gables》故鄉"]}, "NL": {"en": "Newfoundland and Labrador", "zh": "紐芬蘭與拉布拉多省", "region": "Atlantic Canada", "capital": "St. John's 聖約翰斯", "premier": "Andrew Furey（Liberal）", "lt_gov": "Joan Marie Aylward（Lt. Governor）", "facts": ["漁業（鱈魚 Cod）、海上石油、水電", "**最晚加入聯邦的省（1949）**", "**最東邊的省份**（時區比其他省早 30 分鐘）", "獨特方言；維京人 L'Anse aux Meadows 北美最早歐洲遺址"]}, "YT": {"en": "Yukon", "zh": "育空地區", "region": "Northern Territories", "capital": "Whitehorse 白馬市", "premier": "Ranj Pillai（Liberal）", "lt_gov": "Adeline Webber（Commissioner）", "facts": ["礦業、觀光", "**1898 Klondike 淘金潮**（人口曾經高達 4 萬）", "Yukon River、Mount Logan 加拿大最高峰"]}, "NT": {"en": "Northwest Territories", "zh": "西北地區", "region": "Northern Territories", "capital": "Yellowknife 黃刀鎮", "premier": "R.J. Simpson（Independent）", "lt_gov": "Gerald W. Kisoun（Commissioner）", "facts": ["鑽石、石油、天然氣", "Great Bear / Great Slave 兩大湖泊", "Dene 原住民、Métis 為主要族群", "11 種官方語言（含英、法、9 種原住民語）"]}, "NU": {"en": "Nunavut", "zh": "努納武特地區", "region": "Northern Territories", "capital": "Iqaluit 伊魁特", "premier": "P.J. Akeeagok", "lt_gov": "Eva Aariak（Commissioner）", "facts": ["礦業（金、鐵、鑽石）、傳統手工藝", "**1999 從 NT 分出來新建**（最年輕的領地）", "**Inuit 因紐特人為多數**（85%）", "**面積最大的領地**（佔加拿大 20% 土地）", "Inuktitut 為官方語言之一"]}};
+  var DATA = {"BC": {"en": "British Columbia", "zh": "卑詩省（不列顛哥倫比亞）", "region": "West Coast", "capital": "Victoria 維多利亞", "premier": "David Eby（NDP）", "lt_gov": "Wendy Cocchia（Lt. Governor）", "facts": ["木材、礦業、鮭魚捕撈、電影業（Hollywood North）", "華人移民歷史悠久，溫哥華是亞太門戶", "Vancouver 是大城，**Victoria** 才是首府（位於溫哥華島）"]}, "AB": {"en": "Alberta", "zh": "亞伯達省", "region": "Prairie Provinces", "capital": "Edmonton 愛德蒙頓", "premier": "Danielle Smith（UCP）", "lt_gov": "Salma Lakhani（Lt. Governor）", "facts": ["石油、天然氣（油砂 Oil Sands）、農業、牛肉", "Rocky Mountains 落磯山脈、Banff/Jasper 國家公園", "**Calgary** 是最大城但 **Edmonton** 才是首府"]}, "SK": {"en": "Saskatchewan", "zh": "薩斯喀徹溫省（沙省）", "region": "Prairie Provinces", "capital": "Regina 雷吉納", "premier": "Scott Moe（Sask Party）", "lt_gov": "Russ Mirasty（Lt. Governor）", "facts": ["小麥（Wheat Province）、鉀礦、鈾礦", "加拿大穀倉", "Saskatoon 是大城但 **Regina** 才是首府"]}, "MB": {"en": "Manitoba", "zh": "曼尼托巴省（曼省）", "region": "Prairie Provinces", "capital": "Winnipeg 溫尼伯", "premier": "Wab Kinew（NDP，首位原住民省長）", "lt_gov": "Anita Neville（Lt. Governor）", "facts": ["農業、礦業、水力發電", "Louis Riel 反抗運動的核心地（Métis 文化）", "1870 年加入聯邦（第 5 省）"]}, "ON": {"en": "Ontario ⭐", "zh": "安大略省（安省）", "region": "Central Canada", "capital": "Toronto 多倫多", "premier": "Doug Ford（Progressive Conservative）", "lt_gov": "Edith Dumont（Lt. Governor，首位法裔安省人，2023 起）", "facts": ["製造業、金融、服務業、科技", "**國都 Ottawa 渥太華位於此省**（不是 Toronto！）", "人口最多的省（約 1,500 萬，全國 40%）", "主要城市：Toronto、Ottawa、Hamilton、Mississauga、London", "**考試 Ontario 省題重點**：省長 Doug Ford 自 2018 連任至今，省督 Edith Dumont 2023 起", "你的選區記住：聯邦議員 MP & 省議員 MPP", "與美國邊境最長，五大湖區（Great Lakes）"]}, "QC": {"en": "Quebec", "zh": "魁北克省", "region": "Central Canada", "capital": "Quebec City 魁北克市", "premier": "François Legault（CAQ）", "lt_gov": "Manon Jeannotte（Lt. Governor）", "facts": ["航太、水電、礦業、軟體", "**唯一以法語為唯一官方語言的省**", "Montreal 蒙特婁是大城但 **Quebec City** 才是首府", "天主教文化深厚、有獨特民法系統", "1995 公投差點獨立（50.58% 反對）"]}, "NB": {"en": "New Brunswick", "zh": "新布倫瑞克省", "region": "Atlantic Canada", "capital": "Fredericton 弗雷德里克頓", "premier": "Susan Holt（Liberal，2024 起）", "lt_gov": "Louise Imbeault（Lt. Governor）", "facts": ["林業、漁業、食品加工", "**加拿大唯一官方雙語（英＋法）的省份**", "Acadian 文化重鎮（法裔但獨立於魁北克）"]}, "NS": {"en": "Nova Scotia", "zh": "新斯科舍省", "region": "Atlantic Canada", "capital": "Halifax 哈利法克斯", "premier": "Tim Houston (Progressive Conservative)", "lt_gov": "Mike Savage (Lt. Governor)", "facts": ["漁業、造船、旅遊", "**Bluenose 帆船**——10 分硬幣圖案", "**Pier 21** 全國移民登陸博物館", "**Bay of Fundy** 全球最高潮汐", "1605 法國人 Port-Royal 北美第一個歐洲殖民地"]}, "PE": {"en": "Prince Edward Island", "zh": "愛德華王子島（PEI）", "region": "Atlantic Canada", "capital": "Charlottetown 夏洛特鎮", "premier": "Rob Lantz (PC, 2025 起)", "lt_gov": "Wassim Salamoun (Lt. Governor)", "facts": ["馬鈴薯（產量全國第一）、觀光業、漁業", "**面積最小的省**", "**Confederation 發源地**——1864 Charlottetown Conference", "《清秀佳人 Anne of Green Gables》故鄉"]}, "NL": {"en": "Newfoundland and Labrador", "zh": "紐芬蘭與拉布拉多省", "region": "Atlantic Canada", "capital": "St. John's 聖約翰斯", "premier": "Andrew Furey (Liberal)", "lt_gov": "Joan Marie Aylward (Lt. Governor)", "facts": ["漁業（鱈魚 Cod）、海上石油、水電", "**最晚加入聯邦的省（1949）**", "**最東邊的省份**（時區比其他省早 30 分鐘）", "獨特方言；維京人 L'Anse aux Meadows 北美最早歐洲遺址"]}, "YT": {"en": "Yukon", "zh": "育空地區", "region": "Northern Territories", "capital": "Whitehorse 白馬市", "premier": "Ranj Pillai (Liberal)", "lt_gov": "Adeline Webber (Commissioner)", "facts": ["礦業、觀光", "**1898 Klondike 淘金潮**（人口曾經高達 4 萬）", "Yukon River、Mount Logan 加拿大最高峰"]}, "NT": {"en": "Northwest Territories", "zh": "西北地區", "region": "Northern Territories", "capital": "Yellowknife 黃刀鎮", "premier": "R.J. Simpson (Independent)", "lt_gov": "Gerald W. Kisoun (Commissioner)", "facts": ["鑽石、石油、天然氣", "Great Bear / Great Slave 兩大湖泊", "Dene 原住民、Métis 為主要族群", "11 種官方語言（含英、法、9 種原住民語）"]}, "NU": {"en": "Nunavut", "zh": "努納武特地區", "region": "Northern Territories", "capital": "Iqaluit 伊魁特", "premier": "P.J. Akeeagok", "lt_gov": "Eva Aariak (Commissioner)", "facts": ["礦業（金、鐵、鑽石）、傳統手工藝", "**1999 從 NT 分出來新建**（最年輕的領地）", "**Inuit 因紐特人為多數**（85%）", "**面積最大的領地**（佔加拿大 20% 土地）", "Inuktitut 為官方語言之一"]}};
   var detail = document.getElementById('iv-prov-detail');
   if (!detail) return;
-
   function show(code) {
     var d = DATA[code]; if (!d) return;
     detail.dataset.current = code;
-    detail.querySelector('.iv-detail-code').textContent = code;
     detail.querySelector('.iv-detail-head h2').innerHTML =
       '<span class="iv-detail-code">' + code + '</span> ' + d.en +
       ' <span class="iv-detail-zh">' + d.zh + '</span>';
@@ -6592,62 +8044,26 @@ table.iv-quick th { font-size: 12px; }
     stats[2].textContent = d.lt_gov;
     detail.querySelector('.iv-detail-facts').innerHTML =
       d.facts.map(function(f){ return '<li>' + f + '</li>'; }).join('');
-    // Mark active on map + table
     document.querySelectorAll('.iv-prov.iv-active').forEach(function(e){ e.classList.remove('iv-active'); });
     var mapEl = document.querySelector('.iv-prov[data-code="' + code + '"]');
     if (mapEl) mapEl.classList.add('iv-active');
     document.querySelectorAll('.iv-row.iv-active').forEach(function(e){ e.classList.remove('iv-active'); });
     var rowEl = document.querySelector('.iv-row[data-code="' + code + '"]');
     if (rowEl) rowEl.classList.add('iv-active');
-    // scroll detail into view on mobile
     if (window.innerWidth < 800) detail.scrollIntoView({ behavior: 'smooth', block: 'start' });
   }
-
   document.querySelectorAll('.iv-prov').forEach(function(el) {
     el.addEventListener('click', function() { show(el.dataset.code); });
   });
   document.querySelectorAll('.iv-row').forEach(function(el) {
     el.addEventListener('click', function() { show(el.dataset.code); });
   });
-
-  // initial active
   var mapEl = document.querySelector('.iv-prov[data-code="ON"]');
   if (mapEl) mapEl.classList.add('iv-active');
   var rowEl = document.querySelector('.iv-row[data-code="ON"]');
   if (rowEl) rowEl.classList.add('iv-active');
 })();
-</script>
-</section>
-<section id="interactive-history" class="page">
-<div class="iv-hero">
-  <h1>📜 歷史時間軸</h1>
-  <p>製作中。預計會有：</p>
-  <ul><li>垂直時間軸，1497 → 2021，按時代色標分區</li><li>新法蘭西（1497-1763 藍）/ 英屬北美（1763-1867 紅）/ 邦聯（1867-1914 金）/ 兩戰與改革（1914-1949 橄欖）/ 現代加拿大（1949-今 綠）</li><li>點任何事件展開：年代、事件名、為什麼考、相關人物</li><li>Plains of Abraham 1759、Confederation 1867、Vimy Ridge 1917、1982 Charter、2021 TRC Day 都會在</li></ul>
-  <p style="margin-top:14px;color:var(--muted);font-style:italic">告訴 AI「下一個做 歷史時間軸」就會展開。</p>
-</div>
-<style>.iv-hero { background: linear-gradient(135deg, #fff8f8 0%, #fef0e8 100%); border-left: 4px solid var(--accent); padding: 18px 22px; border-radius: 8px; margin: 16px 0 24px; }
-.iv-hero ul { margin: 8px 0; }</style>
-</section>
-<section id="interactive-government" class="page">
-<div class="iv-hero">
-  <h1>🏛️ 政府架構圖</h1>
-  <p>製作中。預計會有：</p>
-  <ul><li>圖 1：三級政府（聯邦 / 省 / 市）——各自管什麼，畫成樹狀圖</li><li>圖 2：國會三部分（君主 → 參議院 + 眾議院）——權力結構流程圖</li><li>圖 3：法案如何變法律（First Reading → Committee → Senate → Royal Assent）——橫向流程圖</li><li>每個節點點開有英中對照解釋與考題提示</li></ul>
-  <p style="margin-top:14px;color:var(--muted);font-style:italic">告訴 AI「下一個做 政府架構圖」就會展開。</p>
-</div>
-<style>.iv-hero { background: linear-gradient(135deg, #fff8f8 0%, #fef0e8 100%); border-left: 4px solid var(--accent); padding: 18px 22px; border-radius: 8px; margin: 16px 0 24px; }
-.iv-hero ul { margin: 8px 0; }</style>
-</section>
-<section id="interactive-symbols" class="page">
-<div class="iv-hero">
-  <h1>🍁 國家象徵圖鑑</h1>
-  <p>製作中。預計會有：</p>
-  <ul><li>國旗（1965 楓葉旗）、楓葉、河狸、皇冠、皇家紋章</li><li>鈔票人物：$5 Laurier、$10 Viola Desmond（2018 起，首位非白人女性）、$20 女王伊麗莎白二世、$50 Mackenzie King、$100 Borden</li><li>硬幣：1¢ Maple Leaf、5¢ Beaver、10¢ Bluenose、25¢ Caribou、$1 Loon（Loonie）、$2 Polar Bear（Toonie）</li><li>國徽、皇家騎警 RCMP 制服、Order of Canada 楓葉勳章</li><li>每張圖配上「為什麼考」「2026 最新狀態」</li></ul>
-  <p style="margin-top:14px;color:var(--muted);font-style:italic">告訴 AI「下一個做 國家象徵圖鑑」就會展開。</p>
-</div>
-<style>.iv-hero { background: linear-gradient(135deg, #fff8f8 0%, #fef0e8 100%); border-left: 4px solid var(--accent); padding: 18px 22px; border-radius: 8px; margin: 16px 0 24px; }
-.iv-hero ul { margin: 8px 0; }</style>
-</section>
+</script></section>
 </main>
 </div>
 <script>

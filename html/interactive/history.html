@@ -437,21 +437,558 @@ blockquote.speakable > .speak-btn,
 <a href="../daily-quiz/day-14.html">Day 14</a>
 <h2>互動式（圖解）</h2>
 <a href="../interactive/index.html">🎯 互動式入口</a>
-<a href="../interactive/geography.html">🗺️ 地圖：13 省領地</a>
-<a href="../interactive/history.html" class="current">📜 時間軸</a>
-<a href="../interactive/government.html">🏛️ 政府架構圖</a>
-<a href="../interactive/symbols.html">🍁 國家象徵圖鑑</a>
+<a href="../interactive/history.html" class="current">📜 04 歷史時間軸</a>
+<a href="../interactive/modern.html">🇨🇦 05 現代加拿大</a>
+<a href="../interactive/government.html">🏛️ 06 政府架構</a>
+<a href="../interactive/elections.html">🗳️ 07 聯邦選舉</a>
+<a href="../interactive/justice.html">⚖️ 08 司法系統</a>
+<a href="../interactive/symbols.html">🍁 09 國家象徵</a>
+<a href="../interactive/economy.html">💼 10 加拿大經濟</a>
+<a href="../interactive/geography.html">🗺️ 11 地圖與省份</a>
 </nav>
 <main>
+<style>
+.iv-hero {
+  background: linear-gradient(135deg, #fff8f8 0%, #fef0e8 100%);
+  border-left: 4px solid var(--accent);
+  padding: 18px 22px; border-radius: 8px; margin: 16px 0 24px;
+}
+.iv-hero h1 { margin: 0 0 6px; border: none; padding: 0; }
+.iv-hero p { margin: 0; color: var(--muted); }
+
+.iv-section-title {
+  margin: 32px 0 14px; padding-bottom: 6px;
+  border-bottom: 2px solid var(--accent);
+  font-size: 19px; font-weight: 700;
+}
+
+.iv-card-grid { display: grid; gap: 12px; margin: 16px 0 24px; }
+.iv-card {
+  background: #fff; border: 1px solid var(--line);
+  border-radius: 10px; padding: 16px 18px;
+  transition: border-color 0.15s, transform 0.15s, box-shadow 0.15s;
+  cursor: pointer;
+}
+.iv-card:hover {
+  border-color: var(--accent);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+.iv-card.iv-active {
+  border-color: var(--accent);
+  background: linear-gradient(135deg, #fff 0%, #fff8f8 100%);
+}
+.iv-card h4 { margin: 0 0 6px; font-size: 16px; }
+.iv-card .meta { font-size: 12px; color: var(--muted); margin-bottom: 8px; }
+.iv-card p { margin: 0; font-size: 14px; line-height: 1.5; }
+
+.iv-detail-panel {
+  margin: 20px 0; padding: 20px 24px;
+  background: #fff; border: 1px solid var(--line);
+  border-radius: 12px; box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+}
+.iv-detail-panel h3 { margin-top: 0; }
+
+.iv-tag {
+  display: inline-block; padding: 2px 8px; border-radius: 12px;
+  background: #f3efe6; font-size: 11px; color: var(--muted);
+  font-family: -apple-system, system-ui, sans-serif;
+  letter-spacing: 0.04em; margin-right: 6px;
+}
+.iv-tag.accent { background: var(--accent-soft); color: var(--accent); font-weight: 600; }
+</style>
+
+<style>
+.iv-era-filter { display: flex; flex-wrap: wrap; gap: 8px; margin: 16px 0 24px; }
+.iv-era-btn {
+  appearance: none; padding: 6px 12px; border-radius: 20px;
+  background: #fff; border: 2px solid var(--era-color);
+  color: var(--era-color); cursor: pointer; font-size: 13px; font-weight: 600;
+  font-family: -apple-system, system-ui, sans-serif;
+  transition: all 0.15s;
+}
+.iv-era-btn.iv-active { background: var(--era-color); color: #fff; }
+.iv-tl { position: relative; padding: 12px 0; }
+.iv-tl::before {
+  content: ''; position: absolute; left: 88px; top: 0; bottom: 0;
+  width: 3px; background: linear-gradient(to bottom, #4a6fa5 0%, #b0413e 20%, #c8a040 40%, #7a8c5c 65%, #5a9460 85%, #5a9460 100%);
+  border-radius: 2px;
+}
+.iv-tl-event {
+  display: grid; grid-template-columns: 80px 30px 1fr;
+  align-items: start; gap: 10px; padding: 10px 0;
+  position: relative;
+}
+.iv-tl-event.iv-hidden { display: none; }
+.iv-tl-year {
+  text-align: right; font-weight: 700; font-family: monospace;
+  font-size: 14px; padding-top: 12px; color: var(--ink);
+}
+.iv-tl-marker {
+  width: 14px; height: 14px; border-radius: 50%;
+  border: 3px solid #fff; box-shadow: 0 0 0 2px currentColor;
+  margin: 14px 8px 0;
+}
+.iv-tl-content {
+  background: #fff; border: 1px solid var(--line); border-radius: 8px;
+  padding: 12px 16px; transition: all 0.15s;
+}
+.iv-tl-event:hover .iv-tl-content {
+  border-color: var(--accent); box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+.iv-tl-star .iv-tl-content {
+  background: linear-gradient(135deg, #fff 0%, #fff8e8 100%);
+  border-color: #d4a943;
+}
+.iv-tl-title { margin: 0 0 2px; font-size: 16px; }
+.iv-tl-en { font-size: 12px; color: var(--muted); font-style: italic; margin-bottom: 6px; }
+.iv-tl-brief { margin: 0 0 8px; font-size: 14px; }
+.iv-tl-details { margin: 6px 0 0; padding-left: 18px; font-size: 13px; color: var(--muted); }
+.iv-tl-details li { margin: 3px 0; }
+@media (max-width: 600px) {
+  .iv-tl::before { left: 60px; }
+  .iv-tl-event { grid-template-columns: 55px 24px 1fr; gap: 6px; }
+  .iv-tl-year { font-size: 12px; }
+}
+</style>
 <div class="iv-hero">
-  <h1>📜 歷史時間軸</h1>
-  <p>製作中。預計會有：</p>
-  <ul><li>垂直時間軸，1497 → 2021，按時代色標分區</li><li>新法蘭西（1497-1763 藍）/ 英屬北美（1763-1867 紅）/ 邦聯（1867-1914 金）/ 兩戰與改革（1914-1949 橄欖）/ 現代加拿大（1949-今 綠）</li><li>點任何事件展開：年代、事件名、為什麼考、相關人物</li><li>Plains of Abraham 1759、Confederation 1867、Vimy Ridge 1917、1982 Charter、2021 TRC Day 都會在</li></ul>
-  <p style="margin-top:14px;color:var(--muted);font-style:italic">告訴 AI「下一個做 歷史時間軸」就會展開。</p>
+  <h1>📜 加拿大歷史時間軸</h1>
+  <p>1497 → 2021 共 41 件考試重點事件。按時代色標分區，⭐ = 高頻考點。點時代按鈕篩選。</p>
 </div>
-<style>.iv-hero { background: linear-gradient(135deg, #fff8f8 0%, #fef0e8 100%); border-left: 4px solid var(--accent); padding: 18px 22px; border-radius: 8px; margin: 16px 0 24px; }
-.iv-hero ul { margin: 8px 0; }</style>
-</main>
+<div class="iv-era-filter">
+  <button class="iv-era-btn iv-active" data-era="all" style="--era-color:#1f2328">全部</button>
+  <button class="iv-era-btn" data-era="new-france" style="--era-color:#4a6fa5">新法蘭西時期 (1497-1763)</button><button class="iv-era-btn" data-era="british" style="--era-color:#b0413e">英屬北美 (1763-1867)</button><button class="iv-era-btn" data-era="confederation" style="--era-color:#c8a040">邦聯時代 (1867-1914)</button><button class="iv-era-btn" data-era="wars" style="--era-color:#7a8c5c">兩戰與改革 (1914-1949)</button><button class="iv-era-btn" data-era="modern" style="--era-color:#5a9460">現代加拿大 (1949-至今)</button>
+</div>
+<div class="iv-tl">
+
+<div class="iv-tl-event " data-era="new-france">
+  <div class="iv-tl-marker" style="background:#4a6fa5"></div>
+  <div class="iv-tl-year">1497</div>
+  <div class="iv-tl-content">
+    <h3 class="iv-tl-title">John Cabot 抵達加拿大東岸</h3>
+    <div class="iv-tl-en">John Cabot reaches Atlantic shores</div>
+    <p class="iv-tl-brief">為英王 Henry VII 宣稱大西洋岸土地，是歐洲人首次有記錄登陸加東</p>
+    <ul class='iv-tl-details'><li>威尼斯航海家受英王委派</li><li>登陸地點可能是 Newfoundland</li><li>為日後英國對加宣稱主權奠基</li></ul>
+  </div>
+</div>
+<div class="iv-tl-event " data-era="new-france">
+  <div class="iv-tl-marker" style="background:#4a6fa5"></div>
+  <div class="iv-tl-year">1534</div>
+  <div class="iv-tl-content">
+    <h3 class="iv-tl-title">Cartier 命名 'Canada'</h3>
+    <div class="iv-tl-en">Cartier names 'Canada'</div>
+    <p class="iv-tl-brief">Jacques Cartier 第一次航行，從原住民 Iroquois 學到 'kanata'（村莊）一詞</p>
+    <ul class='iv-tl-details'><li>第一次航行 1534、第二次 1535、第三次 1541</li><li>為法王 François I 宣稱聖羅倫斯地區</li><li>'Canada' 名字源自 Iroquois 語 'kanata'（kanata = 村莊/居住地）</li></ul>
+  </div>
+</div>
+<div class="iv-tl-event " data-era="new-france">
+  <div class="iv-tl-marker" style="background:#4a6fa5"></div>
+  <div class="iv-tl-year">1604</div>
+  <div class="iv-tl-content">
+    <h3 class="iv-tl-title">首座歐洲永久定居 Port-Royal</h3>
+    <div class="iv-tl-en">Port-Royal — first permanent settlement</div>
+    <p class="iv-tl-brief">Pierre du Gua de Monts 與 Samuel de Champlain 在 Acadia 建立</p>
+    <ul class='iv-tl-details'><li>位於今日 Nova Scotia</li><li>1605 年是北美第一個永久歐洲殖民地</li><li>Acadia 文化由此開始</li></ul>
+  </div>
+</div>
+<div class="iv-tl-event " data-era="new-france">
+  <div class="iv-tl-marker" style="background:#4a6fa5"></div>
+  <div class="iv-tl-year">1608</div>
+  <div class="iv-tl-content">
+    <h3 class="iv-tl-title">Champlain 建立 Québec City</h3>
+    <div class="iv-tl-en">Champlain founds Quebec City</div>
+    <p class="iv-tl-brief">Samuel de Champlain 在聖羅倫斯河岸建立 Québec City，'Father of New France'</p>
+    <ul class='iv-tl-details'><li>這是 New France 的首都</li><li>Champlain 與原住民結盟貿易毛皮</li><li>為法屬北美奠定基石</li></ul>
+  </div>
+</div>
+<div class="iv-tl-event " data-era="new-france">
+  <div class="iv-tl-marker" style="background:#4a6fa5"></div>
+  <div class="iv-tl-year">1670</div>
+  <div class="iv-tl-content">
+    <h3 class="iv-tl-title">Hudson's Bay Company 成立</h3>
+    <div class="iv-tl-en">Hudson's Bay Company chartered</div>
+    <p class="iv-tl-brief">英王 Charles II 給予 HBC 對 Hudson Bay 流域的貿易壟斷權</p>
+    <ul class='iv-tl-details'><li>HBC 是現存最古老的商業公司之一</li><li>推動英國在北方的擴張</li><li>與法國的毛皮貿易競爭白熱化</li></ul>
+  </div>
+</div>
+<div class="iv-tl-event " data-era="new-france">
+  <div class="iv-tl-marker" style="background:#4a6fa5"></div>
+  <div class="iv-tl-year">1701</div>
+  <div class="iv-tl-content">
+    <h3 class="iv-tl-title">Great Peace of Montreal</h3>
+    <div class="iv-tl-en">Great Peace of Montreal</div>
+    <p class="iv-tl-brief">法國與 39 個原住民族在 Montreal 簽訂大和平條約</p>
+    <ul class='iv-tl-details'><li>結束 Iroquois 與法國/盟友的戰爭</li><li>新法蘭西進入和平擴張期</li></ul>
+  </div>
+</div>
+<div class="iv-tl-event " data-era="new-france">
+  <div class="iv-tl-marker" style="background:#4a6fa5"></div>
+  <div class="iv-tl-year">1755</div>
+  <div class="iv-tl-content">
+    <h3 class="iv-tl-title">Acadian 大流亡</h3>
+    <div class="iv-tl-en">Acadian Deportation</div>
+    <p class="iv-tl-brief">英國驅逐 Acadia 地區法裔居民（約 1 萬人）</p>
+    <ul class='iv-tl-details'><li>稱為 'Le Grand Dérangement'</li><li>部分人流亡到 Louisiana（後來變成 Cajun）</li><li>部分人返回成為今日的 Acadian</li></ul>
+  </div>
+</div>
+<div class="iv-tl-event " data-era="british">
+  <div class="iv-tl-marker" style="background:#b0413e"></div>
+  <div class="iv-tl-year">1759</div>
+  <div class="iv-tl-content">
+    <h3 class="iv-tl-title">Plains of Abraham 之戰 ⚔️</h3>
+    <div class="iv-tl-en">Battle of the Plains of Abraham</div>
+    <p class="iv-tl-brief">**英軍 James Wolfe vs. 法軍 Montcalm**，英軍奪下 Québec City，新法蘭西結束</p>
+    <ul class='iv-tl-details'><li>**考試重點戰役**</li><li>兩位將軍都陣亡</li><li>1763 Paris 條約正式將北美交給英國</li></ul>
+  </div>
+</div>
+<div class="iv-tl-event " data-era="british">
+  <div class="iv-tl-marker" style="background:#b0413e"></div>
+  <div class="iv-tl-year">1763</div>
+  <div class="iv-tl-content">
+    <h3 class="iv-tl-title">Treaty of Paris：法割讓北美</h3>
+    <div class="iv-tl-en">Treaty of Paris</div>
+    <p class="iv-tl-brief">七年戰爭結束，法國將北美除聖皮埃爾與密克隆外全部割讓給英國</p>
+    <ul class='iv-tl-details'><li>新法蘭西成為英國殖民地 'Province of Quebec'</li><li>Royal Proclamation 1763 承認原住民權利</li></ul>
+  </div>
+</div>
+<div class="iv-tl-event " data-era="british">
+  <div class="iv-tl-marker" style="background:#b0413e"></div>
+  <div class="iv-tl-year">1774</div>
+  <div class="iv-tl-content">
+    <h3 class="iv-tl-title">Quebec Act 保障法裔權利</h3>
+    <div class="iv-tl-en">Quebec Act</div>
+    <p class="iv-tl-brief">英國保障 Québec 法裔居民的天主教信仰、法國民法、語言</p>
+    <ul class='iv-tl-details'><li>保留 French Civil Law（民事）</li><li>保留天主教</li><li>**為 Québec 法語文化存續的關鍵法案**</li></ul>
+  </div>
+</div>
+<div class="iv-tl-event " data-era="british">
+  <div class="iv-tl-marker" style="background:#b0413e"></div>
+  <div class="iv-tl-year">1776-83</div>
+  <div class="iv-tl-content">
+    <h3 class="iv-tl-title">美國革命，Loyalists 北逃</h3>
+    <div class="iv-tl-en">American Revolution — Loyalists flee north</div>
+    <p class="iv-tl-brief">約 4 萬 'United Empire Loyalists' 從美國逃到英屬北美</p>
+    <ul class='iv-tl-details'><li>大量英裔人口湧入加拿大</li><li>在 Nova Scotia、New Brunswick、Ontario 建立新社區</li><li>1791 Constitutional Act 將 Quebec 分為 Upper / Lower Canada</li></ul>
+  </div>
+</div>
+<div class="iv-tl-event " data-era="british">
+  <div class="iv-tl-marker" style="background:#b0413e"></div>
+  <div class="iv-tl-year">1812-14</div>
+  <div class="iv-tl-content">
+    <h3 class="iv-tl-title">1812 戰爭 — 加拿大守住了 ⚔️</h3>
+    <div class="iv-tl-en">War of 1812 — Canada survives</div>
+    <p class="iv-tl-brief">美國入侵英屬北美，**加拿大、英軍、原住民聯軍擊退美軍**</p>
+    <ul class='iv-tl-details'><li>**考試重點**</li><li>Sir Isaac Brock 在 Queenston Heights 陣亡（英雄）</li><li>原住民領袖 Tecumseh 也陣亡</li><li>Laura Secord 徒步通報英軍美軍動向</li><li>1814 英軍燒了 Washington 白宮</li></ul>
+  </div>
+</div>
+<div class="iv-tl-event " data-era="british">
+  <div class="iv-tl-marker" style="background:#b0413e"></div>
+  <div class="iv-tl-year">1837-38</div>
+  <div class="iv-tl-content">
+    <h3 class="iv-tl-title">Upper / Lower Canada 叛亂</h3>
+    <div class="iv-tl-en">Rebellions of 1837-38</div>
+    <p class="iv-tl-brief">改革派要求 'responsible government' 起義被鎮壓但促成改革</p>
+    <ul class='iv-tl-details'><li>Upper Canada（今 Ontario）：William Lyon Mackenzie</li><li>Lower Canada（今 Quebec）：Louis-Joseph Papineau</li><li>促成 Lord Durham 報告 → 1840 Act of Union</li></ul>
+  </div>
+</div>
+<div class="iv-tl-event " data-era="british">
+  <div class="iv-tl-marker" style="background:#b0413e"></div>
+  <div class="iv-tl-year">1840</div>
+  <div class="iv-tl-content">
+    <h3 class="iv-tl-title">Act of Union 統一兩 Canada</h3>
+    <div class="iv-tl-en">Act of Union</div>
+    <p class="iv-tl-brief">Upper + Lower Canada 合併為 'Province of Canada'</p>
+    <ul class='iv-tl-details'><li>Durham 報告建議責任政府</li><li>1848 'Responsible Government' 實現於 Nova Scotia 與 Canada</li></ul>
+  </div>
+</div>
+<div class="iv-tl-event " data-era="confederation">
+  <div class="iv-tl-marker" style="background:#c8a040"></div>
+  <div class="iv-tl-year">1864</div>
+  <div class="iv-tl-content">
+    <h3 class="iv-tl-title">Charlottetown Conference</h3>
+    <div class="iv-tl-en">Charlottetown Conference</div>
+    <p class="iv-tl-brief">Confederation 規劃會議在 PEI Charlottetown 舉行</p>
+    <ul class='iv-tl-details'><li>**'Birthplace of Confederation'**</li><li>PEI 因此被稱為邦聯發源地</li><li>與會者後稱 'Fathers of Confederation'</li></ul>
+  </div>
+</div>
+<div class="iv-tl-event iv-tl-star" data-era="confederation">
+  <div class="iv-tl-marker" style="background:#c8a040"></div>
+  <div class="iv-tl-year">1867 ⭐</div>
+  <div class="iv-tl-content">
+    <h3 class="iv-tl-title">邦聯誕生 — Dominion of Canada</h3>
+    <div class="iv-tl-en">Confederation — Dominion of Canada</div>
+    <p class="iv-tl-brief">**英國國會通過 British North America Act**，加拿大成為英聯邦下的 Dominion</p>
+    <ul class='iv-tl-details'><li>**考試最重要日期之一**</li><li>成立四省：Ontario、Quebec、Nova Scotia、New Brunswick</li><li>**首任總理 Sir John A. Macdonald**（保守黨）</li><li>George-Étienne Cartier 是法裔共同創建者</li><li>7 月 1 日 = **Canada Day**</li></ul>
+  </div>
+</div>
+<div class="iv-tl-event " data-era="confederation">
+  <div class="iv-tl-marker" style="background:#c8a040"></div>
+  <div class="iv-tl-year">1869-70</div>
+  <div class="iv-tl-content">
+    <h3 class="iv-tl-title">Manitoba 加入 + Riel 起義</h3>
+    <div class="iv-tl-en">Manitoba joins + Riel Rebellion</div>
+    <p class="iv-tl-brief">Métis 領袖 Louis Riel 起義，Manitoba 隨後加入聯邦</p>
+    <ul class='iv-tl-details'><li>1870 Manitoba 加入（第 5 省）</li><li>Louis Riel 是 Métis 民族英雄</li><li>1885 Riel 第二次起義（North-West Rebellion）後被處決</li></ul>
+  </div>
+</div>
+<div class="iv-tl-event " data-era="confederation">
+  <div class="iv-tl-marker" style="background:#c8a040"></div>
+  <div class="iv-tl-year">1871</div>
+  <div class="iv-tl-content">
+    <h3 class="iv-tl-title">British Columbia 加入</h3>
+    <div class="iv-tl-en">British Columbia joins</div>
+    <p class="iv-tl-brief">BC 同意加入聯邦，條件是建一條橫貫鐵路</p>
+    
+  </div>
+</div>
+<div class="iv-tl-event " data-era="confederation">
+  <div class="iv-tl-marker" style="background:#c8a040"></div>
+  <div class="iv-tl-year">1873</div>
+  <div class="iv-tl-content">
+    <h3 class="iv-tl-title">Prince Edward Island 加入</h3>
+    <div class="iv-tl-en">PEI joins</div>
+    <p class="iv-tl-brief">PEI 1873 加入</p>
+    
+  </div>
+</div>
+<div class="iv-tl-event " data-era="confederation">
+  <div class="iv-tl-marker" style="background:#c8a040"></div>
+  <div class="iv-tl-year">1885</div>
+  <div class="iv-tl-content">
+    <h3 class="iv-tl-title">太平洋鐵路完成 🚂</h3>
+    <div class="iv-tl-en">Canadian Pacific Railway completed</div>
+    <p class="iv-tl-brief">鐵路橫貫加拿大東西，把 BC 連入聯邦</p>
+    <ul class='iv-tl-details'><li>**Last Spike** 在 BC Craigellachie 釘下</li><li>華工大量參與築路（許多人罹難）</li><li>為加拿大統一的物理象徵</li></ul>
+  </div>
+</div>
+<div class="iv-tl-event " data-era="confederation">
+  <div class="iv-tl-marker" style="background:#c8a040"></div>
+  <div class="iv-tl-year">1898</div>
+  <div class="iv-tl-content">
+    <h3 class="iv-tl-title">Yukon Territory 與 Klondike 淘金潮</h3>
+    <div class="iv-tl-en">Yukon Territory & Klondike Gold Rush</div>
+    <p class="iv-tl-brief">Klondike 淘金潮帶來人口爆炸，Yukon 正式成為 territory</p>
+    
+  </div>
+</div>
+<div class="iv-tl-event " data-era="confederation">
+  <div class="iv-tl-marker" style="background:#c8a040"></div>
+  <div class="iv-tl-year">1905</div>
+  <div class="iv-tl-content">
+    <h3 class="iv-tl-title">Alberta、Saskatchewan 加入</h3>
+    <div class="iv-tl-en">Alberta & Saskatchewan join</div>
+    <p class="iv-tl-brief">兩省同時從 North-West Territories 切出</p>
+    
+  </div>
+</div>
+<div class="iv-tl-event " data-era="wars">
+  <div class="iv-tl-marker" style="background:#7a8c5c"></div>
+  <div class="iv-tl-year">1914-18</div>
+  <div class="iv-tl-content">
+    <h3 class="iv-tl-title">WWI — Vimy Ridge 🌹</h3>
+    <div class="iv-tl-en">WWI — Vimy Ridge</div>
+    <p class="iv-tl-brief">**1917 加拿大四師團首次合作攻下 Vimy Ridge**——加拿大民族認同的關鍵時刻</p>
+    <ul class='iv-tl-details'><li>**考試重點**</li><li>Vimy Ridge：1917 年 4 月，攻下英法都打不下的據點</li><li>Passchendaele、Somme 也是慘烈戰役</li><li>全國陣亡 ~6 萬</li><li>1918 第一次世界大戰結束</li></ul>
+  </div>
+</div>
+<div class="iv-tl-event " data-era="wars">
+  <div class="iv-tl-marker" style="background:#7a8c5c"></div>
+  <div class="iv-tl-year">1916-18</div>
+  <div class="iv-tl-content">
+    <h3 class="iv-tl-title">婦女選舉權</h3>
+    <div class="iv-tl-en">Women's suffrage</div>
+    <p class="iv-tl-brief">Manitoba 1916 首先給女性投票權，聯邦 1918 跟進</p>
+    <ul class='iv-tl-details'><li>Nellie McClung 等 'Famous Five' 推動</li><li>**Manitoba 1916 = 第一個給女性投票權的省**</li></ul>
+  </div>
+</div>
+<div class="iv-tl-event " data-era="wars">
+  <div class="iv-tl-marker" style="background:#7a8c5c"></div>
+  <div class="iv-tl-year">1929</div>
+  <div class="iv-tl-content">
+    <h3 class="iv-tl-title">Persons Case — 女性是 'persons'</h3>
+    <div class="iv-tl-en">Persons Case — women as legal persons</div>
+    <p class="iv-tl-brief">Privy Council 裁定加拿大女性在法律上是 'persons'，可被任命為參議員</p>
+    <ul class='iv-tl-details'><li>**Famous Five**：Emily Murphy 等 5 位女性推動</li><li>勝訴後 Cairine Wilson 1930 成為首位女參議員</li></ul>
+  </div>
+</div>
+<div class="iv-tl-event " data-era="wars">
+  <div class="iv-tl-marker" style="background:#7a8c5c"></div>
+  <div class="iv-tl-year">1931</div>
+  <div class="iv-tl-content">
+    <h3 class="iv-tl-title">Statute of Westminster</h3>
+    <div class="iv-tl-en">Statute of Westminster</div>
+    <p class="iv-tl-brief">英國國會確認加拿大等 Dominion 在外交與立法上完全自主</p>
+    <ul class='iv-tl-details'><li>加拿大實質獨立的法律基礎</li></ul>
+  </div>
+</div>
+<div class="iv-tl-event " data-era="wars">
+  <div class="iv-tl-marker" style="background:#7a8c5c"></div>
+  <div class="iv-tl-year">1939-45</div>
+  <div class="iv-tl-content">
+    <h3 class="iv-tl-title">WWII — D-Day Juno Beach</h3>
+    <div class="iv-tl-en">WWII — D-Day at Juno Beach</div>
+    <p class="iv-tl-brief">加軍在 D-Day（1944/6/6）登陸 Juno Beach，意大利戰役也激烈</p>
+    <ul class='iv-tl-details'><li>**考試重點**</li><li>Juno Beach 是五個 D-Day 灘頭之一（加拿大負責）</li><li>全國陣亡 ~4 萬</li><li>二戰結束後加拿大成為世界第 4 大空軍</li></ul>
+  </div>
+</div>
+<div class="iv-tl-event " data-era="wars">
+  <div class="iv-tl-marker" style="background:#7a8c5c"></div>
+  <div class="iv-tl-year">1947</div>
+  <div class="iv-tl-content">
+    <h3 class="iv-tl-title">Canadian Citizenship Act 通過</h3>
+    <div class="iv-tl-en">Canadian Citizenship Act</div>
+    <p class="iv-tl-brief">**加拿大公民身份首次法定**——之前是英國臣民</p>
+    <ul class='iv-tl-details'><li>**考試重點**：首次有 'Canadian citizen' 這個身份</li><li>首任公民身份證頒給總理 Mackenzie King</li></ul>
+  </div>
+</div>
+<div class="iv-tl-event " data-era="wars">
+  <div class="iv-tl-marker" style="background:#7a8c5c"></div>
+  <div class="iv-tl-year">1949</div>
+  <div class="iv-tl-content">
+    <h3 class="iv-tl-title">Newfoundland 加入（最後一省）</h3>
+    <div class="iv-tl-en">Newfoundland joins (last province)</div>
+    <p class="iv-tl-brief">公投通過後 Newfoundland 1949 加入聯邦，完成 10 省版圖</p>
+    <ul class='iv-tl-details'><li>**考試重點**</li><li>之前是英國自治領</li></ul>
+  </div>
+</div>
+<div class="iv-tl-event " data-era="modern">
+  <div class="iv-tl-marker" style="background:#5a9460"></div>
+  <div class="iv-tl-year">1960</div>
+  <div class="iv-tl-content">
+    <h3 class="iv-tl-title">原住民獲聯邦投票權</h3>
+    <div class="iv-tl-en">Indigenous federal vote</div>
+    <p class="iv-tl-brief">Status Indians 終於可以在聯邦選舉投票（不必放棄身份）</p>
+    
+  </div>
+</div>
+<div class="iv-tl-event iv-tl-star" data-era="modern">
+  <div class="iv-tl-marker" style="background:#5a9460"></div>
+  <div class="iv-tl-year">1965 ⭐</div>
+  <div class="iv-tl-content">
+    <h3 class="iv-tl-title">楓葉旗誕生</h3>
+    <div class="iv-tl-en">Maple Leaf flag adopted</div>
+    <p class="iv-tl-brief">**2 月 15 日新國旗首次升起**——紅白楓葉旗取代英國 Red Ensign</p>
+    <ul class='iv-tl-details'><li>**考試重點**</li><li>Lester B. Pearson 總理推動</li><li>**2 月 15 日 = National Flag of Canada Day**</li></ul>
+  </div>
+</div>
+<div class="iv-tl-event " data-era="modern">
+  <div class="iv-tl-marker" style="background:#5a9460"></div>
+  <div class="iv-tl-year">1967</div>
+  <div class="iv-tl-content">
+    <h3 class="iv-tl-title">Centennial / Expo '67</h3>
+    <div class="iv-tl-en">Centennial / Expo '67</div>
+    <p class="iv-tl-brief">聯邦 100 週年慶 + Montreal 世博會，是加拿大現代認同的形成期</p>
+    <ul class='iv-tl-details'><li>Bobby Gimby 名曲 'Ca-na-da'</li><li>Pierre Trudeau 1968 上任</li></ul>
+  </div>
+</div>
+<div class="iv-tl-event " data-era="modern">
+  <div class="iv-tl-marker" style="background:#5a9460"></div>
+  <div class="iv-tl-year">1969</div>
+  <div class="iv-tl-content">
+    <h3 class="iv-tl-title">Official Languages Act</h3>
+    <div class="iv-tl-en">Official Languages Act</div>
+    <p class="iv-tl-brief">聯邦政府所有服務必須英法雙語</p>
+    <ul class='iv-tl-details'><li>**考試重點**</li><li>Pierre Trudeau 推動</li><li>聯邦政府工作必須提供雙語服務</li></ul>
+  </div>
+</div>
+<div class="iv-tl-event " data-era="modern">
+  <div class="iv-tl-marker" style="background:#5a9460"></div>
+  <div class="iv-tl-year">1971</div>
+  <div class="iv-tl-content">
+    <h3 class="iv-tl-title">多元文化主義政策</h3>
+    <div class="iv-tl-en">Multiculturalism policy</div>
+    <p class="iv-tl-brief">**加拿大成為世界第一個正式採取多元文化主義為國策**</p>
+    <ul class='iv-tl-details'><li>1988 Canadian Multiculturalism Act 入法</li><li>**'Mosaic' 而不是 'Melting Pot'**</li></ul>
+  </div>
+</div>
+<div class="iv-tl-event " data-era="modern">
+  <div class="iv-tl-marker" style="background:#5a9460"></div>
+  <div class="iv-tl-year">1976</div>
+  <div class="iv-tl-content">
+    <h3 class="iv-tl-title">Quebec PQ 上台 + 1980 公投</h3>
+    <div class="iv-tl-en">Quebec PQ + 1980 referendum</div>
+    <p class="iv-tl-brief">Parti Québécois 1976 上台，1980 第一次主權公投（59.6% No）</p>
+    
+  </div>
+</div>
+<div class="iv-tl-event iv-tl-star" data-era="modern">
+  <div class="iv-tl-marker" style="background:#5a9460"></div>
+  <div class="iv-tl-year">1982 ⭐</div>
+  <div class="iv-tl-content">
+    <h3 class="iv-tl-title">Constitution Act / Charter</h3>
+    <div class="iv-tl-en">Constitution Act + Charter</div>
+    <p class="iv-tl-brief">**Constitution Act 1982**：憲法回到加拿大，含《加拿大權利與自由憲章》</p>
+    <ul class='iv-tl-details'><li>**考試最重要日期**</li><li>Pierre Trudeau 推動</li><li>**Charter of Rights and Freedoms 保障：4 大自由、6 項權利、Aboriginal、Mobility、Official Language**</li><li>Queen Elizabeth II 在 Ottawa 簽署</li></ul>
+  </div>
+</div>
+<div class="iv-tl-event " data-era="modern">
+  <div class="iv-tl-marker" style="background:#5a9460"></div>
+  <div class="iv-tl-year">1995</div>
+  <div class="iv-tl-content">
+    <h3 class="iv-tl-title">第二次 Quebec 公投</h3>
+    <div class="iv-tl-en">Second Quebec referendum</div>
+    <p class="iv-tl-brief">**50.58% No vs 49.42% Yes** — 差 5 萬票</p>
+    <ul class='iv-tl-details'><li>1999 Clarity Act 規範未來公投程序</li></ul>
+  </div>
+</div>
+<div class="iv-tl-event " data-era="modern">
+  <div class="iv-tl-marker" style="background:#5a9460"></div>
+  <div class="iv-tl-year">1999</div>
+  <div class="iv-tl-content">
+    <h3 class="iv-tl-title">Nunavut 從 NT 分出</h3>
+    <div class="iv-tl-en">Nunavut created</div>
+    <p class="iv-tl-brief">**第三個 territory**，從 Northwest Territories 切出</p>
+    <ul class='iv-tl-details'><li>**考試重點**：Nunavut 1999 年成立</li><li>Inuit 為多數人口</li><li>首府 Iqaluit</li></ul>
+  </div>
+</div>
+<div class="iv-tl-event " data-era="modern">
+  <div class="iv-tl-marker" style="background:#5a9460"></div>
+  <div class="iv-tl-year">2008</div>
+  <div class="iv-tl-content">
+    <h3 class="iv-tl-title">PM Harper 為寄宿學校道歉</h3>
+    <div class="iv-tl-en">Harper apologizes for residential schools</div>
+    <p class="iv-tl-brief">Stephen Harper 代表加拿大政府對 Indian Residential Schools 倖存者正式道歉</p>
+    
+  </div>
+</div>
+<div class="iv-tl-event " data-era="modern">
+  <div class="iv-tl-marker" style="background:#5a9460"></div>
+  <div class="iv-tl-year">2015</div>
+  <div class="iv-tl-content">
+    <h3 class="iv-tl-title">TRC 真相與和解報告</h3>
+    <div class="iv-tl-en">TRC report</div>
+    <p class="iv-tl-brief">Truth and Reconciliation Commission 發表報告與 94 項行動呼籲</p>
+    <ul class='iv-tl-details'><li>揭露寄宿學校系統性暴力與文化滅絕</li></ul>
+  </div>
+</div>
+<div class="iv-tl-event iv-tl-star" data-era="modern">
+  <div class="iv-tl-marker" style="background:#5a9460"></div>
+  <div class="iv-tl-year">2021 ⭐</div>
+  <div class="iv-tl-content">
+    <h3 class="iv-tl-title">TRC Day 國定假日</h3>
+    <div class="iv-tl-en">TRC Day becomes national holiday</div>
+    <p class="iv-tl-brief">**National Day for Truth and Reconciliation（9/30）正式列為國定假日**</p>
+    <ul class='iv-tl-details'><li>**考試重點**：Truth and Reconciliation Day = 9 月 30 日</li><li>穿橘色衣（Orange Shirt Day）紀念寄宿學校受害者</li></ul>
+  </div>
+</div>
+</div>
+<script>
+(function() {
+  var buttons = document.querySelectorAll('.iv-era-btn');
+  var events = document.querySelectorAll('.iv-tl-event');
+  buttons.forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      buttons.forEach(function(b){ b.classList.remove('iv-active'); });
+      btn.classList.add('iv-active');
+      var era = btn.dataset.era;
+      events.forEach(function(ev) {
+        if (era === 'all' || ev.dataset.era === era) ev.classList.remove('iv-hidden');
+        else ev.classList.add('iv-hidden');
+      });
+    });
+  });
+})();
+</script></main>
 </div>
 <script>
 (function() {

@@ -479,10 +479,14 @@ def make_sidebar(current: str) -> str:
 
 INTERACTIVE_ITEMS = [
     ("index.html", "🎯 互動式入口"),
-    ("geography.html", "🗺️ 地圖：13 省領地"),
-    ("history.html", "📜 時間軸"),
-    ("government.html", "🏛️ 政府架構圖"),
-    ("symbols.html", "🍁 國家象徵圖鑑"),
+    ("history.html", "📜 04 歷史時間軸"),
+    ("modern.html", "🇨🇦 05 現代加拿大"),
+    ("government.html", "🏛️ 06 政府架構"),
+    ("elections.html", "🗳️ 07 聯邦選舉"),
+    ("justice.html", "⚖️ 08 司法系統"),
+    ("symbols.html", "🍁 09 國家象徵"),
+    ("economy.html", "💼 10 加拿大經濟"),
+    ("geography.html", "🗺️ 11 地圖與省份"),
 ]
 
 
@@ -1211,10 +1215,14 @@ def make_single_sidebar() -> str:
     quiz_items = [(f"day-{i:02d}", f"Day {i:02d}") for i in range(1, 15)]
     interactive_items = [
         ("index", "🎯 互動式入口"),
-        ("geography", "🗺️ 地圖"),
-        ("history", "📜 時間軸"),
-        ("government", "🏛️ 政府架構"),
-        ("symbols", "🍁 象徵圖鑑"),
+        ("history", "📜 04 歷史時間軸"),
+        ("modern", "🇨🇦 05 現代加拿大"),
+        ("government", "🏛️ 06 政府架構"),
+        ("elections", "🗳️ 07 聯邦選舉"),
+        ("justice", "⚖️ 08 司法系統"),
+        ("symbols", "🍁 09 國家象徵"),
+        ("economy", "💼 10 加拿大經濟"),
+        ("geography", "🗺️ 11 地圖"),
     ]
 
     parts = ['<nav class="sidebar">']
@@ -1274,10 +1282,14 @@ def build_single():
     # interactive
     iv_pages = [
         ("interactive/index.html", iv.build_interactive_index_body()),
-        ("interactive/geography.html", iv.build_geography_body()),
         ("interactive/history.html", iv.build_history_body()),
+        ("interactive/modern.html", iv.build_modern_body()),
         ("interactive/government.html", iv.build_government_body()),
+        ("interactive/elections.html", iv.build_elections_body()),
+        ("interactive/justice.html", iv.build_justice_body()),
         ("interactive/symbols.html", iv.build_symbols_body()),
+        ("interactive/economy.html", iv.build_economy_body()),
+        ("interactive/geography.html", iv.build_geography_body()),
     ]
     for rel, body in iv_pages:
         add_section(rel, body)
@@ -1357,10 +1369,14 @@ def build():
     # interactive modules
     interactive_pages = [
         ("interactive/index.html", "互動式入口", iv.build_interactive_index_body()),
-        ("interactive/geography.html", "互動地圖", iv.build_geography_body()),
         ("interactive/history.html", "歷史時間軸", iv.build_history_body()),
-        ("interactive/government.html", "政府架構圖", iv.build_government_body()),
-        ("interactive/symbols.html", "國家象徵圖鑑", iv.build_symbols_body()),
+        ("interactive/modern.html", "現代加拿大", iv.build_modern_body()),
+        ("interactive/government.html", "政府架構", iv.build_government_body()),
+        ("interactive/elections.html", "聯邦選舉", iv.build_elections_body()),
+        ("interactive/justice.html", "司法系統", iv.build_justice_body()),
+        ("interactive/symbols.html", "國家象徵", iv.build_symbols_body()),
+        ("interactive/economy.html", "加拿大經濟", iv.build_economy_body()),
+        ("interactive/geography.html", "省份地圖", iv.build_geography_body()),
     ]
     for rel, title, body in interactive_pages:
         # Interactive pages contain raw HTML (not markdown), so skip TTS-augmentation

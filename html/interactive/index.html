@@ -437,10 +437,14 @@ blockquote.speakable > .speak-btn,
 <a href="../daily-quiz/day-14.html">Day 14</a>
 <h2>互動式（圖解）</h2>
 <a href="../interactive/index.html" class="current">🎯 互動式入口</a>
-<a href="../interactive/geography.html">🗺️ 地圖：13 省領地</a>
-<a href="../interactive/history.html">📜 時間軸</a>
-<a href="../interactive/government.html">🏛️ 政府架構圖</a>
-<a href="../interactive/symbols.html">🍁 國家象徵圖鑑</a>
+<a href="../interactive/history.html">📜 04 歷史時間軸</a>
+<a href="../interactive/modern.html">🇨🇦 05 現代加拿大</a>
+<a href="../interactive/government.html">🏛️ 06 政府架構</a>
+<a href="../interactive/elections.html">🗳️ 07 聯邦選舉</a>
+<a href="../interactive/justice.html">⚖️ 08 司法系統</a>
+<a href="../interactive/symbols.html">🍁 09 國家象徵</a>
+<a href="../interactive/economy.html">💼 10 加拿大經濟</a>
+<a href="../interactive/geography.html">🗺️ 11 地圖與省份</a>
 </nav>
 <main>
 <style>
@@ -449,12 +453,11 @@ blockquote.speakable > .speak-btn,
   border-left: 4px solid var(--accent);
   padding: 22px 26px; border-radius: 10px; margin: 16px 0 28px;
 }
-.iv-hub-hero h1 { margin: 0 0 6px; font-size: 26px; }
+.iv-hub-hero h1 { margin: 0 0 6px; font-size: 26px; border: none; padding: 0; }
 .iv-hub-hero p { margin: 0; color: var(--muted); font-size: 15px; }
-
-.iv-hub-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; margin: 24px 0; }
+.iv-hub-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px; margin: 24px 0; }
 .iv-hub-card {
-  display: block; padding: 22px 24px; background: #fff;
+  display: block; padding: 18px 20px; background: #fff;
   border: 1px solid var(--line); border-radius: 12px;
   text-decoration: none; color: var(--ink);
   transition: border-color 0.15s, transform 0.15s, box-shadow 0.15s;
@@ -465,55 +468,70 @@ blockquote.speakable > .speak-btn,
   box-shadow: 0 4px 12px rgba(0,0,0,0.06);
   text-decoration: none;
 }
-.iv-hub-emoji { font-size: 36px; line-height: 1; display: block; margin-bottom: 10px; }
-.iv-hub-title { font-weight: 700; font-size: 18px; margin-bottom: 4px; }
+.iv-hub-emoji { font-size: 36px; line-height: 1; display: block; margin-bottom: 8px; }
+.iv-hub-chap { font-size: 11px; color: var(--accent); font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; font-family: -apple-system, system-ui, sans-serif; }
+.iv-hub-title { font-weight: 700; font-size: 17px; margin: 4px 0; }
 .iv-hub-desc { font-size: 13px; color: var(--muted); line-height: 1.5; }
-.iv-hub-status {
-  display: inline-block; margin-top: 10px; padding: 2px 8px;
-  border-radius: 4px; font-size: 11px; font-family: -apple-system, system-ui, sans-serif;
-  letter-spacing: 0.04em; text-transform: uppercase;
-}
-.iv-hub-status.ready { background: #e8f5e8; color: #2d7a2d; }
-.iv-hub-status.wip { background: #fff8e1; color: #b08400; }
 </style>
 
 <div class="iv-hub-hero">
   <h1>🎯 互動式學習中心</h1>
-  <p>把抽象的考試內容變成圖、地圖、流程——用視覺記憶取代死背。</p>
+  <p>把抽象的考試內容變成圖、地圖、時間軸、流程——用視覺記憶取代死背。對應教材 04~11 章。</p>
 </div>
 
 <div class="iv-hub-grid">
-  <a href="geography.html" class="iv-hub-card">
-    <span class="iv-hub-emoji">🗺️</span>
-    <div class="iv-hub-title">地圖：13 省領地</div>
-    <div class="iv-hub-desc">點省份看首府、省長、產業；Ontario 重點加大版面（你考試會被問）。</div>
-    <span class="iv-hub-status ready">已完成</span>
-  </a>
-
   <a href="history.html" class="iv-hub-card">
     <span class="iv-hub-emoji">📜</span>
+    <div class="iv-hub-chap">04 章</div>
     <div class="iv-hub-title">歷史時間軸</div>
-    <div class="iv-hub-desc">1497 Cabot → 2021 TRC Day，按時代色標分區、每個事件點開有解說。</div>
-    <span class="iv-hub-status wip">製作中</span>
+    <div class="iv-hub-desc">1497 → 2021，41 事件，5 時代色標、可篩選</div>
   </a>
-
+  <a href="modern.html" class="iv-hub-card">
+    <span class="iv-hub-emoji">🇨🇦</span>
+    <div class="iv-hub-chap">05 章</div>
+    <div class="iv-hub-title">現代加拿大</div>
+    <div class="iv-hub-desc">14 位總理畫廊 + 11 件現代里程碑</div>
+  </a>
   <a href="government.html" class="iv-hub-card">
     <span class="iv-hub-emoji">🏛️</span>
+    <div class="iv-hub-chap">06 章</div>
     <div class="iv-hub-title">政府架構圖</div>
-    <div class="iv-hub-desc">3 張流程圖：三級政府、國會三部分、法案三讀流程。</div>
-    <span class="iv-hub-status wip">製作中</span>
+    <div class="iv-hub-desc">3 張圖：三級政府、國會三部分、法案 7 步驟</div>
   </a>
-
+  <a href="elections.html" class="iv-hub-card">
+    <span class="iv-hub-emoji">🗳️</span>
+    <div class="iv-hub-chap">07 章</div>
+    <div class="iv-hub-title">聯邦選舉</div>
+    <div class="iv-hub-desc">5 大政黨卡 + 投票流程 + 5 必考重點</div>
+  </a>
+  <a href="justice.html" class="iv-hub-card">
+    <span class="iv-hub-emoji">⚖️</span>
+    <div class="iv-hub-chap">08 章</div>
+    <div class="iv-hub-title">司法系統</div>
+    <div class="iv-hub-desc">5 原則 + 4 級法院金字塔 + RCMP</div>
+  </a>
   <a href="symbols.html" class="iv-hub-card">
     <span class="iv-hub-emoji">🍁</span>
+    <div class="iv-hub-chap">09 章</div>
     <div class="iv-hub-title">國家象徵圖鑑</div>
-    <div class="iv-hub-desc">國旗、楓葉、河狸、鈔票人物、硬幣動物——全部視覺整理。</div>
-    <span class="iv-hub-status wip">製作中</span>
+    <div class="iv-hub-desc">10 象徵 + 鈔票人物 + 硬幣動物 + 12 假日</div>
+  </a>
+  <a href="economy.html" class="iv-hub-card">
+    <span class="iv-hub-emoji">💼</span>
+    <div class="iv-hub-chap">10 章</div>
+    <div class="iv-hub-title">加拿大經濟</div>
+    <div class="iv-hub-desc">三大產業圓餅圖 + 5 必考經濟事實</div>
+  </a>
+  <a href="geography.html" class="iv-hub-card">
+    <span class="iv-hub-emoji">🗺️</span>
+    <div class="iv-hub-chap">11 章</div>
+    <div class="iv-hub-title">地圖與省份</div>
+    <div class="iv-hub-desc">13 省領地互動地圖 + Ontario 重點</div>
   </a>
 </div>
 
 <p style="color: var(--muted); font-size: 14px;">
-  進度條 ✓：覺得地圖頁好用嗎？告訴 AI「下一個做 [時間軸 / 政府架構 / 國家象徵]」就會展開。
+  💡 學習建議：先看互動式抓住整體結構（圖／時間軸／流程），再回中英對照精讀文字、daily-quiz 驗收。
 </p>
 </main>
 </div>
