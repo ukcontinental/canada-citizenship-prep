@@ -17,6 +17,8 @@ from pathlib import Path
 
 import markdown as md
 
+import interactive_content as iv
+
 ROOT = Path(__file__).parent
 OUT = ROOT / "html"
 
@@ -466,7 +468,22 @@ def make_sidebar(current: str) -> str:
         cls = ' class="current"' if current == key else ""
         parts.append(f'<a href="{up}daily-quiz/{fn}"{cls}>{label}</a>')
 
+    parts.append('<h2>互動式（圖解）</h2>')
+    for fn, label in INTERACTIVE_ITEMS:
+        key = f"interactive/{fn}"
+        cls = ' class="current"' if current == key else ""
+        parts.append(f'<a href="{up}interactive/{fn}"{cls}>{label}</a>')
+
     return '<nav class="sidebar">\n' + "\n".join(parts) + "\n</nav>"
+
+
+INTERACTIVE_ITEMS = [
+    ("index.html", "🎯 互動式入口"),
+    ("geography.html", "🗺️ 地圖：13 省領地"),
+    ("history.html", "📜 時間軸"),
+    ("government.html", "🏛️ 政府架構圖"),
+    ("symbols.html", "🍁 國家象徵圖鑑"),
+]
 
 
 SPEAK_JS = r"""
@@ -1192,6 +1209,13 @@ def make_single_sidebar() -> str:
         ("12-study-questions", "12 · 官方練習題"),
     ]
     quiz_items = [(f"day-{i:02d}", f"Day {i:02d}") for i in range(1, 15)]
+    interactive_items = [
+        ("index", "🎯 互動式入口"),
+        ("geography", "🗺️ 地圖"),
+        ("history", "📜 時間軸"),
+        ("government", "🏛️ 政府架構"),
+        ("symbols", "🍁 象徵圖鑑"),
+    ]
 
     parts = ['<nav class="sidebar">']
     parts.append('<a href="#home" class="home">加拿大公民考試</a>')
@@ -1203,6 +1227,9 @@ def make_single_sidebar() -> str:
     parts.append('<h2>每日驗收（14 天）</h2>')
     for slug, label in quiz_items:
         parts.append(f'<a href="#daily-quiz-{slug}">{label}</a>')
+    parts.append('<h2>互動式（圖解）</h2>')
+    for slug, label in interactive_items:
+        parts.append(f'<a href="#interactive-{slug}">{label}</a>')
     parts.append('</nav>')
     return "\n".join(parts)
 
@@ -1243,6 +1270,17 @@ def build_single():
     # practice
     for md_file in sorted((ROOT / "practice").glob("*.md")):
         add_section(f"practice/{md_file.stem}.html", render_plain(md_file))
+
+    # interactive
+    iv_pages = [
+        ("interactive/index.html", iv.build_interactive_index_body()),
+        ("interactive/geography.html", iv.build_geography_body()),
+        ("interactive/history.html", iv.build_history_body()),
+        ("interactive/government.html", iv.build_government_body()),
+        ("interactive/symbols.html", iv.build_symbols_body()),
+    ]
+    for rel, body in iv_pages:
+        add_section(rel, body)
 
     body_html = "\n".join(sections)
     sidebar = make_single_sidebar()
@@ -1286,6 +1324,7 @@ def build():
     (OUT / "daily-quiz").mkdir()
     (OUT / "curriculum").mkdir()
     (OUT / "practice").mkdir()
+    (OUT / "interactive").mkdir()
 
     def write(rel: str, title: str, body: str):
         body = add_speak_to_english_blockquotes(body)
@@ -1314,6 +1353,19 @@ def build():
 
     # index
     write("index.html", "學習中心", build_index_body())
+
+    # interactive modules
+    interactive_pages = [
+        ("interactive/index.html", "互動式入口", iv.build_interactive_index_body()),
+        ("interactive/geography.html", "互動地圖", iv.build_geography_body()),
+        ("interactive/history.html", "歷史時間軸", iv.build_history_body()),
+        ("interactive/government.html", "政府架構圖", iv.build_government_body()),
+        ("interactive/symbols.html", "國家象徵圖鑑", iv.build_symbols_body()),
+    ]
+    for rel, title, body in interactive_pages:
+        # Interactive pages contain raw HTML (not markdown), so skip TTS-augmentation
+        # and only rewrite md links (which there aren't any).
+        (OUT / rel).write_text(wrap_page(title, body, rel), encoding="utf-8")
 
     # single-file build (for iOS Files App preview, AirDrop, etc.)
     build_single()
