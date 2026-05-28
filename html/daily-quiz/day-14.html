@@ -1,0 +1,1040 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="加拿大公民考">
+<meta name="theme-color" content="#c8102e">
+<title>Day 14：期末模擬考（仿真考試 + 綜合大考） · 加拿大公民考試</title>
+<style>
+:root {
+  --bg: #faf8f4;
+  --panel: #ffffff;
+  --ink: #1f2328;
+  --muted: #5d646d;
+  --line: #e7e2d6;
+  --accent: #c8102e;        /* maple red */
+  --accent-soft: #fbe9ec;
+  --en-bg: #f3efe6;
+  --en-ink: #2b2620;
+  --zh-bg: #ffffff;
+  --quote: #8a6d3b;
+  --max: 1180px;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: "Source Serif 4","Source Serif Pro","Noto Serif TC","Noto Serif CJK TC","PingFang TC","Songti TC", Georgia, serif;
+  font-size: 17px;
+  line-height: 1.75;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+.layout {
+  display: grid;
+  grid-template-columns: 240px minmax(0, 1fr);
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 0 24px;
+  gap: 36px;
+}
+nav.sidebar {
+  position: sticky;
+  top: 0;
+  align-self: start;
+  height: 100vh;
+  overflow-y: auto;
+  padding: 28px 0 40px;
+  border-right: 1px solid var(--line);
+  font-family: -apple-system, "Helvetica Neue", "PingFang TC", system-ui, sans-serif;
+  font-size: 14px;
+  line-height: 1.45;
+}
+nav.sidebar h1 {
+  font-family: inherit;
+  font-size: 14px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin: 0 0 10px;
+}
+nav.sidebar h2 {
+  font-family: inherit;
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin: 22px 0 6px;
+  font-weight: 600;
+}
+nav.sidebar a {
+  display: block;
+  color: var(--ink);
+  text-decoration: none;
+  padding: 4px 10px 4px 0;
+  border-radius: 4px;
+}
+nav.sidebar a:hover { color: var(--accent); }
+nav.sidebar a.current {
+  color: var(--accent);
+  font-weight: 600;
+}
+nav.sidebar .home {
+  display: inline-block;
+  font-weight: 700;
+  font-size: 18px;
+  color: var(--ink);
+  text-decoration: none;
+  margin-bottom: 14px;
+}
+nav.sidebar .home::before { content: "🍁 "; }
+main {
+  padding: 36px 0 80px;
+  min-width: 0;
+}
+main h1, main h2, main h3, main h4 {
+  font-family: -apple-system, "Helvetica Neue", "PingFang TC", system-ui, sans-serif;
+  line-height: 1.3;
+  color: var(--ink);
+}
+main h1 {
+  font-size: 28px;
+  margin: 0 0 8px;
+  letter-spacing: -0.01em;
+}
+main > p:first-of-type {
+  color: var(--muted);
+  margin-top: 4px;
+}
+main h2 {
+  font-size: 21px;
+  margin: 40px 0 12px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid var(--line);
+}
+main h3 { font-size: 18px; margin: 28px 0 8px; }
+main h4 { font-size: 16px; margin: 22px 0 6px; color: var(--muted); }
+main p { margin: 0 0 12px; }
+main ul, main ol { margin: 0 0 14px; padding-left: 1.4em; }
+main li { margin: 4px 0; }
+main hr {
+  border: none;
+  border-top: 1px solid var(--line);
+  margin: 32px 0;
+}
+main a { color: var(--accent); text-decoration: none; }
+main a:hover { text-decoration: underline; }
+main code {
+  font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.9em;
+  background: #f3efe6;
+  padding: 1px 5px;
+  border-radius: 4px;
+}
+main blockquote {
+  margin: 14px 0;
+  padding: 12px 18px;
+  background: var(--accent-soft);
+  border-left: 3px solid var(--accent);
+  color: var(--ink);
+  border-radius: 0 6px 6px 0;
+}
+main blockquote p:last-child { margin-bottom: 0; }
+main table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 14px 0 22px;
+  font-size: 15px;
+}
+main th, main td {
+  text-align: left;
+  padding: 8px 12px;
+  border-bottom: 1px solid var(--line);
+  vertical-align: top;
+}
+main th {
+  background: #f3efe6;
+  font-family: -apple-system, "Helvetica Neue", "PingFang TC", system-ui, sans-serif;
+  font-weight: 600;
+}
+
+/* --- bilingual pairing --- */
+.bilingual {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  margin: 14px 0;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  overflow: hidden;
+  background: var(--zh-bg);
+}
+.bilingual .en, .bilingual .zh {
+  padding: 16px 20px;
+}
+.bilingual .en {
+  background: var(--en-bg);
+  color: var(--en-ink);
+  font-family: "Source Serif 4","Source Serif Pro", Georgia, serif;
+  font-style: normal;
+  border-right: 1px solid var(--line);
+}
+.bilingual .en p, .bilingual .zh p { margin: 0 0 8px; }
+.bilingual .en p:last-child, .bilingual .zh p:last-child { margin-bottom: 0; }
+.bilingual .en ul, .bilingual .en ol,
+.bilingual .zh ul, .bilingual .zh ol {
+  margin: 0 0 6px;
+  padding-left: 1.3em;
+}
+.bilingual .en em { font-style: italic; }
+.bilingual .label {
+  display: inline-block;
+  font-family: -apple-system, "Helvetica Neue", system-ui, sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 6px;
+  font-weight: 600;
+}
+
+/* --- callouts (⚠️ blocks) --- */
+.callout {
+  margin: 18px 0;
+  padding: 14px 18px;
+  background: #fff8e1;
+  border-left: 4px solid #f0a500;
+  border-radius: 0 6px 6px 0;
+}
+.callout p { margin: 0 0 6px; }
+.callout p:last-child { margin: 0; }
+
+/* --- collapsible answers --- */
+details.answers {
+  margin: 22px 0;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 0;
+  overflow: hidden;
+}
+details.answers > summary {
+  cursor: pointer;
+  padding: 14px 18px;
+  font-family: -apple-system, "Helvetica Neue", "PingFang TC", system-ui, sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  background: #f3efe6;
+  border-bottom: 1px solid transparent;
+  user-select: none;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+details.answers > summary::-webkit-details-marker { display: none; }
+details.answers > summary::after {
+  content: "▸";
+  color: var(--muted);
+  transition: transform 0.18s ease;
+  font-size: 14px;
+}
+details.answers[open] > summary {
+  border-bottom-color: var(--line);
+}
+details.answers[open] > summary::after { transform: rotate(90deg); }
+details.answers .answers-body { padding: 14px 22px 6px; }
+details.answers .answers-body ol { margin: 0; padding-left: 1.4em; }
+details.answers .answers-body li { margin: 8px 0; }
+
+/* --- dashboard cards on index --- */
+.dash {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+  margin: 24px 0;
+}
+.dash a {
+  display: block;
+  padding: 18px 20px;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  color: var(--ink);
+  text-decoration: none;
+  transition: border-color 0.15s, transform 0.15s;
+}
+.dash a:hover {
+  border-color: var(--accent);
+  transform: translateY(-1px);
+}
+.dash a .kicker {
+  font-family: -apple-system, system-ui, sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+  display: block;
+  margin-bottom: 6px;
+}
+.dash a .title {
+  font-weight: 600;
+  font-size: 17px;
+  line-height: 1.35;
+}
+.dash a .meta {
+  display: block;
+  margin-top: 8px;
+  font-size: 13px;
+  color: var(--muted);
+  font-family: -apple-system, system-ui, sans-serif;
+}
+
+/* --- speak (TTS) button --- */
+.speak-btn {
+  appearance: none;
+  background: rgba(255,255,255,0.85);
+  border: 1px solid var(--line);
+  color: var(--muted);
+  cursor: pointer;
+  padding: 4px 9px;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 12px;
+  font-family: -apple-system, "Helvetica Neue", system-ui, sans-serif;
+  transition: all 0.15s;
+  -webkit-tap-highlight-color: transparent;
+  min-width: 64px;
+  justify-content: center;
+}
+.speak-btn .speak-icon { display: inline-flex; }
+.speak-btn svg { display: block; }
+.speak-btn:hover { color: var(--accent); border-color: var(--accent); }
+.speak-btn:active { transform: scale(0.96); }
+.speak-btn.speaking {
+  background: var(--accent);
+  color: #fff;
+  border-color: var(--accent);
+  animation: speak-pulse 1.4s ease-in-out infinite;
+}
+.speak-btn.paused {
+  background: #f0a500;
+  color: #fff;
+  border-color: #f0a500;
+  animation: none;
+}
+@keyframes speak-pulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(200,16,46,0.5); }
+  50%      { box-shadow: 0 0 0 6px rgba(200,16,46,0); }
+}
+
+/* --- per-word highlight during TTS --- */
+.w {
+  border-radius: 3px;
+  padding: 0 1px;
+  transition: color 0.08s ease, background 0.08s ease;
+}
+.w.current {
+  color: var(--accent);
+  background: rgba(200, 16, 46, 0.14);
+  font-weight: 600;
+}
+.bilingual .en { position: relative; }
+.bilingual .en > .speak-btn {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+}
+.bilingual .en > .label + .speak-btn { /* fallback positioning if absolute fails */ }
+blockquote.speakable, .callout.speakable {
+  position: relative;
+  padding-right: 60px;
+}
+blockquote.speakable > .speak-btn,
+.callout.speakable > .speak-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: #fff;
+}
+
+/* --- mobile --- */
+@media (max-width: 900px) {
+  .layout { grid-template-columns: 1fr; padding: 0 16px; gap: 0; }
+  nav.sidebar {
+    position: static;
+    height: auto;
+    border-right: none;
+    border-bottom: 1px solid var(--line);
+    padding: 18px 0;
+  }
+  .bilingual { grid-template-columns: 1fr; }
+  .bilingual .en { border-right: none; border-bottom: 1px solid var(--line); }
+}
+
+/* --- print --- */
+@media print {
+  nav.sidebar { display: none; }
+  .layout { display: block; padding: 0; }
+  main { padding: 0; }
+  details.answers { border: 1px solid #999; }
+  details.answers > summary { display: none; }
+  details.answers > .answers-body { display: block !important; }
+  .bilingual { break-inside: avoid; }
+}
+</style>
+</head>
+<body>
+<div class="layout">
+<nav class="sidebar">
+<a href="../index.html" class="home">加拿大公民考試</a>
+<a href="../curriculum/14-day-plan.html">📅 14 天計畫表</a>
+<a href="../practice/question-bank.html">📝 220 題題庫</a>
+<h2>中英對照（13 章）</h2>
+<a href="../bilingual/00-intro-oath.html">00 · 前言＋誓詞</a>
+<a href="../bilingual/01-applying-citizenship.html">01 · 申請入籍</a>
+<a href="../bilingual/02-rights-responsibilities.html">02 · 權利與義務</a>
+<a href="../bilingual/03-who-we-are.html">03 · 我們是誰</a>
+<a href="../bilingual/04-canadas-history.html">04 · 加拿大歷史</a>
+<a href="../bilingual/05-modern-canada.html">05 · 現代加拿大</a>
+<a href="../bilingual/06-how-canadians-govern.html">06 · 政府架構</a>
+<a href="../bilingual/07-federal-elections.html">07 · 聯邦選舉</a>
+<a href="../bilingual/08-justice-system.html">08 · 司法系統</a>
+<a href="../bilingual/09-canadian-symbols.html">09 · 國家象徵</a>
+<a href="../bilingual/10-canadas-economy.html">10 · 加拿大經濟</a>
+<a href="../bilingual/11-canadas-regions.html">11 · 五大區域</a>
+<a href="../bilingual/12-study-questions.html">12 · 官方練習題</a>
+<h2>每日驗收（14 天）</h2>
+<a href="../daily-quiz/day-01.html">Day 01</a>
+<a href="../daily-quiz/day-02.html">Day 02</a>
+<a href="../daily-quiz/day-03.html">Day 03</a>
+<a href="../daily-quiz/day-04.html">Day 04</a>
+<a href="../daily-quiz/day-05.html">Day 05</a>
+<a href="../daily-quiz/day-06.html">Day 06</a>
+<a href="../daily-quiz/day-07.html">Day 07</a>
+<a href="../daily-quiz/day-08.html">Day 08</a>
+<a href="../daily-quiz/day-09.html">Day 09</a>
+<a href="../daily-quiz/day-10.html">Day 10</a>
+<a href="../daily-quiz/day-11.html">Day 11</a>
+<a href="../daily-quiz/day-12.html">Day 12</a>
+<a href="../daily-quiz/day-13.html">Day 13</a>
+<a href="../daily-quiz/day-14.html" class="current">Day 14</a>
+</nav>
+<main><h1>Day 14：期末模擬考（仿真考試 + 綜合大考）</h1>
+<h2>⚠️ 考試規則（兩段）</h2>
+<h3>第一段：真實考試模擬（必做）</h3>
+<ul>
+<li>⏰ <strong>30 分鐘</strong></li>
+<li>📋 <strong>20 題</strong>（聯邦 18 + Ontario 省題 2）</li>
+<li>📵 <strong>不翻書、不查網、不問人</strong></li>
+<li>✅ <strong>通過：18/20（90%）</strong>——比真實考試的 75% 更嚴格，留安全邊際</li>
+</ul>
+<h3>第二段：綜合大考（拉高熟度）</h3>
+<ul>
+<li>⏰ <strong>60 分鐘</strong></li>
+<li>📋 <strong>40 題</strong>（涵蓋 Day 1–13 全範圍）</li>
+<li>✅ <strong>通過：33/40（82%）</strong></li>
+</ul>
+<p>兩段都過 → 你已具備上考場實力。</p>
+<hr>
+<h1>第一段：真實考試模擬（20 題）</h1>
+<ol>
+<li>加拿大入籍誓詞中效忠的國王是？</li>
+<li>加拿大的政體可用哪三個詞描述？（<strong>一句答完</strong>）</li>
+<li>加拿大三大開國民族是哪三類？</li>
+<li>加拿大三類原住民是？</li>
+<li>1867 加拿大邦聯時的 4 個建國省份？</li>
+<li>加拿大首任總理是誰？</li>
+<li>1812 戰爭中被稱為「Saviour of Upper Canada」的英軍將領？</li>
+<li>1917 哪一場戰役被視為加拿大民族認同的誕生？</li>
+<li>加拿大現行國旗哪一年啟用？</li>
+<li>加拿大國徽箴言中文意思？</li>
+<li>加拿大國會 Parliament 由哪 3 部分組成？</li>
+<li>加拿大眾議院總共多少席？</li>
+<li>加拿大 5 大主要聯邦政黨任寫 4 個。</li>
+<li>加拿大最高法院共有多少位法官？</li>
+<li>加拿大 6 大公民責任任寫 3 條。</li>
+<li>加拿大最大貿易夥伴是哪一國？</li>
+<li>加拿大屬於 G7 還是 G20？</li>
+<li>11 月 11 日是什麼節日？</li>
+<li><strong>Ontario 現任 Premier 是誰？哪一黨？</strong></li>
+<li><strong>Ontario 的首府是哪個城市？省議員稱呼縮寫？</strong></li>
+</ol>
+<hr>
+<h1>第二段：綜合大考（40 題）</h1>
+<h3>Part A — 公民、權利、原住民、語言（8 題）</h3>
+<ol start="21">
+<li>憲章保障的 4 大基本自由是？</li>
+<li>加拿大兩種官方語言是？哪一年通過官方語言法？</li>
+<li>多元文化主義成為加拿大官方政策是哪一年？哪位總理推動？</li>
+<li>「Habeas Corpus」是什麼權利？</li>
+<li>2008 年加拿大政府對哪一群體道歉？</li>
+<li>1988 年加拿大政府對哪一群體道歉？</li>
+<li>加拿大何時對華工人頭稅道歉？哪位總理？</li>
+<li>配偶虐待、強迫婚姻在加拿大屬於民事或刑事？</li>
+</ol>
+<h3>Part B — 歷史（8 題）</h3>
+<ol start="29">
+<li>「Canada」一詞來自哪個原住民語言？意思？</li>
+<li>1670 年由英王 Charles II 授權成立的最大殖民貿易公司是？</li>
+<li>1759 亞伯拉罕平原戰役的英法兩位將軍是？結果？</li>
+<li>1774《Quebec Act》保留法裔哪 3 項權利？</li>
+<li>加拿大邦聯日期？建國 4 省？</li>
+<li>加拿大首位法裔總理是誰？</li>
+<li>加拿大太平洋鐵路 CPR 哪一年完工？對 BC 有什麼意義？</li>
+<li>1949 加入加拿大成為第 10 省的是哪一省？</li>
+</ol>
+<h3>Part C — 婦女、原住民投票權（4 題）</h3>
+<ol start="37">
+<li>第一個給予婦女省級投票權的省份與年份？</li>
+<li>多數加拿大白人婦女取得聯邦投票權哪一年？</li>
+<li>Quebec 婦女取得省級投票權哪一年？</li>
+<li>加拿大原住民不放棄條約身分即可投票是哪一年？</li>
+</ol>
+<h3>Part D — 政府、選舉、司法（10 題）</h3>
+<ol start="41">
+<li>加拿大現任總督是誰？她的歷史意義？</li>
+<li>加拿大參議員如何產生？任期至幾歲？</li>
+<li>一個法案立法流程的最後一步叫什麼？由誰簽署？</li>
+<li>加拿大「Majority Government」與「Minority Government」差別？</li>
+<li>哪一個政黨只在 Quebec 競選？</li>
+<li>「Official Opposition」中文與主要職責？</li>
+<li>加拿大 3 層警力是？</li>
+<li>加拿大最高法院有幾位法官？由誰任命？</li>
+<li>重大刑案陪審團人數？</li>
+<li>加拿大司法系統 3 大核心原則任寫 3 個。</li>
+</ol>
+<h3>Part E — 象徵、節日、貨幣、經濟、地理（10 題）</h3>
+<ol start="51">
+<li>加拿大兩個官方國民運動是？</li>
+<li>國歌哪一年正式被定為加拿大官方國歌？皇室國歌是？</li>
+<li>紀念寄宿學校受害者的「Truth and Reconciliation Day」是哪一天？</li>
+<li>$10 鈔票上的人物是誰？她的歷史意義？</li>
+<li>Loonie 是多少錢？上面是什麼動物？</li>
+<li>加拿大三大產業類別是？服務業占就業比例？</li>
+<li>2020 取代 NAFTA 的協定簡稱？</li>
+<li>加拿大五大地理區是？</li>
+<li>加拿大首都是哪個城市？位於哪個省？</li>
+<li>Ontario、Quebec、Saskatchewan、Alberta 四省的首府分別是？</li>
+</ol>
+<hr>
+<h1>答案與計分</h1>
+<h2>第一段答案（20 題）</h2>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>答案</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>King Charles the Third</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Constitutional monarchy, parliamentary democracy, federal state</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Aboriginal、French、British</td>
+</tr>
+<tr>
+<td>4</td>
+<td>First Nations、Inuit、Métis</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Ontario、Quebec、Nova Scotia、New Brunswick</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Sir John A. Macdonald</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Sir Isaac Brock</td>
+</tr>
+<tr>
+<td>8</td>
+<td>Vimy Ridge 維米嶺戰役 1917</td>
+</tr>
+<tr>
+<td>9</td>
+<td>1965</td>
+</tr>
+<tr>
+<td>10</td>
+<td>從海到海 From sea to sea</td>
+</tr>
+<tr>
+<td>11</td>
+<td>Sovereign、Senate、House of Commons</td>
+</tr>
+<tr>
+<td>12</td>
+<td>338 席</td>
+</tr>
+<tr>
+<td>13</td>
+<td>Liberal、Conservative、NDP、Bloc Québécois、Green（任 4）</td>
+</tr>
+<tr>
+<td>14</td>
+<td>9 位</td>
+</tr>
+<tr>
+<td>15</td>
+<td>守法、照顧家庭、陪審、投票、協助社區、保護加拿大遺產與環境（任 3）</td>
+</tr>
+<tr>
+<td>16</td>
+<td>美國 USA</td>
+</tr>
+<tr>
+<td>17</td>
+<td>兩者都是（G7 和 G20）</td>
+</tr>
+<tr>
+<td>18</td>
+<td>Remembrance Day 國殤紀念日</td>
+</tr>
+<tr>
+<td>19</td>
+<td>Doug Ford；Progressive Conservative Party of Ontario（PC）</td>
+</tr>
+<tr>
+<td>20</td>
+<td>Toronto；MPP（Member of Provincial Parliament）</td>
+</tr>
+</tbody>
+</table>
+<h3>第一段計分</h3>
+<ul>
+<li><strong>20/20</strong>：完美 — 上考場</li>
+<li><strong>18–19/20</strong>：通過 — 上考場前再溫習答錯題即可</li>
+<li><strong>15–17/20</strong>：勉強過真實考試門檻，但安全邊際不足，<strong>再做一次第一段</strong></li>
+<li><strong>&lt; 15</strong>：<strong>不過，請延後 1 週重讀整套</strong></li>
+</ul>
+<h2>第二段答案（40 題）</h2>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>答案</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>21</td>
+<td>良知/宗教、思想/言論（含新聞）、和平集會、結社</td>
+</tr>
+<tr>
+<td>22</td>
+<td>English、French；1969</td>
+</tr>
+<tr>
+<td>23</td>
+<td>1971；Pierre Elliott Trudeau</td>
+</tr>
+<tr>
+<td>24</td>
+<td>被拘留者可挑戰拘留合法性</td>
+</tr>
+<tr>
+<td>25</td>
+<td>寄宿學校的原住民</td>
+</tr>
+<tr>
+<td>26</td>
+<td>日裔加拿大人</td>
+</tr>
+<tr>
+<td>27</td>
+<td>2006；Stephen Harper</td>
+</tr>
+<tr>
+<td>28</td>
+<td>刑事</td>
+</tr>
+<tr>
+<td>29</td>
+<td>Iroquoian；村莊 village</td>
+</tr>
+<tr>
+<td>30</td>
+<td>Hudson&rsquo;s Bay Company 哈德遜灣公司</td>
+</tr>
+<tr>
+<td>31</td>
+<td>英 Wolfe、法 Montcalm；雙雙陣亡，英勝</td>
+</tr>
+<tr>
+<td>32</td>
+<td>法語、天主教、法國民法</td>
+</tr>
+<tr>
+<td>33</td>
+<td>1867/07/01；Ontario、Quebec、NS、NB</td>
+</tr>
+<tr>
+<td>34</td>
+<td>Sir Wilfrid Laurier</td>
+</tr>
+<tr>
+<td>35</td>
+<td>1885；CPR 是 BC 加入邦聯的條件，連通東西</td>
+</tr>
+<tr>
+<td>36</td>
+<td>Newfoundland and Labrador</td>
+</tr>
+<tr>
+<td>37</td>
+<td>Manitoba 1916</td>
+</tr>
+<tr>
+<td>38</td>
+<td>1918</td>
+</tr>
+<tr>
+<td>39</td>
+<td>1940</td>
+</tr>
+<tr>
+<td>40</td>
+<td>1960</td>
+</tr>
+<tr>
+<td>41</td>
+<td>Mary Simon；首位原住民總督</td>
+</tr>
+<tr>
+<td>42</td>
+<td>總理提名、總督任命；75 歲退休</td>
+</tr>
+<tr>
+<td>43</td>
+<td>Royal Assent 御准；由總督簽署</td>
+</tr>
+<tr>
+<td>44</td>
+<td>多數政府過半席次；少數政府未過半，須與他黨合作</td>
+</tr>
+<tr>
+<td>45</td>
+<td>Bloc Québécois</td>
+</tr>
+<tr>
+<td>46</td>
+<td>官方反對黨；讓政府向人民負責</td>
+</tr>
+<tr>
+<td>47</td>
+<td>RCMP（聯邦）、省警、市警</td>
+</tr>
+<tr>
+<td>48</td>
+<td>9 位；聯邦政府任命</td>
+</tr>
+<tr>
+<td>49</td>
+<td>12 人</td>
+</tr>
+<tr>
+<td>50</td>
+<td>無罪推定、公正審判、沉默權、快速審判、獨立司法（任 3）</td>
+</tr>
+<tr>
+<td>51</td>
+<td>Hockey（冬）、Lacrosse（夏）</td>
+</tr>
+<tr>
+<td>52</td>
+<td>1980；God Save the King</td>
+</tr>
+<tr>
+<td>53</td>
+<td>9 月 30 日</td>
+</tr>
+<tr>
+<td>54</td>
+<td>Viola Desmond；黑人民權英雄</td>
+</tr>
+<tr>
+<td>55</td>
+<td>$1；Loon 潛鳥</td>
+</tr>
+<tr>
+<td>56</td>
+<td>服務、製造、自然資源；服務業 ~75%</td>
+</tr>
+<tr>
+<td>57</td>
+<td>USMCA / CUSMA</td>
+</tr>
+<tr>
+<td>58</td>
+<td>Atlantic、Central、Prairie、West Coast、Northern Territories</td>
+</tr>
+<tr>
+<td>59</td>
+<td>Ottawa；Ontario</td>
+</tr>
+<tr>
+<td>60</td>
+<td>Toronto、Quebec City、Regina、Edmonton</td>
+</tr>
+</tbody>
+</table>
+<h3>第二段計分</h3>
+<ul>
+<li><strong>38–40 / 40</strong>：卓越</li>
+<li><strong>33–37 / 40</strong>：通過，可上考場</li>
+<li><strong>27–32 / 40</strong>：基本知道，<strong>再花 3 天溫習錯題</strong></li>
+<li><strong>&lt; 27 / 40</strong>：建議 <strong>延後考試 1–2 週</strong>，重做整套課程</li>
+</ul>
+<hr>
+<h2>終極檢核（上考場前 24 小時）</h2>
+<p>考試前一天請執行：</p>
+<ul>
+<li>[ ] <strong>背 Oath of Citizenship 整段英文（一字不漏）</strong></li>
+<li>[ ] <strong>背 O Canada 前四句</strong></li>
+<li>[ ] <strong>能說出 6 大公民責任</strong></li>
+<li>[ ] <strong>能說出 Ontario Premier / Lt. Governor 名字</strong></li>
+<li>[ ] <strong>能寫出 10 省 + 3 領地 + 全部首府</strong></li>
+<li>[ ] <strong>能寫出 5 大政黨</strong></li>
+<li>[ ] <strong>能寫出 1867 / 1885 / 1917 / 1918 / 1949 / 1969 / 1971 / 1982 / 2008 共 9 個年份</strong></li>
+<li>[ ] <strong>檢查身分證件、預約時間、考試地點</strong></li>
+</ul>
+<blockquote class="speakable"><button class="speak-btn" type="button" aria-label="朗讀英文" title="朗讀英文 / Read aloud" data-state="idle"><span class="speak-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 10v4h4l5 4V6L7 10H3zm12.5 2c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM13 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg></span><span class="speak-label">朗讀</span></button>
+<p><strong>All test questions are based on Discover Canada. 你準備的範圍就是全部。</strong></p>
+</blockquote>
+<p>加油！</p></main>
+</div>
+<script>
+(function() {
+  if (!('speechSynthesis' in window)) return;
+  var synth = window.speechSynthesis;
+  var voicesReady = false;
+
+  var ICON_SPEAKER = '<svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 10v4h4l5 4V6L7 10H3zm12.5 2c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM13 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg>';
+  var ICON_PAUSE = '<svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6 5h4v14H6zM14 5h4v14h-4z"/></svg>';
+  var ICON_PLAY = '<svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>';
+
+  // single global state — only one TTS session at a time
+  var state = {
+    btn: null, chunks: null, words: null, chunkIdx: 0, paused: false
+  };
+
+  function ensureVoices(cb) {
+    if (voicesReady) return cb();
+    var v = synth.getVoices();
+    if (v && v.length) { voicesReady = true; return cb(); }
+    synth.onvoiceschanged = function() { voicesReady = true; cb(); };
+    setTimeout(function(){ if (!voicesReady) { voicesReady = true; cb(); } }, 500);
+  }
+
+  function pickVoice() {
+    var voices = synth.getVoices();
+    function find(pred){ for (var i=0;i<voices.length;i++) if (pred(voices[i])) return voices[i]; return null; }
+    return find(function(v){return v.lang==='en-CA' && /Samantha|Karen|Tessa|Victoria|Allison|Siri/i.test(v.name);})
+        || find(function(v){return v.lang==='en-CA';})
+        || find(function(v){return v.lang==='en-US' && /Samantha|Karen|Allison|Ava|Siri/i.test(v.name);})
+        || find(function(v){return v.lang==='en-US';})
+        || find(function(v){return v.lang && v.lang.indexOf('en')===0;})
+        || null;
+  }
+
+  // Wrap each word in container in a <span class="w" data-idx="N"> for highlighting.
+  function wrapWords(container) {
+    if (container.dataset.wrapped === '1') return;
+    var walker = document.createTreeWalker(container, NodeFilter.SHOW_TEXT, null, false);
+    var nodes = [];
+    var n;
+    while ((n = walker.nextNode())) {
+      if (!n.parentElement) continue;
+      if (n.parentElement.closest('.speak-btn, .label')) continue;
+      if (!/\S/.test(n.nodeValue)) continue;
+      nodes.push(n);
+    }
+    var idx = 0;
+    nodes.forEach(function(tn) {
+      var text = tn.nodeValue;
+      var tokens = text.split(/(\s+)/);
+      var frag = document.createDocumentFragment();
+      tokens.forEach(function(tok) {
+        if (tok.length === 0) return;
+        if (/^\s+$/.test(tok)) {
+          frag.appendChild(document.createTextNode(tok));
+        } else {
+          var sp = document.createElement('span');
+          sp.className = 'w';
+          sp.setAttribute('data-idx', idx++);
+          sp.textContent = tok;
+          frag.appendChild(sp);
+        }
+      });
+      tn.parentNode.replaceChild(frag, tn);
+    });
+    container.dataset.wrapped = '1';
+  }
+
+  // Group words into chunks split on punctuation, with a pause duration after each chunk.
+  function buildChunks(words) {
+    var chunks = [];
+    var cur = { words: [] };
+    function commit(pauseMs) {
+      if (!cur.words.length) return;
+      cur.text = cur.words.map(function(w){ return w.text; }).join(' ');
+      cur.pauseAfterMs = pauseMs;
+      chunks.push(cur);
+      cur = { words: [] };
+    }
+    words.forEach(function(wEl, i) {
+      var text = wEl.textContent;
+      cur.words.push({ el: wEl, idx: i, text: text });
+      // sentence-ending punctuation → long pause
+      if (/[.!?]+["')\]]*$/.test(text) && text.length > 1) {
+        commit(420);
+      }
+      // semicolon / colon → medium pause
+      else if (/[;:]+["')\]]*$/.test(text)) {
+        commit(300);
+      }
+      // comma or em-dash → short pause
+      else if (/[,—–][")'\]]*$/.test(text)) {
+        commit(220);
+      }
+    });
+    commit(0);
+    return chunks;
+  }
+
+  function highlight(globalIdx) {
+    if (!state.words) return;
+    for (var i = 0; i < state.words.length; i++) {
+      if (i === globalIdx) state.words[i].classList.add('current');
+      else state.words[i].classList.remove('current');
+    }
+  }
+
+  function clearHighlight() {
+    if (!state.words) return;
+    state.words.forEach(function(w){ w.classList.remove('current'); });
+  }
+
+  function findWordAtChar(chunk, charIndex) {
+    var pos = 0;
+    for (var i = 0; i < chunk.words.length; i++) {
+      var len = chunk.words[i].text.length;
+      if (charIndex >= pos && charIndex < pos + len) return i;
+      pos += len + 1; // space
+    }
+    return -1;
+  }
+
+  function setBtnState(btn, s) {
+    if (!btn) return;
+    btn.classList.remove('speaking', 'paused');
+    if (s === 'speaking') btn.classList.add('speaking');
+    else if (s === 'paused') btn.classList.add('paused');
+    btn.setAttribute('data-state', s);
+    var icon = btn.querySelector('.speak-icon');
+    var label = btn.querySelector('.speak-label');
+    if (s === 'idle')     { if (icon) icon.innerHTML = ICON_SPEAKER; if (label) label.textContent = '朗讀'; }
+    else if (s === 'speaking') { if (icon) icon.innerHTML = ICON_PAUSE;   if (label) label.textContent = '暫停'; }
+    else if (s === 'paused')   { if (icon) icon.innerHTML = ICON_PLAY;    if (label) label.textContent = '繼續'; }
+  }
+
+  function stopAll() {
+    synth.cancel();
+    if (state.btn) setBtnState(state.btn, 'idle');
+    clearHighlight();
+    state.btn = null; state.chunks = null; state.words = null;
+    state.chunkIdx = 0; state.paused = false;
+  }
+
+  function speakFrom(chunkIdx) {
+    if (!state.chunks || chunkIdx >= state.chunks.length) { stopAll(); return; }
+    state.chunkIdx = chunkIdx;
+    var chunk = state.chunks[chunkIdx];
+    var u = new SpeechSynthesisUtterance(chunk.text);
+    u.lang = 'en-CA';
+    u.rate = 0.92;
+    u.pitch = 1.0;
+    var v = pickVoice();
+    if (v) u.voice = v;
+
+    u.onstart = function() {
+      if (chunk.words[0]) highlight(chunk.words[0].idx);
+    };
+    u.onboundary = function(e) {
+      if (e.name && e.name !== 'word') return;
+      var w = findWordAtChar(chunk, e.charIndex || 0);
+      if (w >= 0) highlight(chunk.words[w].idx);
+    };
+    u.onend = function() {
+      if (state.paused) return; // don't auto-advance while paused
+      var next = chunkIdx + 1;
+      if (next >= state.chunks.length) { stopAll(); return; }
+      setTimeout(function() {
+        if (!state.paused && state.chunks) speakFrom(next);
+      }, chunk.pauseAfterMs);
+    };
+    u.onerror = function() { stopAll(); };
+
+    synth.speak(u);
+  }
+
+  function start(container, btn) {
+    stopAll();
+    wrapWords(container);
+    var words = Array.prototype.slice.call(container.querySelectorAll('.w'));
+    if (!words.length) return;
+    state.btn = btn;
+    state.words = words;
+    state.chunks = buildChunks(words);
+    state.chunkIdx = 0;
+    state.paused = false;
+    setBtnState(btn, 'speaking');
+    speakFrom(0);
+  }
+
+  document.addEventListener('click', function(e) {
+    var btn = e.target.closest && e.target.closest('.speak-btn');
+    if (!btn) return;
+    e.preventDefault();
+    var s = btn.getAttribute('data-state') || 'idle';
+
+    if (s === 'speaking') {
+      // pause: cancel current utterance; chunkIdx stays so resume can restart this chunk
+      state.paused = true;
+      synth.cancel();
+      setBtnState(btn, 'paused');
+      return;
+    }
+    if (s === 'paused') {
+      // resume: continue from current chunk
+      state.paused = false;
+      setBtnState(btn, 'speaking');
+      speakFrom(state.chunkIdx);
+      return;
+    }
+    // idle → new speech
+    ensureVoices(function() { start(btn.parentElement, btn); });
+  });
+
+  window.addEventListener('hashchange', stopAll);
+  window.addEventListener('pagehide', stopAll);
+})();
+</script>
+</body>
+</html>

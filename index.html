@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>加拿大公民考試 · 學習中心</title>
+<style>
+  body { font-family: -apple-system, "PingFang TC", "Helvetica Neue", system-ui, sans-serif;
+         background: #faf8f4; color: #1f2328; padding: 60px 20px; text-align: center; }
+  a { color: #c8102e; }
+</style>
+</head>
+<body>
+<h1>🍁 加拿大公民考試</h1>
+<p>正在跳轉到學習頁面…</p>
+<p>如未自動跳轉，請點：
+  <a href="html/index.html">桌面版</a>
+  ·
+  <a href="html/study.html">手機版（單檔）</a>
+</p>
+<script>
+  // Route mobile users to the single-file version (works in any browser, mobile-friendly TOC).
+  // Desktop users get the multi-page version with sidebar navigation.
+  var ua = navigator.userAgent || '';
+  var isMobile = /iPhone|iPad|iPod|Android|Mobile/i.test(ua);
+  location.replace(isMobile ? 'html/study.html' : 'html/index.html');
+</script>
+<noscript>
+  <meta http-equiv="refresh" content="0;url=html/index.html">
+</noscript>
+</body>
+</html>

@@ -1,0 +1,853 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="加拿大公民考">
+<meta name="theme-color" content="#c8102e">
+<title>中英對照原文 / Bilingual Discover Canada · 加拿大公民考試</title>
+<style>
+:root {
+  --bg: #faf8f4;
+  --panel: #ffffff;
+  --ink: #1f2328;
+  --muted: #5d646d;
+  --line: #e7e2d6;
+  --accent: #c8102e;        /* maple red */
+  --accent-soft: #fbe9ec;
+  --en-bg: #f3efe6;
+  --en-ink: #2b2620;
+  --zh-bg: #ffffff;
+  --quote: #8a6d3b;
+  --max: 1180px;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: "Source Serif 4","Source Serif Pro","Noto Serif TC","Noto Serif CJK TC","PingFang TC","Songti TC", Georgia, serif;
+  font-size: 17px;
+  line-height: 1.75;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+.layout {
+  display: grid;
+  grid-template-columns: 240px minmax(0, 1fr);
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 0 24px;
+  gap: 36px;
+}
+nav.sidebar {
+  position: sticky;
+  top: 0;
+  align-self: start;
+  height: 100vh;
+  overflow-y: auto;
+  padding: 28px 0 40px;
+  border-right: 1px solid var(--line);
+  font-family: -apple-system, "Helvetica Neue", "PingFang TC", system-ui, sans-serif;
+  font-size: 14px;
+  line-height: 1.45;
+}
+nav.sidebar h1 {
+  font-family: inherit;
+  font-size: 14px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin: 0 0 10px;
+}
+nav.sidebar h2 {
+  font-family: inherit;
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin: 22px 0 6px;
+  font-weight: 600;
+}
+nav.sidebar a {
+  display: block;
+  color: var(--ink);
+  text-decoration: none;
+  padding: 4px 10px 4px 0;
+  border-radius: 4px;
+}
+nav.sidebar a:hover { color: var(--accent); }
+nav.sidebar a.current {
+  color: var(--accent);
+  font-weight: 600;
+}
+nav.sidebar .home {
+  display: inline-block;
+  font-weight: 700;
+  font-size: 18px;
+  color: var(--ink);
+  text-decoration: none;
+  margin-bottom: 14px;
+}
+nav.sidebar .home::before { content: "🍁 "; }
+main {
+  padding: 36px 0 80px;
+  min-width: 0;
+}
+main h1, main h2, main h3, main h4 {
+  font-family: -apple-system, "Helvetica Neue", "PingFang TC", system-ui, sans-serif;
+  line-height: 1.3;
+  color: var(--ink);
+}
+main h1 {
+  font-size: 28px;
+  margin: 0 0 8px;
+  letter-spacing: -0.01em;
+}
+main > p:first-of-type {
+  color: var(--muted);
+  margin-top: 4px;
+}
+main h2 {
+  font-size: 21px;
+  margin: 40px 0 12px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid var(--line);
+}
+main h3 { font-size: 18px; margin: 28px 0 8px; }
+main h4 { font-size: 16px; margin: 22px 0 6px; color: var(--muted); }
+main p { margin: 0 0 12px; }
+main ul, main ol { margin: 0 0 14px; padding-left: 1.4em; }
+main li { margin: 4px 0; }
+main hr {
+  border: none;
+  border-top: 1px solid var(--line);
+  margin: 32px 0;
+}
+main a { color: var(--accent); text-decoration: none; }
+main a:hover { text-decoration: underline; }
+main code {
+  font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.9em;
+  background: #f3efe6;
+  padding: 1px 5px;
+  border-radius: 4px;
+}
+main blockquote {
+  margin: 14px 0;
+  padding: 12px 18px;
+  background: var(--accent-soft);
+  border-left: 3px solid var(--accent);
+  color: var(--ink);
+  border-radius: 0 6px 6px 0;
+}
+main blockquote p:last-child { margin-bottom: 0; }
+main table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 14px 0 22px;
+  font-size: 15px;
+}
+main th, main td {
+  text-align: left;
+  padding: 8px 12px;
+  border-bottom: 1px solid var(--line);
+  vertical-align: top;
+}
+main th {
+  background: #f3efe6;
+  font-family: -apple-system, "Helvetica Neue", "PingFang TC", system-ui, sans-serif;
+  font-weight: 600;
+}
+
+/* --- bilingual pairing --- */
+.bilingual {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  margin: 14px 0;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  overflow: hidden;
+  background: var(--zh-bg);
+}
+.bilingual .en, .bilingual .zh {
+  padding: 16px 20px;
+}
+.bilingual .en {
+  background: var(--en-bg);
+  color: var(--en-ink);
+  font-family: "Source Serif 4","Source Serif Pro", Georgia, serif;
+  font-style: normal;
+  border-right: 1px solid var(--line);
+}
+.bilingual .en p, .bilingual .zh p { margin: 0 0 8px; }
+.bilingual .en p:last-child, .bilingual .zh p:last-child { margin-bottom: 0; }
+.bilingual .en ul, .bilingual .en ol,
+.bilingual .zh ul, .bilingual .zh ol {
+  margin: 0 0 6px;
+  padding-left: 1.3em;
+}
+.bilingual .en em { font-style: italic; }
+.bilingual .label {
+  display: inline-block;
+  font-family: -apple-system, "Helvetica Neue", system-ui, sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 6px;
+  font-weight: 600;
+}
+
+/* --- callouts (⚠️ blocks) --- */
+.callout {
+  margin: 18px 0;
+  padding: 14px 18px;
+  background: #fff8e1;
+  border-left: 4px solid #f0a500;
+  border-radius: 0 6px 6px 0;
+}
+.callout p { margin: 0 0 6px; }
+.callout p:last-child { margin: 0; }
+
+/* --- collapsible answers --- */
+details.answers {
+  margin: 22px 0;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 0;
+  overflow: hidden;
+}
+details.answers > summary {
+  cursor: pointer;
+  padding: 14px 18px;
+  font-family: -apple-system, "Helvetica Neue", "PingFang TC", system-ui, sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  background: #f3efe6;
+  border-bottom: 1px solid transparent;
+  user-select: none;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+details.answers > summary::-webkit-details-marker { display: none; }
+details.answers > summary::after {
+  content: "▸";
+  color: var(--muted);
+  transition: transform 0.18s ease;
+  font-size: 14px;
+}
+details.answers[open] > summary {
+  border-bottom-color: var(--line);
+}
+details.answers[open] > summary::after { transform: rotate(90deg); }
+details.answers .answers-body { padding: 14px 22px 6px; }
+details.answers .answers-body ol { margin: 0; padding-left: 1.4em; }
+details.answers .answers-body li { margin: 8px 0; }
+
+/* --- dashboard cards on index --- */
+.dash {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+  margin: 24px 0;
+}
+.dash a {
+  display: block;
+  padding: 18px 20px;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  color: var(--ink);
+  text-decoration: none;
+  transition: border-color 0.15s, transform 0.15s;
+}
+.dash a:hover {
+  border-color: var(--accent);
+  transform: translateY(-1px);
+}
+.dash a .kicker {
+  font-family: -apple-system, system-ui, sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+  display: block;
+  margin-bottom: 6px;
+}
+.dash a .title {
+  font-weight: 600;
+  font-size: 17px;
+  line-height: 1.35;
+}
+.dash a .meta {
+  display: block;
+  margin-top: 8px;
+  font-size: 13px;
+  color: var(--muted);
+  font-family: -apple-system, system-ui, sans-serif;
+}
+
+/* --- speak (TTS) button --- */
+.speak-btn {
+  appearance: none;
+  background: rgba(255,255,255,0.85);
+  border: 1px solid var(--line);
+  color: var(--muted);
+  cursor: pointer;
+  padding: 4px 9px;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 12px;
+  font-family: -apple-system, "Helvetica Neue", system-ui, sans-serif;
+  transition: all 0.15s;
+  -webkit-tap-highlight-color: transparent;
+  min-width: 64px;
+  justify-content: center;
+}
+.speak-btn .speak-icon { display: inline-flex; }
+.speak-btn svg { display: block; }
+.speak-btn:hover { color: var(--accent); border-color: var(--accent); }
+.speak-btn:active { transform: scale(0.96); }
+.speak-btn.speaking {
+  background: var(--accent);
+  color: #fff;
+  border-color: var(--accent);
+  animation: speak-pulse 1.4s ease-in-out infinite;
+}
+.speak-btn.paused {
+  background: #f0a500;
+  color: #fff;
+  border-color: #f0a500;
+  animation: none;
+}
+@keyframes speak-pulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(200,16,46,0.5); }
+  50%      { box-shadow: 0 0 0 6px rgba(200,16,46,0); }
+}
+
+/* --- per-word highlight during TTS --- */
+.w {
+  border-radius: 3px;
+  padding: 0 1px;
+  transition: color 0.08s ease, background 0.08s ease;
+}
+.w.current {
+  color: var(--accent);
+  background: rgba(200, 16, 46, 0.14);
+  font-weight: 600;
+}
+.bilingual .en { position: relative; }
+.bilingual .en > .speak-btn {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+}
+.bilingual .en > .label + .speak-btn { /* fallback positioning if absolute fails */ }
+blockquote.speakable, .callout.speakable {
+  position: relative;
+  padding-right: 60px;
+}
+blockquote.speakable > .speak-btn,
+.callout.speakable > .speak-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: #fff;
+}
+
+/* --- mobile --- */
+@media (max-width: 900px) {
+  .layout { grid-template-columns: 1fr; padding: 0 16px; gap: 0; }
+  nav.sidebar {
+    position: static;
+    height: auto;
+    border-right: none;
+    border-bottom: 1px solid var(--line);
+    padding: 18px 0;
+  }
+  .bilingual { grid-template-columns: 1fr; }
+  .bilingual .en { border-right: none; border-bottom: 1px solid var(--line); }
+}
+
+/* --- print --- */
+@media print {
+  nav.sidebar { display: none; }
+  .layout { display: block; padding: 0; }
+  main { padding: 0; }
+  details.answers { border: 1px solid #999; }
+  details.answers > summary { display: none; }
+  details.answers > .answers-body { display: block !important; }
+  .bilingual { break-inside: avoid; }
+}
+</style>
+</head>
+<body>
+<div class="layout">
+<nav class="sidebar">
+<a href="../index.html" class="home">加拿大公民考試</a>
+<a href="../curriculum/14-day-plan.html">📅 14 天計畫表</a>
+<a href="../practice/question-bank.html">📝 220 題題庫</a>
+<h2>中英對照（13 章）</h2>
+<a href="../bilingual/00-intro-oath.html">00 · 前言＋誓詞</a>
+<a href="../bilingual/01-applying-citizenship.html">01 · 申請入籍</a>
+<a href="../bilingual/02-rights-responsibilities.html">02 · 權利與義務</a>
+<a href="../bilingual/03-who-we-are.html">03 · 我們是誰</a>
+<a href="../bilingual/04-canadas-history.html">04 · 加拿大歷史</a>
+<a href="../bilingual/05-modern-canada.html">05 · 現代加拿大</a>
+<a href="../bilingual/06-how-canadians-govern.html">06 · 政府架構</a>
+<a href="../bilingual/07-federal-elections.html">07 · 聯邦選舉</a>
+<a href="../bilingual/08-justice-system.html">08 · 司法系統</a>
+<a href="../bilingual/09-canadian-symbols.html">09 · 國家象徵</a>
+<a href="../bilingual/10-canadas-economy.html">10 · 加拿大經濟</a>
+<a href="../bilingual/11-canadas-regions.html">11 · 五大區域</a>
+<a href="../bilingual/12-study-questions.html">12 · 官方練習題</a>
+<h2>每日驗收（14 天）</h2>
+<a href="../daily-quiz/day-01.html">Day 01</a>
+<a href="../daily-quiz/day-02.html">Day 02</a>
+<a href="../daily-quiz/day-03.html">Day 03</a>
+<a href="../daily-quiz/day-04.html">Day 04</a>
+<a href="../daily-quiz/day-05.html">Day 05</a>
+<a href="../daily-quiz/day-06.html">Day 06</a>
+<a href="../daily-quiz/day-07.html">Day 07</a>
+<a href="../daily-quiz/day-08.html">Day 08</a>
+<a href="../daily-quiz/day-09.html">Day 09</a>
+<a href="../daily-quiz/day-10.html">Day 10</a>
+<a href="../daily-quiz/day-11.html">Day 11</a>
+<a href="../daily-quiz/day-12.html">Day 12</a>
+<a href="../daily-quiz/day-13.html">Day 13</a>
+<a href="../daily-quiz/day-14.html">Day 14</a>
+</nav>
+<main><h1>中英對照原文 / Bilingual Discover Canada</h1>
+<blockquote>
+<p>內容來自 <code>/Users/willie/code/公民考試資料夾/discover.pdf</code>（IRCC 官方 2021 版，68 頁 PDF / 34 頁書）。
+每章按 <strong>英文原文 (blockquote) → 中文翻譯</strong> 交替排列，方便逐句對照。</p>
+</blockquote>
+<h2>章節索引</h2>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>章節</th>
+<th>中文</th>
+<th>PDF 頁數</th>
+<th>對應 daily-quiz</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>00</td>
+<td><a href="00-intro-oath.html">intro &amp; oath</a></td>
+<td>前言＋公民誓詞</td>
+<td>2–3</td>
+<td><a href="../daily-quiz/day-01.html">day-01</a></td>
+</tr>
+<tr>
+<td>01</td>
+<td><a href="01-applying-citizenship.html">applying citizenship</a></td>
+<td>申請入籍</td>
+<td>6–7</td>
+<td><a href="../daily-quiz/day-01.html">day-01</a></td>
+</tr>
+<tr>
+<td>02</td>
+<td><a href="02-rights-responsibilities.html">rights &amp; responsibilities</a></td>
+<td>公民權利與義務</td>
+<td>8–9</td>
+<td><a href="../daily-quiz/day-01.html">day-01</a></td>
+</tr>
+<tr>
+<td>03</td>
+<td><a href="03-who-we-are.html">who we are</a></td>
+<td>我們是誰（人口、語言、原住民）</td>
+<td>10–13</td>
+<td><a href="../daily-quiz/day-02.html">day-02</a></td>
+</tr>
+<tr>
+<td>04</td>
+<td><a href="04-canadas-history.html">canada&rsquo;s history</a></td>
+<td>加拿大歷史</td>
+<td>14–23</td>
+<td><a href="../daily-quiz/day-03.html">day-03</a>、<a href="../daily-quiz/day-04.html">day-04</a>、<a href="../daily-quiz/day-05.html">day-05</a></td>
+</tr>
+<tr>
+<td>05</td>
+<td><a href="05-modern-canada.html">modern canada</a></td>
+<td>現代加拿大</td>
+<td>24–27</td>
+<td><a href="../daily-quiz/day-06.html">day-06</a></td>
+</tr>
+<tr>
+<td>06</td>
+<td><a href="06-how-canadians-govern.html">how canadians govern</a></td>
+<td>政府制度</td>
+<td>28–29</td>
+<td><a href="../daily-quiz/day-08.html">day-08</a></td>
+</tr>
+<tr>
+<td>07</td>
+<td><a href="07-federal-elections.html">federal elections</a></td>
+<td>聯邦選舉</td>
+<td>30–33</td>
+<td><a href="../daily-quiz/day-09.html">day-09</a></td>
+</tr>
+<tr>
+<td>08</td>
+<td><a href="08-justice-system.html">justice system</a></td>
+<td>司法系統</td>
+<td>36–37</td>
+<td><a href="../daily-quiz/day-10.html">day-10</a></td>
+</tr>
+<tr>
+<td>09</td>
+<td><a href="09-canadian-symbols.html">canadian symbols</a></td>
+<td>國家象徵＋國歌＋假日</td>
+<td>38–41</td>
+<td><a href="../daily-quiz/day-11.html">day-11</a></td>
+</tr>
+<tr>
+<td>10</td>
+<td><a href="10-canadas-economy.html">canada&rsquo;s economy</a></td>
+<td>加拿大經濟</td>
+<td>42–43</td>
+<td><a href="../daily-quiz/day-12.html">day-12</a></td>
+</tr>
+<tr>
+<td>11</td>
+<td><a href="11-canadas-regions.html">canada&rsquo;s regions</a></td>
+<td>五大區域、10 省 3 領地</td>
+<td>44–51</td>
+<td><a href="../daily-quiz/day-13.html">day-13</a></td>
+</tr>
+<tr>
+<td>12</td>
+<td><a href="12-study-questions.html">study questions</a></td>
+<td>官方 28 條練習題</td>
+<td>52–53</td>
+<td><a href="../daily-quiz/day-14.html">day-14</a></td>
+</tr>
+</tbody>
+</table>
+<h2>使用建議</h2>
+<h3>每日複習流程（建議晚上 30 分鐘）</h3>
+<ol>
+<li><strong>打開當天 <code>daily-quiz/day-XX.md</code></strong> 讀「今日重點」</li>
+<li><strong>打開對應的 <code>bilingual/XX-章節.md</code></strong> 對讀英文原文與中文翻譯</li>
+<li><strong>用螢光筆／劃線</strong> 把英文段落中你不確定的字／片語標起來</li>
+<li><strong>做 daily-quiz 的驗收題</strong>（看不懂題目就回 bilingual 查）</li>
+</ol>
+<h3>雙語學習的好處</h3>
+<ul>
+<li><strong>用中文先抓概念</strong> → 再回頭看英文，知道每個關鍵詞對應什麼</li>
+<li><strong>記住關鍵英文片語</strong>（<strong>粗體</strong> 標示部分）→ 真實考試題目用英文，看到片語就能對應到中文意思</li>
+<li><strong>遇到 PDF 與 2026 現況不一致的地方</strong>（如 Queen Elizabeth → King Charles、G8 → G7、308 → 338），翻譯版會 <strong>以「2026 更新」標註說明</strong></li>
+</ul>
+<h2>2026 年版本差異 — 全部更新清單</h2>
+<p>PDF 是 2021 年版，以下是考試實際以新版為準的差異：</p>
+<table>
+<thead>
+<tr>
+<th>項目</th>
+<th>PDF 2021 版</th>
+<th>2026 實際</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>國王</td>
+<td>Queen Elizabeth II</td>
+<td><strong>King Charles III</strong>（2022 即位）</td>
+</tr>
+<tr>
+<td>入籍誓詞</td>
+<td>&ldquo;To Her Majesty Queen Elizabeth the Second&rdquo;</td>
+<td><strong>&ldquo;To His Majesty King Charles the Third&rdquo;</strong></td>
+</tr>
+<tr>
+<td>皇室國歌</td>
+<td>God Save the Queen</td>
+<td><strong>God Save the King</strong></td>
+</tr>
+<tr>
+<td>Court of Queen&rsquo;s Bench</td>
+<td>Queen&rsquo;s Bench</td>
+<td><strong>King&rsquo;s Bench</strong></td>
+</tr>
+<tr>
+<td>國歌歌詞</td>
+<td>&ldquo;in all thy sons command&rdquo;</td>
+<td><strong>&ldquo;in all of us command&rdquo;</strong>（2018 修訂去性別化）</td>
+</tr>
+<tr>
+<td>G8</td>
+<td>G8（含俄羅斯）</td>
+<td><strong>G7</strong>（俄羅斯 2014 被踢出）</td>
+</tr>
+<tr>
+<td>眾議院席次</td>
+<td>308</td>
+<td><strong>338</strong>（重劃後）</td>
+</tr>
+<tr>
+<td>NAFTA</td>
+<td>1994 加美墨自由貿易</td>
+<td><strong>USMCA / CUSMA</strong>（2020 取代）</td>
+</tr>
+<tr>
+<td>Truth and Reconciliation Day</td>
+<td>（未列）</td>
+<td><strong>9 月 30 日新增為國定假日</strong>（2021 起）</td>
+</tr>
+<tr>
+<td>$10 鈔票人物</td>
+<td>Sir John A. Macdonald</td>
+<td><strong>Viola Desmond</strong>（2018 起）</td>
+</tr>
+<tr>
+<td>Ontario Premier</td>
+<td>（隨時間變動）</td>
+<td><strong>Doug Ford</strong>（2018、2022、2025 連任）</td>
+</tr>
+<tr>
+<td>Ontario Lt. Governor</td>
+<td>（隨時間變動）</td>
+<td><strong>Edith Dumont</strong>（2023 起；首位法裔安省人）</td>
+</tr>
+<tr>
+<td>Governor General</td>
+<td>David Johnston（PDF 提及）</td>
+<td><strong>Mary Simon</strong>（2021 起；首位原住民總督）</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>上述差異會在各章節的中文翻譯中以 <strong>「2026 更新」</strong> 區塊明確標出。</p>
+</blockquote></main>
+</div>
+<script>
+(function() {
+  if (!('speechSynthesis' in window)) return;
+  var synth = window.speechSynthesis;
+  var voicesReady = false;
+
+  var ICON_SPEAKER = '<svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 10v4h4l5 4V6L7 10H3zm12.5 2c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM13 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg>';
+  var ICON_PAUSE = '<svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6 5h4v14H6zM14 5h4v14h-4z"/></svg>';
+  var ICON_PLAY = '<svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>';
+
+  // single global state — only one TTS session at a time
+  var state = {
+    btn: null, chunks: null, words: null, chunkIdx: 0, paused: false
+  };
+
+  function ensureVoices(cb) {
+    if (voicesReady) return cb();
+    var v = synth.getVoices();
+    if (v && v.length) { voicesReady = true; return cb(); }
+    synth.onvoiceschanged = function() { voicesReady = true; cb(); };
+    setTimeout(function(){ if (!voicesReady) { voicesReady = true; cb(); } }, 500);
+  }
+
+  function pickVoice() {
+    var voices = synth.getVoices();
+    function find(pred){ for (var i=0;i<voices.length;i++) if (pred(voices[i])) return voices[i]; return null; }
+    return find(function(v){return v.lang==='en-CA' && /Samantha|Karen|Tessa|Victoria|Allison|Siri/i.test(v.name);})
+        || find(function(v){return v.lang==='en-CA';})
+        || find(function(v){return v.lang==='en-US' && /Samantha|Karen|Allison|Ava|Siri/i.test(v.name);})
+        || find(function(v){return v.lang==='en-US';})
+        || find(function(v){return v.lang && v.lang.indexOf('en')===0;})
+        || null;
+  }
+
+  // Wrap each word in container in a <span class="w" data-idx="N"> for highlighting.
+  function wrapWords(container) {
+    if (container.dataset.wrapped === '1') return;
+    var walker = document.createTreeWalker(container, NodeFilter.SHOW_TEXT, null, false);
+    var nodes = [];
+    var n;
+    while ((n = walker.nextNode())) {
+      if (!n.parentElement) continue;
+      if (n.parentElement.closest('.speak-btn, .label')) continue;
+      if (!/\S/.test(n.nodeValue)) continue;
+      nodes.push(n);
+    }
+    var idx = 0;
+    nodes.forEach(function(tn) {
+      var text = tn.nodeValue;
+      var tokens = text.split(/(\s+)/);
+      var frag = document.createDocumentFragment();
+      tokens.forEach(function(tok) {
+        if (tok.length === 0) return;
+        if (/^\s+$/.test(tok)) {
+          frag.appendChild(document.createTextNode(tok));
+        } else {
+          var sp = document.createElement('span');
+          sp.className = 'w';
+          sp.setAttribute('data-idx', idx++);
+          sp.textContent = tok;
+          frag.appendChild(sp);
+        }
+      });
+      tn.parentNode.replaceChild(frag, tn);
+    });
+    container.dataset.wrapped = '1';
+  }
+
+  // Group words into chunks split on punctuation, with a pause duration after each chunk.
+  function buildChunks(words) {
+    var chunks = [];
+    var cur = { words: [] };
+    function commit(pauseMs) {
+      if (!cur.words.length) return;
+      cur.text = cur.words.map(function(w){ return w.text; }).join(' ');
+      cur.pauseAfterMs = pauseMs;
+      chunks.push(cur);
+      cur = { words: [] };
+    }
+    words.forEach(function(wEl, i) {
+      var text = wEl.textContent;
+      cur.words.push({ el: wEl, idx: i, text: text });
+      // sentence-ending punctuation → long pause
+      if (/[.!?]+["')\]]*$/.test(text) && text.length > 1) {
+        commit(420);
+      }
+      // semicolon / colon → medium pause
+      else if (/[;:]+["')\]]*$/.test(text)) {
+        commit(300);
+      }
+      // comma or em-dash → short pause
+      else if (/[,—–][")'\]]*$/.test(text)) {
+        commit(220);
+      }
+    });
+    commit(0);
+    return chunks;
+  }
+
+  function highlight(globalIdx) {
+    if (!state.words) return;
+    for (var i = 0; i < state.words.length; i++) {
+      if (i === globalIdx) state.words[i].classList.add('current');
+      else state.words[i].classList.remove('current');
+    }
+  }
+
+  function clearHighlight() {
+    if (!state.words) return;
+    state.words.forEach(function(w){ w.classList.remove('current'); });
+  }
+
+  function findWordAtChar(chunk, charIndex) {
+    var pos = 0;
+    for (var i = 0; i < chunk.words.length; i++) {
+      var len = chunk.words[i].text.length;
+      if (charIndex >= pos && charIndex < pos + len) return i;
+      pos += len + 1; // space
+    }
+    return -1;
+  }
+
+  function setBtnState(btn, s) {
+    if (!btn) return;
+    btn.classList.remove('speaking', 'paused');
+    if (s === 'speaking') btn.classList.add('speaking');
+    else if (s === 'paused') btn.classList.add('paused');
+    btn.setAttribute('data-state', s);
+    var icon = btn.querySelector('.speak-icon');
+    var label = btn.querySelector('.speak-label');
+    if (s === 'idle')     { if (icon) icon.innerHTML = ICON_SPEAKER; if (label) label.textContent = '朗讀'; }
+    else if (s === 'speaking') { if (icon) icon.innerHTML = ICON_PAUSE;   if (label) label.textContent = '暫停'; }
+    else if (s === 'paused')   { if (icon) icon.innerHTML = ICON_PLAY;    if (label) label.textContent = '繼續'; }
+  }
+
+  function stopAll() {
+    synth.cancel();
+    if (state.btn) setBtnState(state.btn, 'idle');
+    clearHighlight();
+    state.btn = null; state.chunks = null; state.words = null;
+    state.chunkIdx = 0; state.paused = false;
+  }
+
+  function speakFrom(chunkIdx) {
+    if (!state.chunks || chunkIdx >= state.chunks.length) { stopAll(); return; }
+    state.chunkIdx = chunkIdx;
+    var chunk = state.chunks[chunkIdx];
+    var u = new SpeechSynthesisUtterance(chunk.text);
+    u.lang = 'en-CA';
+    u.rate = 0.92;
+    u.pitch = 1.0;
+    var v = pickVoice();
+    if (v) u.voice = v;
+
+    u.onstart = function() {
+      if (chunk.words[0]) highlight(chunk.words[0].idx);
+    };
+    u.onboundary = function(e) {
+      if (e.name && e.name !== 'word') return;
+      var w = findWordAtChar(chunk, e.charIndex || 0);
+      if (w >= 0) highlight(chunk.words[w].idx);
+    };
+    u.onend = function() {
+      if (state.paused) return; // don't auto-advance while paused
+      var next = chunkIdx + 1;
+      if (next >= state.chunks.length) { stopAll(); return; }
+      setTimeout(function() {
+        if (!state.paused && state.chunks) speakFrom(next);
+      }, chunk.pauseAfterMs);
+    };
+    u.onerror = function() { stopAll(); };
+
+    synth.speak(u);
+  }
+
+  function start(container, btn) {
+    stopAll();
+    wrapWords(container);
+    var words = Array.prototype.slice.call(container.querySelectorAll('.w'));
+    if (!words.length) return;
+    state.btn = btn;
+    state.words = words;
+    state.chunks = buildChunks(words);
+    state.chunkIdx = 0;
+    state.paused = false;
+    setBtnState(btn, 'speaking');
+    speakFrom(0);
+  }
+
+  document.addEventListener('click', function(e) {
+    var btn = e.target.closest && e.target.closest('.speak-btn');
+    if (!btn) return;
+    e.preventDefault();
+    var s = btn.getAttribute('data-state') || 'idle';
+
+    if (s === 'speaking') {
+      // pause: cancel current utterance; chunkIdx stays so resume can restart this chunk
+      state.paused = true;
+      synth.cancel();
+      setBtnState(btn, 'paused');
+      return;
+    }
+    if (s === 'paused') {
+      // resume: continue from current chunk
+      state.paused = false;
+      setBtnState(btn, 'speaking');
+      speakFrom(state.chunkIdx);
+      return;
+    }
+    // idle → new speech
+    ensureVoices(function() { start(btn.parentElement, btn); });
+  });
+
+  window.addEventListener('hashchange', stopAll);
+  window.addEventListener('pagehide', stopAll);
+})();
+</script>
+</body>
+</html>

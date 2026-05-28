@@ -1,0 +1,869 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="加拿大公民考">
+<meta name="theme-color" content="#c8102e">
+<title>第 6 章：加拿大的政府制度 / How Canadians Govern Themselves · 加拿大公民考試</title>
+<style>
+:root {
+  --bg: #faf8f4;
+  --panel: #ffffff;
+  --ink: #1f2328;
+  --muted: #5d646d;
+  --line: #e7e2d6;
+  --accent: #c8102e;        /* maple red */
+  --accent-soft: #fbe9ec;
+  --en-bg: #f3efe6;
+  --en-ink: #2b2620;
+  --zh-bg: #ffffff;
+  --quote: #8a6d3b;
+  --max: 1180px;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: "Source Serif 4","Source Serif Pro","Noto Serif TC","Noto Serif CJK TC","PingFang TC","Songti TC", Georgia, serif;
+  font-size: 17px;
+  line-height: 1.75;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+.layout {
+  display: grid;
+  grid-template-columns: 240px minmax(0, 1fr);
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 0 24px;
+  gap: 36px;
+}
+nav.sidebar {
+  position: sticky;
+  top: 0;
+  align-self: start;
+  height: 100vh;
+  overflow-y: auto;
+  padding: 28px 0 40px;
+  border-right: 1px solid var(--line);
+  font-family: -apple-system, "Helvetica Neue", "PingFang TC", system-ui, sans-serif;
+  font-size: 14px;
+  line-height: 1.45;
+}
+nav.sidebar h1 {
+  font-family: inherit;
+  font-size: 14px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin: 0 0 10px;
+}
+nav.sidebar h2 {
+  font-family: inherit;
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin: 22px 0 6px;
+  font-weight: 600;
+}
+nav.sidebar a {
+  display: block;
+  color: var(--ink);
+  text-decoration: none;
+  padding: 4px 10px 4px 0;
+  border-radius: 4px;
+}
+nav.sidebar a:hover { color: var(--accent); }
+nav.sidebar a.current {
+  color: var(--accent);
+  font-weight: 600;
+}
+nav.sidebar .home {
+  display: inline-block;
+  font-weight: 700;
+  font-size: 18px;
+  color: var(--ink);
+  text-decoration: none;
+  margin-bottom: 14px;
+}
+nav.sidebar .home::before { content: "🍁 "; }
+main {
+  padding: 36px 0 80px;
+  min-width: 0;
+}
+main h1, main h2, main h3, main h4 {
+  font-family: -apple-system, "Helvetica Neue", "PingFang TC", system-ui, sans-serif;
+  line-height: 1.3;
+  color: var(--ink);
+}
+main h1 {
+  font-size: 28px;
+  margin: 0 0 8px;
+  letter-spacing: -0.01em;
+}
+main > p:first-of-type {
+  color: var(--muted);
+  margin-top: 4px;
+}
+main h2 {
+  font-size: 21px;
+  margin: 40px 0 12px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid var(--line);
+}
+main h3 { font-size: 18px; margin: 28px 0 8px; }
+main h4 { font-size: 16px; margin: 22px 0 6px; color: var(--muted); }
+main p { margin: 0 0 12px; }
+main ul, main ol { margin: 0 0 14px; padding-left: 1.4em; }
+main li { margin: 4px 0; }
+main hr {
+  border: none;
+  border-top: 1px solid var(--line);
+  margin: 32px 0;
+}
+main a { color: var(--accent); text-decoration: none; }
+main a:hover { text-decoration: underline; }
+main code {
+  font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.9em;
+  background: #f3efe6;
+  padding: 1px 5px;
+  border-radius: 4px;
+}
+main blockquote {
+  margin: 14px 0;
+  padding: 12px 18px;
+  background: var(--accent-soft);
+  border-left: 3px solid var(--accent);
+  color: var(--ink);
+  border-radius: 0 6px 6px 0;
+}
+main blockquote p:last-child { margin-bottom: 0; }
+main table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 14px 0 22px;
+  font-size: 15px;
+}
+main th, main td {
+  text-align: left;
+  padding: 8px 12px;
+  border-bottom: 1px solid var(--line);
+  vertical-align: top;
+}
+main th {
+  background: #f3efe6;
+  font-family: -apple-system, "Helvetica Neue", "PingFang TC", system-ui, sans-serif;
+  font-weight: 600;
+}
+
+/* --- bilingual pairing --- */
+.bilingual {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  margin: 14px 0;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  overflow: hidden;
+  background: var(--zh-bg);
+}
+.bilingual .en, .bilingual .zh {
+  padding: 16px 20px;
+}
+.bilingual .en {
+  background: var(--en-bg);
+  color: var(--en-ink);
+  font-family: "Source Serif 4","Source Serif Pro", Georgia, serif;
+  font-style: normal;
+  border-right: 1px solid var(--line);
+}
+.bilingual .en p, .bilingual .zh p { margin: 0 0 8px; }
+.bilingual .en p:last-child, .bilingual .zh p:last-child { margin-bottom: 0; }
+.bilingual .en ul, .bilingual .en ol,
+.bilingual .zh ul, .bilingual .zh ol {
+  margin: 0 0 6px;
+  padding-left: 1.3em;
+}
+.bilingual .en em { font-style: italic; }
+.bilingual .label {
+  display: inline-block;
+  font-family: -apple-system, "Helvetica Neue", system-ui, sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 6px;
+  font-weight: 600;
+}
+
+/* --- callouts (⚠️ blocks) --- */
+.callout {
+  margin: 18px 0;
+  padding: 14px 18px;
+  background: #fff8e1;
+  border-left: 4px solid #f0a500;
+  border-radius: 0 6px 6px 0;
+}
+.callout p { margin: 0 0 6px; }
+.callout p:last-child { margin: 0; }
+
+/* --- collapsible answers --- */
+details.answers {
+  margin: 22px 0;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 0;
+  overflow: hidden;
+}
+details.answers > summary {
+  cursor: pointer;
+  padding: 14px 18px;
+  font-family: -apple-system, "Helvetica Neue", "PingFang TC", system-ui, sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  background: #f3efe6;
+  border-bottom: 1px solid transparent;
+  user-select: none;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+details.answers > summary::-webkit-details-marker { display: none; }
+details.answers > summary::after {
+  content: "▸";
+  color: var(--muted);
+  transition: transform 0.18s ease;
+  font-size: 14px;
+}
+details.answers[open] > summary {
+  border-bottom-color: var(--line);
+}
+details.answers[open] > summary::after { transform: rotate(90deg); }
+details.answers .answers-body { padding: 14px 22px 6px; }
+details.answers .answers-body ol { margin: 0; padding-left: 1.4em; }
+details.answers .answers-body li { margin: 8px 0; }
+
+/* --- dashboard cards on index --- */
+.dash {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+  margin: 24px 0;
+}
+.dash a {
+  display: block;
+  padding: 18px 20px;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  color: var(--ink);
+  text-decoration: none;
+  transition: border-color 0.15s, transform 0.15s;
+}
+.dash a:hover {
+  border-color: var(--accent);
+  transform: translateY(-1px);
+}
+.dash a .kicker {
+  font-family: -apple-system, system-ui, sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+  display: block;
+  margin-bottom: 6px;
+}
+.dash a .title {
+  font-weight: 600;
+  font-size: 17px;
+  line-height: 1.35;
+}
+.dash a .meta {
+  display: block;
+  margin-top: 8px;
+  font-size: 13px;
+  color: var(--muted);
+  font-family: -apple-system, system-ui, sans-serif;
+}
+
+/* --- speak (TTS) button --- */
+.speak-btn {
+  appearance: none;
+  background: rgba(255,255,255,0.85);
+  border: 1px solid var(--line);
+  color: var(--muted);
+  cursor: pointer;
+  padding: 4px 9px;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 12px;
+  font-family: -apple-system, "Helvetica Neue", system-ui, sans-serif;
+  transition: all 0.15s;
+  -webkit-tap-highlight-color: transparent;
+  min-width: 64px;
+  justify-content: center;
+}
+.speak-btn .speak-icon { display: inline-flex; }
+.speak-btn svg { display: block; }
+.speak-btn:hover { color: var(--accent); border-color: var(--accent); }
+.speak-btn:active { transform: scale(0.96); }
+.speak-btn.speaking {
+  background: var(--accent);
+  color: #fff;
+  border-color: var(--accent);
+  animation: speak-pulse 1.4s ease-in-out infinite;
+}
+.speak-btn.paused {
+  background: #f0a500;
+  color: #fff;
+  border-color: #f0a500;
+  animation: none;
+}
+@keyframes speak-pulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(200,16,46,0.5); }
+  50%      { box-shadow: 0 0 0 6px rgba(200,16,46,0); }
+}
+
+/* --- per-word highlight during TTS --- */
+.w {
+  border-radius: 3px;
+  padding: 0 1px;
+  transition: color 0.08s ease, background 0.08s ease;
+}
+.w.current {
+  color: var(--accent);
+  background: rgba(200, 16, 46, 0.14);
+  font-weight: 600;
+}
+.bilingual .en { position: relative; }
+.bilingual .en > .speak-btn {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+}
+.bilingual .en > .label + .speak-btn { /* fallback positioning if absolute fails */ }
+blockquote.speakable, .callout.speakable {
+  position: relative;
+  padding-right: 60px;
+}
+blockquote.speakable > .speak-btn,
+.callout.speakable > .speak-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: #fff;
+}
+
+/* --- mobile --- */
+@media (max-width: 900px) {
+  .layout { grid-template-columns: 1fr; padding: 0 16px; gap: 0; }
+  nav.sidebar {
+    position: static;
+    height: auto;
+    border-right: none;
+    border-bottom: 1px solid var(--line);
+    padding: 18px 0;
+  }
+  .bilingual { grid-template-columns: 1fr; }
+  .bilingual .en { border-right: none; border-bottom: 1px solid var(--line); }
+}
+
+/* --- print --- */
+@media print {
+  nav.sidebar { display: none; }
+  .layout { display: block; padding: 0; }
+  main { padding: 0; }
+  details.answers { border: 1px solid #999; }
+  details.answers > summary { display: none; }
+  details.answers > .answers-body { display: block !important; }
+  .bilingual { break-inside: avoid; }
+}
+</style>
+</head>
+<body>
+<div class="layout">
+<nav class="sidebar">
+<a href="../index.html" class="home">加拿大公民考試</a>
+<a href="../curriculum/14-day-plan.html">📅 14 天計畫表</a>
+<a href="../practice/question-bank.html">📝 220 題題庫</a>
+<h2>中英對照（13 章）</h2>
+<a href="../bilingual/00-intro-oath.html">00 · 前言＋誓詞</a>
+<a href="../bilingual/01-applying-citizenship.html">01 · 申請入籍</a>
+<a href="../bilingual/02-rights-responsibilities.html">02 · 權利與義務</a>
+<a href="../bilingual/03-who-we-are.html">03 · 我們是誰</a>
+<a href="../bilingual/04-canadas-history.html">04 · 加拿大歷史</a>
+<a href="../bilingual/05-modern-canada.html">05 · 現代加拿大</a>
+<a href="../bilingual/06-how-canadians-govern.html" class="current">06 · 政府架構</a>
+<a href="../bilingual/07-federal-elections.html">07 · 聯邦選舉</a>
+<a href="../bilingual/08-justice-system.html">08 · 司法系統</a>
+<a href="../bilingual/09-canadian-symbols.html">09 · 國家象徵</a>
+<a href="../bilingual/10-canadas-economy.html">10 · 加拿大經濟</a>
+<a href="../bilingual/11-canadas-regions.html">11 · 五大區域</a>
+<a href="../bilingual/12-study-questions.html">12 · 官方練習題</a>
+<h2>每日驗收（14 天）</h2>
+<a href="../daily-quiz/day-01.html">Day 01</a>
+<a href="../daily-quiz/day-02.html">Day 02</a>
+<a href="../daily-quiz/day-03.html">Day 03</a>
+<a href="../daily-quiz/day-04.html">Day 04</a>
+<a href="../daily-quiz/day-05.html">Day 05</a>
+<a href="../daily-quiz/day-06.html">Day 06</a>
+<a href="../daily-quiz/day-07.html">Day 07</a>
+<a href="../daily-quiz/day-08.html">Day 08</a>
+<a href="../daily-quiz/day-09.html">Day 09</a>
+<a href="../daily-quiz/day-10.html">Day 10</a>
+<a href="../daily-quiz/day-11.html">Day 11</a>
+<a href="../daily-quiz/day-12.html">Day 12</a>
+<a href="../daily-quiz/day-13.html">Day 13</a>
+<a href="../daily-quiz/day-14.html">Day 14</a>
+</nav>
+<main><h1>第 6 章：加拿大的政府制度 / How Canadians Govern Themselves</h1>
+<div class="callout"><p>對應 PDF 第 28–29 頁。對應 <a href="../daily-quiz/day-08.html">day-08.md</a>。</p></div>
+<hr>
+<h2>三個關鍵詞</h2>
+<div class="bilingual"><div class="en"><span class="label">English</span><button class="speak-btn" type="button" aria-label="朗讀英文" title="朗讀英文 / Read aloud" data-state="idle"><span class="speak-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 10v4h4l5 4V6L7 10H3zm12.5 2c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM13 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg></span><span class="speak-label">朗讀</span></button><p>There are three key facts about Canada&rsquo;s system of government: our country is a federal state, a parliamentary democracy and a constitutional monarchy.</p></div><div class="zh"><span class="label">中文</span><p>加拿大政府制度有 <strong>3 個關鍵事實</strong>：</p>
+<ol>
+<li><strong>聯邦國家 (federal state)</strong></li>
+<li><strong>議會民主 (parliamentary democracy)</strong></li>
+<li><strong>君主立憲 (constitutional monarchy)</strong></li>
+</ol></div></div>
+<hr>
+<h2>Federal State / 聯邦國家</h2>
+<div class="bilingual"><div class="en"><span class="label">English</span><button class="speak-btn" type="button" aria-label="朗讀英文" title="朗讀英文 / Read aloud" data-state="idle"><span class="speak-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 10v4h4l5 4V6L7 10H3zm12.5 2c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM13 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg></span><span class="speak-label">朗讀</span></button><p>There are federal, provincial, territorial and municipal governments in Canada. The responsibilities of the federal and provincial governments were defined in 1867 in the British North America Act, now known as the Constitution Act, 1867.</p></div><div class="zh"><span class="label">中文</span><p>加拿大有 <strong>聯邦、省、領地、市政</strong> 四級政府。<strong>聯邦與省的職權於 1867 年由《英屬北美法案》（今稱《1867 年憲法法》）所定義</strong>。</p></div></div>
+<div class="bilingual"><div class="en"><span class="label">English</span><button class="speak-btn" type="button" aria-label="朗讀英文" title="朗讀英文 / Read aloud" data-state="idle"><span class="speak-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 10v4h4l5 4V6L7 10H3zm12.5 2c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM13 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg></span><span class="speak-label">朗讀</span></button><p>In our federal state, the federal government takes responsibility for matters of national and international concern. These include defence, foreign policy, interprovincial trade and communications, currency, navigation, criminal law and citizenship.</p></div><div class="zh"><span class="label">中文</span><p>聯邦政府負責 <strong>全國與國際事務</strong>：<strong>國防、外交、跨省貿易與通訊、貨幣、航行、刑法、公民身分</strong>。</p></div></div>
+<div class="bilingual"><div class="en"><span class="label">English</span><button class="speak-btn" type="button" aria-label="朗讀英文" title="朗讀英文 / Read aloud" data-state="idle"><span class="speak-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 10v4h4l5 4V6L7 10H3zm12.5 2c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM13 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg></span><span class="speak-label">朗讀</span></button><p>The provinces are responsible for municipal government, education, health, natural resources, property and civil rights, and highways. The federal government and the provinces share jurisdiction over agriculture and immigration.</p></div><div class="zh"><span class="label">中文</span><p>省政府負責 <strong>市政府、教育、健保、自然資源、財產與民事權利、公路</strong>。<strong>農業與移民由聯邦與省共同管轄</strong>。</p></div></div>
+<div class="bilingual"><div class="en"><span class="label">English</span><button class="speak-btn" type="button" aria-label="朗讀英文" title="朗讀英文 / Read aloud" data-state="idle"><span class="speak-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 10v4h4l5 4V6L7 10H3zm12.5 2c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM13 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg></span><span class="speak-label">朗讀</span></button><p>Federalism allows different provinces to adopt policies tailored to their own populations, and gives provinces the flexibility to experiment with new ideas and policies.</p></div><div class="zh"><span class="label">中文</span><p><strong>聯邦制讓不同省份能因地制宜，並給予省份試行新想法與政策的彈性</strong>。</p></div></div>
+<div class="bilingual"><div class="en"><span class="label">English</span><button class="speak-btn" type="button" aria-label="朗讀英文" title="朗讀英文 / Read aloud" data-state="idle"><span class="speak-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 10v4h4l5 4V6L7 10H3zm12.5 2c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM13 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg></span><span class="speak-label">朗讀</span></button><p>Every province has its own elected Legislative Assembly, like the House of Commons in Ottawa. The three northern territories, which have small populations, do not have the status of provinces, but their governments and assemblies carry out many of the same functions.</p></div><div class="zh"><span class="label">中文</span><p>每個省都有自己 <strong>民選的立法議會 (Legislative Assembly)</strong>，類似渥太華的眾議院。<strong>3 個北方領地人口較少，不具「省」的地位</strong>，但其政府與議會執行許多相同功能。</p></div></div>
+<hr>
+<h2>Parliamentary Democracy / 議會民主</h2>
+<div class="bilingual"><div class="en"><span class="label">English</span><button class="speak-btn" type="button" aria-label="朗讀英文" title="朗讀英文 / Read aloud" data-state="idle"><span class="speak-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 10v4h4l5 4V6L7 10H3zm12.5 2c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM13 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg></span><span class="speak-label">朗讀</span></button><p>In Canada&rsquo;s parliamentary democracy, the people elect members to the House of Commons in Ottawa and to the provincial and territorial legislatures. These representatives are responsible for passing laws, approving and monitoring expenditures, and keeping the government accountable. Cabinet ministers are responsible to the elected representatives, which means they must retain the &ldquo;confidence of the House&rdquo; and have to resign if they are defeated in a non-confidence vote.</p></div><div class="zh"><span class="label">中文</span><p>在加拿大的議會民主下，人民選舉 <strong>聯邦眾議院 (House of Commons)</strong> 與 <strong>省/領地立法機構</strong> 的代表。這些代表負責 <strong>立法、批准並監督支出、讓政府向民眾負責</strong>。<strong>內閣大臣 (Cabinet ministers) 對民選代表負責</strong>——必須維持 <strong>「眾議院信任」</strong>，若 <strong>不信任投票 (non-confidence vote)</strong> 中敗北必須辭職。</p></div></div>
+<div class="bilingual"><div class="en"><span class="label">English</span><button class="speak-btn" type="button" aria-label="朗讀英文" title="朗讀英文 / Read aloud" data-state="idle"><span class="speak-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 10v4h4l5 4V6L7 10H3zm12.5 2c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM13 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg></span><span class="speak-label">朗讀</span></button><p>Parliament has three parts: the Sovereign (Queen or King), the Senate and the <strong>House of Commons</strong>. Provincial legislatures comprise the Lieutenant Governor and the elected Assembly.</p></div><div class="zh"><span class="label">中文</span><p><strong>國會 (Parliament) 由三部分組成</strong>：</p>
+<ol>
+<li><strong>君主 (the Sovereign，國王或女王)</strong></li>
+<li><strong>參議院 (the Senate)</strong></li>
+<li><strong>眾議院 (the House of Commons)</strong></li>
+</ol>
+<p>省議會則由 <strong>省督 (Lieutenant Governor) + 民選議會</strong> 組成。</p></div></div>
+<div class="bilingual"><div class="en"><span class="label">English</span><button class="speak-btn" type="button" aria-label="朗讀英文" title="朗讀英文 / Read aloud" data-state="idle"><span class="speak-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 10v4h4l5 4V6L7 10H3zm12.5 2c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM13 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg></span><span class="speak-label">朗讀</span></button><p>In the federal government, the <strong>Prime Minister</strong> selects the Cabinet ministers and is responsible for the operations and policy of the government. The <strong>House of Commons</strong> is the representative chamber, made up of members of Parliament elected by the people, traditionally every four years. Senators are appointed by the Governor General on the advice of the Prime Minister and serve until age 75. Both the House of Commons and the Senate consider and review bills (proposals for new laws). No bill can become law in Canada until it has been passed by both chambers and has received royal assent, granted by the Governor General on behalf of the Sovereign.</p></div><div class="zh"><span class="label">中文</span><p>聯邦政府中：</p>
+<ul>
+<li><strong>總理 (Prime Minister) 任命內閣</strong>，負責政府運作與政策</li>
+<li><strong>眾議院</strong> 是代議機構，由民選議員 (MP) 組成，<strong>通常每 4 年改選</strong></li>
+<li><strong>參議員由總督依總理建議任命</strong>，<strong>任期至 75 歲</strong></li>
+<li><strong>任何法案 (bill) 必須兩院通過 + 總督代表君主御准 (royal assent) 才能成為法律</strong></li>
+</ul></div></div>
+<hr>
+<h2>Making Laws / 法案如何成為法律</h2>
+<table>
+<thead>
+<tr>
+<th>階段</th>
+<th>英文</th>
+<th>中文</th>
+<th>內容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Step 1</strong></td>
+<td>First Reading</td>
+<td>一讀</td>
+<td>法案被視為一讀完成並付印</td>
+</tr>
+<tr>
+<td><strong>Step 2</strong></td>
+<td>Second Reading</td>
+<td>二讀</td>
+<td>議員辯論法案的原則</td>
+</tr>
+<tr>
+<td><strong>Step 3</strong></td>
+<td>Committee Stage</td>
+<td>委員會審查</td>
+<td>委員逐條檢視法案</td>
+</tr>
+<tr>
+<td><strong>Step 4</strong></td>
+<td>Report Stage</td>
+<td>報告階段</td>
+<td>議員可提出其他修正</td>
+</tr>
+<tr>
+<td><strong>Step 5</strong></td>
+<td>Third Reading</td>
+<td>三讀</td>
+<td>議員辯論並表決</td>
+</tr>
+<tr>
+<td><strong>Step 6</strong></td>
+<td>Senate</td>
+<td>參議院</td>
+<td>法案在參議院重複類似程序</td>
+</tr>
+<tr>
+<td><strong>Step 7</strong></td>
+<td><strong>Royal Assent</strong></td>
+<td><strong>御准</strong></td>
+<td>法案兩院通過後得到御准</td>
+</tr>
+</tbody>
+</table>
+<div class="bilingual"><div class="en"><span class="label">English</span><button class="speak-btn" type="button" aria-label="朗讀英文" title="朗讀英文 / Read aloud" data-state="idle"><span class="speak-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 10v4h4l5 4V6L7 10H3zm12.5 2c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM13 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg></span><span class="speak-label">朗讀</span></button><p>Living in a democracy, Canadian citizens have the right and the responsibility to participate in making decisions that affect them. It is important for Canadians aged 18 or more to participate in their democracy by voting in federal, provincial or territorial and municipal elections.</p></div><div class="zh"><span class="label">中文</span><p>生活在民主制度中，<strong>加拿大公民擁有參與決策的權利與責任</strong>。<strong>18 歲以上的加拿大人應該</strong> 透過在 <strong>聯邦、省/領地、市政</strong> 各級選舉中投票來參與民主。</p></div></div>
+<hr>
+<h2>Constitutional Monarchy / 君主立憲制</h2>
+<div class="bilingual"><div class="en"><span class="label">English</span><button class="speak-btn" type="button" aria-label="朗讀英文" title="朗讀英文 / Read aloud" data-state="idle"><span class="speak-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 10v4h4l5 4V6L7 10H3zm12.5 2c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM13 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg></span><span class="speak-label">朗讀</span></button><p>As a constitutional monarchy, Canada&rsquo;s head of State is a hereditary Sovereign (Queen or King), who reigns in accordance with the Constitution: the rule of law. The Sovereign is a part of Parliament, playing an important, non-partisan role as the focus of citizenship and allegiance, most visibly during royal visits to Canada.</p></div><div class="zh"><span class="label">中文</span><p>作為君主立憲制，加拿大的 <strong>國家元首 (head of State) 是世襲君主</strong>——國王或女王——<strong>依據憲法（法治）統治</strong>。<strong>君主是國會的一部分</strong>，扮演 <strong>重要、非黨派</strong> 的角色，作為公民認同與效忠的焦點，<strong>尤其在皇室訪加時最為明顯</strong>。</p></div></div>
+<div class="bilingual"><div class="en"><span class="label">English</span><button class="speak-btn" type="button" aria-label="朗讀英文" title="朗讀英文 / Read aloud" data-state="idle"><span class="speak-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 10v4h4l5 4V6L7 10H3zm12.5 2c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM13 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg></span><span class="speak-label">朗讀</span></button><p>Her Majesty is a symbol of Canadian sovereignty, a guardian of constitutional freedoms, and a reflection of our history. The Royal Family&rsquo;s example of lifelong service to the community is an encouragement for citizens to give their best to their country. As Head of the Commonwealth, the Sovereign links Canada to 53 other nations that cooperate to advance social, economic and cultural progress.</p></div><div class="zh"><span class="label">中文</span><p>君主是 <strong>加拿大主權的象徵、憲法自由的守護者、我們歷史的反映</strong>。皇室終身服務社群的典範鼓勵公民盡力為國家貢獻。作為 <strong>大英國協元首</strong>，君主將加拿大連結到 <strong>其他 53 個合作推進社會、經濟、文化進步的國家</strong>。</p></div></div>
+<div class="bilingual"><div class="en"><span class="label">English</span><button class="speak-btn" type="button" aria-label="朗讀英文" title="朗讀英文 / Read aloud" data-state="idle"><span class="speak-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 10v4h4l5 4V6L7 10H3zm12.5 2c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM13 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg></span><span class="speak-label">朗讀</span></button><p>Other constitutional monarchies include Denmark, Norway, Sweden, Australia, New Zealand, The Netherlands, Spain, Thailand, Japan, Jordan and Morocco.</p></div><div class="zh"><span class="label">中文</span><p>其他君主立憲國家包括 <strong>丹麥、挪威、瑞典、澳洲、紐西蘭、荷蘭、西班牙、泰國、日本、約旦、摩洛哥</strong>。</p></div></div>
+<div class="bilingual"><div class="en"><span class="label">English</span><button class="speak-btn" type="button" aria-label="朗讀英文" title="朗讀英文 / Read aloud" data-state="idle"><span class="speak-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 10v4h4l5 4V6L7 10H3zm12.5 2c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM13 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg></span><span class="speak-label">朗讀</span></button><p>There is a clear distinction in Canada between the head of state—the Sovereign—and the head of government—the Prime Minister, who actually directs the governing of the country.</p></div><div class="zh"><span class="label">中文</span><p>加拿大 <strong>「國家元首」（君主）</strong> 與 <strong>「政府首長」（總理）</strong> 有明確區分——<strong>總理才是實際領導政府運作的人</strong>。</p></div></div>
+<div class="bilingual"><div class="en"><span class="label">English</span><button class="speak-btn" type="button" aria-label="朗讀英文" title="朗讀英文 / Read aloud" data-state="idle"><span class="speak-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 10v4h4l5 4V6L7 10H3zm12.5 2c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM13 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg></span><span class="speak-label">朗讀</span></button><p>The Sovereign is represented in Canada by the <strong>Governor General</strong>, who is appointed by the Sovereign on the advice of the Prime Minister, usually for five years. In each of the ten provinces, the Sovereign is represented by the <strong>Lieutenant Governor</strong>, who is appointed by the Governor General on the advice of the Prime Minister, also normally for five years.</p></div><div class="zh"><span class="label">中文</span><p>君主在加拿大由 <strong>總督 (Governor General)</strong> 代表——<strong>由君主依總理建議任命，任期通常 5 年</strong>。在 10 個省中，君主由 <strong>省督 (Lieutenant Governor)</strong> 代表——<strong>由總督依總理建議任命，任期通常 5 年</strong>。</p></div></div>
+<div class="bilingual"><div class="en"><span class="label">English</span><button class="speak-btn" type="button" aria-label="朗讀英文" title="朗讀英文 / Read aloud" data-state="idle"><span class="speak-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 10v4h4l5 4V6L7 10H3zm12.5 2c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM13 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg></span><span class="speak-label">朗讀</span></button><p>The interplay between the three branches of government—the Executive, Legislative and Judicial—which work together but also sometimes in creative tension, helps to secure the rights and freedoms of Canadians.</p></div><div class="zh"><span class="label">中文</span><p><strong>三權（行政、立法、司法）之間的互動</strong>——既合作又有時有創造性張力——<strong>有助於保障加拿大人的權利與自由</strong>。</p></div></div>
+<hr>
+<h2>Provincial / Territorial Government / 省與領地政府</h2>
+<div class="bilingual"><div class="en"><span class="label">English</span><button class="speak-btn" type="button" aria-label="朗讀英文" title="朗讀英文 / Read aloud" data-state="idle"><span class="speak-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 10v4h4l5 4V6L7 10H3zm12.5 2c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM13 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg></span><span class="speak-label">朗讀</span></button><p>Each provincial and territorial government has an elected legislature where provincial and territorial laws are passed. The members of the legislature are called <strong>members of the Legislative Assembly (MLAs)</strong>, <strong>members of the National Assembly (MNAs)</strong>, <strong>members of the Provincial Parliament (MPPs)</strong> or <strong>members of the House of Assembly (MHAs)</strong>, depending on the province or territory.</p></div><div class="zh"><span class="label">中文</span><p>每個省與領地都有 <strong>民選立法機構</strong>，通過省/領地法律。議員的稱呼依省/領地而不同：</p>
+<table>
+<thead>
+<tr>
+<th>稱呼</th>
+<th>縮寫</th>
+<th>適用地區</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Member of the Legislative Assembly</td>
+<td><strong>MLA</strong></td>
+<td>大多數省</td>
+</tr>
+<tr>
+<td>Member of the National Assembly</td>
+<td><strong>MNA</strong></td>
+<td><strong>Quebec</strong></td>
+</tr>
+<tr>
+<td>Member of the Provincial Parliament</td>
+<td><strong>MPP</strong></td>
+<td><strong>Ontario</strong></td>
+</tr>
+<tr>
+<td>Member of the House of Assembly</td>
+<td><strong>MHA</strong></td>
+<td>Newfoundland and Labrador</td>
+</tr>
+</tbody>
+</table></div></div>
+<div class="bilingual"><div class="en"><span class="label">English</span><button class="speak-btn" type="button" aria-label="朗讀英文" title="朗讀英文 / Read aloud" data-state="idle"><span class="speak-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 10v4h4l5 4V6L7 10H3zm12.5 2c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM13 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg></span><span class="speak-label">朗讀</span></button><p>In each province, the <strong>Premier</strong> has a role similar to that of the Prime Minister in the federal government, just as the Lieutenant Governor has a role similar to that of the Governor General. In the three territories, the <strong>Commissioner</strong> represents the federal government and plays a ceremonial role.</p></div><div class="zh"><span class="label">中文</span><p>每個省的 <strong>省長 (Premier)</strong> 在省級扮演如同聯邦總理的角色，<strong>省督 (Lieutenant Governor)</strong> 則類似總督。<strong>3 個領地</strong> 由 <strong>「專員 (Commissioner)」</strong> 代表聯邦政府，職務偏儀式性。</p></div></div>
+<hr>
+<h2>Canada&rsquo;s System of Government / 加拿大政府架構圖</h2>
+<pre><code>                  Sovereign（君主）
+              （由 Governor General 代表）
+                        │
+        ┌───────────────┼────────────────┐
+        │               │                │
+   Executive       Legislative        Judiciary
+   行政分支        立法分支             司法分支
+        │               │                │
+   Prime         Parliament         Supreme Court
+   Minister      ───────────         of Canada
+   + Cabinet     │  Senate  │       （9 法官，由
+   （總理        │  House of│        總督任命）
+   與內閣）      │  Commons │              │
+                 └─────┬───┘         Federal Court
+                       │              of Canada
+              ┌────────┴────────┐          │
+              │                 │     Provincial
+         Government       Opposition    Courts
+          Members          Members
+</code></pre>
+<ul>
+<li><strong>Senate</strong>：由總理建議、總督任命</li>
+<li><strong>House of Commons</strong>：由選民選舉</li>
+<li><strong>Supreme Court</strong>：9 位法官，由總督任命</li>
+</ul>
+<hr>
+<h2>Other Levels of Government / 其他層級政府</h2>
+<h3>Municipal Government / 市政府</h3>
+<div class="bilingual"><div class="en"><span class="label">English</span><button class="speak-btn" type="button" aria-label="朗讀英文" title="朗讀英文 / Read aloud" data-state="idle"><span class="speak-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 10v4h4l5 4V6L7 10H3zm12.5 2c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM13 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg></span><span class="speak-label">朗讀</span></button><p>Local or municipal government plays an important role in the lives of our citizens. Municipal governments usually have a council that passes laws called &ldquo;by-laws&rdquo; that affect only the local community. The council usually includes a mayor (or a reeve) and councillors or aldermen.</p></div><div class="zh"><span class="label">中文</span><p><strong>地方/市政府</strong> 在公民生活中扮演重要角色。市政府通常有 <strong>理事會 (council)</strong> 通過 <strong>「附則 (by-laws)」</strong>——只影響當地社區。理事會通常包含 <strong>市長 (mayor)（或 reeve）</strong> 與 <strong>議員 (councillors / aldermen)</strong>。</p></div></div>
+<div class="bilingual"><div class="en"><span class="label">English</span><button class="speak-btn" type="button" aria-label="朗讀英文" title="朗讀英文 / Read aloud" data-state="idle"><span class="speak-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 10v4h4l5 4V6L7 10H3zm12.5 2c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM13 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg></span><span class="speak-label">朗讀</span></button><p>Municipalities are normally responsible for urban or regional planning, streets and roads, sanitation (such as garbage removal), snow removal, firefighting, ambulance and other emergency services, recreation facilities, public transit and some local health and social services. Most major urban centres have municipal police forces.</p></div><div class="zh"><span class="label">中文</span><p>市政府通常負責 <strong>都市規劃、街道、清潔（如垃圾）、除雪、消防、救護車與其他緊急服務、休閒設施、大眾運輸</strong>，以及部分地方健康與社會服務。<strong>主要都市都有自己的市警隊</strong>。</p></div></div>
+<h3>First Nations Government / 第一民族政府</h3>
+<div class="bilingual"><div class="en"><span class="label">English</span><button class="speak-btn" type="button" aria-label="朗讀英文" title="朗讀英文 / Read aloud" data-state="idle"><span class="speak-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 10v4h4l5 4V6L7 10H3zm12.5 2c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM13 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg></span><span class="speak-label">朗讀</span></button><p>The <strong>First Nations</strong> have band chiefs and councillors who have major responsibilities on First Nations reserves, including housing, schools and other services.</p></div><div class="zh"><span class="label">中文</span><p><strong>第一民族 (First Nations)</strong> 設有 <strong>族長 (band chiefs) 與議員</strong>，負責保留地內的房屋、學校、其他服務。</p></div></div>
+<hr>
+<h2>各級政府職責對照</h2>
+<table>
+<thead>
+<tr>
+<th>政府層級</th>
+<th>民選官員</th>
+<th>主要職責</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>聯邦</strong></td>
+<td>MPs</td>
+<td>國防、外交、公民身分、警務（RCMP）、刑事司法、國際貿易、原住民事務、移民（共享）、農業（共享）、環境（共享）</td>
+</tr>
+<tr>
+<td><strong>省/領地</strong></td>
+<td>MLAs / MNAs / MPPs / MHAs</td>
+<td>教育、健保、自然資源、公路、警務（Ontario / Quebec）、財產與民事權利、移民（共享）、農業（共享）、環境（共享）</td>
+</tr>
+<tr>
+<td><strong>市政</strong></td>
+<td>Mayor 或 Reeve、議員</td>
+<td>社會與社區健康、回收、交通與公用事業、除雪、警務、消防、緊急服務</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2>關於「我的政府」自填表（範本）</h2>
+<p>打開正式的 Discover Canada 第 34–35 頁，您會看到一份「How Much Do You Know About Your Government」自填表，請預先把以下資訊填好（<strong>這些題目常出現在 20 題真實考試的最後幾題</strong>）：</p>
+<h3>聯邦</h3>
+<ul>
+<li><strong>國家元首 (Head of State)</strong>：His Majesty King Charles the Third</li>
+<li><strong>加拿大總督 (Governor General)</strong>：Mary Simon</li>
+<li><strong>總理 (Prime Minister)</strong>：（你寫考試當下的姓名）</li>
+<li><strong>執政黨</strong>：（同上）</li>
+<li><strong>官方反對黨領袖</strong>：（同上）</li>
+<li><strong>你聯邦選區的 MP</strong>：（請上 elections.ca 查你郵遞區號）</li>
+<li><strong>你聯邦選區名 (electoral district)</strong>：（同上）</li>
+</ul>
+<h3>省級（Ontario）</h3>
+<ul>
+<li><strong>省督 (Lieutenant Governor)</strong>：Edith Dumont</li>
+<li><strong>省長 (Premier)</strong>：Doug Ford</li>
+<li><strong>執政黨</strong>：Progressive Conservative Party of Ontario</li>
+<li><strong>你的 MPP</strong>：（上 ola.org 查你郵遞區號）</li>
+</ul>
+<h3>市政</h3>
+<ul>
+<li><strong>你住的市政府</strong>：（如 City of Toronto / City of Mississauga 等）</li>
+<li><strong>市長 (Mayor)</strong>：（如 Olivia Chow 等，臨考前再確認）</li>
+</ul></main>
+</div>
+<script>
+(function() {
+  if (!('speechSynthesis' in window)) return;
+  var synth = window.speechSynthesis;
+  var voicesReady = false;
+
+  var ICON_SPEAKER = '<svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 10v4h4l5 4V6L7 10H3zm12.5 2c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM13 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg>';
+  var ICON_PAUSE = '<svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6 5h4v14H6zM14 5h4v14h-4z"/></svg>';
+  var ICON_PLAY = '<svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>';
+
+  // single global state — only one TTS session at a time
+  var state = {
+    btn: null, chunks: null, words: null, chunkIdx: 0, paused: false
+  };
+
+  function ensureVoices(cb) {
+    if (voicesReady) return cb();
+    var v = synth.getVoices();
+    if (v && v.length) { voicesReady = true; return cb(); }
+    synth.onvoiceschanged = function() { voicesReady = true; cb(); };
+    setTimeout(function(){ if (!voicesReady) { voicesReady = true; cb(); } }, 500);
+  }
+
+  function pickVoice() {
+    var voices = synth.getVoices();
+    function find(pred){ for (var i=0;i<voices.length;i++) if (pred(voices[i])) return voices[i]; return null; }
+    return find(function(v){return v.lang==='en-CA' && /Samantha|Karen|Tessa|Victoria|Allison|Siri/i.test(v.name);})
+        || find(function(v){return v.lang==='en-CA';})
+        || find(function(v){return v.lang==='en-US' && /Samantha|Karen|Allison|Ava|Siri/i.test(v.name);})
+        || find(function(v){return v.lang==='en-US';})
+        || find(function(v){return v.lang && v.lang.indexOf('en')===0;})
+        || null;
+  }
+
+  // Wrap each word in container in a <span class="w" data-idx="N"> for highlighting.
+  function wrapWords(container) {
+    if (container.dataset.wrapped === '1') return;
+    var walker = document.createTreeWalker(container, NodeFilter.SHOW_TEXT, null, false);
+    var nodes = [];
+    var n;
+    while ((n = walker.nextNode())) {
+      if (!n.parentElement) continue;
+      if (n.parentElement.closest('.speak-btn, .label')) continue;
+      if (!/\S/.test(n.nodeValue)) continue;
+      nodes.push(n);
+    }
+    var idx = 0;
+    nodes.forEach(function(tn) {
+      var text = tn.nodeValue;
+      var tokens = text.split(/(\s+)/);
+      var frag = document.createDocumentFragment();
+      tokens.forEach(function(tok) {
+        if (tok.length === 0) return;
+        if (/^\s+$/.test(tok)) {
+          frag.appendChild(document.createTextNode(tok));
+        } else {
+          var sp = document.createElement('span');
+          sp.className = 'w';
+          sp.setAttribute('data-idx', idx++);
+          sp.textContent = tok;
+          frag.appendChild(sp);
+        }
+      });
+      tn.parentNode.replaceChild(frag, tn);
+    });
+    container.dataset.wrapped = '1';
+  }
+
+  // Group words into chunks split on punctuation, with a pause duration after each chunk.
+  function buildChunks(words) {
+    var chunks = [];
+    var cur = { words: [] };
+    function commit(pauseMs) {
+      if (!cur.words.length) return;
+      cur.text = cur.words.map(function(w){ return w.text; }).join(' ');
+      cur.pauseAfterMs = pauseMs;
+      chunks.push(cur);
+      cur = { words: [] };
+    }
+    words.forEach(function(wEl, i) {
+      var text = wEl.textContent;
+      cur.words.push({ el: wEl, idx: i, text: text });
+      // sentence-ending punctuation → long pause
+      if (/[.!?]+["')\]]*$/.test(text) && text.length > 1) {
+        commit(420);
+      }
+      // semicolon / colon → medium pause
+      else if (/[;:]+["')\]]*$/.test(text)) {
+        commit(300);
+      }
+      // comma or em-dash → short pause
+      else if (/[,—–][")'\]]*$/.test(text)) {
+        commit(220);
+      }
+    });
+    commit(0);
+    return chunks;
+  }
+
+  function highlight(globalIdx) {
+    if (!state.words) return;
+    for (var i = 0; i < state.words.length; i++) {
+      if (i === globalIdx) state.words[i].classList.add('current');
+      else state.words[i].classList.remove('current');
+    }
+  }
+
+  function clearHighlight() {
+    if (!state.words) return;
+    state.words.forEach(function(w){ w.classList.remove('current'); });
+  }
+
+  function findWordAtChar(chunk, charIndex) {
+    var pos = 0;
+    for (var i = 0; i < chunk.words.length; i++) {
+      var len = chunk.words[i].text.length;
+      if (charIndex >= pos && charIndex < pos + len) return i;
+      pos += len + 1; // space
+    }
+    return -1;
+  }
+
+  function setBtnState(btn, s) {
+    if (!btn) return;
+    btn.classList.remove('speaking', 'paused');
+    if (s === 'speaking') btn.classList.add('speaking');
+    else if (s === 'paused') btn.classList.add('paused');
+    btn.setAttribute('data-state', s);
+    var icon = btn.querySelector('.speak-icon');
+    var label = btn.querySelector('.speak-label');
+    if (s === 'idle')     { if (icon) icon.innerHTML = ICON_SPEAKER; if (label) label.textContent = '朗讀'; }
+    else if (s === 'speaking') { if (icon) icon.innerHTML = ICON_PAUSE;   if (label) label.textContent = '暫停'; }
+    else if (s === 'paused')   { if (icon) icon.innerHTML = ICON_PLAY;    if (label) label.textContent = '繼續'; }
+  }
+
+  function stopAll() {
+    synth.cancel();
+    if (state.btn) setBtnState(state.btn, 'idle');
+    clearHighlight();
+    state.btn = null; state.chunks = null; state.words = null;
+    state.chunkIdx = 0; state.paused = false;
+  }
+
+  function speakFrom(chunkIdx) {
+    if (!state.chunks || chunkIdx >= state.chunks.length) { stopAll(); return; }
+    state.chunkIdx = chunkIdx;
+    var chunk = state.chunks[chunkIdx];
+    var u = new SpeechSynthesisUtterance(chunk.text);
+    u.lang = 'en-CA';
+    u.rate = 0.92;
+    u.pitch = 1.0;
+    var v = pickVoice();
+    if (v) u.voice = v;
+
+    u.onstart = function() {
+      if (chunk.words[0]) highlight(chunk.words[0].idx);
+    };
+    u.onboundary = function(e) {
+      if (e.name && e.name !== 'word') return;
+      var w = findWordAtChar(chunk, e.charIndex || 0);
+      if (w >= 0) highlight(chunk.words[w].idx);
+    };
+    u.onend = function() {
+      if (state.paused) return; // don't auto-advance while paused
+      var next = chunkIdx + 1;
+      if (next >= state.chunks.length) { stopAll(); return; }
+      setTimeout(function() {
+        if (!state.paused && state.chunks) speakFrom(next);
+      }, chunk.pauseAfterMs);
+    };
+    u.onerror = function() { stopAll(); };
+
+    synth.speak(u);
+  }
+
+  function start(container, btn) {
+    stopAll();
+    wrapWords(container);
+    var words = Array.prototype.slice.call(container.querySelectorAll('.w'));
+    if (!words.length) return;
+    state.btn = btn;
+    state.words = words;
+    state.chunks = buildChunks(words);
+    state.chunkIdx = 0;
+    state.paused = false;
+    setBtnState(btn, 'speaking');
+    speakFrom(0);
+  }
+
+  document.addEventListener('click', function(e) {
+    var btn = e.target.closest && e.target.closest('.speak-btn');
+    if (!btn) return;
+    e.preventDefault();
+    var s = btn.getAttribute('data-state') || 'idle';
+
+    if (s === 'speaking') {
+      // pause: cancel current utterance; chunkIdx stays so resume can restart this chunk
+      state.paused = true;
+      synth.cancel();
+      setBtnState(btn, 'paused');
+      return;
+    }
+    if (s === 'paused') {
+      // resume: continue from current chunk
+      state.paused = false;
+      setBtnState(btn, 'speaking');
+      speakFrom(state.chunkIdx);
+      return;
+    }
+    // idle → new speech
+    ensureVoices(function() { start(btn.parentElement, btn); });
+  });
+
+  window.addEventListener('hashchange', stopAll);
+  window.addEventListener('pagehide', stopAll);
+})();
+</script>
+</body>
+</html>

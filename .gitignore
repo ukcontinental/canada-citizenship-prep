@@ -1,0 +1,14 @@
+# PDFs are downloaded via official/download.sh from canada.ca
+official/*.pdf
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+
+# macOS
+.DS_Store
+
+# Editor
+.vscode/
+.idea/

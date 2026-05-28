@@ -1,0 +1,903 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="加拿大公民考">
+<meta name="theme-color" content="#c8102e">
+<title>第 11 章：加拿大五大地理區、10 省 3 領地 / Canada&#x27;s Regions · 加拿大公民考試</title>
+<style>
+:root {
+  --bg: #faf8f4;
+  --panel: #ffffff;
+  --ink: #1f2328;
+  --muted: #5d646d;
+  --line: #e7e2d6;
+  --accent: #c8102e;        /* maple red */
+  --accent-soft: #fbe9ec;
+  --en-bg: #f3efe6;
+  --en-ink: #2b2620;
+  --zh-bg: #ffffff;
+  --quote: #8a6d3b;
+  --max: 1180px;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: "Source Serif 4","Source Serif Pro","Noto Serif TC","Noto Serif CJK TC","PingFang TC","Songti TC", Georgia, serif;
+  font-size: 17px;
+  line-height: 1.75;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+.layout {
+  display: grid;
+  grid-template-columns: 240px minmax(0, 1fr);
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 0 24px;
+  gap: 36px;
+}
+nav.sidebar {
+  position: sticky;
+  top: 0;
+  align-self: start;
+  height: 100vh;
+  overflow-y: auto;
+  padding: 28px 0 40px;
+  border-right: 1px solid var(--line);
+  font-family: -apple-system, "Helvetica Neue", "PingFang TC", system-ui, sans-serif;
+  font-size: 14px;
+  line-height: 1.45;
+}
+nav.sidebar h1 {
+  font-family: inherit;
+  font-size: 14px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin: 0 0 10px;
+}
+nav.sidebar h2 {
+  font-family: inherit;
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin: 22px 0 6px;
+  font-weight: 600;
+}
+nav.sidebar a {
+  display: block;
+  color: var(--ink);
+  text-decoration: none;
+  padding: 4px 10px 4px 0;
+  border-radius: 4px;
+}
+nav.sidebar a:hover { color: var(--accent); }
+nav.sidebar a.current {
+  color: var(--accent);
+  font-weight: 600;
+}
+nav.sidebar .home {
+  display: inline-block;
+  font-weight: 700;
+  font-size: 18px;
+  color: var(--ink);
+  text-decoration: none;
+  margin-bottom: 14px;
+}
+nav.sidebar .home::before { content: "🍁 "; }
+main {
+  padding: 36px 0 80px;
+  min-width: 0;
+}
+main h1, main h2, main h3, main h4 {
+  font-family: -apple-system, "Helvetica Neue", "PingFang TC", system-ui, sans-serif;
+  line-height: 1.3;
+  color: var(--ink);
+}
+main h1 {
+  font-size: 28px;
+  margin: 0 0 8px;
+  letter-spacing: -0.01em;
+}
+main > p:first-of-type {
+  color: var(--muted);
+  margin-top: 4px;
+}
+main h2 {
+  font-size: 21px;
+  margin: 40px 0 12px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid var(--line);
+}
+main h3 { font-size: 18px; margin: 28px 0 8px; }
+main h4 { font-size: 16px; margin: 22px 0 6px; color: var(--muted); }
+main p { margin: 0 0 12px; }
+main ul, main ol { margin: 0 0 14px; padding-left: 1.4em; }
+main li { margin: 4px 0; }
+main hr {
+  border: none;
+  border-top: 1px solid var(--line);
+  margin: 32px 0;
+}
+main a { color: var(--accent); text-decoration: none; }
+main a:hover { text-decoration: underline; }
+main code {
+  font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.9em;
+  background: #f3efe6;
+  padding: 1px 5px;
+  border-radius: 4px;
+}
+main blockquote {
+  margin: 14px 0;
+  padding: 12px 18px;
+  background: var(--accent-soft);
+  border-left: 3px solid var(--accent);
+  color: var(--ink);
+  border-radius: 0 6px 6px 0;
+}
+main blockquote p:last-child { margin-bottom: 0; }
+main table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 14px 0 22px;
+  font-size: 15px;
+}
+main th, main td {
+  text-align: left;
+  padding: 8px 12px;
+  border-bottom: 1px solid var(--line);
+  vertical-align: top;
+}
+main th {
+  background: #f3efe6;
+  font-family: -apple-system, "Helvetica Neue", "PingFang TC", system-ui, sans-serif;
+  font-weight: 600;
+}
+
+/* --- bilingual pairing --- */
+.bilingual {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  margin: 14px 0;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  overflow: hidden;
+  background: var(--zh-bg);
+}
+.bilingual .en, .bilingual .zh {
+  padding: 16px 20px;
+}
+.bilingual .en {
+  background: var(--en-bg);
+  color: var(--en-ink);
+  font-family: "Source Serif 4","Source Serif Pro", Georgia, serif;
+  font-style: normal;
+  border-right: 1px solid var(--line);
+}
+.bilingual .en p, .bilingual .zh p { margin: 0 0 8px; }
+.bilingual .en p:last-child, .bilingual .zh p:last-child { margin-bottom: 0; }
+.bilingual .en ul, .bilingual .en ol,
+.bilingual .zh ul, .bilingual .zh ol {
+  margin: 0 0 6px;
+  padding-left: 1.3em;
+}
+.bilingual .en em { font-style: italic; }
+.bilingual .label {
+  display: inline-block;
+  font-family: -apple-system, "Helvetica Neue", system-ui, sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 6px;
+  font-weight: 600;
+}
+
+/* --- callouts (⚠️ blocks) --- */
+.callout {
+  margin: 18px 0;
+  padding: 14px 18px;
+  background: #fff8e1;
+  border-left: 4px solid #f0a500;
+  border-radius: 0 6px 6px 0;
+}
+.callout p { margin: 0 0 6px; }
+.callout p:last-child { margin: 0; }
+
+/* --- collapsible answers --- */
+details.answers {
+  margin: 22px 0;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 0;
+  overflow: hidden;
+}
+details.answers > summary {
+  cursor: pointer;
+  padding: 14px 18px;
+  font-family: -apple-system, "Helvetica Neue", "PingFang TC", system-ui, sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  background: #f3efe6;
+  border-bottom: 1px solid transparent;
+  user-select: none;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+details.answers > summary::-webkit-details-marker { display: none; }
+details.answers > summary::after {
+  content: "▸";
+  color: var(--muted);
+  transition: transform 0.18s ease;
+  font-size: 14px;
+}
+details.answers[open] > summary {
+  border-bottom-color: var(--line);
+}
+details.answers[open] > summary::after { transform: rotate(90deg); }
+details.answers .answers-body { padding: 14px 22px 6px; }
+details.answers .answers-body ol { margin: 0; padding-left: 1.4em; }
+details.answers .answers-body li { margin: 8px 0; }
+
+/* --- dashboard cards on index --- */
+.dash {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+  margin: 24px 0;
+}
+.dash a {
+  display: block;
+  padding: 18px 20px;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  color: var(--ink);
+  text-decoration: none;
+  transition: border-color 0.15s, transform 0.15s;
+}
+.dash a:hover {
+  border-color: var(--accent);
+  transform: translateY(-1px);
+}
+.dash a .kicker {
+  font-family: -apple-system, system-ui, sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+  display: block;
+  margin-bottom: 6px;
+}
+.dash a .title {
+  font-weight: 600;
+  font-size: 17px;
+  line-height: 1.35;
+}
+.dash a .meta {
+  display: block;
+  margin-top: 8px;
+  font-size: 13px;
+  color: var(--muted);
+  font-family: -apple-system, system-ui, sans-serif;
+}
+
+/* --- speak (TTS) button --- */
+.speak-btn {
+  appearance: none;
+  background: rgba(255,255,255,0.85);
+  border: 1px solid var(--line);
+  color: var(--muted);
+  cursor: pointer;
+  padding: 4px 9px;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 12px;
+  font-family: -apple-system, "Helvetica Neue", system-ui, sans-serif;
+  transition: all 0.15s;
+  -webkit-tap-highlight-color: transparent;
+  min-width: 64px;
+  justify-content: center;
+}
+.speak-btn .speak-icon { display: inline-flex; }
+.speak-btn svg { display: block; }
+.speak-btn:hover { color: var(--accent); border-color: var(--accent); }
+.speak-btn:active { transform: scale(0.96); }
+.speak-btn.speaking {
+  background: var(--accent);
+  color: #fff;
+  border-color: var(--accent);
+  animation: speak-pulse 1.4s ease-in-out infinite;
+}
+.speak-btn.paused {
+  background: #f0a500;
+  color: #fff;
+  border-color: #f0a500;
+  animation: none;
+}
+@keyframes speak-pulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(200,16,46,0.5); }
+  50%      { box-shadow: 0 0 0 6px rgba(200,16,46,0); }
+}
+
+/* --- per-word highlight during TTS --- */
+.w {
+  border-radius: 3px;
+  padding: 0 1px;
+  transition: color 0.08s ease, background 0.08s ease;
+}
+.w.current {
+  color: var(--accent);
+  background: rgba(200, 16, 46, 0.14);
+  font-weight: 600;
+}
+.bilingual .en { position: relative; }
+.bilingual .en > .speak-btn {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+}
+.bilingual .en > .label + .speak-btn { /* fallback positioning if absolute fails */ }
+blockquote.speakable, .callout.speakable {
+  position: relative;
+  padding-right: 60px;
+}
+blockquote.speakable > .speak-btn,
+.callout.speakable > .speak-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: #fff;
+}
+
+/* --- mobile --- */
+@media (max-width: 900px) {
+  .layout { grid-template-columns: 1fr; padding: 0 16px; gap: 0; }
+  nav.sidebar {
+    position: static;
+    height: auto;
+    border-right: none;
+    border-bottom: 1px solid var(--line);
+    padding: 18px 0;
+  }
+  .bilingual { grid-template-columns: 1fr; }
+  .bilingual .en { border-right: none; border-bottom: 1px solid var(--line); }
+}
+
+/* --- print --- */
+@media print {
+  nav.sidebar { display: none; }
+  .layout { display: block; padding: 0; }
+  main { padding: 0; }
+  details.answers { border: 1px solid #999; }
+  details.answers > summary { display: none; }
+  details.answers > .answers-body { display: block !important; }
+  .bilingual { break-inside: avoid; }
+}
+</style>
+</head>
+<body>
+<div class="layout">
+<nav class="sidebar">
+<a href="../index.html" class="home">加拿大公民考試</a>
+<a href="../curriculum/14-day-plan.html">📅 14 天計畫表</a>
+<a href="../practice/question-bank.html">📝 220 題題庫</a>
+<h2>中英對照（13 章）</h2>
+<a href="../bilingual/00-intro-oath.html">00 · 前言＋誓詞</a>
+<a href="../bilingual/01-applying-citizenship.html">01 · 申請入籍</a>
+<a href="../bilingual/02-rights-responsibilities.html">02 · 權利與義務</a>
+<a href="../bilingual/03-who-we-are.html">03 · 我們是誰</a>
+<a href="../bilingual/04-canadas-history.html">04 · 加拿大歷史</a>
+<a href="../bilingual/05-modern-canada.html">05 · 現代加拿大</a>
+<a href="../bilingual/06-how-canadians-govern.html">06 · 政府架構</a>
+<a href="../bilingual/07-federal-elections.html">07 · 聯邦選舉</a>
+<a href="../bilingual/08-justice-system.html">08 · 司法系統</a>
+<a href="../bilingual/09-canadian-symbols.html">09 · 國家象徵</a>
+<a href="../bilingual/10-canadas-economy.html">10 · 加拿大經濟</a>
+<a href="../bilingual/11-canadas-regions.html" class="current">11 · 五大區域</a>
+<a href="../bilingual/12-study-questions.html">12 · 官方練習題</a>
+<h2>每日驗收（14 天）</h2>
+<a href="../daily-quiz/day-01.html">Day 01</a>
+<a href="../daily-quiz/day-02.html">Day 02</a>
+<a href="../daily-quiz/day-03.html">Day 03</a>
+<a href="../daily-quiz/day-04.html">Day 04</a>
+<a href="../daily-quiz/day-05.html">Day 05</a>
+<a href="../daily-quiz/day-06.html">Day 06</a>
+<a href="../daily-quiz/day-07.html">Day 07</a>
+<a href="../daily-quiz/day-08.html">Day 08</a>
+<a href="../daily-quiz/day-09.html">Day 09</a>
+<a href="../daily-quiz/day-10.html">Day 10</a>
+<a href="../daily-quiz/day-11.html">Day 11</a>
+<a href="../daily-quiz/day-12.html">Day 12</a>
+<a href="../daily-quiz/day-13.html">Day 13</a>
+<a href="../daily-quiz/day-14.html">Day 14</a>
+</nav>
+<main><h1>第 11 章：加拿大五大地理區、10 省 3 領地 / Canada&rsquo;s Regions</h1>
+<div class="callout"><p>對應 PDF 第 44–51 頁。對應 <a href="../daily-quiz/day-13.html">day-13.md</a>。</p></div>
+<hr>
+<h2>開場</h2>
+<div class="bilingual"><div class="en"><span class="label">English</span><button class="speak-btn" type="button" aria-label="朗讀英文" title="朗讀英文 / Read aloud" data-state="idle"><span class="speak-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 10v4h4l5 4V6L7 10H3zm12.5 2c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM13 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg></span><span class="speak-label">朗讀</span></button><p>Canada is the second largest country on earth—10 million square kilometres. Three oceans line Canada&rsquo;s frontiers: the Pacific Ocean in the west, the Atlantic Ocean in the east, and the Arctic Ocean to the north. Along the southern edge of Canada lies the Canada-United States boundary. Both Canada and the U.S.A. are committed to a safe, secure and efficient frontier.</p></div><div class="zh"><span class="label">中文</span><p><strong>加拿大是世界第二大國，面積 1,000 萬平方公里</strong>。<strong>三大洋環繞</strong>：<strong>西—太平洋、東—大西洋、北—北極洋</strong>。<strong>南邊是加美邊界</strong>。</p></div></div>
+<hr>
+<h2>The Regions of Canada / 加拿大五大地理區</h2>
+<div class="bilingual"><div class="en"><span class="label">English</span><button class="speak-btn" type="button" aria-label="朗讀英文" title="朗讀英文 / Read aloud" data-state="idle"><span class="speak-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 10v4h4l5 4V6L7 10H3zm12.5 2c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM13 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg></span><span class="speak-label">朗讀</span></button><p>Canada includes many different geographical areas and <strong>five distinct regions</strong>:</p>
+<ul>
+<li>The Atlantic Provinces</li>
+<li>Central Canada</li>
+<li>The Prairie Provinces</li>
+<li>The West Coast</li>
+<li>The Northern Territories</li>
+</ul></div><div class="zh"><span class="label">中文</span><p>加拿大有 <strong>5 個明顯地理區</strong>：</p>
+<ol>
+<li><strong>大西洋諸省 (Atlantic Provinces)</strong></li>
+<li><strong>中部加拿大 (Central Canada)</strong></li>
+<li><strong>草原諸省 (Prairie Provinces)</strong></li>
+<li><strong>西海岸 (West Coast)</strong></li>
+<li><strong>北方領地 (Northern Territories)</strong></li>
+</ol></div></div>
+<hr>
+<h2>The National Capital / 國家首都</h2>
+<div class="bilingual"><div class="en"><span class="label">English</span><button class="speak-btn" type="button" aria-label="朗讀英文" title="朗讀英文 / Read aloud" data-state="idle"><span class="speak-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 10v4h4l5 4V6L7 10H3zm12.5 2c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM13 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg></span><span class="speak-label">朗讀</span></button><p>Ottawa, located on the Ottawa River, was chosen as the capital in <strong>1857 by Queen Victoria</strong>, the great-great-grandmother of Queen Elizabeth II. Today it is Canada&rsquo;s fourth largest metropolitan area. The National Capital Region, 4,700 square kilometres surrounding Ottawa, preserves and enhances the area&rsquo;s built heritage and natural environment.</p></div><div class="zh"><span class="label">中文</span><p><strong>Ottawa 位於 Ottawa 河畔</strong>，<strong>1857 年由 Queen Victoria 選定為首都</strong>（伊莉莎白二世的曾曾祖母）。<strong>今日是加拿大第四大都會區</strong>。<strong>首都區（含 Ottawa 周邊 4,700 平方公里）</strong> 保存並提升該區的人文遺產與自然環境。</p></div></div>
+<hr>
+<h2>Provinces and Territories / 省與領地</h2>
+<div class="bilingual"><div class="en"><span class="label">English</span><button class="speak-btn" type="button" aria-label="朗讀英文" title="朗讀英文 / Read aloud" data-state="idle"><span class="speak-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 10v4h4l5 4V6L7 10H3zm12.5 2c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM13 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg></span><span class="speak-label">朗讀</span></button><p>Canada has ten provinces and three territories. Each province and territory has its own capital city. <strong>You should know the capital of your province or territory as well as that of Canada.</strong></p></div><div class="zh"><span class="label">中文</span><p>加拿大有 <strong>10 個省、3 個領地</strong>。每個都有自己的首府。<strong>您應認得自己所在省/領地的首府以及國家首都</strong>。</p></div></div>
+<hr>
+<h2>Population / 人口</h2>
+<div class="bilingual"><div class="en"><span class="label">English</span><button class="speak-btn" type="button" aria-label="朗讀英文" title="朗讀英文 / Read aloud" data-state="idle"><span class="speak-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 10v4h4l5 4V6L7 10H3zm12.5 2c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM13 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg></span><span class="speak-label">朗讀</span></button><p>Canada has a population of about 34 million people. While the majority live in cities, Canadians also live in small towns, rural areas and everywhere in between.</p></div><div class="zh"><span class="label">中文</span><p>加拿大人口約 <strong>3,400 萬人</strong>（<strong>2026 年實際已成長至約 4,000 萬</strong>）。<strong>多數住在城市</strong>，但也有小鎮、鄉村與各種地方。</p></div></div>
+<hr>
+<h2>5 大區域與省份首府總表</h2>
+<table>
+<thead>
+<tr>
+<th>區域</th>
+<th>省/領地</th>
+<th>首府</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Atlantic Provinces</strong></td>
+<td>Newfoundland and Labrador</td>
+<td><strong>St. John&rsquo;s</strong></td>
+</tr>
+<tr>
+<td></td>
+<td>Prince Edward Island</td>
+<td><strong>Charlottetown</strong></td>
+</tr>
+<tr>
+<td></td>
+<td>Nova Scotia</td>
+<td><strong>Halifax</strong></td>
+</tr>
+<tr>
+<td></td>
+<td>New Brunswick</td>
+<td><strong>Fredericton</strong></td>
+</tr>
+<tr>
+<td><strong>Central Canada</strong></td>
+<td>Quebec</td>
+<td><strong>Québec City</strong></td>
+</tr>
+<tr>
+<td></td>
+<td>Ontario</td>
+<td><strong>Toronto</strong></td>
+</tr>
+<tr>
+<td><strong>Prairie Provinces</strong></td>
+<td>Manitoba</td>
+<td><strong>Winnipeg</strong></td>
+</tr>
+<tr>
+<td></td>
+<td>Saskatchewan</td>
+<td><strong>Regina</strong></td>
+</tr>
+<tr>
+<td></td>
+<td>Alberta</td>
+<td><strong>Edmonton</strong></td>
+</tr>
+<tr>
+<td><strong>West Coast</strong></td>
+<td>British Columbia</td>
+<td><strong>Victoria</strong></td>
+</tr>
+<tr>
+<td><strong>North</strong></td>
+<td>Nunavut</td>
+<td><strong>Iqaluit</strong></td>
+</tr>
+<tr>
+<td></td>
+<td>Northwest Territories</td>
+<td><strong>Yellowknife</strong></td>
+</tr>
+<tr>
+<td></td>
+<td>Yukon Territory</td>
+<td><strong>Whitehorse</strong></td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2>The Atlantic Provinces / 大西洋諸省</h2>
+<div class="bilingual"><div class="en"><span class="label">English</span><button class="speak-btn" type="button" aria-label="朗讀英文" title="朗讀英文 / Read aloud" data-state="idle"><span class="speak-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 10v4h4l5 4V6L7 10H3zm12.5 2c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM13 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg></span><span class="speak-label">朗讀</span></button><p>Atlantic Canada&rsquo;s coasts and natural resources, including fishing, farming, forestry and mining, have made these provinces an important part of Canada&rsquo;s history and development. The Atlantic Ocean brings cool winters and cool humid summers.</p></div><div class="zh"><span class="label">中文</span><p>大西洋諸省的海岸與自然資源（<strong>漁業、農業、林業、礦業</strong>）使其成為加拿大歷史與發展的重要部分。<strong>大西洋帶來涼冬與涼濕夏</strong>。</p></div></div>
+<h3>Newfoundland and Labrador / 紐芬蘭與拉布拉多</h3>
+<div class="bilingual"><div class="en"><span class="label">English</span><button class="speak-btn" type="button" aria-label="朗讀英文" title="朗讀英文 / Read aloud" data-state="idle"><span class="speak-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 10v4h4l5 4V6L7 10H3zm12.5 2c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM13 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg></span><span class="speak-label">朗讀</span></button><p>Newfoundland and Labrador is the most easterly point in North America and has its own time zone. In addition to its natural beauty, the province has a unique heritage linked to the sea. The oldest colony of the British Empire and a strategic prize in Canada&rsquo;s early history, the province has long been known for its fisheries, coastal fishing villages and distinct culture. Today off-shore oil and gas extraction contributes a substantial part of the economy. Labrador also has immense hydro-electric resources.</p></div><div class="zh"><span class="label">中文</span><p><strong>北美最東邊、擁有自己的時區</strong>。除自然美景外，該省有 <strong>與海洋深度連結的獨特文化遺產</strong>。<strong>大英帝國最古老的殖民地之一</strong>，是加拿大早期歷史的戰略要地。<strong>漁業、沿海漁村與獨特文化</strong> 久負盛名。今日 <strong>離岸石油與天然氣</strong> 是經濟支柱。<strong>Labrador 還有龐大的水力電力資源</strong>。</p></div></div>
+<h3>Prince Edward Island / 愛德華王子島</h3>
+<div class="bilingual"><div class="en"><span class="label">English</span><button class="speak-btn" type="button" aria-label="朗讀英文" title="朗讀英文 / Read aloud" data-state="idle"><span class="speak-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 10v4h4l5 4V6L7 10H3zm12.5 2c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM13 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg></span><span class="speak-label">朗讀</span></button><p>Prince Edward Island (P.E.I.) is the smallest province, known for its beaches, red soil and agriculture, especially potatoes. P.E.I. is the <strong>birthplace of Confederation</strong>, connected to mainland Canada by one of the longest continuous multispan bridges in the world, the <strong>Confederation Bridge</strong>. Anne of Green Gables, set in P.E.I. by Lucy Maud Montgomery, is a much-loved story about the adventures of a little red-headed orphan girl.</p></div><div class="zh"><span class="label">中文</span><p><strong>P.E.I. 是加拿大最小的省</strong>，以 <strong>沙灘、紅土、農業（特別是馬鈴薯）</strong> 聞名。<strong>P.E.I. 是「邦聯的誕生地」</strong>，由世界最長多跨連續橋之一 <strong>「邦聯橋 (Confederation Bridge)」</strong> 連到本土。<strong>Lucy Maud Montgomery 的《清秀佳人 Anne of Green Gables》</strong> 即以 P.E.I. 為背景。</p></div></div>
+<h3>Nova Scotia / 新斯科細亞</h3>
+<div class="bilingual"><div class="en"><span class="label">English</span><button class="speak-btn" type="button" aria-label="朗讀英文" title="朗讀英文 / Read aloud" data-state="idle"><span class="speak-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 10v4h4l5 4V6L7 10H3zm12.5 2c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM13 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg></span><span class="speak-label">朗讀</span></button><p>Nova Scotia is the most populous Atlantic Province, with a rich history as the gateway to Canada. Known for the world&rsquo;s highest tides in the <strong>Bay of Fundy</strong>, the province&rsquo;s identity is linked to shipbuilding, fisheries and shipping. As Canada&rsquo;s largest east coast port, deep-water and ice-free, the capital, <strong>Halifax</strong>, has played an important role in Atlantic trade and defence and is home to Canada&rsquo;s largest naval base. Nova Scotia has a long history of coal mining, forestry and agriculture. Today there is also off-shore oil and gas exploration. The province&rsquo;s Celtic and Gaelic traditions sustain a vibrant culture. Nova Scotia is home to over 700 annual festivals, including the spectacular military tattoo in Halifax.</p></div><div class="zh"><span class="label">中文</span><p><strong>Nova Scotia 是大西洋諸省人口最多的省</strong>，<strong>身為加拿大門戶具豐富歷史</strong>。<strong>Bay of Fundy 擁有世界最高的潮差</strong>。身分認同與 <strong>造船、漁業、航運</strong> 緊密相連。<strong>首府 Halifax 是加拿大東岸最大港</strong>——深水、不結冰，在大西洋貿易與防衛中扮演要角，<strong>也是加拿大最大海軍基地所在地</strong>。煤礦、林業、農業歷史悠久；今日有離岸油氣勘探。<strong>塞爾特與蓋爾文化傳統豐厚</strong>，全省每年逾 700 個節慶，包括 Halifax 的 <strong>軍事 Tattoo</strong>。</p></div></div>
+<h3>New Brunswick / 新布朗斯維克</h3>
+<div class="bilingual"><div class="en"><span class="label">English</span><button class="speak-btn" type="button" aria-label="朗讀英文" title="朗讀英文 / Read aloud" data-state="idle"><span class="speak-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 10v4h4l5 4V6L7 10H3zm12.5 2c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM13 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg></span><span class="speak-label">朗讀</span></button><p>Situated in the Appalachian Range, the province was founded by the United Empire Loyalists and has the second largest river system on North America&rsquo;s Atlantic coastline, the St. John River system. Forestry, agriculture, fisheries, mining, food processing and tourism are the principal industries. Saint John is the largest city, port and manufacturing centre; Moncton is the principal Francophone Acadian centre; and Fredericton, the historic capital. <strong>New Brunswick is the only officially bilingual province</strong>, and about one-third of the population lives and works in French.</p></div><div class="zh"><span class="label">中文</span><p>位於阿帕拉契山脈，由 <strong>United Empire Loyalists 建省</strong>。擁有 <strong>北美大西洋岸第二大水系——聖約翰河水系</strong>。主要產業：<strong>林業、農業、漁業、礦業、食品加工、旅遊</strong>。<strong>Saint John</strong> 是最大城、港口與製造業中心；<strong>Moncton</strong> 是法裔阿卡迪亞中心；<strong>Fredericton</strong> 是歷史首府。<strong>New Brunswick 是加拿大唯一官方雙語省</strong>，<strong>約 1/3 人口以法文生活與工作</strong>。</p></div></div>
+<hr>
+<h2>Central Canada / 中部加拿大</h2>
+<div class="bilingual"><div class="en"><span class="label">English</span><button class="speak-btn" type="button" aria-label="朗讀英文" title="朗讀英文 / Read aloud" data-state="idle"><span class="speak-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 10v4h4l5 4V6L7 10H3zm12.5 2c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM13 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg></span><span class="speak-label">朗讀</span></button><p>More than half the people in Canada live in cities and towns near the Great Lakes and the St. Lawrence River in southern Quebec and Ontario, known as Central Canada and the industrial and manufacturing heartland. Southern Ontario and Quebec have cold winters and warm humid summers. <strong>Together, Ontario and Quebec produce more than three-quarters of all Canadian manufactured goods.</strong></p></div><div class="zh"><span class="label">中文</span><p><strong>逾半加拿大人住在中部加拿大</strong>——南 Quebec 與南 Ontario 的 <strong>五大湖區與聖羅倫斯河沿岸</strong>。這是 <strong>加拿大工業與製造業核心</strong>。南 ON 與南 QC 冬寒夏暖濕。<strong>Ontario 與 Quebec 合計生產 75% 以上的加拿大製造品</strong>。</p></div></div>
+<h3>Quebec / 魁北克</h3>
+<div class="bilingual"><div class="en"><span class="label">English</span><button class="speak-btn" type="button" aria-label="朗讀英文" title="朗讀英文 / Read aloud" data-state="idle"><span class="speak-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 10v4h4l5 4V6L7 10H3zm12.5 2c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM13 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg></span><span class="speak-label">朗讀</span></button><p>Nearly eight million people live in Quebec, the vast majority along or near the St. Lawrence River. <strong>More than three-quarters speak French as their first language.</strong> The resources of the Canadian Shield have helped Quebec to develop important industries, including forestry, energy and mining. <strong>Quebec is Canada&rsquo;s main producer of pulp and paper.</strong> The province&rsquo;s huge supply of fresh water has made it Canada&rsquo;s largest producer of hydro-electricity. Quebecers are leaders in cutting-edge industries such as pharmaceuticals and aeronautics. <strong>Montreal, Canada&rsquo;s second largest city and the second largest mainly French-speaking city in the world after Paris</strong>, is famous for its cultural diversity.</p></div><div class="zh"><span class="label">中文</span><p><strong>Quebec 人口近 800 萬</strong>，絕大多數住在聖羅倫斯河沿岸。<strong>超過 75% 以法文為母語</strong>。加拿大盾的資源助 Quebec 發展 <strong>林業、能源、礦業</strong>。<strong>Quebec 是加拿大紙漿與紙業主產地</strong>，<strong>且因水資源豐富是加拿大最大水力發電省</strong>。在 <strong>製藥、航太</strong> 等尖端產業也是領導者。<strong>Montreal 是加拿大第二大城市，也是世界第二大法語為主城市（次於巴黎）</strong>——以 <strong>文化多元</strong> 聞名。</p></div></div>
+<h3>Ontario / 安大略</h3>
+<div class="bilingual"><div class="en"><span class="label">English</span><button class="speak-btn" type="button" aria-label="朗讀英文" title="朗讀英文 / Read aloud" data-state="idle"><span class="speak-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 10v4h4l5 4V6L7 10H3zm12.5 2c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM13 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg></span><span class="speak-label">朗讀</span></button><p>At more than 12 million, the people of Ontario make up more than one-third of Canadians. The large and culturally diverse population, natural resources and strategic location contribute to a vital economy. <strong>Toronto is the largest city in Canada and the country&rsquo;s main financial centre.</strong> Many people work in the service or manufacturing industries, which produce a large percentage of Canada&rsquo;s exports. The Niagara region is known for its vineyards, wines and fruit crops. Ontario farmers raise dairy and beef cattle, poultry, and vegetable and grain crops. Founded by United Empire Loyalists, <strong>Ontario also has the largest French-speaking population outside of Quebec</strong>, with a proud history of preserving their language and culture.</p></div><div class="zh"><span class="label">中文</span><p>Ontario 人口逾 <strong>1,200 萬</strong>（<strong>2026 實際近 1,600 萬</strong>），佔加拿大三分之一以上。<strong>多元、豐富的自然資源、戰略位置</strong> 造就活躍經濟。<strong>Toronto 是加拿大最大城市、主要金融中心</strong>。製造業與服務業是主力，貢獻大量出口。<strong>Niagara 區</strong> 以葡萄園、葡萄酒與水果聞名。Ontario 農民飼養乳牛、肉牛、家禽，種植蔬菜與穀物。<strong>由 United Empire Loyalists 建省</strong>，<strong>也是 Quebec 之外最大的法語人口省</strong>，有保存法語與文化的悠久歷史。</p></div></div>
+<div class="bilingual"><div class="en"><span class="label">English</span><button class="speak-btn" type="button" aria-label="朗讀英文" title="朗讀英文 / Read aloud" data-state="idle"><span class="speak-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 10v4h4l5 4V6L7 10H3zm12.5 2c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM13 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg></span><span class="speak-label">朗讀</span></button><p>There are five Great Lakes located between Ontario and the United States: Lake Ontario, Lake Erie, Lake Huron, Lake Michigan (in the U.S.A.) and Lake Superior, the largest freshwater lake in the world.</p></div><div class="zh"><span class="label">中文</span><p>Ontario 與美國之間有 <strong>五大湖</strong>：<strong>安大略湖、伊利湖、休倫湖、密西根湖（在美國）、蘇必略湖（世界最大淡水湖）</strong>。</p></div></div>
+<hr>
+<h2>The Prairie Provinces / 草原諸省</h2>
+<div class="bilingual"><div class="en"><span class="label">English</span><button class="speak-btn" type="button" aria-label="朗讀英文" title="朗讀英文 / Read aloud" data-state="idle"><span class="speak-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 10v4h4l5 4V6L7 10H3zm12.5 2c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM13 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg></span><span class="speak-label">朗讀</span></button><p>Manitoba, Saskatchewan and Alberta are the Prairie Provinces, rich in energy resources and some of the most fertile farmland in the world. The region is mostly dry, with cold winters and hot summers.</p></div><div class="zh"><span class="label">中文</span><p>Manitoba、Saskatchewan、Alberta 三省 <strong>能源資源豐富</strong>，且擁有 <strong>世界最肥沃農地之一</strong>。大多 <strong>乾燥、冬冷夏熱</strong>。</p></div></div>
+<h3>Manitoba / 曼尼托巴</h3>
+<div class="bilingual"><div class="en"><span class="label">English</span><button class="speak-btn" type="button" aria-label="朗讀英文" title="朗讀英文 / Read aloud" data-state="idle"><span class="speak-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 10v4h4l5 4V6L7 10H3zm12.5 2c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM13 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg></span><span class="speak-label">朗讀</span></button><p>Manitoba&rsquo;s economy is based on agriculture, mining and hydro-electric power generation. The province&rsquo;s most populous city is Winnipeg, whose Exchange District includes the most famous street intersection in Canada, <strong>Portage and Main</strong>. Winnipeg&rsquo;s French Quarter, <strong>St. Boniface</strong>, has Western Canada&rsquo;s largest Francophone community at 45,000. Manitoba is also an important centre of Ukrainian culture, with 14% reporting Ukrainian origins, and <strong>the largest Aboriginal population of any province, at over 15%</strong>.</p></div><div class="zh"><span class="label">中文</span><p>Manitoba 經濟以 <strong>農業、礦業、水力發電</strong> 為主。<strong>最大城 Winnipeg</strong> 的 Exchange District 含加拿大最有名的 <strong>Portage and Main</strong> 十字路口。<strong>Winnipeg 的法語區 St. Boniface 是西部加拿大最大法語社區（4.5 萬人）</strong>。<strong>烏克蘭文化重鎮</strong>，14% 居民有烏克蘭血統。<strong>Manitoba 是各省中原住民人口比例最高的——逾 15%</strong>。</p></div></div>
+<h3>Saskatchewan / 薩斯卡其萬</h3>
+<div class="bilingual"><div class="en"><span class="label">English</span><button class="speak-btn" type="button" aria-label="朗讀英文" title="朗讀英文 / Read aloud" data-state="idle"><span class="speak-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 10v4h4l5 4V6L7 10H3zm12.5 2c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM13 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg></span><span class="speak-label">朗讀</span></button><p>Saskatchewan, once known as the &ldquo;breadbasket of the world&rdquo; and the &ldquo;wheat province,&rdquo; has 40% of the arable land in Canada and is the country&rsquo;s largest producer of grains and oilseeds. It also boasts the world&rsquo;s richest deposits of uranium and potash, used in fertilizer, and produces oil and natural gas. <strong>Regina, the capital, is home to the training academy of the Royal Canadian Mounted Police.</strong> Saskatoon, the largest city, is the headquarters of the mining industry and an important educational, research and technology centre.</p></div><div class="zh"><span class="label">中文</span><p>曾被稱為 <strong>「世界麵包籃」與「麥之省」</strong>——<strong>擁有加拿大 40% 耕地，是穀物與油籽最大生產省</strong>。也有 <strong>世界最豐富的鈾與鉀肥礦藏</strong>（用於肥料），並產油氣。<strong>首府 Regina 是皇家加拿大騎警 (RCMP) 訓練學院所在地</strong>。<strong>Saskatoon</strong> 是最大城，礦業總部與重要教育研究中心。</p></div></div>
+<h3>Alberta / 亞伯達</h3>
+<div class="bilingual"><div class="en"><span class="label">English</span><button class="speak-btn" type="button" aria-label="朗讀英文" title="朗讀英文 / Read aloud" data-state="idle"><span class="speak-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 10v4h4l5 4V6L7 10H3zm12.5 2c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM13 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg></span><span class="speak-label">朗讀</span></button><p>Alberta is the most populous Prairie province. The province, and the world-famous <strong>Lake Louise</strong> in the Rocky Mountains, were both named after Princess Louise Caroline Alberta, fourth daughter of Queen Victoria. <strong>Alberta has five national parks, including Banff National Park, established in 1885.</strong> The rugged Badlands house some of the world&rsquo;s richest deposits of prehistoric fossils and dinosaur finds. <strong>Alberta is the largest producer of oil and gas, and the oil sands in the north are being developed as a major energy source.</strong> Alberta is also renowned for agriculture, especially for the vast cattle ranches that make Canada one of the world&rsquo;s major beef producers.</p></div><div class="zh"><span class="label">中文</span><p><strong>Alberta 是草原省中人口最多</strong>。<strong>省名與洛磯山 Lake Louise 皆得名自維多利亞女王第四女 Louise Caroline Alberta</strong>。<strong>Alberta 有 5 個國家公園，包括 1885 年成立的 Banff 國家公園</strong>。Badlands 蘊藏 <strong>世界最豐富的史前化石與恐龍化石</strong>。<strong>Alberta 是加拿大最大油氣產地，北部油砂正開發為主要能源來源</strong>。也以農業聞名——<strong>廣大的牧場讓加拿大成為世界主要牛肉生產國之一</strong>。</p></div></div>
+<hr>
+<h2>The West Coast / 西海岸</h2>
+<h3>British Columbia / 不列顛哥倫比亞</h3>
+<div class="bilingual"><div class="en"><span class="label">English</span><button class="speak-btn" type="button" aria-label="朗讀英文" title="朗讀英文 / Read aloud" data-state="idle"><span class="speak-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 10v4h4l5 4V6L7 10H3zm12.5 2c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM13 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg></span><span class="speak-label">朗讀</span></button><p>British Columbia is known for its majestic mountains and as Canada&rsquo;s Pacific gateway. The Port of Vancouver, Canada&rsquo;s largest and busiest, handles billions of dollars in goods traded around the world. Warm airstreams from the Pacific Ocean give the B.C. coast a temperate climate.</p></div><div class="zh"><span class="label">中文</span><p>BC 以 <strong>壯麗山脈</strong> 與 <strong>太平洋門戶</strong> 聞名。<strong>溫哥華港 (Port of Vancouver) 是加拿大最大、最繁忙的港口</strong>，處理數十億美元商品。太平洋的暖風流帶來 <strong>溫和氣候</strong>。</p></div></div>
+<div class="bilingual"><div class="en"><span class="label">English</span><button class="speak-btn" type="button" aria-label="朗讀英文" title="朗讀英文 / Read aloud" data-state="idle"><span class="speak-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 10v4h4l5 4V6L7 10H3zm12.5 2c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM13 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg></span><span class="speak-label">朗讀</span></button><p>British Columbia (B.C.), on the Pacific coast, is Canada&rsquo;s westernmost province, with a population of four million. The Port of Vancouver is our gateway to the Asia-Pacific. About one-half of all the goods produced in B.C. are forestry products, including lumber, newsprint, and pulp and paper products—the most valuable forestry industry in Canada. B.C. is also known for mining, fishing, and the fruit orchards and wine industry of the Okanagan Valley. <strong>B.C. has the most extensive park system in Canada, with approximately 600 provincial parks.</strong> The province&rsquo;s large Asian communities have made Chinese and Punjabi the most spoken languages in the cities after English. <strong>The capital, Victoria, is a tourist centre and headquarters of the navy&rsquo;s Pacific fleet.</strong></p></div><div class="zh"><span class="label">中文</span><p>BC 是 <strong>加拿大最西邊的省，人口 400 萬</strong>（2026 約 550 萬）。<strong>Port of Vancouver 是亞太門戶</strong>。<strong>BC 出口商品約一半是林業產品</strong>（<strong>林業全國最有價值</strong>）。也以 <strong>礦業、漁業、Okanagan 山谷果園與酒產業</strong> 聞名。<strong>BC 有加拿大最大省立公園系統——約 600 個</strong>。亞裔社區龐大使 <strong>中文與旁遮普語</strong> 成為城市中除英文外最常使用的語言。<strong>首府 Victoria 是旅遊中心，也是太平洋艦隊總部所在地</strong>。</p></div></div>
+<hr>
+<h2>The Northern Territories / 北方領地</h2>
+<div class="bilingual"><div class="en"><span class="label">English</span><button class="speak-btn" type="button" aria-label="朗讀英文" title="朗讀英文 / Read aloud" data-state="idle"><span class="speak-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 10v4h4l5 4V6L7 10H3zm12.5 2c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM13 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg></span><span class="speak-label">朗讀</span></button><p>The Northwest Territories, Nunavut and Yukon contain one-third of Canada&rsquo;s land mass but have a population of only 100,000. There are gold, lead, copper, diamond and zinc mines. Oil and gas deposits are being developed. <strong>The North is often referred to as the &ldquo;Land of the Midnight Sun&rdquo; because at the height of summer, daylight can last up to 24 hours.</strong> In winter, the sun disappears and darkness sets in for three months. The Northern territories have long cold winters and short cool summers. Much of the North is made up of tundra, the vast rocky Arctic plain. Because of the cold Arctic climate, there are no trees on the tundra and the soil is permanently frozen. Some continue to earn a living by hunting, fishing and trapping. Inuit art is sold throughout Canada and around the world.</p></div><div class="zh"><span class="label">中文</span><p><strong>Northwest Territories、Nunavut、Yukon 三者佔加拿大三分之一土地，但人口僅 10 萬</strong>。礦藏有 <strong>金、鉛、銅、鑽石、鋅</strong>，並開發油氣。<strong>北方常稱「午夜陽光之地」</strong>——夏日陽光可達 <strong>24 小時</strong>；冬日太陽消失三個月。<strong>長冷冬、短涼夏</strong>。多為 <strong>凍原 (tundra)</strong> —— 廣闊岩石的北極平原，無樹、土壤永凍。部分居民仍靠 <strong>狩獵、捕魚、捕獸</strong> 為生。<strong>因紐特藝術</strong> 銷往全國乃至世界。</p></div></div>
+<h3>Yukon / 育空</h3>
+<div class="bilingual"><div class="en"><span class="label">English</span><button class="speak-btn" type="button" aria-label="朗讀英文" title="朗讀英文 / Read aloud" data-state="idle"><span class="speak-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 10v4h4l5 4V6L7 10H3zm12.5 2c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM13 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg></span><span class="speak-label">朗讀</span></button><p>Thousands of miners came to the Yukon during the Gold Rush of the 1890s, as celebrated in the poetry of Robert W. Service. Mining remains a significant part of the economy. The White Pass and Yukon Railway opened from Skagway in neighbouring Alaska to the territorial capital, Whitehorse, in 1900 and provides a spectacular tourist excursion across precipitous passes and bridges. <strong>Yukon holds the record for the coldest temperature ever recorded in Canada (-63°C).</strong></p></div><div class="zh"><span class="label">中文</span><p><strong>1890 年代淘金潮 (Gold Rush) 帶來成千上萬礦工</strong>——詩人 Robert W. Service 為之歌詠。礦業仍是經濟重要一環。<strong>「White Pass and Yukon Railway」1900 年由鄰州 Alaska 的 Skagway 通至首府 Whitehorse</strong>，提供壯麗的旅遊路線。<strong>Yukon 保有加拿大史上最低氣溫紀錄 -63°C</strong>。</p></div></div>
+<div class="bilingual"><div class="en"><span class="label">English</span><button class="speak-btn" type="button" aria-label="朗讀英文" title="朗讀英文 / Read aloud" data-state="idle"><span class="speak-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 10v4h4l5 4V6L7 10H3zm12.5 2c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM13 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg></span><span class="speak-label">朗讀</span></button><p>Mount Logan, located in the Yukon, is the highest mountain in Canada. It is named in honour of Sir William Logan, a world-famous geologist, born in Montreal in 1798 to Scottish immigrant parents.</p></div><div class="zh"><span class="label">中文</span><p><strong>Yukon 境內的 Mount Logan 是加拿大最高峰</strong>，為紀念加拿大地質學家 Sir William Logan 而命名。</p></div></div>
+<h3>Northwest Territories / 西北地區</h3>
+<div class="bilingual"><div class="en"><span class="label">English</span><button class="speak-btn" type="button" aria-label="朗讀英文" title="朗讀英文 / Read aloud" data-state="idle"><span class="speak-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 10v4h4l5 4V6L7 10H3zm12.5 2c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM13 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg></span><span class="speak-label">朗讀</span></button><p>The Northwest Territories (N.W.T.) were originally made up in 1870 from Rupert&rsquo;s Land and the North-Western Territory. <strong>The capital, Yellowknife (population 20,000), is called the &ldquo;diamond capital of North America.&rdquo;</strong> More than half the population is Aboriginal (Dene, Inuit and Métis). The <strong>Mackenzie River, at 4,200 kilometres, is the second-longest river system in North America after the Mississippi</strong> and drains an area of 1.8 million square kilometres.</p></div><div class="zh"><span class="label">中文</span><p><strong>NWT 於 1870 年由 Rupert&rsquo;s Land 與西北領地合併而成</strong>。<strong>首府 Yellowknife（人口 2 萬）稱為「北美鑽石之都」</strong>。<strong>逾一半人口為原住民</strong>（Dene、Inuit、Métis）。<strong>Mackenzie 河 4,200 公里，是北美僅次於密西西比河的第二長水系</strong>，流域 180 萬平方公里。</p></div></div>
+<h3>Nunavut / 努納武特</h3>
+<div class="bilingual"><div class="en"><span class="label">English</span><button class="speak-btn" type="button" aria-label="朗讀英文" title="朗讀英文 / Read aloud" data-state="idle"><span class="speak-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 10v4h4l5 4V6L7 10H3zm12.5 2c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM13 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg></span><span class="speak-label">朗讀</span></button><p>Nunavut, meaning &ldquo;our land&rdquo; in Inuktitut, was established in 1999 from the eastern part of the Northwest Territories, including all of the former District of Keewatin. The capital is Iqaluit, formerly Frobisher Bay, named after the English explorer Martin Frobisher, who penetrated the uncharted Arctic for Queen Elizabeth I in 1576. <strong>The 19-member Legislative Assembly chooses a premier and ministers by consensus.</strong> The population is about 85% Inuit, and <strong>Inuktitut is an official language and the first language in schools</strong>.</p></div><div class="zh"><span class="label">中文</span><p><strong>Nunavut 在 Inuktitut 語中意為「我們的土地」</strong>——<strong>1999 年自 NWT 東部劃出而成立</strong>。<strong>首府 Iqaluit（舊名 Frobisher Bay）</strong>，紀念 <strong>1576 年為英女王伊莉莎白一世探勘北極的 Martin Frobisher</strong>。<strong>19 席立法議會以共識制選出省長與部長</strong>。<strong>人口 85% 為因紐特人</strong>，<strong>Inuktitut 是官方語言，也是學校第一語言</strong>。</p></div></div>
+<hr>
+<h2>The Canadian Rangers / 加拿大遊騎兵</h2>
+<div class="bilingual"><div class="en"><span class="label">English</span><button class="speak-btn" type="button" aria-label="朗讀英文" title="朗讀英文 / Read aloud" data-state="idle"><span class="speak-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 10v4h4l5 4V6L7 10H3zm12.5 2c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM13 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg></span><span class="speak-label">朗讀</span></button><p>Canada&rsquo;s vast North brings security and sovereignty challenges. Dealing with harsh weather conditions in an isolated region, the Canadian Rangers, part of the Canadian Forces Reserves (militia), play a key role. Drawing on indigenous knowledge and experience, the Rangers travel by snowmobile in the winter and all-terrain vehicles in the summer from Resolute to the Magnetic North Pole, and keep the flag flying in Canada&rsquo;s Arctic.</p></div><div class="zh"><span class="label">中文</span><p>廣大北方帶來安全與主權挑戰。<strong>加拿大遊騎兵 (Canadian Rangers)</strong> 是加拿大軍隊預備役（民兵），在嚴酷氣候中扮演關鍵角色——<strong>冬乘雪地摩托車、夏乘全地形車</strong>，從 Resolute 到磁北極，在加拿大北極區守護國旗。</p></div></div>
+<hr>
+<h2>加拿大五大湖（必背）</h2>
+<div class="callout"><p>共 5 個湖中，<strong>4 個由加拿大與美國共享</strong>，<strong>只有 Lake Michigan 完全在美國境內</strong>。</p></div>
+<table>
+<thead>
+<tr>
+<th>湖</th>
+<th>位置</th>
+<th>特點</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Lake Superior</strong></td>
+<td>加美邊界</td>
+<td><strong>世界最大淡水湖</strong></td>
+</tr>
+<tr>
+<td><strong>Lake Huron</strong></td>
+<td>加美邊界</td>
+<td>—</td>
+</tr>
+<tr>
+<td><strong>Lake Michigan</strong></td>
+<td>美國境內</td>
+<td><strong>唯一全在美國的五大湖</strong></td>
+</tr>
+<tr>
+<td><strong>Lake Erie</strong></td>
+<td>加美邊界</td>
+<td>—</td>
+</tr>
+<tr>
+<td><strong>Lake Ontario</strong></td>
+<td>加美邊界</td>
+<td>與 Erie 之間有 <strong>Niagara Falls</strong></td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2>Ontario 加強重點（與你居住地相關）</h2>
+<table>
+<thead>
+<tr>
+<th>項目</th>
+<th>內容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>首府</td>
+<td><strong>Toronto</strong></td>
+</tr>
+<tr>
+<td>加拿大首都</td>
+<td><strong>Ottawa</strong>（也在 Ontario 境內）</td>
+</tr>
+<tr>
+<td>省督 (Lt. Governor)</td>
+<td><strong>Edith Dumont</strong>（2023 起，首位法裔安省人省督）</td>
+</tr>
+<tr>
+<td>省長 (Premier)</td>
+<td><strong>Doug Ford</strong>（PC 黨，2018 起，2022、2025 連任）</td>
+</tr>
+<tr>
+<td>執政黨</td>
+<td><strong>Progressive Conservative Party of Ontario</strong></td>
+</tr>
+<tr>
+<td>反對黨</td>
+<td><strong>Ontario NDP</strong>（黨魁 Marit Stiles）</td>
+</tr>
+<tr>
+<td>省議員</td>
+<td><strong>MPP</strong></td>
+</tr>
+<tr>
+<td>主要產業</td>
+<td>製造（汽車）、金融（Bay Street）、科技（Waterloo）</td>
+</tr>
+<tr>
+<td>五大湖中 Ontario 邊</td>
+<td>Erie, Ontario, Huron, Superior</td>
+</tr>
+<tr>
+<td>著名景點</td>
+<td>Niagara Falls、CN Tower、Algonquin Park</td>
+</tr>
+<tr>
+<td>法裔人口</td>
+<td><strong>Quebec 之外最多</strong></td>
+</tr>
+<tr>
+<td>第一任省督人</td>
+<td>由 United Empire Loyalists 建省</td>
+</tr>
+</tbody>
+</table>
+<div class="bilingual"><div class="en"><span class="label">English</span><button class="speak-btn" type="button" aria-label="朗讀英文" title="朗讀英文 / Read aloud" data-state="idle"><span class="speak-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 10v4h4l5 4V6L7 10H3zm12.5 2c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM13 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg></span><span class="speak-label">朗讀</span></button><p>臨考前一週請上 <a href="https://www.ontario.ca">ontario.ca</a> 與 <a href="https://www.elections.on.ca">Elections Ontario</a> 核對最新人物變動。</p></div><div class="zh"><span class="label">中文</span><p style="color:#888">（未提供翻譯）</p></div></div></main>
+</div>
+<script>
+(function() {
+  if (!('speechSynthesis' in window)) return;
+  var synth = window.speechSynthesis;
+  var voicesReady = false;
+
+  var ICON_SPEAKER = '<svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 10v4h4l5 4V6L7 10H3zm12.5 2c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM13 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg>';
+  var ICON_PAUSE = '<svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6 5h4v14H6zM14 5h4v14h-4z"/></svg>';
+  var ICON_PLAY = '<svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>';
+
+  // single global state — only one TTS session at a time
+  var state = {
+    btn: null, chunks: null, words: null, chunkIdx: 0, paused: false
+  };
+
+  function ensureVoices(cb) {
+    if (voicesReady) return cb();
+    var v = synth.getVoices();
+    if (v && v.length) { voicesReady = true; return cb(); }
+    synth.onvoiceschanged = function() { voicesReady = true; cb(); };
+    setTimeout(function(){ if (!voicesReady) { voicesReady = true; cb(); } }, 500);
+  }
+
+  function pickVoice() {
+    var voices = synth.getVoices();
+    function find(pred){ for (var i=0;i<voices.length;i++) if (pred(voices[i])) return voices[i]; return null; }
+    return find(function(v){return v.lang==='en-CA' && /Samantha|Karen|Tessa|Victoria|Allison|Siri/i.test(v.name);})
+        || find(function(v){return v.lang==='en-CA';})
+        || find(function(v){return v.lang==='en-US' && /Samantha|Karen|Allison|Ava|Siri/i.test(v.name);})
+        || find(function(v){return v.lang==='en-US';})
+        || find(function(v){return v.lang && v.lang.indexOf('en')===0;})
+        || null;
+  }
+
+  // Wrap each word in container in a <span class="w" data-idx="N"> for highlighting.
+  function wrapWords(container) {
+    if (container.dataset.wrapped === '1') return;
+    var walker = document.createTreeWalker(container, NodeFilter.SHOW_TEXT, null, false);
+    var nodes = [];
+    var n;
+    while ((n = walker.nextNode())) {
+      if (!n.parentElement) continue;
+      if (n.parentElement.closest('.speak-btn, .label')) continue;
+      if (!/\S/.test(n.nodeValue)) continue;
+      nodes.push(n);
+    }
+    var idx = 0;
+    nodes.forEach(function(tn) {
+      var text = tn.nodeValue;
+      var tokens = text.split(/(\s+)/);
+      var frag = document.createDocumentFragment();
+      tokens.forEach(function(tok) {
+        if (tok.length === 0) return;
+        if (/^\s+$/.test(tok)) {
+          frag.appendChild(document.createTextNode(tok));
+        } else {
+          var sp = document.createElement('span');
+          sp.className = 'w';
+          sp.setAttribute('data-idx', idx++);
+          sp.textContent = tok;
+          frag.appendChild(sp);
+        }
+      });
+      tn.parentNode.replaceChild(frag, tn);
+    });
+    container.dataset.wrapped = '1';
+  }
+
+  // Group words into chunks split on punctuation, with a pause duration after each chunk.
+  function buildChunks(words) {
+    var chunks = [];
+    var cur = { words: [] };
+    function commit(pauseMs) {
+      if (!cur.words.length) return;
+      cur.text = cur.words.map(function(w){ return w.text; }).join(' ');
+      cur.pauseAfterMs = pauseMs;
+      chunks.push(cur);
+      cur = { words: [] };
+    }
+    words.forEach(function(wEl, i) {
+      var text = wEl.textContent;
+      cur.words.push({ el: wEl, idx: i, text: text });
+      // sentence-ending punctuation → long pause
+      if (/[.!?]+["')\]]*$/.test(text) && text.length > 1) {
+        commit(420);
+      }
+      // semicolon / colon → medium pause
+      else if (/[;:]+["')\]]*$/.test(text)) {
+        commit(300);
+      }
+      // comma or em-dash → short pause
+      else if (/[,—–][")'\]]*$/.test(text)) {
+        commit(220);
+      }
+    });
+    commit(0);
+    return chunks;
+  }
+
+  function highlight(globalIdx) {
+    if (!state.words) return;
+    for (var i = 0; i < state.words.length; i++) {
+      if (i === globalIdx) state.words[i].classList.add('current');
+      else state.words[i].classList.remove('current');
+    }
+  }
+
+  function clearHighlight() {
+    if (!state.words) return;
+    state.words.forEach(function(w){ w.classList.remove('current'); });
+  }
+
+  function findWordAtChar(chunk, charIndex) {
+    var pos = 0;
+    for (var i = 0; i < chunk.words.length; i++) {
+      var len = chunk.words[i].text.length;
+      if (charIndex >= pos && charIndex < pos + len) return i;
+      pos += len + 1; // space
+    }
+    return -1;
+  }
+
+  function setBtnState(btn, s) {
+    if (!btn) return;
+    btn.classList.remove('speaking', 'paused');
+    if (s === 'speaking') btn.classList.add('speaking');
+    else if (s === 'paused') btn.classList.add('paused');
+    btn.setAttribute('data-state', s);
+    var icon = btn.querySelector('.speak-icon');
+    var label = btn.querySelector('.speak-label');
+    if (s === 'idle')     { if (icon) icon.innerHTML = ICON_SPEAKER; if (label) label.textContent = '朗讀'; }
+    else if (s === 'speaking') { if (icon) icon.innerHTML = ICON_PAUSE;   if (label) label.textContent = '暫停'; }
+    else if (s === 'paused')   { if (icon) icon.innerHTML = ICON_PLAY;    if (label) label.textContent = '繼續'; }
+  }
+
+  function stopAll() {
+    synth.cancel();
+    if (state.btn) setBtnState(state.btn, 'idle');
+    clearHighlight();
+    state.btn = null; state.chunks = null; state.words = null;
+    state.chunkIdx = 0; state.paused = false;
+  }
+
+  function speakFrom(chunkIdx) {
+    if (!state.chunks || chunkIdx >= state.chunks.length) { stopAll(); return; }
+    state.chunkIdx = chunkIdx;
+    var chunk = state.chunks[chunkIdx];
+    var u = new SpeechSynthesisUtterance(chunk.text);
+    u.lang = 'en-CA';
+    u.rate = 0.92;
+    u.pitch = 1.0;
+    var v = pickVoice();
+    if (v) u.voice = v;
+
+    u.onstart = function() {
+      if (chunk.words[0]) highlight(chunk.words[0].idx);
+    };
+    u.onboundary = function(e) {
+      if (e.name && e.name !== 'word') return;
+      var w = findWordAtChar(chunk, e.charIndex || 0);
+      if (w >= 0) highlight(chunk.words[w].idx);
+    };
+    u.onend = function() {
+      if (state.paused) return; // don't auto-advance while paused
+      var next = chunkIdx + 1;
+      if (next >= state.chunks.length) { stopAll(); return; }
+      setTimeout(function() {
+        if (!state.paused && state.chunks) speakFrom(next);
+      }, chunk.pauseAfterMs);
+    };
+    u.onerror = function() { stopAll(); };
+
+    synth.speak(u);
+  }
+
+  function start(container, btn) {
+    stopAll();
+    wrapWords(container);
+    var words = Array.prototype.slice.call(container.querySelectorAll('.w'));
+    if (!words.length) return;
+    state.btn = btn;
+    state.words = words;
+    state.chunks = buildChunks(words);
+    state.chunkIdx = 0;
+    state.paused = false;
+    setBtnState(btn, 'speaking');
+    speakFrom(0);
+  }
+
+  document.addEventListener('click', function(e) {
+    var btn = e.target.closest && e.target.closest('.speak-btn');
+    if (!btn) return;
+    e.preventDefault();
+    var s = btn.getAttribute('data-state') || 'idle';
+
+    if (s === 'speaking') {
+      // pause: cancel current utterance; chunkIdx stays so resume can restart this chunk
+      state.paused = true;
+      synth.cancel();
+      setBtnState(btn, 'paused');
+      return;
+    }
+    if (s === 'paused') {
+      // resume: continue from current chunk
+      state.paused = false;
+      setBtnState(btn, 'speaking');
+      speakFrom(state.chunkIdx);
+      return;
+    }
+    // idle → new speech
+    ensureVoices(function() { start(btn.parentElement, btn); });
+  });
+
+  window.addEventListener('hashchange', stopAll);
+  window.addEventListener('pagehide', stopAll);
+})();
+</script>
+</body>
+</html>

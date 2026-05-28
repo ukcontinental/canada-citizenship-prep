@@ -1,0 +1,773 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="加拿大公民考">
+<meta name="theme-color" content="#c8102e">
+<title>第 3 章：我們是誰 / Who We Are · 加拿大公民考試</title>
+<style>
+:root {
+  --bg: #faf8f4;
+  --panel: #ffffff;
+  --ink: #1f2328;
+  --muted: #5d646d;
+  --line: #e7e2d6;
+  --accent: #c8102e;        /* maple red */
+  --accent-soft: #fbe9ec;
+  --en-bg: #f3efe6;
+  --en-ink: #2b2620;
+  --zh-bg: #ffffff;
+  --quote: #8a6d3b;
+  --max: 1180px;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: "Source Serif 4","Source Serif Pro","Noto Serif TC","Noto Serif CJK TC","PingFang TC","Songti TC", Georgia, serif;
+  font-size: 17px;
+  line-height: 1.75;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+.layout {
+  display: grid;
+  grid-template-columns: 240px minmax(0, 1fr);
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 0 24px;
+  gap: 36px;
+}
+nav.sidebar {
+  position: sticky;
+  top: 0;
+  align-self: start;
+  height: 100vh;
+  overflow-y: auto;
+  padding: 28px 0 40px;
+  border-right: 1px solid var(--line);
+  font-family: -apple-system, "Helvetica Neue", "PingFang TC", system-ui, sans-serif;
+  font-size: 14px;
+  line-height: 1.45;
+}
+nav.sidebar h1 {
+  font-family: inherit;
+  font-size: 14px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin: 0 0 10px;
+}
+nav.sidebar h2 {
+  font-family: inherit;
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin: 22px 0 6px;
+  font-weight: 600;
+}
+nav.sidebar a {
+  display: block;
+  color: var(--ink);
+  text-decoration: none;
+  padding: 4px 10px 4px 0;
+  border-radius: 4px;
+}
+nav.sidebar a:hover { color: var(--accent); }
+nav.sidebar a.current {
+  color: var(--accent);
+  font-weight: 600;
+}
+nav.sidebar .home {
+  display: inline-block;
+  font-weight: 700;
+  font-size: 18px;
+  color: var(--ink);
+  text-decoration: none;
+  margin-bottom: 14px;
+}
+nav.sidebar .home::before { content: "🍁 "; }
+main {
+  padding: 36px 0 80px;
+  min-width: 0;
+}
+main h1, main h2, main h3, main h4 {
+  font-family: -apple-system, "Helvetica Neue", "PingFang TC", system-ui, sans-serif;
+  line-height: 1.3;
+  color: var(--ink);
+}
+main h1 {
+  font-size: 28px;
+  margin: 0 0 8px;
+  letter-spacing: -0.01em;
+}
+main > p:first-of-type {
+  color: var(--muted);
+  margin-top: 4px;
+}
+main h2 {
+  font-size: 21px;
+  margin: 40px 0 12px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid var(--line);
+}
+main h3 { font-size: 18px; margin: 28px 0 8px; }
+main h4 { font-size: 16px; margin: 22px 0 6px; color: var(--muted); }
+main p { margin: 0 0 12px; }
+main ul, main ol { margin: 0 0 14px; padding-left: 1.4em; }
+main li { margin: 4px 0; }
+main hr {
+  border: none;
+  border-top: 1px solid var(--line);
+  margin: 32px 0;
+}
+main a { color: var(--accent); text-decoration: none; }
+main a:hover { text-decoration: underline; }
+main code {
+  font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.9em;
+  background: #f3efe6;
+  padding: 1px 5px;
+  border-radius: 4px;
+}
+main blockquote {
+  margin: 14px 0;
+  padding: 12px 18px;
+  background: var(--accent-soft);
+  border-left: 3px solid var(--accent);
+  color: var(--ink);
+  border-radius: 0 6px 6px 0;
+}
+main blockquote p:last-child { margin-bottom: 0; }
+main table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 14px 0 22px;
+  font-size: 15px;
+}
+main th, main td {
+  text-align: left;
+  padding: 8px 12px;
+  border-bottom: 1px solid var(--line);
+  vertical-align: top;
+}
+main th {
+  background: #f3efe6;
+  font-family: -apple-system, "Helvetica Neue", "PingFang TC", system-ui, sans-serif;
+  font-weight: 600;
+}
+
+/* --- bilingual pairing --- */
+.bilingual {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  margin: 14px 0;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  overflow: hidden;
+  background: var(--zh-bg);
+}
+.bilingual .en, .bilingual .zh {
+  padding: 16px 20px;
+}
+.bilingual .en {
+  background: var(--en-bg);
+  color: var(--en-ink);
+  font-family: "Source Serif 4","Source Serif Pro", Georgia, serif;
+  font-style: normal;
+  border-right: 1px solid var(--line);
+}
+.bilingual .en p, .bilingual .zh p { margin: 0 0 8px; }
+.bilingual .en p:last-child, .bilingual .zh p:last-child { margin-bottom: 0; }
+.bilingual .en ul, .bilingual .en ol,
+.bilingual .zh ul, .bilingual .zh ol {
+  margin: 0 0 6px;
+  padding-left: 1.3em;
+}
+.bilingual .en em { font-style: italic; }
+.bilingual .label {
+  display: inline-block;
+  font-family: -apple-system, "Helvetica Neue", system-ui, sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 6px;
+  font-weight: 600;
+}
+
+/* --- callouts (⚠️ blocks) --- */
+.callout {
+  margin: 18px 0;
+  padding: 14px 18px;
+  background: #fff8e1;
+  border-left: 4px solid #f0a500;
+  border-radius: 0 6px 6px 0;
+}
+.callout p { margin: 0 0 6px; }
+.callout p:last-child { margin: 0; }
+
+/* --- collapsible answers --- */
+details.answers {
+  margin: 22px 0;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 0;
+  overflow: hidden;
+}
+details.answers > summary {
+  cursor: pointer;
+  padding: 14px 18px;
+  font-family: -apple-system, "Helvetica Neue", "PingFang TC", system-ui, sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  background: #f3efe6;
+  border-bottom: 1px solid transparent;
+  user-select: none;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+details.answers > summary::-webkit-details-marker { display: none; }
+details.answers > summary::after {
+  content: "▸";
+  color: var(--muted);
+  transition: transform 0.18s ease;
+  font-size: 14px;
+}
+details.answers[open] > summary {
+  border-bottom-color: var(--line);
+}
+details.answers[open] > summary::after { transform: rotate(90deg); }
+details.answers .answers-body { padding: 14px 22px 6px; }
+details.answers .answers-body ol { margin: 0; padding-left: 1.4em; }
+details.answers .answers-body li { margin: 8px 0; }
+
+/* --- dashboard cards on index --- */
+.dash {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+  margin: 24px 0;
+}
+.dash a {
+  display: block;
+  padding: 18px 20px;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  color: var(--ink);
+  text-decoration: none;
+  transition: border-color 0.15s, transform 0.15s;
+}
+.dash a:hover {
+  border-color: var(--accent);
+  transform: translateY(-1px);
+}
+.dash a .kicker {
+  font-family: -apple-system, system-ui, sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+  display: block;
+  margin-bottom: 6px;
+}
+.dash a .title {
+  font-weight: 600;
+  font-size: 17px;
+  line-height: 1.35;
+}
+.dash a .meta {
+  display: block;
+  margin-top: 8px;
+  font-size: 13px;
+  color: var(--muted);
+  font-family: -apple-system, system-ui, sans-serif;
+}
+
+/* --- speak (TTS) button --- */
+.speak-btn {
+  appearance: none;
+  background: rgba(255,255,255,0.85);
+  border: 1px solid var(--line);
+  color: var(--muted);
+  cursor: pointer;
+  padding: 4px 9px;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 12px;
+  font-family: -apple-system, "Helvetica Neue", system-ui, sans-serif;
+  transition: all 0.15s;
+  -webkit-tap-highlight-color: transparent;
+  min-width: 64px;
+  justify-content: center;
+}
+.speak-btn .speak-icon { display: inline-flex; }
+.speak-btn svg { display: block; }
+.speak-btn:hover { color: var(--accent); border-color: var(--accent); }
+.speak-btn:active { transform: scale(0.96); }
+.speak-btn.speaking {
+  background: var(--accent);
+  color: #fff;
+  border-color: var(--accent);
+  animation: speak-pulse 1.4s ease-in-out infinite;
+}
+.speak-btn.paused {
+  background: #f0a500;
+  color: #fff;
+  border-color: #f0a500;
+  animation: none;
+}
+@keyframes speak-pulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(200,16,46,0.5); }
+  50%      { box-shadow: 0 0 0 6px rgba(200,16,46,0); }
+}
+
+/* --- per-word highlight during TTS --- */
+.w {
+  border-radius: 3px;
+  padding: 0 1px;
+  transition: color 0.08s ease, background 0.08s ease;
+}
+.w.current {
+  color: var(--accent);
+  background: rgba(200, 16, 46, 0.14);
+  font-weight: 600;
+}
+.bilingual .en { position: relative; }
+.bilingual .en > .speak-btn {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+}
+.bilingual .en > .label + .speak-btn { /* fallback positioning if absolute fails */ }
+blockquote.speakable, .callout.speakable {
+  position: relative;
+  padding-right: 60px;
+}
+blockquote.speakable > .speak-btn,
+.callout.speakable > .speak-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: #fff;
+}
+
+/* --- mobile --- */
+@media (max-width: 900px) {
+  .layout { grid-template-columns: 1fr; padding: 0 16px; gap: 0; }
+  nav.sidebar {
+    position: static;
+    height: auto;
+    border-right: none;
+    border-bottom: 1px solid var(--line);
+    padding: 18px 0;
+  }
+  .bilingual { grid-template-columns: 1fr; }
+  .bilingual .en { border-right: none; border-bottom: 1px solid var(--line); }
+}
+
+/* --- print --- */
+@media print {
+  nav.sidebar { display: none; }
+  .layout { display: block; padding: 0; }
+  main { padding: 0; }
+  details.answers { border: 1px solid #999; }
+  details.answers > summary { display: none; }
+  details.answers > .answers-body { display: block !important; }
+  .bilingual { break-inside: avoid; }
+}
+</style>
+</head>
+<body>
+<div class="layout">
+<nav class="sidebar">
+<a href="../index.html" class="home">加拿大公民考試</a>
+<a href="../curriculum/14-day-plan.html">📅 14 天計畫表</a>
+<a href="../practice/question-bank.html">📝 220 題題庫</a>
+<h2>中英對照（13 章）</h2>
+<a href="../bilingual/00-intro-oath.html">00 · 前言＋誓詞</a>
+<a href="../bilingual/01-applying-citizenship.html">01 · 申請入籍</a>
+<a href="../bilingual/02-rights-responsibilities.html">02 · 權利與義務</a>
+<a href="../bilingual/03-who-we-are.html" class="current">03 · 我們是誰</a>
+<a href="../bilingual/04-canadas-history.html">04 · 加拿大歷史</a>
+<a href="../bilingual/05-modern-canada.html">05 · 現代加拿大</a>
+<a href="../bilingual/06-how-canadians-govern.html">06 · 政府架構</a>
+<a href="../bilingual/07-federal-elections.html">07 · 聯邦選舉</a>
+<a href="../bilingual/08-justice-system.html">08 · 司法系統</a>
+<a href="../bilingual/09-canadian-symbols.html">09 · 國家象徵</a>
+<a href="../bilingual/10-canadas-economy.html">10 · 加拿大經濟</a>
+<a href="../bilingual/11-canadas-regions.html">11 · 五大區域</a>
+<a href="../bilingual/12-study-questions.html">12 · 官方練習題</a>
+<h2>每日驗收（14 天）</h2>
+<a href="../daily-quiz/day-01.html">Day 01</a>
+<a href="../daily-quiz/day-02.html">Day 02</a>
+<a href="../daily-quiz/day-03.html">Day 03</a>
+<a href="../daily-quiz/day-04.html">Day 04</a>
+<a href="../daily-quiz/day-05.html">Day 05</a>
+<a href="../daily-quiz/day-06.html">Day 06</a>
+<a href="../daily-quiz/day-07.html">Day 07</a>
+<a href="../daily-quiz/day-08.html">Day 08</a>
+<a href="../daily-quiz/day-09.html">Day 09</a>
+<a href="../daily-quiz/day-10.html">Day 10</a>
+<a href="../daily-quiz/day-11.html">Day 11</a>
+<a href="../daily-quiz/day-12.html">Day 12</a>
+<a href="../daily-quiz/day-13.html">Day 13</a>
+<a href="../daily-quiz/day-14.html">Day 14</a>
+</nav>
+<main><h1>第 3 章：我們是誰 / Who We Are</h1>
+<div class="callout"><p>對應 PDF 第 10–13 頁。對應 <a href="../daily-quiz/day-02.html">day-02.md</a>。</p></div>
+<hr>
+<h2>Unity in Diversity / 多元中的統一</h2>
+<div class="bilingual"><div class="en"><span class="label">English</span><button class="speak-btn" type="button" aria-label="朗讀英文" title="朗讀英文 / Read aloud" data-state="idle"><span class="speak-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 10v4h4l5 4V6L7 10H3zm12.5 2c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM13 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg></span><span class="speak-label">朗讀</span></button><p>John Buchan, the 1st Baron Tweedsmuir, was a popular Governor General of Canada (1935–40). Immigrant groups, he said, &ldquo;should retain their individuality and each make its contribution to the national character.&rdquo; Each could learn &ldquo;from the other, and … while they cherish their own special loyalties and traditions, they cherish not less that new loyalty and tradition which springs from their union.&rdquo; (Canadian Club of Halifax, 1937).</p></div><div class="zh"><span class="label">中文</span><p><strong>John Buchan（第一代特威茲穆爾男爵）</strong> 是 1935–40 年廣受愛戴的加拿大總督。他曾說：<strong>移民族群「應該保有自身的獨特性，並各自為國家性格做出貢獻」</strong>；各族群之間可以彼此學習，「他們在珍視自身忠誠與傳統的同時，也同樣珍視從相互結合中誕生的新忠誠與新傳統」（1937 年於哈利法克斯加拿大俱樂部演講）。</p></div></div>
+<hr>
+<h2>加拿大的自由與身分</h2>
+<div class="bilingual"><div class="en"><span class="label">English</span><button class="speak-btn" type="button" aria-label="朗讀英文" title="朗讀英文 / Read aloud" data-state="idle"><span class="speak-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 10v4h4l5 4V6L7 10H3zm12.5 2c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM13 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg></span><span class="speak-label">朗讀</span></button><p>Canada is known around the world as a strong and free country. Canadians are proud of their unique identity. We have inherited the oldest continuous constitutional tradition in the world. We are the only constitutional monarchy in North America.</p></div><div class="zh"><span class="label">中文</span><p>加拿大舉世聞名為一個 <strong>強盛而自由的國家</strong>。加拿大人以自身獨特的身分認同為榮。我們繼承了 <strong>全世界最古老且延續至今的憲政傳統</strong>，並且是 <strong>北美唯一的君主立憲國家</strong>。</p></div></div>
+<div class="bilingual"><div class="en"><span class="label">English</span><button class="speak-btn" type="button" aria-label="朗讀英文" title="朗讀英文 / Read aloud" data-state="idle"><span class="speak-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 10v4h4l5 4V6L7 10H3zm12.5 2c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM13 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg></span><span class="speak-label">朗讀</span></button><p>Our institutions uphold a commitment to Peace, Order and Good Government, a key phrase in Canada&rsquo;s original constitutional document in 1867, the British North America Act. A belief in ordered liberty, enterprise, hard work and fair play has enabled Canadians to build a prosperous society in a rugged environment from our Atlantic shores to the Pacific Ocean and to the Arctic Circle—so much so that poets and songwriters have hailed Canada as the &ldquo;Great Dominion.&rdquo;</p></div><div class="zh"><span class="label">中文</span><p>我們的制度信守 <strong>「和平、秩序與良政」(Peace, Order and Good Government)</strong>——這是 <strong>1867 年《英屬北美法案 (British North America Act)》</strong> 的關鍵詞。對 <strong>有序自由、企業精神、勤奮工作與公平競爭</strong> 的信念，使加拿大人在 <strong>從大西洋岸、太平洋岸到北極圈</strong> 的嚴苛環境中建立繁榮社會——以至於詩人與作詞者讚譽加拿大為 <strong>「偉大的自治領 (Great Dominion)」</strong>。</p></div></div>
+<div class="bilingual"><div class="en"><span class="label">English</span><button class="speak-btn" type="button" aria-label="朗讀英文" title="朗讀英文 / Read aloud" data-state="idle"><span class="speak-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 10v4h4l5 4V6L7 10H3zm12.5 2c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM13 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg></span><span class="speak-label">朗讀</span></button><p>To understand what it means to be Canadian, it is important to know about our three founding peoples— Aboriginal, French and British.</p></div><div class="zh"><span class="label">中文</span><p>要理解「成為加拿大人」的意涵，必須認識我們的 <strong>三大開國民族 (three founding peoples)</strong>：<strong>原住民 (Aboriginal)、法裔 (French) 與英裔 (British)</strong>。</p></div></div>
+<hr>
+<h2>Aboriginal Peoples / 原住民</h2>
+<div class="bilingual"><div class="en"><span class="label">English</span><button class="speak-btn" type="button" aria-label="朗讀英文" title="朗讀英文 / Read aloud" data-state="idle"><span class="speak-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 10v4h4l5 4V6L7 10H3zm12.5 2c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM13 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg></span><span class="speak-label">朗讀</span></button><p>The ancestors of Aboriginal peoples are believed to have migrated from Asia many thousands of years ago. They were well established here long before explorers from Europe first came to North America. Diverse, vibrant First Nations cultures were rooted in religious beliefs about their relationship to the Creator, the natural environment and each other.</p></div><div class="zh"><span class="label">中文</span><p>原住民的祖先 <strong>被認為是數千年前從亞洲遷徙而來</strong>。早在歐洲探險家抵達北美之前，他們已在此安居樂業。多元而活躍的 <strong>第一民族文化</strong> 根植於 <strong>與造物主、自然環境與彼此關係的宗教信仰</strong>。</p></div></div>
+<div class="bilingual"><div class="en"><span class="label">English</span><button class="speak-btn" type="button" aria-label="朗讀英文" title="朗讀英文 / Read aloud" data-state="idle"><span class="speak-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 10v4h4l5 4V6L7 10H3zm12.5 2c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM13 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg></span><span class="speak-label">朗讀</span></button><p>Aboriginal and treaty rights are in the Canadian Constitution. Territorial rights were first guaranteed through the Royal Proclamation of 1763 by King George III, and established the basis for negotiating treaties with the newcomers—treaties that were not always fully respected.</p></div><div class="zh"><span class="label">中文</span><p><strong>原住民權利與條約權利已寫入加拿大憲法</strong>。<strong>領土權</strong> 最早由 <strong>英王喬治三世於 1763 年的《皇家公告 (Royal Proclamation of 1763)》</strong> 所保障，並奠定了與新移居者談判條約的基礎——<strong>這些條約並非總是被完全遵守</strong>。</p></div></div>
+<div class="bilingual"><div class="en"><span class="label">English</span><button class="speak-btn" type="button" aria-label="朗讀英文" title="朗讀英文 / Read aloud" data-state="idle"><span class="speak-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 10v4h4l5 4V6L7 10H3zm12.5 2c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM13 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg></span><span class="speak-label">朗讀</span></button><p>From the 1800s until the 1980s, the federal government placed many Aboriginal children in residential schools to educate and assimilate them into mainstream Canadian culture. The schools were poorly funded and inflicted hardship on the students; some were physically abused. Aboriginal languages and cultural practices were mostly prohibited. In 2008, Ottawa formally apologized to the former students.</p></div><div class="zh"><span class="label">中文</span><p><strong>從 1800 年代直到 1980 年代</strong>，聯邦政府將許多原住民兒童送入 <strong>寄宿學校 (residential schools)</strong>，企圖將他們同化至主流加拿大文化。這些學校 <strong>資源匱乏、給學生帶來痛苦</strong>，部分學童更遭受 <strong>體罰</strong>。<strong>原住民語言與文化習俗大多被禁止</strong>。<strong>2008 年，渥太華（聯邦政府）正式向前學童道歉</strong>。</p></div></div>
+<div class="bilingual"><div class="en"><span class="label">English</span><button class="speak-btn" type="button" aria-label="朗讀英文" title="朗讀英文 / Read aloud" data-state="idle"><span class="speak-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 10v4h4l5 4V6L7 10H3zm12.5 2c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM13 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg></span><span class="speak-label">朗讀</span></button><p>In today&rsquo;s Canada, Aboriginal peoples enjoy renewed pride and confidence, and have made significant achievements in agriculture, the environment, business and the arts.</p></div><div class="zh"><span class="label">中文</span><p>在今日加拿大，原住民族重拾了驕傲與自信，在 <strong>農業、環境、商業與藝術</strong> 領域有重大成就。</p></div></div>
+<hr>
+<h2>原住民 3 大族群</h2>
+<div class="bilingual"><div class="en"><span class="label">English</span><button class="speak-btn" type="button" aria-label="朗讀英文" title="朗讀英文 / Read aloud" data-state="idle"><span class="speak-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 10v4h4l5 4V6L7 10H3zm12.5 2c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM13 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg></span><span class="speak-label">朗讀</span></button><p>Today, the term Aboriginal peoples refers to three distinct groups:</p></div><div class="zh"><span class="label">中文</span><p>「原住民 (Aboriginal peoples)」一詞涵蓋 <strong>3 個獨特的群體</strong>：</p></div></div>
+<div class="bilingual"><div class="en"><span class="label">English</span><button class="speak-btn" type="button" aria-label="朗讀英文" title="朗讀英文 / Read aloud" data-state="idle"><span class="speak-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 10v4h4l5 4V6L7 10H3zm12.5 2c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM13 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg></span><span class="speak-label">朗讀</span></button><p><strong>Indian</strong> refers to all Aboriginal people who are not Inuit or Métis. In the 1970s, the term First Nations began to be used. Today, about half of First Nations people live on reserve land in about 600 communities while the other half live off-reserve, mainly in urban centres.</p></div><div class="zh"><span class="label">中文</span><p><strong>「印第安人 (Indian)」</strong> 指所有非因紐特、非梅蒂斯的原住民。<strong>1970 年代起改稱「第一民族 (First Nations)」</strong>。今日約 <strong>一半的第一民族居於約 600 個保留地 (reserves) 社區</strong>，另一半 <strong>居於保留地外的城市</strong>。</p></div></div>
+<div class="bilingual"><div class="en"><span class="label">English</span><button class="speak-btn" type="button" aria-label="朗讀英文" title="朗讀英文 / Read aloud" data-state="idle"><span class="speak-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 10v4h4l5 4V6L7 10H3zm12.5 2c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM13 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg></span><span class="speak-label">朗讀</span></button><p>The <strong>Inuit</strong>, which means &ldquo;the people&rdquo; in the Inuktitut language, live in small, scattered communities across the Arctic. Their knowledge of the land, sea and wildlife enabled them to adapt to one of the harshest environments on earth.</p></div><div class="zh"><span class="label">中文</span><p><strong>「因紐特 (Inuit)」</strong> 在 <strong>Inuktitut 語</strong> 中意為「人民」，他們居住在 <strong>北極區散布的小型社區</strong>。<strong>對土地、海洋與野生動物的知識</strong> 讓他們適應了地球上最嚴苛的環境之一。</p></div></div>
+<div class="bilingual"><div class="en"><span class="label">English</span><button class="speak-btn" type="button" aria-label="朗讀英文" title="朗讀英文 / Read aloud" data-state="idle"><span class="speak-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 10v4h4l5 4V6L7 10H3zm12.5 2c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM13 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg></span><span class="speak-label">朗讀</span></button><p>The <strong>Métis</strong> are a distinct people of mixed Aboriginal and European ancestry, the majority of whom live in the Prairie provinces. They come from both French- and English-speaking backgrounds and speak their own dialect, Michif.</p></div><div class="zh"><span class="label">中文</span><p><strong>「梅蒂斯 (Métis)」</strong> 是 <strong>原住民與歐裔混血</strong> 的獨特族群，大多居於 <strong>草原省 (Prairie provinces)</strong>。他們同時有 <strong>法語與英語背景</strong>，講自己的方言 <strong>Michif</strong>。</p></div></div>
+<div class="bilingual"><div class="en"><span class="label">English</span><button class="speak-btn" type="button" aria-label="朗讀英文" title="朗讀英文 / Read aloud" data-state="idle"><span class="speak-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 10v4h4l5 4V6L7 10H3zm12.5 2c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM13 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg></span><span class="speak-label">朗讀</span></button><p>About 65% of the Aboriginal people are First Nations, while 30% are Métis and 4% Inuit.</p></div><div class="zh"><span class="label">中文</span><p>原住民中約 <strong>65% 為第一民族 (First Nations)</strong>、<strong>30% 為梅蒂斯 (Métis)</strong>、<strong>4% 為因紐特 (Inuit)</strong>。</p></div></div>
+<hr>
+<h2>English and French / 英裔與法裔</h2>
+<div class="bilingual"><div class="en"><span class="label">English</span><button class="speak-btn" type="button" aria-label="朗讀英文" title="朗讀英文 / Read aloud" data-state="idle"><span class="speak-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 10v4h4l5 4V6L7 10H3zm12.5 2c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM13 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg></span><span class="speak-label">朗讀</span></button><p>Canadian society today stems largely from the English-speaking and French-speaking Christian civilizations that were brought here from Europe by settlers. English and French define the reality of day-to-day life for most people and are the country&rsquo;s official languages. The federal government is required by law to provide services throughout Canada in English and French.</p></div><div class="zh"><span class="label">中文</span><p>今日的加拿大社會主要源自 <strong>歐洲移民帶來的英語與法語基督教文明</strong>。<strong>英文與法文</strong> 定義了多數人的日常生活，並是國家的 <strong>官方語言</strong>。<strong>聯邦政府依法必須在全國以英語與法語提供服務</strong>。</p></div></div>
+<div class="bilingual"><div class="en"><span class="label">English</span><button class="speak-btn" type="button" aria-label="朗讀英文" title="朗讀英文 / Read aloud" data-state="idle"><span class="speak-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 10v4h4l5 4V6L7 10H3zm12.5 2c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM13 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg></span><span class="speak-label">朗讀</span></button><p>Today, there are 18 million Anglophones—people who speak English as a first language—and seven million Francophones—people who speak French as their first language. While the majority of Francophones live in the province of Quebec, one million Francophones live in Ontario, New Brunswick and Manitoba, with a smaller presence in other provinces. New Brunswick is the only officially bilingual province.</p></div><div class="zh"><span class="label">中文</span><p>今日加拿大有 <strong>1,800 萬以英文為母語者 (Anglophones)</strong>，以及 <strong>700 萬以法文為母語者 (Francophones)</strong>。大部分法裔居住於 <strong>魁北克省</strong>，但約有 <strong>100 萬法裔居於安大略、新布朗斯維克與曼尼托巴</strong>，其他省份亦有少數。<strong>新布朗斯維克 (New Brunswick) 是加拿大唯一官方雙語省</strong>。</p></div></div>
+<div class="bilingual"><div class="en"><span class="label">English</span><button class="speak-btn" type="button" aria-label="朗讀英文" title="朗讀英文 / Read aloud" data-state="idle"><span class="speak-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 10v4h4l5 4V6L7 10H3zm12.5 2c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM13 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg></span><span class="speak-label">朗讀</span></button><p>The <strong>Acadians</strong> are the descendants of French colonists who began settling in what are now the Maritime provinces in 1604. Between 1755 and 1763, during the war between Britain and France, more than two-thirds of the Acadians were deported from their homeland. Despite this ordeal, known as the &ldquo;Great Upheaval,&rdquo; the Acadians survived and maintained their unique identity. Today, Acadian culture is flourishing and is a lively part of French-speaking Canada.</p></div><div class="zh"><span class="label">中文</span><p><strong>「阿卡迪亞人 (Acadians)」</strong> 是 <strong>1604 年起定居於今日海岸省份 (Maritime provinces) 的法國殖民者後裔</strong>。<strong>1755–1763 英法戰爭期間，三分之二以上的阿卡迪亞人被驅逐出家園</strong>——史稱 <strong>「大動盪 (Great Upheaval)」</strong>。儘管如此，他們 <strong>倖存並保有獨特身分</strong>。今日 <strong>阿卡迪亞文化蓬勃發展</strong>，是法語加拿大充滿活力的一部分。</p></div></div>
+<div class="bilingual"><div class="en"><span class="label">English</span><button class="speak-btn" type="button" aria-label="朗讀英文" title="朗讀英文 / Read aloud" data-state="idle"><span class="speak-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 10v4h4l5 4V6L7 10H3zm12.5 2c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM13 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg></span><span class="speak-label">朗讀</span></button><p>Quebecers are the people of Quebec, the vast majority French-speaking. Most are descendants of 8,500 French settlers from the 1600s and 1700s and maintain a unique identity, culture and language. The House of Commons recognized in 2006 that the Quebecois form a nation within a united Canada. One million Anglo-Quebecers have a heritage of 250 years and form a vibrant part of the Quebec fabric.</p></div><div class="zh"><span class="label">中文</span><p><strong>「魁北克人 (Quebecers)」</strong> 是魁北克的居民，<strong>絕大多數講法語</strong>。多數為 <strong>1600 與 1700 年代 8,500 名法國移居者的後裔</strong>，保有獨特的身分、文化與語言。<strong>2006 年，加拿大眾議院承認魁北克人 (Quebecois) 為「統一加拿大內的一個民族 (a nation within a united Canada)」</strong>。<strong>100 萬名英裔魁北克人 (Anglo-Quebecers) 擁有 250 年的歷史傳承</strong>，是魁北克社會充滿活力的一部分。</p></div></div>
+<hr>
+<h2>English Settlers / 英裔移居者</h2>
+<div class="bilingual"><div class="en"><span class="label">English</span><button class="speak-btn" type="button" aria-label="朗讀英文" title="朗讀英文 / Read aloud" data-state="idle"><span class="speak-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 10v4h4l5 4V6L7 10H3zm12.5 2c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM13 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg></span><span class="speak-label">朗讀</span></button><p>The basic way of life in English-speaking areas was established by hundreds of thousands of English, Welsh, Scottish and Irish settlers, soldiers and migrants from the 1600s to the 20th century. Generations of pioneers and builders of British origins, as well as other groups, invested and endured hardship in laying the foundations of our country. This helps explain why Anglophones (English speakers) are generally referred to as English Canadians.</p></div><div class="zh"><span class="label">中文</span><p>英語區的基本生活方式由 <strong>1600 年代至 20 世紀數十萬名英格蘭、威爾斯、蘇格蘭與愛爾蘭</strong> 的移居者、士兵與移民所建立。一代代英國裔的開拓者與建設者（以及其他族群）<strong>投入心血並承擔艱辛</strong>，奠定了我們國家的根基。這也是 <strong>英語使用者一般被稱為「英裔加拿大人 (English Canadians)」</strong> 的原因。</p></div></div>
+<hr>
+<h2>Becoming Canadian / 成為加拿大人</h2>
+<div class="bilingual"><div class="en"><span class="label">English</span><button class="speak-btn" type="button" aria-label="朗讀英文" title="朗讀英文 / Read aloud" data-state="idle"><span class="speak-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 10v4h4l5 4V6L7 10H3zm12.5 2c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM13 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg></span><span class="speak-label">朗讀</span></button><p>Some Canadians immigrate from places where they have experienced warfare or conflict. Such experiences do not justify bringing to Canada violent, extreme or hateful prejudices. In becoming Canadian, newcomers are expected to embrace democratic principles such as the rule of law.</p></div><div class="zh"><span class="label">中文</span><p>部分加拿大人來自曾經歷戰爭或衝突之地。<strong>這些經歷不能成為將暴力、極端或仇恨偏見帶入加拿大的藉口</strong>。<strong>成為加拿大人意味著接納民主原則，例如法治</strong>。</p></div></div>
+<hr>
+<h2>Diversity in Canada / 加拿大的多元</h2>
+<div class="bilingual"><div class="en"><span class="label">English</span><button class="speak-btn" type="button" aria-label="朗讀英文" title="朗讀英文 / Read aloud" data-state="idle"><span class="speak-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 10v4h4l5 4V6L7 10H3zm12.5 2c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM13 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg></span><span class="speak-label">朗讀</span></button><p>The majority of Canadians were born in this country and this has been true since the 1800s. However, Canada is often referred to as a land of immigrants because, over the past 200 years, millions of newcomers have helped to build and defend our way of life.</p></div><div class="zh"><span class="label">中文</span><p><strong>自 1800 年代起，多數加拿大人即出生於本土</strong>。然而加拿大常被稱為 <strong>「移民之國 (a land of immigrants)」</strong>，因為過去 200 年裡，<strong>數百萬新移民協助建設並捍衛了我們的生活方式</strong>。</p></div></div>
+<div class="bilingual"><div class="en"><span class="label">English</span><button class="speak-btn" type="button" aria-label="朗讀英文" title="朗讀英文 / Read aloud" data-state="idle"><span class="speak-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 10v4h4l5 4V6L7 10H3zm12.5 2c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM13 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg></span><span class="speak-label">朗讀</span></button><p>Many ethnic and religious groups live and work in peace as proud Canadians. The largest groups are the English, French, Scottish, Irish, German, Italian, Chinese, Aboriginal, Ukrainian, Dutch, South Asian and Scandinavian. Since the 1970s, most immigrants have come from Asian countries.</p></div><div class="zh"><span class="label">中文</span><p>許多族裔與宗教群體 <strong>以驕傲的加拿大人身分和平共處</strong>。最大的群體包括 <strong>英格蘭、法蘭西、蘇格蘭、愛爾蘭、德國、義大利、華人、原住民、烏克蘭、荷蘭、南亞、北歐</strong>。<strong>1970 年代起，多數新移民來自亞洲國家</strong>。</p></div></div>
+<div class="bilingual"><div class="en"><span class="label">English</span><button class="speak-btn" type="button" aria-label="朗讀英文" title="朗讀英文 / Read aloud" data-state="idle"><span class="speak-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 10v4h4l5 4V6L7 10H3zm12.5 2c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM13 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg></span><span class="speak-label">朗讀</span></button><p>Non-official languages are widely spoken in Canadian homes. Chinese languages are the second most-spoken at home, after English, in two of Canada&rsquo;s biggest cities. In Vancouver, 13% of the population speak Chinese languages at home; in Toronto, the number is 7%.</p></div><div class="zh"><span class="label">中文</span><p><strong>非官方語言</strong> 在加拿大家庭中廣泛使用。在兩個最大城市中，<strong>中文是僅次於英文的第二大家用語言</strong>：<strong>溫哥華 13%</strong>、<strong>多倫多 7%</strong> 在家講中文。</p></div></div>
+<div class="bilingual"><div class="en"><span class="label">English</span><button class="speak-btn" type="button" aria-label="朗讀英文" title="朗讀英文 / Read aloud" data-state="idle"><span class="speak-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 10v4h4l5 4V6L7 10H3zm12.5 2c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM13 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg></span><span class="speak-label">朗讀</span></button><p>The great majority of Canadians identify as Christians. The largest religious affiliation is Catholic, followed by various Protestant churches. The numbers of Muslims, Jews, Hindus, Sikhs and members of other religions, as well as people who state &ldquo;no religion&rdquo; are also growing.</p></div><div class="zh"><span class="label">中文</span><p>絕大多數加拿大人 <strong>自認為基督徒</strong>。最大的宗教派別是 <strong>天主教 (Catholic)</strong>，其次是 <strong>各新教教派 (Protestant)</strong>。<strong>穆斯林、猶太教徒、印度教徒、錫克教徒</strong> 與其他宗教信徒、以及 <strong>「無宗教信仰者」</strong> 的人數也持續增加。</p></div></div>
+<div class="bilingual"><div class="en"><span class="label">English</span><button class="speak-btn" type="button" aria-label="朗讀英文" title="朗讀英文 / Read aloud" data-state="idle"><span class="speak-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 10v4h4l5 4V6L7 10H3zm12.5 2c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM13 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg></span><span class="speak-label">朗讀</span></button><p>In Canada the state has traditionally partnered with faith communities to promote social welfare, harmony and mutual respect; to provide schools and health care; to resettle refugees; and to uphold religious freedom, religious expression and freedom of conscience.</p></div><div class="zh"><span class="label">中文</span><p>在加拿大，<strong>國家傳統上與宗教社群合作</strong>，以促進 <strong>社會福利、和諧與相互尊重</strong>；提供 <strong>學校與健保</strong>；<strong>安置難民</strong>；並維護 <strong>宗教自由、宗教表達與良知自由</strong>。</p></div></div>
+<div class="bilingual"><div class="en"><span class="label">English</span><button class="speak-btn" type="button" aria-label="朗讀英文" title="朗讀英文 / Read aloud" data-state="idle"><span class="speak-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 10v4h4l5 4V6L7 10H3zm12.5 2c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM13 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg></span><span class="speak-label">朗讀</span></button><p>Canada&rsquo;s diversity includes gay and lesbian Canadians, who enjoy the full protection of and equal treatment under the law, including access to civil marriage.</p></div><div class="zh"><span class="label">中文</span><p>加拿大的多元也涵蓋 <strong>同性戀加拿大人 (gay and lesbian Canadians)</strong>，他們在法律之下 <strong>受完全保障與平等對待</strong>，包括 <strong>可進入民事婚姻 (civil marriage)</strong>。</p></div></div>
+<div class="bilingual"><div class="en"><span class="label">English</span><button class="speak-btn" type="button" aria-label="朗讀英文" title="朗讀英文 / Read aloud" data-state="idle"><span class="speak-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 10v4h4l5 4V6L7 10H3zm12.5 2c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM13 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg></span><span class="speak-label">朗讀</span></button><p>Together, these diverse groups, sharing a common Canadian identity, make up today&rsquo;s multicultural society.</p></div><div class="zh"><span class="label">中文</span><p>這些多元族群共同擁有加拿大人身分，<strong>組成了今日加拿大的多元文化社會</strong>。</p></div></div>
+<div class="bilingual"><div class="en"><span class="label">English</span><button class="speak-btn" type="button" aria-label="朗讀英文" title="朗讀英文 / Read aloud" data-state="idle"><span class="speak-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 10v4h4l5 4V6L7 10H3zm12.5 2c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM13 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg></span><span class="speak-label">朗讀</span></button><p>Olympian Marjorie Turner-Bailey of Nova Scotia is a descendant of black Loyalists, escaped slaves and freed men and women of African origin who in the 1780s fled to Canada from America, where slavery remained legal until 1863.</p></div><div class="zh"><span class="label">中文</span><p>新斯科細亞的奧運選手 <strong>Marjorie Turner-Bailey</strong> 是 <strong>黑人保皇黨 (black Loyalists)、逃亡黑奴與獲釋黑人</strong> 的後裔——他們在 <strong>1780 年代</strong> 從仍實施奴隸制度的美國（<strong>奴隸制度在美國延續到 1863 年</strong>）逃到加拿大。</p></div></div>
+<hr>
+<h2>重點整理</h2>
+<table>
+<thead>
+<tr>
+<th>項目</th>
+<th>數字 / 事實</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>三大開國民族</td>
+<td>Aboriginal、French、British</td>
+</tr>
+<tr>
+<td>原住民 3 族</td>
+<td>First Nations 65%、Métis 30%、Inuit 4%</td>
+</tr>
+<tr>
+<td>「Indian」更名</td>
+<td>1970 年代起改稱 First Nations</td>
+</tr>
+<tr>
+<td>第一民族居住保留地數</td>
+<td>約 600 個</td>
+</tr>
+<tr>
+<td>Royal Proclamation</td>
+<td>1763 年，英王喬治三世發布</td>
+</tr>
+<tr>
+<td>寄宿學校道歉</td>
+<td>2008 年</td>
+</tr>
+<tr>
+<td>Anglophones</td>
+<td>1,800 萬人</td>
+</tr>
+<tr>
+<td>Francophones</td>
+<td>700 萬人</td>
+</tr>
+<tr>
+<td>唯一官方雙語省</td>
+<td>New Brunswick</td>
+</tr>
+<tr>
+<td>Acadians 起源</td>
+<td>1604 年法國殖民者</td>
+</tr>
+<tr>
+<td>Great Upheaval</td>
+<td>1755–1763 阿卡迪亞人被驅逐</td>
+</tr>
+<tr>
+<td>Quebec 法裔祖先</td>
+<td>8,500 名 1600–1700 年代法國移居者</td>
+</tr>
+<tr>
+<td>2006 國會承認</td>
+<td>Quebecois 為「統一加拿大內的一個民族」</td>
+</tr>
+<tr>
+<td>Anglo-Quebecers</td>
+<td>100 萬人，250 年歷史</td>
+</tr>
+<tr>
+<td>溫哥華 / 多倫多家用中文比例</td>
+<td>13% / 7%</td>
+</tr>
+<tr>
+<td>1970 年代起最大移民來源</td>
+<td>亞洲</td>
+</tr>
+<tr>
+<td>美國奴隸制廢除年</td>
+<td>1863</td>
+</tr>
+</tbody>
+</table></main>
+</div>
+<script>
+(function() {
+  if (!('speechSynthesis' in window)) return;
+  var synth = window.speechSynthesis;
+  var voicesReady = false;
+
+  var ICON_SPEAKER = '<svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 10v4h4l5 4V6L7 10H3zm12.5 2c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM13 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg>';
+  var ICON_PAUSE = '<svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6 5h4v14H6zM14 5h4v14h-4z"/></svg>';
+  var ICON_PLAY = '<svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>';
+
+  // single global state — only one TTS session at a time
+  var state = {
+    btn: null, chunks: null, words: null, chunkIdx: 0, paused: false
+  };
+
+  function ensureVoices(cb) {
+    if (voicesReady) return cb();
+    var v = synth.getVoices();
+    if (v && v.length) { voicesReady = true; return cb(); }
+    synth.onvoiceschanged = function() { voicesReady = true; cb(); };
+    setTimeout(function(){ if (!voicesReady) { voicesReady = true; cb(); } }, 500);
+  }
+
+  function pickVoice() {
+    var voices = synth.getVoices();
+    function find(pred){ for (var i=0;i<voices.length;i++) if (pred(voices[i])) return voices[i]; return null; }
+    return find(function(v){return v.lang==='en-CA' && /Samantha|Karen|Tessa|Victoria|Allison|Siri/i.test(v.name);})
+        || find(function(v){return v.lang==='en-CA';})
+        || find(function(v){return v.lang==='en-US' && /Samantha|Karen|Allison|Ava|Siri/i.test(v.name);})
+        || find(function(v){return v.lang==='en-US';})
+        || find(function(v){return v.lang && v.lang.indexOf('en')===0;})
+        || null;
+  }
+
+  // Wrap each word in container in a <span class="w" data-idx="N"> for highlighting.
+  function wrapWords(container) {
+    if (container.dataset.wrapped === '1') return;
+    var walker = document.createTreeWalker(container, NodeFilter.SHOW_TEXT, null, false);
+    var nodes = [];
+    var n;
+    while ((n = walker.nextNode())) {
+      if (!n.parentElement) continue;
+      if (n.parentElement.closest('.speak-btn, .label')) continue;
+      if (!/\S/.test(n.nodeValue)) continue;
+      nodes.push(n);
+    }
+    var idx = 0;
+    nodes.forEach(function(tn) {
+      var text = tn.nodeValue;
+      var tokens = text.split(/(\s+)/);
+      var frag = document.createDocumentFragment();
+      tokens.forEach(function(tok) {
+        if (tok.length === 0) return;
+        if (/^\s+$/.test(tok)) {
+          frag.appendChild(document.createTextNode(tok));
+        } else {
+          var sp = document.createElement('span');
+          sp.className = 'w';
+          sp.setAttribute('data-idx', idx++);
+          sp.textContent = tok;
+          frag.appendChild(sp);
+        }
+      });
+      tn.parentNode.replaceChild(frag, tn);
+    });
+    container.dataset.wrapped = '1';
+  }
+
+  // Group words into chunks split on punctuation, with a pause duration after each chunk.
+  function buildChunks(words) {
+    var chunks = [];
+    var cur = { words: [] };
+    function commit(pauseMs) {
+      if (!cur.words.length) return;
+      cur.text = cur.words.map(function(w){ return w.text; }).join(' ');
+      cur.pauseAfterMs = pauseMs;
+      chunks.push(cur);
+      cur = { words: [] };
+    }
+    words.forEach(function(wEl, i) {
+      var text = wEl.textContent;
+      cur.words.push({ el: wEl, idx: i, text: text });
+      // sentence-ending punctuation → long pause
+      if (/[.!?]+["')\]]*$/.test(text) && text.length > 1) {
+        commit(420);
+      }
+      // semicolon / colon → medium pause
+      else if (/[;:]+["')\]]*$/.test(text)) {
+        commit(300);
+      }
+      // comma or em-dash → short pause
+      else if (/[,—–][")'\]]*$/.test(text)) {
+        commit(220);
+      }
+    });
+    commit(0);
+    return chunks;
+  }
+
+  function highlight(globalIdx) {
+    if (!state.words) return;
+    for (var i = 0; i < state.words.length; i++) {
+      if (i === globalIdx) state.words[i].classList.add('current');
+      else state.words[i].classList.remove('current');
+    }
+  }
+
+  function clearHighlight() {
+    if (!state.words) return;
+    state.words.forEach(function(w){ w.classList.remove('current'); });
+  }
+
+  function findWordAtChar(chunk, charIndex) {
+    var pos = 0;
+    for (var i = 0; i < chunk.words.length; i++) {
+      var len = chunk.words[i].text.length;
+      if (charIndex >= pos && charIndex < pos + len) return i;
+      pos += len + 1; // space
+    }
+    return -1;
+  }
+
+  function setBtnState(btn, s) {
+    if (!btn) return;
+    btn.classList.remove('speaking', 'paused');
+    if (s === 'speaking') btn.classList.add('speaking');
+    else if (s === 'paused') btn.classList.add('paused');
+    btn.setAttribute('data-state', s);
+    var icon = btn.querySelector('.speak-icon');
+    var label = btn.querySelector('.speak-label');
+    if (s === 'idle')     { if (icon) icon.innerHTML = ICON_SPEAKER; if (label) label.textContent = '朗讀'; }
+    else if (s === 'speaking') { if (icon) icon.innerHTML = ICON_PAUSE;   if (label) label.textContent = '暫停'; }
+    else if (s === 'paused')   { if (icon) icon.innerHTML = ICON_PLAY;    if (label) label.textContent = '繼續'; }
+  }
+
+  function stopAll() {
+    synth.cancel();
+    if (state.btn) setBtnState(state.btn, 'idle');
+    clearHighlight();
+    state.btn = null; state.chunks = null; state.words = null;
+    state.chunkIdx = 0; state.paused = false;
+  }
+
+  function speakFrom(chunkIdx) {
+    if (!state.chunks || chunkIdx >= state.chunks.length) { stopAll(); return; }
+    state.chunkIdx = chunkIdx;
+    var chunk = state.chunks[chunkIdx];
+    var u = new SpeechSynthesisUtterance(chunk.text);
+    u.lang = 'en-CA';
+    u.rate = 0.92;
+    u.pitch = 1.0;
+    var v = pickVoice();
+    if (v) u.voice = v;
+
+    u.onstart = function() {
+      if (chunk.words[0]) highlight(chunk.words[0].idx);
+    };
+    u.onboundary = function(e) {
+      if (e.name && e.name !== 'word') return;
+      var w = findWordAtChar(chunk, e.charIndex || 0);
+      if (w >= 0) highlight(chunk.words[w].idx);
+    };
+    u.onend = function() {
+      if (state.paused) return; // don't auto-advance while paused
+      var next = chunkIdx + 1;
+      if (next >= state.chunks.length) { stopAll(); return; }
+      setTimeout(function() {
+        if (!state.paused && state.chunks) speakFrom(next);
+      }, chunk.pauseAfterMs);
+    };
+    u.onerror = function() { stopAll(); };
+
+    synth.speak(u);
+  }
+
+  function start(container, btn) {
+    stopAll();
+    wrapWords(container);
+    var words = Array.prototype.slice.call(container.querySelectorAll('.w'));
+    if (!words.length) return;
+    state.btn = btn;
+    state.words = words;
+    state.chunks = buildChunks(words);
+    state.chunkIdx = 0;
+    state.paused = false;
+    setBtnState(btn, 'speaking');
+    speakFrom(0);
+  }
+
+  document.addEventListener('click', function(e) {
+    var btn = e.target.closest && e.target.closest('.speak-btn');
+    if (!btn) return;
+    e.preventDefault();
+    var s = btn.getAttribute('data-state') || 'idle';
+
+    if (s === 'speaking') {
+      // pause: cancel current utterance; chunkIdx stays so resume can restart this chunk
+      state.paused = true;
+      synth.cancel();
+      setBtnState(btn, 'paused');
+      return;
+    }
+    if (s === 'paused') {
+      // resume: continue from current chunk
+      state.paused = false;
+      setBtnState(btn, 'speaking');
+      speakFrom(state.chunkIdx);
+      return;
+    }
+    // idle → new speech
+    ensureVoices(function() { start(btn.parentElement, btn); });
+  });
+
+  window.addEventListener('hashchange', stopAll);
+  window.addEventListener('pagehide', stopAll);
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,952 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="加拿大公民考">
+<meta name="theme-color" content="#c8102e">
+<title>第 9 章：加拿大象徵 / Canadian Symbols · 加拿大公民考試</title>
+<style>
+:root {
+  --bg: #faf8f4;
+  --panel: #ffffff;
+  --ink: #1f2328;
+  --muted: #5d646d;
+  --line: #e7e2d6;
+  --accent: #c8102e;        /* maple red */
+  --accent-soft: #fbe9ec;
+  --en-bg: #f3efe6;
+  --en-ink: #2b2620;
+  --zh-bg: #ffffff;
+  --quote: #8a6d3b;
+  --max: 1180px;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: "Source Serif 4","Source Serif Pro","Noto Serif TC","Noto Serif CJK TC","PingFang TC","Songti TC", Georgia, serif;
+  font-size: 17px;
+  line-height: 1.75;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+.layout {
+  display: grid;
+  grid-template-columns: 240px minmax(0, 1fr);
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 0 24px;
+  gap: 36px;
+}
+nav.sidebar {
+  position: sticky;
+  top: 0;
+  align-self: start;
+  height: 100vh;
+  overflow-y: auto;
+  padding: 28px 0 40px;
+  border-right: 1px solid var(--line);
+  font-family: -apple-system, "Helvetica Neue", "PingFang TC", system-ui, sans-serif;
+  font-size: 14px;
+  line-height: 1.45;
+}
+nav.sidebar h1 {
+  font-family: inherit;
+  font-size: 14px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin: 0 0 10px;
+}
+nav.sidebar h2 {
+  font-family: inherit;
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin: 22px 0 6px;
+  font-weight: 600;
+}
+nav.sidebar a {
+  display: block;
+  color: var(--ink);
+  text-decoration: none;
+  padding: 4px 10px 4px 0;
+  border-radius: 4px;
+}
+nav.sidebar a:hover { color: var(--accent); }
+nav.sidebar a.current {
+  color: var(--accent);
+  font-weight: 600;
+}
+nav.sidebar .home {
+  display: inline-block;
+  font-weight: 700;
+  font-size: 18px;
+  color: var(--ink);
+  text-decoration: none;
+  margin-bottom: 14px;
+}
+nav.sidebar .home::before { content: "🍁 "; }
+main {
+  padding: 36px 0 80px;
+  min-width: 0;
+}
+main h1, main h2, main h3, main h4 {
+  font-family: -apple-system, "Helvetica Neue", "PingFang TC", system-ui, sans-serif;
+  line-height: 1.3;
+  color: var(--ink);
+}
+main h1 {
+  font-size: 28px;
+  margin: 0 0 8px;
+  letter-spacing: -0.01em;
+}
+main > p:first-of-type {
+  color: var(--muted);
+  margin-top: 4px;
+}
+main h2 {
+  font-size: 21px;
+  margin: 40px 0 12px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid var(--line);
+}
+main h3 { font-size: 18px; margin: 28px 0 8px; }
+main h4 { font-size: 16px; margin: 22px 0 6px; color: var(--muted); }
+main p { margin: 0 0 12px; }
+main ul, main ol { margin: 0 0 14px; padding-left: 1.4em; }
+main li { margin: 4px 0; }
+main hr {
+  border: none;
+  border-top: 1px solid var(--line);
+  margin: 32px 0;
+}
+main a { color: var(--accent); text-decoration: none; }
+main a:hover { text-decoration: underline; }
+main code {
+  font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.9em;
+  background: #f3efe6;
+  padding: 1px 5px;
+  border-radius: 4px;
+}
+main blockquote {
+  margin: 14px 0;
+  padding: 12px 18px;
+  background: var(--accent-soft);
+  border-left: 3px solid var(--accent);
+  color: var(--ink);
+  border-radius: 0 6px 6px 0;
+}
+main blockquote p:last-child { margin-bottom: 0; }
+main table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 14px 0 22px;
+  font-size: 15px;
+}
+main th, main td {
+  text-align: left;
+  padding: 8px 12px;
+  border-bottom: 1px solid var(--line);
+  vertical-align: top;
+}
+main th {
+  background: #f3efe6;
+  font-family: -apple-system, "Helvetica Neue", "PingFang TC", system-ui, sans-serif;
+  font-weight: 600;
+}
+
+/* --- bilingual pairing --- */
+.bilingual {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  margin: 14px 0;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  overflow: hidden;
+  background: var(--zh-bg);
+}
+.bilingual .en, .bilingual .zh {
+  padding: 16px 20px;
+}
+.bilingual .en {
+  background: var(--en-bg);
+  color: var(--en-ink);
+  font-family: "Source Serif 4","Source Serif Pro", Georgia, serif;
+  font-style: normal;
+  border-right: 1px solid var(--line);
+}
+.bilingual .en p, .bilingual .zh p { margin: 0 0 8px; }
+.bilingual .en p:last-child, .bilingual .zh p:last-child { margin-bottom: 0; }
+.bilingual .en ul, .bilingual .en ol,
+.bilingual .zh ul, .bilingual .zh ol {
+  margin: 0 0 6px;
+  padding-left: 1.3em;
+}
+.bilingual .en em { font-style: italic; }
+.bilingual .label {
+  display: inline-block;
+  font-family: -apple-system, "Helvetica Neue", system-ui, sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 6px;
+  font-weight: 600;
+}
+
+/* --- callouts (⚠️ blocks) --- */
+.callout {
+  margin: 18px 0;
+  padding: 14px 18px;
+  background: #fff8e1;
+  border-left: 4px solid #f0a500;
+  border-radius: 0 6px 6px 0;
+}
+.callout p { margin: 0 0 6px; }
+.callout p:last-child { margin: 0; }
+
+/* --- collapsible answers --- */
+details.answers {
+  margin: 22px 0;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 0;
+  overflow: hidden;
+}
+details.answers > summary {
+  cursor: pointer;
+  padding: 14px 18px;
+  font-family: -apple-system, "Helvetica Neue", "PingFang TC", system-ui, sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  background: #f3efe6;
+  border-bottom: 1px solid transparent;
+  user-select: none;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+details.answers > summary::-webkit-details-marker { display: none; }
+details.answers > summary::after {
+  content: "▸";
+  color: var(--muted);
+  transition: transform 0.18s ease;
+  font-size: 14px;
+}
+details.answers[open] > summary {
+  border-bottom-color: var(--line);
+}
+details.answers[open] > summary::after { transform: rotate(90deg); }
+details.answers .answers-body { padding: 14px 22px 6px; }
+details.answers .answers-body ol { margin: 0; padding-left: 1.4em; }
+details.answers .answers-body li { margin: 8px 0; }
+
+/* --- dashboard cards on index --- */
+.dash {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+  margin: 24px 0;
+}
+.dash a {
+  display: block;
+  padding: 18px 20px;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  color: var(--ink);
+  text-decoration: none;
+  transition: border-color 0.15s, transform 0.15s;
+}
+.dash a:hover {
+  border-color: var(--accent);
+  transform: translateY(-1px);
+}
+.dash a .kicker {
+  font-family: -apple-system, system-ui, sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+  display: block;
+  margin-bottom: 6px;
+}
+.dash a .title {
+  font-weight: 600;
+  font-size: 17px;
+  line-height: 1.35;
+}
+.dash a .meta {
+  display: block;
+  margin-top: 8px;
+  font-size: 13px;
+  color: var(--muted);
+  font-family: -apple-system, system-ui, sans-serif;
+}
+
+/* --- speak (TTS) button --- */
+.speak-btn {
+  appearance: none;
+  background: rgba(255,255,255,0.85);
+  border: 1px solid var(--line);
+  color: var(--muted);
+  cursor: pointer;
+  padding: 4px 9px;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 12px;
+  font-family: -apple-system, "Helvetica Neue", system-ui, sans-serif;
+  transition: all 0.15s;
+  -webkit-tap-highlight-color: transparent;
+  min-width: 64px;
+  justify-content: center;
+}
+.speak-btn .speak-icon { display: inline-flex; }
+.speak-btn svg { display: block; }
+.speak-btn:hover { color: var(--accent); border-color: var(--accent); }
+.speak-btn:active { transform: scale(0.96); }
+.speak-btn.speaking {
+  background: var(--accent);
+  color: #fff;
+  border-color: var(--accent);
+  animation: speak-pulse 1.4s ease-in-out infinite;
+}
+.speak-btn.paused {
+  background: #f0a500;
+  color: #fff;
+  border-color: #f0a500;
+  animation: none;
+}
+@keyframes speak-pulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(200,16,46,0.5); }
+  50%      { box-shadow: 0 0 0 6px rgba(200,16,46,0); }
+}
+
+/* --- per-word highlight during TTS --- */
+.w {
+  border-radius: 3px;
+  padding: 0 1px;
+  transition: color 0.08s ease, background 0.08s ease;
+}
+.w.current {
+  color: var(--accent);
+  background: rgba(200, 16, 46, 0.14);
+  font-weight: 600;
+}
+.bilingual .en { position: relative; }
+.bilingual .en > .speak-btn {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+}
+.bilingual .en > .label + .speak-btn { /* fallback positioning if absolute fails */ }
+blockquote.speakable, .callout.speakable {
+  position: relative;
+  padding-right: 60px;
+}
+blockquote.speakable > .speak-btn,
+.callout.speakable > .speak-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: #fff;
+}
+
+/* --- mobile --- */
+@media (max-width: 900px) {
+  .layout { grid-template-columns: 1fr; padding: 0 16px; gap: 0; }
+  nav.sidebar {
+    position: static;
+    height: auto;
+    border-right: none;
+    border-bottom: 1px solid var(--line);
+    padding: 18px 0;
+  }
+  .bilingual { grid-template-columns: 1fr; }
+  .bilingual .en { border-right: none; border-bottom: 1px solid var(--line); }
+}
+
+/* --- print --- */
+@media print {
+  nav.sidebar { display: none; }
+  .layout { display: block; padding: 0; }
+  main { padding: 0; }
+  details.answers { border: 1px solid #999; }
+  details.answers > summary { display: none; }
+  details.answers > .answers-body { display: block !important; }
+  .bilingual { break-inside: avoid; }
+}
+</style>
+</head>
+<body>
+<div class="layout">
+<nav class="sidebar">
+<a href="../index.html" class="home">加拿大公民考試</a>
+<a href="../curriculum/14-day-plan.html">📅 14 天計畫表</a>
+<a href="../practice/question-bank.html">📝 220 題題庫</a>
+<h2>中英對照（13 章）</h2>
+<a href="../bilingual/00-intro-oath.html">00 · 前言＋誓詞</a>
+<a href="../bilingual/01-applying-citizenship.html">01 · 申請入籍</a>
+<a href="../bilingual/02-rights-responsibilities.html">02 · 權利與義務</a>
+<a href="../bilingual/03-who-we-are.html">03 · 我們是誰</a>
+<a href="../bilingual/04-canadas-history.html">04 · 加拿大歷史</a>
+<a href="../bilingual/05-modern-canada.html">05 · 現代加拿大</a>
+<a href="../bilingual/06-how-canadians-govern.html">06 · 政府架構</a>
+<a href="../bilingual/07-federal-elections.html">07 · 聯邦選舉</a>
+<a href="../bilingual/08-justice-system.html">08 · 司法系統</a>
+<a href="../bilingual/09-canadian-symbols.html" class="current">09 · 國家象徵</a>
+<a href="../bilingual/10-canadas-economy.html">10 · 加拿大經濟</a>
+<a href="../bilingual/11-canadas-regions.html">11 · 五大區域</a>
+<a href="../bilingual/12-study-questions.html">12 · 官方練習題</a>
+<h2>每日驗收（14 天）</h2>
+<a href="../daily-quiz/day-01.html">Day 01</a>
+<a href="../daily-quiz/day-02.html">Day 02</a>
+<a href="../daily-quiz/day-03.html">Day 03</a>
+<a href="../daily-quiz/day-04.html">Day 04</a>
+<a href="../daily-quiz/day-05.html">Day 05</a>
+<a href="../daily-quiz/day-06.html">Day 06</a>
+<a href="../daily-quiz/day-07.html">Day 07</a>
+<a href="../daily-quiz/day-08.html">Day 08</a>
+<a href="../daily-quiz/day-09.html">Day 09</a>
+<a href="../daily-quiz/day-10.html">Day 10</a>
+<a href="../daily-quiz/day-11.html">Day 11</a>
+<a href="../daily-quiz/day-12.html">Day 12</a>
+<a href="../daily-quiz/day-13.html">Day 13</a>
+<a href="../daily-quiz/day-14.html">Day 14</a>
+</nav>
+<main><h1>第 9 章：加拿大象徵 / Canadian Symbols</h1>
+<div class="callout"><p>對應 PDF 第 38–41 頁。對應 <a href="../daily-quiz/day-11.html">day-11.md</a>。</p></div>
+<hr>
+<h2>開場</h2>
+<div class="bilingual"><div class="en"><span class="label">English</span><button class="speak-btn" type="button" aria-label="朗讀英文" title="朗讀英文 / Read aloud" data-state="idle"><span class="speak-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 10v4h4l5 4V6L7 10H3zm12.5 2c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM13 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg></span><span class="speak-label">朗讀</span></button><p>Canada has many important symbols — objects, events, and people that have special meaning. Together they help explain what it means to be Canadian and express our national identity.</p></div><div class="zh"><span class="label">中文</span><p>加拿大有許多重要象徵——<strong>具特殊意義的物品、事件與人物</strong>。它們共同闡釋 <strong>「成為加拿大人」的意涵</strong>，並表達國家認同。</p></div></div>
+<hr>
+<h2>The Canadian Crown / 加拿大皇冠</h2>
+<div class="bilingual"><div class="en"><span class="label">English</span><button class="speak-btn" type="button" aria-label="朗讀英文" title="朗讀英文 / Read aloud" data-state="idle"><span class="speak-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 10v4h4l5 4V6L7 10H3zm12.5 2c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM13 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg></span><span class="speak-label">朗讀</span></button><p>The Crown has been a symbol of the state in Canada for 400 years. Canada has been a constitutional monarchy in its own right since Confederation in 1867 during Queen Victoria&rsquo;s reign. Queen Elizabeth II, who has been Queen of Canada since 1952, marked her Golden Jubilee in 2002, and celebrates her Diamond Jubilee (60 years as Sovereign) in 2012. The Crown is a symbol of government, including Parliament, the legislatures, the courts, police services and the Canadian Forces.</p></div><div class="zh"><span class="label">中文</span><p><strong>皇冠 400 年來都是加拿大國家的象徵</strong>。加拿大自 <strong>1867 年邦聯（Queen Victoria 在位時）</strong> 起就是君主立憲國。<strong>Queen Elizabeth II 從 1952 年起擔任加拿大女王</strong>，2002 年慶祝 50 年金禧 (Golden Jubilee)，2012 年慶祝 60 年鑽禧 (Diamond Jubilee)。<strong>皇冠象徵政府——包括國會、省議會、法院、警察、加拿大軍隊</strong>。</p></div></div>
+<div class="bilingual"><div class="en"><span class="label">English</span><button class="speak-btn" type="button" aria-label="朗讀英文" title="朗讀英文 / Read aloud" data-state="idle"><span class="speak-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 10v4h4l5 4V6L7 10H3zm12.5 2c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM13 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg></span><span class="speak-label">朗讀</span></button><p><strong>2026 年更新：</strong> Queen Elizabeth II 於 <strong>2022 年 9 月 8 日辭世，King Charles III 即位</strong>。所有原本提到「Queen」的職位現在改為「King」（如 Royal Anthem 改唱 God Save the King；Court of Queen&rsquo;s Bench 改稱 Court of King&rsquo;s Bench）。</p></div><div class="zh"><span class="label">中文</span><p style="color:#888">（未提供翻譯）</p></div></div>
+<hr>
+<h2>Flags in Canada / 加拿大的旗幟</h2>
+<div class="bilingual"><div class="en"><span class="label">English</span><button class="speak-btn" type="button" aria-label="朗讀英文" title="朗讀英文 / Read aloud" data-state="idle"><span class="speak-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 10v4h4l5 4V6L7 10H3zm12.5 2c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM13 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg></span><span class="speak-label">朗讀</span></button><p>A new Canadian flag was raised for the first time in 1965. The red-white-red pattern comes from the flag of the Royal Military College, Kingston, founded in 1876. Red and white had been colours of France and England since the Middle Ages and the national colours of Canada since 1921. The Union Jack is our official Royal Flag. The Canadian Red Ensign served as the Canadian flag for about 100 years. The provinces and territories also have flags that embody their distinct traditions.</p></div><div class="zh"><span class="label">中文</span><p><strong>加拿大現行國旗於 1965 年首次升起</strong>。<strong>紅—白—紅</strong> 的圖案源自 <strong>1876 年成立的京斯敦皇家軍事學院 (Royal Military College)</strong> 的旗幟。<strong>紅與白自中世紀起就是法、英兩國的顏色</strong>，<strong>1921 年起成為加拿大國家顏色</strong>。<strong>英國米字旗 (Union Jack) 是加拿大的正式皇家旗 (Royal Flag)</strong>。<strong>「Canadian Red Ensign」</strong> 曾作加拿大國旗約 100 年。各省/領地也有自己的旗幟。</p></div></div>
+<hr>
+<h2>The Maple Leaf / 楓葉</h2>
+<div class="bilingual"><div class="en"><span class="label">English</span><button class="speak-btn" type="button" aria-label="朗讀英文" title="朗讀英文 / Read aloud" data-state="idle"><span class="speak-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 10v4h4l5 4V6L7 10H3zm12.5 2c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM13 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg></span><span class="speak-label">朗讀</span></button><p>The maple leaf is Canada&rsquo;s best-known symbol. Maple leaves were adopted as a symbol by French Canadians in the 1700s, have appeared on Canadian uniforms and insignia since the 1850s, and are carved into the headstones of our fallen soldiers buried overseas and in Canada.</p></div><div class="zh"><span class="label">中文</span><p><strong>楓葉是加拿大最知名的象徵</strong>。法裔加拿大人在 <strong>1700 年代</strong> 即以楓葉為象徵；<strong>1850 年代起出現在加拿大軍服與徽章上</strong>；也 <strong>刻在埋葬於海內外的加拿大陣亡軍人墓碑上</strong>。</p></div></div>
+<hr>
+<h2>The Fleur-de-lys / 鳶尾花</h2>
+<div class="bilingual"><div class="en"><span class="label">English</span><button class="speak-btn" type="button" aria-label="朗讀英文" title="朗讀英文 / Read aloud" data-state="idle"><span class="speak-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 10v4h4l5 4V6L7 10H3zm12.5 2c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM13 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg></span><span class="speak-label">朗讀</span></button><p>It is said that the lily flower (&ldquo;fleur-de-lys&rdquo;) was adopted by the French king in the year 496. It became the symbol of French royalty for more than 1,000 years, including the colony of New France. Revived at Confederation, the fleur-de-lys was included in the Canadian Red Ensign. In 1948 Quebec adopted its own flag, based on the Cross and the fleur-de-lys.</p></div><div class="zh"><span class="label">中文</span><p>據傳 <strong>鳶尾花於公元 496 年被法國國王採用</strong>。<strong>逾 1,000 年來作為法國王室象徵</strong>，包括新法蘭西殖民地。<strong>邦聯時復興，被納入加拿大 Red Ensign</strong>。<strong>1948 年 Quebec 採用自己的旗幟——以十字與鳶尾花為基礎</strong>。</p></div></div>
+<hr>
+<h2>Coat of Arms and Motto / 國徽與箴言</h2>
+<div class="bilingual"><div class="en"><span class="label">English</span><button class="speak-btn" type="button" aria-label="朗讀英文" title="朗讀英文 / Read aloud" data-state="idle"><span class="speak-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 10v4h4l5 4V6L7 10H3zm12.5 2c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM13 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg></span><span class="speak-label">朗讀</span></button><p>As an expression of national pride after the First World War, Canada adopted an official coat of arms and a national motto, <strong>A mari usque ad mare</strong>, which in Latin means <strong>&ldquo;from sea to sea.&rdquo;</strong> The arms contain symbols of England, France, Scotland and Ireland as well as red maple leaves. Today the arms can be seen on dollar bills, government documents and public buildings.</p></div><div class="zh"><span class="label">中文</span><p><strong>一戰後</strong>，作為國家驕傲的表達，<strong>加拿大採用了官方國徽與國家箴言</strong>：<strong>「A Mari Usque Ad Mare」</strong>——拉丁文意為 <strong>「從海到海 (from sea to sea)」</strong>。國徽包含 <strong>英格蘭、法國、蘇格蘭、愛爾蘭的象徵，以及紅楓葉</strong>。今日國徽出現在 <strong>紙鈔、政府文件、公共建築上</strong>。</p></div></div>
+<hr>
+<h2>Parliament Buildings / 國會建築</h2>
+<div class="bilingual"><div class="en"><span class="label">English</span><button class="speak-btn" type="button" aria-label="朗讀英文" title="朗讀英文 / Read aloud" data-state="idle"><span class="speak-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 10v4h4l5 4V6L7 10H3zm12.5 2c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM13 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg></span><span class="speak-label">朗讀</span></button><p>The towers, arches, sculptures and stained glass of the Parliament Buildings embody the French, English and Aboriginal traditions and the Gothic Revival architecture popular in the time of Queen Victoria. The buildings were completed in the 1860s. The Centre Block was destroyed by an accidental fire in 1916 and rebuilt in 1922. The Library is the only part of the original building remaining. The Peace Tower was completed in 1927 in memory of the First World War. The Memorial Chamber within the Tower contains the Books of Remembrance in which are written the names of soldiers, sailors and airmen who died serving Canada in wars or while on duty.</p></div><div class="zh"><span class="label">中文</span><p>國會建築的塔樓、拱門、雕刻與彩繪玻璃 <strong>體現法、英、原住民傳統與維多利亞女王時期流行的哥德復興式建築</strong>。建築於 <strong>1860 年代</strong> 完工。<strong>1916 年中央堂 (Centre Block) 因意外火災毀損，1922 年重建</strong>。<strong>圖書館是原建築唯一保留的部分</strong>。<strong>和平塔 (Peace Tower) 於 1927 年完工，紀念一戰</strong>。塔內 <strong>紀念堂 (Memorial Chamber)</strong> 存放 <strong>《追思之書 (Books of Remembrance)》</strong>，記錄為加拿大戰死或殉職的軍人姓名。</p></div></div>
+<div class="bilingual"><div class="en"><span class="label">English</span><button class="speak-btn" type="button" aria-label="朗讀英文" title="朗讀英文 / Read aloud" data-state="idle"><span class="speak-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 10v4h4l5 4V6L7 10H3zm12.5 2c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM13 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg></span><span class="speak-label">朗讀</span></button><p>The provincial legislatures are architectural treasures. The Quebec National Assembly is built in the French Second Empire style, while the legislatures of the other provinces are Baroque, Romanesque and neoclassical, reflecting the Greco-Roman heritage of Western civilization in which democracy originated.</p></div><div class="zh"><span class="label">中文</span><p>省議會建築亦是瑰寶。<strong>Quebec 國民議會為法國第二帝國風格</strong>；其他省議會為 <strong>巴洛克、羅馬式、新古典式</strong>——反映西方文明的希羅遺產（民主的起源）。</p></div></div>
+<hr>
+<h2>Popular Sports / 熱門運動</h2>
+<div class="bilingual"><div class="en"><span class="label">English</span><button class="speak-btn" type="button" aria-label="朗讀英文" title="朗讀英文 / Read aloud" data-state="idle"><span class="speak-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 10v4h4l5 4V6L7 10H3zm12.5 2c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM13 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg></span><span class="speak-label">朗讀</span></button><p>Hockey is Canada&rsquo;s most popular spectator sport and is considered to be the national winter sport. Ice hockey was developed in Canada in the 1800s. The National Hockey League plays for the championship <strong>Stanley Cup</strong>, donated by <strong>Lord Stanley, the Governor General, in 1892</strong>. The Clarkson Cup, established in 2005 by <strong>Adrienne Clarkson, the 26th Governor General (and the first of Asian origin)</strong>, is awarded for women&rsquo;s hockey.</p></div><div class="zh"><span class="label">中文</span><p><strong>冰球 (Hockey) 是加拿大最熱門的觀賞運動，也是國家冬季運動</strong>。冰球於 <strong>1800 年代</strong> 在加拿大發展。<strong>國家冰球聯盟 (NHL) 競逐冠軍盃「史丹利盃 (Stanley Cup)」</strong>——<strong>1892 年由總督 Lord Stanley 捐贈</strong>。<strong>Clarkson Cup（2005 年由第 26 任、首位亞裔總督 Adrienne Clarkson 設立）</strong> 是女子冰球冠軍盃。</p></div></div>
+<div class="bilingual"><div class="en"><span class="label">English</span><button class="speak-btn" type="button" aria-label="朗讀英文" title="朗讀英文 / Read aloud" data-state="idle"><span class="speak-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 10v4h4l5 4V6L7 10H3zm12.5 2c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM13 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg></span><span class="speak-label">朗讀</span></button><p>Many young Canadians play hockey at school, in a hockey league or on quiet streets—road hockey or street hockey—and are taken to the hockey rink by their parents. Canadian children have collected hockey cards for generations.</p></div><div class="zh"><span class="label">中文</span><p>許多加拿大青少年在學校、聯盟或安靜街道（<strong>road hockey / street hockey</strong>）打冰球，由父母送到冰場。<strong>加拿大孩子世代收集冰球卡</strong>。</p></div></div>
+<div class="bilingual"><div class="en"><span class="label">English</span><button class="speak-btn" type="button" aria-label="朗讀英文" title="朗讀英文 / Read aloud" data-state="idle"><span class="speak-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 10v4h4l5 4V6L7 10H3zm12.5 2c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM13 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg></span><span class="speak-label">朗讀</span></button><p>Canadian football is the second most popular sport. Curling, an ice game introduced by Scottish pioneers, is popular. <strong>Lacrosse</strong>, an ancient sport first played by Aboriginals, is the <strong>official summer sport</strong>. Soccer has the most registered players of any game in Canada.</p></div><div class="zh"><span class="label">中文</span><ul>
+<li><strong>加拿大式足球 (Canadian Football)</strong>：第二熱門</li>
+<li><strong>冰壺 (Curling)</strong>：蘇格蘭開拓者引入</li>
+<li><strong>長曲棍球 (Lacrosse)</strong>：原住民古老運動，是 <strong>官方夏季運動</strong></li>
+<li><strong>足球 (Soccer)</strong>：加拿大註冊球員最多的運動</li>
+</ul></div></div>
+<hr>
+<h2>The Beaver / 河狸</h2>
+<div class="bilingual"><div class="en"><span class="label">English</span><button class="speak-btn" type="button" aria-label="朗讀英文" title="朗讀英文 / Read aloud" data-state="idle"><span class="speak-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 10v4h4l5 4V6L7 10H3zm12.5 2c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM13 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg></span><span class="speak-label">朗讀</span></button><p>The beaver was adopted centuries ago as a symbol of the Hudson&rsquo;s Bay Company. It became an emblem of the St. Jean Baptiste Society, a French-Canadian patriotic association, in 1834, and was also adopted by other groups. This industrious rodent can be seen on the <strong>five-cent coin</strong>, on the coats of arms of Saskatchewan and Alberta, and of cities such as Montreal and Toronto.</p></div><div class="zh"><span class="label">中文</span><p><strong>河狸數百年前被哈德遜灣公司採為象徵</strong>。<strong>1834 年成為法裔愛國組織「聖洗約翰會 (St. Jean Baptiste Society)」的徽章</strong>。這勤勞的齧齒類可見於 <strong>5 分硬幣</strong>、Saskatchewan 與 Alberta 的省徽，以及 Montreal、Toronto 等城市徽章。</p></div></div>
+<hr>
+<h2>Canada&rsquo;s Official Languages / 加拿大官方語言</h2>
+<div class="bilingual"><div class="en"><span class="label">English</span><button class="speak-btn" type="button" aria-label="朗讀英文" title="朗讀英文 / Read aloud" data-state="idle"><span class="speak-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 10v4h4l5 4V6L7 10H3zm12.5 2c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM13 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg></span><span class="speak-label">朗讀</span></button><p>English and French are the two official languages and are important symbols of identity. English speakers (Anglophones) and French speakers (Francophones) have lived together in partnership and creative tension for more than 300 years.</p></div><div class="zh"><span class="label">中文</span><p><strong>英文與法文是加拿大的兩種官方語言</strong>，是身分認同的重要象徵。英語使用者 (Anglophones) 與法語使用者 (Francophones) 在 <strong>夥伴與創造性張力中共同生活逾 300 年</strong>。</p></div></div>
+<div class="bilingual"><div class="en"><span class="label">English</span><button class="speak-btn" type="button" aria-label="朗讀英文" title="朗讀英文 / Read aloud" data-state="idle"><span class="speak-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 10v4h4l5 4V6L7 10H3zm12.5 2c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM13 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg></span><span class="speak-label">朗讀</span></button><p><strong>You must have adequate knowledge of English or French to become a Canadian citizen.</strong> Adult applicants 55 years of age or over are exempted from this requirement.</p></div><div class="zh"><span class="label">中文</span><p><strong>要成為加拿大公民，您必須具備足夠的英文或法文能力</strong>。<strong>55 歲以上的成年申請人免除此要求</strong>。</p></div></div>
+<div class="bilingual"><div class="en"><span class="label">English</span><button class="speak-btn" type="button" aria-label="朗讀英文" title="朗讀英文 / Read aloud" data-state="idle"><span class="speak-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 10v4h4l5 4V6L7 10H3zm12.5 2c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM13 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg></span><span class="speak-label">朗讀</span></button><p>Parliament passed the <strong>Official Languages Act in 1969</strong>. It has three main objectives:</p>
+<ul>
+<li>Establish equality between French and English in Parliament, the Government of Canada and institutions subject to the Act;</li>
+<li>Maintain and develop official language minority communities in Canada; and</li>
+<li>Promote equality of French and English in Canadian society.</li>
+</ul></div><div class="zh"><span class="label">中文</span><p><strong>1969 年國會通過《官方語言法》</strong>。<strong>三大目標</strong>：</p>
+<ol>
+<li><strong>在國會、聯邦政府及受該法律規範之機構中，建立法、英平等地位</strong></li>
+<li><strong>維護並發展加拿大的官方語言少數社群</strong></li>
+<li><strong>在加拿大社會中促進法、英平等</strong></li>
+</ol></div></div>
+<hr>
+<h2>The Victoria Cross / 維多利亞十字勳章</h2>
+<div class="bilingual"><div class="en"><span class="label">English</span><button class="speak-btn" type="button" aria-label="朗讀英文" title="朗讀英文 / Read aloud" data-state="idle"><span class="speak-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 10v4h4l5 4V6L7 10H3zm12.5 2c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM13 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg></span><span class="speak-label">朗讀</span></button><p>The <strong>Victoria Cross (V.C.)</strong> is the highest honour available to Canadians and is awarded for the most conspicuous bravery, a daring or pre-eminent act of valour or self-sacrifice, or extreme devotion to duty in the presence of the enemy. The V.C. has been awarded to <strong>96 Canadians since 1854</strong>.</p></div><div class="zh"><span class="label">中文</span><p><strong>「維多利亞十字勳章 (V.C.)」是加拿大公民可獲得的最高榮譽</strong>——授予 <strong>在敵前展現極度英勇、果敢、自我犧牲或忠於職守</strong> 的人。<strong>1854 年以來，已授予 96 位加拿大人</strong>。</p>
+<p>著名獲獎者：</p>
+<table>
+<thead>
+<tr>
+<th>人物</th>
+<th>事蹟</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Alexander Roberts Dunn</strong>（多倫多出生）</td>
+<td>1854 克里米亞戰爭 Balaclava 戰役輕騎兵衝鋒；<strong>第一位獲 V.C. 的加拿大人</strong></td>
+</tr>
+<tr>
+<td><strong>William Hall</strong>（NS）</td>
+<td>美國黑奴後裔；1857 印度叛亂 Lucknow 圍城；<strong>第一位獲 V.C. 的黑人</strong></td>
+</tr>
+<tr>
+<td><strong>Filip Konowal</strong>（烏克蘭出生）</td>
+<td>1917 Hill 70；<strong>第一位非生於英帝國境內的加拿大軍團成員獲 V.C.</strong></td>
+</tr>
+<tr>
+<td><strong>Billy Bishop</strong>（Owen Sound, Ontario）</td>
+<td>一戰皇家飛行隊王牌；後為加拿大空軍榮譽元帥</td>
+</tr>
+<tr>
+<td><strong>Paul Triquet</strong>（Cabano, Quebec）</td>
+<td>1943 義大利 Casa Berardi</td>
+</tr>
+<tr>
+<td><strong>Robert Hampton Gray</strong>（Trail, BC）</td>
+<td>1945 8 月轟炸日艦時陣亡；<strong>最後一位獲 V.C. 的加拿大人</strong></td>
+</tr>
+</tbody>
+</table></div></div>
+<hr>
+<h2>National Anthem / 國歌</h2>
+<div class="bilingual"><div class="en"><span class="label">English</span><button class="speak-btn" type="button" aria-label="朗讀英文" title="朗讀英文 / Read aloud" data-state="idle"><span class="speak-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 10v4h4l5 4V6L7 10H3zm12.5 2c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM13 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg></span><span class="speak-label">朗讀</span></button><p><strong>O Canada</strong> was proclaimed as the national anthem in <strong>1980</strong>. It was first sung in <strong>Québec City in 1880</strong>. French and English Canadians sing different words to the national anthem.</p></div><div class="zh"><span class="label">中文</span><p><strong>《O Canada》於 1980 年正式定為國歌</strong>。<strong>1880 年於魁北克市首次演唱</strong>（作曲者 Calixa Lavallée）。法、英加拿大人 <strong>唱不同的歌詞</strong>。</p></div></div>
+<h3>O Canada（英文版＋中文翻譯）</h3>
+<div class="bilingual"><div class="en"><span class="label">English</span><button class="speak-btn" type="button" aria-label="朗讀英文" title="朗讀英文 / Read aloud" data-state="idle"><span class="speak-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 10v4h4l5 4V6L7 10H3zm12.5 2c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM13 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg></span><span class="speak-label">朗讀</span></button><p>O Canada! Our home and native land!
+True patriot love in all thy sons command
+With glowing hearts we see thee rise
+The true North strong and free!
+From far and wide, O Canada
+We stand on guard for thee
+God keep our land glorious and free!
+O Canada, we stand on guard for thee
+O Canada, we stand on guard for thee</p></div><div class="zh"><span class="label">中文</span><p><strong>O Canada！我們的家園與故土！</strong>
+<strong>真摯的愛國之情在我們胸中激盪，</strong>
+<strong>懷著熾熱的心，我們看著您崛起，</strong>
+<strong>真正的北方，強盛而自由！</strong>
+<strong>從遠方到四面八方，O Canada，</strong>
+<strong>我們守護著您。</strong>
+<strong>願上帝使我們的土地榮耀而自由！</strong>
+<strong>O Canada，我們守護著您。</strong>
+<strong>O Canada，我們守護著您。</strong></p></div></div>
+<div class="callout"><p><strong>2018 年國歌修訂</strong>：英文版第二句 <em>&ldquo;in all thy sons command&rdquo;</em> <strong>已改為 <em>&ldquo;in all of us command&rdquo;</em></strong>（去性別化）。PDF 是 2021 版仍寫舊版，<strong>考試與正式場合請用新版 &ldquo;in all of us command&rdquo;</strong>。</p></div>
+<h3>Ô Canada（法文版）</h3>
+<div class="bilingual"><div class="en"><span class="label">English</span><button class="speak-btn" type="button" aria-label="朗讀英文" title="朗讀英文 / Read aloud" data-state="idle"><span class="speak-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 10v4h4l5 4V6L7 10H3zm12.5 2c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM13 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg></span><span class="speak-label">朗讀</span></button><p>Ô Canada! Terre de nos aïeux,
+Ton front est ceint de fleurons glorieux!
+Car ton bras sait porter l&rsquo;épée,
+Il sait porter la croix!
+Ton histoire est une épopée
+Des plus brillants exploits.
+Et ta valeur, de foi trempée,
+Protégera nos foyers et nos droits.
+Protégera nos foyers et nos droits.</p></div><div class="zh"><span class="label">中文</span><p>法文版與英文版意涵相近但歌詞並非直譯，提到 <strong>「我們的祖先之地」、「光榮花冠」、「持劍與十字架」、「信仰浸潤的英勇」、「守護家園與權利」</strong>。</p></div></div>
+<hr>
+<h2>Royal Anthem / 皇室國歌</h2>
+<div class="bilingual"><div class="en"><span class="label">English</span><button class="speak-btn" type="button" aria-label="朗讀英文" title="朗讀英文 / Read aloud" data-state="idle"><span class="speak-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 10v4h4l5 4V6L7 10H3zm12.5 2c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM13 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg></span><span class="speak-label">朗讀</span></button><p>The Royal Anthem of Canada, <strong>&ldquo;God Save the Queen (or King),&rdquo;</strong> can be played or sung on any occasion when Canadians wish to honour the Sovereign.</p></div><div class="zh"><span class="label">中文</span><p>加拿大的皇室國歌 <strong>「God Save the Queen（或 King）」</strong> 可在任何加拿大人想致敬君主的場合演奏。</p></div></div>
+<div class="callout"><p>2026 年版本：<strong>God Save the King</strong>（因 King Charles III）。</p></div>
+<h3>God Save the King</h3>
+<div class="bilingual"><div class="en"><span class="label">English</span><button class="speak-btn" type="button" aria-label="朗讀英文" title="朗讀英文 / Read aloud" data-state="idle"><span class="speak-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 10v4h4l5 4V6L7 10H3zm12.5 2c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM13 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg></span><span class="speak-label">朗讀</span></button><p>God save our gracious King!
+Long live our noble King!
+God save the King!
+Send him victorious,
+Happy and glorious,
+Long to reign over us,
+God save the King!</p></div><div class="zh"><span class="label">中文</span><p><strong>願神保佑我們仁慈的國王！</strong>
+<strong>願我們高貴的國王長壽！</strong>
+<strong>願神保佑國王！</strong>
+<strong>賜他勝利、</strong>
+<strong>幸福、榮光，</strong>
+<strong>長久統治我們，</strong>
+<strong>願神保佑國王！</strong></p></div></div>
+<hr>
+<h2>The Order of Canada and Other Honours / 加拿大勳章與其他榮譽</h2>
+<div class="bilingual"><div class="en"><span class="label">English</span><button class="speak-btn" type="button" aria-label="朗讀英文" title="朗讀英文 / Read aloud" data-state="idle"><span class="speak-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 10v4h4l5 4V6L7 10H3zm12.5 2c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM13 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg></span><span class="speak-label">朗讀</span></button><p>All countries have ways to recognize outstanding citizens. Official awards are called honours, consisting of orders, decorations and medals. After using British honours for many years, Canada started its own honours system with the <strong>Order of Canada in 1967</strong>, the centennial of Confederation.</p></div><div class="zh"><span class="label">中文</span><p>所有國家都有表彰傑出公民的方式。官方獎項稱為 <strong>「榮譽 (honours)」</strong>，包含 <strong>勳章 (orders)、勳飾 (decorations) 與獎章 (medals)</strong>。長年使用英國榮譽後，<strong>加拿大於 1967 年——邦聯百年——設立自己的「加拿大勳章 (Order of Canada)」系統</strong>。</p></div></div>
+<hr>
+<h2>National Public Holidays and Other Important Dates / 國定假日與重要日期</h2>
+<table>
+<thead>
+<tr>
+<th>日期</th>
+<th>假日</th>
+<th>中文</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1 月 1 日</td>
+<td>New Year&rsquo;s Day</td>
+<td>元旦</td>
+</tr>
+<tr>
+<td>1 月 11 日</td>
+<td>Sir John A. Macdonald Day</td>
+<td>Macdonald 紀念日</td>
+</tr>
+<tr>
+<td>復活節前週五</td>
+<td>Good Friday</td>
+<td>受難日</td>
+</tr>
+<tr>
+<td>復活節後週一</td>
+<td>Easter Monday</td>
+<td>復活節週一</td>
+</tr>
+<tr>
+<td>4 月 9 日</td>
+<td>Vimy Day</td>
+<td>Vimy 紀念日</td>
+</tr>
+<tr>
+<td>5/25 前最後一個週一</td>
+<td>Victoria Day</td>
+<td>維多利亞日（君主官方生日）</td>
+</tr>
+<tr>
+<td>6 月 24 日</td>
+<td>Fête nationale (Quebec)</td>
+<td>魁北克省慶（聖洗約翰節）</td>
+</tr>
+<tr>
+<td>7 月 1 日</td>
+<td>Canada Day</td>
+<td>加拿大國慶</td>
+</tr>
+<tr>
+<td>9 月第一個週一</td>
+<td>Labour Day</td>
+<td>勞動節</td>
+</tr>
+<tr>
+<td><strong>9 月 30 日</strong></td>
+<td><strong>National Day for Truth and Reconciliation</strong></td>
+<td><strong>真相與和解日</strong>（2021 起新增；PDF 未列）</td>
+</tr>
+<tr>
+<td>10 月第二個週一</td>
+<td>Thanksgiving Day</td>
+<td>感恩節</td>
+</tr>
+<tr>
+<td><strong>11 月 11 日</strong></td>
+<td>Remembrance Day</td>
+<td>國殤紀念日</td>
+</tr>
+<tr>
+<td>11 月 20 日</td>
+<td>Sir Wilfrid Laurier Day</td>
+<td>Laurier 紀念日</td>
+</tr>
+<tr>
+<td>12 月 25 日</td>
+<td>Christmas Day</td>
+<td>聖誕節</td>
+</tr>
+<tr>
+<td>12 月 26 日</td>
+<td>Boxing Day</td>
+<td>節禮日</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2>重點整理</h2>
+<table>
+<thead>
+<tr>
+<th>象徵</th>
+<th>關鍵字</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>國旗</td>
+<td>1965 採用；紅—白—紅 + 楓葉</td>
+</tr>
+<tr>
+<td>國徽箴言</td>
+<td><strong>A Mari Usque Ad Mare</strong>（從海到海）</td>
+</tr>
+<tr>
+<td>國家顏色</td>
+<td>紅與白，1921 起</td>
+</tr>
+<tr>
+<td>楓葉</td>
+<td>1700 年代為法裔象徵；1850 年代起用於軍服</td>
+</tr>
+<tr>
+<td>鳶尾花</td>
+<td>法國王室象徵；Quebec 旗 1948</td>
+</tr>
+<tr>
+<td>河狸</td>
+<td>哈德遜灣公司象徵；5 分硬幣</td>
+</tr>
+<tr>
+<td>Hockey</td>
+<td>1800 年代於加拿大發展；冬季國運</td>
+</tr>
+<tr>
+<td>Stanley Cup</td>
+<td>1892 由總督 Lord Stanley 捐贈</td>
+</tr>
+<tr>
+<td>Lacrosse</td>
+<td>原住民古老運動；夏季國運</td>
+</tr>
+<tr>
+<td>國歌</td>
+<td>O Canada；1980 定；首唱 1880 魁北克市</td>
+</tr>
+<tr>
+<td>皇室國歌</td>
+<td>God Save the King</td>
+</tr>
+<tr>
+<td>最高軍事榮譽</td>
+<td>Victoria Cross（V.C.）；96 名加拿大人</td>
+</tr>
+<tr>
+<td>最高平民榮譽</td>
+<td>Order of Canada（1967 設立）</td>
+</tr>
+<tr>
+<td>官方語言法</td>
+<td>1969</td>
+</tr>
+<tr>
+<td>Peace Tower</td>
+<td>1927 完工，紀念一戰</td>
+</tr>
+</tbody>
+</table></main>
+</div>
+<script>
+(function() {
+  if (!('speechSynthesis' in window)) return;
+  var synth = window.speechSynthesis;
+  var voicesReady = false;
+
+  var ICON_SPEAKER = '<svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 10v4h4l5 4V6L7 10H3zm12.5 2c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM13 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg>';
+  var ICON_PAUSE = '<svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6 5h4v14H6zM14 5h4v14h-4z"/></svg>';
+  var ICON_PLAY = '<svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>';
+
+  // single global state — only one TTS session at a time
+  var state = {
+    btn: null, chunks: null, words: null, chunkIdx: 0, paused: false
+  };
+
+  function ensureVoices(cb) {
+    if (voicesReady) return cb();
+    var v = synth.getVoices();
+    if (v && v.length) { voicesReady = true; return cb(); }
+    synth.onvoiceschanged = function() { voicesReady = true; cb(); };
+    setTimeout(function(){ if (!voicesReady) { voicesReady = true; cb(); } }, 500);
+  }
+
+  function pickVoice() {
+    var voices = synth.getVoices();
+    function find(pred){ for (var i=0;i<voices.length;i++) if (pred(voices[i])) return voices[i]; return null; }
+    return find(function(v){return v.lang==='en-CA' && /Samantha|Karen|Tessa|Victoria|Allison|Siri/i.test(v.name);})
+        || find(function(v){return v.lang==='en-CA';})
+        || find(function(v){return v.lang==='en-US' && /Samantha|Karen|Allison|Ava|Siri/i.test(v.name);})
+        || find(function(v){return v.lang==='en-US';})
+        || find(function(v){return v.lang && v.lang.indexOf('en')===0;})
+        || null;
+  }
+
+  // Wrap each word in container in a <span class="w" data-idx="N"> for highlighting.
+  function wrapWords(container) {
+    if (container.dataset.wrapped === '1') return;
+    var walker = document.createTreeWalker(container, NodeFilter.SHOW_TEXT, null, false);
+    var nodes = [];
+    var n;
+    while ((n = walker.nextNode())) {
+      if (!n.parentElement) continue;
+      if (n.parentElement.closest('.speak-btn, .label')) continue;
+      if (!/\S/.test(n.nodeValue)) continue;
+      nodes.push(n);
+    }
+    var idx = 0;
+    nodes.forEach(function(tn) {
+      var text = tn.nodeValue;
+      var tokens = text.split(/(\s+)/);
+      var frag = document.createDocumentFragment();
+      tokens.forEach(function(tok) {
+        if (tok.length === 0) return;
+        if (/^\s+$/.test(tok)) {
+          frag.appendChild(document.createTextNode(tok));
+        } else {
+          var sp = document.createElement('span');
+          sp.className = 'w';
+          sp.setAttribute('data-idx', idx++);
+          sp.textContent = tok;
+          frag.appendChild(sp);
+        }
+      });
+      tn.parentNode.replaceChild(frag, tn);
+    });
+    container.dataset.wrapped = '1';
+  }
+
+  // Group words into chunks split on punctuation, with a pause duration after each chunk.
+  function buildChunks(words) {
+    var chunks = [];
+    var cur = { words: [] };
+    function commit(pauseMs) {
+      if (!cur.words.length) return;
+      cur.text = cur.words.map(function(w){ return w.text; }).join(' ');
+      cur.pauseAfterMs = pauseMs;
+      chunks.push(cur);
+      cur = { words: [] };
+    }
+    words.forEach(function(wEl, i) {
+      var text = wEl.textContent;
+      cur.words.push({ el: wEl, idx: i, text: text });
+      // sentence-ending punctuation → long pause
+      if (/[.!?]+["')\]]*$/.test(text) && text.length > 1) {
+        commit(420);
+      }
+      // semicolon / colon → medium pause
+      else if (/[;:]+["')\]]*$/.test(text)) {
+        commit(300);
+      }
+      // comma or em-dash → short pause
+      else if (/[,—–][")'\]]*$/.test(text)) {
+        commit(220);
+      }
+    });
+    commit(0);
+    return chunks;
+  }
+
+  function highlight(globalIdx) {
+    if (!state.words) return;
+    for (var i = 0; i < state.words.length; i++) {
+      if (i === globalIdx) state.words[i].classList.add('current');
+      else state.words[i].classList.remove('current');
+    }
+  }
+
+  function clearHighlight() {
+    if (!state.words) return;
+    state.words.forEach(function(w){ w.classList.remove('current'); });
+  }
+
+  function findWordAtChar(chunk, charIndex) {
+    var pos = 0;
+    for (var i = 0; i < chunk.words.length; i++) {
+      var len = chunk.words[i].text.length;
+      if (charIndex >= pos && charIndex < pos + len) return i;
+      pos += len + 1; // space
+    }
+    return -1;
+  }
+
+  function setBtnState(btn, s) {
+    if (!btn) return;
+    btn.classList.remove('speaking', 'paused');
+    if (s === 'speaking') btn.classList.add('speaking');
+    else if (s === 'paused') btn.classList.add('paused');
+    btn.setAttribute('data-state', s);
+    var icon = btn.querySelector('.speak-icon');
+    var label = btn.querySelector('.speak-label');
+    if (s === 'idle')     { if (icon) icon.innerHTML = ICON_SPEAKER; if (label) label.textContent = '朗讀'; }
+    else if (s === 'speaking') { if (icon) icon.innerHTML = ICON_PAUSE;   if (label) label.textContent = '暫停'; }
+    else if (s === 'paused')   { if (icon) icon.innerHTML = ICON_PLAY;    if (label) label.textContent = '繼續'; }
+  }
+
+  function stopAll() {
+    synth.cancel();
+    if (state.btn) setBtnState(state.btn, 'idle');
+    clearHighlight();
+    state.btn = null; state.chunks = null; state.words = null;
+    state.chunkIdx = 0; state.paused = false;
+  }
+
+  function speakFrom(chunkIdx) {
+    if (!state.chunks || chunkIdx >= state.chunks.length) { stopAll(); return; }
+    state.chunkIdx = chunkIdx;
+    var chunk = state.chunks[chunkIdx];
+    var u = new SpeechSynthesisUtterance(chunk.text);
+    u.lang = 'en-CA';
+    u.rate = 0.92;
+    u.pitch = 1.0;
+    var v = pickVoice();
+    if (v) u.voice = v;
+
+    u.onstart = function() {
+      if (chunk.words[0]) highlight(chunk.words[0].idx);
+    };
+    u.onboundary = function(e) {
+      if (e.name && e.name !== 'word') return;
+      var w = findWordAtChar(chunk, e.charIndex || 0);
+      if (w >= 0) highlight(chunk.words[w].idx);
+    };
+    u.onend = function() {
+      if (state.paused) return; // don't auto-advance while paused
+      var next = chunkIdx + 1;
+      if (next >= state.chunks.length) { stopAll(); return; }
+      setTimeout(function() {
+        if (!state.paused && state.chunks) speakFrom(next);
+      }, chunk.pauseAfterMs);
+    };
+    u.onerror = function() { stopAll(); };
+
+    synth.speak(u);
+  }
+
+  function start(container, btn) {
+    stopAll();
+    wrapWords(container);
+    var words = Array.prototype.slice.call(container.querySelectorAll('.w'));
+    if (!words.length) return;
+    state.btn = btn;
+    state.words = words;
+    state.chunks = buildChunks(words);
+    state.chunkIdx = 0;
+    state.paused = false;
+    setBtnState(btn, 'speaking');
+    speakFrom(0);
+  }
+
+  document.addEventListener('click', function(e) {
+    var btn = e.target.closest && e.target.closest('.speak-btn');
+    if (!btn) return;
+    e.preventDefault();
+    var s = btn.getAttribute('data-state') || 'idle';
+
+    if (s === 'speaking') {
+      // pause: cancel current utterance; chunkIdx stays so resume can restart this chunk
+      state.paused = true;
+      synth.cancel();
+      setBtnState(btn, 'paused');
+      return;
+    }
+    if (s === 'paused') {
+      // resume: continue from current chunk
+      state.paused = false;
+      setBtnState(btn, 'speaking');
+      speakFrom(state.chunkIdx);
+      return;
+    }
+    // idle → new speech
+    ensureVoices(function() { start(btn.parentElement, btn); });
+  });
+
+  window.addEventListener('hashchange', stopAll);
+  window.addEventListener('pagehide', stopAll);
+})();
+</script>
+</body>
+</html>
