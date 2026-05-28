@@ -334,16 +334,26 @@ details.answers .answers-body li { margin: 8px 0; }
   50%      { box-shadow: 0 0 0 6px rgba(200,16,46,0); }
 }
 
-/* --- per-word highlight during TTS --- */
+/* --- per-word highlight during TTS + click-to-play-from-here --- */
 .w {
   border-radius: 3px;
   padding: 0 1px;
   transition: color 0.08s ease, background 0.08s ease;
+  cursor: pointer;
+  -webkit-tap-highlight-color: rgba(200, 16, 46, 0.15);
+}
+.w:hover {
+  background: rgba(200, 16, 46, 0.07);
+  text-decoration: underline;
+  text-decoration-color: rgba(200, 16, 46, 0.3);
+  text-decoration-style: dotted;
+  text-underline-offset: 3px;
 }
 .w.current {
   color: var(--accent);
   background: rgba(200, 16, 46, 0.14);
   font-weight: 600;
+  text-decoration: none;
 }
 .bilingual .en { position: relative; }
 .bilingual .en > .speak-btn {
@@ -867,11 +877,23 @@ God save the King!</p></div><div class="zh"><span class="label">中文</span><p>
   }
 
   function stopAll() {
+    state.suppressNextEnd = true;  // ignore the cancel-induced end/error
     synth.cancel();
     if (state.btn) setBtnState(state.btn, 'idle');
     clearHighlight();
     state.btn = null; state.chunks = null; state.words = null;
     state.chunkIdx = 0; state.paused = false;
+    // reset suppression on next tick
+    setTimeout(function(){ state.suppressNextEnd = false; }, 100);
+  }
+
+  function findChunkForWord(chunks, wordIdx) {
+    for (var i = 0; i < chunks.length; i++) {
+      for (var j = 0; j < chunks[i].words.length; j++) {
+        if (chunks[i].words[j].idx === wordIdx) return i;
+      }
+    }
+    return -1;
   }
 
   function speakFrom(chunkIdx) {
@@ -894,19 +916,26 @@ God save the King!</p></div><div class="zh"><span class="label">中文</span><p>
       if (w >= 0) highlight(chunk.words[w].idx);
     };
     u.onend = function() {
-      if (state.paused) return; // don't auto-advance while paused
+      // ignore the end event if it was triggered by our own cancel (pause/jump/stop)
+      if (state.suppressNextEnd) { state.suppressNextEnd = false; return; }
+      if (state.paused) return;
       var next = chunkIdx + 1;
       if (next >= state.chunks.length) { stopAll(); return; }
       setTimeout(function() {
         if (!state.paused && state.chunks) speakFrom(next);
       }, chunk.pauseAfterMs);
     };
-    u.onerror = function() { stopAll(); };
+    u.onerror = function() {
+      if (state.suppressNextEnd) { state.suppressNextEnd = false; return; }
+      if (state.paused) return; // user paused — keep state for resume
+      stopAll();
+    };
 
     synth.speak(u);
   }
 
-  function start(container, btn) {
+  // Start fresh speech for a container, optionally from a specific chunk index.
+  function startFresh(container, btn, fromChunk) {
     stopAll();
     wrapWords(container);
     var words = Array.prototype.slice.call(container.querySelectorAll('.w'));
@@ -914,35 +943,98 @@ God save the King!</p></div><div class="zh"><span class="label">中文</span><p>
     state.btn = btn;
     state.words = words;
     state.chunks = buildChunks(words);
-    state.chunkIdx = 0;
+    state.chunkIdx = Math.max(0, Math.min(fromChunk || 0, state.chunks.length - 1));
     state.paused = false;
     setBtnState(btn, 'speaking');
-    speakFrom(0);
+    speakFrom(state.chunkIdx);
+  }
+
+  // Jump speech to a specific word — restart the chunk containing it.
+  function jumpToWord(container, btn, wordIdx) {
+    // Same container that's currently speaking/paused → in-place jump
+    if (state.btn === btn && state.chunks && state.words) {
+      var ci = findChunkForWord(state.chunks, wordIdx);
+      if (ci < 0) return;
+      state.suppressNextEnd = true;
+      synth.cancel();
+      state.chunkIdx = ci;
+      state.paused = false;
+      setBtnState(btn, 'speaking');
+      setTimeout(function() {
+        state.suppressNextEnd = false;
+        if (state.chunks) speakFrom(ci);
+      }, 60);
+      return;
+    }
+    // Different container or fresh start — figure out chunk first
+    wrapWords(container);
+    var words = Array.prototype.slice.call(container.querySelectorAll('.w'));
+    if (!words.length) return;
+    var chunks = buildChunks(words);
+    var ci2 = findChunkForWord(chunks, wordIdx);
+    startFresh(container, btn, ci2 >= 0 ? ci2 : 0);
+  }
+
+  function speakableContainerOf(el) {
+    return el.closest && el.closest('.bilingual .en, blockquote.speakable, .callout.speakable');
   }
 
   document.addEventListener('click', function(e) {
+    // --- speak button ---
     var btn = e.target.closest && e.target.closest('.speak-btn');
-    if (!btn) return;
-    e.preventDefault();
-    var s = btn.getAttribute('data-state') || 'idle';
+    if (btn) {
+      e.preventDefault();
+      var s = btn.getAttribute('data-state') || 'idle';
+      if (s === 'speaking') {
+        // pause: set flag BEFORE cancel so onend/onerror preserve state
+        state.paused = true;
+        synth.cancel();
+        setBtnState(btn, 'paused');
+        return;
+      }
+      if (s === 'paused') {
+        // resume: restart current chunk
+        state.paused = false;
+        setBtnState(btn, 'speaking');
+        if (state.chunks) speakFrom(state.chunkIdx);
+        return;
+      }
+      // idle → new speech from start
+      ensureVoices(function() { startFresh(btn.parentElement, btn, 0); });
+      return;
+    }
 
-    if (s === 'speaking') {
-      // pause: cancel current utterance; chunkIdx stays so resume can restart this chunk
-      state.paused = true;
-      synth.cancel();
-      setBtnState(btn, 'paused');
-      return;
-    }
-    if (s === 'paused') {
-      // resume: continue from current chunk
-      state.paused = false;
-      setBtnState(btn, 'speaking');
-      speakFrom(state.chunkIdx);
-      return;
-    }
-    // idle → new speech
-    ensureVoices(function() { start(btn.parentElement, btn); });
+    // --- word click (play from here) ---
+    var w = e.target.closest && e.target.closest('.w');
+    if (!w) return;
+    // skip if user is selecting text
+    var sel = window.getSelection && window.getSelection();
+    if (sel && sel.toString && sel.toString().length > 0) return;
+    var container = speakableContainerOf(w);
+    if (!container) return;
+    var speakBtn = container.querySelector('.speak-btn');
+    if (!speakBtn) return;
+    e.preventDefault();
+    var widx = parseInt(w.getAttribute('data-idx'), 10);
+    if (isNaN(widx)) return;
+    ensureVoices(function() { jumpToWord(container, speakBtn, widx); });
   });
+
+  // Pre-wrap all speakable containers during idle time so word-click works without first hitting the button
+  function preWrapAll() {
+    var containers = document.querySelectorAll('.bilingual .en, blockquote.speakable, .callout.speakable');
+    var i = 0;
+    function step() {
+      if (i >= containers.length) return;
+      try { wrapWords(containers[i]); } catch (e) {}
+      i++;
+      if (window.requestIdleCallback) requestIdleCallback(step, { timeout: 200 });
+      else setTimeout(step, 0);
+    }
+    step();
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', preWrapAll);
+  else preWrapAll();
 
   window.addEventListener('hashchange', stopAll);
   window.addEventListener('pagehide', stopAll);
