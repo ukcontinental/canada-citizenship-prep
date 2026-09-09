@@ -1259,6 +1259,12 @@ def build_interactive_index_body():
     <div class="iv-hub-title">歷史時間軸</div>
     <div class="iv-hub-desc">1497 → 2021，41 事件，5 時代色標、可篩選</div>
   </a>
+  <a href="story-04.html" class="iv-hub-card">
+    <span class="iv-hub-emoji">📖</span>
+    <div class="iv-hub-chap">04 章 · 邊聽邊玩</div>
+    <div class="iv-hub-title">歷史故事聽學</div>
+    <div class="iv-hub-desc">中文故事音頻＋記憶卡＋小測驗，手機隨時聽</div>
+  </a>
   <a href="modern.html" class="iv-hub-card">
     <span class="iv-hub-emoji">🇨🇦</span>
     <div class="iv-hub-chap">05 章</div>
@@ -1307,3 +1313,374 @@ def build_interactive_index_body():
   💡 學習建議：先看互動式抓住整體結構（圖／時間軸／流程），再回中英對照精讀文字、daily-quiz 驗收。
 </p>
 '''
+
+
+# ============================================================================
+# STORY MODE — bilingual audio storytelling + memory cards + light quiz
+#
+# Designed for: 中文母語、記性有限、對英文考試有恐懼感的學習者。
+# 故事只用中文講，英文只在關鍵詞出現、放慢重複兩次，不做整段英文聽力。
+# ============================================================================
+
+STORY_04_SCENES = [
+    ("🏕️", "原住民：加拿大最早的主人", [
+        ("zh", "在歐洲人出現的好幾千年前，加拿大這片土地上已經住著許多原住民族——他們有自己的政府、自己的語言，還有自己的貿易網絡。"),
+        ("zh", "可惜歐洲人後來帶來的疾病，讓原住民人口一下子少了將近一半到八成，非常慘烈。"),
+    ]),
+    ("⛵", "第一批歐洲人：維京人、卡伯特、卡蒂亞", [
+        ("zh", "大概西元一千年，一群從冰島來的維京人，先到了格陵蘭，接著一路划到了紐芬蘭島，成為第一批踏上北美的歐洲人。"),
+        ("zh", "1497 年，一位替英國國王工作的義大利探險家登陸紐芬蘭，宣告這塊地是英國的，他的名字是——"),
+        ("en", "John Cabot. John Cabot."),
+        ("zh", "接下來換法國人出手了。1534 到 1542 年之間，"),
+        ("en", "Jacques Cartier."),
+        ("zh", "三次橫渡大西洋，替法國宣告主權。他還從原住民嚮導口中聽到一個詞，叫「卡那塔」，意思是「村莊」——這就是「加拿大」這個名字的由來！"),
+    ]),
+    ("🏰", "新法蘭西誕生：魁北克城的誕生", [
+        ("zh", "1608 年，法國探險家"),
+        ("en", "Samuel de Champlain."),
+        ("zh", "在今天的魁北克市蓋了一座堡壘，他被稱為「新法蘭西之父」。從此，法國人跟原住民一起靠著毛皮貿易，把生意做到哈德遜灣到墨西哥灣那麼大！"),
+    ]),
+    ("⚔️", "英法大對決：亞伯拉罕平原之役", [
+        ("zh", "英國跟法國為了爭奪北美，打了一百多年的仗。決定勝負的關鍵一戰，發生在 1759 年的魁北克市，叫做——"),
+        ("en", "Battle of the Plains of Abraham. Battle of the Plains of Abraham."),
+        ("zh", "這一戰非常戲劇化：英軍將領沃夫，跟法軍將領蒙特卡姆，兩個人都在戰場上陣亡了！最後英國贏了，法國在北美的帝國，就這樣結束了。"),
+    ]),
+    ("🚣", "忠貞派大遷徙：四萬人逃亡潮", [
+        ("zh", "1776 年，美國獨立革命爆發。大約四萬個效忠英國的人，不想留在剛獨立的美國，就往北逃到了加拿大，他們被稱為——"),
+        ("en", "United Empire Loyalists."),
+        ("zh", "這批新移民裡面還包括了自由黑人，跟一位莫霍克族的領袖約瑟夫．布蘭特。英國後來把魁北克分成了「上加拿大」跟「下加拿大」，也就是今天的安大略跟魁北克。"),
+    ]),
+    ("⛓️", "廢除奴隸制的先鋒", [
+        ("zh", "1793 年，上加拿大的副總督"),
+        ("en", "John Graves Simcoe."),
+        ("zh", "推動立法，讓上加拿大成為整個大英帝國第一個禁止奴隸制的地方！後來還有三萬名美國黑奴，經過一條叫「地下鐵路」的秘密逃亡路線，來到加拿大尋求自由。"),
+    ]),
+    ("🎖️", "1812 年戰爭：保家衛國", [
+        ("zh", "1812 年，美國出兵想要併吞加拿大。這時候站出來三位英雄：英軍司令布洛克，原住民首領特庫姆塞，還有一位傳奇女性——"),
+        ("en", "Laura Secord."),
+        ("zh", "她走了三十公里的路去通報美軍的作戰計畫，被視為加拿大的民族英雄。最後加拿大打贏了，沒有被美國併吞——這是加拿大能獨立存在到今天的關鍵一戰！"),
+    ]),
+    ("🎂", "建國的那一天：1867 年 7 月 1 日", [
+        ("zh", "終於，來到整堂課最重要的一天！安大略、魁北克、新斯科細亞、新布藍瑞克這四個殖民地，決定聯合組成一個國家，這一天就叫——"),
+        ("en", "Confederation. Confederation."),
+        ("zh", "這就是加拿大的生日，後來變成了「加拿大日」。第一任總理，是——"),
+        ("en", "Sir John Alexander Macdonald."),
+        ("zh", "他的頭像，現在就印在十塊錢加幣的鈔票上。"),
+    ]),
+    ("🚂", "版圖擴張：橫貫鐵路的血與淚", [
+        ("zh", "建國之後，加拿大的版圖越變越大。把東西兩岸串起來的關鍵建設，是 1885 年完工的——"),
+        ("en", "Canadian Pacific Railway."),
+        ("zh", "這條鐵路是由一萬五千名華人工人辛苦建造的，很多人因為工作環境太惡劣而喪命。完工那年，加拿大政府居然還對華人徵收「人頭稅」，一直到 2006 年，當時的總理哈珀才正式道歉並補償。"),
+    ]),
+    ("🗳️", "女性投票權：從曼尼托巴到最高法院", [
+        ("zh", "1916 年，滿尼托巴省成為加拿大第一個讓女性投票的省份。到了 1929 年，五位女性運動者打贏了一場官司，叫做——"),
+        ("en", "Persons Case."),
+        ("zh", "她們證明了女性在法律上也算是「人」，從此才有資格進入加拿大的參議院。這五位女性，被稱為「Famous Five」。"),
+    ]),
+    ("🎖️", "兩次世界大戰：加拿大打出了名號", [
+        ("zh", "第一次世界大戰，加拿大軍隊在法國打了一場關鍵戰役，叫做——"),
+        ("en", "Battle of Vimy Ridge."),
+        ("zh", "這一戰被認為是加拿大從英國殖民地，走向獨立國家認同的轉捩點。到了第二次世界大戰，加拿大軍隊參加了 1944 年 6 月 6 日的諾曼第登陸，那個海灘的代號叫——"),
+        ("en", "Juno Beach."),
+    ]),
+    ("🍁", "現代加拿大：憲法回家了", [
+        ("zh", "1965 年，現在這面紅白相間的楓葉旗正式誕生。到了 1982 年，時任總理老杜魯道推動了加拿大現代史上最重要的大事——把原本放在英國的加拿大憲法，正式「接回」加拿大，同時加入了保障所有人基本權利的——"),
+        ("en", "Canadian Charter of Rights and Freedoms."),
+        ("zh", "從這一刻起，加拿大才真正完全掌握了自己的命運。這，就是加拿大歷史，從原住民時代一路走到今天的故事。"),
+    ]),
+]
+
+# (標題, 中文口訣, 補充細節)
+STORY_04_CARDS = [
+    ("1867/7/1 建國", "一八六七七月一，四省聯手把家立", "安大略、魁北克、新斯科細亞、新布藍瑞克 四個原始省份，Confederation 誕生"),
+    ("1759 亞伯拉罕平原之役", "沃夫蒙特卡姆，雙雙戰死魁北克", "英軍 Wolfe 勝、法軍 Montcalm 敗，兩位將軍皆陣亡，法國在美洲帝國結束"),
+    ("1812 戰爭", "一二年戰爭打得凶，加拿大保住沒被吞", "Brock、Tecumseh、Laura Secord 三英雄，保住加拿大不被美國併吞"),
+    ("1885 橫貫鐵路", "一八八五鐵路通，華工血汗立奇功", "15,000 華工建 CPR，後遭徵人頭稅，2006 年 Harper 道歉補償"),
+    ("1917 Vimy Ridge", "一九一七維米嶺，加拿大打出了名", "一戰關鍵戰役，被視為加拿大國家認同的轉捩點"),
+    ("1929 Persons Case", "一九二九五姐妹，打贏官司變法人", "Famous Five 打贏官司，女性法律上正式算「person」，可進參議院"),
+    ("1793 廢除奴隸制", "英帝國內第一個，上加拿大先禁奴", "Simcoe 推動立法，大英帝國第一個禁奴隸制的地方；後有 Underground Railroad"),
+    ("1982 憲法回家", "八二年老杜魯道，憲法回家權利到", "Constitution Act + Charter of Rights and Freedoms，加拿大憲法正式脫離英國"),
+]
+
+# (題目, [選項3個], 正解索引, 解說)
+STORY_04_QUIZ = [
+    ("加拿大的「生日」Confederation 是哪一天？", ["1867 年 7 月 1 日", "1867 年 1 月 1 日", "1982 年 7 月 1 日"], 0,
+     "1867/7/1，四個原始省份（安大略、魁北克、新斯科細亞、新布藍瑞克）組成加拿大自治領。"),
+    ("加拿大第一任總理是誰？", ["Sir John A. Macdonald", "Pierre Trudeau", "Wilfrid Laurier"], 0,
+     "Sir John Alexander Macdonald，頭像印在 $10 加幣鈔票上。"),
+    ("1759 年英法決戰的地點叫什麼？", ["Battle of the Plains of Abraham", "Battle of Vimy Ridge", "Battle of Queenston Heights"], 0,
+     "地點在魁北克市，英軍 Wolfe 對法軍 Montcalm，兩位將軍都戰死。"),
+    ("1929 年 Persons Case 打贏官司的是哪一群人？", ["Famous Five（五位女性）", "United Empire Loyalists", "Fathers of Confederation"], 0,
+     "五位女性運動者證明女性在法律上算「person」，可以進入參議院。"),
+    ("加拿大憲法「回家」（patriated）是哪一年？", ["1982 年", "1867 年", "1965 年"], 0,
+     "1982 年，PM Pierre Trudeau 推動 Constitution Act，同時通過 Charter of Rights and Freedoms。"),
+    ("1885 年橫貫鐵路（CPR）完工，主要由誰辛苦建造？", ["華人工人", "英國軍隊", "美國移民"], 0,
+     "15,000 名華工參與建造，後來還被徵收人頭稅，2006 年 Harper 總理道歉補償。"),
+]
+
+STORY_SHARED_CSS = """
+<style>
+.story-player { background:#fff; border:1px solid var(--line); border-radius:12px; padding:18px 20px; margin:16px 0 28px; }
+.story-controls { display:flex; align-items:center; gap:10px; flex-wrap:wrap; margin-bottom:14px; }
+.story-btn { appearance:none; border:2px solid var(--accent); background:#fff; color:var(--accent); padding:8px 16px; border-radius:20px; font-size:14px; font-weight:600; cursor:pointer; font-family:-apple-system,system-ui,sans-serif; }
+.story-btn-main { background:var(--accent); color:#fff; }
+.story-btn:disabled { opacity:0.4; cursor:default; }
+.story-progress { font-size:13px; color:var(--muted); margin-left:auto; }
+.story-transcript { max-height:440px; overflow-y:auto; padding-right:6px; }
+.story-scene { padding:14px 0; border-bottom:1px dashed var(--line); }
+.story-scene:last-child { border-bottom:none; }
+.story-scene-head { display:flex; align-items:center; gap:8px; margin-bottom:6px; }
+.story-emoji { font-size:22px; }
+.story-scene-head h3 { margin:0; font-size:15px; }
+.story-text { margin:0; line-height:2; font-size:15px; }
+.story-chunk { transition:background 0.2s; border-radius:4px; padding:1px 2px; }
+.story-chunk.story-en { color:#8a1f2e; font-weight:600; font-family:Georgia,serif; }
+.story-chunk.current { background:#ffe9b3; }
+
+.mem-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:14px; margin:16px 0 28px; perspective:1000px; }
+.mem-card { min-height:150px; cursor:pointer; }
+.mem-card-inner { position:relative; width:100%; height:100%; min-height:150px; transition:transform 0.5s; transform-style:preserve-3d; }
+.mem-card.flipped .mem-card-inner { transform:rotateY(180deg); }
+.mem-card-front, .mem-card-back { position:absolute; inset:0; backface-visibility:hidden; border-radius:10px; padding:16px 18px; border:1px solid var(--line); background:#fff; display:flex; flex-direction:column; justify-content:center; }
+.mem-card-back { transform:rotateY(180deg); background:linear-gradient(135deg,#fff 0%,#fff8f8 100%); border-color:var(--accent); }
+.mem-title { font-weight:700; font-size:14px; color:var(--accent); margin-bottom:8px; }
+.mem-hook { font-size:16px; font-weight:600; line-height:1.5; }
+.mem-tap { font-size:11px; color:var(--muted); margin-top:10px; }
+.mem-detail { font-size:14px; line-height:1.6; }
+
+.quiz-q { background:#fff; border:1px solid var(--line); border-radius:10px; padding:14px 18px; margin-bottom:12px; }
+.quiz-qtext { font-weight:600; margin-bottom:10px; }
+.quiz-opts { display:flex; flex-direction:column; gap:8px; }
+.quiz-opt { appearance:none; text-align:left; padding:10px 14px; border-radius:8px; border:1px solid var(--line); background:#faf8f4; cursor:pointer; font-size:14px; font-family:-apple-system,system-ui,sans-serif; }
+.quiz-opt.correct { border-color:#2e7d46; background:#e8f5ea; }
+.quiz-opt.wrong { border-color:#c8102e; background:#fbe9ec; }
+.quiz-opt:disabled { cursor:default; }
+.quiz-explain { margin-top:10px; font-size:13px; color:var(--muted); background:#f3efe6; padding:10px 12px; border-radius:8px; }
+.quiz-score { font-size:16px; font-weight:700; text-align:center; margin:16px 0; }
+.quiz-reset { display:block; margin:0 auto; }
+</style>
+"""
+
+
+def render_story_page(num, title_zh, subtitle, scenes, memory_cards, quiz):
+    root_id = f"story-{num}-root"
+
+    scenes_html = ""
+    for i, (emoji, title, chunks) in enumerate(scenes):
+        chunk_spans = ""
+        for lang, text in chunks:
+            cls = "story-chunk story-en" if lang == "en" else "story-chunk story-zh"
+            chunk_spans += f'<span class="{cls}" data-lang="{lang}">{text}</span> '
+        scenes_html += f'''
+<div class="story-scene" data-scene="{i}">
+  <div class="story-scene-head"><span class="story-emoji">{emoji}</span><h3>{title}</h3></div>
+  <p class="story-text">{chunk_spans}</p>
+</div>'''
+
+    cards_html = ""
+    for title, hook, detail in memory_cards:
+        cards_html += f'''
+<div class="mem-card">
+  <div class="mem-card-inner">
+    <div class="mem-card-front">
+      <div class="mem-title">{title}</div>
+      <div class="mem-hook">「{hook}」</div>
+      <div class="mem-tap">點一下看細節 →</div>
+    </div>
+    <div class="mem-card-back">
+      <div class="mem-detail">{detail}</div>
+    </div>
+  </div>
+</div>'''
+
+    quiz_html = ""
+    for qi, (q, opts, ans, explain) in enumerate(quiz):
+        opts_html = ""
+        for oi, opt in enumerate(opts):
+            opts_html += f'<button class="quiz-opt" data-correct="{1 if oi == ans else 0}" type="button">{opt}</button>'
+        quiz_html += f'''
+<div class="quiz-q" data-qidx="{qi}">
+  <div class="quiz-qtext">{qi + 1}. {q}</div>
+  <div class="quiz-opts">{opts_html}</div>
+  <div class="quiz-explain" style="display:none">💡 {explain}</div>
+</div>'''
+
+    return f'''{IV_SHARED_CSS}{STORY_SHARED_CSS}
+<div class="iv-hero">
+  <h1>📖 {num} {title_zh}：故事聽學</h1>
+  <p>{subtitle}——用中文故事講一遍，關鍵英文詞放慢重複兩次。開車、走路、躺著都能聽，聽完再翻記憶卡、玩小測驗。</p>
+</div>
+
+<div class="story-player" id="{root_id}">
+  <div class="story-controls">
+    <button class="story-btn story-btn-main story-play" type="button">▶ 播放故事</button>
+    <button class="story-btn story-restart" type="button">⏮ 重來</button>
+    <span class="story-progress">尚未開始</span>
+  </div>
+  <div class="story-transcript">
+{scenes_html}
+  </div>
+</div>
+
+<h2 class="iv-section-title">🧠 {len(memory_cards)} 張記憶卡（點一下翻面看細節）</h2>
+<div class="mem-grid" id="mem-{num}-root">{cards_html}</div>
+
+<h2 class="iv-section-title">🎮 小測驗（{len(quiz)} 題，答錯也沒關係，看解說就好）</h2>
+<div class="quiz-wrap" id="quiz-{num}-root">{quiz_html}</div>
+<div class="quiz-score" data-quiz-total="{len(quiz)}"></div>
+<button class="story-btn quiz-reset" type="button">🔄 重新測驗</button>
+
+<script>
+(function() {{
+  var root = document.getElementById('{root_id}');
+  var quizRoot = document.getElementById('quiz-{num}-root');
+  var memRoot = document.getElementById('mem-{num}-root');
+  if (!root && !quizRoot && !memRoot) return;
+  var synth = window.speechSynthesis;
+
+  // ---------- memory card flip ----------
+  if (memRoot) {{
+    memRoot.addEventListener('click', function(e) {{
+      var card = e.target.closest && e.target.closest('.mem-card');
+      if (card) card.classList.toggle('flipped');
+    }});
+  }}
+
+  // ---------- story player ----------
+  if (root && synth) {{
+    var chunks = Array.prototype.slice.call(root.querySelectorAll('.story-chunk'));
+    var playBtn = root.querySelector('.story-play');
+    var restartBtn = root.querySelector('.story-restart');
+    var progressEl = root.querySelector('.story-progress');
+    var idx = 0;
+    var playing = false;
+    var voicesReady = false;
+
+    function ensureVoices(cb) {{
+      if (voicesReady || !('speechSynthesis' in window)) return cb();
+      var v = synth.getVoices();
+      if (v && v.length) {{ voicesReady = true; return cb(); }}
+      synth.onvoiceschanged = function() {{ voicesReady = true; cb(); }};
+      setTimeout(function() {{ if (!voicesReady) {{ voicesReady = true; cb(); }} }}, 500);
+    }}
+    function pickVoice(lang) {{
+      var voices = synth.getVoices();
+      function find(pred) {{ for (var i = 0; i < voices.length; i++) if (pred(voices[i])) return voices[i]; return null; }}
+      if (lang === 'en') {{
+        return find(function(v) {{ return v.lang === 'en-US' && /Samantha|Karen|Allison|Ava/i.test(v.name); }})
+            || find(function(v) {{ return v.lang && v.lang.indexOf('en') === 0; }})
+            || null;
+      }}
+      return find(function(v) {{ return v.lang === 'zh-TW'; }})
+          || find(function(v) {{ return v.lang === 'zh-CN'; }})
+          || find(function(v) {{ return v.lang && v.lang.indexOf('zh') === 0; }})
+          || null;
+    }}
+    function clearHighlight() {{ chunks.forEach(function(c) {{ c.classList.remove('current'); }}); }}
+    function setProgress() {{ progressEl.textContent = playing ? ('播放中 ' + (idx + 1) + ' / ' + chunks.length) : '已暫停'; }}
+    function setIdleUI() {{
+      playing = false;
+      playBtn.textContent = '▶ 播放故事';
+      progressEl.textContent = idx >= chunks.length ? '播完了 🎉' : '已暫停';
+    }}
+
+    function speakChunk(i) {{
+      if (i >= chunks.length) {{ clearHighlight(); setIdleUI(); idx = 0; return; }}
+      idx = i;
+      var el = chunks[i];
+      clearHighlight();
+      el.classList.add('current');
+      el.scrollIntoView({{ block: 'center', behavior: 'smooth' }});
+      setProgress();
+      var lang = el.dataset.lang === 'en' ? 'en' : 'zh';
+      var u = new SpeechSynthesisUtterance(el.textContent.trim());
+      u.lang = lang === 'en' ? 'en-US' : 'zh-TW';
+      u.rate = lang === 'en' ? 0.8 : 1.02;
+      var v = pickVoice(lang);
+      if (v) u.voice = v;
+      u.onend = function() {{ if (playing) speakChunk(i + 1); }};
+      u.onerror = function() {{ if (playing) speakChunk(i + 1); }};
+      synth.speak(u);
+    }}
+
+    playBtn.addEventListener('click', function() {{
+      if (playing) {{
+        playing = false;
+        synth.cancel();
+        setIdleUI();
+        return;
+      }}
+      ensureVoices(function() {{
+        synth.cancel();
+        playing = true;
+        playBtn.textContent = '⏸ 暫停';
+        speakChunk(idx >= chunks.length ? 0 : idx);
+      }});
+    }});
+    restartBtn.addEventListener('click', function() {{
+      synth.cancel();
+      playing = false;
+      idx = 0;
+      clearHighlight();
+      setIdleUI();
+      progressEl.textContent = '尚未開始';
+    }});
+    window.addEventListener('hashchange', function() {{ synth.cancel(); playing = false; }});
+    window.addEventListener('pagehide', function() {{ synth.cancel(); }});
+  }}
+
+  // ---------- quiz ----------
+  if (quizRoot) {{
+    var scoreEl = quizRoot.parentElement.querySelector('.quiz-score');
+    var resetBtn = quizRoot.parentElement.querySelector('.quiz-reset');
+    var total = parseInt(scoreEl.getAttribute('data-quiz-total'), 10) || 0;
+    var answered = 0, correct = 0;
+
+    function resetQuiz() {{
+      answered = 0; correct = 0;
+      quizRoot.querySelectorAll('.quiz-q').forEach(function(q) {{
+        q.querySelectorAll('.quiz-opt').forEach(function(b) {{
+          b.disabled = false;
+          b.classList.remove('correct', 'wrong');
+        }});
+        var ex = q.querySelector('.quiz-explain');
+        if (ex) ex.style.display = 'none';
+      }});
+      scoreEl.textContent = '';
+    }}
+    resetBtn.addEventListener('click', resetQuiz);
+
+    quizRoot.addEventListener('click', function(e) {{
+      var btn = e.target.closest && e.target.closest('.quiz-opt');
+      if (!btn || btn.disabled) return;
+      var qEl = btn.closest('.quiz-q');
+      var opts = qEl.querySelectorAll('.quiz-opt');
+      var isCorrect = btn.getAttribute('data-correct') === '1';
+      opts.forEach(function(b) {{
+        b.disabled = true;
+        if (b.getAttribute('data-correct') === '1') b.classList.add('correct');
+      }});
+      if (!isCorrect) btn.classList.add('wrong');
+      var ex = qEl.querySelector('.quiz-explain');
+      if (ex) ex.style.display = 'block';
+      answered++;
+      if (isCorrect) correct++;
+      if (answered >= total) {{
+        scoreEl.textContent = '你答對了 ' + correct + ' / ' + total + ' 題' + (correct === total ? '，太厲害了！🎉' : '，再翻一下記憶卡加深印象～');
+      }}
+    }});
+  }}
+}})();
+</script>
+'''
+
+
+def build_story_04_body():
+    return render_story_page(
+        num="04",
+        title_zh="加拿大歷史",
+        subtitle="從原住民時代到現代加拿大，用 12 個場景記住考試最愛考的關鍵時刻",
+        scenes=STORY_04_SCENES,
+        memory_cards=STORY_04_CARDS,
+        quiz=STORY_04_QUIZ,
+    )

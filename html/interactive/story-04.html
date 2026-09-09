@@ -1,0 +1,1185 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="加拿大公民考">
+<meta name="theme-color" content="#c8102e">
+<title>歷史故事聽學 · 加拿大公民考試</title>
+<style>
+:root {
+  --bg: #faf8f4;
+  --panel: #ffffff;
+  --ink: #1f2328;
+  --muted: #5d646d;
+  --line: #e7e2d6;
+  --accent: #c8102e;        /* maple red */
+  --accent-soft: #fbe9ec;
+  --en-bg: #f3efe6;
+  --en-ink: #2b2620;
+  --zh-bg: #ffffff;
+  --quote: #8a6d3b;
+  --max: 1180px;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: "Source Serif 4","Source Serif Pro","Noto Serif TC","Noto Serif CJK TC","PingFang TC","Songti TC", Georgia, serif;
+  font-size: 17px;
+  line-height: 1.75;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+.layout {
+  display: grid;
+  grid-template-columns: 240px minmax(0, 1fr);
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 0 24px;
+  gap: 36px;
+}
+nav.sidebar {
+  position: sticky;
+  top: 0;
+  align-self: start;
+  height: 100vh;
+  overflow-y: auto;
+  padding: 28px 0 40px;
+  border-right: 1px solid var(--line);
+  font-family: -apple-system, "Helvetica Neue", "PingFang TC", system-ui, sans-serif;
+  font-size: 14px;
+  line-height: 1.45;
+}
+nav.sidebar h1 {
+  font-family: inherit;
+  font-size: 14px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin: 0 0 10px;
+}
+nav.sidebar h2 {
+  font-family: inherit;
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin: 22px 0 6px;
+  font-weight: 600;
+}
+nav.sidebar a {
+  display: block;
+  color: var(--ink);
+  text-decoration: none;
+  padding: 4px 10px 4px 0;
+  border-radius: 4px;
+}
+nav.sidebar a:hover { color: var(--accent); }
+nav.sidebar a.current {
+  color: var(--accent);
+  font-weight: 600;
+}
+nav.sidebar .home {
+  display: inline-block;
+  font-weight: 700;
+  font-size: 18px;
+  color: var(--ink);
+  text-decoration: none;
+  margin-bottom: 14px;
+}
+nav.sidebar .home::before { content: "🍁 "; }
+main {
+  padding: 36px 0 80px;
+  min-width: 0;
+}
+main h1, main h2, main h3, main h4 {
+  font-family: -apple-system, "Helvetica Neue", "PingFang TC", system-ui, sans-serif;
+  line-height: 1.3;
+  color: var(--ink);
+}
+main h1 {
+  font-size: 28px;
+  margin: 0 0 8px;
+  letter-spacing: -0.01em;
+}
+main > p:first-of-type {
+  color: var(--muted);
+  margin-top: 4px;
+}
+main h2 {
+  font-size: 21px;
+  margin: 40px 0 12px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid var(--line);
+}
+main h3 { font-size: 18px; margin: 28px 0 8px; }
+main h4 { font-size: 16px; margin: 22px 0 6px; color: var(--muted); }
+main p { margin: 0 0 12px; }
+main ul, main ol { margin: 0 0 14px; padding-left: 1.4em; }
+main li { margin: 4px 0; }
+main hr {
+  border: none;
+  border-top: 1px solid var(--line);
+  margin: 32px 0;
+}
+main a { color: var(--accent); text-decoration: none; }
+main a:hover { text-decoration: underline; }
+main code {
+  font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.9em;
+  background: #f3efe6;
+  padding: 1px 5px;
+  border-radius: 4px;
+}
+main blockquote {
+  margin: 14px 0;
+  padding: 12px 18px;
+  background: var(--accent-soft);
+  border-left: 3px solid var(--accent);
+  color: var(--ink);
+  border-radius: 0 6px 6px 0;
+}
+main blockquote p:last-child { margin-bottom: 0; }
+main table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 14px 0 22px;
+  font-size: 15px;
+}
+main th, main td {
+  text-align: left;
+  padding: 8px 12px;
+  border-bottom: 1px solid var(--line);
+  vertical-align: top;
+}
+main th {
+  background: #f3efe6;
+  font-family: -apple-system, "Helvetica Neue", "PingFang TC", system-ui, sans-serif;
+  font-weight: 600;
+}
+
+/* --- bilingual pairing --- */
+.bilingual {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  margin: 14px 0;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  overflow: hidden;
+  background: var(--zh-bg);
+}
+.bilingual .en, .bilingual .zh {
+  padding: 16px 20px;
+}
+.bilingual .en {
+  background: var(--en-bg);
+  color: var(--en-ink);
+  font-family: "Source Serif 4","Source Serif Pro", Georgia, serif;
+  font-style: normal;
+  border-right: 1px solid var(--line);
+}
+.bilingual .en p, .bilingual .zh p { margin: 0 0 8px; }
+.bilingual .en p:last-child, .bilingual .zh p:last-child { margin-bottom: 0; }
+.bilingual .en ul, .bilingual .en ol,
+.bilingual .zh ul, .bilingual .zh ol {
+  margin: 0 0 6px;
+  padding-left: 1.3em;
+}
+.bilingual .en em { font-style: italic; }
+.bilingual .label {
+  display: inline-block;
+  font-family: -apple-system, "Helvetica Neue", system-ui, sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 6px;
+  font-weight: 600;
+}
+
+/* --- callouts (⚠️ blocks) --- */
+.callout {
+  margin: 18px 0;
+  padding: 14px 18px;
+  background: #fff8e1;
+  border-left: 4px solid #f0a500;
+  border-radius: 0 6px 6px 0;
+}
+.callout p { margin: 0 0 6px; }
+.callout p:last-child { margin: 0; }
+
+/* --- collapsible answers --- */
+details.answers {
+  margin: 22px 0;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 0;
+  overflow: hidden;
+}
+details.answers > summary {
+  cursor: pointer;
+  padding: 14px 18px;
+  font-family: -apple-system, "Helvetica Neue", "PingFang TC", system-ui, sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  background: #f3efe6;
+  border-bottom: 1px solid transparent;
+  user-select: none;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+details.answers > summary::-webkit-details-marker { display: none; }
+details.answers > summary::after {
+  content: "▸";
+  color: var(--muted);
+  transition: transform 0.18s ease;
+  font-size: 14px;
+}
+details.answers[open] > summary {
+  border-bottom-color: var(--line);
+}
+details.answers[open] > summary::after { transform: rotate(90deg); }
+details.answers .answers-body { padding: 14px 22px 6px; }
+details.answers .answers-body ol { margin: 0; padding-left: 1.4em; }
+details.answers .answers-body li { margin: 8px 0; }
+
+/* --- dashboard cards on index --- */
+.dash {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+  margin: 24px 0;
+}
+.dash a {
+  display: block;
+  padding: 18px 20px;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  color: var(--ink);
+  text-decoration: none;
+  transition: border-color 0.15s, transform 0.15s;
+}
+.dash a:hover {
+  border-color: var(--accent);
+  transform: translateY(-1px);
+}
+.dash a .kicker {
+  font-family: -apple-system, system-ui, sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+  display: block;
+  margin-bottom: 6px;
+}
+.dash a .title {
+  font-weight: 600;
+  font-size: 17px;
+  line-height: 1.35;
+}
+.dash a .meta {
+  display: block;
+  margin-top: 8px;
+  font-size: 13px;
+  color: var(--muted);
+  font-family: -apple-system, system-ui, sans-serif;
+}
+
+/* --- speak (TTS) button --- */
+.speak-btn {
+  appearance: none;
+  background: rgba(255,255,255,0.85);
+  border: 1px solid var(--line);
+  color: var(--muted);
+  cursor: pointer;
+  padding: 4px 9px;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 12px;
+  font-family: -apple-system, "Helvetica Neue", system-ui, sans-serif;
+  transition: all 0.15s;
+  -webkit-tap-highlight-color: transparent;
+  min-width: 64px;
+  justify-content: center;
+}
+.speak-btn .speak-icon { display: inline-flex; }
+.speak-btn svg { display: block; }
+.speak-btn:hover { color: var(--accent); border-color: var(--accent); }
+.speak-btn:active { transform: scale(0.96); }
+.speak-btn.speaking {
+  background: var(--accent);
+  color: #fff;
+  border-color: var(--accent);
+  animation: speak-pulse 1.4s ease-in-out infinite;
+}
+.speak-btn.paused {
+  background: #f0a500;
+  color: #fff;
+  border-color: #f0a500;
+  animation: none;
+}
+@keyframes speak-pulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(200,16,46,0.5); }
+  50%      { box-shadow: 0 0 0 6px rgba(200,16,46,0); }
+}
+
+/* --- per-word highlight during TTS + click-to-play-from-here --- */
+.w {
+  border-radius: 3px;
+  padding: 0 1px;
+  transition: color 0.08s ease, background 0.08s ease;
+  cursor: pointer;
+  -webkit-tap-highlight-color: rgba(200, 16, 46, 0.15);
+}
+.w:hover {
+  background: rgba(200, 16, 46, 0.07);
+  text-decoration: underline;
+  text-decoration-color: rgba(200, 16, 46, 0.3);
+  text-decoration-style: dotted;
+  text-underline-offset: 3px;
+}
+.w.current {
+  color: var(--accent);
+  background: rgba(200, 16, 46, 0.14);
+  font-weight: 600;
+  text-decoration: none;
+}
+.bilingual .en { position: relative; }
+.bilingual .en > .speak-btn {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+}
+.bilingual .en > .label + .speak-btn { /* fallback positioning if absolute fails */ }
+blockquote.speakable, .callout.speakable {
+  position: relative;
+  padding-right: 60px;
+}
+blockquote.speakable > .speak-btn,
+.callout.speakable > .speak-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: #fff;
+}
+
+/* --- mobile --- */
+@media (max-width: 900px) {
+  .layout { grid-template-columns: 1fr; padding: 0 16px; gap: 0; }
+  nav.sidebar {
+    position: static;
+    height: auto;
+    border-right: none;
+    border-bottom: 1px solid var(--line);
+    padding: 18px 0;
+  }
+  .bilingual { grid-template-columns: 1fr; }
+  .bilingual .en { border-right: none; border-bottom: 1px solid var(--line); }
+}
+
+/* --- print --- */
+@media print {
+  nav.sidebar { display: none; }
+  .layout { display: block; padding: 0; }
+  main { padding: 0; }
+  details.answers { border: 1px solid #999; }
+  details.answers > summary { display: none; }
+  details.answers > .answers-body { display: block !important; }
+  .bilingual { break-inside: avoid; }
+}
+</style>
+</head>
+<body>
+<div class="layout">
+<nav class="sidebar">
+<a href="../index.html" class="home">加拿大公民考試</a>
+<a href="../curriculum/14-day-plan.html">📅 14 天計畫表</a>
+<a href="../practice/question-bank.html">📝 220 題題庫</a>
+<h2>中英對照（13 章）</h2>
+<a href="../bilingual/00-intro-oath.html">00 · 前言＋誓詞</a>
+<a href="../bilingual/01-applying-citizenship.html">01 · 申請入籍</a>
+<a href="../bilingual/02-rights-responsibilities.html">02 · 權利與義務</a>
+<a href="../bilingual/03-who-we-are.html">03 · 我們是誰</a>
+<a href="../bilingual/04-canadas-history.html">04 · 加拿大歷史</a>
+<a href="../bilingual/05-modern-canada.html">05 · 現代加拿大</a>
+<a href="../bilingual/06-how-canadians-govern.html">06 · 政府架構</a>
+<a href="../bilingual/07-federal-elections.html">07 · 聯邦選舉</a>
+<a href="../bilingual/08-justice-system.html">08 · 司法系統</a>
+<a href="../bilingual/09-canadian-symbols.html">09 · 國家象徵</a>
+<a href="../bilingual/10-canadas-economy.html">10 · 加拿大經濟</a>
+<a href="../bilingual/11-canadas-regions.html">11 · 五大區域</a>
+<a href="../bilingual/12-study-questions.html">12 · 官方練習題</a>
+<h2>每日驗收（14 天）</h2>
+<a href="../daily-quiz/day-01.html">Day 01</a>
+<a href="../daily-quiz/day-02.html">Day 02</a>
+<a href="../daily-quiz/day-03.html">Day 03</a>
+<a href="../daily-quiz/day-04.html">Day 04</a>
+<a href="../daily-quiz/day-05.html">Day 05</a>
+<a href="../daily-quiz/day-06.html">Day 06</a>
+<a href="../daily-quiz/day-07.html">Day 07</a>
+<a href="../daily-quiz/day-08.html">Day 08</a>
+<a href="../daily-quiz/day-09.html">Day 09</a>
+<a href="../daily-quiz/day-10.html">Day 10</a>
+<a href="../daily-quiz/day-11.html">Day 11</a>
+<a href="../daily-quiz/day-12.html">Day 12</a>
+<a href="../daily-quiz/day-13.html">Day 13</a>
+<a href="../daily-quiz/day-14.html">Day 14</a>
+<h2>互動式（圖解）</h2>
+<a href="../interactive/index.html">🎯 互動式入口</a>
+<a href="../interactive/history.html">📜 04 歷史時間軸</a>
+<a href="../interactive/story-04.html" class="current">📖 04 故事聽學</a>
+<a href="../interactive/modern.html">🇨🇦 05 現代加拿大</a>
+<a href="../interactive/government.html">🏛️ 06 政府架構</a>
+<a href="../interactive/elections.html">🗳️ 07 聯邦選舉</a>
+<a href="../interactive/justice.html">⚖️ 08 司法系統</a>
+<a href="../interactive/symbols.html">🍁 09 國家象徵</a>
+<a href="../interactive/economy.html">💼 10 加拿大經濟</a>
+<a href="../interactive/geography.html">🗺️ 11 地圖與省份</a>
+</nav>
+<main>
+<style>
+.iv-hero {
+  background: linear-gradient(135deg, #fff8f8 0%, #fef0e8 100%);
+  border-left: 4px solid var(--accent);
+  padding: 18px 22px; border-radius: 8px; margin: 16px 0 24px;
+}
+.iv-hero h1 { margin: 0 0 6px; border: none; padding: 0; }
+.iv-hero p { margin: 0; color: var(--muted); }
+
+.iv-section-title {
+  margin: 32px 0 14px; padding-bottom: 6px;
+  border-bottom: 2px solid var(--accent);
+  font-size: 19px; font-weight: 700;
+}
+
+.iv-card-grid { display: grid; gap: 12px; margin: 16px 0 24px; }
+.iv-card {
+  background: #fff; border: 1px solid var(--line);
+  border-radius: 10px; padding: 16px 18px;
+  transition: border-color 0.15s, transform 0.15s, box-shadow 0.15s;
+  cursor: pointer;
+}
+.iv-card:hover {
+  border-color: var(--accent);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+.iv-card.iv-active {
+  border-color: var(--accent);
+  background: linear-gradient(135deg, #fff 0%, #fff8f8 100%);
+}
+.iv-card h4 { margin: 0 0 6px; font-size: 16px; }
+.iv-card .meta { font-size: 12px; color: var(--muted); margin-bottom: 8px; }
+.iv-card p { margin: 0; font-size: 14px; line-height: 1.5; }
+
+.iv-detail-panel {
+  margin: 20px 0; padding: 20px 24px;
+  background: #fff; border: 1px solid var(--line);
+  border-radius: 12px; box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+}
+.iv-detail-panel h3 { margin-top: 0; }
+
+.iv-tag {
+  display: inline-block; padding: 2px 8px; border-radius: 12px;
+  background: #f3efe6; font-size: 11px; color: var(--muted);
+  font-family: -apple-system, system-ui, sans-serif;
+  letter-spacing: 0.04em; margin-right: 6px;
+}
+.iv-tag.accent { background: var(--accent-soft); color: var(--accent); font-weight: 600; }
+</style>
+
+<style>
+.story-player { background:#fff; border:1px solid var(--line); border-radius:12px; padding:18px 20px; margin:16px 0 28px; }
+.story-controls { display:flex; align-items:center; gap:10px; flex-wrap:wrap; margin-bottom:14px; }
+.story-btn { appearance:none; border:2px solid var(--accent); background:#fff; color:var(--accent); padding:8px 16px; border-radius:20px; font-size:14px; font-weight:600; cursor:pointer; font-family:-apple-system,system-ui,sans-serif; }
+.story-btn-main { background:var(--accent); color:#fff; }
+.story-btn:disabled { opacity:0.4; cursor:default; }
+.story-progress { font-size:13px; color:var(--muted); margin-left:auto; }
+.story-transcript { max-height:440px; overflow-y:auto; padding-right:6px; }
+.story-scene { padding:14px 0; border-bottom:1px dashed var(--line); }
+.story-scene:last-child { border-bottom:none; }
+.story-scene-head { display:flex; align-items:center; gap:8px; margin-bottom:6px; }
+.story-emoji { font-size:22px; }
+.story-scene-head h3 { margin:0; font-size:15px; }
+.story-text { margin:0; line-height:2; font-size:15px; }
+.story-chunk { transition:background 0.2s; border-radius:4px; padding:1px 2px; }
+.story-chunk.story-en { color:#8a1f2e; font-weight:600; font-family:Georgia,serif; }
+.story-chunk.current { background:#ffe9b3; }
+
+.mem-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:14px; margin:16px 0 28px; perspective:1000px; }
+.mem-card { min-height:150px; cursor:pointer; }
+.mem-card-inner { position:relative; width:100%; height:100%; min-height:150px; transition:transform 0.5s; transform-style:preserve-3d; }
+.mem-card.flipped .mem-card-inner { transform:rotateY(180deg); }
+.mem-card-front, .mem-card-back { position:absolute; inset:0; backface-visibility:hidden; border-radius:10px; padding:16px 18px; border:1px solid var(--line); background:#fff; display:flex; flex-direction:column; justify-content:center; }
+.mem-card-back { transform:rotateY(180deg); background:linear-gradient(135deg,#fff 0%,#fff8f8 100%); border-color:var(--accent); }
+.mem-title { font-weight:700; font-size:14px; color:var(--accent); margin-bottom:8px; }
+.mem-hook { font-size:16px; font-weight:600; line-height:1.5; }
+.mem-tap { font-size:11px; color:var(--muted); margin-top:10px; }
+.mem-detail { font-size:14px; line-height:1.6; }
+
+.quiz-q { background:#fff; border:1px solid var(--line); border-radius:10px; padding:14px 18px; margin-bottom:12px; }
+.quiz-qtext { font-weight:600; margin-bottom:10px; }
+.quiz-opts { display:flex; flex-direction:column; gap:8px; }
+.quiz-opt { appearance:none; text-align:left; padding:10px 14px; border-radius:8px; border:1px solid var(--line); background:#faf8f4; cursor:pointer; font-size:14px; font-family:-apple-system,system-ui,sans-serif; }
+.quiz-opt.correct { border-color:#2e7d46; background:#e8f5ea; }
+.quiz-opt.wrong { border-color:#c8102e; background:#fbe9ec; }
+.quiz-opt:disabled { cursor:default; }
+.quiz-explain { margin-top:10px; font-size:13px; color:var(--muted); background:#f3efe6; padding:10px 12px; border-radius:8px; }
+.quiz-score { font-size:16px; font-weight:700; text-align:center; margin:16px 0; }
+.quiz-reset { display:block; margin:0 auto; }
+</style>
+
+<div class="iv-hero">
+  <h1>📖 04 加拿大歷史：故事聽學</h1>
+  <p>從原住民時代到現代加拿大，用 12 個場景記住考試最愛考的關鍵時刻——用中文故事講一遍，關鍵英文詞放慢重複兩次。開車、走路、躺著都能聽，聽完再翻記憶卡、玩小測驗。</p>
+</div>
+
+<div class="story-player" id="story-04-root">
+  <div class="story-controls">
+    <button class="story-btn story-btn-main story-play" type="button">▶ 播放故事</button>
+    <button class="story-btn story-restart" type="button">⏮ 重來</button>
+    <span class="story-progress">尚未開始</span>
+  </div>
+  <div class="story-transcript">
+
+<div class="story-scene" data-scene="0">
+  <div class="story-scene-head"><span class="story-emoji">🏕️</span><h3>原住民：加拿大最早的主人</h3></div>
+  <p class="story-text"><span class="story-chunk story-zh" data-lang="zh">在歐洲人出現的好幾千年前，加拿大這片土地上已經住著許多原住民族——他們有自己的政府、自己的語言，還有自己的貿易網絡。</span> <span class="story-chunk story-zh" data-lang="zh">可惜歐洲人後來帶來的疾病，讓原住民人口一下子少了將近一半到八成，非常慘烈。</span> </p>
+</div>
+<div class="story-scene" data-scene="1">
+  <div class="story-scene-head"><span class="story-emoji">⛵</span><h3>第一批歐洲人：維京人、卡伯特、卡蒂亞</h3></div>
+  <p class="story-text"><span class="story-chunk story-zh" data-lang="zh">大概西元一千年，一群從冰島來的維京人，先到了格陵蘭，接著一路划到了紐芬蘭島，成為第一批踏上北美的歐洲人。</span> <span class="story-chunk story-zh" data-lang="zh">1497 年，一位替英國國王工作的義大利探險家登陸紐芬蘭，宣告這塊地是英國的，他的名字是——</span> <span class="story-chunk story-en" data-lang="en">John Cabot. John Cabot.</span> <span class="story-chunk story-zh" data-lang="zh">接下來換法國人出手了。1534 到 1542 年之間，</span> <span class="story-chunk story-en" data-lang="en">Jacques Cartier.</span> <span class="story-chunk story-zh" data-lang="zh">三次橫渡大西洋，替法國宣告主權。他還從原住民嚮導口中聽到一個詞，叫「卡那塔」，意思是「村莊」——這就是「加拿大」這個名字的由來！</span> </p>
+</div>
+<div class="story-scene" data-scene="2">
+  <div class="story-scene-head"><span class="story-emoji">🏰</span><h3>新法蘭西誕生：魁北克城的誕生</h3></div>
+  <p class="story-text"><span class="story-chunk story-zh" data-lang="zh">1608 年，法國探險家</span> <span class="story-chunk story-en" data-lang="en">Samuel de Champlain.</span> <span class="story-chunk story-zh" data-lang="zh">在今天的魁北克市蓋了一座堡壘，他被稱為「新法蘭西之父」。從此，法國人跟原住民一起靠著毛皮貿易，把生意做到哈德遜灣到墨西哥灣那麼大！</span> </p>
+</div>
+<div class="story-scene" data-scene="3">
+  <div class="story-scene-head"><span class="story-emoji">⚔️</span><h3>英法大對決：亞伯拉罕平原之役</h3></div>
+  <p class="story-text"><span class="story-chunk story-zh" data-lang="zh">英國跟法國為了爭奪北美，打了一百多年的仗。決定勝負的關鍵一戰，發生在 1759 年的魁北克市，叫做——</span> <span class="story-chunk story-en" data-lang="en">Battle of the Plains of Abraham. Battle of the Plains of Abraham.</span> <span class="story-chunk story-zh" data-lang="zh">這一戰非常戲劇化：英軍將領沃夫，跟法軍將領蒙特卡姆，兩個人都在戰場上陣亡了！最後英國贏了，法國在北美的帝國，就這樣結束了。</span> </p>
+</div>
+<div class="story-scene" data-scene="4">
+  <div class="story-scene-head"><span class="story-emoji">🚣</span><h3>忠貞派大遷徙：四萬人逃亡潮</h3></div>
+  <p class="story-text"><span class="story-chunk story-zh" data-lang="zh">1776 年，美國獨立革命爆發。大約四萬個效忠英國的人，不想留在剛獨立的美國，就往北逃到了加拿大，他們被稱為——</span> <span class="story-chunk story-en" data-lang="en">United Empire Loyalists.</span> <span class="story-chunk story-zh" data-lang="zh">這批新移民裡面還包括了自由黑人，跟一位莫霍克族的領袖約瑟夫．布蘭特。英國後來把魁北克分成了「上加拿大」跟「下加拿大」，也就是今天的安大略跟魁北克。</span> </p>
+</div>
+<div class="story-scene" data-scene="5">
+  <div class="story-scene-head"><span class="story-emoji">⛓️</span><h3>廢除奴隸制的先鋒</h3></div>
+  <p class="story-text"><span class="story-chunk story-zh" data-lang="zh">1793 年，上加拿大的副總督</span> <span class="story-chunk story-en" data-lang="en">John Graves Simcoe.</span> <span class="story-chunk story-zh" data-lang="zh">推動立法，讓上加拿大成為整個大英帝國第一個禁止奴隸制的地方！後來還有三萬名美國黑奴，經過一條叫「地下鐵路」的秘密逃亡路線，來到加拿大尋求自由。</span> </p>
+</div>
+<div class="story-scene" data-scene="6">
+  <div class="story-scene-head"><span class="story-emoji">🎖️</span><h3>1812 年戰爭：保家衛國</h3></div>
+  <p class="story-text"><span class="story-chunk story-zh" data-lang="zh">1812 年，美國出兵想要併吞加拿大。這時候站出來三位英雄：英軍司令布洛克，原住民首領特庫姆塞，還有一位傳奇女性——</span> <span class="story-chunk story-en" data-lang="en">Laura Secord.</span> <span class="story-chunk story-zh" data-lang="zh">她走了三十公里的路去通報美軍的作戰計畫，被視為加拿大的民族英雄。最後加拿大打贏了，沒有被美國併吞——這是加拿大能獨立存在到今天的關鍵一戰！</span> </p>
+</div>
+<div class="story-scene" data-scene="7">
+  <div class="story-scene-head"><span class="story-emoji">🎂</span><h3>建國的那一天：1867 年 7 月 1 日</h3></div>
+  <p class="story-text"><span class="story-chunk story-zh" data-lang="zh">終於，來到整堂課最重要的一天！安大略、魁北克、新斯科細亞、新布藍瑞克這四個殖民地，決定聯合組成一個國家，這一天就叫——</span> <span class="story-chunk story-en" data-lang="en">Confederation. Confederation.</span> <span class="story-chunk story-zh" data-lang="zh">這就是加拿大的生日，後來變成了「加拿大日」。第一任總理，是——</span> <span class="story-chunk story-en" data-lang="en">Sir John Alexander Macdonald.</span> <span class="story-chunk story-zh" data-lang="zh">他的頭像，現在就印在十塊錢加幣的鈔票上。</span> </p>
+</div>
+<div class="story-scene" data-scene="8">
+  <div class="story-scene-head"><span class="story-emoji">🚂</span><h3>版圖擴張：橫貫鐵路的血與淚</h3></div>
+  <p class="story-text"><span class="story-chunk story-zh" data-lang="zh">建國之後，加拿大的版圖越變越大。把東西兩岸串起來的關鍵建設，是 1885 年完工的——</span> <span class="story-chunk story-en" data-lang="en">Canadian Pacific Railway.</span> <span class="story-chunk story-zh" data-lang="zh">這條鐵路是由一萬五千名華人工人辛苦建造的，很多人因為工作環境太惡劣而喪命。完工那年，加拿大政府居然還對華人徵收「人頭稅」，一直到 2006 年，當時的總理哈珀才正式道歉並補償。</span> </p>
+</div>
+<div class="story-scene" data-scene="9">
+  <div class="story-scene-head"><span class="story-emoji">🗳️</span><h3>女性投票權：從曼尼托巴到最高法院</h3></div>
+  <p class="story-text"><span class="story-chunk story-zh" data-lang="zh">1916 年，滿尼托巴省成為加拿大第一個讓女性投票的省份。到了 1929 年，五位女性運動者打贏了一場官司，叫做——</span> <span class="story-chunk story-en" data-lang="en">Persons Case.</span> <span class="story-chunk story-zh" data-lang="zh">她們證明了女性在法律上也算是「人」，從此才有資格進入加拿大的參議院。這五位女性，被稱為「Famous Five」。</span> </p>
+</div>
+<div class="story-scene" data-scene="10">
+  <div class="story-scene-head"><span class="story-emoji">🎖️</span><h3>兩次世界大戰：加拿大打出了名號</h3></div>
+  <p class="story-text"><span class="story-chunk story-zh" data-lang="zh">第一次世界大戰，加拿大軍隊在法國打了一場關鍵戰役，叫做——</span> <span class="story-chunk story-en" data-lang="en">Battle of Vimy Ridge.</span> <span class="story-chunk story-zh" data-lang="zh">這一戰被認為是加拿大從英國殖民地，走向獨立國家認同的轉捩點。到了第二次世界大戰，加拿大軍隊參加了 1944 年 6 月 6 日的諾曼第登陸，那個海灘的代號叫——</span> <span class="story-chunk story-en" data-lang="en">Juno Beach.</span> </p>
+</div>
+<div class="story-scene" data-scene="11">
+  <div class="story-scene-head"><span class="story-emoji">🍁</span><h3>現代加拿大：憲法回家了</h3></div>
+  <p class="story-text"><span class="story-chunk story-zh" data-lang="zh">1965 年，現在這面紅白相間的楓葉旗正式誕生。到了 1982 年，時任總理老杜魯道推動了加拿大現代史上最重要的大事——把原本放在英國的加拿大憲法，正式「接回」加拿大，同時加入了保障所有人基本權利的——</span> <span class="story-chunk story-en" data-lang="en">Canadian Charter of Rights and Freedoms.</span> <span class="story-chunk story-zh" data-lang="zh">從這一刻起，加拿大才真正完全掌握了自己的命運。這，就是加拿大歷史，從原住民時代一路走到今天的故事。</span> </p>
+</div>
+  </div>
+</div>
+
+<h2 class="iv-section-title">🧠 8 張記憶卡（點一下翻面看細節）</h2>
+<div class="mem-grid" id="mem-04-root">
+<div class="mem-card">
+  <div class="mem-card-inner">
+    <div class="mem-card-front">
+      <div class="mem-title">1867/7/1 建國</div>
+      <div class="mem-hook">「一八六七七月一，四省聯手把家立」</div>
+      <div class="mem-tap">點一下看細節 →</div>
+    </div>
+    <div class="mem-card-back">
+      <div class="mem-detail">安大略、魁北克、新斯科細亞、新布藍瑞克 四個原始省份，Confederation 誕生</div>
+    </div>
+  </div>
+</div>
+<div class="mem-card">
+  <div class="mem-card-inner">
+    <div class="mem-card-front">
+      <div class="mem-title">1759 亞伯拉罕平原之役</div>
+      <div class="mem-hook">「沃夫蒙特卡姆，雙雙戰死魁北克」</div>
+      <div class="mem-tap">點一下看細節 →</div>
+    </div>
+    <div class="mem-card-back">
+      <div class="mem-detail">英軍 Wolfe 勝、法軍 Montcalm 敗，兩位將軍皆陣亡，法國在美洲帝國結束</div>
+    </div>
+  </div>
+</div>
+<div class="mem-card">
+  <div class="mem-card-inner">
+    <div class="mem-card-front">
+      <div class="mem-title">1812 戰爭</div>
+      <div class="mem-hook">「一二年戰爭打得凶，加拿大保住沒被吞」</div>
+      <div class="mem-tap">點一下看細節 →</div>
+    </div>
+    <div class="mem-card-back">
+      <div class="mem-detail">Brock、Tecumseh、Laura Secord 三英雄，保住加拿大不被美國併吞</div>
+    </div>
+  </div>
+</div>
+<div class="mem-card">
+  <div class="mem-card-inner">
+    <div class="mem-card-front">
+      <div class="mem-title">1885 橫貫鐵路</div>
+      <div class="mem-hook">「一八八五鐵路通，華工血汗立奇功」</div>
+      <div class="mem-tap">點一下看細節 →</div>
+    </div>
+    <div class="mem-card-back">
+      <div class="mem-detail">15,000 華工建 CPR，後遭徵人頭稅，2006 年 Harper 道歉補償</div>
+    </div>
+  </div>
+</div>
+<div class="mem-card">
+  <div class="mem-card-inner">
+    <div class="mem-card-front">
+      <div class="mem-title">1917 Vimy Ridge</div>
+      <div class="mem-hook">「一九一七維米嶺，加拿大打出了名」</div>
+      <div class="mem-tap">點一下看細節 →</div>
+    </div>
+    <div class="mem-card-back">
+      <div class="mem-detail">一戰關鍵戰役，被視為加拿大國家認同的轉捩點</div>
+    </div>
+  </div>
+</div>
+<div class="mem-card">
+  <div class="mem-card-inner">
+    <div class="mem-card-front">
+      <div class="mem-title">1929 Persons Case</div>
+      <div class="mem-hook">「一九二九五姐妹，打贏官司變法人」</div>
+      <div class="mem-tap">點一下看細節 →</div>
+    </div>
+    <div class="mem-card-back">
+      <div class="mem-detail">Famous Five 打贏官司，女性法律上正式算「person」，可進參議院</div>
+    </div>
+  </div>
+</div>
+<div class="mem-card">
+  <div class="mem-card-inner">
+    <div class="mem-card-front">
+      <div class="mem-title">1793 廢除奴隸制</div>
+      <div class="mem-hook">「英帝國內第一個，上加拿大先禁奴」</div>
+      <div class="mem-tap">點一下看細節 →</div>
+    </div>
+    <div class="mem-card-back">
+      <div class="mem-detail">Simcoe 推動立法，大英帝國第一個禁奴隸制的地方；後有 Underground Railroad</div>
+    </div>
+  </div>
+</div>
+<div class="mem-card">
+  <div class="mem-card-inner">
+    <div class="mem-card-front">
+      <div class="mem-title">1982 憲法回家</div>
+      <div class="mem-hook">「八二年老杜魯道，憲法回家權利到」</div>
+      <div class="mem-tap">點一下看細節 →</div>
+    </div>
+    <div class="mem-card-back">
+      <div class="mem-detail">Constitution Act + Charter of Rights and Freedoms，加拿大憲法正式脫離英國</div>
+    </div>
+  </div>
+</div></div>
+
+<h2 class="iv-section-title">🎮 小測驗（6 題，答錯也沒關係，看解說就好）</h2>
+<div class="quiz-wrap" id="quiz-04-root">
+<div class="quiz-q" data-qidx="0">
+  <div class="quiz-qtext">1. 加拿大的「生日」Confederation 是哪一天？</div>
+  <div class="quiz-opts"><button class="quiz-opt" data-correct="1" type="button">1867 年 7 月 1 日</button><button class="quiz-opt" data-correct="0" type="button">1867 年 1 月 1 日</button><button class="quiz-opt" data-correct="0" type="button">1982 年 7 月 1 日</button></div>
+  <div class="quiz-explain" style="display:none">💡 1867/7/1，四個原始省份（安大略、魁北克、新斯科細亞、新布藍瑞克）組成加拿大自治領。</div>
+</div>
+<div class="quiz-q" data-qidx="1">
+  <div class="quiz-qtext">2. 加拿大第一任總理是誰？</div>
+  <div class="quiz-opts"><button class="quiz-opt" data-correct="1" type="button">Sir John A. Macdonald</button><button class="quiz-opt" data-correct="0" type="button">Pierre Trudeau</button><button class="quiz-opt" data-correct="0" type="button">Wilfrid Laurier</button></div>
+  <div class="quiz-explain" style="display:none">💡 Sir John Alexander Macdonald，頭像印在 $10 加幣鈔票上。</div>
+</div>
+<div class="quiz-q" data-qidx="2">
+  <div class="quiz-qtext">3. 1759 年英法決戰的地點叫什麼？</div>
+  <div class="quiz-opts"><button class="quiz-opt" data-correct="1" type="button">Battle of the Plains of Abraham</button><button class="quiz-opt" data-correct="0" type="button">Battle of Vimy Ridge</button><button class="quiz-opt" data-correct="0" type="button">Battle of Queenston Heights</button></div>
+  <div class="quiz-explain" style="display:none">💡 地點在魁北克市，英軍 Wolfe 對法軍 Montcalm，兩位將軍都戰死。</div>
+</div>
+<div class="quiz-q" data-qidx="3">
+  <div class="quiz-qtext">4. 1929 年 Persons Case 打贏官司的是哪一群人？</div>
+  <div class="quiz-opts"><button class="quiz-opt" data-correct="1" type="button">Famous Five（五位女性）</button><button class="quiz-opt" data-correct="0" type="button">United Empire Loyalists</button><button class="quiz-opt" data-correct="0" type="button">Fathers of Confederation</button></div>
+  <div class="quiz-explain" style="display:none">💡 五位女性運動者證明女性在法律上算「person」，可以進入參議院。</div>
+</div>
+<div class="quiz-q" data-qidx="4">
+  <div class="quiz-qtext">5. 加拿大憲法「回家」（patriated）是哪一年？</div>
+  <div class="quiz-opts"><button class="quiz-opt" data-correct="1" type="button">1982 年</button><button class="quiz-opt" data-correct="0" type="button">1867 年</button><button class="quiz-opt" data-correct="0" type="button">1965 年</button></div>
+  <div class="quiz-explain" style="display:none">💡 1982 年，PM Pierre Trudeau 推動 Constitution Act，同時通過 Charter of Rights and Freedoms。</div>
+</div>
+<div class="quiz-q" data-qidx="5">
+  <div class="quiz-qtext">6. 1885 年橫貫鐵路（CPR）完工，主要由誰辛苦建造？</div>
+  <div class="quiz-opts"><button class="quiz-opt" data-correct="1" type="button">華人工人</button><button class="quiz-opt" data-correct="0" type="button">英國軍隊</button><button class="quiz-opt" data-correct="0" type="button">美國移民</button></div>
+  <div class="quiz-explain" style="display:none">💡 15,000 名華工參與建造，後來還被徵收人頭稅，2006 年 Harper 總理道歉補償。</div>
+</div></div>
+<div class="quiz-score" data-quiz-total="6"></div>
+<button class="story-btn quiz-reset" type="button">🔄 重新測驗</button>
+
+<script>
+(function() {
+  var root = document.getElementById('story-04-root');
+  var quizRoot = document.getElementById('quiz-04-root');
+  var memRoot = document.getElementById('mem-04-root');
+  if (!root && !quizRoot && !memRoot) return;
+  var synth = window.speechSynthesis;
+
+  // ---------- memory card flip ----------
+  if (memRoot) {
+    memRoot.addEventListener('click', function(e) {
+      var card = e.target.closest && e.target.closest('.mem-card');
+      if (card) card.classList.toggle('flipped');
+    });
+  }
+
+  // ---------- story player ----------
+  if (root && synth) {
+    var chunks = Array.prototype.slice.call(root.querySelectorAll('.story-chunk'));
+    var playBtn = root.querySelector('.story-play');
+    var restartBtn = root.querySelector('.story-restart');
+    var progressEl = root.querySelector('.story-progress');
+    var idx = 0;
+    var playing = false;
+    var voicesReady = false;
+
+    function ensureVoices(cb) {
+      if (voicesReady || !('speechSynthesis' in window)) return cb();
+      var v = synth.getVoices();
+      if (v && v.length) { voicesReady = true; return cb(); }
+      synth.onvoiceschanged = function() { voicesReady = true; cb(); };
+      setTimeout(function() { if (!voicesReady) { voicesReady = true; cb(); } }, 500);
+    }
+    function pickVoice(lang) {
+      var voices = synth.getVoices();
+      function find(pred) { for (var i = 0; i < voices.length; i++) if (pred(voices[i])) return voices[i]; return null; }
+      if (lang === 'en') {
+        return find(function(v) { return v.lang === 'en-US' && /Samantha|Karen|Allison|Ava/i.test(v.name); })
+            || find(function(v) { return v.lang && v.lang.indexOf('en') === 0; })
+            || null;
+      }
+      return find(function(v) { return v.lang === 'zh-TW'; })
+          || find(function(v) { return v.lang === 'zh-CN'; })
+          || find(function(v) { return v.lang && v.lang.indexOf('zh') === 0; })
+          || null;
+    }
+    function clearHighlight() { chunks.forEach(function(c) { c.classList.remove('current'); }); }
+    function setProgress() { progressEl.textContent = playing ? ('播放中 ' + (idx + 1) + ' / ' + chunks.length) : '已暫停'; }
+    function setIdleUI() {
+      playing = false;
+      playBtn.textContent = '▶ 播放故事';
+      progressEl.textContent = idx >= chunks.length ? '播完了 🎉' : '已暫停';
+    }
+
+    function speakChunk(i) {
+      if (i >= chunks.length) { clearHighlight(); setIdleUI(); idx = 0; return; }
+      idx = i;
+      var el = chunks[i];
+      clearHighlight();
+      el.classList.add('current');
+      el.scrollIntoView({ block: 'center', behavior: 'smooth' });
+      setProgress();
+      var lang = el.dataset.lang === 'en' ? 'en' : 'zh';
+      var u = new SpeechSynthesisUtterance(el.textContent.trim());
+      u.lang = lang === 'en' ? 'en-US' : 'zh-TW';
+      u.rate = lang === 'en' ? 0.8 : 1.02;
+      var v = pickVoice(lang);
+      if (v) u.voice = v;
+      u.onend = function() { if (playing) speakChunk(i + 1); };
+      u.onerror = function() { if (playing) speakChunk(i + 1); };
+      synth.speak(u);
+    }
+
+    playBtn.addEventListener('click', function() {
+      if (playing) {
+        playing = false;
+        synth.cancel();
+        setIdleUI();
+        return;
+      }
+      ensureVoices(function() {
+        synth.cancel();
+        playing = true;
+        playBtn.textContent = '⏸ 暫停';
+        speakChunk(idx >= chunks.length ? 0 : idx);
+      });
+    });
+    restartBtn.addEventListener('click', function() {
+      synth.cancel();
+      playing = false;
+      idx = 0;
+      clearHighlight();
+      setIdleUI();
+      progressEl.textContent = '尚未開始';
+    });
+    window.addEventListener('hashchange', function() { synth.cancel(); playing = false; });
+    window.addEventListener('pagehide', function() { synth.cancel(); });
+  }
+
+  // ---------- quiz ----------
+  if (quizRoot) {
+    var scoreEl = quizRoot.parentElement.querySelector('.quiz-score');
+    var resetBtn = quizRoot.parentElement.querySelector('.quiz-reset');
+    var total = parseInt(scoreEl.getAttribute('data-quiz-total'), 10) || 0;
+    var answered = 0, correct = 0;
+
+    function resetQuiz() {
+      answered = 0; correct = 0;
+      quizRoot.querySelectorAll('.quiz-q').forEach(function(q) {
+        q.querySelectorAll('.quiz-opt').forEach(function(b) {
+          b.disabled = false;
+          b.classList.remove('correct', 'wrong');
+        });
+        var ex = q.querySelector('.quiz-explain');
+        if (ex) ex.style.display = 'none';
+      });
+      scoreEl.textContent = '';
+    }
+    resetBtn.addEventListener('click', resetQuiz);
+
+    quizRoot.addEventListener('click', function(e) {
+      var btn = e.target.closest && e.target.closest('.quiz-opt');
+      if (!btn || btn.disabled) return;
+      var qEl = btn.closest('.quiz-q');
+      var opts = qEl.querySelectorAll('.quiz-opt');
+      var isCorrect = btn.getAttribute('data-correct') === '1';
+      opts.forEach(function(b) {
+        b.disabled = true;
+        if (b.getAttribute('data-correct') === '1') b.classList.add('correct');
+      });
+      if (!isCorrect) btn.classList.add('wrong');
+      var ex = qEl.querySelector('.quiz-explain');
+      if (ex) ex.style.display = 'block';
+      answered++;
+      if (isCorrect) correct++;
+      if (answered >= total) {
+        scoreEl.textContent = '你答對了 ' + correct + ' / ' + total + ' 題' + (correct === total ? '，太厲害了！🎉' : '，再翻一下記憶卡加深印象～');
+      }
+    });
+  }
+})();
+</script>
+</main>
+</div>
+<script>
+(function() {
+  if (!('speechSynthesis' in window)) return;
+  var synth = window.speechSynthesis;
+  var voicesReady = false;
+
+  var ICON_SPEAKER = '<svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 10v4h4l5 4V6L7 10H3zm12.5 2c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM13 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg>';
+  var ICON_PAUSE = '<svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6 5h4v14H6zM14 5h4v14h-4z"/></svg>';
+  var ICON_PLAY = '<svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>';
+
+  // single global state — only one TTS session at a time
+  var state = {
+    btn: null, chunks: null, words: null, chunkIdx: 0, paused: false
+  };
+
+  function ensureVoices(cb) {
+    if (voicesReady) return cb();
+    var v = synth.getVoices();
+    if (v && v.length) { voicesReady = true; return cb(); }
+    synth.onvoiceschanged = function() { voicesReady = true; cb(); };
+    setTimeout(function(){ if (!voicesReady) { voicesReady = true; cb(); } }, 500);
+  }
+
+  function pickVoice() {
+    var voices = synth.getVoices();
+    function find(pred){ for (var i=0;i<voices.length;i++) if (pred(voices[i])) return voices[i]; return null; }
+    return find(function(v){return v.lang==='en-CA' && /Samantha|Karen|Tessa|Victoria|Allison|Siri/i.test(v.name);})
+        || find(function(v){return v.lang==='en-CA';})
+        || find(function(v){return v.lang==='en-US' && /Samantha|Karen|Allison|Ava|Siri/i.test(v.name);})
+        || find(function(v){return v.lang==='en-US';})
+        || find(function(v){return v.lang && v.lang.indexOf('en')===0;})
+        || null;
+  }
+
+  // Wrap each word in container in a <span class="w" data-idx="N"> for highlighting.
+  function wrapWords(container) {
+    if (container.dataset.wrapped === '1') return;
+    var walker = document.createTreeWalker(container, NodeFilter.SHOW_TEXT, null, false);
+    var nodes = [];
+    var n;
+    while ((n = walker.nextNode())) {
+      if (!n.parentElement) continue;
+      if (n.parentElement.closest('.speak-btn, .label')) continue;
+      if (!/\S/.test(n.nodeValue)) continue;
+      nodes.push(n);
+    }
+    var idx = 0;
+    nodes.forEach(function(tn) {
+      var text = tn.nodeValue;
+      var tokens = text.split(/(\s+)/);
+      var frag = document.createDocumentFragment();
+      tokens.forEach(function(tok) {
+        if (tok.length === 0) return;
+        if (/^\s+$/.test(tok)) {
+          frag.appendChild(document.createTextNode(tok));
+        } else {
+          var sp = document.createElement('span');
+          sp.className = 'w';
+          sp.setAttribute('data-idx', idx++);
+          sp.textContent = tok;
+          frag.appendChild(sp);
+        }
+      });
+      tn.parentNode.replaceChild(frag, tn);
+    });
+    container.dataset.wrapped = '1';
+  }
+
+  // Group words into chunks split on punctuation, with a pause duration after each chunk.
+  function buildChunks(words) {
+    var chunks = [];
+    var cur = { words: [] };
+    function commit(pauseMs) {
+      if (!cur.words.length) return;
+      cur.text = cur.words.map(function(w){ return w.text; }).join(' ');
+      cur.pauseAfterMs = pauseMs;
+      chunks.push(cur);
+      cur = { words: [] };
+    }
+    words.forEach(function(wEl, i) {
+      var text = wEl.textContent;
+      cur.words.push({ el: wEl, idx: i, text: text });
+      // sentence-ending punctuation → long pause
+      if (/[.!?]+["')\]]*$/.test(text) && text.length > 1) {
+        commit(420);
+      }
+      // semicolon / colon → medium pause
+      else if (/[;:]+["')\]]*$/.test(text)) {
+        commit(300);
+      }
+      // comma or em-dash → short pause
+      else if (/[,—–][")'\]]*$/.test(text)) {
+        commit(220);
+      }
+    });
+    commit(0);
+    return chunks;
+  }
+
+  function highlight(globalIdx) {
+    if (!state.words) return;
+    for (var i = 0; i < state.words.length; i++) {
+      if (i === globalIdx) state.words[i].classList.add('current');
+      else state.words[i].classList.remove('current');
+    }
+  }
+
+  function clearHighlight() {
+    if (!state.words) return;
+    state.words.forEach(function(w){ w.classList.remove('current'); });
+  }
+
+  function findWordAtChar(chunk, charIndex) {
+    var pos = 0;
+    for (var i = 0; i < chunk.words.length; i++) {
+      var len = chunk.words[i].text.length;
+      if (charIndex >= pos && charIndex < pos + len) return i;
+      pos += len + 1; // space
+    }
+    return -1;
+  }
+
+  function setBtnState(btn, s) {
+    if (!btn) return;
+    btn.classList.remove('speaking', 'paused');
+    if (s === 'speaking') btn.classList.add('speaking');
+    else if (s === 'paused') btn.classList.add('paused');
+    btn.setAttribute('data-state', s);
+    var icon = btn.querySelector('.speak-icon');
+    var label = btn.querySelector('.speak-label');
+    if (s === 'idle')     { if (icon) icon.innerHTML = ICON_SPEAKER; if (label) label.textContent = '朗讀'; }
+    else if (s === 'speaking') { if (icon) icon.innerHTML = ICON_PAUSE;   if (label) label.textContent = '暫停'; }
+    else if (s === 'paused')   { if (icon) icon.innerHTML = ICON_PLAY;    if (label) label.textContent = '繼續'; }
+  }
+
+  function stopAll() {
+    state.suppressNextEnd = true;  // ignore the cancel-induced end/error
+    synth.cancel();
+    if (state.btn) setBtnState(state.btn, 'idle');
+    clearHighlight();
+    state.btn = null; state.chunks = null; state.words = null;
+    state.chunkIdx = 0; state.paused = false;
+    // reset suppression on next tick
+    setTimeout(function(){ state.suppressNextEnd = false; }, 100);
+  }
+
+  function findChunkForWord(chunks, wordIdx) {
+    for (var i = 0; i < chunks.length; i++) {
+      for (var j = 0; j < chunks[i].words.length; j++) {
+        if (chunks[i].words[j].idx === wordIdx) return i;
+      }
+    }
+    return -1;
+  }
+
+  function speakFrom(chunkIdx) {
+    if (!state.chunks || chunkIdx >= state.chunks.length) { stopAll(); return; }
+    state.chunkIdx = chunkIdx;
+    var chunk = state.chunks[chunkIdx];
+    var u = new SpeechSynthesisUtterance(chunk.text);
+    u.lang = 'en-CA';
+    u.rate = 0.92;
+    u.pitch = 1.0;
+    var v = pickVoice();
+    if (v) u.voice = v;
+
+    u.onstart = function() {
+      if (chunk.words[0]) highlight(chunk.words[0].idx);
+    };
+    u.onboundary = function(e) {
+      if (e.name && e.name !== 'word') return;
+      var w = findWordAtChar(chunk, e.charIndex || 0);
+      if (w >= 0) highlight(chunk.words[w].idx);
+    };
+    u.onend = function() {
+      // ignore the end event if it was triggered by our own cancel (pause/jump/stop)
+      if (state.suppressNextEnd) { state.suppressNextEnd = false; return; }
+      if (state.paused) return;
+      var next = chunkIdx + 1;
+      if (next >= state.chunks.length) { stopAll(); return; }
+      setTimeout(function() {
+        if (!state.paused && state.chunks) speakFrom(next);
+      }, chunk.pauseAfterMs);
+    };
+    u.onerror = function() {
+      if (state.suppressNextEnd) { state.suppressNextEnd = false; return; }
+      if (state.paused) return; // user paused — keep state for resume
+      stopAll();
+    };
+
+    synth.speak(u);
+  }
+
+  // Start fresh speech for a container, optionally from a specific chunk index.
+  function startFresh(container, btn, fromChunk) {
+    stopAll();
+    wrapWords(container);
+    var words = Array.prototype.slice.call(container.querySelectorAll('.w'));
+    if (!words.length) return;
+    state.btn = btn;
+    state.words = words;
+    state.chunks = buildChunks(words);
+    state.chunkIdx = Math.max(0, Math.min(fromChunk || 0, state.chunks.length - 1));
+    state.paused = false;
+    setBtnState(btn, 'speaking');
+    speakFrom(state.chunkIdx);
+  }
+
+  // Jump speech to a specific word — restart the chunk containing it.
+  function jumpToWord(container, btn, wordIdx) {
+    // Same container that's currently speaking/paused → in-place jump
+    if (state.btn === btn && state.chunks && state.words) {
+      var ci = findChunkForWord(state.chunks, wordIdx);
+      if (ci < 0) return;
+      state.suppressNextEnd = true;
+      synth.cancel();
+      state.chunkIdx = ci;
+      state.paused = false;
+      setBtnState(btn, 'speaking');
+      setTimeout(function() {
+        state.suppressNextEnd = false;
+        if (state.chunks) speakFrom(ci);
+      }, 60);
+      return;
+    }
+    // Different container or fresh start — figure out chunk first
+    wrapWords(container);
+    var words = Array.prototype.slice.call(container.querySelectorAll('.w'));
+    if (!words.length) return;
+    var chunks = buildChunks(words);
+    var ci2 = findChunkForWord(chunks, wordIdx);
+    startFresh(container, btn, ci2 >= 0 ? ci2 : 0);
+  }
+
+  function speakableContainerOf(el) {
+    return el.closest && el.closest('.bilingual .en, blockquote.speakable, .callout.speakable');
+  }
+
+  document.addEventListener('click', function(e) {
+    // --- speak button ---
+    var btn = e.target.closest && e.target.closest('.speak-btn');
+    if (btn) {
+      e.preventDefault();
+      var s = btn.getAttribute('data-state') || 'idle';
+      if (s === 'speaking') {
+        // pause: set flag BEFORE cancel so onend/onerror preserve state
+        state.paused = true;
+        synth.cancel();
+        setBtnState(btn, 'paused');
+        return;
+      }
+      if (s === 'paused') {
+        // resume: restart current chunk
+        state.paused = false;
+        setBtnState(btn, 'speaking');
+        if (state.chunks) speakFrom(state.chunkIdx);
+        return;
+      }
+      // idle → new speech from start
+      ensureVoices(function() { startFresh(btn.parentElement, btn, 0); });
+      return;
+    }
+
+    // --- word click (play from here) ---
+    var w = e.target.closest && e.target.closest('.w');
+    if (!w) return;
+    // skip if user is selecting text
+    var sel = window.getSelection && window.getSelection();
+    if (sel && sel.toString && sel.toString().length > 0) return;
+    var container = speakableContainerOf(w);
+    if (!container) return;
+    var speakBtn = container.querySelector('.speak-btn');
+    if (!speakBtn) return;
+    e.preventDefault();
+    var widx = parseInt(w.getAttribute('data-idx'), 10);
+    if (isNaN(widx)) return;
+    ensureVoices(function() { jumpToWord(container, speakBtn, widx); });
+  });
+
+  // Pre-wrap all speakable containers during idle time so word-click works without first hitting the button
+  function preWrapAll() {
+    var containers = document.querySelectorAll('.bilingual .en, blockquote.speakable, .callout.speakable');
+    var i = 0;
+    function step() {
+      if (i >= containers.length) return;
+      try { wrapWords(containers[i]); } catch (e) {}
+      i++;
+      if (window.requestIdleCallback) requestIdleCallback(step, { timeout: 200 });
+      else setTimeout(step, 0);
+    }
+    step();
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', preWrapAll);
+  else preWrapAll();
+
+  window.addEventListener('hashchange', stopAll);
+  window.addEventListener('pagehide', stopAll);
+})();
+</script>
+</body>
+</html>

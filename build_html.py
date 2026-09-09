@@ -480,6 +480,7 @@ def make_sidebar(current: str) -> str:
 INTERACTIVE_ITEMS = [
     ("index.html", "🎯 互動式入口"),
     ("history.html", "📜 04 歷史時間軸"),
+    ("story-04.html", "📖 04 故事聽學"),
     ("modern.html", "🇨🇦 05 現代加拿大"),
     ("government.html", "🏛️ 06 政府架構"),
     ("elections.html", "🗳️ 07 聯邦選舉"),
@@ -1216,6 +1217,7 @@ def make_single_sidebar() -> str:
     interactive_items = [
         ("index", "🎯 互動式入口"),
         ("history", "📜 04 歷史時間軸"),
+        ("story-04", "📖 04 故事聽學"),
         ("modern", "🇨🇦 05 現代加拿大"),
         ("government", "🏛️ 06 政府架構"),
         ("elections", "🗳️ 07 聯邦選舉"),
@@ -1283,6 +1285,7 @@ def build_single():
     iv_pages = [
         ("interactive/index.html", iv.build_interactive_index_body()),
         ("interactive/history.html", iv.build_history_body()),
+        ("interactive/story-04.html", iv.build_story_04_body()),
         ("interactive/modern.html", iv.build_modern_body()),
         ("interactive/government.html", iv.build_government_body()),
         ("interactive/elections.html", iv.build_elections_body()),
@@ -1370,6 +1373,7 @@ def build():
     interactive_pages = [
         ("interactive/index.html", "互動式入口", iv.build_interactive_index_body()),
         ("interactive/history.html", "歷史時間軸", iv.build_history_body()),
+        ("interactive/story-04.html", "歷史故事聽學", iv.build_story_04_body()),
         ("interactive/modern.html", "現代加拿大", iv.build_modern_body()),
         ("interactive/government.html", "政府架構", iv.build_government_body()),
         ("interactive/elections.html", "聯邦選舉", iv.build_elections_body()),
