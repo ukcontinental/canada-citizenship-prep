@@ -15,6 +15,10 @@ __pycache__/
 # compiled by build_audio.py from tools/tts_align.swift
 tools/tts_align
 
+# local progress records (not for the public site)
+日誌/
+每日進度報告/
+
 # Editor
 .vscode/
 .idea/
