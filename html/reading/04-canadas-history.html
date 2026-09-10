@@ -1,0 +1,1217 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="加拿大公民考">
+<meta name="theme-color" content="#c8102e">
+<title>04 加拿大歷史 人聲朗讀 · 加拿大公民考試</title>
+<style>
+:root {
+  --bg: #faf8f4;
+  --panel: #ffffff;
+  --ink: #1f2328;
+  --muted: #5d646d;
+  --line: #e7e2d6;
+  --accent: #c8102e;        /* maple red */
+  --accent-soft: #fbe9ec;
+  --en-bg: #f3efe6;
+  --en-ink: #2b2620;
+  --zh-bg: #ffffff;
+  --quote: #8a6d3b;
+  --max: 1180px;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: "Source Serif 4","Source Serif Pro","Noto Serif TC","Noto Serif CJK TC","PingFang TC","Songti TC", Georgia, serif;
+  font-size: 17px;
+  line-height: 1.75;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+.layout {
+  display: grid;
+  grid-template-columns: 240px minmax(0, 1fr);
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 0 24px;
+  gap: 36px;
+}
+nav.sidebar {
+  position: sticky;
+  top: 0;
+  align-self: start;
+  height: 100vh;
+  overflow-y: auto;
+  padding: 28px 0 40px;
+  border-right: 1px solid var(--line);
+  font-family: -apple-system, "Helvetica Neue", "PingFang TC", system-ui, sans-serif;
+  font-size: 14px;
+  line-height: 1.45;
+}
+nav.sidebar h1 {
+  font-family: inherit;
+  font-size: 14px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin: 0 0 10px;
+}
+nav.sidebar h2 {
+  font-family: inherit;
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin: 22px 0 6px;
+  font-weight: 600;
+}
+nav.sidebar a {
+  display: block;
+  color: var(--ink);
+  text-decoration: none;
+  padding: 4px 10px 4px 0;
+  border-radius: 4px;
+}
+nav.sidebar a:hover { color: var(--accent); }
+nav.sidebar a.current {
+  color: var(--accent);
+  font-weight: 600;
+}
+nav.sidebar .home {
+  display: inline-block;
+  font-weight: 700;
+  font-size: 18px;
+  color: var(--ink);
+  text-decoration: none;
+  margin-bottom: 14px;
+}
+nav.sidebar .home::before { content: "🍁 "; }
+main {
+  padding: 36px 0 80px;
+  min-width: 0;
+}
+main h1, main h2, main h3, main h4 {
+  font-family: -apple-system, "Helvetica Neue", "PingFang TC", system-ui, sans-serif;
+  line-height: 1.3;
+  color: var(--ink);
+}
+main h1 {
+  font-size: 28px;
+  margin: 0 0 8px;
+  letter-spacing: -0.01em;
+}
+main > p:first-of-type {
+  color: var(--muted);
+  margin-top: 4px;
+}
+main h2 {
+  font-size: 21px;
+  margin: 40px 0 12px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid var(--line);
+}
+main h3 { font-size: 18px; margin: 28px 0 8px; }
+main h4 { font-size: 16px; margin: 22px 0 6px; color: var(--muted); }
+main p { margin: 0 0 12px; }
+main ul, main ol { margin: 0 0 14px; padding-left: 1.4em; }
+main li { margin: 4px 0; }
+main hr {
+  border: none;
+  border-top: 1px solid var(--line);
+  margin: 32px 0;
+}
+main a { color: var(--accent); text-decoration: none; }
+main a:hover { text-decoration: underline; }
+main code {
+  font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.9em;
+  background: #f3efe6;
+  padding: 1px 5px;
+  border-radius: 4px;
+}
+main blockquote {
+  margin: 14px 0;
+  padding: 12px 18px;
+  background: var(--accent-soft);
+  border-left: 3px solid var(--accent);
+  color: var(--ink);
+  border-radius: 0 6px 6px 0;
+}
+main blockquote p:last-child { margin-bottom: 0; }
+main table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 14px 0 22px;
+  font-size: 15px;
+}
+main th, main td {
+  text-align: left;
+  padding: 8px 12px;
+  border-bottom: 1px solid var(--line);
+  vertical-align: top;
+}
+main th {
+  background: #f3efe6;
+  font-family: -apple-system, "Helvetica Neue", "PingFang TC", system-ui, sans-serif;
+  font-weight: 600;
+}
+
+/* --- bilingual pairing --- */
+.bilingual {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  margin: 14px 0;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  overflow: hidden;
+  background: var(--zh-bg);
+}
+.bilingual .en, .bilingual .zh {
+  padding: 16px 20px;
+}
+.bilingual .en {
+  background: var(--en-bg);
+  color: var(--en-ink);
+  font-family: "Source Serif 4","Source Serif Pro", Georgia, serif;
+  font-style: normal;
+  border-right: 1px solid var(--line);
+}
+.bilingual .en p, .bilingual .zh p { margin: 0 0 8px; }
+.bilingual .en p:last-child, .bilingual .zh p:last-child { margin-bottom: 0; }
+.bilingual .en ul, .bilingual .en ol,
+.bilingual .zh ul, .bilingual .zh ol {
+  margin: 0 0 6px;
+  padding-left: 1.3em;
+}
+.bilingual .en em { font-style: italic; }
+.bilingual .label {
+  display: inline-block;
+  font-family: -apple-system, "Helvetica Neue", system-ui, sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 6px;
+  font-weight: 600;
+}
+
+/* --- callouts (⚠️ blocks) --- */
+.callout {
+  margin: 18px 0;
+  padding: 14px 18px;
+  background: #fff8e1;
+  border-left: 4px solid #f0a500;
+  border-radius: 0 6px 6px 0;
+}
+.callout p { margin: 0 0 6px; }
+.callout p:last-child { margin: 0; }
+
+/* --- collapsible answers --- */
+details.answers {
+  margin: 22px 0;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 0;
+  overflow: hidden;
+}
+details.answers > summary {
+  cursor: pointer;
+  padding: 14px 18px;
+  font-family: -apple-system, "Helvetica Neue", "PingFang TC", system-ui, sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  background: #f3efe6;
+  border-bottom: 1px solid transparent;
+  user-select: none;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+details.answers > summary::-webkit-details-marker { display: none; }
+details.answers > summary::after {
+  content: "▸";
+  color: var(--muted);
+  transition: transform 0.18s ease;
+  font-size: 14px;
+}
+details.answers[open] > summary {
+  border-bottom-color: var(--line);
+}
+details.answers[open] > summary::after { transform: rotate(90deg); }
+details.answers .answers-body { padding: 14px 22px 6px; }
+details.answers .answers-body ol { margin: 0; padding-left: 1.4em; }
+details.answers .answers-body li { margin: 8px 0; }
+
+/* --- dashboard cards on index --- */
+.dash {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+  margin: 24px 0;
+}
+.dash a {
+  display: block;
+  padding: 18px 20px;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  color: var(--ink);
+  text-decoration: none;
+  transition: border-color 0.15s, transform 0.15s;
+}
+.dash a:hover {
+  border-color: var(--accent);
+  transform: translateY(-1px);
+}
+.dash a .kicker {
+  font-family: -apple-system, system-ui, sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+  display: block;
+  margin-bottom: 6px;
+}
+.dash a .title {
+  font-weight: 600;
+  font-size: 17px;
+  line-height: 1.35;
+}
+.dash a .meta {
+  display: block;
+  margin-top: 8px;
+  font-size: 13px;
+  color: var(--muted);
+  font-family: -apple-system, system-ui, sans-serif;
+}
+
+/* --- speak (TTS) button --- */
+.speak-btn {
+  appearance: none;
+  background: rgba(255,255,255,0.85);
+  border: 1px solid var(--line);
+  color: var(--muted);
+  cursor: pointer;
+  padding: 4px 9px;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 12px;
+  font-family: -apple-system, "Helvetica Neue", system-ui, sans-serif;
+  transition: all 0.15s;
+  -webkit-tap-highlight-color: transparent;
+  min-width: 64px;
+  justify-content: center;
+}
+.speak-btn .speak-icon { display: inline-flex; }
+.speak-btn svg { display: block; }
+.speak-btn:hover { color: var(--accent); border-color: var(--accent); }
+.speak-btn:active { transform: scale(0.96); }
+.speak-btn.speaking {
+  background: var(--accent);
+  color: #fff;
+  border-color: var(--accent);
+  animation: speak-pulse 1.4s ease-in-out infinite;
+}
+.speak-btn.paused {
+  background: #f0a500;
+  color: #fff;
+  border-color: #f0a500;
+  animation: none;
+}
+@keyframes speak-pulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(200,16,46,0.5); }
+  50%      { box-shadow: 0 0 0 6px rgba(200,16,46,0); }
+}
+
+/* --- per-word highlight during TTS + click-to-play-from-here --- */
+.w {
+  border-radius: 3px;
+  padding: 0 1px;
+  transition: color 0.08s ease, background 0.08s ease;
+  cursor: pointer;
+  -webkit-tap-highlight-color: rgba(200, 16, 46, 0.15);
+}
+.w:hover {
+  background: rgba(200, 16, 46, 0.07);
+  text-decoration: underline;
+  text-decoration-color: rgba(200, 16, 46, 0.3);
+  text-decoration-style: dotted;
+  text-underline-offset: 3px;
+}
+.w.current {
+  color: var(--accent);
+  background: rgba(200, 16, 46, 0.14);
+  font-weight: 600;
+  text-decoration: none;
+}
+.bilingual .en { position: relative; }
+.bilingual .en > .speak-btn {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+}
+.bilingual .en > .label + .speak-btn { /* fallback positioning if absolute fails */ }
+blockquote.speakable, .callout.speakable {
+  position: relative;
+  padding-right: 60px;
+}
+blockquote.speakable > .speak-btn,
+.callout.speakable > .speak-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: #fff;
+}
+
+/* --- mobile --- */
+@media (max-width: 900px) {
+  .layout { grid-template-columns: 1fr; padding: 0 16px; gap: 0; }
+  nav.sidebar {
+    position: static;
+    height: auto;
+    border-right: none;
+    border-bottom: 1px solid var(--line);
+    padding: 18px 0;
+  }
+  .bilingual { grid-template-columns: 1fr; }
+  .bilingual .en { border-right: none; border-bottom: 1px solid var(--line); }
+}
+
+/* --- print --- */
+@media print {
+  nav.sidebar { display: none; }
+  .layout { display: block; padding: 0; }
+  main { padding: 0; }
+  details.answers { border: 1px solid #999; }
+  details.answers > summary { display: none; }
+  details.answers > .answers-body { display: block !important; }
+  .bilingual { break-inside: avoid; }
+}
+</style>
+</head>
+<body>
+<div class="layout">
+<nav class="sidebar">
+<a href="../index.html" class="home">加拿大公民考試</a>
+<a href="../curriculum/14-day-plan.html">📅 14 天計畫表</a>
+<a href="../practice/question-bank.html">📝 220 題題庫</a>
+<h2>中英對照（13 章）</h2>
+<a href="../bilingual/00-intro-oath.html">00 · 前言＋誓詞</a>
+<a href="../bilingual/01-applying-citizenship.html">01 · 申請入籍</a>
+<a href="../bilingual/02-rights-responsibilities.html">02 · 權利與義務</a>
+<a href="../bilingual/03-who-we-are.html">03 · 我們是誰</a>
+<a href="../bilingual/04-canadas-history.html">04 · 加拿大歷史</a>
+<a href="../bilingual/05-modern-canada.html">05 · 現代加拿大</a>
+<a href="../bilingual/06-how-canadians-govern.html">06 · 政府架構</a>
+<a href="../bilingual/07-federal-elections.html">07 · 聯邦選舉</a>
+<a href="../bilingual/08-justice-system.html">08 · 司法系統</a>
+<a href="../bilingual/09-canadian-symbols.html">09 · 國家象徵</a>
+<a href="../bilingual/10-canadas-economy.html">10 · 加拿大經濟</a>
+<a href="../bilingual/11-canadas-regions.html">11 · 五大區域</a>
+<a href="../bilingual/12-study-questions.html">12 · 官方練習題</a>
+<h2>每日驗收（14 天）</h2>
+<a href="../daily-quiz/day-01.html">Day 01</a>
+<a href="../daily-quiz/day-02.html">Day 02</a>
+<a href="../daily-quiz/day-03.html">Day 03</a>
+<a href="../daily-quiz/day-04.html">Day 04</a>
+<a href="../daily-quiz/day-05.html">Day 05</a>
+<a href="../daily-quiz/day-06.html">Day 06</a>
+<a href="../daily-quiz/day-07.html">Day 07</a>
+<a href="../daily-quiz/day-08.html">Day 08</a>
+<a href="../daily-quiz/day-09.html">Day 09</a>
+<a href="../daily-quiz/day-10.html">Day 10</a>
+<a href="../daily-quiz/day-11.html">Day 11</a>
+<a href="../daily-quiz/day-12.html">Day 12</a>
+<a href="../daily-quiz/day-13.html">Day 13</a>
+<a href="../daily-quiz/day-14.html">Day 14</a>
+<h2>互動式（圖解）</h2>
+<a href="../interactive/index.html">🎯 互動式入口</a>
+<a href="../interactive/history.html">📜 04 歷史時間軸</a>
+<a href="../interactive/story-04.html">📖 04 故事聽學</a>
+<a href="../interactive/modern.html">🇨🇦 05 現代加拿大</a>
+<a href="../interactive/government.html">🏛️ 06 政府架構</a>
+<a href="../interactive/elections.html">🗳️ 07 聯邦選舉</a>
+<a href="../interactive/justice.html">⚖️ 08 司法系統</a>
+<a href="../interactive/symbols.html">🍁 09 國家象徵</a>
+<a href="../interactive/economy.html">💼 10 加拿大經濟</a>
+<a href="../interactive/geography.html">🗺️ 11 地圖與省份</a>
+<h2>人聲朗讀對照</h2>
+<a href="../reading/04-canadas-history.html" class="current">🎧 04 · 加拿大歷史</a>
+</nav>
+<main>
+<style>
+.layout { max-width: 1480px; }
+.rd-hero {
+  background: linear-gradient(135deg, #fff8f8 0%, #fef0e8 100%);
+  border-left: 4px solid var(--accent);
+  padding: 18px 22px; border-radius: 8px; margin: 16px 0 12px;
+}
+.rd-hero h1 { margin: 0 0 6px; border: none; padding: 0; }
+.rd-hero p { margin: 0; color: var(--muted); font-size: 14px; }
+.rd-bar {
+  position: sticky; top: 0; z-index: 5; background: var(--bg);
+  display: flex; align-items: center; gap: 10px; flex-wrap: wrap;
+  padding: 10px 0; border-bottom: 1px solid var(--line); margin-bottom: 8px;
+}
+.rd-btn {
+  appearance: none; border: 2px solid var(--accent); background: #fff; color: var(--accent);
+  padding: 7px 14px; border-radius: 20px; font-size: 14px; font-weight: 600; cursor: pointer;
+  font-family: -apple-system, system-ui, sans-serif;
+}
+.rd-btn.rd-main { background: var(--accent); color: #fff; }
+.rd-bar label { font-size: 13px; color: var(--muted); display: inline-flex; align-items: center; gap: 4px; }
+.rd-bar select { font-size: 13px; padding: 3px 6px; }
+.rd-status { font-size: 13px; color: var(--muted); margin-left: auto; }
+.rd-sec h2 { margin: 30px 0 6px; font-size: 18px; border-bottom: 2px solid var(--accent); padding-bottom: 4px; }
+.rd-sec h2 small { color: var(--muted); font-weight: 400; font-size: 13px; margin-left: 10px; }
+.rd-row {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 20px;
+  padding: 12px 0; border-bottom: 1px dashed var(--line);
+}
+.rd-cell { position: relative; padding: 4px 8px 4px 36px; line-height: 1.9; font-size: 16.5px; border-radius: 8px; }
+.rd-zh { font-family: "Noto Serif TC","Noto Serif CJK TC","PingFang TC","Songti TC",serif; }
+.rd-en { font-family: "Source Serif 4","Source Serif Pro",Georgia,serif; color: var(--en-ink); background: var(--en-bg); }
+.rd-row.playing .rd-cell { box-shadow: inset 0 0 0 2px #f0c86a; }
+.rd-play {
+  position: absolute; left: 6px; top: 9px; width: 24px; height: 24px; border-radius: 50%;
+  border: 1.5px solid var(--accent); background: #fff; color: var(--accent);
+  cursor: pointer; font-size: 10px; line-height: 1; padding: 0;
+}
+.rd-play.on { background: var(--accent); color: #fff; }
+.s { cursor: pointer; border-radius: 3px; padding: 1px 2px; transition: background 0.15s; }
+.s:hover { background: #f3efe6; }
+.rd-en .s:hover { background: #ebe4d3; }
+.s.on { background: #ffe08a !important; }
+@media (max-width: 820px) {
+  .rd-row { grid-template-columns: 1fr; gap: 8px; }
+}
+</style>
+
+<div class="rd" id="rd-04">
+<div class="rd-hero">
+  <h1>🎧 04 加拿大歷史 <small style="font-weight:400;color:var(--muted)">Canada&#x27;s History</small></h1>
+  <p>左中文、右英文，句對句對照。按段落左邊的 ▶ 朗讀該段；點任何一句從那句開始念；念到哪一句，中英文同時標黃。空白鍵＝暫停／繼續。</p>
+</div>
+<div class="rd-bar">
+  <button class="rd-btn rd-main rd-all-en" type="button">▶ English 全章</button>
+  <button class="rd-btn rd-all-zh" type="button">▶ 中文全章</button>
+  <button class="rd-btn rd-pause" type="button">❚❚ 暫停／繼續</button>
+  <button class="rd-btn rd-stop" type="button">■ 停</button>
+  <label><input type="checkbox" class="rd-cont" checked> 連續播放下一段</label>
+  <label>速度 <select class="rd-rate">
+    <option value="0.8">0.8×</option><option value="0.9">0.9×</option>
+    <option value="1" selected>1×</option><option value="1.15">1.15×</option><option value="1.3">1.3×</option>
+  </select></label>
+  <span class="rd-status"></span>
+</div>
+<section class="rd-sec"><h2>原住民<small>Aboriginal Peoples</small></h2>
+<div class="rd-row" data-p="0">
+  <div class="rd-cell rd-zh"><button class="rd-play" data-lang="zh" data-p="0" type="button" title="朗讀中文">▶</button><span class="s" data-i="0">歐洲人探索加拿大時，發現每一個地區都已經有原住民居住；他們把這些人叫作「印第安人」，因為最早的探險家以為自己抵達的是東印度群島。</span><span class="s" data-i="1">原住民靠土地維生，有的狩獵採集，有的種植作物。</span><span class="s" data-i="2">五大湖區的休倫－溫達特族（Huron-Wendat）和易洛魁族（Iroquois）一樣，既務農也狩獵。</span><span class="s" data-i="3">西北部的克里族（Cree）和迪尼族（Dene）是狩獵採集民族。</span><span class="s" data-i="4">蘇族（Sioux）過著游牧生活，跟隨野牛群遷徙。</span><span class="s" data-i="5">因紐特人（Inuit）靠北極的野生動物維生。</span><span class="s" data-i="6">西海岸的原住民用曬乾和煙燻的方式保存魚類。</span><span class="s" data-i="7">各原住民族群之間為了爭奪土地、資源和聲望，經常發生戰爭。</span></div>
+  <div class="rd-cell rd-en"><button class="rd-play" data-lang="en" data-p="0" type="button" title="Read English">▶</button><span class="s" data-i="0">When Europeans explored Canada they found all regions occupied by native peoples they called Indians, because the first explorers thought they had reached the East Indies.</span> <span class="s" data-i="1">The native people lived off the land, some by hunting and gathering, others by raising crops.</span> <span class="s" data-i="2">The Huron-Wendat of the Great Lakes region, like the Iroquois, were farmers and hunters.</span> <span class="s" data-i="3">The Cree and Dene of the Northwest were hunter-gatherers.</span> <span class="s" data-i="4">The Sioux were nomadic, following the bison (buffalo) herd.</span> <span class="s" data-i="5">The Inuit lived off Arctic wildlife.</span> <span class="s" data-i="6">West Coast natives preserved fish by drying and smoking.</span> <span class="s" data-i="7">Warfare was common among Aboriginal groups as they competed for land, resources and prestige.</span></div>
+</div>
+<div class="rd-row" data-p="1">
+  <div class="rd-cell rd-zh"><button class="rd-play" data-lang="zh" data-p="1" type="button" title="朗讀中文">▶</button><span class="s" data-i="0">歐洲商人、傳教士、士兵和殖民者的到來，永遠改變了原住民的生活方式。</span><span class="s" data-i="1">大量原住民死於歐洲帶來的疾病，因為他們對這些疾病沒有免疫力。</span><span class="s" data-i="2">不過，在共同生活的最初兩百年裡，原住民和歐洲人在經濟、宗教和軍事上建立了緊密的關係，奠定了加拿大的基礎。</span></div>
+  <div class="rd-cell rd-en"><button class="rd-play" data-lang="en" data-p="1" type="button" title="Read English">▶</button><span class="s" data-i="0">The arrival of European traders, missionaries, soldiers and colonists changed the native way of life forever.</span> <span class="s" data-i="1">Large numbers of Aboriginals died of European diseases to which they lacked immunity.</span> <span class="s" data-i="2">However, Aboriginals and Europeans formed strong economic, religious and military bonds in the first 200 years of coexistence which laid the foundations of Canada.</span></div>
+</div></section><section class="rd-sec"><h2>最早的歐洲人<small>The First Europeans</small></h2>
+<div class="rd-row" data-p="2">
+  <div class="rd-cell rd-zh"><button class="rd-play" data-lang="zh" data-p="2" type="button" title="朗讀中文">▶</button><span class="s" data-i="0">一千年前，來自冰島並在格陵蘭殖民的維京人，也抵達了拉布拉多（Labrador）和紐芬蘭島（Newfoundland）。</span><span class="s" data-i="1">他們聚落的遺址「蘭塞奧茲牧草地」（L&#x27;Anse aux Meadows）現在是世界遺產。</span></div>
+  <div class="rd-cell rd-en"><button class="rd-play" data-lang="en" data-p="2" type="button" title="Read English">▶</button><span class="s" data-i="0">The Vikings from Iceland who colonized Greenland 1,000 years ago also reached Labrador and the island of Newfoundland.</span> <span class="s" data-i="1">The remains of their settlement, l&#x27;Anse aux Meadows, are a World Heritage site.</span></div>
+</div>
+<div class="rd-row" data-p="3">
+  <div class="rd-cell rd-zh"><button class="rd-play" data-lang="zh" data-p="3" type="button" title="朗讀中文">▶</button><span class="s" data-i="0">歐洲人對加拿大的探索，從 1497 年約翰・卡伯特（John Cabot）的遠征正式開始；他是第一個繪製加拿大東岸地圖的人。</span></div>
+  <div class="rd-cell rd-en"><button class="rd-play" data-lang="en" data-p="3" type="button" title="Read English">▶</button><span class="s" data-i="0">European exploration began in earnest in 1497 with the expedition of John Cabot, who was the first to draw a map of Canada&#x27;s East Coast.</span></div>
+</div></section><section class="rd-sec"><h2>探索大河，為加拿大命名<small>Exploring a River, Naming Canada</small></h2>
+<div class="rd-row" data-p="4">
+  <div class="rd-cell rd-zh"><button class="rd-play" data-lang="zh" data-p="4" type="button" title="朗讀中文">▶</button><span class="s" data-i="0">1534 年到 1542 年之間，雅克・卡蒂亞（Jacques Cartier）三度橫渡大西洋，為法國國王法蘭索瓦一世（Francis I）宣告這片土地的主權。</span><span class="s" data-i="1">卡蒂亞聽到兩名被俘的嚮導說出易洛魁語的「kanata」，意思是「村莊」。</span><span class="s" data-i="2">到了 1550 年代，「Canada」這個名字開始出現在地圖上。</span></div>
+  <div class="rd-cell rd-en"><button class="rd-play" data-lang="en" data-p="4" type="button" title="Read English">▶</button><span class="s" data-i="0">Between 1534 and 1542, Jacques Cartier made three voyages across the Atlantic, claiming the land for King Francis I of France.</span> <span class="s" data-i="1">Cartier heard two captured guides speak the Iroquoian word kanata, meaning &quot;village.&quot;</span> <span class="s" data-i="2">By the 1550s, the name of Canada began appearing on maps.</span></div>
+</div></section><section class="rd-sec"><h2>皇家新法蘭西<small>Royal New France</small></h2>
+<div class="rd-row" data-p="5">
+  <div class="rd-cell rd-zh"><button class="rd-play" data-lang="zh" data-p="5" type="button" title="朗讀中文">▶</button><span class="s" data-i="0">1604 年，法國探險家皮埃爾・德蒙（Pierre de Monts）和薩繆爾・德・尚普蘭（Samuel de Champlain）建立了佛羅里達以北第一個歐洲聚落——先在聖克魯瓦島（St. Croix Island，今美國緬因州），後來遷到阿卡迪亞（Acadia，今新斯科細亞）的皇家港（Port-Royal）。</span><span class="s" data-i="1">1608 年，尚普蘭在今天的魁北克市建造了一座堡壘。</span></div>
+  <div class="rd-cell rd-en"><button class="rd-play" data-lang="en" data-p="5" type="button" title="Read English">▶</button><span class="s" data-i="0">In 1604, the first European settlement north of Florida was established by French explorers Pierre de Monts and Samuel de Champlain, first on St. Croix Island (in present-day Maine), then at Port-Royal, in Acadia (present-day Nova Scotia).</span> <span class="s" data-i="1">In 1608 Champlain built a fortress at what is now Québec City.</span></div>
+</div>
+<div class="rd-row" data-p="6">
+  <div class="rd-cell rd-zh"><button class="rd-play" data-lang="zh" data-p="6" type="button" title="朗讀中文">▶</button><span class="s" data-i="0">殖民者在嚴酷的氣候中艱苦求生。</span><span class="s" data-i="1">尚普蘭讓殖民地與阿爾岡昆族（Algonquin）、蒙塔涅族（Montagnais）和休倫族（Huron）結盟；這些族群是易洛魁族的世仇。易洛魁是由五個（後來六個）第一民族組成的聯盟，與法國殖民地交戰了一個世紀。</span><span class="s" data-i="2">法國人與易洛魁族在 1701 年締結和平。</span></div>
+  <div class="rd-cell rd-en"><button class="rd-play" data-lang="en" data-p="6" type="button" title="Read English">▶</button><span class="s" data-i="0">The colonists struggled against a harsh climate.</span> <span class="s" data-i="1">Champlain allied the colony with the Algonquin, Montagnais and Huron, historic enemies of the Iroquois, a confederation of five (later six) First Nations who battled with the French settlements for a century.</span> <span class="s" data-i="2">The French and the Iroquois made peace in 1701.</span></div>
+</div>
+<div class="rd-row" data-p="7">
+  <div class="rd-cell rd-zh"><button class="rd-play" data-lang="zh" data-p="7" type="button" title="朗讀中文">▶</button><span class="s" data-i="0">法國人與原住民合作經營龐大的毛皮貿易，背後的動力是歐洲對海狸皮的需求。</span><span class="s" data-i="1">尚・塔隆（Jean Talon）、拉瓦主教（Bishop Laval）和弗龍特納克伯爵（Count Frontenac）等傑出領袖，在北美建立了一個從哈德遜灣延伸到墨西哥灣的法蘭西帝國。</span></div>
+  <div class="rd-cell rd-en"><button class="rd-play" data-lang="en" data-p="7" type="button" title="Read English">▶</button><span class="s" data-i="0">The French and Aboriginal people collaborated in the vast fur-trade economy, driven by the demand for beaver pelts in Europe.</span> <span class="s" data-i="1">Outstanding leaders like Jean Talon, Bishop Laval, and Count Frontenac built a French Empire in North America that reached from Hudson Bay to the Gulf of Mexico.</span></div>
+</div></section><section class="rd-sec"><h2>爭奪一塊大陸<small>Struggle for a Continent</small></h2>
+<div class="rd-row" data-p="8">
+  <div class="rd-cell rd-zh"><button class="rd-play" data-lang="zh" data-p="8" type="button" title="朗讀中文">▶</button><span class="s" data-i="0">1670 年，英國國王查理二世（Charles II）授予哈德遜灣公司（Hudson&#x27;s Bay Company）在哈德遜灣流域的獨家貿易權。</span><span class="s" data-i="1">接下來的一百年裡，這家公司與蒙特婁的商人互相競爭。</span><span class="s" data-i="2">那些技術高超、勇敢無畏、乘獨木舟往來的人被稱為 voyageurs（航行者）和 coureurs des bois（林中跑者），他們與第一民族建立了牢固的同盟。</span></div>
+  <div class="rd-cell rd-en"><button class="rd-play" data-lang="en" data-p="8" type="button" title="Read English">▶</button><span class="s" data-i="0">In 1670, King Charles II of England granted the Hudson&#x27;s Bay Company exclusive trading rights over the watershed draining into Hudson Bay.</span> <span class="s" data-i="1">For the next 100 years the Company competed with Montreal-based traders.</span> <span class="s" data-i="2">The skilled and courageous men who travelled by canoe were called voyageurs and coureurs des bois, and formed strong alliances with First Nations.</span></div>
+</div>
+<div class="rd-row" data-p="9">
+  <div class="rd-cell rd-zh"><button class="rd-play" data-lang="zh" data-p="9" type="button" title="朗讀中文">▶</button><span class="s" data-i="0">從 1600 年代初期開始建立的大西洋沿岸英國殖民地，最終變得比新法蘭西更富裕、人口更多。</span><span class="s" data-i="1">1700 年代，法國與英國為了爭奪北美的控制權而交戰。</span><span class="s" data-i="2">1759 年，英軍在魁北克市的亞伯拉罕平原戰役（Battle of the Plains of Abraham）中擊敗法軍，法國在美洲的帝國就此終結。</span><span class="s" data-i="3">雙方的指揮官——英軍准將詹姆斯・沃爾夫（James Wolfe）和法軍蒙卡姆侯爵（Marquis de Montcalm）——都在率軍作戰時陣亡。</span></div>
+  <div class="rd-cell rd-en"><button class="rd-play" data-lang="en" data-p="9" type="button" title="Read English">▶</button><span class="s" data-i="0">English colonies along the Atlantic seaboard, dating from the early 1600s, eventually became richer and more populous than New France.</span> <span class="s" data-i="1">In the 1700s France and Great Britain battled for control of North America.</span> <span class="s" data-i="2">In 1759, the British defeated the French in the Battle of the Plains of Abraham at Québec City — marking the end of France&#x27;s empire in America.</span> <span class="s" data-i="3">The commanders of both armies, Brigadier James Wolfe and the Marquis de Montcalm, were killed leading their troops in battle.</span></div>
+</div></section><section class="rd-sec"><h2>魁北克省<small>The Province of Quebec</small></h2>
+<div class="rd-row" data-p="10">
+  <div class="rd-cell rd-zh"><button class="rd-play" data-lang="zh" data-p="10" type="button" title="朗讀中文">▶</button><span class="s" data-i="0">戰後，英國把這塊殖民地改名為「魁北克省」（Province of Quebec）。</span><span class="s" data-i="1">說法語的天主教居民——被稱為 habitants 或 Canadiens——在以英語為主、由新教徒統治的大英帝國中，努力保存自己的生活方式。</span></div>
+  <div class="rd-cell rd-en"><button class="rd-play" data-lang="en" data-p="10" type="button" title="Read English">▶</button><span class="s" data-i="0">Following the war, Great Britain renamed the colony the &quot;Province of Quebec.&quot;</span> <span class="s" data-i="1">The French-speaking Catholic people, known as habitants or Canadiens, strove to preserve their way of life in the English-speaking, Protestant-ruled British Empire.</span></div>
+</div></section><section class="rd-sec"><h2>包容的傳統<small>A Tradition of Accommodation</small></h2>
+<div class="rd-row" data-p="11">
+  <div class="rd-cell rd-zh"><button class="rd-play" data-lang="zh" data-p="11" type="button" title="朗讀中文">▶</button><span class="s" data-i="0">為了更好地治理佔多數的法裔天主教徒，英國國會在 1774 年通過了《魁北克法案》（Quebec Act）。</span><span class="s" data-i="1">《魁北克法案》是加拿大憲政基礎之一，它讓英國體制的原則遷就了這個省的實際狀況。</span><span class="s" data-i="2">它允許天主教徒享有宗教自由，並准許他們擔任公職——這在當時的英國本土是不被允許的。</span><span class="s" data-i="3">《魁北克法案》恢復了法國民法，同時保留英國刑法。</span></div>
+  <div class="rd-cell rd-en"><button class="rd-play" data-lang="en" data-p="11" type="button" title="Read English">▶</button><span class="s" data-i="0">To better govern the French Roman Catholic majority, the British Parliament passed the Quebec Act of 1774.</span> <span class="s" data-i="1">One of the constitutional foundations of Canada, the Quebec Act accommodated the principles of British institutions to the reality of the province.</span> <span class="s" data-i="2">It allowed religious freedom for Catholics and permitted them to hold public office, a practice not then allowed in Britain.</span> <span class="s" data-i="3">The Quebec Act restored French civil law while maintaining British criminal law.</span></div>
+</div></section><section class="rd-sec"><h2>聯合帝國效忠派<small>United Empire Loyalists</small></h2>
+<div class="rd-row" data-p="12">
+  <div class="rd-cell rd-zh"><button class="rd-play" data-lang="zh" data-p="12" type="button" title="朗讀中文">▶</button><span class="s" data-i="0">1776 年，魁北克以南的十三個英國殖民地宣布獨立，組成了美國。</span><span class="s" data-i="1">北美再次因戰爭而分裂。</span><span class="s" data-i="2">超過四萬名效忠英國王室的人——稱為「效忠派」（Loyalists）——為了逃離美國革命的迫害，遷居到新斯科細亞（Nova Scotia）和魁北克。</span><span class="s" data-i="3">約瑟夫・布蘭特（Joseph Brant）率領數千名效忠派的莫霍克族（Mohawk）印第安人進入加拿大。</span><span class="s" data-i="4">效忠派的族裔包括荷蘭、德國、英國、北歐、原住民等，宗教背景則有長老會、聖公會、浸信會、衛理公會、猶太教、貴格會和天主教。</span></div>
+  <div class="rd-cell rd-en"><button class="rd-play" data-lang="en" data-p="12" type="button" title="Read English">▶</button><span class="s" data-i="0">In 1776, the 13 British colonies to the south of Quebec declared independence and formed the United States.</span> <span class="s" data-i="1">North America was again divided by war.</span> <span class="s" data-i="2">More than 40,000 people loyal to the Crown, called &quot;Loyalists,&quot; fled the oppression of the American Revolution to settle in Nova Scotia and Quebec.</span> <span class="s" data-i="3">Joseph Brant led thousands of Loyalist Mohawk Indians into Canada.</span> <span class="s" data-i="4">The Loyalists came from Dutch, German, British, Scandinavian, Aboriginal and other origins and from Presbyterian, Anglican, Baptist, Methodist, Jewish, Quaker and Catholic religious backgrounds.</span></div>
+</div>
+<div class="rd-row" data-p="13">
+  <div class="rd-cell rd-zh"><button class="rd-play" data-lang="zh" data-p="13" type="button" title="朗讀中文">▶</button><span class="s" data-i="0">大約三千名黑人效忠派、獲釋的自由人和奴隸北上，尋求更好的生活。</span><span class="s" data-i="1">後來在 1792 年，一些分到貧瘠土地的新斯科細亞黑人，又遷往西非的獅子山（Sierra Leone）建立自由城（Freetown）——一個專為獲釋奴隸設立的新英國殖民地。</span></div>
+  <div class="rd-cell rd-en"><button class="rd-play" data-lang="en" data-p="13" type="button" title="Read English">▶</button><span class="s" data-i="0">About 3,000 black Loyalists, freedmen and slaves came north seeking a better life.</span> <span class="s" data-i="1">In turn, in 1792, some black Nova Scotians, who were given poor land, moved on to establish Freetown, Sierra Leone (West Africa), a new British colony for freed slaves.</span></div>
+</div></section><section class="rd-sec"><h2>民主的開端<small>The Beginnings of Democracy</small></h2>
+<div class="rd-row" data-p="14">
+  <div class="rd-cell rd-zh"><button class="rd-play" data-lang="zh" data-p="14" type="button" title="朗讀中文">▶</button><span class="s" data-i="0">民主制度是逐步、和平地發展起來的。</span><span class="s" data-i="1">第一個民選代議議會於 1758 年在新斯科細亞的哈利法克斯（Halifax）選出。</span><span class="s" data-i="2">愛德華王子島（Prince Edward Island）在 1773 年跟進，新布藍瑞克（New Brunswick）則在 1785 年。</span><span class="s" data-i="3">1791 年的《憲法法案》（Constitutional Act）把魁北克省一分為二：上加拿大（Upper Canada，後來的安大略），以效忠派、新教徒和英語人口為主；以及下加拿大（Lower Canada，後來的魁北克），以天主教徒和法語人口為主。</span></div>
+  <div class="rd-cell rd-en"><button class="rd-play" data-lang="en" data-p="14" type="button" title="Read English">▶</button><span class="s" data-i="0">Democratic institutions developed gradually and peacefully.</span> <span class="s" data-i="1">The first representative assembly was elected in Halifax, Nova Scotia, in 1758.</span> <span class="s" data-i="2">Prince Edward Island followed in 1773, New Brunswick in 1785.</span> <span class="s" data-i="3">The Constitutional Act of 1791 divided the Province of Quebec into Upper Canada (later Ontario), which was mainly Loyalist, Protestant and English-speaking, and Lower Canada (later Quebec), heavily Catholic and French-speaking.</span></div>
+</div>
+<div class="rd-row" data-p="15">
+  <div class="rd-cell rd-zh"><button class="rd-play" data-lang="zh" data-p="15" type="button" title="朗讀中文">▶</button><span class="s" data-i="0">這項法案也首次賦予兩個加拿大省由人民選舉產生的立法議會。</span><span class="s" data-i="1">「Canada」這個名稱也在此時成為正式名稱，一直沿用至今。</span><span class="s" data-i="2">大西洋殖民地和兩個加拿大省合稱為「英屬北美」（British North America）。</span></div>
+  <div class="rd-cell rd-en"><button class="rd-play" data-lang="en" data-p="15" type="button" title="Read English">▶</button><span class="s" data-i="0">The Act also granted to the Canadas, for the first time, legislative assemblies elected by the people.</span> <span class="s" data-i="1">The name Canada also became official at this time and has been used ever since.</span> <span class="s" data-i="2">The Atlantic colonies and the two Canadas were known collectively as British North America.</span></div>
+</div></section><section class="rd-sec"><h2>廢除奴隸制<small>Abolition of Slavery</small></h2>
+<div class="rd-row" data-p="16">
+  <div class="rd-cell rd-zh"><button class="rd-play" data-lang="zh" data-p="16" type="button" title="朗讀中文">▶</button><span class="s" data-i="0">奴隸制曾經存在於世界各地，從亞洲、非洲、中東到美洲。</span><span class="s" data-i="1">廢除跨大西洋奴隸貿易的第一波運動，在 1700 年代末期出現於英國國會。</span><span class="s" data-i="2">1793 年，在效忠派軍官、副總督約翰・格雷夫斯・辛科（John Graves Simcoe）的領導下，上加拿大成為大英帝國第一個邁向廢奴的省份。</span><span class="s" data-i="3">1807 年，英國國會禁止買賣奴隸；1833 年更在整個帝國廢除奴隸制。</span><span class="s" data-i="4">成千上萬的奴隸從美國逃出，跟隨「北極星」的指引，經由「地下鐵路」（Underground Railroad）——一個基督教的反奴隸網絡——來到加拿大定居。</span></div>
+  <div class="rd-cell rd-en"><button class="rd-play" data-lang="en" data-p="16" type="button" title="Read English">▶</button><span class="s" data-i="0">Slavery has existed all over the world, from Asia, Africa and the Middle East to the Americas.</span> <span class="s" data-i="1">The first movement to abolish the transatlantic slave trade emerged in the British Parliament in the late 1700s.</span> <span class="s" data-i="2">In 1793, Upper Canada, led by Lieutenant Governor John Graves Simcoe, a Loyalist military officer, became the first province in the Empire to move toward abolition.</span> <span class="s" data-i="3">In 1807, the British Parliament prohibited the buying and selling of slaves, and in 1833 abolished slavery throughout the Empire.</span> <span class="s" data-i="4">Thousands of slaves escaped from the United States, followed &quot;the North Star&quot; and settled in Canada via the Underground Railroad, a Christian anti-slavery network.</span></div>
+</div></section><section class="rd-sec"><h2>成長中的經濟<small>A Growing Economy</small></h2>
+<div class="rd-row" data-p="17">
+  <div class="rd-cell rd-zh"><button class="rd-play" data-lang="zh" data-p="17" type="button" title="朗讀中文">▶</button><span class="s" data-i="0">加拿大最早的公司成立於法國和英國統治時期，彼此競爭毛皮貿易。</span><span class="s" data-i="1">哈德遜灣公司雇用法國人、英國人和原住民，逐漸主宰了西北部的貿易，範圍從加里堡（Fort Garry，今溫尼伯）、艾德蒙頓堡（Fort Edmonton）到蘭利堡（Fort Langley，溫哥華附近）和維多利亞堡（Fort Victoria）——這些貿易站後來都發展成了城市。</span></div>
+  <div class="rd-cell rd-en"><button class="rd-play" data-lang="en" data-p="17" type="button" title="Read English">▶</button><span class="s" data-i="0">The first companies in Canada were formed during the French and British regimes and competed for the fur trade.</span> <span class="s" data-i="1">The Hudson&#x27;s Bay Company, with French, British and Aboriginal employees, came to dominate the trade in the northwest from Fort Garry (Winnipeg) and Fort Edmonton to Fort Langley (near Vancouver) and Fort Victoria—trading posts that later became cities.</span></div>
+</div>
+<div class="rd-row" data-p="18">
+  <div class="rd-cell rd-zh"><button class="rd-play" data-lang="zh" data-p="18" type="button" title="朗讀中文">▶</button><span class="s" data-i="0">最早的金融機構在 18 世紀末、19 世紀初開業。</span><span class="s" data-i="1">蒙特婁證券交易所（Montreal Stock Exchange）於 1832 年開業。</span><span class="s" data-i="2">幾個世紀以來，加拿大的經濟主要依靠農業，以及出口毛皮、魚類和木材等自然資源，靠道路、湖泊、河流和運河來運輸。</span></div>
+  <div class="rd-cell rd-en"><button class="rd-play" data-lang="en" data-p="18" type="button" title="Read English">▶</button><span class="s" data-i="0">The first financial institutions opened in the late 18th and early 19th centuries.</span> <span class="s" data-i="1">The Montreal Stock Exchange opened in 1832.</span> <span class="s" data-i="2">For centuries Canada&#x27;s economy was based mainly on farming and on exporting natural resources such as fur, fish and timber, transported by roads, lakes, rivers and canals.</span></div>
+</div></section><section class="rd-sec"><h2>1812 年戰爭：保衛加拿大<small>The War of 1812: The Fight for Canada</small></h2>
+<div class="rd-row" data-p="19">
+  <div class="rd-cell rd-zh"><button class="rd-play" data-lang="zh" data-p="19" type="button" title="朗讀中文">▶</button><span class="s" data-i="0">拿破崙的艦隊在 1805 年特拉法加海戰（Battle of Trafalgar）戰敗之後，英國皇家海軍稱霸海洋。</span><span class="s" data-i="1">包括加拿大在內的大英帝國，奮力抵抗拿破崙稱霸歐洲的野心。</span><span class="s" data-i="2">這導致美國人對英國干擾他們的航運感到不滿。</span><span class="s" data-i="3">美國以為征服加拿大易如反掌，於 1812 年 6 月發動入侵。</span></div>
+  <div class="rd-cell rd-en"><button class="rd-play" data-lang="en" data-p="19" type="button" title="Read English">▶</button><span class="s" data-i="0">After the defeat of Napoleon Bonaparte&#x27;s fleet in the Battle of Trafalgar (1805), the Royal Navy ruled the waves.</span> <span class="s" data-i="1">The British Empire, which included Canada, fought to resist Bonaparte&#x27;s bid to dominate Europe.</span> <span class="s" data-i="2">This led to American resentment at British interference with their shipping.</span> <span class="s" data-i="3">Believing it would be easy to conquer Canada, the United States launched an invasion in June 1812.</span></div>
+</div>
+<div class="rd-row" data-p="20">
+  <div class="rd-cell rd-zh"><button class="rd-play" data-lang="zh" data-p="20" type="button" title="朗讀中文">▶</button><span class="s" data-i="0">美國人錯了。</span><span class="s" data-i="1">加拿大志願軍和第一民族——包括由酋長特庫姆塞（Tecumseh）率領的肖尼族（Shawnee）——協助英軍保衛加拿大。</span><span class="s" data-i="2">7 月，少將艾薩克・布洛克爵士（Sir Isaac Brock）攻下底特律，但在尼加拉瀑布附近的昆士頓高地（Queenston Heights）抵禦美軍進攻時陣亡；那場戰役美軍戰敗。</span><span class="s" data-i="3">1813 年，中校夏爾・德・薩拉貝里（Charles de Salaberry）率領 460 名士兵（多為法裔加拿大人），在蒙特婁南方的沙托蓋（Châteauguay）擊退了四千名美軍入侵者。</span></div>
+  <div class="rd-cell rd-en"><button class="rd-play" data-lang="en" data-p="20" type="button" title="Read English">▶</button><span class="s" data-i="0">The Americans were mistaken.</span> <span class="s" data-i="1">Canadian volunteers and First Nations, including Shawnee led by Chief Tecumseh, supported British soldiers in Canada&#x27;s defence.</span> <span class="s" data-i="2">In July, Major-General Sir Isaac Brock captured Detroit but was killed while defending against an American attack at Queenston Heights, near Niagara Falls, a battle the Americans lost.</span> <span class="s" data-i="3">In 1813, Lieutenant-Colonel Charles de Salaberry and 460 soldiers, mostly French Canadiens, turned back 4,000 American invaders at Châteauguay, south of Montreal.</span></div>
+</div>
+<div class="rd-row" data-p="21">
+  <div class="rd-cell rd-zh"><button class="rd-play" data-lang="zh" data-p="21" type="button" title="朗讀中文">▶</button><span class="s" data-i="0">1813 年，美軍燒毀了約克（York，今多倫多）的總督府和議會大廈。</span><span class="s" data-i="1">作為報復，1814 年少將羅伯特・羅斯（Robert Ross）率領遠征軍從新斯科細亞出發，燒毀了華盛頓特區的白宮和其他公共建築。</span><span class="s" data-i="2">羅斯不久後在戰鬥中陣亡，以最高軍禮安葬於哈利法克斯。</span></div>
+  <div class="rd-cell rd-en"><button class="rd-play" data-lang="en" data-p="21" type="button" title="Read English">▶</button><span class="s" data-i="0">In 1813 the Americans burned Government House and the Parliament Buildings in York (now Toronto).</span> <span class="s" data-i="1">In retaliation in 1814, Major-General Robert Ross led an expedition from Nova Scotia that burned down the White House and other public buildings in Washington, D.C.</span> <span class="s" data-i="2">Ross died in battle soon afterwards and was buried in Halifax with full military honours.</span></div>
+</div>
+<div class="rd-row" data-p="22">
+  <div class="rd-cell rd-zh"><button class="rd-play" data-lang="zh" data-p="22" type="button" title="朗讀中文">▶</button><span class="s" data-i="0">到了 1814 年，美國征服加拿大的企圖已經失敗。</span><span class="s" data-i="1">英國出資建造了昂貴的加拿大防禦體系，包括哈利法克斯和魁北克市的城堡、哈利法克斯的海軍乾船塢，以及京士頓（Kingston）的亨利堡（Fort Henry）——這些今天都是熱門的歷史景點。</span><span class="s" data-i="2">今天的加美邊界有一部分就是 1812 年戰爭的結果；這場戰爭確保了加拿大不會被美國併吞。</span></div>
+  <div class="rd-cell rd-en"><button class="rd-play" data-lang="en" data-p="22" type="button" title="Read English">▶</button><span class="s" data-i="0">By 1814, the American attempt to conquer Canada had failed.</span> <span class="s" data-i="1">The British paid for a costly Canadian defence system, including the Citadels at Halifax and Québec City, the naval drydock at Halifax and Fort Henry at Kingston—today popular historic sites.</span> <span class="s" data-i="2">The present-day Canada-U.S.A. border is partly an outcome of the War of 1812, which ensured that Canada would remain independent of the United States.</span></div>
+</div>
+<div class="rd-row" data-p="23">
+  <div class="rd-cell rd-zh"><button class="rd-play" data-lang="zh" data-p="23" type="button" title="朗讀中文">▶</button><span class="s" data-i="0">1813 年，拓荒者之妻、五個孩子的母親蘿拉・西科德（Laura Secord），冒險徒步走了 19 英里（30 公里），去警告詹姆斯・費茨吉本中尉（James FitzGibbon）美軍即將發動攻擊。</span><span class="s" data-i="1">她的勇敢促成了比佛丹戰役（Battle of Beaver Dams）的勝利。</span><span class="s" data-i="2">直到今天，她仍被尊為女英雄。</span></div>
+  <div class="rd-cell rd-en"><button class="rd-play" data-lang="en" data-p="23" type="button" title="Read English">▶</button><span class="s" data-i="0">In 1813, Laura Secord, pioneer wife and mother of five children, made a dangerous 19-mile (30-km) journey on foot to warn Lieutenant James FitzGibbon of a planned American attack.</span> <span class="s" data-i="1">Her bravery contributed to victory at the Battle of Beaver Dams.</span> <span class="s" data-i="2">She is recognized as a heroine to this day.</span></div>
+</div></section><section class="rd-sec"><h2>1837–38 年叛亂<small>Rebellions of 1837–38</small></h2>
+<div class="rd-row" data-p="24">
+  <div class="rd-cell rd-zh"><button class="rd-play" data-lang="zh" data-p="24" type="button" title="朗讀中文">▶</button><span class="s" data-i="0">1830 年代，上、下加拿大的改革派認為邁向完全民主的進展太慢。</span><span class="s" data-i="1">有些人認為加拿大應該採用美國的共和價值，甚至設法加入美國。</span><span class="s" data-i="2">1837 到 38 年，蒙特婁郊區和多倫多爆發武裝叛亂，但叛軍缺乏足夠的民意支持，無法成功。</span><span class="s" data-i="3">他們被英軍和加拿大志願軍擊敗。</span><span class="s" data-i="4">一些叛亂者被處以絞刑或流放；有些被流放的人後來回到了加拿大。</span></div>
+  <div class="rd-cell rd-en"><button class="rd-play" data-lang="en" data-p="24" type="button" title="Read English">▶</button><span class="s" data-i="0">In the 1830s, reformers in Upper and Lower Canada believed that progress toward full democracy was too slow.</span> <span class="s" data-i="1">Some believed Canada should adopt American republican values or even try to join the United States.</span> <span class="s" data-i="2">When armed rebellions occurred in 1837–38 in the area outside Montreal and in Toronto, the rebels did not have enough public support to succeed.</span> <span class="s" data-i="3">They were defeated by British troops and Canadian volunteers.</span> <span class="s" data-i="4">A number of rebels were hanged or exiled; some exiles later returned to Canada.</span></div>
+</div>
+<div class="rd-row" data-p="25">
+  <div class="rd-cell rd-zh"><button class="rd-play" data-lang="zh" data-p="25" type="button" title="朗讀中文">▶</button><span class="s" data-i="0">英國改革派德倫勳爵（Lord Durham）奉派前來調查叛亂，他建議把上、下加拿大合併，並給予「責任政府」（responsible government）。</span><span class="s" data-i="1">這意味著王室的大臣們必須得到多數民選代表的支持，才能執政。</span><span class="s" data-i="2">德倫勳爵還提出了一個爭議性的說法：法裔加拿大人要進步，最快的方法就是同化到說英語的新教文化裡。</span><span class="s" data-i="3">這項建議顯示他完全不了解法裔加拿大人——他們一心想維護法裔加拿大的獨特身分。</span></div>
+  <div class="rd-cell rd-en"><button class="rd-play" data-lang="en" data-p="25" type="button" title="Read English">▶</button><span class="s" data-i="0">Lord Durham, an English reformer sent to report on the rebellions, recommended that Upper and Lower Canada be merged and given responsible government.</span> <span class="s" data-i="1">This meant that the ministers of the Crown must have the support of a majority of the elected representatives in order to govern.</span> <span class="s" data-i="2">Controversially, Lord Durham also said that the quickest way for the Canadiens to achieve progress was to assimilate into English-speaking Protestant culture.</span> <span class="s" data-i="3">This recommendation demonstrated a complete lack of understanding of French Canadians, who sought to uphold the distinct identity of French Canada.</span></div>
+</div>
+<div class="rd-row" data-p="26">
+  <div class="rd-cell rd-zh"><button class="rd-play" data-lang="zh" data-p="26" type="button" title="朗讀中文">▶</button><span class="s" data-i="0">一些改革派人士，包括艾蒂安－帕斯卡・塔謝爵士（Sir Étienne-Paschal Taché）和喬治－艾蒂安・卡蒂埃爵士（Sir George-Étienne Cartier），後來成為「聯邦之父」（Fathers of Confederation）；曾在上加拿大擔任政府志願民兵的約翰・A・麥克唐納爵士（Sir John A. Macdonald）也是其中之一。</span></div>
+  <div class="rd-cell rd-en"><button class="rd-play" data-lang="en" data-p="26" type="button" title="Read English">▶</button><span class="s" data-i="0">Some reformers, including Sir Étienne-Paschal Taché and Sir George-Étienne Cartier, later became Fathers of Confederation, as did a former member of the voluntary government militia in Upper Canada, Sir John A. Macdonald.</span></div>
+</div></section><section class="rd-sec"><h2>責任政府<small>Responsible Government</small></h2>
+<div class="rd-row" data-p="27">
+  <div class="rd-cell rd-zh"><button class="rd-play" data-lang="zh" data-p="27" type="button" title="朗讀中文">▶</button><span class="s" data-i="0">1840 年，上、下加拿大合併為「加拿大省」（Province of Canada）。</span><span class="s" data-i="1">路易－伊波利特・拉方丹爵士（Sir Louis-Hippolyte La Fontaine）和羅伯特・鮑德溫（Robert Baldwin）等改革派，與新斯科細亞的約瑟夫・豪（Joseph Howe）同步，和英國總督合作推動責任政府。</span></div>
+  <div class="rd-cell rd-en"><button class="rd-play" data-lang="en" data-p="27" type="button" title="Read English">▶</button><span class="s" data-i="0">In 1840, Upper and Lower Canada were united as the Province of Canada.</span> <span class="s" data-i="1">Reformers such as Sir Louis-Hippolyte La Fontaine and Robert Baldwin, in parallel with Joseph Howe in Nova Scotia, worked with British governors toward responsible government.</span></div>
+</div>
+<div class="rd-row" data-p="28">
+  <div class="rd-cell rd-zh"><button class="rd-play" data-lang="zh" data-p="28" type="button" title="朗讀中文">▶</button><span class="s" data-i="0">英屬北美第一個獲得完全責任政府的殖民地是新斯科細亞，時間是 1847 到 48 年。</span><span class="s" data-i="1">1848 到 49 年，聯合加拿大的總督額爾金勳爵（Lord Elgin）在倫敦的鼓勵下，引進了責任政府。</span></div>
+  <div class="rd-cell rd-en"><button class="rd-play" data-lang="en" data-p="28" type="button" title="Read English">▶</button><span class="s" data-i="0">The first British North American colony to attain full responsible government was Nova Scotia in 1847–48.</span> <span class="s" data-i="1">In 1848–49 the governor of United Canada, Lord Elgin, with encouragement from London, introduced responsible government.</span></div>
+</div>
+<div class="rd-row" data-p="29">
+  <div class="rd-cell rd-zh"><button class="rd-play" data-lang="zh" data-p="29" type="button" title="朗讀中文">▶</button><span class="s" data-i="0">這就是我們今天的制度：政府如果在議會的信任投票中落敗，就必須辭職。</span><span class="s" data-i="1">拉方丹是民主和法語權利的捍衛者，他成為加拿大第一位責任政府的領袖。</span></div>
+  <div class="rd-cell rd-en"><button class="rd-play" data-lang="en" data-p="29" type="button" title="Read English">▶</button><span class="s" data-i="0">This is the system that we have today: if the government loses a confidence vote in the assembly it must resign.</span> <span class="s" data-i="1">La Fontaine, a champion of democracy and French language rights, became the first leader of a responsible government in the Canadas.</span></div>
+</div></section><section class="rd-sec"><h2>聯邦<small>Confederation</small></h2>
+<div class="rd-row" data-p="30">
+  <div class="rd-cell rd-zh"><button class="rd-play" data-lang="zh" data-p="30" type="button" title="朗讀中文">▶</button><span class="s" data-i="0">1864 年到 1867 年，新斯科細亞、新布藍瑞克和加拿大省的代表在英國的支持下，共同努力建立一個新國家。</span><span class="s" data-i="1">這些人被稱為「聯邦之父」。</span><span class="s" data-i="2">他們建立了兩級政府：聯邦和省。</span><span class="s" data-i="3">原來的加拿大省被拆成兩個新省：安大略和魁北克；它們與新布藍瑞克、新斯科細亞一起，組成了名為「加拿大自治領」（Dominion of Canada）的新國家。</span><span class="s" data-i="4">每個省都選舉自己的議會，並掌管教育、醫療等領域。</span></div>
+  <div class="rd-cell rd-en"><button class="rd-play" data-lang="en" data-p="30" type="button" title="Read English">▶</button><span class="s" data-i="0">From 1864 to 1867, representatives of Nova Scotia, New Brunswick and the Province of Canada, with British support, worked together to establish a new country.</span> <span class="s" data-i="1">These men are known as the Fathers of Confederation.</span> <span class="s" data-i="2">They created two levels of government: federal and provincial.</span> <span class="s" data-i="3">The old Province of Canada was split into two new provinces: Ontario and Quebec, which, together with New Brunswick and Nova Scotia, formed the new country called the Dominion of Canada.</span> <span class="s" data-i="4">Each province would elect its own legislature and have control of such areas as education and health.</span></div>
+</div>
+<div class="rd-row" data-p="31">
+  <div class="rd-cell rd-zh"><button class="rd-play" data-lang="zh" data-p="31" type="button" title="朗讀中文">▶</button><span class="s" data-i="0">英國國會於 1867 年通過《英屬北美法案》（British North America Act）。</span><span class="s" data-i="1">加拿大自治領於 1867 年 7 月 1 日正式誕生。</span><span class="s" data-i="2">在 1982 年以前，7 月 1 日被稱為「自治領日」（Dominion Day），紀念加拿大成為自治領的那一天。</span><span class="s" data-i="3">今天它的正式名稱是「加拿大日」（Canada Day）。</span></div>
+  <div class="rd-cell rd-en"><button class="rd-play" data-lang="en" data-p="31" type="button" title="Read English">▶</button><span class="s" data-i="0">The British Parliament passed the British North America Act in 1867.</span> <span class="s" data-i="1">The Dominion of Canada was officially born on July 1, 1867.</span> <span class="s" data-i="2">Until 1982, July 1 was celebrated as &quot;Dominion Day&quot; to commemorate the day that Canada became a self-governing Dominion.</span> <span class="s" data-i="3">Today it is officially known as Canada Day.</span></div>
+</div></section><section class="rd-sec"><h2>從海到海的自治領<small>Dominion from Sea to Sea</small></h2>
+<div class="rd-row" data-p="32">
+  <div class="rd-cell rd-zh"><button class="rd-play" data-lang="zh" data-p="32" type="button" title="朗讀中文">▶</button><span class="s" data-i="0">來自新布藍瑞克的民選官員、聯邦之父李奧納德・蒂利爵士（Sir Leonard Tilley），在 1864 年提議使用「加拿大自治領」這個名稱。</span><span class="s" data-i="1">他的靈感來自《聖經・詩篇》第 72 篇：「他要執掌權柄，從這海直到那海，從大河直到地極。」</span><span class="s" data-i="2">這句話體現了建立一個橫跨大陸、強大、團結、富裕而自由的國家的願景。</span></div>
+  <div class="rd-cell rd-en"><button class="rd-play" data-lang="en" data-p="32" type="button" title="Read English">▶</button><span class="s" data-i="0">Sir Leonard Tilley, an elected official and Father of Confederation from New Brunswick, suggested the term Dominion of Canada in 1864.</span> <span class="s" data-i="1">He was inspired by Psalm 72 in the Bible which refers to &quot;dominion from sea to sea and from the river to the ends of the earth.&quot;</span> <span class="s" data-i="2">This phrase embodied the vision of building a powerful, united, wealthy and free country that spanned a continent.</span></div>
+</div></section><section class="rd-sec"><h2>加拿大第一任總理<small>Canada&#x27;s First Prime Minister</small></h2>
+<div class="rd-row" data-p="33">
+  <div class="rd-cell rd-zh"><button class="rd-play" data-lang="zh" data-p="33" type="button" title="朗讀中文">▶</button><span class="s" data-i="0">1867 年，聯邦之父約翰・亞歷山大・麥克唐納爵士（Sir John Alexander Macdonald）成為加拿大第一任總理。</span><span class="s" data-i="1">他 1815 年 1 月 11 日生於蘇格蘭，小時候來到上加拿大。</span><span class="s" data-i="2">他是安大略京士頓的律師，也是一位才華洋溢、個性鮮明的政治家。</span><span class="s" data-i="3">國會將 1 月 11 日定為「約翰・A・麥克唐納爵士日」。</span><span class="s" data-i="4">他的肖像印在 10 元紙鈔上。</span></div>
+  <div class="rd-cell rd-en"><button class="rd-play" data-lang="en" data-p="33" type="button" title="Read English">▶</button><span class="s" data-i="0">In 1867, Sir John Alexander Macdonald, a Father of Confederation, became Canada&#x27;s first Prime Minister.</span> <span class="s" data-i="1">Born in Scotland on January 11, 1815, he came to Upper Canada as a child.</span> <span class="s" data-i="2">He was a lawyer in Kingston, Ontario, a gifted politician and a colourful personality.</span> <span class="s" data-i="3">Parliament has recognized January 11 as Sir John A. Macdonald Day.</span> <span class="s" data-i="4">His portrait is on the $10 bill.</span></div>
+</div>
+<div class="rd-row" data-p="34">
+  <div class="rd-cell rd-zh"><button class="rd-play" data-lang="zh" data-p="34" type="button" title="朗讀中文">▶</button><span class="s" data-i="0">喬治－艾蒂安・卡蒂埃爵士是來自魁北克的聯邦主要設計者。</span><span class="s" data-i="1">他是鐵路律師、蒙特婁人、麥克唐納的親密盟友，也是愛國的法裔加拿大人；他帶領魁北克加入聯邦，並協助談判讓西北地區（Northwest Territories）、曼尼托巴（Manitoba）和卑詩省（British Columbia）加入加拿大。</span></div>
+  <div class="rd-cell rd-en"><button class="rd-play" data-lang="en" data-p="34" type="button" title="Read English">▶</button><span class="s" data-i="0">Sir George-Étienne Cartier was the key architect of Confederation from Quebec.</span> <span class="s" data-i="1">A railway lawyer, Montrealer, close ally of Macdonald and patriotic Canadien, Cartier led Quebec into Confederation and helped negotiate the entry of the Northwest Territories, Manitoba and British Columbia into Canada.</span></div>
+</div></section><section class="rd-sec"><h2>自治領的擴張<small>Expansion of the Dominion</small></h2>
+<div class="rd-row" data-p="35">
+  <div class="rd-cell rd-zh"><button class="rd-play" data-lang="zh" data-p="35" type="button" title="朗讀中文">▶</button><span class="s" data-i="0">1867 年：安大略、魁北克、新斯科細亞、新布藍瑞克。</span><span class="s" data-i="1">1870 年：曼尼托巴、西北地區。</span><span class="s" data-i="2">1871 年：卑詩省。</span><span class="s" data-i="3">1873 年：愛德華王子島。</span><span class="s" data-i="4">1880 年：北極群島劃入西北地區。</span><span class="s" data-i="5">1898 年：育空地區。</span><span class="s" data-i="6">1905 年：亞伯達、薩克其萬。</span><span class="s" data-i="7">1949 年：紐芬蘭與拉布拉多。</span><span class="s" data-i="8">1999 年：努納福特。</span></div>
+  <div class="rd-cell rd-en"><button class="rd-play" data-lang="en" data-p="35" type="button" title="Read English">▶</button><span class="s" data-i="0">1867: Ontario, Quebec, Nova Scotia, New Brunswick.</span> <span class="s" data-i="1">1870: Manitoba, Northwest Territories.</span> <span class="s" data-i="2">1871: British Columbia.</span> <span class="s" data-i="3">1873: Prince Edward Island.</span> <span class="s" data-i="4">1880: Transfer of the Arctic Islands to the Northwest Territories.</span> <span class="s" data-i="5">1898: Yukon Territory.</span> <span class="s" data-i="6">1905: Alberta, Saskatchewan.</span> <span class="s" data-i="7">1949: Newfoundland and Labrador.</span> <span class="s" data-i="8">1999: Nunavut.</span></div>
+</div></section><section class="rd-sec"><h2>西部的挑戰<small>Challenge in the West</small></h2>
+<div class="rd-row" data-p="36">
+  <div class="rd-cell rd-zh"><button class="rd-play" data-lang="zh" data-p="36" type="button" title="朗讀中文">▶</button><span class="s" data-i="0">1869 年，加拿大從哈德遜灣公司手中接管廣大的西北地區，卻沒有徵詢紅河（Red River）一帶一萬兩千名梅蒂人（Métis）的意見。</span><span class="s" data-i="1">作為回應，路易・瑞爾（Louis Riel）領導武裝起義，奪取了領地首府加里堡（Fort Garry）。</span><span class="s" data-i="2">加拿大的未來岌岌可危。</span><span class="s" data-i="3">如果連內陸都控制不了，自治領怎麼可能「從海到海」？</span></div>
+  <div class="rd-cell rd-en"><button class="rd-play" data-lang="en" data-p="36" type="button" title="Read English">▶</button><span class="s" data-i="0">When Canada took over the vast northwest region from the Hudson&#x27;s Bay Company in 1869, the 12,000 Métis of the Red River were not consulted.</span> <span class="s" data-i="1">In response, Louis Riel led an armed uprising and seized Fort Garry, the territorial capital.</span> <span class="s" data-i="2">Canada&#x27;s future was in jeopardy.</span> <span class="s" data-i="3">How could the Dominion reach from sea to sea if it could not control the interior?</span></div>
+</div>
+<div class="rd-row" data-p="37">
+  <div class="rd-cell rd-zh"><button class="rd-play" data-lang="zh" data-p="37" type="button" title="朗讀中文">▶</button><span class="s" data-i="0">1870 年，渥太華派兵奪回加里堡。</span><span class="s" data-i="1">瑞爾逃往美國，加拿大則成立了一個新省：曼尼托巴。</span><span class="s" data-i="2">瑞爾曾當選國會議員，但從未就任。</span><span class="s" data-i="3">後來，梅蒂人和印第安人的權利再次因西進拓殖而受到威脅，1885 年在今天的薩克其萬爆發第二次叛亂，導致瑞爾以叛國罪受審並被處決——這個決定在魁北克遭到強烈反對。</span><span class="s" data-i="4">許多人把瑞爾視為英雄、梅蒂人權利的捍衛者，以及曼尼托巴之父。</span></div>
+  <div class="rd-cell rd-en"><button class="rd-play" data-lang="en" data-p="37" type="button" title="Read English">▶</button><span class="s" data-i="0">Ottawa sent soldiers to retake Fort Garry in 1870.</span> <span class="s" data-i="1">Riel fled to the United States and Canada established a new province: Manitoba.</span> <span class="s" data-i="2">Riel was elected to Parliament but never took his seat.</span> <span class="s" data-i="3">Later, as Métis and Indian rights were again threatened by westward settlement, a second rebellion in 1885 in present-day Saskatchewan led to Riel&#x27;s trial and execution for high treason, a decision that was strongly opposed in Quebec.</span> <span class="s" data-i="4">Riel is seen by many as a hero, a defender of Métis rights and the father of Manitoba.</span></div>
+</div>
+<div class="rd-row" data-p="38">
+  <div class="rd-cell rd-zh"><button class="rd-play" data-lang="zh" data-p="38" type="button" title="朗讀中文">▶</button><span class="s" data-i="0">第一次梅蒂人起義之後，麥克唐納總理於 1873 年成立「西北騎警」（North West Mounted Police，NWMP），以平定西部並協助與印第安人談判。</span><span class="s" data-i="1">西北騎警建立了卡加利堡（Fort Calgary）、麥克勞德堡（Fort MacLeod）等據點，今天都成了城市和城鎮。</span><span class="s" data-i="2">里賈納（Regina）成為它的總部。</span><span class="s" data-i="3">今天的皇家加拿大騎警（Royal Canadian Mounted Police，簡稱 RCMP 或「騎警」）是國家警察，也是加拿大最著名的象徵之一。</span></div>
+  <div class="rd-cell rd-en"><button class="rd-play" data-lang="en" data-p="38" type="button" title="Read English">▶</button><span class="s" data-i="0">After the first Métis uprising, Prime Minister Macdonald established the North West Mounted Police (NWMP) in 1873 to pacify the West and assist in negotiations with the Indians.</span> <span class="s" data-i="1">The NWMP founded Fort Calgary, Fort MacLeod and other centres that today are cities and towns.</span> <span class="s" data-i="2">Regina became its headquarters.</span> <span class="s" data-i="3">Today, the Royal Canadian Mounted Police (RCMP or &quot;the Mounties&quot;) are the national police force and one of Canada&#x27;s best-known symbols.</span></div>
+</div></section><section class="rd-sec"><h2>從海到海的鐵路<small>A Railway from Sea to Sea</small></h2>
+<div class="rd-row" data-p="39">
+  <div class="rd-cell rd-zh"><button class="rd-play" data-lang="zh" data-p="39" type="button" title="朗讀中文">▶</button><span class="s" data-i="0">在渥太華承諾修建一條通往西海岸的鐵路之後，卑詩省於 1871 年加入加拿大。</span><span class="s" data-i="1">1885 年 11 月 7 日，蘇格蘭出生的加拿大太平洋鐵路（Canadian Pacific Railway，CPR）董事唐納德・史密斯（Donald Smith，即史特拉斯科納勳爵）敲下最後一根道釘，一個強而有力的統一象徵就此完成。</span><span class="s" data-i="2">這項工程由英國和美國的投資者出資，由歐洲和華人勞工共同建造。</span><span class="s" data-i="3">之後華人受到歧視，包括「人頭稅」（Head Tax）——一種以種族為依據的入境費。</span><span class="s" data-i="4">加拿大政府在 2006 年為這項歧視政策道歉。</span></div>
+  <div class="rd-cell rd-en"><button class="rd-play" data-lang="en" data-p="39" type="button" title="Read English">▶</button><span class="s" data-i="0">British Columbia joined Canada in 1871 after Ottawa promised to build a railway to the West Coast.</span> <span class="s" data-i="1">On November 7, 1885, a powerful symbol of unity was completed when Donald Smith (Lord Strathcona), the Scottish-born director of the Canadian Pacific Railway (CPR), drove the last spike.</span> <span class="s" data-i="2">The project was financed by British and American investors and built by both European and Chinese labour.</span> <span class="s" data-i="3">Afterwards the Chinese were subject to discrimination, including the Head Tax, a race-based entry fee.</span> <span class="s" data-i="4">The Government of Canada apologized in 2006 for this discriminatory policy.</span></div>
+</div></section><section class="rd-sec"><h2>向西發展<small>Moving Westward</small></h2>
+<div class="rd-row" data-p="40">
+  <div class="rd-cell rd-zh"><button class="rd-play" data-lang="zh" data-p="40" type="button" title="朗讀中文">▶</button><span class="s" data-i="0">在 1890 年代到 1900 年代初的經濟繁榮期，加拿大的經濟成長，工業化程度也提高。</span><span class="s" data-i="1">這段期間有一百萬英國人和一百萬美國人移民到加拿大。</span></div>
+  <div class="rd-cell rd-en"><button class="rd-play" data-lang="en" data-p="40" type="button" title="Read English">▶</button><span class="s" data-i="0">Canada&#x27;s economy grew and became more industrialized during the economic boom of the 1890s and early 1900s.</span> <span class="s" data-i="1">One million British and one million Americans immigrated to Canada at this time.</span></div>
+</div>
+<div class="rd-row" data-p="41">
+  <div class="rd-cell rd-zh"><button class="rd-play" data-lang="zh" data-p="41" type="button" title="朗讀中文">▶</button><span class="s" data-i="0">威爾弗里德・勞里埃爵士（Sir Wilfrid Laurier）成為聯邦成立以來第一位法裔加拿大總理，他鼓勵移民前往西部。</span><span class="s" data-i="1">他的肖像印在 5 元紙鈔上。</span><span class="s" data-i="2">鐵路讓移民得以在 1914 年之前到西部定居，包括十七萬烏克蘭人、十一萬五千名波蘭人，以及數萬名來自德國、法國、挪威和瑞典的人，他們發展出蓬勃的農業。</span></div>
+  <div class="rd-cell rd-en"><button class="rd-play" data-lang="en" data-p="41" type="button" title="Read English">▶</button><span class="s" data-i="0">Sir Wilfrid Laurier became the first French-Canadian prime minister since Confederation and encouraged immigration to the West.</span> <span class="s" data-i="1">His portrait is on the $5 bill.</span> <span class="s" data-i="2">The railway made it possible for immigrants, including 170,000 Ukrainians, 115,000 Poles and tens of thousands from Germany, France, Norway and Sweden to settle in the West before 1914 and develop a thriving agricultural sector.</span></div>
+</div></section><section class="rd-sec"><h2>婦女取得投票權<small>Women Get the Vote</small></h2>
+<div class="rd-row" data-p="42">
+  <div class="rd-cell rd-zh"><button class="rd-play" data-lang="zh" data-p="42" type="button" title="朗讀中文">▶</button><span class="s" data-i="0">聯邦成立時，投票權僅限於擁有財產的成年白人男性。</span><span class="s" data-i="1">這在當時大多數民主國家都很普遍。</span><span class="s" data-i="2">婦女爭取投票權的努力，稱為「婦女參政運動」（women&#x27;s suffrage movement）。</span><span class="s" data-i="3">這項運動在加拿大的創始人是艾蜜莉・斯托醫師（Dr. Emily Stowe），她是第一位在加拿大執業的加拿大女醫師。</span><span class="s" data-i="4">1916 年，曼尼托巴成為第一個給予婦女投票權的省份。</span></div>
+  <div class="rd-cell rd-en"><button class="rd-play" data-lang="en" data-p="42" type="button" title="Read English">▶</button><span class="s" data-i="0">At the time of Confederation, the vote was limited to property-owning adult white males.</span> <span class="s" data-i="1">This was common in most democratic countries at the time.</span> <span class="s" data-i="2">The effort by women to achieve the right to vote is known as the women&#x27;s suffrage movement.</span> <span class="s" data-i="3">Its founder in Canada was Dr. Emily Stowe, the first Canadian woman to practise medicine in Canada.</span> <span class="s" data-i="4">In 1916, Manitoba became the first province to grant voting rights to women.</span></div>
+</div>
+<div class="rd-row" data-p="43">
+  <div class="rd-cell rd-zh"><button class="rd-play" data-lang="zh" data-p="43" type="button" title="朗讀中文">▶</button><span class="s" data-i="0">1917 年，由於斯托醫師等婦女參政運動者的領導，羅伯特・博登爵士（Sir Robert Borden）的聯邦政府給予婦女聯邦選舉的投票權——先是前線的護士，接著是有男性親屬正在服役的婦女。</span><span class="s" data-i="1">1918 年，大多數 21 歲以上的加拿大女性公民獲得聯邦選舉投票權。</span><span class="s" data-i="2">1921 年，農民兼教師艾格妮絲・麥克費爾（Agnes Macphail）成為第一位女性國會議員。</span><span class="s" data-i="3">由於泰蕾茲・卡斯格蘭（Thérèse Casgrain）等人的努力，魁北克在 1940 年給予婦女投票權。</span></div>
+  <div class="rd-cell rd-en"><button class="rd-play" data-lang="en" data-p="43" type="button" title="Read English">▶</button><span class="s" data-i="0">In 1917, thanks to the leadership of women such as Dr. Stowe and other suffragettes, the federal government of Sir Robert Borden gave women the right to vote in federal elections — first to nurses at the battle front, then to women who were related to men in active wartime service.</span> <span class="s" data-i="1">In 1918, most Canadian female citizens aged 21 and over were granted the right to vote in federal elections.</span> <span class="s" data-i="2">In 1921 Agnes Macphail, a farmer and teacher, became the first woman MP.</span> <span class="s" data-i="3">Due to the work of Thérèse Casgrain and others, Quebec granted women the vote in 1940.</span></div>
+</div></section><section class="rd-sec"><h2>第一次世界大戰<small>The First World War</small></h2>
+<div class="rd-row" data-p="44">
+  <div class="rd-cell rd-zh"><button class="rd-play" data-lang="zh" data-p="44" type="button" title="朗讀中文">▶</button><span class="s" data-i="0">大多數加拿大人以身為大英帝國的一份子為榮。</span><span class="s" data-i="1">超過七千人自願參加南非戰爭（1899–1902，俗稱波耳戰爭），其中 260 多人陣亡。</span></div>
+  <div class="rd-cell rd-en"><button class="rd-play" data-lang="en" data-p="44" type="button" title="Read English">▶</button><span class="s" data-i="0">Most Canadians were proud to be part of the British Empire.</span> <span class="s" data-i="1">Over 7,000 volunteered to fight in the South African War (1899–1902), popularly known as the Boer War, and over 260 died.</span></div>
+</div>
+<div class="rd-row" data-p="45">
+  <div class="rd-cell rd-zh"><button class="rd-play" data-lang="zh" data-p="45" type="button" title="朗讀中文">▶</button><span class="s" data-i="0">1914 年，德國攻擊比利時和法國，英國宣戰，渥太華組建了「加拿大遠征軍」（Canadian Expeditionary Force，後來的「加拿大軍團」）。</span><span class="s" data-i="1">在總人口八百萬人當中，有超過六十萬加拿大人參戰，大多是志願軍。</span></div>
+  <div class="rd-cell rd-en"><button class="rd-play" data-lang="en" data-p="45" type="button" title="Read English">▶</button><span class="s" data-i="0">When Germany attacked Belgium and France in 1914 and Britain declared war, Ottawa formed the Canadian Expeditionary Force (later the Canadian Corps).</span> <span class="s" data-i="1">More than 600,000 Canadians served in the war, most of them volunteers, out of a total population of eight million.</span></div>
+</div>
+<div class="rd-row" data-p="46">
+  <div class="rd-cell rd-zh"><button class="rd-play" data-lang="zh" data-p="46" type="button" title="朗讀中文">▶</button><span class="s" data-i="0">在戰場上，加拿大人證明自己是堅韌、有創意的軍人。</span><span class="s" data-i="1">1917 年 4 月，加拿大軍團攻下維米嶺（Vimy Ridge），一萬人傷亡，為加拿大人贏得「大英帝國突擊部隊」的英勇美名。</span><span class="s" data-i="2">一位加拿大軍官說：「那是從大西洋到太平洋的整個加拿大在列隊行進……在那短短幾分鐘裡，我見證了一個國家的誕生。」</span><span class="s" data-i="3">4 月 9 日被定為「維米日」（Vimy Day）。</span></div>
+  <div class="rd-cell rd-en"><button class="rd-play" data-lang="en" data-p="46" type="button" title="Read English">▶</button><span class="s" data-i="0">On the battlefield, the Canadians proved to be tough, innovative soldiers.</span> <span class="s" data-i="1">The Canadian Corps captured Vimy Ridge in April 1917, with 10,000 killed or wounded, securing the Canadians&#x27; reputation for valour as the &quot;shock troops of the British Empire.&quot;</span> <span class="s" data-i="2">One Canadian officer said: &quot;It was Canada from the Atlantic to the Pacific on parade ... In those few minutes I witnessed the birth of a nation.&quot;</span> <span class="s" data-i="3">April 9 is celebrated as Vimy Day.</span></div>
+</div>
+<div class="rd-row" data-p="47">
+  <div class="rd-cell rd-zh"><button class="rd-play" data-lang="zh" data-p="47" type="button" title="朗讀中文">▶</button><span class="s" data-i="0">遺憾的是，1914 年到 1920 年間，渥太華把八千多名前奧匈帝國臣民（主要是烏克蘭男性）當作「敵國僑民」，關進全國 24 個勞動營——儘管英國曾建議不要這麼做。</span></div>
+  <div class="rd-cell rd-en"><button class="rd-play" data-lang="en" data-p="47" type="button" title="Read English">▶</button><span class="s" data-i="0">Regrettably, from 1914 to 1920, Ottawa interned over 8,000 former Austro-Hungarian subjects, mainly Ukrainian men, as &quot;enemy aliens&quot; in 24 labour camps across Canada, even though Britain advised against the policy.</span></div>
+</div>
+<div class="rd-row" data-p="48">
+  <div class="rd-cell rd-zh"><button class="rd-play" data-lang="zh" data-p="48" type="button" title="朗讀中文">▶</button><span class="s" data-i="0">1918 年，在加拿大最偉大的軍人亞瑟・柯里將軍（General Sir Arthur Currie）的指揮下，加拿大軍團與法軍和大英帝國部隊並肩，在「最後一百天」攻勢中向前推進。</span><span class="s" data-i="1">其中包括 1918 年 8 月 8 日大獲全勝的亞眠戰役（Battle of Amiens）——德國人稱那天為「德軍的黑色之日」——接著是阿拉斯（Arras）、北運河（Canal du Nord）、康布雷（Cambrai）和蒙斯（Mons）。</span><span class="s" data-i="2">隨著德國和奧地利投降，戰爭於 1918 年 11 月 11 日以停戰協定（Armistice）告終。</span><span class="s" data-i="3">總共有六萬名加拿大人陣亡，十七萬人受傷。</span></div>
+  <div class="rd-cell rd-en"><button class="rd-play" data-lang="en" data-p="48" type="button" title="Read English">▶</button><span class="s" data-i="0">In 1918, under the command of General Sir Arthur Currie, Canada&#x27;s greatest soldier, the Canadian Corps advanced alongside the French and British Empire troops in the last hundred days.</span> <span class="s" data-i="1">These included the victorious Battle of Amiens on August 8, 1918–which the Germans called &quot;the black day of the German Army&quot;–followed by Arras, Canal du Nord, Cambrai and Mons.</span> <span class="s" data-i="2">With Germany and Austria&#x27;s surrender, the war ended in the Armistice on November 11, 1918.</span> <span class="s" data-i="3">In total 60,000 Canadians were killed and 170,000 wounded.</span></div>
+</div></section><section class="rd-sec"><h2>國殤紀念日<small>Remembrance Day</small></h2>
+<div class="rd-row" data-p="49">
+  <div class="rd-cell rd-zh"><button class="rd-play" data-lang="zh" data-p="49" type="button" title="朗讀中文">▶</button><span class="s" data-i="0">每年 11 月 11 日的國殤紀念日（Remembrance Day），加拿大人緬懷退伍軍人和在歷次戰爭中英勇犧牲的將士——涵蓋加拿大人參與過的所有戰爭，直到今天。</span><span class="s" data-i="1">加拿大人佩戴紅色罌粟花，並在 11 月 11 日 11 時默哀片刻，向一百多萬曾經服役的勇敢男女，以及十一萬名獻出生命的人致敬。</span></div>
+  <div class="rd-cell rd-en"><button class="rd-play" data-lang="en" data-p="49" type="button" title="Read English">▶</button><span class="s" data-i="0">Canadians remember the sacrifices of our veterans and brave fallen in all wars up to the present day in which Canadians took part, each year on November 11: Remembrance Day.</span> <span class="s" data-i="1">Canadians wear the red poppy and observe a moment of silence at the 11th hour of the 11th day of the 11th month to honour the sacrifices of over a million brave men and women who have served, and the 110,000 who have given their lives.</span></div>
+</div>
+<div class="rd-row" data-p="50">
+  <div class="rd-cell rd-zh"><button class="rd-play" data-lang="zh" data-p="50" type="button" title="朗讀中文">▶</button><span class="s" data-i="0">加拿大軍醫中校約翰・麥克雷（John McCrae）在 1915 年寫下了詩作〈在法蘭德斯戰場〉（In Flanders Fields）。</span></div>
+  <div class="rd-cell rd-en"><button class="rd-play" data-lang="en" data-p="50" type="button" title="Read English">▶</button><span class="s" data-i="0">Canadian medical officer Lieutenant-Colonel John McCrae composed the poem &quot;In Flanders Fields&quot; in 1915.</span></div>
+</div>
+<div class="rd-row" data-p="51">
+  <div class="rd-cell rd-zh"><button class="rd-play" data-lang="zh" data-p="51" type="button" title="朗讀中文">▶</button><span class="s" data-i="0">在法蘭德斯戰場，罌粟花隨風搖曳，在一排又一排的十字架之間，那是我們長眠的地方；天空中，雲雀依然勇敢地歌唱著飛翔，卻在底下的砲聲中幾乎聽不見。</span><span class="s" data-i="1">我們是死者。就在幾天前，我們還活著，感受黎明，看見晚霞，愛人，也被愛；如今我們卻長眠在法蘭德斯戰場。</span><span class="s" data-i="2">接下我們與敵人的戰鬥吧：我們用無力的手，把火炬拋給你們；請你們高高舉起。如果你們背棄了我們這些死者的信約，即使罌粟花開遍法蘭德斯戰場，我們也無法安眠。</span></div>
+  <div class="rd-cell rd-en"><button class="rd-play" data-lang="en" data-p="51" type="button" title="Read English">▶</button><span class="s" data-i="0">In Flanders fields the poppies blow, between the crosses, row on row, that mark our place; and in the sky the larks, still bravely singing, fly, scarce heard amid the guns below.</span> <span class="s" data-i="1">We are the dead. Short days ago we lived, felt dawn, saw sunset glow, loved, and were loved, and now we lie in Flanders fields.</span> <span class="s" data-i="2">Take up our quarrel with the foe: to you from failing hands we throw the torch; be yours to hold it high. If ye break faith with us who die we shall not sleep, though poppies grow in Flanders fields.</span></div>
+</div></section><section class="rd-sec"><h2>兩次大戰之間<small>Between the Wars</small></h2>
+<div class="rd-row" data-p="52">
+  <div class="rd-cell rd-zh"><button class="rd-play" data-lang="zh" data-p="52" type="button" title="朗讀中文">▶</button><span class="s" data-i="0">第一次世界大戰之後，大英帝國演變成一個自由結合的國家組織，稱為「大英國協」（British Commonwealth of Nations）。</span><span class="s" data-i="1">加拿大至今仍是國協的主要成員，其他成員還包括帝國的繼承國，如印度、澳洲、紐西蘭，以及幾個非洲和加勒比海國家。</span></div>
+  <div class="rd-cell rd-en"><button class="rd-play" data-lang="en" data-p="52" type="button" title="Read English">▶</button><span class="s" data-i="0">After the First World War, the British Empire evolved into a free association of states known as the British Commonwealth of Nations.</span> <span class="s" data-i="1">Canada remains a leading member of the Commonwealth to this day, together with other successor states of the Empire such as India, Australia, New Zealand, and several African and Caribbean countries.</span></div>
+</div>
+<div class="rd-row" data-p="53">
+  <div class="rd-cell rd-zh"><button class="rd-play" data-lang="zh" data-p="53" type="button" title="朗讀中文">▶</button><span class="s" data-i="0">「咆哮的二〇年代」是繁榮的年代，企業興旺，失業率低。</span><span class="s" data-i="1">然而 1929 年的股市崩盤帶來了經濟大蕭條，也就是「骯髒的三〇年代」。</span><span class="s" data-i="2">1933 年失業率高達 27%，許多企業倒閉。</span><span class="s" data-i="3">加拿大西部的農民受創最重，原因是穀物價格低迷和嚴重的乾旱。</span></div>
+  <div class="rd-cell rd-en"><button class="rd-play" data-lang="en" data-p="53" type="button" title="Read English">▶</button><span class="s" data-i="0">The &quot;Roaring Twenties&quot; were boom times, with prosperity for businesses and low unemployment.</span> <span class="s" data-i="1">The stock market crash of 1929, however, led to the Great Depression or the &quot;Dirty Thirties.&quot;</span> <span class="s" data-i="2">Unemployment reached 27% in 1933 and many businesses were wiped out.</span> <span class="s" data-i="3">Farmers in Western Canada were hit hardest by low grain prices and a terrible drought.</span></div>
+</div>
+<div class="rd-row" data-p="54">
+  <div class="rd-cell rd-zh"><button class="rd-play" data-lang="zh" data-p="54" type="button" title="朗讀中文">▶</button><span class="s" data-i="0">民眾愈來愈要求政府建立社會安全網，包括最低工資、標準工時，以及失業保險等制度。</span><span class="s" data-i="1">加拿大銀行（Bank of Canada）——負責管理貨幣供給、穩定金融體系的中央銀行——於 1934 年成立。</span></div>
+  <div class="rd-cell rd-en"><button class="rd-play" data-lang="en" data-p="54" type="button" title="Read English">▶</button><span class="s" data-i="0">There was growing demand for the government to create a social safety net with minimum wages, a standard work week and programs such as unemployment insurance.</span> <span class="s" data-i="1">The Bank of Canada, a central bank to manage the money supply and bring stability to the financial system, was created in 1934.</span></div>
+</div></section><section class="rd-sec"><h2>第二次世界大戰<small>The Second World War</small></h2>
+<div class="rd-row" data-p="55">
+  <div class="rd-cell rd-zh"><button class="rd-play" data-lang="zh" data-p="55" type="button" title="朗讀中文">▶</button><span class="s" data-i="0">1939 年，德國的國家社會主義（納粹）獨裁者阿道夫・希特勒入侵波蘭並征服歐洲大部分地區，第二次世界大戰爆發。</span><span class="s" data-i="1">加拿大與民主盟國並肩作戰，以武力打倒暴政。</span></div>
+  <div class="rd-cell rd-en"><button class="rd-play" data-lang="en" data-p="55" type="button" title="Read English">▶</button><span class="s" data-i="0">The Second World War began in 1939 when Adolf Hitler, the National Socialist (Nazi) dictator of Germany, invaded Poland and conquered much of Europe.</span> <span class="s" data-i="1">Canada joined with its democratic allies in the fight to defeat tyranny by force of arms.</span></div>
+</div>
+<div class="rd-row" data-p="56">
+  <div class="rd-cell rd-zh"><button class="rd-play" data-lang="zh" data-p="56" type="button" title="朗讀中文">▶</button><span class="s" data-i="0">在一千一百五十萬人口中，有超過一百萬加拿大人和紐芬蘭人（當時紐芬蘭是獨立的英國屬地）在二戰中服役。</span><span class="s" data-i="1">這是很高的比例，其中有四萬四千人陣亡。</span></div>
+  <div class="rd-cell rd-en"><button class="rd-play" data-lang="en" data-p="56" type="button" title="Read English">▶</button><span class="s" data-i="0">More than one million Canadians and Newfoundlanders (Newfoundland was a separate British entity) served in the Second World War, out of a population of 11.5 million.</span> <span class="s" data-i="1">This was a high proportion and of these, 44,000 were killed.</span></div>
+</div>
+<div class="rd-row" data-p="57">
+  <div class="rd-cell rd-zh"><button class="rd-play" data-lang="zh" data-p="57" type="button" title="朗讀中文">▶</button><span class="s" data-i="0">加拿大人英勇作戰，在 1941 年抵抗日本帝國進攻香港的失敗防衛戰，以及 1942 年突襲法國海岸納粹控制的迪耶普（Dieppe）失利中，都蒙受了損失。</span></div>
+  <div class="rd-cell rd-en"><button class="rd-play" data-lang="en" data-p="57" type="button" title="Read English">▶</button><span class="s" data-i="0">The Canadians fought bravely and suffered losses in the unsuccessful defence of Hong Kong (1941) from attack by Imperial Japan, and in a failed raid on Nazi-controlled Dieppe on the coast of France (1942).</span></div>
+</div>
+<div class="rd-row" data-p="58">
+  <div class="rd-cell rd-zh"><button class="rd-play" data-lang="zh" data-p="58" type="button" title="朗讀中文">▶</button><span class="s" data-i="0">皇家加拿大空軍（RCAF）參與了不列顛戰役，並在歐洲上空的轟炸機和戰鬥機中，提供了很高比例的國協空勤人員。</span><span class="s" data-i="1">此外，加拿大對盟軍空戰的貢獻超過任何其他國協國家；在「大英國協空軍訓練計畫」下，超過十三萬名盟軍空勤人員在加拿大受訓。</span></div>
+  <div class="rd-cell rd-en"><button class="rd-play" data-lang="en" data-p="58" type="button" title="Read English">▶</button><span class="s" data-i="0">The Royal Canadian Air Force (RCAF) took part in the Battle of Britain and provided a high proportion of Commonwealth aircrew in bombers and fighter planes over Europe.</span> <span class="s" data-i="1">Moreover, Canada contributed more to the Allied air effort than any other Commonwealth country, with over 130,000 Allied air crew trained in Canada under the British Commonwealth Air Training Plan.</span></div>
+</div>
+<div class="rd-row" data-p="59">
+  <div class="rd-cell rd-zh"><button class="rd-play" data-lang="zh" data-p="59" type="button" title="朗讀中文">▶</button><span class="s" data-i="0">皇家加拿大海軍（RCN）最光榮的時刻是大西洋戰役，他們保護商船船隊，抵禦德國潛艇。</span><span class="s" data-i="1">加拿大的商船隊協助為英國供應糧食、衣物和補給。</span><span class="s" data-i="2">第二次世界大戰結束時，加拿大擁有世界第三大的海軍。</span></div>
+  <div class="rd-cell rd-en"><button class="rd-play" data-lang="en" data-p="59" type="button" title="Read English">▶</button><span class="s" data-i="0">The Royal Canadian Navy (RCN) saw its finest hour in the Battle of the Atlantic, protecting convoys of merchant ships against German submarines.</span> <span class="s" data-i="1">Canada&#x27;s Merchant Navy helped to feed, clothe and resupply Britain.</span> <span class="s" data-i="2">At the end of the Second World War, Canada had the third-largest navy in the world.</span></div>
+</div>
+<div class="rd-row" data-p="60">
+  <div class="rd-cell rd-zh"><button class="rd-play" data-lang="zh" data-p="60" type="button" title="朗讀中文">▶</button><span class="s" data-i="0">在太平洋戰爭中，日本入侵阿留申群島、攻擊溫哥華島上的一座燈塔、向卑詩省和草原省份施放火氣球，並嚴重虐待在香港被俘的加拿大戰俘。</span><span class="s" data-i="1">日本於 1945 年 8 月 14 日投降，結束了四年的太平洋戰爭。</span></div>
+  <div class="rd-cell rd-en"><button class="rd-play" data-lang="en" data-p="60" type="button" title="Read English">▶</button><span class="s" data-i="0">In the Pacific war, Japan invaded the Aleutian Islands, attacked a lighthouse on Vancouver Island, launched fire balloons over B.C. and the Prairies, and grossly maltreated Canadian prisoners of war captured at Hong Kong.</span> <span class="s" data-i="1">Japan surrendered on August 14, 1945—the end of four years of war in the Pacific.</span></div>
+</div>
+<div class="rd-row" data-p="61">
+  <div class="rd-cell rd-zh"><button class="rd-play" data-lang="zh" data-p="61" type="button" title="朗讀中文">▶</button><span class="s" data-i="0">遺憾的是，戰爭狀態和卑詩省的輿論，導致聯邦政府強制遷移日裔加拿大人，並在沒有補償的情況下變賣他們的財產。</span><span class="s" data-i="1">儘管軍方和皇家騎警都告訴渥太華，這些人對加拿大幾乎沒有威脅，這件事還是發生了。</span><span class="s" data-i="2">加拿大政府在 1988 年為戰時的錯誤道歉，並補償受害者。</span></div>
+  <div class="rd-cell rd-en"><button class="rd-play" data-lang="en" data-p="61" type="button" title="Read English">▶</button><span class="s" data-i="0">Regrettably, the state of war and public opinion in B.C. led to the forcible relocation of Canadians of Japanese origin by the federal government and the sale of their property without compensation.</span> <span class="s" data-i="1">This occurred even though the military and the RCMP told Ottawa that they posed little danger to Canada.</span> <span class="s" data-i="2">The Government of Canada apologized in 1988 for wartime wrongs and compensated the victims.</span></div>
+</div></section><section class="rd-sec"><h2>D 日<small>D-Day</small></h2>
+<div class="rd-row" data-p="62">
+  <div class="rd-cell rd-zh"><button class="rd-play" data-lang="zh" data-p="62" type="button" title="朗讀中文">▶</button><span class="s" data-i="0">為了擊敗納粹主義和法西斯主義，盟軍進攻納粹佔領下的歐洲。</span><span class="s" data-i="1">加拿大人在 1943 到 44 年參與了解放義大利的行動。</span><span class="s" data-i="2">1944 年 6 月 6 日，也就是所謂的「D 日」，盟軍在法國北部諾曼第發動史詩般的登陸；一萬五千名加拿大士兵強攻並從德軍手中奪下朱諾海灘（Juno Beach）。</span><span class="s" data-i="3">D 日當天，每十名盟軍士兵中大約就有一名是加拿大人。</span><span class="s" data-i="4">加拿大陸軍在 1944 到 45 年解放了荷蘭，並協助迫使德國於 1945 年 5 月 8 日投降，結束了長達六年的歐洲戰爭。</span></div>
+  <div class="rd-cell rd-en"><button class="rd-play" data-lang="en" data-p="62" type="button" title="Read English">▶</button><span class="s" data-i="0">In order to defeat Nazism and Fascism, the Allies invaded Nazi-occupied Europe.</span> <span class="s" data-i="1">Canadians took part in the liberation of Italy in 1943–44.</span> <span class="s" data-i="2">In the epic invasion of Normandy in northern France on June 6, 1944, known as D-Day, 15,000 Canadian troops stormed and captured Juno Beach from the German Army.</span> <span class="s" data-i="3">Approximately one in ten Allied soldiers on D-Day was Canadian.</span> <span class="s" data-i="4">The Canadian Army liberated the Netherlands in 1944–45 and helped force the German surrender of May 8, 1945, bringing to an end six years of war in Europe.</span></div>
+</div></section>
+</div>
+<script type="application/json" id="rd-04-timings">{"en": [[[0.0, 10.085], [10.465, 15.941], [16.321, 21.5], [21.88, 25.123], [25.503, 29.539], [29.919, 32.548], [32.928, 36.705], [37.085, 42.491]], [[0.0, 6.982], [7.362, 12.316], [12.696, 23.221]], [[0.0, 8.239], [8.619, 13.372]], [[0.0, 8.992]], [[0.0, 9.666], [10.046, 15.2], [15.58, 19.744]], [[0.0, 17.667], [18.047, 22.594]], [[0.0, 2.665], [3.045, 17.02], [17.4, 20.57]], [[0.0, 7.188], [7.568, 18.09]], [[0.0, 9.04], [9.42, 14.176], [14.556, 22.924]], [[0.0, 8.727], [9.107, 13.84], [14.22, 23.458], [23.838, 30.926]], [[0.0, 4.418], [4.798, 14.424]], [[0.0, 7.669], [8.049, 16.449], [16.829, 23.57], [23.95, 28.409]], [[0.0, 7.367], [7.747, 10.089], [10.469, 19.346], [19.726, 23.898], [24.278, 39.189]], [[0.0, 5.58], [5.96, 19.958]], [[0.0, 3.56], [3.94, 10.208], [10.588, 16.353], [16.733, 33.325]], [[0.0, 6.17], [6.55, 11.13], [11.51, 16.531]], [[0.0, 5.871], [6.251, 13.32], [13.7, 25.838], [26.218, 35.196], [35.576, 45.205]], [[0.0, 6.113], [6.493, 23.085]], [[0.0, 5.288], [5.668, 8.951], [9.331, 21.157]], [[0.0, 7.768], [8.148, 13.844], [14.224, 18.074], [18.454, 25.01]], [[0.0, 1.783], [2.163, 10.186], [10.566, 22.405], [22.785, 35.841]], [[0.0, 6.078], [6.458, 17.263], [17.643, 22.817]], [[0.0, 4.386], [4.766, 17.416], [17.796, 27.242]], [[0.0, 14.124], [14.504, 18.157], [18.537, 21.203]], [[0.0, 6.821], [7.201, 13.106], [13.486, 24.303], [24.683, 28.209], [28.589, 33.508]], [[0.0, 8.599], [8.979, 15.901], [16.281, 25.035], [25.415, 33.977]], [[0.0, 14.485]], [[0.0, 4.673], [5.053, 15.966]], [[0.0, 8.212], [8.592, 18.444]], [[0.0, 6.298], [6.678, 14.546]], [[0.0, 11.946], [12.326, 15.292], [15.672, 19.265], [19.645, 31.447], [31.827, 37.493]], [[0.0, 4.5], [4.88, 9.775], [10.155, 18.023], [18.403, 20.94]], [[0.0, 8.877], [9.257, 16.954], [17.334, 24.0]], [[0.0, 7.959], [8.339, 14.52], [14.9, 20.78], [21.16, 25.834], [26.214, 28.647]], [[0.0, 4.79], [5.17, 20.132]], [[0.0, 5.543], [5.923, 10.693], [11.073, 14.52], [14.9, 18.66], [19.04, 24.855], [25.235, 27.832], [28.212, 31.702], [32.082, 35.329], [35.709, 37.984]], [[0.0, 9.641], [10.021, 16.191], [16.571, 18.445], [18.825, 23.185]], [[0.0, 3.86], [4.24, 9.036], [9.416, 12.412], [12.792, 28.483], [28.863, 34.339]], [[0.0, 13.534], [13.914, 20.634], [21.014, 22.948], [23.328, 32.142]], [[0.0, 6.613], [6.993, 21.752], [22.132, 28.35], [28.73, 34.868], [35.248, 40.375]], [[0.0, 7.621], [8.001, 12.471]], [[0.0, 7.914], [8.294, 10.855], [11.235, 28.94]], [[0.0, 4.881], [5.261, 8.332], [8.712, 13.523], [13.903, 20.214], [20.594, 26.128]], [[0.0, 17.179], [17.559, 25.101], [25.481, 31.132], [31.512, 37.333]], [[0.0, 3.316], [3.696, 15.011]], [[0.0, 9.841], [10.221, 17.786]], [[0.0, 4.346], [4.726, 16.544], [16.924, 25.317], [25.697, 28.201]], [[0.0, 16.561]], [[0.0, 11.618], [11.998, 23.356], [23.736, 30.408], [30.788, 35.637]], [[0.0, 11.093], [11.473, 26.196]], [[0.0, 6.956]], [[0.0, 12.616], [12.996, 21.886], [22.266, 33.919]], [[0.0, 7.525], [7.905, 20.297]], [[0.0, 5.327], [5.707, 12.065], [12.445, 17.909], [18.289, 23.254]], [[0.0, 9.303], [9.683, 17.94]], [[0.0, 11.025], [11.405, 16.739]], [[0.0, 10.501], [10.881, 14.59]], [[0.0, 14.697]], [[0.0, 10.536], [10.916, 22.786]], [[0.0, 9.932], [10.312, 14.38], [14.76, 19.817]], [[0.0, 14.009], [14.389, 20.828]], [[0.0, 11.592], [11.972, 17.827], [18.207, 24.297]], [[0.0, 5.324], [5.704, 11.011], [11.391, 23.624], [24.004, 28.187], [28.567, 41.186]]], "zh": [[[0.0, 13.151], [13.471, 18.932], [19.252, 26.675], [26.995, 31.01], [31.33, 36.165], [36.485, 39.779], [40.099, 44.149], [44.469, 50.932]], [[0.0, 7.636], [7.956, 13.978], [14.298, 25.649]], [[0.0, 8.503], [8.823, 15.286]], [[0.0, 10.144]], [[0.0, 11.258], [11.578, 18.181], [18.501, 24.129]], [[0.0, 20.349], [20.669, 25.855]], [[0.0, 3.132], [3.452, 20.354], [20.674, 24.373]], [[0.0, 6.903], [7.223, 19.318]], [[0.0, 9.528], [9.848, 15.105], [15.425, 26.566]], [[0.0, 8.667], [8.987, 14.448], [14.768, 24.989], [25.309, 35.604]], [[0.0, 6.475], [6.795, 18.716]], [[0.0, 7.81], [8.13, 15.104], [15.424, 23.85], [24.17, 29.112]], [[0.0, 6.506], [6.826, 9.168], [9.488, 22.046], [22.366, 29.371], [29.691, 45.618]], [[0.0, 7.23], [7.55, 20.42]], [[0.0, 3.778], [4.098, 10.306], [10.626, 18.123], [18.443, 38.049]], [[0.0, 5.128], [5.448, 11.076], [11.396, 18.138]], [[0.0, 6.355], [6.675, 13.218], [13.538, 25.4], [25.72, 33.263], [33.583, 47.814]], [[0.0, 6.255], [6.575, 27.514]], [[0.0, 4.583], [4.903, 9.47], [9.79, 22.442]], [[0.0, 7.969], [8.289, 14.067], [14.387, 18.285], [18.605, 24.298]], [[0.0, 1.374], [1.694, 10.562], [10.882, 23.708], [24.028, 37.283]], [[0.0, 6.823], [7.143, 18.681], [19.001, 24.891]], [[0.0, 4.699], [5.019, 20.406], [20.726, 28.943]], [[0.0, 14.149], [14.469, 18.565], [18.885, 22.388]], [[0.0, 6.463], [6.783, 12.604], [12.924, 22.511], [22.831, 25.881], [26.201, 32.699]], [[0.0, 11.8], [12.12, 17.585], [17.905, 27.132], [27.452, 34.786]], [[0.0, 23.816]], [[0.0, 7.044], [7.364, 21.939]], [[0.0, 7.613], [7.933, 16.358]], [[0.0, 7.032], [7.352, 13.769]], [[0.0, 10.829], [11.149, 14.21], [14.53, 18.115], [18.435, 33.126], [33.446, 39.197]], [[0.0, 5.171], [5.491, 9.47], [9.79, 19.363], [19.683, 24.475]], [[0.0, 11.672], [11.992, 20.662], [20.982, 28.34]], [[0.0, 8.774], [9.094, 14.71], [15.03, 21.657], [21.977, 26.954], [27.274, 30.01]], [[0.0, 5.024], [5.344, 23.987]], [[0.0, 6.73], [7.05, 11.041], [11.361, 13.865], [14.185, 17.328], [17.648, 21.511], [21.831, 24.579], [24.899, 28.808], [29.128, 32.875], [33.195, 35.943]], [[0.0, 10.539], [10.859, 18.17], [18.49, 20.67], [20.99, 26.617]], [[0.0, 3.944], [4.264, 9.725], [10.045, 14.101], [14.421, 30.379], [30.699, 37.245]], [[0.0, 14.08], [14.4, 23.105], [23.425, 25.96], [26.28, 37.678]], [[0.0, 7.181], [7.501, 24.402], [24.722, 31.22], [31.54, 39.501], [39.821, 43.871]], [[0.0, 7.994], [8.314, 13.048]], [[0.0, 9.168], [9.488, 12.19], [12.51, 28.68]], [[0.0, 5.333], [5.653, 8.866], [9.186, 16.356], [16.676, 25.125], [25.445, 30.782]], [[0.0, 16.425], [16.745, 23.08], [23.4, 30.375], [30.695, 38.071]], [[0.0, 3.933], [4.253, 12.76]], [[0.0, 13.743], [14.063, 21.139]], [[0.0, 5.674], [5.994, 17.96], [18.28, 29.105], [29.425, 33.669]], [[0.0, 15.991]], [[0.0, 14.637], [14.957, 30.639], [30.959, 38.213], [38.533, 43.081]], [[0.0, 12.857], [13.177, 25.202]], [[0.0, 8.008]], [[0.0, 16.016], [16.336, 29.111], [29.431, 45.717]], [[0.0, 10.562], [10.882, 23.012]], [[0.0, 6.243], [6.563, 13.386], [13.706, 18.602], [18.922, 24.898]], [[0.0, 8.828], [9.148, 18.259]], [[0.0, 10.817], [11.137, 15.755]], [[0.0, 9.619], [9.939, 14.197]], [[0.0, 13.059]], [[0.0, 9.942], [10.262, 23.318]], [[0.0, 8.433], [8.753, 13.452], [13.772, 18.877]], [[0.0, 13.961], [14.281, 20.141]], [[0.0, 10.662], [10.982, 19.452], [19.772, 25.47]], [[0.0, 5.778], [6.098, 10.948], [11.268, 25.382], [25.702, 31.04], [31.36, 42.096]]]}</script>
+
+<script>
+(function() {
+  var root = document.getElementById('rd-04');
+  if (!root) return;
+  var T = JSON.parse(document.getElementById('rd-04-timings').textContent || '{}');
+  T.en = T.en || []; T.zh = T.zh || [];
+  var base = (location.pathname.indexOf('/reading/') >= 0 ? '../' : '') + 'audio/04/';
+  var audio = new Audio();
+  var cur = { lang: null, p: -1, i: -1 };
+  var loadedSrc = '';
+  var rate = 1;
+  var status = root.querySelector('.rd-status');
+  var nParas = root.querySelectorAll('.rd-row').length;
+
+  function clearMarks() {
+    root.querySelectorAll('.s.on').forEach(function(e){ e.classList.remove('on'); });
+    root.querySelectorAll('.rd-row.playing').forEach(function(e){ e.classList.remove('playing'); });
+    root.querySelectorAll('.rd-play.on').forEach(function(e){ e.classList.remove('on'); e.textContent = '▶'; });
+  }
+  function mark(p, i) {
+    clearMarks();
+    var row = root.querySelector('.rd-row[data-p="' + p + '"]');
+    if (!row) return;
+    row.classList.add('playing');
+    row.querySelectorAll('.s[data-i="' + i + '"]').forEach(function(e){ e.classList.add('on'); });
+    var btn = row.querySelector('.rd-play[data-lang="' + cur.lang + '"]');
+    if (btn) { btn.classList.add('on'); btn.textContent = '❚❚'; }
+    var el = row.querySelector('.rd-' + cur.lang + ' .s[data-i="' + i + '"]') || row;
+    var r = el.getBoundingClientRect();
+    if (r.top < 90 || r.bottom > window.innerHeight - 40) el.scrollIntoView({ block: 'center', behavior: 'smooth' });
+    if (status) status.textContent = (cur.lang === 'en' ? 'English' : '中文') + ' · 第 ' + (p + 1) + ' / ' + nParas + ' 段';
+  }
+  function seekStart(lang, p, i) {
+    var t = T[lang] && T[lang][p];
+    return (t && t[i]) ? t[i][0] : 0;
+  }
+  function play(lang, p, i) {
+    if (p < 0 || p >= nParas) { stop(); return; }
+    cur = { lang: lang, p: p, i: i };
+    var src = base + lang + '/p' + p + '.m4a';
+    var at = seekStart(lang, p, i);
+    if (loadedSrc !== src) {
+      loadedSrc = src;
+      audio.src = src;
+      var onMeta = function() {
+        audio.removeEventListener('loadedmetadata', onMeta);
+        audio.currentTime = at;
+        audio.playbackRate = rate;
+        audio.play().catch(function(){});
+      };
+      audio.addEventListener('loadedmetadata', onMeta);
+      audio.load();
+    } else {
+      audio.currentTime = at;
+      audio.playbackRate = rate;
+      audio.play().catch(function(){});
+    }
+    mark(p, i);
+  }
+  function stop() {
+    audio.pause();
+    clearMarks();
+    cur = { lang: null, p: -1, i: -1 };
+    if (status) status.textContent = '';
+  }
+  function pause() {
+    audio.pause();
+    var row = root.querySelector('.rd-row.playing .rd-play.on');
+    if (row) { row.classList.remove('on'); row.textContent = '▶'; }
+  }
+  function resume() {
+    if (cur.p < 0) return;
+    audio.playbackRate = rate;
+    audio.play().catch(function(){});
+    mark(cur.p, cur.i);
+  }
+
+  audio.addEventListener('timeupdate', function() {
+    if (cur.p < 0) return;
+    var t = T[cur.lang] && T[cur.lang][cur.p];
+    if (!t) return;
+    var tt = audio.currentTime;
+    for (var k = 0; k < t.length; k++) {
+      var last = (k === t.length - 1);
+      if (tt >= t[k][0] - 0.05 && (last || tt < t[k + 1][0])) {
+        if (k !== cur.i) { cur.i = k; mark(cur.p, k); }
+        break;
+      }
+    }
+  });
+  audio.addEventListener('ended', function() {
+    var cont = root.querySelector('.rd-cont');
+    if (cont && cont.checked && cur.p + 1 < nParas) play(cur.lang, cur.p + 1, 0);
+    else stop();
+  });
+
+  root.addEventListener('click', function(e) {
+    var btn = e.target.closest && e.target.closest('.rd-play');
+    if (btn) {
+      var p = parseInt(btn.dataset.p, 10), lang = btn.dataset.lang;
+      if (cur.p === p && cur.lang === lang) {
+        if (audio.paused) resume(); else pause();
+      } else {
+        play(lang, p, 0);
+      }
+      return;
+    }
+    var s = e.target.closest && e.target.closest('.s');
+    if (s) {
+      var sel = window.getSelection && window.getSelection();
+      if (sel && sel.toString().length) return;
+      var cell = s.closest('.rd-cell');
+      var row = s.closest('.rd-row');
+      var lang2 = cell.classList.contains('rd-en') ? 'en' : 'zh';
+      play(lang2, parseInt(row.dataset.p, 10), parseInt(s.dataset.i, 10));
+    }
+  });
+
+  var bar = root.querySelector('.rd-bar');
+  bar.querySelector('.rd-all-zh').addEventListener('click', function(){ play('zh', 0, 0); });
+  bar.querySelector('.rd-all-en').addEventListener('click', function(){ play('en', 0, 0); });
+  bar.querySelector('.rd-pause').addEventListener('click', function(){
+    if (cur.p < 0) return;
+    if (audio.paused) resume(); else pause();
+  });
+  bar.querySelector('.rd-stop').addEventListener('click', stop);
+  bar.querySelector('.rd-rate').addEventListener('change', function(e){
+    rate = parseFloat(e.target.value) || 1;
+    audio.playbackRate = rate;
+  });
+  document.addEventListener('keydown', function(e) {
+    if (e.code !== 'Space' || cur.p < 0) return;
+    if (/input|select|textarea/i.test(e.target.tagName)) return;
+    e.preventDefault();
+    if (audio.paused) resume(); else pause();
+  });
+  window.addEventListener('hashchange', stop);
+  window.addEventListener('pagehide', function(){ audio.pause(); });
+})();
+</script>
+
+</main>
+</div>
+<script>
+(function() {
+  if (!('speechSynthesis' in window)) return;
+  var synth = window.speechSynthesis;
+  var voicesReady = false;
+
+  var ICON_SPEAKER = '<svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 10v4h4l5 4V6L7 10H3zm12.5 2c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM13 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg>';
+  var ICON_PAUSE = '<svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6 5h4v14H6zM14 5h4v14h-4z"/></svg>';
+  var ICON_PLAY = '<svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>';
+
+  // single global state — only one TTS session at a time
+  var state = {
+    btn: null, chunks: null, words: null, chunkIdx: 0, paused: false
+  };
+
+  function ensureVoices(cb) {
+    if (voicesReady) return cb();
+    var v = synth.getVoices();
+    if (v && v.length) { voicesReady = true; return cb(); }
+    synth.onvoiceschanged = function() { voicesReady = true; cb(); };
+    setTimeout(function(){ if (!voicesReady) { voicesReady = true; cb(); } }, 500);
+  }
+
+  function pickVoice() {
+    var voices = synth.getVoices();
+    function find(pred){ for (var i=0;i<voices.length;i++) if (pred(voices[i])) return voices[i]; return null; }
+    return find(function(v){return v.lang==='en-CA' && /Samantha|Karen|Tessa|Victoria|Allison|Siri/i.test(v.name);})
+        || find(function(v){return v.lang==='en-CA';})
+        || find(function(v){return v.lang==='en-US' && /Samantha|Karen|Allison|Ava|Siri/i.test(v.name);})
+        || find(function(v){return v.lang==='en-US';})
+        || find(function(v){return v.lang && v.lang.indexOf('en')===0;})
+        || null;
+  }
+
+  // Wrap each word in container in a <span class="w" data-idx="N"> for highlighting.
+  function wrapWords(container) {
+    if (container.dataset.wrapped === '1') return;
+    var walker = document.createTreeWalker(container, NodeFilter.SHOW_TEXT, null, false);
+    var nodes = [];
+    var n;
+    while ((n = walker.nextNode())) {
+      if (!n.parentElement) continue;
+      if (n.parentElement.closest('.speak-btn, .label')) continue;
+      if (!/\S/.test(n.nodeValue)) continue;
+      nodes.push(n);
+    }
+    var idx = 0;
+    nodes.forEach(function(tn) {
+      var text = tn.nodeValue;
+      var tokens = text.split(/(\s+)/);
+      var frag = document.createDocumentFragment();
+      tokens.forEach(function(tok) {
+        if (tok.length === 0) return;
+        if (/^\s+$/.test(tok)) {
+          frag.appendChild(document.createTextNode(tok));
+        } else {
+          var sp = document.createElement('span');
+          sp.className = 'w';
+          sp.setAttribute('data-idx', idx++);
+          sp.textContent = tok;
+          frag.appendChild(sp);
+        }
+      });
+      tn.parentNode.replaceChild(frag, tn);
+    });
+    container.dataset.wrapped = '1';
+  }
+
+  // Group words into chunks split on punctuation, with a pause duration after each chunk.
+  function buildChunks(words) {
+    var chunks = [];
+    var cur = { words: [] };
+    function commit(pauseMs) {
+      if (!cur.words.length) return;
+      cur.text = cur.words.map(function(w){ return w.text; }).join(' ');
+      cur.pauseAfterMs = pauseMs;
+      chunks.push(cur);
+      cur = { words: [] };
+    }
+    words.forEach(function(wEl, i) {
+      var text = wEl.textContent;
+      cur.words.push({ el: wEl, idx: i, text: text });
+      // sentence-ending punctuation → long pause
+      if (/[.!?]+["')\]]*$/.test(text) && text.length > 1) {
+        commit(420);
+      }
+      // semicolon / colon → medium pause
+      else if (/[;:]+["')\]]*$/.test(text)) {
+        commit(300);
+      }
+      // comma or em-dash → short pause
+      else if (/[,—–][")'\]]*$/.test(text)) {
+        commit(220);
+      }
+    });
+    commit(0);
+    return chunks;
+  }
+
+  function highlight(globalIdx) {
+    if (!state.words) return;
+    for (var i = 0; i < state.words.length; i++) {
+      if (i === globalIdx) state.words[i].classList.add('current');
+      else state.words[i].classList.remove('current');
+    }
+  }
+
+  function clearHighlight() {
+    if (!state.words) return;
+    state.words.forEach(function(w){ w.classList.remove('current'); });
+  }
+
+  function findWordAtChar(chunk, charIndex) {
+    var pos = 0;
+    for (var i = 0; i < chunk.words.length; i++) {
+      var len = chunk.words[i].text.length;
+      if (charIndex >= pos && charIndex < pos + len) return i;
+      pos += len + 1; // space
+    }
+    return -1;
+  }
+
+  function setBtnState(btn, s) {
+    if (!btn) return;
+    btn.classList.remove('speaking', 'paused');
+    if (s === 'speaking') btn.classList.add('speaking');
+    else if (s === 'paused') btn.classList.add('paused');
+    btn.setAttribute('data-state', s);
+    var icon = btn.querySelector('.speak-icon');
+    var label = btn.querySelector('.speak-label');
+    if (s === 'idle')     { if (icon) icon.innerHTML = ICON_SPEAKER; if (label) label.textContent = '朗讀'; }
+    else if (s === 'speaking') { if (icon) icon.innerHTML = ICON_PAUSE;   if (label) label.textContent = '暫停'; }
+    else if (s === 'paused')   { if (icon) icon.innerHTML = ICON_PLAY;    if (label) label.textContent = '繼續'; }
+  }
+
+  function stopAll() {
+    state.suppressNextEnd = true;  // ignore the cancel-induced end/error
+    synth.cancel();
+    if (state.btn) setBtnState(state.btn, 'idle');
+    clearHighlight();
+    state.btn = null; state.chunks = null; state.words = null;
+    state.chunkIdx = 0; state.paused = false;
+    // reset suppression on next tick
+    setTimeout(function(){ state.suppressNextEnd = false; }, 100);
+  }
+
+  function findChunkForWord(chunks, wordIdx) {
+    for (var i = 0; i < chunks.length; i++) {
+      for (var j = 0; j < chunks[i].words.length; j++) {
+        if (chunks[i].words[j].idx === wordIdx) return i;
+      }
+    }
+    return -1;
+  }
+
+  function speakFrom(chunkIdx) {
+    if (!state.chunks || chunkIdx >= state.chunks.length) { stopAll(); return; }
+    state.chunkIdx = chunkIdx;
+    var chunk = state.chunks[chunkIdx];
+    var u = new SpeechSynthesisUtterance(chunk.text);
+    u.lang = 'en-CA';
+    u.rate = 0.92;
+    u.pitch = 1.0;
+    var v = pickVoice();
+    if (v) u.voice = v;
+
+    u.onstart = function() {
+      if (chunk.words[0]) highlight(chunk.words[0].idx);
+    };
+    u.onboundary = function(e) {
+      if (e.name && e.name !== 'word') return;
+      var w = findWordAtChar(chunk, e.charIndex || 0);
+      if (w >= 0) highlight(chunk.words[w].idx);
+    };
+    u.onend = function() {
+      // ignore the end event if it was triggered by our own cancel (pause/jump/stop)
+      if (state.suppressNextEnd) { state.suppressNextEnd = false; return; }
+      if (state.paused) return;
+      var next = chunkIdx + 1;
+      if (next >= state.chunks.length) { stopAll(); return; }
+      setTimeout(function() {
+        if (!state.paused && state.chunks) speakFrom(next);
+      }, chunk.pauseAfterMs);
+    };
+    u.onerror = function() {
+      if (state.suppressNextEnd) { state.suppressNextEnd = false; return; }
+      if (state.paused) return; // user paused — keep state for resume
+      stopAll();
+    };
+
+    synth.speak(u);
+  }
+
+  // Start fresh speech for a container, optionally from a specific chunk index.
+  function startFresh(container, btn, fromChunk) {
+    stopAll();
+    wrapWords(container);
+    var words = Array.prototype.slice.call(container.querySelectorAll('.w'));
+    if (!words.length) return;
+    state.btn = btn;
+    state.words = words;
+    state.chunks = buildChunks(words);
+    state.chunkIdx = Math.max(0, Math.min(fromChunk || 0, state.chunks.length - 1));
+    state.paused = false;
+    setBtnState(btn, 'speaking');
+    speakFrom(state.chunkIdx);
+  }
+
+  // Jump speech to a specific word — restart the chunk containing it.
+  function jumpToWord(container, btn, wordIdx) {
+    // Same container that's currently speaking/paused → in-place jump
+    if (state.btn === btn && state.chunks && state.words) {
+      var ci = findChunkForWord(state.chunks, wordIdx);
+      if (ci < 0) return;
+      state.suppressNextEnd = true;
+      synth.cancel();
+      state.chunkIdx = ci;
+      state.paused = false;
+      setBtnState(btn, 'speaking');
+      setTimeout(function() {
+        state.suppressNextEnd = false;
+        if (state.chunks) speakFrom(ci);
+      }, 60);
+      return;
+    }
+    // Different container or fresh start — figure out chunk first
+    wrapWords(container);
+    var words = Array.prototype.slice.call(container.querySelectorAll('.w'));
+    if (!words.length) return;
+    var chunks = buildChunks(words);
+    var ci2 = findChunkForWord(chunks, wordIdx);
+    startFresh(container, btn, ci2 >= 0 ? ci2 : 0);
+  }
+
+  function speakableContainerOf(el) {
+    return el.closest && el.closest('.bilingual .en, blockquote.speakable, .callout.speakable');
+  }
+
+  document.addEventListener('click', function(e) {
+    // --- speak button ---
+    var btn = e.target.closest && e.target.closest('.speak-btn');
+    if (btn) {
+      e.preventDefault();
+      var s = btn.getAttribute('data-state') || 'idle';
+      if (s === 'speaking') {
+        // pause: set flag BEFORE cancel so onend/onerror preserve state
+        state.paused = true;
+        synth.cancel();
+        setBtnState(btn, 'paused');
+        return;
+      }
+      if (s === 'paused') {
+        // resume: restart current chunk
+        state.paused = false;
+        setBtnState(btn, 'speaking');
+        if (state.chunks) speakFrom(state.chunkIdx);
+        return;
+      }
+      // idle → new speech from start
+      ensureVoices(function() { startFresh(btn.parentElement, btn, 0); });
+      return;
+    }
+
+    // --- word click (play from here) ---
+    var w = e.target.closest && e.target.closest('.w');
+    if (!w) return;
+    // skip if user is selecting text
+    var sel = window.getSelection && window.getSelection();
+    if (sel && sel.toString && sel.toString().length > 0) return;
+    var container = speakableContainerOf(w);
+    if (!container) return;
+    var speakBtn = container.querySelector('.speak-btn');
+    if (!speakBtn) return;
+    e.preventDefault();
+    var widx = parseInt(w.getAttribute('data-idx'), 10);
+    if (isNaN(widx)) return;
+    ensureVoices(function() { jumpToWord(container, speakBtn, widx); });
+  });
+
+  // Pre-wrap all speakable containers during idle time so word-click works without first hitting the button
+  function preWrapAll() {
+    var containers = document.querySelectorAll('.bilingual .en, blockquote.speakable, .callout.speakable');
+    var i = 0;
+    function step() {
+      if (i >= containers.length) return;
+      try { wrapWords(containers[i]); } catch (e) {}
+      i++;
+      if (window.requestIdleCallback) requestIdleCallback(step, { timeout: 200 });
+      else setTimeout(step, 0);
+    }
+    step();
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', preWrapAll);
+  else preWrapAll();
+
+  window.addEventListener('hashchange', stopAll);
+  window.addEventListener('pagehide', stopAll);
+})();
+</script>
+</body>
+</html>

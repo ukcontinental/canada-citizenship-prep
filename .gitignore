@@ -9,6 +9,9 @@ __pycache__/
 # macOS
 .DS_Store
 
+# build_html.py parks html/audio here during a rebuild
+.audio_keep/
+
 # Editor
 .vscode/
 .idea/

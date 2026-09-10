@@ -1,0 +1,496 @@
+{
+  "num": "04",
+  "title_en": "Canada's History",
+  "title_zh": "加拿大歷史",
+  "sections": [
+    {
+      "title_en": "Aboriginal Peoples",
+      "title_zh": "原住民",
+      "paras": [
+        [
+          {"en": "When Europeans explored Canada they found all regions occupied by native peoples they called Indians, because the first explorers thought they had reached the East Indies.", "zh": "歐洲人探索加拿大時，發現每一個地區都已經有原住民居住；他們把這些人叫作「印第安人」，因為最早的探險家以為自己抵達的是東印度群島。"},
+          {"en": "The native people lived off the land, some by hunting and gathering, others by raising crops.", "zh": "原住民靠土地維生，有的狩獵採集，有的種植作物。"},
+          {"en": "The Huron-Wendat of the Great Lakes region, like the Iroquois, were farmers and hunters.", "zh": "五大湖區的休倫－溫達特族（Huron-Wendat）和易洛魁族（Iroquois）一樣，既務農也狩獵。"},
+          {"en": "The Cree and Dene of the Northwest were hunter-gatherers.", "zh": "西北部的克里族（Cree）和迪尼族（Dene）是狩獵採集民族。"},
+          {"en": "The Sioux were nomadic, following the bison (buffalo) herd.", "zh": "蘇族（Sioux）過著游牧生活，跟隨野牛群遷徙。"},
+          {"en": "The Inuit lived off Arctic wildlife.", "zh": "因紐特人（Inuit）靠北極的野生動物維生。"},
+          {"en": "West Coast natives preserved fish by drying and smoking.", "zh": "西海岸的原住民用曬乾和煙燻的方式保存魚類。"},
+          {"en": "Warfare was common among Aboriginal groups as they competed for land, resources and prestige.", "zh": "各原住民族群之間為了爭奪土地、資源和聲望，經常發生戰爭。"}
+        ],
+        [
+          {"en": "The arrival of European traders, missionaries, soldiers and colonists changed the native way of life forever.", "zh": "歐洲商人、傳教士、士兵和殖民者的到來，永遠改變了原住民的生活方式。"},
+          {"en": "Large numbers of Aboriginals died of European diseases to which they lacked immunity.", "zh": "大量原住民死於歐洲帶來的疾病，因為他們對這些疾病沒有免疫力。"},
+          {"en": "However, Aboriginals and Europeans formed strong economic, religious and military bonds in the first 200 years of coexistence which laid the foundations of Canada.", "zh": "不過，在共同生活的最初兩百年裡，原住民和歐洲人在經濟、宗教和軍事上建立了緊密的關係，奠定了加拿大的基礎。"}
+        ]
+      ]
+    },
+    {
+      "title_en": "The First Europeans",
+      "title_zh": "最早的歐洲人",
+      "paras": [
+        [
+          {"en": "The Vikings from Iceland who colonized Greenland 1,000 years ago also reached Labrador and the island of Newfoundland.", "zh": "一千年前，來自冰島並在格陵蘭殖民的維京人，也抵達了拉布拉多（Labrador）和紐芬蘭島（Newfoundland）。"},
+          {"en": "The remains of their settlement, l'Anse aux Meadows, are a World Heritage site.", "zh": "他們聚落的遺址「蘭塞奧茲牧草地」（L'Anse aux Meadows）現在是世界遺產。"}
+        ],
+        [
+          {"en": "European exploration began in earnest in 1497 with the expedition of John Cabot, who was the first to draw a map of Canada's East Coast.", "zh": "歐洲人對加拿大的探索，從 1497 年約翰・卡伯特（John Cabot）的遠征正式開始；他是第一個繪製加拿大東岸地圖的人。"}
+        ]
+      ]
+    },
+    {
+      "title_en": "Exploring a River, Naming Canada",
+      "title_zh": "探索大河，為加拿大命名",
+      "paras": [
+        [
+          {"en": "Between 1534 and 1542, Jacques Cartier made three voyages across the Atlantic, claiming the land for King Francis I of France.", "zh": "1534 年到 1542 年之間，雅克・卡蒂亞（Jacques Cartier）三度橫渡大西洋，為法國國王法蘭索瓦一世（Francis I）宣告這片土地的主權。"},
+          {"en": "Cartier heard two captured guides speak the Iroquoian word kanata, meaning \"village.\"", "zh": "卡蒂亞聽到兩名被俘的嚮導說出易洛魁語的「kanata」，意思是「村莊」。"},
+          {"en": "By the 1550s, the name of Canada began appearing on maps.", "zh": "到了 1550 年代，「Canada」這個名字開始出現在地圖上。"}
+        ]
+      ]
+    },
+    {
+      "title_en": "Royal New France",
+      "title_zh": "皇家新法蘭西",
+      "paras": [
+        [
+          {"en": "In 1604, the first European settlement north of Florida was established by French explorers Pierre de Monts and Samuel de Champlain, first on St. Croix Island (in present-day Maine), then at Port-Royal, in Acadia (present-day Nova Scotia).", "zh": "1604 年，法國探險家皮埃爾・德蒙（Pierre de Monts）和薩繆爾・德・尚普蘭（Samuel de Champlain）建立了佛羅里達以北第一個歐洲聚落——先在聖克魯瓦島（St. Croix Island，今美國緬因州），後來遷到阿卡迪亞（Acadia，今新斯科細亞）的皇家港（Port-Royal）。"},
+          {"en": "In 1608 Champlain built a fortress at what is now Québec City.", "zh": "1608 年，尚普蘭在今天的魁北克市建造了一座堡壘。"}
+        ],
+        [
+          {"en": "The colonists struggled against a harsh climate.", "zh": "殖民者在嚴酷的氣候中艱苦求生。"},
+          {"en": "Champlain allied the colony with the Algonquin, Montagnais and Huron, historic enemies of the Iroquois, a confederation of five (later six) First Nations who battled with the French settlements for a century.", "zh": "尚普蘭讓殖民地與阿爾岡昆族（Algonquin）、蒙塔涅族（Montagnais）和休倫族（Huron）結盟；這些族群是易洛魁族的世仇。易洛魁是由五個（後來六個）第一民族組成的聯盟，與法國殖民地交戰了一個世紀。"},
+          {"en": "The French and the Iroquois made peace in 1701.", "zh": "法國人與易洛魁族在 1701 年締結和平。"}
+        ],
+        [
+          {"en": "The French and Aboriginal people collaborated in the vast fur-trade economy, driven by the demand for beaver pelts in Europe.", "zh": "法國人與原住民合作經營龐大的毛皮貿易，背後的動力是歐洲對海狸皮的需求。"},
+          {"en": "Outstanding leaders like Jean Talon, Bishop Laval, and Count Frontenac built a French Empire in North America that reached from Hudson Bay to the Gulf of Mexico.", "zh": "尚・塔隆（Jean Talon）、拉瓦主教（Bishop Laval）和弗龍特納克伯爵（Count Frontenac）等傑出領袖，在北美建立了一個從哈德遜灣延伸到墨西哥灣的法蘭西帝國。"}
+        ]
+      ]
+    },
+    {
+      "title_en": "Struggle for a Continent",
+      "title_zh": "爭奪一塊大陸",
+      "paras": [
+        [
+          {"en": "In 1670, King Charles II of England granted the Hudson's Bay Company exclusive trading rights over the watershed draining into Hudson Bay.", "zh": "1670 年，英國國王查理二世（Charles II）授予哈德遜灣公司（Hudson's Bay Company）在哈德遜灣流域的獨家貿易權。"},
+          {"en": "For the next 100 years the Company competed with Montreal-based traders.", "zh": "接下來的一百年裡，這家公司與蒙特婁的商人互相競爭。"},
+          {"en": "The skilled and courageous men who travelled by canoe were called voyageurs and coureurs des bois, and formed strong alliances with First Nations.", "zh": "那些技術高超、勇敢無畏、乘獨木舟往來的人被稱為 voyageurs（航行者）和 coureurs des bois（林中跑者），他們與第一民族建立了牢固的同盟。"}
+        ],
+        [
+          {"en": "English colonies along the Atlantic seaboard, dating from the early 1600s, eventually became richer and more populous than New France.", "zh": "從 1600 年代初期開始建立的大西洋沿岸英國殖民地，最終變得比新法蘭西更富裕、人口更多。"},
+          {"en": "In the 1700s France and Great Britain battled for control of North America.", "zh": "1700 年代，法國與英國為了爭奪北美的控制權而交戰。"},
+          {"en": "In 1759, the British defeated the French in the Battle of the Plains of Abraham at Québec City — marking the end of France's empire in America.", "zh": "1759 年，英軍在魁北克市的亞伯拉罕平原戰役（Battle of the Plains of Abraham）中擊敗法軍，法國在美洲的帝國就此終結。"},
+          {"en": "The commanders of both armies, Brigadier James Wolfe and the Marquis de Montcalm, were killed leading their troops in battle.", "zh": "雙方的指揮官——英軍准將詹姆斯・沃爾夫（James Wolfe）和法軍蒙卡姆侯爵（Marquis de Montcalm）——都在率軍作戰時陣亡。"}
+        ]
+      ]
+    },
+    {
+      "title_en": "The Province of Quebec",
+      "title_zh": "魁北克省",
+      "paras": [
+        [
+          {"en": "Following the war, Great Britain renamed the colony the \"Province of Quebec.\"", "zh": "戰後，英國把這塊殖民地改名為「魁北克省」（Province of Quebec）。"},
+          {"en": "The French-speaking Catholic people, known as habitants or Canadiens, strove to preserve their way of life in the English-speaking, Protestant-ruled British Empire.", "zh": "說法語的天主教居民——被稱為 habitants 或 Canadiens——在以英語為主、由新教徒統治的大英帝國中，努力保存自己的生活方式。"}
+        ]
+      ]
+    },
+    {
+      "title_en": "A Tradition of Accommodation",
+      "title_zh": "包容的傳統",
+      "paras": [
+        [
+          {"en": "To better govern the French Roman Catholic majority, the British Parliament passed the Quebec Act of 1774.", "zh": "為了更好地治理佔多數的法裔天主教徒，英國國會在 1774 年通過了《魁北克法案》（Quebec Act）。"},
+          {"en": "One of the constitutional foundations of Canada, the Quebec Act accommodated the principles of British institutions to the reality of the province.", "zh": "《魁北克法案》是加拿大憲政基礎之一，它讓英國體制的原則遷就了這個省的實際狀況。"},
+          {"en": "It allowed religious freedom for Catholics and permitted them to hold public office, a practice not then allowed in Britain.", "zh": "它允許天主教徒享有宗教自由，並准許他們擔任公職——這在當時的英國本土是不被允許的。"},
+          {"en": "The Quebec Act restored French civil law while maintaining British criminal law.", "zh": "《魁北克法案》恢復了法國民法，同時保留英國刑法。"}
+        ]
+      ]
+    },
+    {
+      "title_en": "United Empire Loyalists",
+      "title_zh": "聯合帝國效忠派",
+      "paras": [
+        [
+          {"en": "In 1776, the 13 British colonies to the south of Quebec declared independence and formed the United States.", "zh": "1776 年，魁北克以南的十三個英國殖民地宣布獨立，組成了美國。"},
+          {"en": "North America was again divided by war.", "zh": "北美再次因戰爭而分裂。"},
+          {"en": "More than 40,000 people loyal to the Crown, called \"Loyalists,\" fled the oppression of the American Revolution to settle in Nova Scotia and Quebec.", "zh": "超過四萬名效忠英國王室的人——稱為「效忠派」（Loyalists）——為了逃離美國革命的迫害，遷居到新斯科細亞（Nova Scotia）和魁北克。"},
+          {"en": "Joseph Brant led thousands of Loyalist Mohawk Indians into Canada.", "zh": "約瑟夫・布蘭特（Joseph Brant）率領數千名效忠派的莫霍克族（Mohawk）印第安人進入加拿大。"},
+          {"en": "The Loyalists came from Dutch, German, British, Scandinavian, Aboriginal and other origins and from Presbyterian, Anglican, Baptist, Methodist, Jewish, Quaker and Catholic religious backgrounds.", "zh": "效忠派的族裔包括荷蘭、德國、英國、北歐、原住民等，宗教背景則有長老會、聖公會、浸信會、衛理公會、猶太教、貴格會和天主教。"}
+        ],
+        [
+          {"en": "About 3,000 black Loyalists, freedmen and slaves came north seeking a better life.", "zh": "大約三千名黑人效忠派、獲釋的自由人和奴隸北上，尋求更好的生活。"},
+          {"en": "In turn, in 1792, some black Nova Scotians, who were given poor land, moved on to establish Freetown, Sierra Leone (West Africa), a new British colony for freed slaves.", "zh": "後來在 1792 年，一些分到貧瘠土地的新斯科細亞黑人，又遷往西非的獅子山（Sierra Leone）建立自由城（Freetown）——一個專為獲釋奴隸設立的新英國殖民地。"}
+        ]
+      ]
+    },
+    {
+      "title_en": "The Beginnings of Democracy",
+      "title_zh": "民主的開端",
+      "paras": [
+        [
+          {"en": "Democratic institutions developed gradually and peacefully.", "zh": "民主制度是逐步、和平地發展起來的。"},
+          {"en": "The first representative assembly was elected in Halifax, Nova Scotia, in 1758.", "zh": "第一個民選代議議會於 1758 年在新斯科細亞的哈利法克斯（Halifax）選出。"},
+          {"en": "Prince Edward Island followed in 1773, New Brunswick in 1785.", "zh": "愛德華王子島（Prince Edward Island）在 1773 年跟進，新布藍瑞克（New Brunswick）則在 1785 年。"},
+          {"en": "The Constitutional Act of 1791 divided the Province of Quebec into Upper Canada (later Ontario), which was mainly Loyalist, Protestant and English-speaking, and Lower Canada (later Quebec), heavily Catholic and French-speaking.", "zh": "1791 年的《憲法法案》（Constitutional Act）把魁北克省一分為二：上加拿大（Upper Canada，後來的安大略），以效忠派、新教徒和英語人口為主；以及下加拿大（Lower Canada，後來的魁北克），以天主教徒和法語人口為主。"}
+        ],
+        [
+          {"en": "The Act also granted to the Canadas, for the first time, legislative assemblies elected by the people.", "zh": "這項法案也首次賦予兩個加拿大省由人民選舉產生的立法議會。"},
+          {"en": "The name Canada also became official at this time and has been used ever since.", "zh": "「Canada」這個名稱也在此時成為正式名稱，一直沿用至今。"},
+          {"en": "The Atlantic colonies and the two Canadas were known collectively as British North America.", "zh": "大西洋殖民地和兩個加拿大省合稱為「英屬北美」（British North America）。"}
+        ]
+      ]
+    },
+    {
+      "title_en": "Abolition of Slavery",
+      "title_zh": "廢除奴隸制",
+      "paras": [
+        [
+          {"en": "Slavery has existed all over the world, from Asia, Africa and the Middle East to the Americas.", "zh": "奴隸制曾經存在於世界各地，從亞洲、非洲、中東到美洲。"},
+          {"en": "The first movement to abolish the transatlantic slave trade emerged in the British Parliament in the late 1700s.", "zh": "廢除跨大西洋奴隸貿易的第一波運動，在 1700 年代末期出現於英國國會。"},
+          {"en": "In 1793, Upper Canada, led by Lieutenant Governor John Graves Simcoe, a Loyalist military officer, became the first province in the Empire to move toward abolition.", "zh": "1793 年，在效忠派軍官、副總督約翰・格雷夫斯・辛科（John Graves Simcoe）的領導下，上加拿大成為大英帝國第一個邁向廢奴的省份。"},
+          {"en": "In 1807, the British Parliament prohibited the buying and selling of slaves, and in 1833 abolished slavery throughout the Empire.", "zh": "1807 年，英國國會禁止買賣奴隸；1833 年更在整個帝國廢除奴隸制。"},
+          {"en": "Thousands of slaves escaped from the United States, followed \"the North Star\" and settled in Canada via the Underground Railroad, a Christian anti-slavery network.", "zh": "成千上萬的奴隸從美國逃出，跟隨「北極星」的指引，經由「地下鐵路」（Underground Railroad）——一個基督教的反奴隸網絡——來到加拿大定居。"}
+        ]
+      ]
+    },
+    {
+      "title_en": "A Growing Economy",
+      "title_zh": "成長中的經濟",
+      "paras": [
+        [
+          {"en": "The first companies in Canada were formed during the French and British regimes and competed for the fur trade.", "zh": "加拿大最早的公司成立於法國和英國統治時期，彼此競爭毛皮貿易。"},
+          {"en": "The Hudson's Bay Company, with French, British and Aboriginal employees, came to dominate the trade in the northwest from Fort Garry (Winnipeg) and Fort Edmonton to Fort Langley (near Vancouver) and Fort Victoria—trading posts that later became cities.", "zh": "哈德遜灣公司雇用法國人、英國人和原住民，逐漸主宰了西北部的貿易，範圍從加里堡（Fort Garry，今溫尼伯）、艾德蒙頓堡（Fort Edmonton）到蘭利堡（Fort Langley，溫哥華附近）和維多利亞堡（Fort Victoria）——這些貿易站後來都發展成了城市。"}
+        ],
+        [
+          {"en": "The first financial institutions opened in the late 18th and early 19th centuries.", "zh": "最早的金融機構在 18 世紀末、19 世紀初開業。"},
+          {"en": "The Montreal Stock Exchange opened in 1832.", "zh": "蒙特婁證券交易所（Montreal Stock Exchange）於 1832 年開業。"},
+          {"en": "For centuries Canada's economy was based mainly on farming and on exporting natural resources such as fur, fish and timber, transported by roads, lakes, rivers and canals.", "zh": "幾個世紀以來，加拿大的經濟主要依靠農業，以及出口毛皮、魚類和木材等自然資源，靠道路、湖泊、河流和運河來運輸。"}
+        ]
+      ]
+    },
+    {
+      "title_en": "The War of 1812: The Fight for Canada",
+      "title_zh": "1812 年戰爭：保衛加拿大",
+      "paras": [
+        [
+          {"en": "After the defeat of Napoleon Bonaparte's fleet in the Battle of Trafalgar (1805), the Royal Navy ruled the waves.", "zh": "拿破崙的艦隊在 1805 年特拉法加海戰（Battle of Trafalgar）戰敗之後，英國皇家海軍稱霸海洋。"},
+          {"en": "The British Empire, which included Canada, fought to resist Bonaparte's bid to dominate Europe.", "zh": "包括加拿大在內的大英帝國，奮力抵抗拿破崙稱霸歐洲的野心。"},
+          {"en": "This led to American resentment at British interference with their shipping.", "zh": "這導致美國人對英國干擾他們的航運感到不滿。"},
+          {"en": "Believing it would be easy to conquer Canada, the United States launched an invasion in June 1812.", "zh": "美國以為征服加拿大易如反掌，於 1812 年 6 月發動入侵。"}
+        ],
+        [
+          {"en": "The Americans were mistaken.", "zh": "美國人錯了。"},
+          {"en": "Canadian volunteers and First Nations, including Shawnee led by Chief Tecumseh, supported British soldiers in Canada's defence.", "zh": "加拿大志願軍和第一民族——包括由酋長特庫姆塞（Tecumseh）率領的肖尼族（Shawnee）——協助英軍保衛加拿大。"},
+          {"en": "In July, Major-General Sir Isaac Brock captured Detroit but was killed while defending against an American attack at Queenston Heights, near Niagara Falls, a battle the Americans lost.", "zh": "7 月，少將艾薩克・布洛克爵士（Sir Isaac Brock）攻下底特律，但在尼加拉瀑布附近的昆士頓高地（Queenston Heights）抵禦美軍進攻時陣亡；那場戰役美軍戰敗。"},
+          {"en": "In 1813, Lieutenant-Colonel Charles de Salaberry and 460 soldiers, mostly French Canadiens, turned back 4,000 American invaders at Châteauguay, south of Montreal.", "zh": "1813 年，中校夏爾・德・薩拉貝里（Charles de Salaberry）率領 460 名士兵（多為法裔加拿大人），在蒙特婁南方的沙托蓋（Châteauguay）擊退了四千名美軍入侵者。"}
+        ],
+        [
+          {"en": "In 1813 the Americans burned Government House and the Parliament Buildings in York (now Toronto).", "zh": "1813 年，美軍燒毀了約克（York，今多倫多）的總督府和議會大廈。"},
+          {"en": "In retaliation in 1814, Major-General Robert Ross led an expedition from Nova Scotia that burned down the White House and other public buildings in Washington, D.C.", "zh": "作為報復，1814 年少將羅伯特・羅斯（Robert Ross）率領遠征軍從新斯科細亞出發，燒毀了華盛頓特區的白宮和其他公共建築。"},
+          {"en": "Ross died in battle soon afterwards and was buried in Halifax with full military honours.", "zh": "羅斯不久後在戰鬥中陣亡，以最高軍禮安葬於哈利法克斯。"}
+        ],
+        [
+          {"en": "By 1814, the American attempt to conquer Canada had failed.", "zh": "到了 1814 年，美國征服加拿大的企圖已經失敗。"},
+          {"en": "The British paid for a costly Canadian defence system, including the Citadels at Halifax and Québec City, the naval drydock at Halifax and Fort Henry at Kingston—today popular historic sites.", "zh": "英國出資建造了昂貴的加拿大防禦體系，包括哈利法克斯和魁北克市的城堡、哈利法克斯的海軍乾船塢，以及京士頓（Kingston）的亨利堡（Fort Henry）——這些今天都是熱門的歷史景點。"},
+          {"en": "The present-day Canada-U.S.A. border is partly an outcome of the War of 1812, which ensured that Canada would remain independent of the United States.", "zh": "今天的加美邊界有一部分就是 1812 年戰爭的結果；這場戰爭確保了加拿大不會被美國併吞。"}
+        ],
+        [
+          {"en": "In 1813, Laura Secord, pioneer wife and mother of five children, made a dangerous 19-mile (30-km) journey on foot to warn Lieutenant James FitzGibbon of a planned American attack.", "zh": "1813 年，拓荒者之妻、五個孩子的母親蘿拉・西科德（Laura Secord），冒險徒步走了 19 英里（30 公里），去警告詹姆斯・費茨吉本中尉（James FitzGibbon）美軍即將發動攻擊。"},
+          {"en": "Her bravery contributed to victory at the Battle of Beaver Dams.", "zh": "她的勇敢促成了比佛丹戰役（Battle of Beaver Dams）的勝利。"},
+          {"en": "She is recognized as a heroine to this day.", "zh": "直到今天，她仍被尊為女英雄。"}
+        ]
+      ]
+    },
+    {
+      "title_en": "Rebellions of 1837–38",
+      "title_zh": "1837–38 年叛亂",
+      "paras": [
+        [
+          {"en": "In the 1830s, reformers in Upper and Lower Canada believed that progress toward full democracy was too slow.", "zh": "1830 年代，上、下加拿大的改革派認為邁向完全民主的進展太慢。"},
+          {"en": "Some believed Canada should adopt American republican values or even try to join the United States.", "zh": "有些人認為加拿大應該採用美國的共和價值，甚至設法加入美國。"},
+          {"en": "When armed rebellions occurred in 1837–38 in the area outside Montreal and in Toronto, the rebels did not have enough public support to succeed.", "zh": "1837 到 38 年，蒙特婁郊區和多倫多爆發武裝叛亂，但叛軍缺乏足夠的民意支持，無法成功。"},
+          {"en": "They were defeated by British troops and Canadian volunteers.", "zh": "他們被英軍和加拿大志願軍擊敗。"},
+          {"en": "A number of rebels were hanged or exiled; some exiles later returned to Canada.", "zh": "一些叛亂者被處以絞刑或流放；有些被流放的人後來回到了加拿大。"}
+        ],
+        [
+          {"en": "Lord Durham, an English reformer sent to report on the rebellions, recommended that Upper and Lower Canada be merged and given responsible government.", "zh": "英國改革派德倫勳爵（Lord Durham）奉派前來調查叛亂，他建議把上、下加拿大合併，並給予「責任政府」（responsible government）。"},
+          {"en": "This meant that the ministers of the Crown must have the support of a majority of the elected representatives in order to govern.", "zh": "這意味著王室的大臣們必須得到多數民選代表的支持，才能執政。"},
+          {"en": "Controversially, Lord Durham also said that the quickest way for the Canadiens to achieve progress was to assimilate into English-speaking Protestant culture.", "zh": "德倫勳爵還提出了一個爭議性的說法：法裔加拿大人要進步，最快的方法就是同化到說英語的新教文化裡。"},
+          {"en": "This recommendation demonstrated a complete lack of understanding of French Canadians, who sought to uphold the distinct identity of French Canada.", "zh": "這項建議顯示他完全不了解法裔加拿大人——他們一心想維護法裔加拿大的獨特身分。"}
+        ],
+        [
+          {"en": "Some reformers, including Sir Étienne-Paschal Taché and Sir George-Étienne Cartier, later became Fathers of Confederation, as did a former member of the voluntary government militia in Upper Canada, Sir John A. Macdonald.", "zh": "一些改革派人士，包括艾蒂安－帕斯卡・塔謝爵士（Sir Étienne-Paschal Taché）和喬治－艾蒂安・卡蒂埃爵士（Sir George-Étienne Cartier），後來成為「聯邦之父」（Fathers of Confederation）；曾在上加拿大擔任政府志願民兵的約翰・A・麥克唐納爵士（Sir John A. Macdonald）也是其中之一。"}
+        ]
+      ]
+    },
+    {
+      "title_en": "Responsible Government",
+      "title_zh": "責任政府",
+      "paras": [
+        [
+          {"en": "In 1840, Upper and Lower Canada were united as the Province of Canada.", "zh": "1840 年，上、下加拿大合併為「加拿大省」（Province of Canada）。"},
+          {"en": "Reformers such as Sir Louis-Hippolyte La Fontaine and Robert Baldwin, in parallel with Joseph Howe in Nova Scotia, worked with British governors toward responsible government.", "zh": "路易－伊波利特・拉方丹爵士（Sir Louis-Hippolyte La Fontaine）和羅伯特・鮑德溫（Robert Baldwin）等改革派，與新斯科細亞的約瑟夫・豪（Joseph Howe）同步，和英國總督合作推動責任政府。"}
+        ],
+        [
+          {"en": "The first British North American colony to attain full responsible government was Nova Scotia in 1847–48.", "zh": "英屬北美第一個獲得完全責任政府的殖民地是新斯科細亞，時間是 1847 到 48 年。"},
+          {"en": "In 1848–49 the governor of United Canada, Lord Elgin, with encouragement from London, introduced responsible government.", "zh": "1848 到 49 年，聯合加拿大的總督額爾金勳爵（Lord Elgin）在倫敦的鼓勵下，引進了責任政府。"}
+        ],
+        [
+          {"en": "This is the system that we have today: if the government loses a confidence vote in the assembly it must resign.", "zh": "這就是我們今天的制度：政府如果在議會的信任投票中落敗，就必須辭職。"},
+          {"en": "La Fontaine, a champion of democracy and French language rights, became the first leader of a responsible government in the Canadas.", "zh": "拉方丹是民主和法語權利的捍衛者，他成為加拿大第一位責任政府的領袖。"}
+        ]
+      ]
+    },
+    {
+      "title_en": "Confederation",
+      "title_zh": "聯邦",
+      "paras": [
+        [
+          {"en": "From 1864 to 1867, representatives of Nova Scotia, New Brunswick and the Province of Canada, with British support, worked together to establish a new country.", "zh": "1864 年到 1867 年，新斯科細亞、新布藍瑞克和加拿大省的代表在英國的支持下，共同努力建立一個新國家。"},
+          {"en": "These men are known as the Fathers of Confederation.", "zh": "這些人被稱為「聯邦之父」。"},
+          {"en": "They created two levels of government: federal and provincial.", "zh": "他們建立了兩級政府：聯邦和省。"},
+          {"en": "The old Province of Canada was split into two new provinces: Ontario and Quebec, which, together with New Brunswick and Nova Scotia, formed the new country called the Dominion of Canada.", "zh": "原來的加拿大省被拆成兩個新省：安大略和魁北克；它們與新布藍瑞克、新斯科細亞一起，組成了名為「加拿大自治領」（Dominion of Canada）的新國家。"},
+          {"en": "Each province would elect its own legislature and have control of such areas as education and health.", "zh": "每個省都選舉自己的議會，並掌管教育、醫療等領域。"}
+        ],
+        [
+          {"en": "The British Parliament passed the British North America Act in 1867.", "zh": "英國國會於 1867 年通過《英屬北美法案》（British North America Act）。"},
+          {"en": "The Dominion of Canada was officially born on July 1, 1867.", "zh": "加拿大自治領於 1867 年 7 月 1 日正式誕生。"},
+          {"en": "Until 1982, July 1 was celebrated as \"Dominion Day\" to commemorate the day that Canada became a self-governing Dominion.", "zh": "在 1982 年以前，7 月 1 日被稱為「自治領日」（Dominion Day），紀念加拿大成為自治領的那一天。"},
+          {"en": "Today it is officially known as Canada Day.", "zh": "今天它的正式名稱是「加拿大日」（Canada Day）。"}
+        ]
+      ]
+    },
+    {
+      "title_en": "Dominion from Sea to Sea",
+      "title_zh": "從海到海的自治領",
+      "paras": [
+        [
+          {"en": "Sir Leonard Tilley, an elected official and Father of Confederation from New Brunswick, suggested the term Dominion of Canada in 1864.", "zh": "來自新布藍瑞克的民選官員、聯邦之父李奧納德・蒂利爵士（Sir Leonard Tilley），在 1864 年提議使用「加拿大自治領」這個名稱。"},
+          {"en": "He was inspired by Psalm 72 in the Bible which refers to \"dominion from sea to sea and from the river to the ends of the earth.\"", "zh": "他的靈感來自《聖經・詩篇》第 72 篇：「他要執掌權柄，從這海直到那海，從大河直到地極。」"},
+          {"en": "This phrase embodied the vision of building a powerful, united, wealthy and free country that spanned a continent.", "zh": "這句話體現了建立一個橫跨大陸、強大、團結、富裕而自由的國家的願景。"}
+        ]
+      ]
+    },
+    {
+      "title_en": "Canada's First Prime Minister",
+      "title_zh": "加拿大第一任總理",
+      "paras": [
+        [
+          {"en": "In 1867, Sir John Alexander Macdonald, a Father of Confederation, became Canada's first Prime Minister.", "zh": "1867 年，聯邦之父約翰・亞歷山大・麥克唐納爵士（Sir John Alexander Macdonald）成為加拿大第一任總理。"},
+          {"en": "Born in Scotland on January 11, 1815, he came to Upper Canada as a child.", "zh": "他 1815 年 1 月 11 日生於蘇格蘭，小時候來到上加拿大。"},
+          {"en": "He was a lawyer in Kingston, Ontario, a gifted politician and a colourful personality.", "zh": "他是安大略京士頓的律師，也是一位才華洋溢、個性鮮明的政治家。"},
+          {"en": "Parliament has recognized January 11 as Sir John A. Macdonald Day.", "zh": "國會將 1 月 11 日定為「約翰・A・麥克唐納爵士日」。"},
+          {"en": "His portrait is on the $10 bill.", "zh": "他的肖像印在 10 元紙鈔上。"}
+        ],
+        [
+          {"en": "Sir George-Étienne Cartier was the key architect of Confederation from Quebec.", "zh": "喬治－艾蒂安・卡蒂埃爵士是來自魁北克的聯邦主要設計者。"},
+          {"en": "A railway lawyer, Montrealer, close ally of Macdonald and patriotic Canadien, Cartier led Quebec into Confederation and helped negotiate the entry of the Northwest Territories, Manitoba and British Columbia into Canada.", "zh": "他是鐵路律師、蒙特婁人、麥克唐納的親密盟友，也是愛國的法裔加拿大人；他帶領魁北克加入聯邦，並協助談判讓西北地區（Northwest Territories）、曼尼托巴（Manitoba）和卑詩省（British Columbia）加入加拿大。"}
+        ]
+      ]
+    },
+    {
+      "title_en": "Expansion of the Dominion",
+      "title_zh": "自治領的擴張",
+      "paras": [
+        [
+          {"en": "1867: Ontario, Quebec, Nova Scotia, New Brunswick.", "zh": "1867 年：安大略、魁北克、新斯科細亞、新布藍瑞克。"},
+          {"en": "1870: Manitoba, Northwest Territories.", "zh": "1870 年：曼尼托巴、西北地區。"},
+          {"en": "1871: British Columbia.", "zh": "1871 年：卑詩省。"},
+          {"en": "1873: Prince Edward Island.", "zh": "1873 年：愛德華王子島。"},
+          {"en": "1880: Transfer of the Arctic Islands to the Northwest Territories.", "zh": "1880 年：北極群島劃入西北地區。"},
+          {"en": "1898: Yukon Territory.", "zh": "1898 年：育空地區。"},
+          {"en": "1905: Alberta, Saskatchewan.", "zh": "1905 年：亞伯達、薩克其萬。"},
+          {"en": "1949: Newfoundland and Labrador.", "zh": "1949 年：紐芬蘭與拉布拉多。"},
+          {"en": "1999: Nunavut.", "zh": "1999 年：努納福特。"}
+        ]
+      ]
+    },
+    {
+      "title_en": "Challenge in the West",
+      "title_zh": "西部的挑戰",
+      "paras": [
+        [
+          {"en": "When Canada took over the vast northwest region from the Hudson's Bay Company in 1869, the 12,000 Métis of the Red River were not consulted.", "zh": "1869 年，加拿大從哈德遜灣公司手中接管廣大的西北地區，卻沒有徵詢紅河（Red River）一帶一萬兩千名梅蒂人（Métis）的意見。"},
+          {"en": "In response, Louis Riel led an armed uprising and seized Fort Garry, the territorial capital.", "zh": "作為回應，路易・瑞爾（Louis Riel）領導武裝起義，奪取了領地首府加里堡（Fort Garry）。"},
+          {"en": "Canada's future was in jeopardy.", "zh": "加拿大的未來岌岌可危。"},
+          {"en": "How could the Dominion reach from sea to sea if it could not control the interior?", "zh": "如果連內陸都控制不了，自治領怎麼可能「從海到海」？"}
+        ],
+        [
+          {"en": "Ottawa sent soldiers to retake Fort Garry in 1870.", "zh": "1870 年，渥太華派兵奪回加里堡。"},
+          {"en": "Riel fled to the United States and Canada established a new province: Manitoba.", "zh": "瑞爾逃往美國，加拿大則成立了一個新省：曼尼托巴。"},
+          {"en": "Riel was elected to Parliament but never took his seat.", "zh": "瑞爾曾當選國會議員，但從未就任。"},
+          {"en": "Later, as Métis and Indian rights were again threatened by westward settlement, a second rebellion in 1885 in present-day Saskatchewan led to Riel's trial and execution for high treason, a decision that was strongly opposed in Quebec.", "zh": "後來，梅蒂人和印第安人的權利再次因西進拓殖而受到威脅，1885 年在今天的薩克其萬爆發第二次叛亂，導致瑞爾以叛國罪受審並被處決——這個決定在魁北克遭到強烈反對。"},
+          {"en": "Riel is seen by many as a hero, a defender of Métis rights and the father of Manitoba.", "zh": "許多人把瑞爾視為英雄、梅蒂人權利的捍衛者，以及曼尼托巴之父。"}
+        ],
+        [
+          {"en": "After the first Métis uprising, Prime Minister Macdonald established the North West Mounted Police (NWMP) in 1873 to pacify the West and assist in negotiations with the Indians.", "zh": "第一次梅蒂人起義之後，麥克唐納總理於 1873 年成立「西北騎警」（North West Mounted Police，NWMP），以平定西部並協助與印第安人談判。"},
+          {"en": "The NWMP founded Fort Calgary, Fort MacLeod and other centres that today are cities and towns.", "zh": "西北騎警建立了卡加利堡（Fort Calgary）、麥克勞德堡（Fort MacLeod）等據點，今天都成了城市和城鎮。"},
+          {"en": "Regina became its headquarters.", "zh": "里賈納（Regina）成為它的總部。"},
+          {"en": "Today, the Royal Canadian Mounted Police (RCMP or \"the Mounties\") are the national police force and one of Canada's best-known symbols.", "zh": "今天的皇家加拿大騎警（Royal Canadian Mounted Police，簡稱 RCMP 或「騎警」）是國家警察，也是加拿大最著名的象徵之一。"}
+        ]
+      ]
+    },
+    {
+      "title_en": "A Railway from Sea to Sea",
+      "title_zh": "從海到海的鐵路",
+      "paras": [
+        [
+          {"en": "British Columbia joined Canada in 1871 after Ottawa promised to build a railway to the West Coast.", "zh": "在渥太華承諾修建一條通往西海岸的鐵路之後，卑詩省於 1871 年加入加拿大。"},
+          {"en": "On November 7, 1885, a powerful symbol of unity was completed when Donald Smith (Lord Strathcona), the Scottish-born director of the Canadian Pacific Railway (CPR), drove the last spike.", "zh": "1885 年 11 月 7 日，蘇格蘭出生的加拿大太平洋鐵路（Canadian Pacific Railway，CPR）董事唐納德・史密斯（Donald Smith，即史特拉斯科納勳爵）敲下最後一根道釘，一個強而有力的統一象徵就此完成。"},
+          {"en": "The project was financed by British and American investors and built by both European and Chinese labour.", "zh": "這項工程由英國和美國的投資者出資，由歐洲和華人勞工共同建造。"},
+          {"en": "Afterwards the Chinese were subject to discrimination, including the Head Tax, a race-based entry fee.", "zh": "之後華人受到歧視，包括「人頭稅」（Head Tax）——一種以種族為依據的入境費。"},
+          {"en": "The Government of Canada apologized in 2006 for this discriminatory policy.", "zh": "加拿大政府在 2006 年為這項歧視政策道歉。"}
+        ]
+      ]
+    },
+    {
+      "title_en": "Moving Westward",
+      "title_zh": "向西發展",
+      "paras": [
+        [
+          {"en": "Canada's economy grew and became more industrialized during the economic boom of the 1890s and early 1900s.", "zh": "在 1890 年代到 1900 年代初的經濟繁榮期，加拿大的經濟成長，工業化程度也提高。"},
+          {"en": "One million British and one million Americans immigrated to Canada at this time.", "zh": "這段期間有一百萬英國人和一百萬美國人移民到加拿大。"}
+        ],
+        [
+          {"en": "Sir Wilfrid Laurier became the first French-Canadian prime minister since Confederation and encouraged immigration to the West.", "zh": "威爾弗里德・勞里埃爵士（Sir Wilfrid Laurier）成為聯邦成立以來第一位法裔加拿大總理，他鼓勵移民前往西部。"},
+          {"en": "His portrait is on the $5 bill.", "zh": "他的肖像印在 5 元紙鈔上。"},
+          {"en": "The railway made it possible for immigrants, including 170,000 Ukrainians, 115,000 Poles and tens of thousands from Germany, France, Norway and Sweden to settle in the West before 1914 and develop a thriving agricultural sector.", "zh": "鐵路讓移民得以在 1914 年之前到西部定居，包括十七萬烏克蘭人、十一萬五千名波蘭人，以及數萬名來自德國、法國、挪威和瑞典的人，他們發展出蓬勃的農業。"}
+        ]
+      ]
+    },
+    {
+      "title_en": "Women Get the Vote",
+      "title_zh": "婦女取得投票權",
+      "paras": [
+        [
+          {"en": "At the time of Confederation, the vote was limited to property-owning adult white males.", "zh": "聯邦成立時，投票權僅限於擁有財產的成年白人男性。"},
+          {"en": "This was common in most democratic countries at the time.", "zh": "這在當時大多數民主國家都很普遍。"},
+          {"en": "The effort by women to achieve the right to vote is known as the women's suffrage movement.", "zh": "婦女爭取投票權的努力，稱為「婦女參政運動」（women's suffrage movement）。"},
+          {"en": "Its founder in Canada was Dr. Emily Stowe, the first Canadian woman to practise medicine in Canada.", "zh": "這項運動在加拿大的創始人是艾蜜莉・斯托醫師（Dr. Emily Stowe），她是第一位在加拿大執業的加拿大女醫師。"},
+          {"en": "In 1916, Manitoba became the first province to grant voting rights to women.", "zh": "1916 年，曼尼托巴成為第一個給予婦女投票權的省份。"}
+        ],
+        [
+          {"en": "In 1917, thanks to the leadership of women such as Dr. Stowe and other suffragettes, the federal government of Sir Robert Borden gave women the right to vote in federal elections — first to nurses at the battle front, then to women who were related to men in active wartime service.", "zh": "1917 年，由於斯托醫師等婦女參政運動者的領導，羅伯特・博登爵士（Sir Robert Borden）的聯邦政府給予婦女聯邦選舉的投票權——先是前線的護士，接著是有男性親屬正在服役的婦女。"},
+          {"en": "In 1918, most Canadian female citizens aged 21 and over were granted the right to vote in federal elections.", "zh": "1918 年，大多數 21 歲以上的加拿大女性公民獲得聯邦選舉投票權。"},
+          {"en": "In 1921 Agnes Macphail, a farmer and teacher, became the first woman MP.", "zh": "1921 年，農民兼教師艾格妮絲・麥克費爾（Agnes Macphail）成為第一位女性國會議員。"},
+          {"en": "Due to the work of Thérèse Casgrain and others, Quebec granted women the vote in 1940.", "zh": "由於泰蕾茲・卡斯格蘭（Thérèse Casgrain）等人的努力，魁北克在 1940 年給予婦女投票權。"}
+        ]
+      ]
+    },
+    {
+      "title_en": "The First World War",
+      "title_zh": "第一次世界大戰",
+      "paras": [
+        [
+          {"en": "Most Canadians were proud to be part of the British Empire.", "zh": "大多數加拿大人以身為大英帝國的一份子為榮。"},
+          {"en": "Over 7,000 volunteered to fight in the South African War (1899–1902), popularly known as the Boer War, and over 260 died.", "zh": "超過七千人自願參加南非戰爭（1899–1902，俗稱波耳戰爭），其中 260 多人陣亡。"}
+        ],
+        [
+          {"en": "When Germany attacked Belgium and France in 1914 and Britain declared war, Ottawa formed the Canadian Expeditionary Force (later the Canadian Corps).", "zh": "1914 年，德國攻擊比利時和法國，英國宣戰，渥太華組建了「加拿大遠征軍」（Canadian Expeditionary Force，後來的「加拿大軍團」）。"},
+          {"en": "More than 600,000 Canadians served in the war, most of them volunteers, out of a total population of eight million.", "zh": "在總人口八百萬人當中，有超過六十萬加拿大人參戰，大多是志願軍。"}
+        ],
+        [
+          {"en": "On the battlefield, the Canadians proved to be tough, innovative soldiers.", "zh": "在戰場上，加拿大人證明自己是堅韌、有創意的軍人。"},
+          {"en": "The Canadian Corps captured Vimy Ridge in April 1917, with 10,000 killed or wounded, securing the Canadians' reputation for valour as the \"shock troops of the British Empire.\"", "zh": "1917 年 4 月，加拿大軍團攻下維米嶺（Vimy Ridge），一萬人傷亡，為加拿大人贏得「大英帝國突擊部隊」的英勇美名。"},
+          {"en": "One Canadian officer said: \"It was Canada from the Atlantic to the Pacific on parade ... In those few minutes I witnessed the birth of a nation.\"", "zh": "一位加拿大軍官說：「那是從大西洋到太平洋的整個加拿大在列隊行進……在那短短幾分鐘裡，我見證了一個國家的誕生。」"},
+          {"en": "April 9 is celebrated as Vimy Day.", "zh": "4 月 9 日被定為「維米日」（Vimy Day）。"}
+        ],
+        [
+          {"en": "Regrettably, from 1914 to 1920, Ottawa interned over 8,000 former Austro-Hungarian subjects, mainly Ukrainian men, as \"enemy aliens\" in 24 labour camps across Canada, even though Britain advised against the policy.", "zh": "遺憾的是，1914 年到 1920 年間，渥太華把八千多名前奧匈帝國臣民（主要是烏克蘭男性）當作「敵國僑民」，關進全國 24 個勞動營——儘管英國曾建議不要這麼做。"}
+        ],
+        [
+          {"en": "In 1918, under the command of General Sir Arthur Currie, Canada's greatest soldier, the Canadian Corps advanced alongside the French and British Empire troops in the last hundred days.", "zh": "1918 年，在加拿大最偉大的軍人亞瑟・柯里將軍（General Sir Arthur Currie）的指揮下，加拿大軍團與法軍和大英帝國部隊並肩，在「最後一百天」攻勢中向前推進。"},
+          {"en": "These included the victorious Battle of Amiens on August 8, 1918–which the Germans called \"the black day of the German Army\"–followed by Arras, Canal du Nord, Cambrai and Mons.", "zh": "其中包括 1918 年 8 月 8 日大獲全勝的亞眠戰役（Battle of Amiens）——德國人稱那天為「德軍的黑色之日」——接著是阿拉斯（Arras）、北運河（Canal du Nord）、康布雷（Cambrai）和蒙斯（Mons）。"},
+          {"en": "With Germany and Austria's surrender, the war ended in the Armistice on November 11, 1918.", "zh": "隨著德國和奧地利投降，戰爭於 1918 年 11 月 11 日以停戰協定（Armistice）告終。"},
+          {"en": "In total 60,000 Canadians were killed and 170,000 wounded.", "zh": "總共有六萬名加拿大人陣亡，十七萬人受傷。"}
+        ]
+      ]
+    },
+    {
+      "title_en": "Remembrance Day",
+      "title_zh": "國殤紀念日",
+      "paras": [
+        [
+          {"en": "Canadians remember the sacrifices of our veterans and brave fallen in all wars up to the present day in which Canadians took part, each year on November 11: Remembrance Day.", "zh": "每年 11 月 11 日的國殤紀念日（Remembrance Day），加拿大人緬懷退伍軍人和在歷次戰爭中英勇犧牲的將士——涵蓋加拿大人參與過的所有戰爭，直到今天。"},
+          {"en": "Canadians wear the red poppy and observe a moment of silence at the 11th hour of the 11th day of the 11th month to honour the sacrifices of over a million brave men and women who have served, and the 110,000 who have given their lives.", "zh": "加拿大人佩戴紅色罌粟花，並在 11 月 11 日 11 時默哀片刻，向一百多萬曾經服役的勇敢男女，以及十一萬名獻出生命的人致敬。"}
+        ],
+        [
+          {"en": "Canadian medical officer Lieutenant-Colonel John McCrae composed the poem \"In Flanders Fields\" in 1915.", "zh": "加拿大軍醫中校約翰・麥克雷（John McCrae）在 1915 年寫下了詩作〈在法蘭德斯戰場〉（In Flanders Fields）。"}
+        ],
+        [
+          {"en": "In Flanders fields the poppies blow, between the crosses, row on row, that mark our place; and in the sky the larks, still bravely singing, fly, scarce heard amid the guns below.", "zh": "在法蘭德斯戰場，罌粟花隨風搖曳，在一排又一排的十字架之間，那是我們長眠的地方；天空中，雲雀依然勇敢地歌唱著飛翔，卻在底下的砲聲中幾乎聽不見。"},
+          {"en": "We are the dead. Short days ago we lived, felt dawn, saw sunset glow, loved, and were loved, and now we lie in Flanders fields.", "zh": "我們是死者。就在幾天前，我們還活著，感受黎明，看見晚霞，愛人，也被愛；如今我們卻長眠在法蘭德斯戰場。"},
+          {"en": "Take up our quarrel with the foe: to you from failing hands we throw the torch; be yours to hold it high. If ye break faith with us who die we shall not sleep, though poppies grow in Flanders fields.", "zh": "接下我們與敵人的戰鬥吧：我們用無力的手，把火炬拋給你們；請你們高高舉起。如果你們背棄了我們這些死者的信約，即使罌粟花開遍法蘭德斯戰場，我們也無法安眠。"}
+        ]
+      ]
+    },
+    {
+      "title_en": "Between the Wars",
+      "title_zh": "兩次大戰之間",
+      "paras": [
+        [
+          {"en": "After the First World War, the British Empire evolved into a free association of states known as the British Commonwealth of Nations.", "zh": "第一次世界大戰之後，大英帝國演變成一個自由結合的國家組織，稱為「大英國協」（British Commonwealth of Nations）。"},
+          {"en": "Canada remains a leading member of the Commonwealth to this day, together with other successor states of the Empire such as India, Australia, New Zealand, and several African and Caribbean countries.", "zh": "加拿大至今仍是國協的主要成員，其他成員還包括帝國的繼承國，如印度、澳洲、紐西蘭，以及幾個非洲和加勒比海國家。"}
+        ],
+        [
+          {"en": "The \"Roaring Twenties\" were boom times, with prosperity for businesses and low unemployment.", "zh": "「咆哮的二〇年代」是繁榮的年代，企業興旺，失業率低。"},
+          {"en": "The stock market crash of 1929, however, led to the Great Depression or the \"Dirty Thirties.\"", "zh": "然而 1929 年的股市崩盤帶來了經濟大蕭條，也就是「骯髒的三〇年代」。"},
+          {"en": "Unemployment reached 27% in 1933 and many businesses were wiped out.", "zh": "1933 年失業率高達 27%，許多企業倒閉。"},
+          {"en": "Farmers in Western Canada were hit hardest by low grain prices and a terrible drought.", "zh": "加拿大西部的農民受創最重，原因是穀物價格低迷和嚴重的乾旱。"}
+        ],
+        [
+          {"en": "There was growing demand for the government to create a social safety net with minimum wages, a standard work week and programs such as unemployment insurance.", "zh": "民眾愈來愈要求政府建立社會安全網，包括最低工資、標準工時，以及失業保險等制度。"},
+          {"en": "The Bank of Canada, a central bank to manage the money supply and bring stability to the financial system, was created in 1934.", "zh": "加拿大銀行（Bank of Canada）——負責管理貨幣供給、穩定金融體系的中央銀行——於 1934 年成立。"}
+        ]
+      ]
+    },
+    {
+      "title_en": "The Second World War",
+      "title_zh": "第二次世界大戰",
+      "paras": [
+        [
+          {"en": "The Second World War began in 1939 when Adolf Hitler, the National Socialist (Nazi) dictator of Germany, invaded Poland and conquered much of Europe.", "zh": "1939 年，德國的國家社會主義（納粹）獨裁者阿道夫・希特勒入侵波蘭並征服歐洲大部分地區，第二次世界大戰爆發。"},
+          {"en": "Canada joined with its democratic allies in the fight to defeat tyranny by force of arms.", "zh": "加拿大與民主盟國並肩作戰，以武力打倒暴政。"}
+        ],
+        [
+          {"en": "More than one million Canadians and Newfoundlanders (Newfoundland was a separate British entity) served in the Second World War, out of a population of 11.5 million.", "zh": "在一千一百五十萬人口中，有超過一百萬加拿大人和紐芬蘭人（當時紐芬蘭是獨立的英國屬地）在二戰中服役。"},
+          {"en": "This was a high proportion and of these, 44,000 were killed.", "zh": "這是很高的比例，其中有四萬四千人陣亡。"}
+        ],
+        [
+          {"en": "The Canadians fought bravely and suffered losses in the unsuccessful defence of Hong Kong (1941) from attack by Imperial Japan, and in a failed raid on Nazi-controlled Dieppe on the coast of France (1942).", "zh": "加拿大人英勇作戰，在 1941 年抵抗日本帝國進攻香港的失敗防衛戰，以及 1942 年突襲法國海岸納粹控制的迪耶普（Dieppe）失利中，都蒙受了損失。"}
+        ],
+        [
+          {"en": "The Royal Canadian Air Force (RCAF) took part in the Battle of Britain and provided a high proportion of Commonwealth aircrew in bombers and fighter planes over Europe.", "zh": "皇家加拿大空軍（RCAF）參與了不列顛戰役，並在歐洲上空的轟炸機和戰鬥機中，提供了很高比例的國協空勤人員。"},
+          {"en": "Moreover, Canada contributed more to the Allied air effort than any other Commonwealth country, with over 130,000 Allied air crew trained in Canada under the British Commonwealth Air Training Plan.", "zh": "此外，加拿大對盟軍空戰的貢獻超過任何其他國協國家；在「大英國協空軍訓練計畫」下，超過十三萬名盟軍空勤人員在加拿大受訓。"}
+        ],
+        [
+          {"en": "The Royal Canadian Navy (RCN) saw its finest hour in the Battle of the Atlantic, protecting convoys of merchant ships against German submarines.", "zh": "皇家加拿大海軍（RCN）最光榮的時刻是大西洋戰役，他們保護商船船隊，抵禦德國潛艇。"},
+          {"en": "Canada's Merchant Navy helped to feed, clothe and resupply Britain.", "zh": "加拿大的商船隊協助為英國供應糧食、衣物和補給。"},
+          {"en": "At the end of the Second World War, Canada had the third-largest navy in the world.", "zh": "第二次世界大戰結束時，加拿大擁有世界第三大的海軍。"}
+        ],
+        [
+          {"en": "In the Pacific war, Japan invaded the Aleutian Islands, attacked a lighthouse on Vancouver Island, launched fire balloons over B.C. and the Prairies, and grossly maltreated Canadian prisoners of war captured at Hong Kong.", "zh": "在太平洋戰爭中，日本入侵阿留申群島、攻擊溫哥華島上的一座燈塔、向卑詩省和草原省份施放火氣球，並嚴重虐待在香港被俘的加拿大戰俘。"},
+          {"en": "Japan surrendered on August 14, 1945—the end of four years of war in the Pacific.", "zh": "日本於 1945 年 8 月 14 日投降，結束了四年的太平洋戰爭。"}
+        ],
+        [
+          {"en": "Regrettably, the state of war and public opinion in B.C. led to the forcible relocation of Canadians of Japanese origin by the federal government and the sale of their property without compensation.", "zh": "遺憾的是，戰爭狀態和卑詩省的輿論，導致聯邦政府強制遷移日裔加拿大人，並在沒有補償的情況下變賣他們的財產。"},
+          {"en": "This occurred even though the military and the RCMP told Ottawa that they posed little danger to Canada.", "zh": "儘管軍方和皇家騎警都告訴渥太華，這些人對加拿大幾乎沒有威脅，這件事還是發生了。"},
+          {"en": "The Government of Canada apologized in 1988 for wartime wrongs and compensated the victims.", "zh": "加拿大政府在 1988 年為戰時的錯誤道歉，並補償受害者。"}
+        ]
+      ]
+    },
+    {
+      "title_en": "D-Day",
+      "title_zh": "D 日",
+      "paras": [
+        [
+          {"en": "In order to defeat Nazism and Fascism, the Allies invaded Nazi-occupied Europe.", "zh": "為了擊敗納粹主義和法西斯主義，盟軍進攻納粹佔領下的歐洲。"},
+          {"en": "Canadians took part in the liberation of Italy in 1943–44.", "zh": "加拿大人在 1943 到 44 年參與了解放義大利的行動。"},
+          {"en": "In the epic invasion of Normandy in northern France on June 6, 1944, known as D-Day, 15,000 Canadian troops stormed and captured Juno Beach from the German Army.", "zh": "1944 年 6 月 6 日，也就是所謂的「D 日」，盟軍在法國北部諾曼第發動史詩般的登陸；一萬五千名加拿大士兵強攻並從德軍手中奪下朱諾海灘（Juno Beach）。"},
+          {"en": "Approximately one in ten Allied soldiers on D-Day was Canadian.", "zh": "D 日當天，每十名盟軍士兵中大約就有一名是加拿大人。"},
+          {"en": "The Canadian Army liberated the Netherlands in 1944–45 and helped force the German surrender of May 8, 1945, bringing to an end six years of war in Europe.", "zh": "加拿大陸軍在 1944 到 45 年解放了荷蘭，並協助迫使德國於 1945 年 5 月 8 日投降，結束了長達六年的歐洲戰爭。"}
+        ]
+      ]
+    }
+  ]
+}

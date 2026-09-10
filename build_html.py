@@ -11,6 +11,7 @@ Run: python3 build_html.py
 
 from __future__ import annotations
 import html
+import json
 import re
 import shutil
 from pathlib import Path
@@ -473,6 +474,12 @@ def make_sidebar(current: str) -> str:
         key = f"interactive/{fn}"
         cls = ' class="current"' if current == key else ""
         parts.append(f'<a href="{up}interactive/{fn}"{cls}>{label}</a>')
+
+    parts.append('<h2>人聲朗讀對照</h2>')
+    for fn, label in READING_ITEMS:
+        key = f"reading/{fn}"
+        cls = ' class="current"' if current == key else ""
+        parts.append(f'<a href="{up}reading/{fn}"{cls}>{label}</a>')
 
     return '<nav class="sidebar">\n' + "\n".join(parts) + "\n</nav>"
 
@@ -1240,6 +1247,9 @@ def make_single_sidebar() -> str:
     parts.append('<h2>互動式（圖解）</h2>')
     for slug, label in interactive_items:
         parts.append(f'<a href="#interactive-{slug}">{label}</a>')
+    parts.append('<h2>人聲朗讀對照</h2>')
+    for fn, label in READING_ITEMS:
+        parts.append(f'<a href="#reading-{fn[:-5]}">{label}</a>')
     parts.append('</nav>')
     return "\n".join(parts)
 
@@ -1297,6 +1307,10 @@ def build_single():
     for rel, body in iv_pages:
         add_section(rel, body)
 
+    # reading (human-voice bilingual)
+    for js in sorted((ROOT / "aligned").glob("*.json")):
+        add_section(f"reading/{js.stem}.html", render_reading(js))
+
     body_html = "\n".join(sections)
     sidebar = make_single_sidebar()
     page = f"""<!doctype html>
@@ -1330,12 +1344,280 @@ def build_single():
     return out_path
 
 
+# ----------------------------- reading (human voice) ----------------------------- #
+
+READING_ITEMS = [
+    ("04-canadas-history.html", "🎧 04 · 加拿大歷史"),
+]
+
+READING_CSS = r"""
+<style>
+.layout { max-width: 1480px; }
+.rd-hero {
+  background: linear-gradient(135deg, #fff8f8 0%, #fef0e8 100%);
+  border-left: 4px solid var(--accent);
+  padding: 18px 22px; border-radius: 8px; margin: 16px 0 12px;
+}
+.rd-hero h1 { margin: 0 0 6px; border: none; padding: 0; }
+.rd-hero p { margin: 0; color: var(--muted); font-size: 14px; }
+.rd-bar {
+  position: sticky; top: 0; z-index: 5; background: var(--bg);
+  display: flex; align-items: center; gap: 10px; flex-wrap: wrap;
+  padding: 10px 0; border-bottom: 1px solid var(--line); margin-bottom: 8px;
+}
+.rd-btn {
+  appearance: none; border: 2px solid var(--accent); background: #fff; color: var(--accent);
+  padding: 7px 14px; border-radius: 20px; font-size: 14px; font-weight: 600; cursor: pointer;
+  font-family: -apple-system, system-ui, sans-serif;
+}
+.rd-btn.rd-main { background: var(--accent); color: #fff; }
+.rd-bar label { font-size: 13px; color: var(--muted); display: inline-flex; align-items: center; gap: 4px; }
+.rd-bar select { font-size: 13px; padding: 3px 6px; }
+.rd-status { font-size: 13px; color: var(--muted); margin-left: auto; }
+.rd-sec h2 { margin: 30px 0 6px; font-size: 18px; border-bottom: 2px solid var(--accent); padding-bottom: 4px; }
+.rd-sec h2 small { color: var(--muted); font-weight: 400; font-size: 13px; margin-left: 10px; }
+.rd-row {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 20px;
+  padding: 12px 0; border-bottom: 1px dashed var(--line);
+}
+.rd-cell { position: relative; padding: 4px 8px 4px 36px; line-height: 1.9; font-size: 16.5px; border-radius: 8px; }
+.rd-zh { font-family: "Noto Serif TC","Noto Serif CJK TC","PingFang TC","Songti TC",serif; }
+.rd-en { font-family: "Source Serif 4","Source Serif Pro",Georgia,serif; color: var(--en-ink); background: var(--en-bg); }
+.rd-row.playing .rd-cell { box-shadow: inset 0 0 0 2px #f0c86a; }
+.rd-play {
+  position: absolute; left: 6px; top: 9px; width: 24px; height: 24px; border-radius: 50%;
+  border: 1.5px solid var(--accent); background: #fff; color: var(--accent);
+  cursor: pointer; font-size: 10px; line-height: 1; padding: 0;
+}
+.rd-play.on { background: var(--accent); color: #fff; }
+.s { cursor: pointer; border-radius: 3px; padding: 1px 2px; transition: background 0.15s; }
+.s:hover { background: #f3efe6; }
+.rd-en .s:hover { background: #ebe4d3; }
+.s.on { background: #ffe08a !important; }
+@media (max-width: 820px) {
+  .rd-row { grid-template-columns: 1fr; gap: 8px; }
+}
+</style>
+"""
+
+READING_JS = r"""
+<script>
+(function() {
+  var root = document.getElementById('rd-__NUM__');
+  if (!root) return;
+  var T = JSON.parse(document.getElementById('rd-__NUM__-timings').textContent || '{}');
+  T.en = T.en || []; T.zh = T.zh || [];
+  var base = (location.pathname.indexOf('/reading/') >= 0 ? '../' : '') + 'audio/__NUM__/';
+  var audio = new Audio();
+  var cur = { lang: null, p: -1, i: -1 };
+  var loadedSrc = '';
+  var rate = 1;
+  var status = root.querySelector('.rd-status');
+  var nParas = root.querySelectorAll('.rd-row').length;
+
+  function clearMarks() {
+    root.querySelectorAll('.s.on').forEach(function(e){ e.classList.remove('on'); });
+    root.querySelectorAll('.rd-row.playing').forEach(function(e){ e.classList.remove('playing'); });
+    root.querySelectorAll('.rd-play.on').forEach(function(e){ e.classList.remove('on'); e.textContent = '▶'; });
+  }
+  function mark(p, i) {
+    clearMarks();
+    var row = root.querySelector('.rd-row[data-p="' + p + '"]');
+    if (!row) return;
+    row.classList.add('playing');
+    row.querySelectorAll('.s[data-i="' + i + '"]').forEach(function(e){ e.classList.add('on'); });
+    var btn = row.querySelector('.rd-play[data-lang="' + cur.lang + '"]');
+    if (btn) { btn.classList.add('on'); btn.textContent = '❚❚'; }
+    var el = row.querySelector('.rd-' + cur.lang + ' .s[data-i="' + i + '"]') || row;
+    var r = el.getBoundingClientRect();
+    if (r.top < 90 || r.bottom > window.innerHeight - 40) el.scrollIntoView({ block: 'center', behavior: 'smooth' });
+    if (status) status.textContent = (cur.lang === 'en' ? 'English' : '中文') + ' · 第 ' + (p + 1) + ' / ' + nParas + ' 段';
+  }
+  function seekStart(lang, p, i) {
+    var t = T[lang] && T[lang][p];
+    return (t && t[i]) ? t[i][0] : 0;
+  }
+  function play(lang, p, i) {
+    if (p < 0 || p >= nParas) { stop(); return; }
+    cur = { lang: lang, p: p, i: i };
+    var src = base + lang + '/p' + p + '.m4a';
+    var at = seekStart(lang, p, i);
+    if (loadedSrc !== src) {
+      loadedSrc = src;
+      audio.src = src;
+      var onMeta = function() {
+        audio.removeEventListener('loadedmetadata', onMeta);
+        audio.currentTime = at;
+        audio.playbackRate = rate;
+        audio.play().catch(function(){});
+      };
+      audio.addEventListener('loadedmetadata', onMeta);
+      audio.load();
+    } else {
+      audio.currentTime = at;
+      audio.playbackRate = rate;
+      audio.play().catch(function(){});
+    }
+    mark(p, i);
+  }
+  function stop() {
+    audio.pause();
+    clearMarks();
+    cur = { lang: null, p: -1, i: -1 };
+    if (status) status.textContent = '';
+  }
+  function pause() {
+    audio.pause();
+    var row = root.querySelector('.rd-row.playing .rd-play.on');
+    if (row) { row.classList.remove('on'); row.textContent = '▶'; }
+  }
+  function resume() {
+    if (cur.p < 0) return;
+    audio.playbackRate = rate;
+    audio.play().catch(function(){});
+    mark(cur.p, cur.i);
+  }
+
+  audio.addEventListener('timeupdate', function() {
+    if (cur.p < 0) return;
+    var t = T[cur.lang] && T[cur.lang][cur.p];
+    if (!t) return;
+    var tt = audio.currentTime;
+    for (var k = 0; k < t.length; k++) {
+      var last = (k === t.length - 1);
+      if (tt >= t[k][0] - 0.05 && (last || tt < t[k + 1][0])) {
+        if (k !== cur.i) { cur.i = k; mark(cur.p, k); }
+        break;
+      }
+    }
+  });
+  audio.addEventListener('ended', function() {
+    var cont = root.querySelector('.rd-cont');
+    if (cont && cont.checked && cur.p + 1 < nParas) play(cur.lang, cur.p + 1, 0);
+    else stop();
+  });
+
+  root.addEventListener('click', function(e) {
+    var btn = e.target.closest && e.target.closest('.rd-play');
+    if (btn) {
+      var p = parseInt(btn.dataset.p, 10), lang = btn.dataset.lang;
+      if (cur.p === p && cur.lang === lang) {
+        if (audio.paused) resume(); else pause();
+      } else {
+        play(lang, p, 0);
+      }
+      return;
+    }
+    var s = e.target.closest && e.target.closest('.s');
+    if (s) {
+      var sel = window.getSelection && window.getSelection();
+      if (sel && sel.toString().length) return;
+      var cell = s.closest('.rd-cell');
+      var row = s.closest('.rd-row');
+      var lang2 = cell.classList.contains('rd-en') ? 'en' : 'zh';
+      play(lang2, parseInt(row.dataset.p, 10), parseInt(s.dataset.i, 10));
+    }
+  });
+
+  var bar = root.querySelector('.rd-bar');
+  bar.querySelector('.rd-all-zh').addEventListener('click', function(){ play('zh', 0, 0); });
+  bar.querySelector('.rd-all-en').addEventListener('click', function(){ play('en', 0, 0); });
+  bar.querySelector('.rd-pause').addEventListener('click', function(){
+    if (cur.p < 0) return;
+    if (audio.paused) resume(); else pause();
+  });
+  bar.querySelector('.rd-stop').addEventListener('click', stop);
+  bar.querySelector('.rd-rate').addEventListener('change', function(e){
+    rate = parseFloat(e.target.value) || 1;
+    audio.playbackRate = rate;
+  });
+  document.addEventListener('keydown', function(e) {
+    if (e.code !== 'Space' || cur.p < 0) return;
+    if (/input|select|textarea/i.test(e.target.tagName)) return;
+    e.preventDefault();
+    if (audio.paused) resume(); else pause();
+  });
+  window.addEventListener('hashchange', stop);
+  window.addEventListener('pagehide', function(){ audio.pause(); });
+})();
+</script>
+"""
+
+
+def render_reading(json_path: Path) -> str:
+    data = json.loads(json_path.read_text(encoding="utf-8"))
+    num = data["num"]
+    tpath = OUT / "audio" / num / "timings.json"
+    timings = {"en": [], "zh": []}
+    if tpath.exists():
+        t = json.loads(tpath.read_text(encoding="utf-8"))
+        timings = {"en": t.get("en", []), "zh": t.get("zh", [])}
+
+    pi = 0
+    secs_html = ""
+    for sec in data["sections"]:
+        rows = ""
+        for para in sec["paras"]:
+            zh = "".join(
+                f'<span class="s" data-i="{i}">{html.escape(p["zh"])}</span>'
+                for i, p in enumerate(para)
+            )
+            en = " ".join(
+                f'<span class="s" data-i="{i}">{html.escape(p["en"])}</span>'
+                for i, p in enumerate(para)
+            )
+            rows += f'''
+<div class="rd-row" data-p="{pi}">
+  <div class="rd-cell rd-zh"><button class="rd-play" data-lang="zh" data-p="{pi}" type="button" title="朗讀中文">▶</button>{zh}</div>
+  <div class="rd-cell rd-en"><button class="rd-play" data-lang="en" data-p="{pi}" type="button" title="Read English">▶</button>{en}</div>
+</div>'''
+            pi += 1
+        secs_html += (
+            f'<section class="rd-sec"><h2>{html.escape(sec["title_zh"])}'
+            f'<small>{html.escape(sec["title_en"])}</small></h2>{rows}</section>'
+        )
+
+    tjson = json.dumps(timings, ensure_ascii=False).replace("</", "<\\/")
+    return f'''{READING_CSS}
+<div class="rd" id="rd-{num}">
+<div class="rd-hero">
+  <h1>🎧 {num} {html.escape(data["title_zh"])} <small style="font-weight:400;color:var(--muted)">{html.escape(data["title_en"])}</small></h1>
+  <p>左中文、右英文，句對句對照。按段落左邊的 ▶ 朗讀該段；點任何一句從那句開始念；念到哪一句，中英文同時標黃。空白鍵＝暫停／繼續。</p>
+</div>
+<div class="rd-bar">
+  <button class="rd-btn rd-main rd-all-en" type="button">▶ English 全章</button>
+  <button class="rd-btn rd-all-zh" type="button">▶ 中文全章</button>
+  <button class="rd-btn rd-pause" type="button">❚❚ 暫停／繼續</button>
+  <button class="rd-btn rd-stop" type="button">■ 停</button>
+  <label><input type="checkbox" class="rd-cont" checked> 連續播放下一段</label>
+  <label>速度 <select class="rd-rate">
+    <option value="0.8">0.8×</option><option value="0.9">0.9×</option>
+    <option value="1" selected>1×</option><option value="1.15">1.15×</option><option value="1.3">1.3×</option>
+  </select></label>
+  <span class="rd-status"></span>
+</div>
+{secs_html}
+</div>
+<script type="application/json" id="rd-{num}-timings">{tjson}</script>
+{READING_JS.replace("__NUM__", num)}
+'''
+
+
 # ----------------------------- build ----------------------------- #
 
 def build():
+    # html/audio is produced by build_audio.py (slow); keep it across rebuilds.
+    audio_keep = None
+    if (OUT / "audio").exists():
+        audio_keep = ROOT / ".audio_keep"
+        if audio_keep.exists():
+            shutil.rmtree(audio_keep)
+        shutil.move(str(OUT / "audio"), str(audio_keep))
     if OUT.exists():
         shutil.rmtree(OUT)
     (OUT / "bilingual").mkdir(parents=True)
+    if audio_keep is not None:
+        shutil.move(str(audio_keep), str(OUT / "audio"))
     (OUT / "daily-quiz").mkdir()
     (OUT / "curriculum").mkdir()
     (OUT / "practice").mkdir()
@@ -1386,6 +1668,16 @@ def build():
         # Interactive pages contain raw HTML (not markdown), so skip TTS-augmentation
         # and only rewrite md links (which there aren't any).
         (OUT / rel).write_text(wrap_page(title, body, rel), encoding="utf-8")
+
+    # reading pages (human-voice bilingual, audio already in html/audio/)
+    (OUT / "reading").mkdir(exist_ok=True)
+    for js in sorted((ROOT / "aligned").glob("*.json")):
+        data = json.loads(js.read_text(encoding="utf-8"))
+        rel = f"reading/{js.stem}.html"
+        (OUT / rel).write_text(
+            wrap_page(f"{data['num']} {data['title_zh']} 人聲朗讀", render_reading(js), rel),
+            encoding="utf-8",
+        )
 
     # single-file build (for iOS Files App preview, AirDrop, etc.)
     build_single()
