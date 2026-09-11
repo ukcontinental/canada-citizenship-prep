@@ -1,0 +1,161 @@
+{
+  "num": "06",
+  "title_en": "How Canadians Govern Themselves",
+  "title_zh": "加拿大人如何治理自己",
+  "sections": [
+    {
+      "title_en": "How Canadians Govern Themselves",
+      "title_zh": "加拿大人如何治理自己",
+      "paras": [
+        [
+          {"en": "There are three key facts about Canada's system of government: our country is a federal state, a parliamentary democracy and a constitutional monarchy.", "zh": "關於加拿大的政府制度有三個關鍵事實：我們的國家是一個聯邦國家、一個議會民主國，也是一個君主立憲國。"}
+        ]
+      ]
+    },
+    {
+      "title_en": "Federal state",
+      "title_zh": "聯邦國家",
+      "paras": [
+        [
+          {"en": "There are federal, provincial, territorial and municipal governments in Canada.", "zh": "加拿大有聯邦、省、地區和市鎮政府。"},
+          {"en": "The responsibilities of the federal and provincial governments were defined in 1867 in the British North America Act, now known as the Constitution Act, 1867.", "zh": "聯邦與省政府的職責在 1867 年的《英屬北美法案》中訂定，這部法案現在稱為《1867 年憲法法案》。"}
+        ],
+        [
+          {"en": "In our federal state, the federal government takes responsibility for matters of national and international concern.", "zh": "在我們的聯邦國家裡，聯邦政府負責全國性和國際性的事務。"},
+          {"en": "These include defence, foreign policy, interprovincial trade and communications, currency, navigation, criminal law and citizenship.", "zh": "這些包括國防、外交政策、省際貿易與通訊、貨幣、航運、刑法和公民身分。"},
+          {"en": "The provinces are responsible for municipal government, education, health, natural resources, property and civil rights, and highways.", "zh": "各省負責市鎮政府、教育、醫療、自然資源、財產與民事權利，以及公路。"},
+          {"en": "The federal government and the provinces share jurisdiction over agriculture and immigration.", "zh": "聯邦政府與各省共同管轄農業和移民。"},
+          {"en": "Federalism allows different provinces to adopt policies tailored to their own populations, and gives provinces the flexibility to experiment with new ideas and policies.", "zh": "聯邦制讓各省能採用適合自己人口的政策，也讓各省有彈性嘗試新的想法和政策。"}
+        ],
+        [
+          {"en": "Every province has its own elected Legislative Assembly, like the House of Commons in Ottawa.", "zh": "每個省都有自己民選的立法議會，就像渥太華的眾議院一樣。"},
+          {"en": "The three northern territories, which have small populations, do not have the status of provinces, but their governments and assemblies carry out many of the same functions.", "zh": "北方三個地區人口稀少，沒有省的地位，但它們的政府和議會執行許多相同的職能。"}
+        ]
+      ]
+    },
+    {
+      "title_en": "Parliamentary democracy",
+      "title_zh": "議會民主",
+      "paras": [
+        [
+          {"en": "In Canada's parliamentary democracy, the people elect members to the House of Commons in Ottawa and to the provincial and territorial legislatures.", "zh": "在加拿大的議會民主制度中，人民選出議員進入渥太華的眾議院，以及各省和地區的議會。"},
+          {"en": "These representatives are responsible for passing laws, approving and monitoring expenditures, and keeping the government accountable.", "zh": "這些民意代表負責通過法律、審核與監督支出，並讓政府負起責任。"},
+          {"en": "Cabinet ministers are responsible to the elected representatives, which means they must retain the \"confidence of the House\" and have to resign if they are defeated in a non-confidence vote.", "zh": "內閣部長對民選代表負責，這表示他們必須維持「眾議院的信任」，如果在不信任投票中落敗就必須辭職。"}
+        ],
+        [
+          {"en": "Parliament has three parts: the Sovereign (Queen or King), the Senate and the House of Commons.", "zh": "國會由三個部分組成：君主（女王或國王）、參議院和眾議院。"},
+          {"en": "Provincial legislatures comprise the Lieutenant Governor and the elected Assembly.", "zh": "省議會則由省督和民選的議會組成。"}
+        ],
+        [
+          {"en": "In the federal government, the Prime Minister selects the Cabinet ministers and is responsible for the operations and policy of the government.", "zh": "在聯邦政府中，總理挑選內閣部長，並負責政府的運作與政策。"},
+          {"en": "The House of Commons is the representative chamber, made up of members of Parliament elected by the people, traditionally every four years.", "zh": "眾議院是民意代表的議事廳，由人民選出的國會議員組成，傳統上每四年選一次。"},
+          {"en": "Senators are appointed by the Governor General on the advice of the Prime Minister and serve until age 75.", "zh": "參議員由總督依總理的建議任命，任職到 75 歲。"},
+          {"en": "Both the House of Commons and the Senate consider and review bills (proposals for new laws).", "zh": "眾議院和參議院都會審議法案（新法律的提案）。"},
+          {"en": "No bill can become law in Canada until it has been passed by both chambers and has received royal assent, granted by the Governor General on behalf of the Sovereign.", "zh": "在加拿大，任何法案都必須經兩院通過，並獲得總督代表君主授予的「御准」，才能成為法律。"}
+        ]
+      ]
+    },
+    {
+      "title_en": "How a bill becomes law — The Legislative Process",
+      "title_zh": "法案如何成為法律——立法程序",
+      "paras": [
+        [
+          {"en": "Step 1: First Reading – The bill is considered read for the first time and is printed.", "zh": "第一步：一讀——法案視為第一次宣讀，並印製出來。"},
+          {"en": "Step 2: Second Reading – Members debate the bill's principle.", "zh": "第二步：二讀——議員辯論法案的原則。"},
+          {"en": "Step 3: Committee Stage – Committee members study the bill clause by clause.", "zh": "第三步：委員會階段——委員會成員逐條研究法案。"},
+          {"en": "Step 4: Report Stage – Members can make other amendments.", "zh": "第四步：報告階段——議員可以提出其他修正。"},
+          {"en": "Step 5: Third Reading – Members debate and vote on the bill.", "zh": "第五步：三讀——議員辯論並對法案投票。"},
+          {"en": "Step 6: Senate – The bill follows a similar process in the Senate.", "zh": "第六步：參議院——法案在參議院經過類似的程序。"},
+          {"en": "Step 7: Royal Assent – The bill receives royal assent after being passed by both Houses.", "zh": "第七步：御准——法案經兩院通過後獲得御准。"}
+        ],
+        [
+          {"en": "Living in a democracy, Canadian citizens have the right and the responsibility to participate in making decisions that affect them.", "zh": "生活在民主國家，加拿大公民有權利也有責任參與影響自己的決策。"},
+          {"en": "It is important for Canadians aged 18 or more to participate in their democracy by voting in federal, provincial or territorial and municipal elections.", "zh": "18 歲以上的加拿大人在聯邦、省或地區以及市鎮選舉中投票、參與民主，是很重要的。"}
+        ]
+      ]
+    },
+    {
+      "title_en": "Constitutional monarchy",
+      "title_zh": "君主立憲",
+      "paras": [
+        [
+          {"en": "As a constitutional monarchy, Canada's Head of State is a hereditary Sovereign (Queen or King), who reigns in accordance with the Constitution: the rule of law.", "zh": "作為君主立憲國，加拿大的國家元首是世襲的君主（女王或國王），依據憲法——也就是法治——統治。"},
+          {"en": "The Sovereign is a part of Parliament, playing an important, non-partisan role as the focus of citizenship and allegiance, most visibly during royal visits to Canada.", "zh": "君主是國會的一部分，扮演重要而超越黨派的角色，是公民身分與效忠的核心，在王室訪問加拿大時最為明顯。"},
+          {"en": "Her Majesty is a symbol of Canadian sovereignty, a guardian of constitutional freedoms, and a reflection of our history.", "zh": "君主陛下是加拿大主權的象徵、憲政自由的守護者，也反映了我們的歷史。"},
+          {"en": "The Royal Family's example of lifelong service to the community is an encouragement for citizens to give their best to their country.", "zh": "王室終身為社會服務的榜樣，鼓勵公民為國家盡最大的努力。"},
+          {"en": "As Head of the Commonwealth, the Sovereign links Canada to 53 other nations that cooperate to advance social, economic and cultural progress.", "zh": "作為大英國協的元首，君主把加拿大與其他 53 個國家連結起來，這些國家合作推動社會、經濟和文化的進步。"},
+          {"en": "Other constitutional monarchies include Denmark, Norway, Sweden, Australia, New Zealand, The Netherlands, Spain, Thailand, Japan, Jordan and Morocco.", "zh": "其他君主立憲國包括丹麥、挪威、瑞典、澳洲、紐西蘭、荷蘭、西班牙、泰國、日本、約旦和摩洛哥。"}
+        ],
+        [
+          {"en": "There is a clear distinction in Canada between the head of state—the Sovereign—and the head of government—the Prime Minister, who actually directs the governing of the country.", "zh": "在加拿大，國家元首（君主）與政府首長（總理）有明確的區分；實際指揮國家治理的是總理。"}
+        ],
+        [
+          {"en": "The Sovereign is represented in Canada by the Governor General, who is appointed by the Sovereign on the advice of the Prime Minister, usually for five years.", "zh": "君主在加拿大由總督代表；總督由君主依總理的建議任命，通常任期五年。"},
+          {"en": "In each of the ten provinces, the Sovereign is represented by the Lieutenant Governor, who is appointed by the Governor General on the advice of the Prime Minister, also normally for five years.", "zh": "在十個省中，君主由省督代表；省督由總督依總理的建議任命，通常也是五年。"}
+        ],
+        [
+          {"en": "The interplay between the three branches of government—the Executive, Legislative and Judicial—which work together but also sometimes in creative tension, helps to secure the rights and freedoms of Canadians.", "zh": "政府三個部門——行政、立法和司法——之間的互動，既合作又時有良性的張力，有助於保障加拿大人的權利與自由。"}
+        ],
+        [
+          {"en": "Each provincial and territorial government has an elected legislature where provincial and territorial laws are passed.", "zh": "每個省和地區政府都有民選的議會，省和地區的法律在那裡通過。"},
+          {"en": "The members of the legislature are called members of the Legislative Assembly (MLAs), members of the National Assembly (MNAs), members of the Provincial Parliament (MPPs) or members of the House of Assembly (MHAs), depending on the province or territory.", "zh": "議會成員依省或地區不同，稱為立法議會議員（MLA）、國民議會議員（MNA）、省議會議員（MPP）或眾議會議員（MHA）。"}
+        ],
+        [
+          {"en": "In each province, the Premier has a role similar to that of the Prime Minister in the federal government, just as the Lieutenant Governor has a role similar to that of the Governor General.", "zh": "在每個省，省長（Premier）的角色類似聯邦政府的總理，正如省督的角色類似總督。"},
+          {"en": "In the three territories, the Commissioner represents the federal government and plays a ceremonial role.", "zh": "在三個地區，專員（Commissioner）代表聯邦政府，扮演儀式性的角色。"}
+        ]
+      ]
+    },
+    {
+      "title_en": "Canada's System of Government",
+      "title_zh": "加拿大的政府體系",
+      "paras": [
+        [
+          {"en": "The Sovereign is represented in Canada by the Governor General.", "zh": "君主在加拿大由總督代表。"},
+          {"en": "The Legislative Branch is Parliament: the Senate, appointed on the Prime Minister's recommendation, and the House of Commons, elected by voters.", "zh": "立法部門是國會：由總理推薦任命的參議院，以及由選民選出的眾議院。"},
+          {"en": "The Executive Branch is the Prime Minister and Cabinet.", "zh": "行政部門是總理和內閣。"},
+          {"en": "The Judiciary is the Supreme Court of Canada, with nine judges appointed by the Governor General, the Federal Court of Canada, and the provincial courts.", "zh": "司法部門是加拿大最高法院（由總督任命的九位法官）、加拿大聯邦法院，以及各省法院。"}
+        ]
+      ]
+    },
+    {
+      "title_en": "Other levels of government in Canada",
+      "title_zh": "加拿大的其他層級政府",
+      "paras": [
+        [
+          {"en": "Local or municipal government plays an important role in the lives of our citizens.", "zh": "地方或市鎮政府在公民的生活中扮演重要角色。"},
+          {"en": "Municipal governments usually have a council that passes laws called \"by-laws\" that affect only the local community.", "zh": "市鎮政府通常有一個議會，通過只影響當地社區的法規，稱為「地方法規」（by-laws）。"},
+          {"en": "The council usually includes a mayor (or a reeve) and councillors or aldermen.", "zh": "議會通常包括一位市長（或鄉長）以及議員。"},
+          {"en": "Municipalities are normally responsible for urban or regional planning, streets and roads, sanitation (such as garbage removal), snow removal, firefighting, ambulance and other emergency services, recreation facilities, public transit and some local health and social services.", "zh": "市鎮通常負責都市或區域規劃、街道與道路、環境衛生（例如垃圾清運）、除雪、消防、救護車和其他緊急服務、休閒設施、大眾運輸，以及部分地方的健康與社會服務。"},
+          {"en": "Most major urban centres have municipal police forces.", "zh": "大多數主要城市都有市警察。"}
+        ],
+        [
+          {"en": "Provincial, territorial and municipal elections are held by secret ballot, but the rules are not the same as those for federal elections.", "zh": "省、地區和市鎮選舉都採不記名投票，但規則與聯邦選舉不同。"},
+          {"en": "It is important to find out the rules for voting in provincial, territorial and local elections so that you can exercise your right to vote.", "zh": "了解省、地區和地方選舉的投票規則很重要，這樣你才能行使投票權。"}
+        ],
+        [
+          {"en": "The First Nations have band chiefs and councillors who have major responsibilities on First Nations reserves, including housing, schools and other services.", "zh": "第一民族有部落酋長和議員，他們在第一民族保留區負有重大責任，包括住房、學校和其他服務。"},
+          {"en": "There are a number of provincial, regional and national Aboriginal organizations that are a voice for First Nations, Métis and Inuit people in their relationships with the federal, provincial and territorial governments.", "zh": "有許多省級、區域和全國性的原住民組織，代表第一民族、梅蒂人和因紐特人與聯邦、省和地區政府往來時發聲。"}
+        ]
+      ]
+    },
+    {
+      "title_en": "Elected officials and responsibilities",
+      "title_zh": "各級民選官員與職責",
+      "paras": [
+        [
+          {"en": "Federal government: the elected officials are Members of Parliament (MPs).", "zh": "聯邦政府：民選官員是國會議員（MP）。"},
+          {"en": "Federal responsibilities include national defence, foreign policy, citizenship, policing, criminal justice, international trade, Aboriginal affairs, and shared responsibility for immigration, agriculture and the environment.", "zh": "聯邦的職責包括國防、外交政策、公民身分、警政、刑事司法、國際貿易、原住民事務，以及與省共同負責的移民、農業和環境。"}
+        ],
+        [
+          {"en": "Provincial and territorial governments: the elected officials are Members of the Legislative Assembly (MLAs), Members of the National Assembly (MNAs), Members of the Provincial Parliament (MPPs) or Members of the House of Assembly (MHAs).", "zh": "省和地區政府：民選官員是立法議會議員（MLA）、國民議會議員（MNA）、省議會議員（MPP）或眾議會議員（MHA）。"},
+          {"en": "Provincial responsibilities include education, health care, natural resources, highways, policing in Ontario and Quebec, property and civil rights, and shared responsibility for immigration, agriculture and the environment.", "zh": "省的職責包括教育、醫療、自然資源、公路、安大略與魁北克的警政、財產與民事權利，以及與聯邦共同負責的移民、農業和環境。"}
+        ],
+        [
+          {"en": "Municipal (local) government: the elected officials are the Mayor or Reeve and the Councillors or Aldermen.", "zh": "市鎮（地方）政府：民選官員是市長或鄉長，以及市議員。"},
+          {"en": "Municipal responsibilities include social and community health, recycling programs, transportation and utilities, snow removal, policing, firefighting and emergency services.", "zh": "市鎮的職責包括社會與社區健康、資源回收計畫、交通與公用事業、除雪、警政、消防和緊急服務。"}
+        ]
+      ]
+    }
+  ]
+}

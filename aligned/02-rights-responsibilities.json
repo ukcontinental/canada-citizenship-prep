@@ -1,0 +1,100 @@
+{
+  "num": "02",
+  "title_en": "Rights and Responsibilities of Citizenship",
+  "title_zh": "公民的權利與責任",
+  "sections": [
+    {
+      "title_en": "Rights and Responsibilities of Citizenship",
+      "title_zh": "公民的權利與責任",
+      "paras": [
+        [
+          {"en": "Canadian citizens have rights and responsibilities.", "zh": "加拿大公民有權利，也有責任。"},
+          {"en": "These come to us from our history, are secured by Canadian law, and reflect our shared traditions, identity and values.", "zh": "這些權利與責任來自我們的歷史，受加拿大法律保障，並反映我們共同的傳統、身分與價值觀。"}
+        ],
+        [
+          {"en": "Canadian law has several sources, including laws passed by Parliament and the provincial legislatures, English common law, the civil code of France and the unwritten constitution that we have inherited from Great Britain.", "zh": "加拿大的法律有好幾個來源，包括國會和各省議會通過的法律、英國的普通法、法國的民法典，以及我們從英國繼承而來的不成文憲法。"}
+        ],
+        [
+          {"en": "Together, these secure for Canadians an 800-year old tradition of ordered liberty, which dates back to the signing of Magna Carta in 1215 in England (also known as the Great Charter of Freedoms), including:", "zh": "這些法律加起來，為加拿大人保障了一項長達八百年的「有序自由」傳統；這個傳統可以追溯到 1215 年在英國簽署的《大憲章》（Magna Carta，又稱《自由大憲章》），包括："},
+          {"en": "Freedom of conscience and religion.", "zh": "良心與宗教自由。"},
+          {"en": "Freedom of thought, belief, opinion and expression, including freedom of speech and of the press.", "zh": "思想、信仰、意見與表達的自由，包括言論自由和新聞自由。"},
+          {"en": "Freedom of peaceful assembly.", "zh": "和平集會的自由。"},
+          {"en": "Freedom of association.", "zh": "結社的自由。"}
+        ],
+        [
+          {"en": "Habeas corpus, the right to challenge unlawful detention by the state, comes from English common law.", "zh": "「人身保護令」（Habeas corpus）——挑戰國家非法拘留的權利——來自英國的普通法。"}
+        ],
+        [
+          {"en": "The Constitution of Canada was amended in 1982 to entrench the Canadian Charter of Rights and Freedoms, which begins with the words, \"Whereas Canada is founded upon principles that recognize the supremacy of God and the rule of law.\"", "zh": "加拿大憲法在 1982 年修訂，把《加拿大權利與自由憲章》寫進憲法；憲章的開頭寫道：「鑒於加拿大建立在承認上帝至高無上與法治的原則之上。」"},
+          {"en": "This phrase underlines the importance of religious traditions to Canadian society and the dignity and worth of the human person.", "zh": "這句話強調了宗教傳統對加拿大社會的重要性，以及人的尊嚴與價值。"}
+        ],
+        [
+          {"en": "The Charter attempts to summarize fundamental freedoms while also setting out additional rights.", "zh": "憲章試圖概括各項基本自由，同時也列出其他的權利。"},
+          {"en": "The most important of these include:", "zh": "其中最重要的包括："},
+          {"en": "Mobility Rights — Canadians can live and work anywhere they choose in Canada, enter and leave the country freely, and apply for a passport.", "zh": "遷徙權——加拿大人可以在加拿大任何地方居住和工作，自由出入境，並申請護照。"},
+          {"en": "Aboriginal Peoples' Rights — The rights guaranteed in the Charter will not adversely affect any treaty or other rights or freedoms of Aboriginal peoples.", "zh": "原住民權利——憲章所保障的權利，不會損害原住民的任何條約權利或其他權利與自由。"},
+          {"en": "Official Language Rights and Minority Language Educational Rights — French and English have equal status in Parliament and throughout the government.", "zh": "官方語言權利與少數語言教育權利——法語和英語在國會和整個政府中地位平等。"},
+          {"en": "Multiculturalism — A fundamental characteristic of the Canadian heritage and identity.", "zh": "多元文化——加拿大傳統與身分的一項基本特徵。"},
+          {"en": "Canadians celebrate the gift of one another's presence and work hard to respect pluralism and live in harmony.", "zh": "加拿大人珍視彼此的存在，並努力尊重多元、和諧共處。"}
+        ]
+      ]
+    },
+    {
+      "title_en": "Defending Canada",
+      "title_zh": "保衛加拿大",
+      "paras": [
+        [
+          {"en": "There is no compulsory military service in Canada.", "zh": "加拿大沒有義務兵役制。"},
+          {"en": "However, serving in the regular Canadian Forces (navy, army and air force) is a noble way to contribute to Canada and an excellent career choice.", "zh": "不過，在加拿大正規軍（海軍、陸軍、空軍）服役，是為加拿大貢獻的一種崇高方式，也是很好的職業選擇。"},
+          {"en": "You can serve in your local part-time navy, militia and air reserves and gain valuable experience, skills and contacts.", "zh": "你可以在當地的兼職海軍、民兵和空軍後備部隊服役，獲得寶貴的經驗、技能和人脈。"},
+          {"en": "Young people can learn discipline, responsibility and skills by getting involved in the cadets.", "zh": "年輕人可以透過參加青年軍校（cadets）學習紀律、責任感和技能。"}
+        ],
+        [
+          {"en": "You may also serve in the Coast Guard or emergency services in your community such as a police force or fire department.", "zh": "你也可以在海岸防衛隊，或社區的緊急服務單位（例如警察局或消防隊）服務。"},
+          {"en": "By helping to protect your community, you follow in the footsteps of Canadians before you who made sacrifices in the service of our country.", "zh": "幫助保護你的社區，就是追隨前人的腳步——那些曾為國家服務而犧牲的加拿大人。"}
+        ]
+      ]
+    },
+    {
+      "title_en": "The Equality of Women and Men",
+      "title_zh": "男女平等",
+      "paras": [
+        [
+          {"en": "In Canada, men and women are equal under the law.", "zh": "在加拿大，男女在法律之下一律平等。"},
+          {"en": "Canada's openness and generosity do not extend to barbaric cultural practices that tolerate spousal abuse, \"honour killings,\" female genital mutilation, forced marriage or other gender-based violence.", "zh": "加拿大的開放與包容，不包括縱容配偶虐待、「榮譽殺人」、女性割禮、強迫婚姻或其他性別暴力的野蠻文化習俗。"},
+          {"en": "Those guilty of these crimes are severely punished under Canada's criminal laws.", "zh": "犯下這些罪行的人，會依加拿大刑法受到嚴厲懲罰。"}
+        ]
+      ]
+    },
+    {
+      "title_en": "Citizenship Responsibilities",
+      "title_zh": "公民的責任",
+      "paras": [
+        [
+          {"en": "In Canada, rights come with responsibilities. These include:", "zh": "在加拿大，權利伴隨著責任。這些責任包括："},
+          {"en": "Obeying the law — One of Canada's founding principles is the rule of law.", "zh": "遵守法律——法治是加拿大的立國原則之一。"},
+          {"en": "Individuals and governments are regulated by laws and not by arbitrary actions.", "zh": "個人和政府都受法律規範，而不是受任意的行為所支配。"},
+          {"en": "No person or group is above the law.", "zh": "沒有任何人或團體可以凌駕於法律之上。"}
+        ],
+        [
+          {"en": "Taking responsibility for oneself and one's family — Getting a job, taking care of one's family and working hard in keeping with one's abilities are important Canadian values.", "zh": "為自己和家人負責——找工作、照顧家人、盡自己的能力努力工作，是加拿大的重要價值觀。"},
+          {"en": "Work contributes to personal dignity and self-respect, and to Canada's prosperity.", "zh": "工作有助於個人的尊嚴與自尊，也有助於加拿大的繁榮。"}
+        ],
+        [
+          {"en": "Serving on a jury — When called to do so, you are legally required to serve.", "zh": "擔任陪審員——當你被傳喚時，依法必須去擔任。"},
+          {"en": "Serving on a jury is a privilege that makes the justice system work as it depends on impartial juries made up of citizens.", "zh": "擔任陪審員是一種殊榮，它讓司法制度得以運作，因為司法制度仰賴由公民組成的公正陪審團。"}
+        ],
+        [
+          {"en": "Voting in elections — The right to vote comes with a responsibility to vote in federal, provincial or territorial and local elections.", "zh": "在選舉中投票——投票權伴隨著責任：在聯邦、省或地區以及地方選舉中投票。"}
+        ],
+        [
+          {"en": "Helping others in the community — Millions of volunteers freely donate their time to help others without pay—helping people in need, assisting at your child's school, volunteering at a food bank or other charity, or encouraging newcomers to integrate.", "zh": "幫助社區裡的他人——數百萬名志工無償奉獻時間幫助別人：幫助有需要的人、到孩子的學校協助、在食物銀行或其他慈善機構當志工，或鼓勵新移民融入。"},
+          {"en": "Volunteering is an excellent way to gain useful skills and develop friends and contacts.", "zh": "當志工是獲得實用技能、結交朋友和建立人脈的絕佳方式。"}
+        ],
+        [
+          {"en": "Protecting and enjoying our heritage and environment — Every citizen has a role to play in avoiding waste and pollution while protecting Canada's natural, cultural and architectural heritage for future generations.", "zh": "保護並享受我們的遺產與環境——每位公民都有責任避免浪費和污染，同時為後代保護加拿大的自然、文化與建築遺產。"}
+        ]
+      ]
+    }
+  ]
+}

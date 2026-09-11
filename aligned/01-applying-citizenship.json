@@ -1,0 +1,59 @@
+{
+  "num": "01",
+  "title_en": "Applying for Citizenship",
+  "title_zh": "申請公民身分",
+  "sections": [
+    {
+      "title_en": "Applying for Citizenship",
+      "title_zh": "申請公民身分",
+      "paras": [
+        [
+          {"en": "When you apply for citizenship, officials will check your status, verify that you are not prohibited from applying, and ensure that you meet the requirements.", "zh": "當你申請公民身分時，官員會查核你的身分狀態、確認你沒有被禁止申請，並確保你符合各項要求。"},
+          {"en": "Your application may take several months.", "zh": "你的申請可能需要好幾個月。"},
+          {"en": "Please ensure that the Call Centre always has your correct address while your application is being processed.", "zh": "在申請處理期間，請確保客服中心隨時有你正確的地址。"}
+        ]
+      ]
+    },
+    {
+      "title_en": "How to use this booklet to prepare for the citizenship test",
+      "title_zh": "如何用這本手冊準備公民考試",
+      "paras": [
+        [
+          {"en": "This booklet will help you prepare for the citizenship test.", "zh": "這本手冊會幫助你準備公民考試。"},
+          {"en": "You should study this guide.", "zh": "你應該研讀這本指南。"},
+          {"en": "Ask a friend or family member to help you practise answering questions about Canada.", "zh": "請朋友或家人幫你練習回答關於加拿大的問題。"},
+          {"en": "Call a local school or school board, a college, a community centre or a local organization that provides services to immigrants and ask for information on citizenship classes.", "zh": "打電話給當地的學校或教育局、學院、社區中心，或為移民提供服務的地方組織，詢問公民課程的資訊。"},
+          {"en": "Take English or French language classes, which the Government of Canada offers free of charge.", "zh": "參加加拿大政府免費提供的英語或法語課程。"}
+        ]
+      ]
+    },
+    {
+      "title_en": "About the citizenship test",
+      "title_zh": "關於公民考試",
+      "paras": [
+        [
+          {"en": "The citizenship test is usually a written test, but it could be an interview.", "zh": "公民考試通常是筆試，但也可能是面試。"},
+          {"en": "You will be tested on two basic requirements for citizenship: knowledge of Canada and of the rights and responsibilities of citizenship, and adequate knowledge of English or French.", "zh": "考試會測驗公民身分的兩項基本要求：一是對加拿大以及公民權利與責任的了解，二是足夠的英語或法語能力。"},
+          {"en": "Adult applicants 55 years of age and over do not need to write the citizenship test.", "zh": "55 歲以上的成年申請人不需要參加公民考試。"},
+          {"en": "The Citizenship Regulations provide information on how your ability to meet the knowledge of Canada requirement is determined.", "zh": "《公民法規》說明了如何判定你是否符合「了解加拿大」這項要求。"},
+          {"en": "All the citizenship test questions are based on the subject areas noted in the Citizenship Regulations, and all required information is provided in this study guide.", "zh": "所有公民考試的題目都根據《公民法規》列出的主題範圍出題，而所有需要的資訊都在這本學習指南裡。"}
+        ]
+      ]
+    },
+    {
+      "title_en": "After the test",
+      "title_zh": "考試之後",
+      "paras": [
+        [
+          {"en": "If you pass the test and meet all the other requirements, you will receive a Notice to Appear to Take the Oath of Citizenship.", "zh": "如果你通過考試並符合其他所有要求，你會收到一份「宣誓入籍出席通知」。"},
+          {"en": "This document tells you the date, time and place of your citizenship ceremony.", "zh": "這份文件會告訴你公民宣誓儀式的日期、時間和地點。"}
+        ],
+        [
+          {"en": "At the ceremony, you will take the Oath of Citizenship, sign the oath form, and receive your Canadian Citizenship Certificate.", "zh": "在儀式上，你會宣讀公民誓詞、簽署誓詞表格，並領取你的加拿大公民證書。"},
+          {"en": "If you do not pass the test, you will receive a notification indicating the next steps.", "zh": "如果你沒有通過考試，你會收到一份通知，說明接下來的步驟。"},
+          {"en": "You are encouraged to bring your family and friends to celebrate this occasion.", "zh": "我們鼓勵你帶家人和朋友一起來慶祝這個時刻。"}
+        ]
+      ]
+    }
+  ]
+}

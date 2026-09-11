@@ -1,0 +1,77 @@
+{
+  "num": "08",
+  "title_en": "The Justice System",
+  "title_zh": "司法系統",
+  "sections": [
+    {
+      "title_en": "The Justice System",
+      "title_zh": "司法系統",
+      "paras": [
+        [
+          {"en": "The Canadian justice system guarantees everyone due process under the law.", "zh": "加拿大的司法系統保障每個人依法享有正當程序。"},
+          {"en": "Our judicial system is founded on the presumption of innocence in criminal matters, meaning everyone is innocent until proven guilty.", "zh": "我們的司法制度在刑事案件上建立在「無罪推定」的基礎上，意思是每個人在被證明有罪之前都是無辜的。"}
+        ],
+        [
+          {"en": "Canada's legal system is based on a heritage that includes the rule of law, freedom under the law, democratic principles and due process.", "zh": "加拿大的法律制度建立在一項傳統之上，包括法治、法律之下的自由、民主原則和正當程序。"},
+          {"en": "Due process is the principle that the government must respect all the legal rights a person is entitled to under the law.", "zh": "正當程序的原則是：政府必須尊重一個人依法享有的所有法律權利。"}
+        ],
+        [
+          {"en": "Canada is governed by an organized system of laws.", "zh": "加拿大由一套有系統的法律來治理。"},
+          {"en": "These laws are the written rules intended to guide people in our society.", "zh": "這些法律是為了引導社會中的人們而制定的成文規則。"},
+          {"en": "They are made by elected representatives.", "zh": "它們由民選的代表制定。"},
+          {"en": "The courts settle disputes and the police enforce the laws.", "zh": "法院解決糾紛，警察執行法律。"},
+          {"en": "The law in Canada applies to everyone, including judges, politicians and the police.", "zh": "加拿大的法律適用於每一個人，包括法官、政治人物和警察。"},
+          {"en": "Our laws are intended to provide order in society and a peaceful way to settle disputes, and to express the values and beliefs of Canadians.", "zh": "我們的法律旨在為社會提供秩序、提供和平解決糾紛的方式，並表達加拿大人的價值觀與信念。"}
+        ],
+        [
+          {"en": "The blindfolded Lady Justice symbolizes the impartial manner in which our laws are administered: blind to all considerations but the facts.", "zh": "蒙著眼睛的正義女神象徵我們法律執行的公正方式：除了事實之外，對一切考量都視而不見。"}
+        ]
+      ]
+    },
+    {
+      "title_en": "Courts",
+      "title_zh": "法院",
+      "paras": [
+        [
+          {"en": "The Supreme Court of Canada is our country's highest court.", "zh": "加拿大最高法院是我們國家的最高法院。"},
+          {"en": "The Federal Court of Canada deals with matters concerning the federal government.", "zh": "加拿大聯邦法院處理與聯邦政府有關的事務。"},
+          {"en": "In most provinces there is an appeal court and a trial court, sometimes called the Court of Queen's Bench or the Supreme Court.", "zh": "大多數省份有上訴法院和審判法院，審判法院有時稱為「女王座法院」或「最高法院」。"},
+          {"en": "There are also provincial courts for lesser offences, family courts, traffic courts and small claims courts for civil cases involving small sums of money.", "zh": "另外還有審理較輕罪行的省法院、家事法院、交通法院，以及審理小額民事案件的小額索賠法院。"}
+        ]
+      ]
+    },
+    {
+      "title_en": "Police",
+      "title_zh": "警察",
+      "paras": [
+        [
+          {"en": "The police are there to keep people safe and to enforce the law.", "zh": "警察的職責是保護人民安全並執行法律。"},
+          {"en": "You can ask the police for help in all kinds of situations—if there's been an accident, if someone has stolen something from you, if you are a victim of assault, if you see a crime taking place or if someone you know has gone missing.", "zh": "在各種情況下你都可以向警察求助——發生意外、東西被偷、遭到攻擊、目睹犯罪，或認識的人失蹤時。"}
+        ],
+        [
+          {"en": "There are different types of police in Canada.", "zh": "加拿大有不同種類的警察。"},
+          {"en": "There are provincial police forces in Ontario and Quebec and municipal police departments in all provinces.", "zh": "安大略和魁北克有省警察，所有省份都有市警察局。"},
+          {"en": "The Royal Canadian Mounted Police (RCMP) enforce federal laws throughout Canada, and serve as the provincial police in all provinces and territories except Ontario and Quebec, as well as in some municipalities.", "zh": "皇家加拿大騎警（RCMP）在全加拿大執行聯邦法律，並在安大略和魁北克以外的所有省和地區擔任省警察，也在一些市鎮服務。"},
+          {"en": "Remember, the police are there to help you.", "zh": "記住，警察是來幫助你的。"}
+        ],
+        [
+          {"en": "You can also question the police about their service or conduct if you feel you need to.", "zh": "如果你覺得有必要，你也可以就警察的服務或行為提出質疑。"},
+          {"en": "Almost all police forces in Canada have a process by which you can bring your concerns to the police and seek action.", "zh": "加拿大幾乎所有警察機關都有一套程序，讓你可以向警方反映你的疑慮並要求處理。"}
+        ],
+        [
+          {"en": "Prisons have an essential role in punishing criminals and deterring crime.", "zh": "監獄在懲罰罪犯和嚇阻犯罪方面扮演重要角色。"}
+        ]
+      ]
+    },
+    {
+      "title_en": "Getting legal help",
+      "title_zh": "尋求法律協助",
+      "paras": [
+        [
+          {"en": "Lawyers can help you with legal problems and act for you in court.", "zh": "律師可以幫你處理法律問題，並在法庭上代表你。"},
+          {"en": "If you cannot pay for a lawyer, in most communities there are legal aid services available free of charge or at a low cost.", "zh": "如果你付不起律師費，大多數社區都有免費或低收費的法律援助服務。"}
+        ]
+      ]
+    }
+  ]
+}

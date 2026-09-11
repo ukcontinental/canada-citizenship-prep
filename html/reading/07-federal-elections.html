@@ -1,0 +1,1050 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="加拿大公民考">
+<meta name="theme-color" content="#c8102e">
+<title>07 聯邦選舉 人聲朗讀 · 加拿大公民考試</title>
+<style>
+:root {
+  --bg: #faf8f4;
+  --panel: #ffffff;
+  --ink: #1f2328;
+  --muted: #5d646d;
+  --line: #e7e2d6;
+  --accent: #c8102e;        /* maple red */
+  --accent-soft: #fbe9ec;
+  --en-bg: #f3efe6;
+  --en-ink: #2b2620;
+  --zh-bg: #ffffff;
+  --quote: #8a6d3b;
+  --max: 1180px;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: "Source Serif 4","Source Serif Pro","Noto Serif TC","Noto Serif CJK TC","PingFang TC","Songti TC", Georgia, serif;
+  font-size: 17px;
+  line-height: 1.75;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+.layout {
+  display: grid;
+  grid-template-columns: 240px minmax(0, 1fr);
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 0 24px;
+  gap: 36px;
+}
+nav.sidebar {
+  position: sticky;
+  top: 0;
+  align-self: start;
+  height: 100vh;
+  overflow-y: auto;
+  padding: 28px 0 40px;
+  border-right: 1px solid var(--line);
+  font-family: -apple-system, "Helvetica Neue", "PingFang TC", system-ui, sans-serif;
+  font-size: 14px;
+  line-height: 1.45;
+}
+nav.sidebar h1 {
+  font-family: inherit;
+  font-size: 14px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin: 0 0 10px;
+}
+nav.sidebar h2 {
+  font-family: inherit;
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin: 22px 0 6px;
+  font-weight: 600;
+}
+nav.sidebar a {
+  display: block;
+  color: var(--ink);
+  text-decoration: none;
+  padding: 4px 10px 4px 0;
+  border-radius: 4px;
+}
+nav.sidebar a:hover { color: var(--accent); }
+nav.sidebar a.current {
+  color: var(--accent);
+  font-weight: 600;
+}
+nav.sidebar .home {
+  display: inline-block;
+  font-weight: 700;
+  font-size: 18px;
+  color: var(--ink);
+  text-decoration: none;
+  margin-bottom: 14px;
+}
+nav.sidebar .home::before { content: "🍁 "; }
+main {
+  padding: 36px 0 80px;
+  min-width: 0;
+}
+main h1, main h2, main h3, main h4 {
+  font-family: -apple-system, "Helvetica Neue", "PingFang TC", system-ui, sans-serif;
+  line-height: 1.3;
+  color: var(--ink);
+}
+main h1 {
+  font-size: 28px;
+  margin: 0 0 8px;
+  letter-spacing: -0.01em;
+}
+main > p:first-of-type {
+  color: var(--muted);
+  margin-top: 4px;
+}
+main h2 {
+  font-size: 21px;
+  margin: 40px 0 12px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid var(--line);
+}
+main h3 { font-size: 18px; margin: 28px 0 8px; }
+main h4 { font-size: 16px; margin: 22px 0 6px; color: var(--muted); }
+main p { margin: 0 0 12px; }
+main ul, main ol { margin: 0 0 14px; padding-left: 1.4em; }
+main li { margin: 4px 0; }
+main hr {
+  border: none;
+  border-top: 1px solid var(--line);
+  margin: 32px 0;
+}
+main a { color: var(--accent); text-decoration: none; }
+main a:hover { text-decoration: underline; }
+main code {
+  font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.9em;
+  background: #f3efe6;
+  padding: 1px 5px;
+  border-radius: 4px;
+}
+main blockquote {
+  margin: 14px 0;
+  padding: 12px 18px;
+  background: var(--accent-soft);
+  border-left: 3px solid var(--accent);
+  color: var(--ink);
+  border-radius: 0 6px 6px 0;
+}
+main blockquote p:last-child { margin-bottom: 0; }
+main table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 14px 0 22px;
+  font-size: 15px;
+}
+main th, main td {
+  text-align: left;
+  padding: 8px 12px;
+  border-bottom: 1px solid var(--line);
+  vertical-align: top;
+}
+main th {
+  background: #f3efe6;
+  font-family: -apple-system, "Helvetica Neue", "PingFang TC", system-ui, sans-serif;
+  font-weight: 600;
+}
+
+/* --- bilingual pairing --- */
+.bilingual {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  margin: 14px 0;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  overflow: hidden;
+  background: var(--zh-bg);
+}
+.bilingual .en, .bilingual .zh {
+  padding: 16px 20px;
+}
+.bilingual .en {
+  background: var(--en-bg);
+  color: var(--en-ink);
+  font-family: "Source Serif 4","Source Serif Pro", Georgia, serif;
+  font-style: normal;
+  border-right: 1px solid var(--line);
+}
+.bilingual .en p, .bilingual .zh p { margin: 0 0 8px; }
+.bilingual .en p:last-child, .bilingual .zh p:last-child { margin-bottom: 0; }
+.bilingual .en ul, .bilingual .en ol,
+.bilingual .zh ul, .bilingual .zh ol {
+  margin: 0 0 6px;
+  padding-left: 1.3em;
+}
+.bilingual .en em { font-style: italic; }
+.bilingual .label {
+  display: inline-block;
+  font-family: -apple-system, "Helvetica Neue", system-ui, sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 6px;
+  font-weight: 600;
+}
+
+/* --- callouts (⚠️ blocks) --- */
+.callout {
+  margin: 18px 0;
+  padding: 14px 18px;
+  background: #fff8e1;
+  border-left: 4px solid #f0a500;
+  border-radius: 0 6px 6px 0;
+}
+.callout p { margin: 0 0 6px; }
+.callout p:last-child { margin: 0; }
+
+/* --- collapsible answers --- */
+details.answers {
+  margin: 22px 0;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 0;
+  overflow: hidden;
+}
+details.answers > summary {
+  cursor: pointer;
+  padding: 14px 18px;
+  font-family: -apple-system, "Helvetica Neue", "PingFang TC", system-ui, sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  background: #f3efe6;
+  border-bottom: 1px solid transparent;
+  user-select: none;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+details.answers > summary::-webkit-details-marker { display: none; }
+details.answers > summary::after {
+  content: "▸";
+  color: var(--muted);
+  transition: transform 0.18s ease;
+  font-size: 14px;
+}
+details.answers[open] > summary {
+  border-bottom-color: var(--line);
+}
+details.answers[open] > summary::after { transform: rotate(90deg); }
+details.answers .answers-body { padding: 14px 22px 6px; }
+details.answers .answers-body ol { margin: 0; padding-left: 1.4em; }
+details.answers .answers-body li { margin: 8px 0; }
+
+/* --- dashboard cards on index --- */
+.dash {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+  margin: 24px 0;
+}
+.dash a {
+  display: block;
+  padding: 18px 20px;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  color: var(--ink);
+  text-decoration: none;
+  transition: border-color 0.15s, transform 0.15s;
+}
+.dash a:hover {
+  border-color: var(--accent);
+  transform: translateY(-1px);
+}
+.dash a .kicker {
+  font-family: -apple-system, system-ui, sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+  display: block;
+  margin-bottom: 6px;
+}
+.dash a .title {
+  font-weight: 600;
+  font-size: 17px;
+  line-height: 1.35;
+}
+.dash a .meta {
+  display: block;
+  margin-top: 8px;
+  font-size: 13px;
+  color: var(--muted);
+  font-family: -apple-system, system-ui, sans-serif;
+}
+
+/* --- speak (TTS) button --- */
+.speak-btn {
+  appearance: none;
+  background: rgba(255,255,255,0.85);
+  border: 1px solid var(--line);
+  color: var(--muted);
+  cursor: pointer;
+  padding: 4px 9px;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 12px;
+  font-family: -apple-system, "Helvetica Neue", system-ui, sans-serif;
+  transition: all 0.15s;
+  -webkit-tap-highlight-color: transparent;
+  min-width: 64px;
+  justify-content: center;
+}
+.speak-btn .speak-icon { display: inline-flex; }
+.speak-btn svg { display: block; }
+.speak-btn:hover { color: var(--accent); border-color: var(--accent); }
+.speak-btn:active { transform: scale(0.96); }
+.speak-btn.speaking {
+  background: var(--accent);
+  color: #fff;
+  border-color: var(--accent);
+  animation: speak-pulse 1.4s ease-in-out infinite;
+}
+.speak-btn.paused {
+  background: #f0a500;
+  color: #fff;
+  border-color: #f0a500;
+  animation: none;
+}
+@keyframes speak-pulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(200,16,46,0.5); }
+  50%      { box-shadow: 0 0 0 6px rgba(200,16,46,0); }
+}
+
+/* --- per-word highlight during TTS + click-to-play-from-here --- */
+.w {
+  border-radius: 3px;
+  padding: 0 1px;
+  transition: color 0.08s ease, background 0.08s ease;
+  cursor: pointer;
+  -webkit-tap-highlight-color: rgba(200, 16, 46, 0.15);
+}
+.w:hover {
+  background: rgba(200, 16, 46, 0.07);
+  text-decoration: underline;
+  text-decoration-color: rgba(200, 16, 46, 0.3);
+  text-decoration-style: dotted;
+  text-underline-offset: 3px;
+}
+.w.current {
+  color: var(--accent);
+  background: rgba(200, 16, 46, 0.14);
+  font-weight: 600;
+  text-decoration: none;
+}
+.bilingual .en { position: relative; }
+.bilingual .en > .speak-btn {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+}
+.bilingual .en > .label + .speak-btn { /* fallback positioning if absolute fails */ }
+blockquote.speakable, .callout.speakable {
+  position: relative;
+  padding-right: 60px;
+}
+blockquote.speakable > .speak-btn,
+.callout.speakable > .speak-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: #fff;
+}
+
+/* --- mobile --- */
+@media (max-width: 900px) {
+  .layout { grid-template-columns: 1fr; padding: 0 16px; gap: 0; }
+  nav.sidebar {
+    position: static;
+    height: auto;
+    border-right: none;
+    border-bottom: 1px solid var(--line);
+    padding: 18px 0;
+  }
+  .bilingual { grid-template-columns: 1fr; }
+  .bilingual .en { border-right: none; border-bottom: 1px solid var(--line); }
+}
+
+/* --- print --- */
+@media print {
+  nav.sidebar { display: none; }
+  .layout { display: block; padding: 0; }
+  main { padding: 0; }
+  details.answers { border: 1px solid #999; }
+  details.answers > summary { display: none; }
+  details.answers > .answers-body { display: block !important; }
+  .bilingual { break-inside: avoid; }
+}
+</style>
+</head>
+<body>
+<div class="layout">
+<nav class="sidebar">
+<a href="../index.html" class="home">加拿大公民考試</a>
+<h2>🎧 人聲朗讀對照</h2>
+<a href="../reading/00-intro-oath.html">00 · 公民誓詞與給讀者的話</a>
+<a href="../reading/01-applying-citizenship.html">01 · 申請公民身分</a>
+<a href="../reading/02-rights-responsibilities.html">02 · 公民的權利與責任</a>
+<a href="../reading/03-who-we-are.html">03 · 我們是誰</a>
+<a href="../reading/04-canadas-history.html">04 · 加拿大歷史</a>
+<a href="../reading/05-modern-canada.html">05 · 現代加拿大</a>
+<a href="../reading/06-how-canadians-govern.html">06 · 加拿大人如何治理自己</a>
+<a href="../reading/07-federal-elections.html" class="current">07 · 聯邦選舉</a>
+<a href="../reading/08-justice-system.html">08 · 司法系統</a>
+<a href="../reading/09-canadian-symbols.html">09 · 加拿大的象徵</a>
+<a href="../reading/10-canadas-economy.html">10 · 加拿大的經濟</a>
+<a href="../reading/11-canadas-regions.html">11 · 加拿大的各個地區</a>
+<a href="../reading/12-study-questions.html">12 · 官方練習題</a>
+<h2>🧠 每章重點互動記憶</h2>
+<a href="../interactive/index.html">🎯 互動式入口</a>
+<a href="../interactive/history.html">📜 04 歷史時間軸</a>
+<a href="../interactive/story-04.html">📖 04 故事聽學</a>
+<a href="../interactive/modern.html">🇨🇦 05 現代加拿大</a>
+<a href="../interactive/government.html">🏛️ 06 政府架構</a>
+<a href="../interactive/elections.html">🗳️ 07 聯邦選舉</a>
+<a href="../interactive/justice.html">⚖️ 08 司法系統</a>
+<a href="../interactive/symbols.html">🍁 09 國家象徵</a>
+<a href="../interactive/economy.html">💼 10 加拿大經濟</a>
+<a href="../interactive/geography.html">🗺️ 11 地圖與省份</a>
+<h2>📝 考題</h2>
+<a href="../practice/question-bank.html">220 題題庫（依章節）</a>
+<a href="../daily-quiz/day-01.html">驗收 Day 01</a>
+<a href="../daily-quiz/day-02.html">驗收 Day 02</a>
+<a href="../daily-quiz/day-03.html">驗收 Day 03</a>
+<a href="../daily-quiz/day-04.html">驗收 Day 04</a>
+<a href="../daily-quiz/day-05.html">驗收 Day 05</a>
+<a href="../daily-quiz/day-06.html">驗收 Day 06</a>
+<a href="../daily-quiz/day-07.html">驗收 Day 07</a>
+<a href="../daily-quiz/day-08.html">驗收 Day 08</a>
+<a href="../daily-quiz/day-09.html">驗收 Day 09</a>
+<a href="../daily-quiz/day-10.html">驗收 Day 10</a>
+<a href="../daily-quiz/day-11.html">驗收 Day 11</a>
+<a href="../daily-quiz/day-12.html">驗收 Day 12</a>
+<a href="../daily-quiz/day-13.html">驗收 Day 13</a>
+<a href="../daily-quiz/day-14.html">驗收 Day 14</a>
+</nav>
+<main>
+<style>
+.layout { max-width: 1480px; }
+.rd-hero {
+  background: linear-gradient(135deg, #fff8f8 0%, #fef0e8 100%);
+  border-left: 4px solid var(--accent);
+  padding: 18px 22px; border-radius: 8px; margin: 16px 0 12px;
+}
+.rd-hero h1 { margin: 0 0 6px; border: none; padding: 0; }
+.rd-hero p { margin: 0; color: var(--muted); font-size: 14px; }
+.rd-bar {
+  position: sticky; top: 0; z-index: 5; background: var(--bg);
+  display: flex; align-items: center; gap: 10px; flex-wrap: wrap;
+  padding: 10px 0; border-bottom: 1px solid var(--line); margin-bottom: 8px;
+}
+.rd-btn {
+  appearance: none; border: 2px solid var(--accent); background: #fff; color: var(--accent);
+  padding: 7px 14px; border-radius: 20px; font-size: 14px; font-weight: 600; cursor: pointer;
+  font-family: -apple-system, system-ui, sans-serif;
+}
+.rd-btn.rd-main { background: var(--accent); color: #fff; }
+.rd-bar label { font-size: 13px; color: var(--muted); display: inline-flex; align-items: center; gap: 4px; }
+.rd-bar select { font-size: 13px; padding: 3px 6px; }
+.rd-status { font-size: 13px; color: var(--muted); margin-left: auto; }
+.rd-sec h2 { margin: 30px 0 6px; font-size: 18px; border-bottom: 2px solid var(--accent); padding-bottom: 4px; }
+.rd-sec h2 small { color: var(--muted); font-weight: 400; font-size: 13px; margin-left: 10px; }
+.rd-row {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 20px;
+  padding: 12px 0; border-bottom: 1px dashed var(--line);
+}
+.rd-cell { position: relative; padding: 4px 8px 4px 36px; line-height: 1.9; font-size: 16.5px; border-radius: 8px; }
+.rd-zh { font-family: "Noto Serif TC","Noto Serif CJK TC","PingFang TC","Songti TC",serif; }
+.rd-en { font-family: "Source Serif 4","Source Serif Pro",Georgia,serif; color: var(--en-ink); background: var(--en-bg); }
+.rd-row.playing .rd-cell { box-shadow: inset 0 0 0 2px #f0c86a; }
+.rd-play {
+  position: absolute; left: 6px; top: 9px; width: 24px; height: 24px; border-radius: 50%;
+  border: 1.5px solid var(--accent); background: #fff; color: var(--accent);
+  cursor: pointer; font-size: 10px; line-height: 1; padding: 0;
+}
+.rd-play.on { background: var(--accent); color: #fff; }
+.s { cursor: pointer; border-radius: 3px; padding: 1px 2px; transition: background 0.15s; }
+.s:hover { background: #f3efe6; }
+.rd-en .s:hover { background: #ebe4d3; }
+.s.on { background: #ffe08a !important; }
+@media (max-width: 820px) {
+  .rd-row { grid-template-columns: 1fr; gap: 8px; }
+}
+</style>
+
+<div class="rd" id="rd-07">
+<div class="rd-hero">
+  <h1>🎧 07 聯邦選舉 <small style="font-weight:400;color:var(--muted)">Federal Elections</small></h1>
+  <p>左中文、右英文，句對句對照。按段落左邊的 ▶ 朗讀該段；點任何一句從那句開始念；念到哪一句，中英文同時標黃。空白鍵＝暫停／繼續。</p>
+</div>
+<div class="rd-bar">
+  <button class="rd-btn rd-main rd-all-en" type="button">▶ English 全章</button>
+  <button class="rd-btn rd-all-zh" type="button">▶ 中文全章</button>
+  <button class="rd-btn rd-pause" type="button">❚❚ 暫停／繼續</button>
+  <button class="rd-btn rd-stop" type="button">■ 停</button>
+  <label><input type="checkbox" class="rd-cont" checked> 連續播放下一段</label>
+  <label>速度 <select class="rd-rate">
+    <option value="0.8">0.8×</option><option value="0.9">0.9×</option>
+    <option value="1" selected>1×</option><option value="1.15">1.15×</option><option value="1.3">1.3×</option>
+  </select></label>
+  <span class="rd-status"></span>
+</div>
+<section class="rd-sec"><h2>聯邦選舉<small>Federal Elections</small></h2>
+<div class="rd-row" data-p="0">
+  <div class="rd-cell rd-zh"><button class="rd-play" data-lang="zh" data-p="0" type="button" title="朗讀中文">▶</button><span class="s" data-i="0">加拿大人在選舉中投票，選出他們希望在眾議院代表自己的人。</span><span class="s" data-i="1">每次選舉，選民可以讓同一批眾議院議員連任，也可以選出新的人。</span><span class="s" data-i="2">眾議院的成員也稱為國會議員（MP）。</span></div>
+  <div class="rd-cell rd-en"><button class="rd-play" data-lang="en" data-p="0" type="button" title="Read English">▶</button><span class="s" data-i="0">Canadians vote in elections for the people they want to represent them in the House of Commons.</span> <span class="s" data-i="1">In each election, voters may re-elect the same members of the House of Commons or choose new ones.</span> <span class="s" data-i="2">Members of the House of Commons are also known as members of Parliament or MPs.</span></div>
+</div>
+<div class="rd-row" data-p="1">
+  <div class="rd-cell rd-zh"><button class="rd-play" data-lang="zh" data-p="1" type="button" title="朗讀中文">▶</button><span class="s" data-i="0">依據國會通過的法律，聯邦選舉必須在最近一次大選之後每四年的十月第三個星期一舉行。</span><span class="s" data-i="1">總理可以請總督提前舉行選舉。</span></div>
+  <div class="rd-cell rd-en"><button class="rd-play" data-lang="en" data-p="1" type="button" title="Read English">▶</button><span class="s" data-i="0">Under legislation passed by Parliament, federal elections must be held on the third Monday in October every four years following the most recent general election.</span> <span class="s" data-i="1">The Prime Minister may ask the Governor General to call an earlier election.</span></div>
+</div>
+<div class="rd-row" data-p="2">
+  <div class="rd-cell rd-zh"><button class="rd-play" data-lang="zh" data-p="2" type="button" title="朗讀中文">▶</button><span class="s" data-i="0">加拿大分為 308 個選區（electoral districts，也叫 ridings 或 constituencies）。</span><span class="s" data-i="1">注意：308 是這本 2021 年版的數字；選區數會隨人口增加，考前請到 elections.ca 查最新總數。</span><span class="s" data-i="2">選區是由一位國會議員代表的地理區域。</span><span class="s" data-i="3">每個選區的公民選出一位國會議員，在眾議院代表他們，也代表全體加拿大人。</span></div>
+  <div class="rd-cell rd-en"><button class="rd-play" data-lang="en" data-p="2" type="button" title="Read English">▶</button><span class="s" data-i="0">Canada is divided into 308 electoral districts, also known as ridings or constituencies.</span> <span class="s" data-i="1">Note: 308 is the figure in this 2021 edition; the number of ridings grows with the population, so check elections.ca for the current total before your test.</span> <span class="s" data-i="2">An electoral district is a geographical area represented by a member of Parliament (MP).</span> <span class="s" data-i="3">The citizens in each electoral district elect one MP who sits in the House of Commons to represent them, as well as all Canadians.</span></div>
+</div>
+<div class="rd-row" data-p="3">
+  <div class="rd-cell rd-zh"><button class="rd-play" data-lang="zh" data-p="3" type="button" title="朗讀中文">▶</button><span class="s" data-i="0">18 歲以上的加拿大公民可以參選聯邦選舉。</span><span class="s" data-i="1">參選的人稱為候選人。</span><span class="s" data-i="2">一個選區可以有很多候選人。</span></div>
+  <div class="rd-cell rd-en"><button class="rd-play" data-lang="en" data-p="3" type="button" title="Read English">▶</button><span class="s" data-i="0">Canadian citizens who are 18 years old or older may run in a federal election.</span> <span class="s" data-i="1">The people who run for office are called candidates.</span> <span class="s" data-i="2">There can be many candidates in an electoral district.</span></div>
+</div>
+<div class="rd-row" data-p="4">
+  <div class="rd-cell rd-zh"><button class="rd-play" data-lang="zh" data-p="4" type="button" title="朗讀中文">▶</button><span class="s" data-i="0">每個選區的人民投票給自己選擇的候選人和政黨。</span><span class="s" data-i="1">得票最多的候選人成為該選區的國會議員。</span></div>
+  <div class="rd-cell rd-en"><button class="rd-play" data-lang="en" data-p="4" type="button" title="Read English">▶</button><span class="s" data-i="0">The people in each electoral district vote for the candidate and political party of their choice.</span> <span class="s" data-i="1">The candidate who receives the most votes becomes the MP for that electoral district.</span></div>
+</div></section><section class="rd-sec"><h2>投票<small>Voting</small></h2>
+<div class="rd-row" data-p="5">
+  <div class="rd-cell rd-zh"><button class="rd-play" data-lang="zh" data-p="5" type="button" title="朗讀中文">▶</button><span class="s" data-i="0">加拿大公民的特權之一就是投票權。</span><span class="s" data-i="1">如果你是加拿大公民、投票日當天年滿 18 歲，並且在選民名冊上，你就有資格在聯邦選舉中投票，或在聯邦公投中投票。</span></div>
+  <div class="rd-cell rd-en"><button class="rd-play" data-lang="en" data-p="5" type="button" title="Read English">▶</button><span class="s" data-i="0">One of the privileges of Canadian citizenship is the right to vote.</span> <span class="s" data-i="1">You are eligible to vote in a federal election or cast a ballot in a federal referendum if you are a Canadian citizen, at least 18 years old on voting day, and on the voters&#x27; list.</span></div>
+</div>
+<div class="rd-row" data-p="6">
+  <div class="rd-cell rd-zh"><button class="rd-play" data-lang="zh" data-p="6" type="button" title="朗讀中文">▶</button><span class="s" data-i="0">聯邦選舉和公投使用的選民名冊，是由國會的中立機構「加拿大選舉局」（Elections Canada）根據「全國選民登記冊」製作的。</span><span class="s" data-i="1">這是一個永久性的資料庫，記錄有資格在聯邦選舉和公投中投票的 18 歲以上加拿大公民。</span></div>
+  <div class="rd-cell rd-en"><button class="rd-play" data-lang="en" data-p="6" type="button" title="Read English">▶</button><span class="s" data-i="0">The voters&#x27; lists used during federal elections and referendums are produced from the National Register of Electors by a neutral agency of Parliament called Elections Canada.</span> <span class="s" data-i="1">This is a permanent database of Canadian citizens 18 years of age or older who are qualified to vote in federal elections and referendums.</span></div>
+</div>
+<div class="rd-row" data-p="7">
+  <div class="rd-cell rd-zh"><button class="rd-play" data-lang="zh" data-p="7" type="button" title="朗讀中文">▶</button><span class="s" data-i="0">選舉一經宣布，加拿大選舉局會寄一張「選民資訊卡」給每一位名字在全國選民登記冊上的選民。</span><span class="s" data-i="1">卡片上列出你投票的時間和地點，以及需要口譯或其他特殊服務時可以撥打的電話號碼。</span></div>
+  <div class="rd-cell rd-en"><button class="rd-play" data-lang="en" data-p="7" type="button" title="Read English">▶</button><span class="s" data-i="0">Once an election has been called, Elections Canada mails a voter information card to each elector whose name is in the National Register of Electors.</span> <span class="s" data-i="1">The card lists when and where you vote and the number to call if you require an interpreter or other special services.</span></div>
+</div>
+<div class="rd-row" data-p="8">
+  <div class="rd-cell rd-zh"><button class="rd-play" data-lang="zh" data-p="8" type="button" title="朗讀中文">▶</button><span class="s" data-i="0">即使你選擇不列入全國選民登記冊，或沒有收到選民資訊卡，你仍然可以隨時被加入選民名冊，包括在選舉日當天。</span><span class="s" data-i="1">不論是在選舉日或提前投票，都到你選民資訊卡上列出的投票站去投票。</span></div>
+  <div class="rd-cell rd-en"><button class="rd-play" data-lang="en" data-p="8" type="button" title="Read English">▶</button><span class="s" data-i="0">Even if you choose not to be listed in the National Register of Electors or do not receive a voter information card, you can still be added to the voters&#x27; list at any time, including on election day.</span> <span class="s" data-i="1">To vote either on election day or at advance polls, go to the polling station listed on your voter information card.</span></div>
+</div></section><section class="rd-sec"><h2>不記名投票<small>Secret ballot</small></h2>
+<div class="rd-row" data-p="9">
+  <div class="rd-cell rd-zh"><button class="rd-play" data-lang="zh" data-p="9" type="button" title="朗讀中文">▶</button><span class="s" data-i="0">加拿大法律保障不記名投票的權利。</span><span class="s" data-i="1">這表示沒有人可以看你投票，也沒有人應該看你投給了誰。</span><span class="s" data-i="2">你可以選擇跟別人討論你投給誰，但沒有人——包括家人、雇主或工會代表——有權利堅持要你告訴他們你投給了誰。</span><span class="s" data-i="3">投票站一關閉，選務人員就立刻開票，結果會在廣播、電視和報紙上公布。</span></div>
+  <div class="rd-cell rd-en"><button class="rd-play" data-lang="en" data-p="9" type="button" title="Read English">▶</button><span class="s" data-i="0">Canadian law secures the right to a secret ballot.</span> <span class="s" data-i="1">This means that no one can watch you vote and no one should look at how you voted.</span> <span class="s" data-i="2">You may choose to discuss how you voted with others, but no one, including family members, your employer or union representative, has the right to insist that you tell them how you voted.</span> <span class="s" data-i="3">Immediately after the polling stations close, election officers count the ballots and the results are announced on radio and television, and in the newspapers.</span></div>
+</div></section><section class="rd-sec"><h2>選舉之後<small>After an election</small></h2>
+<div class="rd-row" data-p="10">
+  <div class="rd-cell rd-zh"><button class="rd-play" data-lang="zh" data-p="10" type="button" title="朗讀中文">▶</button><span class="s" data-i="0">通常在選舉之後，總督會邀請在眾議院席次最多的政黨領袖組成政府。</span><span class="s" data-i="1">經總督任命後，這個政黨的領袖就成為總理。</span><span class="s" data-i="2">如果執政黨在眾議院擁有至少一半的席次，就稱為「多數政府」。</span><span class="s" data-i="3">如果執政黨在眾議院的席次不到一半，就稱為「少數政府」。</span></div>
+  <div class="rd-cell rd-en"><button class="rd-play" data-lang="en" data-p="10" type="button" title="Read English">▶</button><span class="s" data-i="0">Ordinarily, after an election, the leader of the political party with the most seats in the House of Commons is invited by the Governor General to form the government.</span> <span class="s" data-i="1">After being appointed by the Governor General, the leader of this party becomes the Prime Minister.</span> <span class="s" data-i="2">If the party in power holds at least half of the seats in the House of Commons, this is called a majority government.</span> <span class="s" data-i="3">If the party in power holds less than half of the seats in the House of Commons, this is called a minority government.</span></div>
+</div>
+<div class="rd-row" data-p="11">
+  <div class="rd-cell rd-zh"><button class="rd-play" data-lang="zh" data-p="11" type="button" title="朗讀中文">▶</button><span class="s" data-i="0">只要獲得多數國會議員的支持或信任，總理和執政黨就能繼續執政。</span><span class="s" data-i="1">當眾議院就預算等重大議題投票時，這被視為信任投票。</span><span class="s" data-i="2">如果多數眾議院議員投票反對政府的重大決定，執政黨就被擊敗，通常會導致總理請總督代表君主宣布舉行選舉。</span></div>
+  <div class="rd-cell rd-en"><button class="rd-play" data-lang="en" data-p="11" type="button" title="Read English">▶</button><span class="s" data-i="0">The Prime Minister and the party in power run the government as long as they have the support or confidence of the majority of the MPs.</span> <span class="s" data-i="1">When the House of Commons votes on a major issue such as the budget, this is considered a matter of confidence.</span> <span class="s" data-i="2">If a majority of the members of the House of Commons vote against a major government decision, the party in power is defeated, which usually results in the Prime Minister asking the Governor General, on behalf of the Sovereign, to call an election.</span></div>
+</div>
+<div class="rd-row" data-p="12">
+  <div class="rd-cell rd-zh"><button class="rd-play" data-lang="zh" data-p="12" type="button" title="朗讀中文">▶</button><span class="s" data-i="0">總理挑選各部部長，大多數來自眾議院議員。</span><span class="s" data-i="1">內閣部長負責管理聯邦政府各部門。</span><span class="s" data-i="2">總理和內閣部長合稱「內閣」，他們對國家如何治理做出重要決定。</span><span class="s" data-i="3">他們編列預算，並提出大多數的新法律。</span><span class="s" data-i="4">他們的決定可以受到所有眾議院議員的質詢。</span></div>
+  <div class="rd-cell rd-en"><button class="rd-play" data-lang="en" data-p="12" type="button" title="Read English">▶</button><span class="s" data-i="0">The Prime Minister chooses the ministers of the Crown, most of them from among members of the House of Commons.</span> <span class="s" data-i="1">Cabinet ministers are responsible for running the federal government departments.</span> <span class="s" data-i="2">The Prime Minister and the Cabinet ministers are called the Cabinet and they make important decisions about how the country is governed.</span> <span class="s" data-i="3">They prepare the budget and propose most new laws.</span> <span class="s" data-i="4">Their decisions can be questioned by all members of the House of Commons.</span></div>
+</div>
+<div class="rd-row" data-p="13">
+  <div class="rd-cell rd-zh"><button class="rd-play" data-lang="zh" data-p="13" type="button" title="朗讀中文">▶</button><span class="s" data-i="0">其他沒有執政的政黨稱為反對黨。</span><span class="s" data-i="1">在眾議院席次最多的反對黨是「官方反對黨」，或稱「女王陛下的忠誠反對黨」。</span><span class="s" data-i="2">反對黨的角色是和平地反對政府的提案，或設法改善它們。</span><span class="s" data-i="3">目前在眾議院有席次的三大政黨是：保守黨、新民主黨和自由黨。</span></div>
+  <div class="rd-cell rd-en"><button class="rd-play" data-lang="en" data-p="13" type="button" title="Read English">▶</button><span class="s" data-i="0">The other parties that are not in power are known as opposition parties.</span> <span class="s" data-i="1">The opposition party with the most members of the House of Commons is the Official Opposition or Her Majesty&#x27;s Loyal Opposition.</span> <span class="s" data-i="2">The role of opposition parties is to peacefully oppose or try to improve government proposals.</span> <span class="s" data-i="3">There are three major political parties currently represented in the House of Commons: the Conservative Party, the New Democratic Party, and the Liberal Party.</span></div>
+</div></section><section class="rd-sec"><h2>選舉期間的投票程序<small>Voting procedures during an election period</small></h2>
+<div class="rd-row" data-p="14">
+  <div class="rd-cell rd-zh"><button class="rd-play" data-lang="zh" data-p="14" type="button" title="朗讀中文">▶</button><span class="s" data-i="0">第一步：選民資訊卡。資料在全國選民登記冊上的選民會收到一張選民資訊卡。</span><span class="s" data-i="1">這張卡確認你的名字在選民名冊上，並說明你投票的時間和地點。</span></div>
+  <div class="rd-cell rd-en"><button class="rd-play" data-lang="en" data-p="14" type="button" title="Read English">▶</button><span class="s" data-i="0">Step 1: Voter information card. Electors whose information is in the National Register of Electors will receive a voter information card.</span> <span class="s" data-i="1">This confirms that your name is on the voters&#x27; list and states when and where you vote.</span></div>
+</div>
+<div class="rd-row" data-p="15">
+  <div class="rd-cell rd-zh"><button class="rd-play" data-lang="zh" data-p="15" type="button" title="朗讀中文">▶</button><span class="s" data-i="0">第二步：我沒收到卡。如果你沒有收到選民資訊卡，請打電話給當地的選舉辦公室，確認你在選民名冊上。</span><span class="s" data-i="1">如果你沒有電話號碼，請撥打渥太華的加拿大選舉局：1-800-463-6868。</span></div>
+  <div class="rd-cell rd-en"><button class="rd-play" data-lang="en" data-p="15" type="button" title="Read English">▶</button><span class="s" data-i="0">Step 2: I did not get a card. If you do not receive a voter information card, call your local elections office to ensure that you are on the voters&#x27; list.</span> <span class="s" data-i="1">If you do not have the number, call Elections Canada, in Ottawa, at 1-800-463-6868.</span></div>
+</div>
+<div class="rd-row" data-p="16">
+  <div class="rd-cell rd-zh"><button class="rd-play" data-lang="zh" data-p="16" type="button" title="朗讀中文">▶</button><span class="s" data-i="0">第三步：提前投票與特別選票。如果你在選舉日不能或不想投票，可以提前投票，或用特別選票投票。</span><span class="s" data-i="1">日期和地點都在你的選民資訊卡上。</span></div>
+  <div class="rd-cell rd-en"><button class="rd-play" data-lang="en" data-p="16" type="button" title="Read English">▶</button><span class="s" data-i="0">Step 3: Advance poll and special ballot. If you cannot or do not wish to vote on election day, you can vote at the advance polls or by special ballot.</span> <span class="s" data-i="1">The dates and location are on your voter information card.</span></div>
+</div>
+<div class="rd-row" data-p="17">
+  <div class="rd-cell rd-zh"><button class="rd-play" data-lang="zh" data-p="17" type="button" title="朗讀中文">▶</button><span class="s" data-i="0">第四步：選舉日當天。前往你的投票站。</span><span class="s" data-i="1">地點在你的選民資訊卡上。</span><span class="s" data-i="2">帶著這張卡，以及你的身分和地址證明到投票站。</span></div>
+  <div class="rd-cell rd-en"><button class="rd-play" data-lang="en" data-p="17" type="button" title="Read English">▶</button><span class="s" data-i="0">Step 4: On election day. Go to your polling station.</span> <span class="s" data-i="1">The location is on your voter information card.</span> <span class="s" data-i="2">Bring this card and proof of your identity and address to the polling station.</span></div>
+</div>
+<div class="rd-row" data-p="18">
+  <div class="rd-cell rd-zh"><button class="rd-play" data-lang="zh" data-p="18" type="button" title="朗讀中文">▶</button><span class="s" data-i="0">第五步：畫選票。在你選擇的候選人姓名旁邊的圓圈裡畫一個「X」。</span></div>
+  <div class="rd-cell rd-en"><button class="rd-play" data-lang="en" data-p="18" type="button" title="Read English">▶</button><span class="s" data-i="0">Step 5: Marking the ballot. Mark an &quot;X&quot; in the circle next to the name of the candidate of your choice.</span></div>
+</div>
+<div class="rd-row" data-p="19">
+  <div class="rd-cell rd-zh"><button class="rd-play" data-lang="zh" data-p="19" type="button" title="朗讀中文">▶</button><span class="s" data-i="0">第六步：投票是不記名的。你的投票是秘密的。</span><span class="s" data-i="1">你會被請到遮板後面畫選票。</span><span class="s" data-i="2">畫好後，把選票摺起來，交給投票站的工作人員。</span></div>
+  <div class="rd-cell rd-en"><button class="rd-play" data-lang="en" data-p="19" type="button" title="Read English">▶</button><span class="s" data-i="0">Step 6: Voting is secret. Your vote is secret.</span> <span class="s" data-i="1">You will be invited to go behind the screen to mark your ballot.</span> <span class="s" data-i="2">Once marked, fold it and present it to the poll officials.</span></div>
+</div>
+<div class="rd-row" data-p="20">
+  <div class="rd-cell rd-zh"><button class="rd-play" data-lang="zh" data-p="20" type="button" title="朗讀中文">▶</button><span class="s" data-i="0">第七步：投票箱。工作人員會撕下選票編號，再把選票交還給你，由你投進投票箱。</span></div>
+  <div class="rd-cell rd-en"><button class="rd-play" data-lang="en" data-p="20" type="button" title="Read English">▶</button><span class="s" data-i="0">Step 7: The ballot box. The poll official will tear off the ballot number and give your ballot back to you to deposit in the ballot box.</span></div>
+</div>
+<div class="rd-row" data-p="21">
+  <div class="rd-cell rd-zh"><button class="rd-play" data-lang="zh" data-p="21" type="button" title="朗讀中文">▶</button><span class="s" data-i="0">第八步：選舉結果。投票結束後，每一張選票都會被計算，結果會公開。</span><span class="s" data-i="1">你可以在電視上或加拿大選舉局的網站上看到結果。</span></div>
+  <div class="rd-cell rd-en"><button class="rd-play" data-lang="en" data-p="21" type="button" title="Read English">▶</button><span class="s" data-i="0">Step 8: The election results. When the polls close, every ballot is counted and the results are made public.</span> <span class="s" data-i="1">You can see the results on television or on the Elections Canada website.</span></div>
+</div></section>
+</div>
+<script type="application/json" id="rd-07-timings">{"en": [[[0.0, 5.249], [5.249, 11.159], [11.159, 15.664]], [[0.0, 10.376], [10.376, 14.625]], [[0.0, 6.599], [6.599, 17.838], [17.838, 23.492], [23.492, 31.05]], [[0.0, 4.735], [4.735, 7.753], [7.753, 10.632]], [[0.0, 5.042], [5.042, 9.988]], [[0.0, 3.908], [3.908, 15.309]], [[0.0, 10.186], [10.186, 18.986]], [[0.0, 9.029], [9.029, 15.426]], [[0.0, 11.862], [11.862, 18.735]], [[0.0, 2.923], [2.923, 8.113], [8.113, 19.886], [19.886, 29.336]], [[0.0, 9.099], [9.099, 14.671], [14.671, 21.01], [21.01, 27.338]], [[0.0, 6.892], [6.892, 13.092], [13.092, 27.267]], [[0.0, 6.238], [6.238, 10.638], [10.638, 18.068], [18.068, 21.296], [21.296, 25.104]], [[0.0, 3.999], [3.999, 11.801], [11.801, 17.2], [17.2, 26.371]], [[0.0, 8.587], [8.587, 13.266]], [[0.0, 9.505], [9.505, 18.108]], [[0.0, 9.827], [9.827, 12.985]], [[0.0, 4.08], [4.08, 7.029], [7.029, 11.29]], [[0.0, 6.135]], [[0.0, 3.908], [3.908, 7.206], [7.206, 10.573]], [[0.0, 7.798]], [[0.0, 7.043], [7.043, 11.13]]], "zh": [[[0.0, 6.034], [6.034, 12.85], [12.85, 16.077]], [[0.0, 7.741], [7.741, 10.574]], [[0.0, 6.545], [6.545, 17.331], [17.331, 21.174], [21.174, 28.86]], [[0.0, 3.98], [3.98, 6.545], [6.545, 9.262]], [[0.0, 4.381], [4.381, 8.213]], [[0.0, 3.387], [3.387, 15.798]], [[0.0, 12.137], [12.137, 19.962]], [[0.0, 9.68], [9.68, 17.076]], [[0.0, 11.12], [11.12, 17.679]], [[0.0, 3.306], [3.306, 8.995], [8.995, 20.338], [20.338, 28.593]], [[0.0, 6.545], [6.545, 11.235], [11.235, 17.493], [17.493, 23.344]], [[0.0, 6.429], [6.429, 12.153], [12.153, 22.428]], [[0.0, 4.72], [4.72, 8.168], [8.168, 14.82], [14.82, 19.116], [19.116, 22.866]], [[0.0, 3.225], [3.225, 11.294], [11.294, 16.855], [16.855, 23.426]], [[0.0, 7.753], [7.753, 13.79]], [[0.0, 10.805], [10.805, 18.573]], [[0.0, 11.003], [11.003, 14.242]], [[0.0, 4.838], [4.838, 7.683], [7.683, 12.246]], [[0.0, 6.916]], [[0.0, 5.245], [5.245, 8.449], [8.449, 13.894]], [[0.0, 9.645]], [[0.0, 8.53], [8.53, 12.849]]]}</script>
+
+<script>
+(function() {
+  var root = document.getElementById('rd-07');
+  if (!root) return;
+  var T = JSON.parse(document.getElementById('rd-07-timings').textContent || '{}');
+  T.en = T.en || []; T.zh = T.zh || [];
+  var base = (location.pathname.indexOf('/reading/') >= 0 ? '../' : '') + 'audio/07/';
+  var audio = new Audio();
+  var cur = { lang: null, p: -1, i: -1 };
+  var loadedSrc = '';
+  var rate = 1;
+  var status = root.querySelector('.rd-status');
+  var nParas = root.querySelectorAll('.rd-row').length;
+
+  function clearMarks() {
+    root.querySelectorAll('.s.on').forEach(function(e){ e.classList.remove('on'); });
+    root.querySelectorAll('.rd-row.playing').forEach(function(e){ e.classList.remove('playing'); });
+    root.querySelectorAll('.rd-play.on').forEach(function(e){ e.classList.remove('on'); e.textContent = '▶'; });
+  }
+  function mark(p, i) {
+    clearMarks();
+    var row = root.querySelector('.rd-row[data-p="' + p + '"]');
+    if (!row) return;
+    row.classList.add('playing');
+    row.querySelectorAll('.s[data-i="' + i + '"]').forEach(function(e){ e.classList.add('on'); });
+    var btn = row.querySelector('.rd-play[data-lang="' + cur.lang + '"]');
+    if (btn) { btn.classList.add('on'); btn.textContent = '❚❚'; }
+    var el = row.querySelector('.rd-' + cur.lang + ' .s[data-i="' + i + '"]') || row;
+    var r = el.getBoundingClientRect();
+    if (r.top < 90 || r.bottom > window.innerHeight - 40) el.scrollIntoView({ block: 'center', behavior: 'smooth' });
+    if (status) status.textContent = (cur.lang === 'en' ? 'English' : '中文') + ' · 第 ' + (p + 1) + ' / ' + nParas + ' 段';
+  }
+  function seekStart(lang, p, i) {
+    var t = T[lang] && T[lang][p];
+    return (t && t[i]) ? t[i][0] : 0;
+  }
+  function play(lang, p, i) {
+    if (p < 0 || p >= nParas) { stop(); return; }
+    cur = { lang: lang, p: p, i: i };
+    var src = base + lang + '/p' + p + '.m4a';
+    var at = seekStart(lang, p, i);
+    if (loadedSrc !== src) {
+      loadedSrc = src;
+      audio.src = src;
+      var onMeta = function() {
+        audio.removeEventListener('loadedmetadata', onMeta);
+        audio.currentTime = at;
+        audio.playbackRate = rate;
+        audio.play().catch(function(){});
+      };
+      audio.addEventListener('loadedmetadata', onMeta);
+      audio.load();
+    } else {
+      audio.currentTime = at;
+      audio.playbackRate = rate;
+      audio.play().catch(function(){});
+    }
+    mark(p, i);
+  }
+  function stop() {
+    audio.pause();
+    clearMarks();
+    cur = { lang: null, p: -1, i: -1 };
+    if (status) status.textContent = '';
+  }
+  function pause() {
+    audio.pause();
+    var row = root.querySelector('.rd-row.playing .rd-play.on');
+    if (row) { row.classList.remove('on'); row.textContent = '▶'; }
+  }
+  function resume() {
+    if (cur.p < 0) return;
+    audio.playbackRate = rate;
+    audio.play().catch(function(){});
+    mark(cur.p, cur.i);
+  }
+
+  audio.addEventListener('timeupdate', function() {
+    if (cur.p < 0) return;
+    var t = T[cur.lang] && T[cur.lang][cur.p];
+    if (!t) return;
+    var tt = audio.currentTime;
+    for (var k = 0; k < t.length; k++) {
+      var last = (k === t.length - 1);
+      if (tt >= t[k][0] - 0.05 && (last || tt < t[k + 1][0])) {
+        if (k !== cur.i) { cur.i = k; mark(cur.p, k); }
+        break;
+      }
+    }
+  });
+  audio.addEventListener('ended', function() {
+    var cont = root.querySelector('.rd-cont');
+    if (cont && cont.checked && cur.p + 1 < nParas) play(cur.lang, cur.p + 1, 0);
+    else stop();
+  });
+
+  root.addEventListener('click', function(e) {
+    var btn = e.target.closest && e.target.closest('.rd-play');
+    if (btn) {
+      var p = parseInt(btn.dataset.p, 10), lang = btn.dataset.lang;
+      if (cur.p === p && cur.lang === lang) {
+        if (audio.paused) resume(); else pause();
+      } else {
+        play(lang, p, 0);
+      }
+      return;
+    }
+    var s = e.target.closest && e.target.closest('.s');
+    if (s) {
+      var sel = window.getSelection && window.getSelection();
+      if (sel && sel.toString().length) return;
+      var cell = s.closest('.rd-cell');
+      var row = s.closest('.rd-row');
+      var lang2 = cell.classList.contains('rd-en') ? 'en' : 'zh';
+      play(lang2, parseInt(row.dataset.p, 10), parseInt(s.dataset.i, 10));
+    }
+  });
+
+  var bar = root.querySelector('.rd-bar');
+  bar.querySelector('.rd-all-zh').addEventListener('click', function(){ play('zh', 0, 0); });
+  bar.querySelector('.rd-all-en').addEventListener('click', function(){ play('en', 0, 0); });
+  bar.querySelector('.rd-pause').addEventListener('click', function(){
+    if (cur.p < 0) return;
+    if (audio.paused) resume(); else pause();
+  });
+  bar.querySelector('.rd-stop').addEventListener('click', stop);
+  bar.querySelector('.rd-rate').addEventListener('change', function(e){
+    rate = parseFloat(e.target.value) || 1;
+    audio.playbackRate = rate;
+  });
+  document.addEventListener('keydown', function(e) {
+    if (e.code !== 'Space' || cur.p < 0) return;
+    if (/input|select|textarea/i.test(e.target.tagName)) return;
+    e.preventDefault();
+    if (audio.paused) resume(); else pause();
+  });
+  window.addEventListener('hashchange', stop);
+  window.addEventListener('pagehide', function(){ audio.pause(); });
+})();
+</script>
+
+</main>
+</div>
+<script>
+(function() {
+  if (!('speechSynthesis' in window)) return;
+  var synth = window.speechSynthesis;
+  var voicesReady = false;
+
+  var ICON_SPEAKER = '<svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 10v4h4l5 4V6L7 10H3zm12.5 2c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM13 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg>';
+  var ICON_PAUSE = '<svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6 5h4v14H6zM14 5h4v14h-4z"/></svg>';
+  var ICON_PLAY = '<svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>';
+
+  // single global state — only one TTS session at a time
+  var state = {
+    btn: null, chunks: null, words: null, chunkIdx: 0, paused: false
+  };
+
+  function ensureVoices(cb) {
+    if (voicesReady) return cb();
+    var v = synth.getVoices();
+    if (v && v.length) { voicesReady = true; return cb(); }
+    synth.onvoiceschanged = function() { voicesReady = true; cb(); };
+    setTimeout(function(){ if (!voicesReady) { voicesReady = true; cb(); } }, 500);
+  }
+
+  function pickVoice() {
+    var voices = synth.getVoices();
+    function find(pred){ for (var i=0;i<voices.length;i++) if (pred(voices[i])) return voices[i]; return null; }
+    return find(function(v){return v.lang==='en-CA' && /Samantha|Karen|Tessa|Victoria|Allison|Siri/i.test(v.name);})
+        || find(function(v){return v.lang==='en-CA';})
+        || find(function(v){return v.lang==='en-US' && /Samantha|Karen|Allison|Ava|Siri/i.test(v.name);})
+        || find(function(v){return v.lang==='en-US';})
+        || find(function(v){return v.lang && v.lang.indexOf('en')===0;})
+        || null;
+  }
+
+  // Wrap each word in container in a <span class="w" data-idx="N"> for highlighting.
+  function wrapWords(container) {
+    if (container.dataset.wrapped === '1') return;
+    var walker = document.createTreeWalker(container, NodeFilter.SHOW_TEXT, null, false);
+    var nodes = [];
+    var n;
+    while ((n = walker.nextNode())) {
+      if (!n.parentElement) continue;
+      if (n.parentElement.closest('.speak-btn, .label')) continue;
+      if (!/\S/.test(n.nodeValue)) continue;
+      nodes.push(n);
+    }
+    var idx = 0;
+    nodes.forEach(function(tn) {
+      var text = tn.nodeValue;
+      var tokens = text.split(/(\s+)/);
+      var frag = document.createDocumentFragment();
+      tokens.forEach(function(tok) {
+        if (tok.length === 0) return;
+        if (/^\s+$/.test(tok)) {
+          frag.appendChild(document.createTextNode(tok));
+        } else {
+          var sp = document.createElement('span');
+          sp.className = 'w';
+          sp.setAttribute('data-idx', idx++);
+          sp.textContent = tok;
+          frag.appendChild(sp);
+        }
+      });
+      tn.parentNode.replaceChild(frag, tn);
+    });
+    container.dataset.wrapped = '1';
+  }
+
+  // Group words into chunks split on punctuation, with a pause duration after each chunk.
+  function buildChunks(words) {
+    var chunks = [];
+    var cur = { words: [] };
+    function commit(pauseMs) {
+      if (!cur.words.length) return;
+      cur.text = cur.words.map(function(w){ return w.text; }).join(' ');
+      cur.pauseAfterMs = pauseMs;
+      chunks.push(cur);
+      cur = { words: [] };
+    }
+    words.forEach(function(wEl, i) {
+      var text = wEl.textContent;
+      cur.words.push({ el: wEl, idx: i, text: text });
+      // sentence-ending punctuation → long pause
+      if (/[.!?]+["')\]]*$/.test(text) && text.length > 1) {
+        commit(420);
+      }
+      // semicolon / colon → medium pause
+      else if (/[;:]+["')\]]*$/.test(text)) {
+        commit(300);
+      }
+      // comma or em-dash → short pause
+      else if (/[,—–][")'\]]*$/.test(text)) {
+        commit(220);
+      }
+    });
+    commit(0);
+    return chunks;
+  }
+
+  function highlight(globalIdx) {
+    if (!state.words) return;
+    for (var i = 0; i < state.words.length; i++) {
+      if (i === globalIdx) state.words[i].classList.add('current');
+      else state.words[i].classList.remove('current');
+    }
+  }
+
+  function clearHighlight() {
+    if (!state.words) return;
+    state.words.forEach(function(w){ w.classList.remove('current'); });
+  }
+
+  function findWordAtChar(chunk, charIndex) {
+    var pos = 0;
+    for (var i = 0; i < chunk.words.length; i++) {
+      var len = chunk.words[i].text.length;
+      if (charIndex >= pos && charIndex < pos + len) return i;
+      pos += len + 1; // space
+    }
+    return -1;
+  }
+
+  function setBtnState(btn, s) {
+    if (!btn) return;
+    btn.classList.remove('speaking', 'paused');
+    if (s === 'speaking') btn.classList.add('speaking');
+    else if (s === 'paused') btn.classList.add('paused');
+    btn.setAttribute('data-state', s);
+    var icon = btn.querySelector('.speak-icon');
+    var label = btn.querySelector('.speak-label');
+    if (s === 'idle')     { if (icon) icon.innerHTML = ICON_SPEAKER; if (label) label.textContent = '朗讀'; }
+    else if (s === 'speaking') { if (icon) icon.innerHTML = ICON_PAUSE;   if (label) label.textContent = '暫停'; }
+    else if (s === 'paused')   { if (icon) icon.innerHTML = ICON_PLAY;    if (label) label.textContent = '繼續'; }
+  }
+
+  function stopAll() {
+    state.suppressNextEnd = true;  // ignore the cancel-induced end/error
+    synth.cancel();
+    if (state.btn) setBtnState(state.btn, 'idle');
+    clearHighlight();
+    state.btn = null; state.chunks = null; state.words = null;
+    state.chunkIdx = 0; state.paused = false;
+    // reset suppression on next tick
+    setTimeout(function(){ state.suppressNextEnd = false; }, 100);
+  }
+
+  function findChunkForWord(chunks, wordIdx) {
+    for (var i = 0; i < chunks.length; i++) {
+      for (var j = 0; j < chunks[i].words.length; j++) {
+        if (chunks[i].words[j].idx === wordIdx) return i;
+      }
+    }
+    return -1;
+  }
+
+  function speakFrom(chunkIdx) {
+    if (!state.chunks || chunkIdx >= state.chunks.length) { stopAll(); return; }
+    state.chunkIdx = chunkIdx;
+    var chunk = state.chunks[chunkIdx];
+    var u = new SpeechSynthesisUtterance(chunk.text);
+    u.lang = 'en-CA';
+    u.rate = 0.92;
+    u.pitch = 1.0;
+    var v = pickVoice();
+    if (v) u.voice = v;
+
+    u.onstart = function() {
+      if (chunk.words[0]) highlight(chunk.words[0].idx);
+    };
+    u.onboundary = function(e) {
+      if (e.name && e.name !== 'word') return;
+      var w = findWordAtChar(chunk, e.charIndex || 0);
+      if (w >= 0) highlight(chunk.words[w].idx);
+    };
+    u.onend = function() {
+      // ignore the end event if it was triggered by our own cancel (pause/jump/stop)
+      if (state.suppressNextEnd) { state.suppressNextEnd = false; return; }
+      if (state.paused) return;
+      var next = chunkIdx + 1;
+      if (next >= state.chunks.length) { stopAll(); return; }
+      setTimeout(function() {
+        if (!state.paused && state.chunks) speakFrom(next);
+      }, chunk.pauseAfterMs);
+    };
+    u.onerror = function() {
+      if (state.suppressNextEnd) { state.suppressNextEnd = false; return; }
+      if (state.paused) return; // user paused — keep state for resume
+      stopAll();
+    };
+
+    synth.speak(u);
+  }
+
+  // Start fresh speech for a container, optionally from a specific chunk index.
+  function startFresh(container, btn, fromChunk) {
+    stopAll();
+    wrapWords(container);
+    var words = Array.prototype.slice.call(container.querySelectorAll('.w'));
+    if (!words.length) return;
+    state.btn = btn;
+    state.words = words;
+    state.chunks = buildChunks(words);
+    state.chunkIdx = Math.max(0, Math.min(fromChunk || 0, state.chunks.length - 1));
+    state.paused = false;
+    setBtnState(btn, 'speaking');
+    speakFrom(state.chunkIdx);
+  }
+
+  // Jump speech to a specific word — restart the chunk containing it.
+  function jumpToWord(container, btn, wordIdx) {
+    // Same container that's currently speaking/paused → in-place jump
+    if (state.btn === btn && state.chunks && state.words) {
+      var ci = findChunkForWord(state.chunks, wordIdx);
+      if (ci < 0) return;
+      state.suppressNextEnd = true;
+      synth.cancel();
+      state.chunkIdx = ci;
+      state.paused = false;
+      setBtnState(btn, 'speaking');
+      setTimeout(function() {
+        state.suppressNextEnd = false;
+        if (state.chunks) speakFrom(ci);
+      }, 60);
+      return;
+    }
+    // Different container or fresh start — figure out chunk first
+    wrapWords(container);
+    var words = Array.prototype.slice.call(container.querySelectorAll('.w'));
+    if (!words.length) return;
+    var chunks = buildChunks(words);
+    var ci2 = findChunkForWord(chunks, wordIdx);
+    startFresh(container, btn, ci2 >= 0 ? ci2 : 0);
+  }
+
+  function speakableContainerOf(el) {
+    return el.closest && el.closest('.bilingual .en, blockquote.speakable, .callout.speakable');
+  }
+
+  document.addEventListener('click', function(e) {
+    // --- speak button ---
+    var btn = e.target.closest && e.target.closest('.speak-btn');
+    if (btn) {
+      e.preventDefault();
+      var s = btn.getAttribute('data-state') || 'idle';
+      if (s === 'speaking') {
+        // pause: set flag BEFORE cancel so onend/onerror preserve state
+        state.paused = true;
+        synth.cancel();
+        setBtnState(btn, 'paused');
+        return;
+      }
+      if (s === 'paused') {
+        // resume: restart current chunk
+        state.paused = false;
+        setBtnState(btn, 'speaking');
+        if (state.chunks) speakFrom(state.chunkIdx);
+        return;
+      }
+      // idle → new speech from start
+      ensureVoices(function() { startFresh(btn.parentElement, btn, 0); });
+      return;
+    }
+
+    // --- word click (play from here) ---
+    var w = e.target.closest && e.target.closest('.w');
+    if (!w) return;
+    // skip if user is selecting text
+    var sel = window.getSelection && window.getSelection();
+    if (sel && sel.toString && sel.toString().length > 0) return;
+    var container = speakableContainerOf(w);
+    if (!container) return;
+    var speakBtn = container.querySelector('.speak-btn');
+    if (!speakBtn) return;
+    e.preventDefault();
+    var widx = parseInt(w.getAttribute('data-idx'), 10);
+    if (isNaN(widx)) return;
+    ensureVoices(function() { jumpToWord(container, speakBtn, widx); });
+  });
+
+  // Pre-wrap all speakable containers during idle time so word-click works without first hitting the button
+  function preWrapAll() {
+    var containers = document.querySelectorAll('.bilingual .en, blockquote.speakable, .callout.speakable');
+    var i = 0;
+    function step() {
+      if (i >= containers.length) return;
+      try { wrapWords(containers[i]); } catch (e) {}
+      i++;
+      if (window.requestIdleCallback) requestIdleCallback(step, { timeout: 200 });
+      else setTimeout(step, 0);
+    }
+    step();
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', preWrapAll);
+  else preWrapAll();
+
+  window.addEventListener('hashchange', stopAll);
+  window.addEventListener('pagehide', stopAll);
+})();
+</script>
+</body>
+</html>

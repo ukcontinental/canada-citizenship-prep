@@ -1,0 +1,1062 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="加拿大公民考">
+<meta name="theme-color" content="#c8102e">
+<title>11 加拿大的各個地區 人聲朗讀 · 加拿大公民考試</title>
+<style>
+:root {
+  --bg: #faf8f4;
+  --panel: #ffffff;
+  --ink: #1f2328;
+  --muted: #5d646d;
+  --line: #e7e2d6;
+  --accent: #c8102e;        /* maple red */
+  --accent-soft: #fbe9ec;
+  --en-bg: #f3efe6;
+  --en-ink: #2b2620;
+  --zh-bg: #ffffff;
+  --quote: #8a6d3b;
+  --max: 1180px;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: "Source Serif 4","Source Serif Pro","Noto Serif TC","Noto Serif CJK TC","PingFang TC","Songti TC", Georgia, serif;
+  font-size: 17px;
+  line-height: 1.75;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+.layout {
+  display: grid;
+  grid-template-columns: 240px minmax(0, 1fr);
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 0 24px;
+  gap: 36px;
+}
+nav.sidebar {
+  position: sticky;
+  top: 0;
+  align-self: start;
+  height: 100vh;
+  overflow-y: auto;
+  padding: 28px 0 40px;
+  border-right: 1px solid var(--line);
+  font-family: -apple-system, "Helvetica Neue", "PingFang TC", system-ui, sans-serif;
+  font-size: 14px;
+  line-height: 1.45;
+}
+nav.sidebar h1 {
+  font-family: inherit;
+  font-size: 14px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin: 0 0 10px;
+}
+nav.sidebar h2 {
+  font-family: inherit;
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin: 22px 0 6px;
+  font-weight: 600;
+}
+nav.sidebar a {
+  display: block;
+  color: var(--ink);
+  text-decoration: none;
+  padding: 4px 10px 4px 0;
+  border-radius: 4px;
+}
+nav.sidebar a:hover { color: var(--accent); }
+nav.sidebar a.current {
+  color: var(--accent);
+  font-weight: 600;
+}
+nav.sidebar .home {
+  display: inline-block;
+  font-weight: 700;
+  font-size: 18px;
+  color: var(--ink);
+  text-decoration: none;
+  margin-bottom: 14px;
+}
+nav.sidebar .home::before { content: "🍁 "; }
+main {
+  padding: 36px 0 80px;
+  min-width: 0;
+}
+main h1, main h2, main h3, main h4 {
+  font-family: -apple-system, "Helvetica Neue", "PingFang TC", system-ui, sans-serif;
+  line-height: 1.3;
+  color: var(--ink);
+}
+main h1 {
+  font-size: 28px;
+  margin: 0 0 8px;
+  letter-spacing: -0.01em;
+}
+main > p:first-of-type {
+  color: var(--muted);
+  margin-top: 4px;
+}
+main h2 {
+  font-size: 21px;
+  margin: 40px 0 12px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid var(--line);
+}
+main h3 { font-size: 18px; margin: 28px 0 8px; }
+main h4 { font-size: 16px; margin: 22px 0 6px; color: var(--muted); }
+main p { margin: 0 0 12px; }
+main ul, main ol { margin: 0 0 14px; padding-left: 1.4em; }
+main li { margin: 4px 0; }
+main hr {
+  border: none;
+  border-top: 1px solid var(--line);
+  margin: 32px 0;
+}
+main a { color: var(--accent); text-decoration: none; }
+main a:hover { text-decoration: underline; }
+main code {
+  font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.9em;
+  background: #f3efe6;
+  padding: 1px 5px;
+  border-radius: 4px;
+}
+main blockquote {
+  margin: 14px 0;
+  padding: 12px 18px;
+  background: var(--accent-soft);
+  border-left: 3px solid var(--accent);
+  color: var(--ink);
+  border-radius: 0 6px 6px 0;
+}
+main blockquote p:last-child { margin-bottom: 0; }
+main table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 14px 0 22px;
+  font-size: 15px;
+}
+main th, main td {
+  text-align: left;
+  padding: 8px 12px;
+  border-bottom: 1px solid var(--line);
+  vertical-align: top;
+}
+main th {
+  background: #f3efe6;
+  font-family: -apple-system, "Helvetica Neue", "PingFang TC", system-ui, sans-serif;
+  font-weight: 600;
+}
+
+/* --- bilingual pairing --- */
+.bilingual {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  margin: 14px 0;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  overflow: hidden;
+  background: var(--zh-bg);
+}
+.bilingual .en, .bilingual .zh {
+  padding: 16px 20px;
+}
+.bilingual .en {
+  background: var(--en-bg);
+  color: var(--en-ink);
+  font-family: "Source Serif 4","Source Serif Pro", Georgia, serif;
+  font-style: normal;
+  border-right: 1px solid var(--line);
+}
+.bilingual .en p, .bilingual .zh p { margin: 0 0 8px; }
+.bilingual .en p:last-child, .bilingual .zh p:last-child { margin-bottom: 0; }
+.bilingual .en ul, .bilingual .en ol,
+.bilingual .zh ul, .bilingual .zh ol {
+  margin: 0 0 6px;
+  padding-left: 1.3em;
+}
+.bilingual .en em { font-style: italic; }
+.bilingual .label {
+  display: inline-block;
+  font-family: -apple-system, "Helvetica Neue", system-ui, sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 6px;
+  font-weight: 600;
+}
+
+/* --- callouts (⚠️ blocks) --- */
+.callout {
+  margin: 18px 0;
+  padding: 14px 18px;
+  background: #fff8e1;
+  border-left: 4px solid #f0a500;
+  border-radius: 0 6px 6px 0;
+}
+.callout p { margin: 0 0 6px; }
+.callout p:last-child { margin: 0; }
+
+/* --- collapsible answers --- */
+details.answers {
+  margin: 22px 0;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 0;
+  overflow: hidden;
+}
+details.answers > summary {
+  cursor: pointer;
+  padding: 14px 18px;
+  font-family: -apple-system, "Helvetica Neue", "PingFang TC", system-ui, sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  background: #f3efe6;
+  border-bottom: 1px solid transparent;
+  user-select: none;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+details.answers > summary::-webkit-details-marker { display: none; }
+details.answers > summary::after {
+  content: "▸";
+  color: var(--muted);
+  transition: transform 0.18s ease;
+  font-size: 14px;
+}
+details.answers[open] > summary {
+  border-bottom-color: var(--line);
+}
+details.answers[open] > summary::after { transform: rotate(90deg); }
+details.answers .answers-body { padding: 14px 22px 6px; }
+details.answers .answers-body ol { margin: 0; padding-left: 1.4em; }
+details.answers .answers-body li { margin: 8px 0; }
+
+/* --- dashboard cards on index --- */
+.dash {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+  margin: 24px 0;
+}
+.dash a {
+  display: block;
+  padding: 18px 20px;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  color: var(--ink);
+  text-decoration: none;
+  transition: border-color 0.15s, transform 0.15s;
+}
+.dash a:hover {
+  border-color: var(--accent);
+  transform: translateY(-1px);
+}
+.dash a .kicker {
+  font-family: -apple-system, system-ui, sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+  display: block;
+  margin-bottom: 6px;
+}
+.dash a .title {
+  font-weight: 600;
+  font-size: 17px;
+  line-height: 1.35;
+}
+.dash a .meta {
+  display: block;
+  margin-top: 8px;
+  font-size: 13px;
+  color: var(--muted);
+  font-family: -apple-system, system-ui, sans-serif;
+}
+
+/* --- speak (TTS) button --- */
+.speak-btn {
+  appearance: none;
+  background: rgba(255,255,255,0.85);
+  border: 1px solid var(--line);
+  color: var(--muted);
+  cursor: pointer;
+  padding: 4px 9px;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 12px;
+  font-family: -apple-system, "Helvetica Neue", system-ui, sans-serif;
+  transition: all 0.15s;
+  -webkit-tap-highlight-color: transparent;
+  min-width: 64px;
+  justify-content: center;
+}
+.speak-btn .speak-icon { display: inline-flex; }
+.speak-btn svg { display: block; }
+.speak-btn:hover { color: var(--accent); border-color: var(--accent); }
+.speak-btn:active { transform: scale(0.96); }
+.speak-btn.speaking {
+  background: var(--accent);
+  color: #fff;
+  border-color: var(--accent);
+  animation: speak-pulse 1.4s ease-in-out infinite;
+}
+.speak-btn.paused {
+  background: #f0a500;
+  color: #fff;
+  border-color: #f0a500;
+  animation: none;
+}
+@keyframes speak-pulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(200,16,46,0.5); }
+  50%      { box-shadow: 0 0 0 6px rgba(200,16,46,0); }
+}
+
+/* --- per-word highlight during TTS + click-to-play-from-here --- */
+.w {
+  border-radius: 3px;
+  padding: 0 1px;
+  transition: color 0.08s ease, background 0.08s ease;
+  cursor: pointer;
+  -webkit-tap-highlight-color: rgba(200, 16, 46, 0.15);
+}
+.w:hover {
+  background: rgba(200, 16, 46, 0.07);
+  text-decoration: underline;
+  text-decoration-color: rgba(200, 16, 46, 0.3);
+  text-decoration-style: dotted;
+  text-underline-offset: 3px;
+}
+.w.current {
+  color: var(--accent);
+  background: rgba(200, 16, 46, 0.14);
+  font-weight: 600;
+  text-decoration: none;
+}
+.bilingual .en { position: relative; }
+.bilingual .en > .speak-btn {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+}
+.bilingual .en > .label + .speak-btn { /* fallback positioning if absolute fails */ }
+blockquote.speakable, .callout.speakable {
+  position: relative;
+  padding-right: 60px;
+}
+blockquote.speakable > .speak-btn,
+.callout.speakable > .speak-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: #fff;
+}
+
+/* --- mobile --- */
+@media (max-width: 900px) {
+  .layout { grid-template-columns: 1fr; padding: 0 16px; gap: 0; }
+  nav.sidebar {
+    position: static;
+    height: auto;
+    border-right: none;
+    border-bottom: 1px solid var(--line);
+    padding: 18px 0;
+  }
+  .bilingual { grid-template-columns: 1fr; }
+  .bilingual .en { border-right: none; border-bottom: 1px solid var(--line); }
+}
+
+/* --- print --- */
+@media print {
+  nav.sidebar { display: none; }
+  .layout { display: block; padding: 0; }
+  main { padding: 0; }
+  details.answers { border: 1px solid #999; }
+  details.answers > summary { display: none; }
+  details.answers > .answers-body { display: block !important; }
+  .bilingual { break-inside: avoid; }
+}
+</style>
+</head>
+<body>
+<div class="layout">
+<nav class="sidebar">
+<a href="../index.html" class="home">加拿大公民考試</a>
+<h2>🎧 人聲朗讀對照</h2>
+<a href="../reading/00-intro-oath.html">00 · 公民誓詞與給讀者的話</a>
+<a href="../reading/01-applying-citizenship.html">01 · 申請公民身分</a>
+<a href="../reading/02-rights-responsibilities.html">02 · 公民的權利與責任</a>
+<a href="../reading/03-who-we-are.html">03 · 我們是誰</a>
+<a href="../reading/04-canadas-history.html">04 · 加拿大歷史</a>
+<a href="../reading/05-modern-canada.html">05 · 現代加拿大</a>
+<a href="../reading/06-how-canadians-govern.html">06 · 加拿大人如何治理自己</a>
+<a href="../reading/07-federal-elections.html">07 · 聯邦選舉</a>
+<a href="../reading/08-justice-system.html">08 · 司法系統</a>
+<a href="../reading/09-canadian-symbols.html">09 · 加拿大的象徵</a>
+<a href="../reading/10-canadas-economy.html">10 · 加拿大的經濟</a>
+<a href="../reading/11-canadas-regions.html" class="current">11 · 加拿大的各個地區</a>
+<a href="../reading/12-study-questions.html">12 · 官方練習題</a>
+<h2>🧠 每章重點互動記憶</h2>
+<a href="../interactive/index.html">🎯 互動式入口</a>
+<a href="../interactive/history.html">📜 04 歷史時間軸</a>
+<a href="../interactive/story-04.html">📖 04 故事聽學</a>
+<a href="../interactive/modern.html">🇨🇦 05 現代加拿大</a>
+<a href="../interactive/government.html">🏛️ 06 政府架構</a>
+<a href="../interactive/elections.html">🗳️ 07 聯邦選舉</a>
+<a href="../interactive/justice.html">⚖️ 08 司法系統</a>
+<a href="../interactive/symbols.html">🍁 09 國家象徵</a>
+<a href="../interactive/economy.html">💼 10 加拿大經濟</a>
+<a href="../interactive/geography.html">🗺️ 11 地圖與省份</a>
+<h2>📝 考題</h2>
+<a href="../practice/question-bank.html">220 題題庫（依章節）</a>
+<a href="../daily-quiz/day-01.html">驗收 Day 01</a>
+<a href="../daily-quiz/day-02.html">驗收 Day 02</a>
+<a href="../daily-quiz/day-03.html">驗收 Day 03</a>
+<a href="../daily-quiz/day-04.html">驗收 Day 04</a>
+<a href="../daily-quiz/day-05.html">驗收 Day 05</a>
+<a href="../daily-quiz/day-06.html">驗收 Day 06</a>
+<a href="../daily-quiz/day-07.html">驗收 Day 07</a>
+<a href="../daily-quiz/day-08.html">驗收 Day 08</a>
+<a href="../daily-quiz/day-09.html">驗收 Day 09</a>
+<a href="../daily-quiz/day-10.html">驗收 Day 10</a>
+<a href="../daily-quiz/day-11.html">驗收 Day 11</a>
+<a href="../daily-quiz/day-12.html">驗收 Day 12</a>
+<a href="../daily-quiz/day-13.html">驗收 Day 13</a>
+<a href="../daily-quiz/day-14.html">驗收 Day 14</a>
+</nav>
+<main>
+<style>
+.layout { max-width: 1480px; }
+.rd-hero {
+  background: linear-gradient(135deg, #fff8f8 0%, #fef0e8 100%);
+  border-left: 4px solid var(--accent);
+  padding: 18px 22px; border-radius: 8px; margin: 16px 0 12px;
+}
+.rd-hero h1 { margin: 0 0 6px; border: none; padding: 0; }
+.rd-hero p { margin: 0; color: var(--muted); font-size: 14px; }
+.rd-bar {
+  position: sticky; top: 0; z-index: 5; background: var(--bg);
+  display: flex; align-items: center; gap: 10px; flex-wrap: wrap;
+  padding: 10px 0; border-bottom: 1px solid var(--line); margin-bottom: 8px;
+}
+.rd-btn {
+  appearance: none; border: 2px solid var(--accent); background: #fff; color: var(--accent);
+  padding: 7px 14px; border-radius: 20px; font-size: 14px; font-weight: 600; cursor: pointer;
+  font-family: -apple-system, system-ui, sans-serif;
+}
+.rd-btn.rd-main { background: var(--accent); color: #fff; }
+.rd-bar label { font-size: 13px; color: var(--muted); display: inline-flex; align-items: center; gap: 4px; }
+.rd-bar select { font-size: 13px; padding: 3px 6px; }
+.rd-status { font-size: 13px; color: var(--muted); margin-left: auto; }
+.rd-sec h2 { margin: 30px 0 6px; font-size: 18px; border-bottom: 2px solid var(--accent); padding-bottom: 4px; }
+.rd-sec h2 small { color: var(--muted); font-weight: 400; font-size: 13px; margin-left: 10px; }
+.rd-row {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 20px;
+  padding: 12px 0; border-bottom: 1px dashed var(--line);
+}
+.rd-cell { position: relative; padding: 4px 8px 4px 36px; line-height: 1.9; font-size: 16.5px; border-radius: 8px; }
+.rd-zh { font-family: "Noto Serif TC","Noto Serif CJK TC","PingFang TC","Songti TC",serif; }
+.rd-en { font-family: "Source Serif 4","Source Serif Pro",Georgia,serif; color: var(--en-ink); background: var(--en-bg); }
+.rd-row.playing .rd-cell { box-shadow: inset 0 0 0 2px #f0c86a; }
+.rd-play {
+  position: absolute; left: 6px; top: 9px; width: 24px; height: 24px; border-radius: 50%;
+  border: 1.5px solid var(--accent); background: #fff; color: var(--accent);
+  cursor: pointer; font-size: 10px; line-height: 1; padding: 0;
+}
+.rd-play.on { background: var(--accent); color: #fff; }
+.s { cursor: pointer; border-radius: 3px; padding: 1px 2px; transition: background 0.15s; }
+.s:hover { background: #f3efe6; }
+.rd-en .s:hover { background: #ebe4d3; }
+.s.on { background: #ffe08a !important; }
+@media (max-width: 820px) {
+  .rd-row { grid-template-columns: 1fr; gap: 8px; }
+}
+</style>
+
+<div class="rd" id="rd-11">
+<div class="rd-hero">
+  <h1>🎧 11 加拿大的各個地區 <small style="font-weight:400;color:var(--muted)">Canada&#x27;s Regions</small></h1>
+  <p>左中文、右英文，句對句對照。按段落左邊的 ▶ 朗讀該段；點任何一句從那句開始念；念到哪一句，中英文同時標黃。空白鍵＝暫停／繼續。</p>
+</div>
+<div class="rd-bar">
+  <button class="rd-btn rd-main rd-all-en" type="button">▶ English 全章</button>
+  <button class="rd-btn rd-all-zh" type="button">▶ 中文全章</button>
+  <button class="rd-btn rd-pause" type="button">❚❚ 暫停／繼續</button>
+  <button class="rd-btn rd-stop" type="button">■ 停</button>
+  <label><input type="checkbox" class="rd-cont" checked> 連續播放下一段</label>
+  <label>速度 <select class="rd-rate">
+    <option value="0.8">0.8×</option><option value="0.9">0.9×</option>
+    <option value="1" selected>1×</option><option value="1.15">1.15×</option><option value="1.3">1.3×</option>
+  </select></label>
+  <span class="rd-status"></span>
+</div>
+<section class="rd-sec"><h2>加拿大的各個地區<small>Canada&#x27;s Regions</small></h2>
+<div class="rd-row" data-p="0">
+  <div class="rd-cell rd-zh"><button class="rd-play" data-lang="zh" data-p="0" type="button" title="朗讀中文">▶</button><span class="s" data-i="0">加拿大是地球上第二大的國家——一千萬平方公里。</span><span class="s" data-i="1">三個大洋環繞加拿大的邊界：西邊是太平洋，東邊是大西洋，北邊是北冰洋。</span><span class="s" data-i="2">加拿大的南緣是加拿大與美國的邊界。</span><span class="s" data-i="3">加拿大和美國都致力於維持一條安全、穩固而有效率的邊界。</span></div>
+  <div class="rd-cell rd-en"><button class="rd-play" data-lang="en" data-p="0" type="button" title="Read English">▶</button><span class="s" data-i="0">Canada is the second largest country on earth—10 million square kilometres.</span> <span class="s" data-i="1">Three oceans line Canada&#x27;s frontiers: the Pacific Ocean in the west, the Atlantic Ocean in the east, and the Arctic Ocean to the north.</span> <span class="s" data-i="2">Along the southern edge of Canada lies the Canada-United States boundary.</span> <span class="s" data-i="3">Both Canada and the U.S.A. are committed to a safe, secure and efficient frontier.</span></div>
+</div></section><section class="rd-sec"><h2>加拿大的五大區域<small>The Regions of Canada</small></h2>
+<div class="rd-row" data-p="1">
+  <div class="rd-cell rd-zh"><button class="rd-play" data-lang="zh" data-p="1" type="button" title="朗讀中文">▶</button><span class="s" data-i="0">加拿大包含許多不同的地理區域，分為五個不同的區域：大西洋省份、中部加拿大、草原省份、西海岸，以及北方地區。</span></div>
+  <div class="rd-cell rd-en"><button class="rd-play" data-lang="en" data-p="1" type="button" title="Read English">▶</button><span class="s" data-i="0">Canada includes many different geographical areas and five distinct regions: the Atlantic Provinces, Central Canada, the Prairie Provinces, the West Coast, and the Northern Territories.</span></div>
+</div></section><section class="rd-sec"><h2>國家首都<small>The National Capital</small></h2>
+<div class="rd-row" data-p="2">
+  <div class="rd-cell rd-zh"><button class="rd-play" data-lang="zh" data-p="2" type="button" title="朗讀中文">▶</button><span class="s" data-i="0">位於渥太華河畔的渥太華，在 1857 年由伊莉莎白二世女王的高祖母維多利亞女王選為首都。</span><span class="s" data-i="1">今天它是加拿大第四大都會區。</span><span class="s" data-i="2">環繞渥太華、面積 4,700 平方公里的國家首都區，保存並提升該地區的建築遺產和自然環境。</span></div>
+  <div class="rd-cell rd-en"><button class="rd-play" data-lang="en" data-p="2" type="button" title="Read English">▶</button><span class="s" data-i="0">Ottawa, located on the Ottawa River, was chosen as the capital in 1857 by Queen Victoria, the great-great-grandmother of Queen Elizabeth II.</span> <span class="s" data-i="1">Today it is Canada&#x27;s fourth largest metropolitan area.</span> <span class="s" data-i="2">The National Capital Region, 4,700 square kilometres surrounding Ottawa, preserves and enhances the area&#x27;s built heritage and natural environment.</span></div>
+</div></section><section class="rd-sec"><h2>省與地區<small>Provinces and Territories</small></h2>
+<div class="rd-row" data-p="3">
+  <div class="rd-cell rd-zh"><button class="rd-play" data-lang="zh" data-p="3" type="button" title="朗讀中文">▶</button><span class="s" data-i="0">加拿大有十個省和三個地區。</span><span class="s" data-i="1">每個省和地區都有自己的首府。</span><span class="s" data-i="2">你應該知道自己所在省或地區的首府，以及加拿大的首都。</span></div>
+  <div class="rd-cell rd-en"><button class="rd-play" data-lang="en" data-p="3" type="button" title="Read English">▶</button><span class="s" data-i="0">Canada has ten provinces and three territories.</span> <span class="s" data-i="1">Each province and territory has its own capital city.</span> <span class="s" data-i="2">You should know the capital of your province or territory as well as that of Canada.</span></div>
+</div>
+<div class="rd-row" data-p="4">
+  <div class="rd-cell rd-zh"><button class="rd-play" data-lang="zh" data-p="4" type="button" title="朗讀中文">▶</button><span class="s" data-i="0">大西洋省份：紐芬蘭與拉布拉多，首府聖約翰斯（St. John&#x27;s）；愛德華王子島，首府夏洛特敦（Charlottetown）；新斯科細亞，首府哈利法克斯（Halifax）；新布藍瑞克，首府弗雷德里克頓（Fredericton）。</span><span class="s" data-i="1">中部加拿大：魁北克，首府魁北克市（Québec City）；安大略，首府多倫多（Toronto）。</span><span class="s" data-i="2">草原省份：曼尼托巴，首府溫尼伯（Winnipeg）；薩克其萬，首府里賈納（Regina）；亞伯達，首府艾德蒙頓（Edmonton）。</span><span class="s" data-i="3">西海岸：卑詩省，首府維多利亞（Victoria）。</span><span class="s" data-i="4">北方：努納福特，首府伊魁特（Iqaluit）；西北地區，首府黃刀鎮（Yellowknife）；育空地區，首府白馬市（Whitehorse）。</span></div>
+  <div class="rd-cell rd-en"><button class="rd-play" data-lang="en" data-p="4" type="button" title="Read English">▶</button><span class="s" data-i="0">Atlantic Provinces: Newfoundland and Labrador, capital St. John&#x27;s; Prince Edward Island, capital Charlottetown; Nova Scotia, capital Halifax; New Brunswick, capital Fredericton.</span> <span class="s" data-i="1">Central Canada: Quebec, capital Québec City; Ontario, capital Toronto.</span> <span class="s" data-i="2">Prairie Provinces: Manitoba, capital Winnipeg; Saskatchewan, capital Regina; Alberta, capital Edmonton.</span> <span class="s" data-i="3">West Coast: British Columbia, capital Victoria.</span> <span class="s" data-i="4">North: Nunavut, capital Iqaluit; Northwest Territories, capital Yellowknife; Yukon Territory, capital Whitehorse.</span></div>
+</div></section><section class="rd-sec"><h2>人口<small>Population</small></h2>
+<div class="rd-row" data-p="5">
+  <div class="rd-cell rd-zh"><button class="rd-play" data-lang="zh" data-p="5" type="button" title="朗讀中文">▶</button><span class="s" data-i="0">加拿大的人口約三千四百萬。</span><span class="s" data-i="1">雖然大多數人住在城市，加拿大人也住在小鎮、鄉村，以及介於兩者之間的各種地方。</span><span class="s" data-i="2">注意：這是 2021 年版的數字；加拿大人口在 2023 年已突破四千萬。</span></div>
+  <div class="rd-cell rd-en"><button class="rd-play" data-lang="en" data-p="5" type="button" title="Read English">▶</button><span class="s" data-i="0">Canada has a population of about 34 million people.</span> <span class="s" data-i="1">While the majority live in cities, Canadians also live in small towns, rural areas and everywhere in between.</span> <span class="s" data-i="2">Note: this is the 2021 edition&#x27;s figure; Canada passed 40 million people in 2023.</span></div>
+</div></section><section class="rd-sec"><h2>大西洋省份<small>The Atlantic Provinces</small></h2>
+<div class="rd-row" data-p="6">
+  <div class="rd-cell rd-zh"><button class="rd-play" data-lang="zh" data-p="6" type="button" title="朗讀中文">▶</button><span class="s" data-i="0">大西洋加拿大的海岸和自然資源——包括漁業、農業、林業和礦業——使這些省份成為加拿大歷史與發展的重要部分。</span><span class="s" data-i="1">大西洋帶來涼爽的冬天和涼爽潮濕的夏天。</span></div>
+  <div class="rd-cell rd-en"><button class="rd-play" data-lang="en" data-p="6" type="button" title="Read English">▶</button><span class="s" data-i="0">Atlantic Canada&#x27;s coasts and natural resources, including fishing, farming, forestry and mining, have made these provinces an important part of Canada&#x27;s history and development.</span> <span class="s" data-i="1">The Atlantic Ocean brings cool winters and cool humid summers.</span></div>
+</div>
+<div class="rd-row" data-p="7">
+  <div class="rd-cell rd-zh"><button class="rd-play" data-lang="zh" data-p="7" type="button" title="朗讀中文">▶</button><span class="s" data-i="0">紐芬蘭與拉布拉多（Newfoundland and Labrador）是北美洲最東端，有自己的時區。</span><span class="s" data-i="1">除了自然美景，這個省還有與海洋相連的獨特傳承。</span><span class="s" data-i="2">作為大英帝國最古老的殖民地、加拿大早期歷史中的戰略要地，這個省長期以來以漁業、沿海漁村和獨特的文化聞名。</span><span class="s" data-i="3">今天，海上石油和天然氣開採占經濟相當大的一部分。</span><span class="s" data-i="4">拉布拉多也有巨大的水力發電資源。</span></div>
+  <div class="rd-cell rd-en"><button class="rd-play" data-lang="en" data-p="7" type="button" title="Read English">▶</button><span class="s" data-i="0">Newfoundland and Labrador is the most easterly point in North America and has its own time zone.</span> <span class="s" data-i="1">In addition to its natural beauty, the province has a unique heritage linked to the sea.</span> <span class="s" data-i="2">The oldest colony of the British Empire and a strategic prize in Canada&#x27;s early history, the province has long been known for its fisheries, coastal fishing villages and distinct culture.</span> <span class="s" data-i="3">Today off-shore oil and gas extraction contributes a substantial part of the economy.</span> <span class="s" data-i="4">Labrador also has immense hydro-electric resources.</span></div>
+</div>
+<div class="rd-row" data-p="8">
+  <div class="rd-cell rd-zh"><button class="rd-play" data-lang="zh" data-p="8" type="button" title="朗讀中文">▶</button><span class="s" data-i="0">愛德華王子島（Prince Edward Island，P.E.I.）是最小的省，以海灘、紅土和農業聞名，尤其是馬鈴薯。</span><span class="s" data-i="1">愛德華王子島是聯邦的誕生地，由世界上最長的連續多跨橋之一「聯邦大橋」與加拿大本土相連。</span><span class="s" data-i="2">露西・莫德・蒙哥馬利（Lucy Maud Montgomery）以愛德華王子島為背景的《清秀佳人》（Anne of Green Gables），是一個深受喜愛的故事，講述一個紅髮小孤女的冒險。</span></div>
+  <div class="rd-cell rd-en"><button class="rd-play" data-lang="en" data-p="8" type="button" title="Read English">▶</button><span class="s" data-i="0">Prince Edward Island (P.E.I.) is the smallest province, known for its beaches, red soil and agriculture, especially potatoes.</span> <span class="s" data-i="1">P.E.I. is the birthplace of Confederation, connected to mainland Canada by one of the longest continuous multispan bridges in the world, the Confederation Bridge.</span> <span class="s" data-i="2">Anne of Green Gables, set in P.E.I. by Lucy Maud Montgomery, is a much-loved story about the adventures of a little red-headed orphan girl.</span></div>
+</div>
+<div class="rd-row" data-p="9">
+  <div class="rd-cell rd-zh"><button class="rd-play" data-lang="zh" data-p="9" type="button" title="朗讀中文">▶</button><span class="s" data-i="0">新斯科細亞（Nova Scotia）是人口最多的大西洋省份，作為加拿大的門戶有豐富的歷史。</span><span class="s" data-i="1">以芬迪灣世界最高的潮汐聞名，這個省的身分與造船、漁業和航運息息相關。</span><span class="s" data-i="2">首府哈利法克斯是加拿大東岸最大的港口，水深且終年不結冰，在大西洋貿易和國防上扮演重要角色，也是加拿大最大海軍基地的所在地。</span><span class="s" data-i="3">新斯科細亞有悠久的煤礦、林業和農業歷史。</span><span class="s" data-i="4">今天也有海上石油和天然氣的探勘。</span><span class="s" data-i="5">這個省的凱爾特和蓋爾傳統維繫著充滿活力的文化。</span><span class="s" data-i="6">新斯科細亞每年有超過 700 個節慶，包括哈利法克斯壯觀的軍樂表演。</span></div>
+  <div class="rd-cell rd-en"><button class="rd-play" data-lang="en" data-p="9" type="button" title="Read English">▶</button><span class="s" data-i="0">Nova Scotia is the most populous Atlantic Province, with a rich history as the gateway to Canada.</span> <span class="s" data-i="1">Known for the world&#x27;s highest tides in the Bay of Fundy, the province&#x27;s identity is linked to shipbuilding, fisheries and shipping.</span> <span class="s" data-i="2">As Canada&#x27;s largest east coast port, deep-water and ice-free, the capital, Halifax, has played an important role in Atlantic trade and defence and is home to Canada&#x27;s largest naval base.</span> <span class="s" data-i="3">Nova Scotia has a long history of coal mining, forestry and agriculture.</span> <span class="s" data-i="4">Today there is also off-shore oil and gas exploration.</span> <span class="s" data-i="5">The province&#x27;s Celtic and Gaelic traditions sustain a vibrant culture.</span> <span class="s" data-i="6">Nova Scotia is home to over 700 annual festivals, including the spectacular military tattoo in Halifax.</span></div>
+</div>
+<div class="rd-row" data-p="10">
+  <div class="rd-cell rd-zh"><button class="rd-play" data-lang="zh" data-p="10" type="button" title="朗讀中文">▶</button><span class="s" data-i="0">位於阿帕拉契山脈的新布藍瑞克（New Brunswick），由聯合帝國效忠派建立，擁有北美大西洋沿岸第二大的河流系統——聖約翰河系統。</span><span class="s" data-i="1">林業、農業、漁業、礦業、食品加工和旅遊業是主要產業。</span><span class="s" data-i="2">聖約翰（Saint John）是最大的城市、港口和製造中心；蒙克頓（Moncton）是主要的法語阿卡迪亞中心；弗雷德里克頓（Fredericton）是歷史悠久的首府。</span><span class="s" data-i="3">新布藍瑞克是唯一官方雙語的省份，約三分之一的人口以法語生活和工作。</span><span class="s" data-i="4">這個省的效忠派拓荒者和法國文化遺產與歷史，在街頭節慶和傳統音樂中鮮活地呈現。</span></div>
+  <div class="rd-cell rd-en"><button class="rd-play" data-lang="en" data-p="10" type="button" title="Read English">▶</button><span class="s" data-i="0">Situated in the Appalachian Range, New Brunswick was founded by the United Empire Loyalists and has the second largest river system on North America&#x27;s Atlantic coastline, the St. John River system.</span> <span class="s" data-i="1">Forestry, agriculture, fisheries, mining, food processing and tourism are the principal industries.</span> <span class="s" data-i="2">Saint John is the largest city, port and manufacturing centre; Moncton is the principal Francophone Acadian centre; and Fredericton, the historic capital.</span> <span class="s" data-i="3">New Brunswick is the only officially bilingual province, and about one-third of the population lives and works in French.</span> <span class="s" data-i="4">The province&#x27;s pioneer Loyalist and French cultural heritage and history come alive in street festivals and traditional music.</span></div>
+</div></section><section class="rd-sec"><h2>中部加拿大<small>Central Canada</small></h2>
+<div class="rd-row" data-p="11">
+  <div class="rd-cell rd-zh"><button class="rd-play" data-lang="zh" data-p="11" type="button" title="朗讀中文">▶</button><span class="s" data-i="0">加拿大超過一半的人口住在魁北克南部和安大略五大湖與聖羅倫斯河附近的城鎮，這裡被稱為中部加拿大，是工業和製造業的心臟地帶。</span><span class="s" data-i="1">安大略南部和魁北克冬天寒冷，夏天溫暖潮濕。</span><span class="s" data-i="2">安大略和魁北克合起來生產加拿大四分之三以上的製造品。</span></div>
+  <div class="rd-cell rd-en"><button class="rd-play" data-lang="en" data-p="11" type="button" title="Read English">▶</button><span class="s" data-i="0">More than half the people in Canada live in cities and towns near the Great Lakes and the St. Lawrence River in southern Quebec and Ontario, known as Central Canada and the industrial and manufacturing heartland.</span> <span class="s" data-i="1">Southern Ontario and Quebec have cold winters and warm humid summers.</span> <span class="s" data-i="2">Together, Ontario and Quebec produce more than three-quarters of all Canadian manufactured goods.</span></div>
+</div>
+<div class="rd-row" data-p="12">
+  <div class="rd-cell rd-zh"><button class="rd-play" data-lang="zh" data-p="12" type="button" title="朗讀中文">▶</button><span class="s" data-i="0">將近八百萬人住在魁北克（Quebec），絕大多數沿著或靠近聖羅倫斯河。</span><span class="s" data-i="1">超過四分之三的人以法語為第一語言。</span><span class="s" data-i="2">加拿大地盾的資源幫助魁北克發展了重要產業，包括林業、能源和礦業。</span><span class="s" data-i="3">魁北克是加拿大主要的紙漿和紙張生產地。</span><span class="s" data-i="4">這個省龐大的淡水資源使它成為加拿大最大的水力發電生產者。</span><span class="s" data-i="5">魁北克人在製藥和航空等尖端產業居於領先地位。</span><span class="s" data-i="6">魁北克的電影、音樂、文學作品和美食享有國際地位，尤其在法語國家組織（La Francophonie）中。</span><span class="s" data-i="7">蒙特婁（Montreal）是加拿大第二大城市，也是世界上僅次於巴黎的第二大法語城市，以文化多元聞名。</span></div>
+  <div class="rd-cell rd-en"><button class="rd-play" data-lang="en" data-p="12" type="button" title="Read English">▶</button><span class="s" data-i="0">Nearly eight million people live in Quebec, the vast majority along or near the St. Lawrence River.</span> <span class="s" data-i="1">More than three-quarters speak French as their first language.</span> <span class="s" data-i="2">The resources of the Canadian Shield have helped Quebec to develop important industries, including forestry, energy and mining.</span> <span class="s" data-i="3">Quebec is Canada&#x27;s main producer of pulp and paper.</span> <span class="s" data-i="4">The province&#x27;s huge supply of fresh water has made it Canada&#x27;s largest producer of hydro-electricity.</span> <span class="s" data-i="5">Quebecers are leaders in cutting-edge industries such as pharmaceuticals and aeronautics.</span> <span class="s" data-i="6">Quebec films, music, literary works and food have international stature, especially in La Francophonie, an association of French-speaking nations.</span> <span class="s" data-i="7">Montreal, Canada&#x27;s second largest city and the second largest mainly French-speaking city in the world after Paris, is famous for its cultural diversity.</span></div>
+</div>
+<div class="rd-row" data-p="13">
+  <div class="rd-cell rd-zh"><button class="rd-play" data-lang="zh" data-p="13" type="button" title="朗讀中文">▶</button><span class="s" data-i="0">安大略（Ontario）人口超過一千兩百萬，占加拿大人口的三分之一以上。</span><span class="s" data-i="1">龐大而文化多元的人口、自然資源和戰略位置，造就了充滿活力的經濟。</span><span class="s" data-i="2">多倫多（Toronto）是加拿大最大的城市，也是國家的主要金融中心。</span><span class="s" data-i="3">許多人在服務業或製造業工作，這些產業生產加拿大很大一部分的出口品。</span><span class="s" data-i="4">尼加拉地區以葡萄園、葡萄酒和水果作物聞名。</span><span class="s" data-i="5">安大略的農民飼養乳牛和肉牛、家禽，並種植蔬菜和穀物。</span><span class="s" data-i="6">由聯合帝國效忠派建立的安大略，也擁有魁北克以外最多的法語人口，他們以保存自己語言和文化的歷史為榮。</span><span class="s" data-i="7">安大略與美國之間有五大湖：安大略湖、伊利湖、休倫湖、密西根湖（在美國境內），以及世界最大的淡水湖蘇必略湖。</span></div>
+  <div class="rd-cell rd-en"><button class="rd-play" data-lang="en" data-p="13" type="button" title="Read English">▶</button><span class="s" data-i="0">At more than 12 million, the people of Ontario make up more than one-third of Canadians.</span> <span class="s" data-i="1">The large and culturally diverse population, natural resources and strategic location contribute to a vital economy.</span> <span class="s" data-i="2">Toronto is the largest city in Canada and the country&#x27;s main financial centre.</span> <span class="s" data-i="3">Many people work in the service or manufacturing industries, which produce a large percentage of Canada&#x27;s exports.</span> <span class="s" data-i="4">The Niagara region is known for its vineyards, wines and fruit crops.</span> <span class="s" data-i="5">Ontario farmers raise dairy and beef cattle, poultry, and vegetable and grain crops.</span> <span class="s" data-i="6">Founded by United Empire Loyalists, Ontario also has the largest French-speaking population outside of Quebec, with a proud history of preserving their language and culture.</span> <span class="s" data-i="7">There are five Great Lakes located between Ontario and the United States: Lake Ontario, Lake Erie, Lake Huron, Lake Michigan (in the U.S.A.) and Lake Superior, the largest freshwater lake in the world.</span></div>
+</div></section><section class="rd-sec"><h2>草原省份<small>The Prairie Provinces</small></h2>
+<div class="rd-row" data-p="14">
+  <div class="rd-cell rd-zh"><button class="rd-play" data-lang="zh" data-p="14" type="button" title="朗讀中文">▶</button><span class="s" data-i="0">曼尼托巴、薩克其萬和亞伯達是草原省份，擁有豐富的能源資源和世界上最肥沃的農田之一。</span><span class="s" data-i="1">這個地區大多乾燥，冬天寒冷，夏天炎熱。</span></div>
+  <div class="rd-cell rd-en"><button class="rd-play" data-lang="en" data-p="14" type="button" title="Read English">▶</button><span class="s" data-i="0">Manitoba, Saskatchewan and Alberta are the Prairie Provinces, rich in energy resources and some of the most fertile farmland in the world.</span> <span class="s" data-i="1">The region is mostly dry, with cold winters and hot summers.</span></div>
+</div>
+<div class="rd-row" data-p="15">
+  <div class="rd-cell rd-zh"><button class="rd-play" data-lang="zh" data-p="15" type="button" title="朗讀中文">▶</button><span class="s" data-i="0">曼尼托巴（Manitoba）的經濟以農業、礦業和水力發電為基礎。</span><span class="s" data-i="1">這個省人口最多的城市是溫尼伯（Winnipeg），它的交易區包含加拿大最著名的十字路口——波蒂奇大道與緬街（Portage and Main）。</span><span class="s" data-i="2">溫尼伯的法語區聖博尼法斯（St. Boniface）擁有加拿大西部最大的法語社群，有四萬五千人。</span><span class="s" data-i="3">曼尼托巴也是烏克蘭文化的重要中心，14% 的人自報烏克蘭血統；它也是各省中原住民人口比例最高的，超過 15%。</span></div>
+  <div class="rd-cell rd-en"><button class="rd-play" data-lang="en" data-p="15" type="button" title="Read English">▶</button><span class="s" data-i="0">Manitoba&#x27;s economy is based on agriculture, mining and hydro-electric power generation.</span> <span class="s" data-i="1">The province&#x27;s most populous city is Winnipeg, whose Exchange District includes the most famous street intersection in Canada, Portage and Main.</span> <span class="s" data-i="2">Winnipeg&#x27;s French Quarter, St. Boniface, has Western Canada&#x27;s largest Francophone community at 45,000.</span> <span class="s" data-i="3">Manitoba is also an important centre of Ukrainian culture, with 14% reporting Ukrainian origins, and the largest Aboriginal population of any province, at over 15%.</span></div>
+</div>
+<div class="rd-row" data-p="16">
+  <div class="rd-cell rd-zh"><button class="rd-play" data-lang="zh" data-p="16" type="button" title="朗讀中文">▶</button><span class="s" data-i="0">薩克其萬（Saskatchewan）曾被稱為「世界的麵包籃」和「小麥之省」，擁有加拿大 40% 的可耕地，是全國最大的穀物和油籽生產地。</span><span class="s" data-i="1">它還擁有世界上最豐富的鈾礦和鉀鹽礦藏（鉀鹽用於肥料），也生產石油和天然氣。</span><span class="s" data-i="2">首府里賈納（Regina）是皇家加拿大騎警訓練學院的所在地。</span><span class="s" data-i="3">最大的城市薩斯卡通（Saskatoon）是礦業的總部，也是重要的教育、研究和科技中心。</span></div>
+  <div class="rd-cell rd-en"><button class="rd-play" data-lang="en" data-p="16" type="button" title="Read English">▶</button><span class="s" data-i="0">Saskatchewan, once known as the &quot;breadbasket of the world&quot; and the &quot;wheat province,&quot; has 40% of the arable land in Canada and is the country&#x27;s largest producer of grains and oilseeds.</span> <span class="s" data-i="1">It also boasts the world&#x27;s richest deposits of uranium and potash, used in fertilizer, and produces oil and natural gas.</span> <span class="s" data-i="2">Regina, the capital, is home to the training academy of the Royal Canadian Mounted Police.</span> <span class="s" data-i="3">Saskatoon, the largest city, is the headquarters of the mining industry and an important educational, research and technology centre.</span></div>
+</div>
+<div class="rd-row" data-p="17">
+  <div class="rd-cell rd-zh"><button class="rd-play" data-lang="zh" data-p="17" type="button" title="朗讀中文">▶</button><span class="s" data-i="0">亞伯達（Alberta）是人口最多的草原省份。</span><span class="s" data-i="1">這個省和洛磯山脈中舉世聞名的露易絲湖，都是以維多利亞女王的第四個女兒露易絲・卡洛琳・亞伯達公主命名的。</span><span class="s" data-i="2">亞伯達有五個國家公園，包括 1885 年設立的班夫國家公園。</span><span class="s" data-i="3">崎嶇的惡地藏有世界上最豐富的史前化石和恐龍發現。</span><span class="s" data-i="4">亞伯達是最大的石油和天然氣生產地，北部的油砂正被開發為主要能源。</span><span class="s" data-i="5">亞伯達也以農業聞名，尤其是廣大的牧牛場，使加拿大成為世界主要牛肉生產國之一。</span></div>
+  <div class="rd-cell rd-en"><button class="rd-play" data-lang="en" data-p="17" type="button" title="Read English">▶</button><span class="s" data-i="0">Alberta is the most populous Prairie province.</span> <span class="s" data-i="1">The province, and the world-famous Lake Louise in the Rocky Mountains, were both named after Princess Louise Caroline Alberta, fourth daughter of Queen Victoria.</span> <span class="s" data-i="2">Alberta has five national parks, including Banff National Park, established in 1885.</span> <span class="s" data-i="3">The rugged Badlands house some of the world&#x27;s richest deposits of prehistoric fossils and dinosaur finds.</span> <span class="s" data-i="4">Alberta is the largest producer of oil and gas, and the oil sands in the north are being developed as a major energy source.</span> <span class="s" data-i="5">Alberta is also renowned for agriculture, especially for the vast cattle ranches that make Canada one of the world&#x27;s major beef producers.</span></div>
+</div></section><section class="rd-sec"><h2>西海岸<small>The West Coast</small></h2>
+<div class="rd-row" data-p="18">
+  <div class="rd-cell rd-zh"><button class="rd-play" data-lang="zh" data-p="18" type="button" title="朗讀中文">▶</button><span class="s" data-i="0">卑詩省以雄偉的山脈聞名，也是加拿大通往太平洋的門戶。</span><span class="s" data-i="1">溫哥華港是加拿大最大、最繁忙的港口，處理價值數十億美元、與世界各地交易的貨物。</span><span class="s" data-i="2">來自太平洋的暖氣流讓卑詩省海岸有溫和的氣候。</span></div>
+  <div class="rd-cell rd-en"><button class="rd-play" data-lang="en" data-p="18" type="button" title="Read English">▶</button><span class="s" data-i="0">British Columbia is known for its majestic mountains and as Canada&#x27;s Pacific gateway.</span> <span class="s" data-i="1">The Port of Vancouver, Canada&#x27;s largest and busiest, handles billions of dollars in goods traded around the world.</span> <span class="s" data-i="2">Warm airstreams from the Pacific Ocean give the B.C. coast a temperate climate.</span></div>
+</div>
+<div class="rd-row" data-p="19">
+  <div class="rd-cell rd-zh"><button class="rd-play" data-lang="zh" data-p="19" type="button" title="朗讀中文">▶</button><span class="s" data-i="0">位於太平洋岸的卑詩省（British Columbia，B.C.）是加拿大最西邊的省，人口四百萬。</span><span class="s" data-i="1">溫哥華港是我們通往亞太地區的門戶。</span><span class="s" data-i="2">卑詩省生產的商品約有一半是林產品，包括木材、新聞紙、紙漿和紙製品——是加拿大最有價值的林業。</span><span class="s" data-i="3">卑詩省也以礦業、漁業，以及奧卡納根谷的果園和葡萄酒產業聞名。</span><span class="s" data-i="4">卑詩省擁有加拿大最龐大的公園系統，約有 600 個省立公園。</span><span class="s" data-i="5">這個省龐大的亞裔社群，使中文和旁遮普語成為城市裡僅次於英語最常使用的語言。</span><span class="s" data-i="6">首府維多利亞（Victoria）是旅遊中心，也是海軍太平洋艦隊的總部。</span></div>
+  <div class="rd-cell rd-en"><button class="rd-play" data-lang="en" data-p="19" type="button" title="Read English">▶</button><span class="s" data-i="0">British Columbia (B.C.), on the Pacific coast, is Canada&#x27;s westernmost province, with a population of four million.</span> <span class="s" data-i="1">The Port of Vancouver is our gateway to the Asia-Pacific.</span> <span class="s" data-i="2">About one-half of all the goods produced in B.C. are forestry products, including lumber, newsprint, and pulp and paper products—the most valuable forestry industry in Canada.</span> <span class="s" data-i="3">B.C. is also known for mining, fishing, and the fruit orchards and wine industry of the Okanagan Valley.</span> <span class="s" data-i="4">B.C. has the most extensive park system in Canada, with approximately 600 provincial parks.</span> <span class="s" data-i="5">The province&#x27;s large Asian communities have made Chinese and Punjabi the most spoken languages in the cities after English.</span> <span class="s" data-i="6">The capital, Victoria, is a tourist centre and headquarters of the navy&#x27;s Pacific fleet.</span></div>
+</div></section><section class="rd-sec"><h2>北方地區<small>The Northern Territories</small></h2>
+<div class="rd-row" data-p="20">
+  <div class="rd-cell rd-zh"><button class="rd-play" data-lang="zh" data-p="20" type="button" title="朗讀中文">▶</button><span class="s" data-i="0">西北地區、努納福特和育空占加拿大三分之一的陸地面積，但人口只有十萬。</span><span class="s" data-i="1">這裡有金礦、鉛礦、銅礦、鑽石礦和鋅礦。</span><span class="s" data-i="2">石油和天然氣礦藏正在開發中。</span><span class="s" data-i="3">北方常被稱為「午夜太陽之地」，因為在盛夏，白晝可長達 24 小時。</span><span class="s" data-i="4">冬天，太陽消失，黑暗持續三個月。</span><span class="s" data-i="5">北方地區冬天漫長寒冷，夏天短暫涼爽。</span><span class="s" data-i="6">北方大部分是凍原，也就是廣闊多岩石的北極平原。</span><span class="s" data-i="7">由於北極的寒冷氣候，凍原上沒有樹木，土壤永久凍結。</span><span class="s" data-i="8">有些人仍靠狩獵、捕魚和設陷阱捕獸維生。</span><span class="s" data-i="9">因紐特藝術品銷售到全加拿大和世界各地。</span></div>
+  <div class="rd-cell rd-en"><button class="rd-play" data-lang="en" data-p="20" type="button" title="Read English">▶</button><span class="s" data-i="0">The Northwest Territories, Nunavut and Yukon contain one-third of Canada&#x27;s land mass but have a population of only 100,000.</span> <span class="s" data-i="1">There are gold, lead, copper, diamond and zinc mines.</span> <span class="s" data-i="2">Oil and gas deposits are being developed.</span> <span class="s" data-i="3">The North is often referred to as the &quot;Land of the Midnight Sun&quot; because at the height of summer, daylight can last up to 24 hours.</span> <span class="s" data-i="4">In winter, the sun disappears and darkness sets in for three months.</span> <span class="s" data-i="5">The Northern territories have long cold winters and short cool summers.</span> <span class="s" data-i="6">Much of the North is made up of tundra, the vast rocky Arctic plain.</span> <span class="s" data-i="7">Because of the cold Arctic climate, there are no trees on the tundra and the soil is permanently frozen.</span> <span class="s" data-i="8">Some continue to earn a living by hunting, fishing and trapping.</span> <span class="s" data-i="9">Inuit art is sold throughout Canada and around the world.</span></div>
+</div>
+<div class="rd-row" data-p="21">
+  <div class="rd-cell rd-zh"><button class="rd-play" data-lang="zh" data-p="21" type="button" title="朗讀中文">▶</button><span class="s" data-i="0">西北地區（Northwest Territories，N.W.T.）最初在 1870 年由魯珀特地和西北領地組成。</span><span class="s" data-i="1">首府黃刀鎮（Yellowknife，人口兩萬）被稱為「北美鑽石之都」。</span><span class="s" data-i="2">超過一半的人口是原住民（迪尼族、因紐特人和梅蒂人）。</span><span class="s" data-i="3">馬更些河（Mackenzie River）長 4,200 公里，是北美僅次於密西西比河的第二長河流系統，流域面積 180 萬平方公里。</span></div>
+  <div class="rd-cell rd-en"><button class="rd-play" data-lang="en" data-p="21" type="button" title="Read English">▶</button><span class="s" data-i="0">The Northwest Territories (N.W.T.) were originally made up in 1870 from Rupert&#x27;s Land and the North-Western Territory.</span> <span class="s" data-i="1">The capital, Yellowknife (population 20,000), is called the &quot;diamond capital of North America.&quot;</span> <span class="s" data-i="2">More than half the population is Aboriginal (Dene, Inuit and Métis).</span> <span class="s" data-i="3">The Mackenzie River, at 4,200 kilometres, is the second-longest river system in North America after the Mississippi and drains an area of 1.8 million square kilometres.</span></div>
+</div>
+<div class="rd-row" data-p="22">
+  <div class="rd-cell rd-zh"><button class="rd-play" data-lang="zh" data-p="22" type="button" title="朗讀中文">▶</button><span class="s" data-i="0">1890 年代淘金熱期間，成千上萬的礦工來到育空（Yukon），詩人羅伯特・W・瑟維斯（Robert W. Service）的詩歌歌頌了這段歷史。</span><span class="s" data-i="1">礦業仍然是經濟的重要部分。</span><span class="s" data-i="2">白隘口與育空鐵路於 1900 年通車，從鄰近阿拉斯加的史凱威到地區首府白馬市（Whitehorse），提供穿越險峻山口和橋梁的壯觀觀光行程。</span><span class="s" data-i="3">育空保有加拿大有記錄以來最低溫的紀錄（攝氏零下 63 度）。</span><span class="s" data-i="4">位於育空的洛根山（Mount Logan）是加拿大最高的山。</span><span class="s" data-i="5">它以世界著名地質學家威廉・洛根爵士（Sir William Logan）命名；他 1798 年生於蒙特婁，父母是蘇格蘭移民，1842 年到 1869 年創立並領導加拿大地質調查局，被視為加拿大最偉大的科學家之一。</span></div>
+  <div class="rd-cell rd-en"><button class="rd-play" data-lang="en" data-p="22" type="button" title="Read English">▶</button><span class="s" data-i="0">Thousands of miners came to the Yukon during the Gold Rush of the 1890s, as celebrated in the poetry of Robert W. Service.</span> <span class="s" data-i="1">Mining remains a significant part of the economy.</span> <span class="s" data-i="2">The White Pass and Yukon Railway opened from Skagway in neighbouring Alaska to the territorial capital, Whitehorse, in 1900 and provides a spectacular tourist excursion across precipitous passes and bridges.</span> <span class="s" data-i="3">Yukon holds the record for the coldest temperature ever recorded in Canada (-63°C).</span> <span class="s" data-i="4">Mount Logan, located in the Yukon, is the highest mountain in Canada.</span> <span class="s" data-i="5">It is named in honour of Sir William Logan, a world-famous geologist, born in Montreal in 1798 to Scottish immigrant parents, who founded and directed the Geological Survey of Canada from 1842 to 1869 and is considered one of Canada&#x27;s greatest scientists.</span></div>
+</div>
+<div class="rd-row" data-p="23">
+  <div class="rd-cell rd-zh"><button class="rd-play" data-lang="zh" data-p="23" type="button" title="朗讀中文">▶</button><span class="s" data-i="0">努納福特（Nunavut）在因紐特語中意為「我們的土地」，於 1999 年從西北地區的東部設立，包括原來的整個基瓦丁區。</span><span class="s" data-i="1">首府是伊魁特（Iqaluit），舊稱弗羅比舍灣，以英國探險家馬丁・弗羅比舍命名；他在 1576 年為伊莉莎白一世女王深入未知的北極。</span><span class="s" data-i="2">由 19 名議員組成的立法議會以共識方式選出省長和部長。</span><span class="s" data-i="3">人口約 85% 是因紐特人，因紐特語是官方語言，也是學校的第一語言。</span></div>
+  <div class="rd-cell rd-en"><button class="rd-play" data-lang="en" data-p="23" type="button" title="Read English">▶</button><span class="s" data-i="0">Nunavut, meaning &quot;our land&quot; in Inuktitut, was established in 1999 from the eastern part of the Northwest Territories, including all of the former District of Keewatin.</span> <span class="s" data-i="1">The capital is Iqaluit, formerly Frobisher Bay, named after the English explorer Martin Frobisher, who penetrated the uncharted Arctic for Queen Elizabeth I in 1576.</span> <span class="s" data-i="2">The 19-member Legislative Assembly chooses a premier and ministers by consensus.</span> <span class="s" data-i="3">The population is about 85% Inuit, and Inuktitut is an official language and the first language in schools.</span></div>
+</div></section><section class="rd-sec"><h2>加拿大巡邏隊<small>The Canadian Rangers</small></h2>
+<div class="rd-row" data-p="24">
+  <div class="rd-cell rd-zh"><button class="rd-play" data-lang="zh" data-p="24" type="button" title="朗讀中文">▶</button><span class="s" data-i="0">加拿大廣闊的北方帶來安全與主權的挑戰。</span><span class="s" data-i="1">在偏遠地區面對嚴酷天氣，加拿大巡邏隊（Canadian Rangers）——加拿大軍隊後備部隊（民兵）的一部分——扮演關鍵角色。</span><span class="s" data-i="2">巡邏隊運用原住民的知識和經驗，冬天騎雪上摩托車、夏天駕駛全地形車，從雷索盧特一直巡邏到磁北極，讓國旗在加拿大的北極飄揚。</span></div>
+  <div class="rd-cell rd-en"><button class="rd-play" data-lang="en" data-p="24" type="button" title="Read English">▶</button><span class="s" data-i="0">Canada&#x27;s vast North brings security and sovereignty challenges.</span> <span class="s" data-i="1">Dealing with harsh weather conditions in an isolated region, the Canadian Rangers, part of the Canadian Forces Reserves (militia), play a key role.</span> <span class="s" data-i="2">Drawing on indigenous knowledge and experience, the Rangers travel by snowmobile in the winter and all-terrain vehicles in the summer from Resolute to the Magnetic North Pole, and keep the flag flying in Canada&#x27;s Arctic.</span></div>
+</div></section>
+</div>
+<script type="application/json" id="rd-11-timings">{"en": [[[0.0, 5.09], [5.09, 13.542], [13.542, 17.861], [17.861, 22.981]], [[0.0, 12.486]], [[0.0, 10.096], [10.096, 13.73], [13.73, 23.97]], [[0.0, 3.279], [3.279, 6.832], [6.832, 11.51]], [[0.0, 14.161], [14.161, 20.267], [20.267, 29.404], [29.404, 33.166], [33.166, 42.71]], [[0.0, 3.685], [3.685, 10.744], [10.744, 18.082]], [[0.0, 11.502], [11.502, 15.252]], [[0.0, 5.522], [5.522, 10.573], [10.573, 22.067], [22.067, 27.604], [27.604, 31.076]], [[0.0, 8.957], [8.957, 19.139], [19.139, 27.847]], [[0.0, 6.126], [6.126, 13.417], [13.417, 25.979], [25.979, 31.099], [31.099, 34.582], [34.582, 38.866], [38.866, 46.494]], [[0.0, 12.024], [12.024, 19.303], [19.303, 29.984], [29.984, 37.322], [37.322, 44.926]], [[0.0, 12.418], [12.418, 16.888], [16.888, 22.879]], [[0.0, 5.859], [5.859, 9.574], [9.574, 17.248], [17.248, 20.696], [20.696, 27.175], [27.175, 32.364], [32.364, 42.918], [42.918, 52.299]], [[0.0, 5.661], [5.661, 13.312], [13.312, 18.328], [18.328, 25.387], [25.387, 30.054], [30.054, 36.172], [36.172, 47.132], [47.132, 62.666]], [[0.0, 8.726], [8.726, 12.5]], [[0.0, 6.113], [6.113, 15.169], [15.169, 23.017], [23.017, 35.243]], [[0.0, 11.455], [11.455, 19.988], [19.988, 25.666], [25.666, 34.083]], [[0.0, 3.068], [3.068, 12.983], [12.983, 19.403], [19.403, 26.009], [26.009, 33.486], [33.486, 41.799]], [[0.0, 5.348], [5.348, 12.534], [12.534, 17.364]], [[0.0, 7.972], [7.972, 11.489], [11.489, 23.541], [23.541, 29.984], [29.984, 36.579], [36.579, 44.288], [44.288, 49.593]], [[0.0, 8.202], [8.202, 12.115], [12.115, 14.854], [14.854, 22.738], [22.738, 27.149], [27.149, 31.515], [31.515, 35.822], [35.822, 41.999], [41.999, 45.934], [45.934, 49.185]], [[0.0, 8.005], [8.005, 14.576], [14.576, 19.754], [19.754, 31.573]], [[0.0, 8.167], [8.167, 11.429], [11.429, 25.222], [25.222, 32.315], [32.315, 37.18], [37.18, 55.268]], [[0.0, 10.573], [10.573, 23.019], [23.019, 28.243], [28.243, 35.012]], [[0.0, 4.254], [4.254, 13.74], [13.74, 26.534]]], "zh": [[[0.0, 4.873], [4.873, 13.209], [13.209, 16.82], [16.82, 22.451]], [[0.0, 12.42]], [[0.0, 8.065], [8.065, 11.223], [11.223, 20.232]], [[0.0, 2.992], [2.992, 5.988], [5.988, 11.154]], [[0.0, 19.629], [19.629, 28.267], [28.267, 40.62], [40.62, 45.485], [45.485, 57.443]], [[0.0, 2.946], [2.946, 11.851], [11.851, 18.852]], [[0.0, 11.003], [11.003, 14.8]], [[0.0, 6.262], [6.262, 11.556], [11.556, 22.806], [22.806, 28.054], [28.054, 31.049]], [[0.0, 11.433], [11.433, 21.371], [21.371, 33.724]], [[0.0, 7.312], [7.312, 15.276], [15.276, 28.094], [28.094, 32.819], [32.819, 36.383], [36.383, 40.818], [40.818, 47.459]], [[0.0, 11.71], [11.71, 18.351], [18.351, 31.169], [31.169, 38.251], [38.251, 45.995]], [[0.0, 12.547], [12.547, 17.714], [17.714, 22.579]], [[0.0, 6.429], [6.429, 10.156], [10.156, 17.168], [17.168, 21.093], [21.093, 26.329], [26.329, 31.008], [31.008, 40.11], [40.11, 48.782]], [[0.0, 6.429], [6.429, 13.72], [13.72, 19.734], [19.734, 26.654], [26.654, 31.786], [31.786, 38.276], [38.276, 48.446], [48.446, 60.23]], [[0.0, 8.874], [8.874, 13.483]], [[0.0, 5.461], [5.461, 15.794], [15.794, 23.712], [23.712, 35.484]], [[0.0, 12.905], [12.905, 20.544], [20.544, 25.42], [25.42, 32.943]], [[0.0, 3.621], [3.621, 12.712], [12.712, 18.54], [18.54, 23.753], [23.753, 30.44], [30.44, 38.265]], [[0.0, 5.674], [5.674, 14.695], [14.695, 18.887]], [[0.0, 8.889], [8.889, 12.5], [12.5, 23.042], [23.042, 29.776], [29.776, 35.824], [35.824, 43.545], [43.545, 49.501]], [[0.0, 7.474], [7.474, 13.07], [13.07, 16.426], [16.426, 23.972], [23.972, 28.314], [28.314, 32.958], [32.958, 38.206], [38.206, 44.429], [44.429, 49.119], [49.119, 52.951]], [[0.0, 9.378], [9.378, 15.787], [15.787, 21.279], [21.279, 31.553]], [[0.0, 11.711], [11.711, 14.718], [14.718, 27.118], [27.118, 32.4], [32.4, 36.359], [36.359, 53.484]], [[0.0, 10.593], [10.593, 22.969], [22.969, 28.089], [28.089, 35.728]], [[0.0, 3.747], [3.747, 14.556], [14.556, 27.896]]]}</script>
+
+<script>
+(function() {
+  var root = document.getElementById('rd-11');
+  if (!root) return;
+  var T = JSON.parse(document.getElementById('rd-11-timings').textContent || '{}');
+  T.en = T.en || []; T.zh = T.zh || [];
+  var base = (location.pathname.indexOf('/reading/') >= 0 ? '../' : '') + 'audio/11/';
+  var audio = new Audio();
+  var cur = { lang: null, p: -1, i: -1 };
+  var loadedSrc = '';
+  var rate = 1;
+  var status = root.querySelector('.rd-status');
+  var nParas = root.querySelectorAll('.rd-row').length;
+
+  function clearMarks() {
+    root.querySelectorAll('.s.on').forEach(function(e){ e.classList.remove('on'); });
+    root.querySelectorAll('.rd-row.playing').forEach(function(e){ e.classList.remove('playing'); });
+    root.querySelectorAll('.rd-play.on').forEach(function(e){ e.classList.remove('on'); e.textContent = '▶'; });
+  }
+  function mark(p, i) {
+    clearMarks();
+    var row = root.querySelector('.rd-row[data-p="' + p + '"]');
+    if (!row) return;
+    row.classList.add('playing');
+    row.querySelectorAll('.s[data-i="' + i + '"]').forEach(function(e){ e.classList.add('on'); });
+    var btn = row.querySelector('.rd-play[data-lang="' + cur.lang + '"]');
+    if (btn) { btn.classList.add('on'); btn.textContent = '❚❚'; }
+    var el = row.querySelector('.rd-' + cur.lang + ' .s[data-i="' + i + '"]') || row;
+    var r = el.getBoundingClientRect();
+    if (r.top < 90 || r.bottom > window.innerHeight - 40) el.scrollIntoView({ block: 'center', behavior: 'smooth' });
+    if (status) status.textContent = (cur.lang === 'en' ? 'English' : '中文') + ' · 第 ' + (p + 1) + ' / ' + nParas + ' 段';
+  }
+  function seekStart(lang, p, i) {
+    var t = T[lang] && T[lang][p];
+    return (t && t[i]) ? t[i][0] : 0;
+  }
+  function play(lang, p, i) {
+    if (p < 0 || p >= nParas) { stop(); return; }
+    cur = { lang: lang, p: p, i: i };
+    var src = base + lang + '/p' + p + '.m4a';
+    var at = seekStart(lang, p, i);
+    if (loadedSrc !== src) {
+      loadedSrc = src;
+      audio.src = src;
+      var onMeta = function() {
+        audio.removeEventListener('loadedmetadata', onMeta);
+        audio.currentTime = at;
+        audio.playbackRate = rate;
+        audio.play().catch(function(){});
+      };
+      audio.addEventListener('loadedmetadata', onMeta);
+      audio.load();
+    } else {
+      audio.currentTime = at;
+      audio.playbackRate = rate;
+      audio.play().catch(function(){});
+    }
+    mark(p, i);
+  }
+  function stop() {
+    audio.pause();
+    clearMarks();
+    cur = { lang: null, p: -1, i: -1 };
+    if (status) status.textContent = '';
+  }
+  function pause() {
+    audio.pause();
+    var row = root.querySelector('.rd-row.playing .rd-play.on');
+    if (row) { row.classList.remove('on'); row.textContent = '▶'; }
+  }
+  function resume() {
+    if (cur.p < 0) return;
+    audio.playbackRate = rate;
+    audio.play().catch(function(){});
+    mark(cur.p, cur.i);
+  }
+
+  audio.addEventListener('timeupdate', function() {
+    if (cur.p < 0) return;
+    var t = T[cur.lang] && T[cur.lang][cur.p];
+    if (!t) return;
+    var tt = audio.currentTime;
+    for (var k = 0; k < t.length; k++) {
+      var last = (k === t.length - 1);
+      if (tt >= t[k][0] - 0.05 && (last || tt < t[k + 1][0])) {
+        if (k !== cur.i) { cur.i = k; mark(cur.p, k); }
+        break;
+      }
+    }
+  });
+  audio.addEventListener('ended', function() {
+    var cont = root.querySelector('.rd-cont');
+    if (cont && cont.checked && cur.p + 1 < nParas) play(cur.lang, cur.p + 1, 0);
+    else stop();
+  });
+
+  root.addEventListener('click', function(e) {
+    var btn = e.target.closest && e.target.closest('.rd-play');
+    if (btn) {
+      var p = parseInt(btn.dataset.p, 10), lang = btn.dataset.lang;
+      if (cur.p === p && cur.lang === lang) {
+        if (audio.paused) resume(); else pause();
+      } else {
+        play(lang, p, 0);
+      }
+      return;
+    }
+    var s = e.target.closest && e.target.closest('.s');
+    if (s) {
+      var sel = window.getSelection && window.getSelection();
+      if (sel && sel.toString().length) return;
+      var cell = s.closest('.rd-cell');
+      var row = s.closest('.rd-row');
+      var lang2 = cell.classList.contains('rd-en') ? 'en' : 'zh';
+      play(lang2, parseInt(row.dataset.p, 10), parseInt(s.dataset.i, 10));
+    }
+  });
+
+  var bar = root.querySelector('.rd-bar');
+  bar.querySelector('.rd-all-zh').addEventListener('click', function(){ play('zh', 0, 0); });
+  bar.querySelector('.rd-all-en').addEventListener('click', function(){ play('en', 0, 0); });
+  bar.querySelector('.rd-pause').addEventListener('click', function(){
+    if (cur.p < 0) return;
+    if (audio.paused) resume(); else pause();
+  });
+  bar.querySelector('.rd-stop').addEventListener('click', stop);
+  bar.querySelector('.rd-rate').addEventListener('change', function(e){
+    rate = parseFloat(e.target.value) || 1;
+    audio.playbackRate = rate;
+  });
+  document.addEventListener('keydown', function(e) {
+    if (e.code !== 'Space' || cur.p < 0) return;
+    if (/input|select|textarea/i.test(e.target.tagName)) return;
+    e.preventDefault();
+    if (audio.paused) resume(); else pause();
+  });
+  window.addEventListener('hashchange', stop);
+  window.addEventListener('pagehide', function(){ audio.pause(); });
+})();
+</script>
+
+</main>
+</div>
+<script>
+(function() {
+  if (!('speechSynthesis' in window)) return;
+  var synth = window.speechSynthesis;
+  var voicesReady = false;
+
+  var ICON_SPEAKER = '<svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 10v4h4l5 4V6L7 10H3zm12.5 2c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM13 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg>';
+  var ICON_PAUSE = '<svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6 5h4v14H6zM14 5h4v14h-4z"/></svg>';
+  var ICON_PLAY = '<svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>';
+
+  // single global state — only one TTS session at a time
+  var state = {
+    btn: null, chunks: null, words: null, chunkIdx: 0, paused: false
+  };
+
+  function ensureVoices(cb) {
+    if (voicesReady) return cb();
+    var v = synth.getVoices();
+    if (v && v.length) { voicesReady = true; return cb(); }
+    synth.onvoiceschanged = function() { voicesReady = true; cb(); };
+    setTimeout(function(){ if (!voicesReady) { voicesReady = true; cb(); } }, 500);
+  }
+
+  function pickVoice() {
+    var voices = synth.getVoices();
+    function find(pred){ for (var i=0;i<voices.length;i++) if (pred(voices[i])) return voices[i]; return null; }
+    return find(function(v){return v.lang==='en-CA' && /Samantha|Karen|Tessa|Victoria|Allison|Siri/i.test(v.name);})
+        || find(function(v){return v.lang==='en-CA';})
+        || find(function(v){return v.lang==='en-US' && /Samantha|Karen|Allison|Ava|Siri/i.test(v.name);})
+        || find(function(v){return v.lang==='en-US';})
+        || find(function(v){return v.lang && v.lang.indexOf('en')===0;})
+        || null;
+  }
+
+  // Wrap each word in container in a <span class="w" data-idx="N"> for highlighting.
+  function wrapWords(container) {
+    if (container.dataset.wrapped === '1') return;
+    var walker = document.createTreeWalker(container, NodeFilter.SHOW_TEXT, null, false);
+    var nodes = [];
+    var n;
+    while ((n = walker.nextNode())) {
+      if (!n.parentElement) continue;
+      if (n.parentElement.closest('.speak-btn, .label')) continue;
+      if (!/\S/.test(n.nodeValue)) continue;
+      nodes.push(n);
+    }
+    var idx = 0;
+    nodes.forEach(function(tn) {
+      var text = tn.nodeValue;
+      var tokens = text.split(/(\s+)/);
+      var frag = document.createDocumentFragment();
+      tokens.forEach(function(tok) {
+        if (tok.length === 0) return;
+        if (/^\s+$/.test(tok)) {
+          frag.appendChild(document.createTextNode(tok));
+        } else {
+          var sp = document.createElement('span');
+          sp.className = 'w';
+          sp.setAttribute('data-idx', idx++);
+          sp.textContent = tok;
+          frag.appendChild(sp);
+        }
+      });
+      tn.parentNode.replaceChild(frag, tn);
+    });
+    container.dataset.wrapped = '1';
+  }
+
+  // Group words into chunks split on punctuation, with a pause duration after each chunk.
+  function buildChunks(words) {
+    var chunks = [];
+    var cur = { words: [] };
+    function commit(pauseMs) {
+      if (!cur.words.length) return;
+      cur.text = cur.words.map(function(w){ return w.text; }).join(' ');
+      cur.pauseAfterMs = pauseMs;
+      chunks.push(cur);
+      cur = { words: [] };
+    }
+    words.forEach(function(wEl, i) {
+      var text = wEl.textContent;
+      cur.words.push({ el: wEl, idx: i, text: text });
+      // sentence-ending punctuation → long pause
+      if (/[.!?]+["')\]]*$/.test(text) && text.length > 1) {
+        commit(420);
+      }
+      // semicolon / colon → medium pause
+      else if (/[;:]+["')\]]*$/.test(text)) {
+        commit(300);
+      }
+      // comma or em-dash → short pause
+      else if (/[,—–][")'\]]*$/.test(text)) {
+        commit(220);
+      }
+    });
+    commit(0);
+    return chunks;
+  }
+
+  function highlight(globalIdx) {
+    if (!state.words) return;
+    for (var i = 0; i < state.words.length; i++) {
+      if (i === globalIdx) state.words[i].classList.add('current');
+      else state.words[i].classList.remove('current');
+    }
+  }
+
+  function clearHighlight() {
+    if (!state.words) return;
+    state.words.forEach(function(w){ w.classList.remove('current'); });
+  }
+
+  function findWordAtChar(chunk, charIndex) {
+    var pos = 0;
+    for (var i = 0; i < chunk.words.length; i++) {
+      var len = chunk.words[i].text.length;
+      if (charIndex >= pos && charIndex < pos + len) return i;
+      pos += len + 1; // space
+    }
+    return -1;
+  }
+
+  function setBtnState(btn, s) {
+    if (!btn) return;
+    btn.classList.remove('speaking', 'paused');
+    if (s === 'speaking') btn.classList.add('speaking');
+    else if (s === 'paused') btn.classList.add('paused');
+    btn.setAttribute('data-state', s);
+    var icon = btn.querySelector('.speak-icon');
+    var label = btn.querySelector('.speak-label');
+    if (s === 'idle')     { if (icon) icon.innerHTML = ICON_SPEAKER; if (label) label.textContent = '朗讀'; }
+    else if (s === 'speaking') { if (icon) icon.innerHTML = ICON_PAUSE;   if (label) label.textContent = '暫停'; }
+    else if (s === 'paused')   { if (icon) icon.innerHTML = ICON_PLAY;    if (label) label.textContent = '繼續'; }
+  }
+
+  function stopAll() {
+    state.suppressNextEnd = true;  // ignore the cancel-induced end/error
+    synth.cancel();
+    if (state.btn) setBtnState(state.btn, 'idle');
+    clearHighlight();
+    state.btn = null; state.chunks = null; state.words = null;
+    state.chunkIdx = 0; state.paused = false;
+    // reset suppression on next tick
+    setTimeout(function(){ state.suppressNextEnd = false; }, 100);
+  }
+
+  function findChunkForWord(chunks, wordIdx) {
+    for (var i = 0; i < chunks.length; i++) {
+      for (var j = 0; j < chunks[i].words.length; j++) {
+        if (chunks[i].words[j].idx === wordIdx) return i;
+      }
+    }
+    return -1;
+  }
+
+  function speakFrom(chunkIdx) {
+    if (!state.chunks || chunkIdx >= state.chunks.length) { stopAll(); return; }
+    state.chunkIdx = chunkIdx;
+    var chunk = state.chunks[chunkIdx];
+    var u = new SpeechSynthesisUtterance(chunk.text);
+    u.lang = 'en-CA';
+    u.rate = 0.92;
+    u.pitch = 1.0;
+    var v = pickVoice();
+    if (v) u.voice = v;
+
+    u.onstart = function() {
+      if (chunk.words[0]) highlight(chunk.words[0].idx);
+    };
+    u.onboundary = function(e) {
+      if (e.name && e.name !== 'word') return;
+      var w = findWordAtChar(chunk, e.charIndex || 0);
+      if (w >= 0) highlight(chunk.words[w].idx);
+    };
+    u.onend = function() {
+      // ignore the end event if it was triggered by our own cancel (pause/jump/stop)
+      if (state.suppressNextEnd) { state.suppressNextEnd = false; return; }
+      if (state.paused) return;
+      var next = chunkIdx + 1;
+      if (next >= state.chunks.length) { stopAll(); return; }
+      setTimeout(function() {
+        if (!state.paused && state.chunks) speakFrom(next);
+      }, chunk.pauseAfterMs);
+    };
+    u.onerror = function() {
+      if (state.suppressNextEnd) { state.suppressNextEnd = false; return; }
+      if (state.paused) return; // user paused — keep state for resume
+      stopAll();
+    };
+
+    synth.speak(u);
+  }
+
+  // Start fresh speech for a container, optionally from a specific chunk index.
+  function startFresh(container, btn, fromChunk) {
+    stopAll();
+    wrapWords(container);
+    var words = Array.prototype.slice.call(container.querySelectorAll('.w'));
+    if (!words.length) return;
+    state.btn = btn;
+    state.words = words;
+    state.chunks = buildChunks(words);
+    state.chunkIdx = Math.max(0, Math.min(fromChunk || 0, state.chunks.length - 1));
+    state.paused = false;
+    setBtnState(btn, 'speaking');
+    speakFrom(state.chunkIdx);
+  }
+
+  // Jump speech to a specific word — restart the chunk containing it.
+  function jumpToWord(container, btn, wordIdx) {
+    // Same container that's currently speaking/paused → in-place jump
+    if (state.btn === btn && state.chunks && state.words) {
+      var ci = findChunkForWord(state.chunks, wordIdx);
+      if (ci < 0) return;
+      state.suppressNextEnd = true;
+      synth.cancel();
+      state.chunkIdx = ci;
+      state.paused = false;
+      setBtnState(btn, 'speaking');
+      setTimeout(function() {
+        state.suppressNextEnd = false;
+        if (state.chunks) speakFrom(ci);
+      }, 60);
+      return;
+    }
+    // Different container or fresh start — figure out chunk first
+    wrapWords(container);
+    var words = Array.prototype.slice.call(container.querySelectorAll('.w'));
+    if (!words.length) return;
+    var chunks = buildChunks(words);
+    var ci2 = findChunkForWord(chunks, wordIdx);
+    startFresh(container, btn, ci2 >= 0 ? ci2 : 0);
+  }
+
+  function speakableContainerOf(el) {
+    return el.closest && el.closest('.bilingual .en, blockquote.speakable, .callout.speakable');
+  }
+
+  document.addEventListener('click', function(e) {
+    // --- speak button ---
+    var btn = e.target.closest && e.target.closest('.speak-btn');
+    if (btn) {
+      e.preventDefault();
+      var s = btn.getAttribute('data-state') || 'idle';
+      if (s === 'speaking') {
+        // pause: set flag BEFORE cancel so onend/onerror preserve state
+        state.paused = true;
+        synth.cancel();
+        setBtnState(btn, 'paused');
+        return;
+      }
+      if (s === 'paused') {
+        // resume: restart current chunk
+        state.paused = false;
+        setBtnState(btn, 'speaking');
+        if (state.chunks) speakFrom(state.chunkIdx);
+        return;
+      }
+      // idle → new speech from start
+      ensureVoices(function() { startFresh(btn.parentElement, btn, 0); });
+      return;
+    }
+
+    // --- word click (play from here) ---
+    var w = e.target.closest && e.target.closest('.w');
+    if (!w) return;
+    // skip if user is selecting text
+    var sel = window.getSelection && window.getSelection();
+    if (sel && sel.toString && sel.toString().length > 0) return;
+    var container = speakableContainerOf(w);
+    if (!container) return;
+    var speakBtn = container.querySelector('.speak-btn');
+    if (!speakBtn) return;
+    e.preventDefault();
+    var widx = parseInt(w.getAttribute('data-idx'), 10);
+    if (isNaN(widx)) return;
+    ensureVoices(function() { jumpToWord(container, speakBtn, widx); });
+  });
+
+  // Pre-wrap all speakable containers during idle time so word-click works without first hitting the button
+  function preWrapAll() {
+    var containers = document.querySelectorAll('.bilingual .en, blockquote.speakable, .callout.speakable');
+    var i = 0;
+    function step() {
+      if (i >= containers.length) return;
+      try { wrapWords(containers[i]); } catch (e) {}
+      i++;
+      if (window.requestIdleCallback) requestIdleCallback(step, { timeout: 200 });
+      else setTimeout(step, 0);
+    }
+    step();
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', preWrapAll);
+  else preWrapAll();
+
+  window.addEventListener('hashchange', stopAll);
+  window.addEventListener('pagehide', stopAll);
+})();
+</script>
+</body>
+</html>

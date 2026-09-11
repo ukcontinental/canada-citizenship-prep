@@ -1,0 +1,153 @@
+{
+  "num": "03",
+  "title_en": "Who We Are",
+  "title_zh": "我們是誰",
+  "sections": [
+    {
+      "title_en": "Who We Are",
+      "title_zh": "我們是誰",
+      "paras": [
+        [
+          {"en": "Canada is known around the world as a strong and free country.", "zh": "加拿大在世界上以強大而自由的國家聞名。"},
+          {"en": "Canadians are proud of their unique identity.", "zh": "加拿大人以自己獨特的身分為榮。"},
+          {"en": "We have inherited the oldest continuous constitutional tradition in the world.", "zh": "我們繼承了世界上延續最久的憲政傳統。"},
+          {"en": "We are the only constitutional monarchy in North America.", "zh": "我們是北美洲唯一的君主立憲國。"},
+          {"en": "Our institutions uphold a commitment to Peace, Order and Good Government, a key phrase in Canada's original constitutional document in 1867, the British North America Act.", "zh": "我們的制度堅守「和平、秩序與良好政府」的承諾——這是加拿大 1867 年最初的憲法文件《英屬北美法案》裡的關鍵詞句。"},
+          {"en": "A belief in ordered liberty, enterprise, hard work and fair play has enabled Canadians to build a prosperous society in a rugged environment from our Atlantic shores to the Pacific Ocean and to the Arctic Circle—so much so that poets and songwriters have hailed Canada as the \"Great Dominion.\"", "zh": "對有序的自由、進取心、勤奮和公平競爭的信念，讓加拿大人在從大西洋岸到太平洋、再到北極圈的嚴峻環境中建立了繁榮的社會——以至於詩人和作曲家都把加拿大譽為「偉大的自治領」。"}
+        ],
+        [
+          {"en": "To understand what it means to be Canadian, it is important to know about our three founding peoples—Aboriginal, French and British.", "zh": "要了解身為加拿大人的意義，就必須認識我們的三個奠基民族——原住民、法裔和英裔。"}
+        ]
+      ]
+    },
+    {
+      "title_en": "Aboriginal Peoples",
+      "title_zh": "原住民",
+      "paras": [
+        [
+          {"en": "The ancestors of Aboriginal peoples are believed to have migrated from Asia many thousands of years ago.", "zh": "一般認為，原住民的祖先在數千年前從亞洲遷徙而來。"},
+          {"en": "They were well established here long before explorers from Europe first came to North America.", "zh": "早在歐洲探險家第一次來到北美之前很久，他們就已經在這裡安居了。"},
+          {"en": "Diverse, vibrant First Nations cultures were rooted in religious beliefs about their relationship to the Creator, the natural environment and each other.", "zh": "多元而充滿活力的第一民族文化，根植於他們的宗教信仰——關於自己與造物主、自然環境以及彼此之間的關係。"}
+        ],
+        [
+          {"en": "Aboriginal and treaty rights are in the Canadian Constitution.", "zh": "原住民權利與條約權利都寫在加拿大憲法裡。"},
+          {"en": "Territorial rights were first guaranteed through the Royal Proclamation of 1763 by King George III, and established the basis for negotiating treaties with the newcomers—treaties that were not always fully respected.", "zh": "領土權利最早是由英王喬治三世在 1763 年的《皇家公告》中保障的，這也奠定了與新來者談判條約的基礎——但這些條約並不總是被完全遵守。"}
+        ],
+        [
+          {"en": "From the 1800s until the 1980s, the federal government placed many Aboriginal children in residential schools to educate and assimilate them into mainstream Canadian culture.", "zh": "從 1800 年代到 1980 年代，聯邦政府把許多原住民兒童送進寄宿學校，要教育他們並同化到主流加拿大文化中。"},
+          {"en": "The schools were poorly funded and inflicted hardship on the students; some were physically abused.", "zh": "這些學校經費不足，讓學生吃盡苦頭；有些學生還遭到身體虐待。"},
+          {"en": "Aboriginal languages and cultural practices were mostly prohibited.", "zh": "原住民的語言和文化習俗大多被禁止。"},
+          {"en": "In 2008, Ottawa formally apologized to the former students.", "zh": "2008 年，渥太華正式向這些學校的前學生道歉。"}
+        ],
+        [
+          {"en": "In today's Canada, Aboriginal peoples enjoy renewed pride and confidence, and have made significant achievements in agriculture, the environment, business and the arts.", "zh": "在今天的加拿大，原住民重拾驕傲與自信，並在農業、環境、商業和藝術方面取得重大成就。"}
+        ],
+        [
+          {"en": "Today, the term Aboriginal peoples refers to three distinct groups:", "zh": "今天，「原住民」一詞指的是三個不同的族群："},
+          {"en": "Indian refers to all Aboriginal people who are not Inuit or Métis.", "zh": "「印第安人」指的是所有不屬於因紐特人或梅蒂人的原住民。"},
+          {"en": "In the 1970s, the term First Nations began to be used.", "zh": "1970 年代開始使用「第一民族」（First Nations）這個詞。"},
+          {"en": "Today, about half of First Nations people live on reserve land in about 600 communities while the other half live off-reserve, mainly in urban centres.", "zh": "今天，大約一半的第一民族人口住在約 600 個保留區社區裡，另一半住在保留區之外，主要在城市裡。"}
+        ],
+        [
+          {"en": "The Inuit, which means \"the people\" in the Inuktitut language, live in small, scattered communities across the Arctic.", "zh": "因紐特人（Inuit）——在因紐特語中意思是「人」——住在北極各地零星分散的小社區裡。"},
+          {"en": "Their knowledge of the land, sea and wildlife enabled them to adapt to one of the harshest environments on earth.", "zh": "他們對土地、海洋和野生動物的知識，讓他們能適應地球上最嚴酷的環境之一。"}
+        ],
+        [
+          {"en": "The Métis are a distinct people of mixed Aboriginal and European ancestry, the majority of whom live in the Prairie provinces.", "zh": "梅蒂人（Métis）是原住民與歐洲人混血的獨特民族，大多數住在草原省份。"},
+          {"en": "They come from both French- and English-speaking backgrounds and speak their own dialect, Michif.", "zh": "他們有法語和英語兩種背景，並說自己的方言——米奇夫語（Michif）。"},
+          {"en": "About 65% of the Aboriginal people are First Nations, while 30% are Métis and 4% Inuit.", "zh": "原住民當中約 65% 是第一民族，30% 是梅蒂人，4% 是因紐特人。"}
+        ]
+      ]
+    },
+    {
+      "title_en": "Unity in Diversity",
+      "title_zh": "多元中的團結",
+      "paras": [
+        [
+          {"en": "John Buchan, the 1st Baron Tweedsmuir, was a popular Governor General of Canada (1935–40).", "zh": "約翰・布肯（John Buchan），第一代特威茲繆爾男爵，是一位深受歡迎的加拿大總督（1935 至 1940 年）。"},
+          {"en": "Immigrant groups, he said, \"should retain their individuality and each make its contribution to the national character.\"", "zh": "他說，移民族群「應該保留各自的特性，並各自為國家的品格做出貢獻」。"},
+          {"en": "Each could learn \"from the other, and … while they cherish their own special loyalties and traditions, they cherish not less that new loyalty and tradition which springs from their union.\"", "zh": "每個族群都可以「向彼此學習……在珍惜自己特有的忠誠與傳統的同時，也同樣珍惜因他們的結合而產生的新忠誠與新傳統」。"}
+        ]
+      ]
+    },
+    {
+      "title_en": "English and French",
+      "title_zh": "英語與法語",
+      "paras": [
+        [
+          {"en": "Canadian society today stems largely from the English-speaking and French-speaking Christian civilizations that were brought here from Europe by settlers.", "zh": "今天的加拿大社會主要源自拓荒者從歐洲帶來的英語和法語基督教文明。"},
+          {"en": "English and French define the reality of day-to-day life for most people and are the country's official languages.", "zh": "英語和法語構成大多數人日常生活的現實，也是這個國家的官方語言。"},
+          {"en": "The federal government is required by law to provide services throughout Canada in English and French.", "zh": "聯邦政府依法必須在全加拿大以英語和法語提供服務。"}
+        ],
+        [
+          {"en": "Today, there are 18 million Anglophones—people who speak English as a first language—and seven million Francophones—people who speak French as their first language.", "zh": "今天有一千八百萬英語人口（Anglophones，以英語為第一語言的人）和七百萬法語人口（Francophones，以法語為第一語言的人）。"},
+          {"en": "While the majority of Francophones live in the province of Quebec, one million Francophones live in Ontario, New Brunswick and Manitoba, with a smaller presence in other provinces.", "zh": "雖然大多數法語人口住在魁北克省，但有一百萬法語人口住在安大略、新布藍瑞克和曼尼托巴，其他省份也有少數。"},
+          {"en": "New Brunswick is the only officially bilingual province.", "zh": "新布藍瑞克（New Brunswick）是唯一官方雙語的省份。"}
+        ],
+        [
+          {"en": "The Acadians are the descendants of French colonists who began settling in what are now the Maritime provinces in 1604.", "zh": "阿卡迪亞人（Acadians）是法國殖民者的後裔，他們從 1604 年開始在今天的濱海省份定居。"},
+          {"en": "Between 1755 and 1763, during the war between Britain and France, more than two-thirds of the Acadians were deported from their homeland.", "zh": "1755 年到 1763 年英法戰爭期間，超過三分之二的阿卡迪亞人被驅逐出家園。"},
+          {"en": "Despite this ordeal, known as the \"Great Upheaval,\" the Acadians survived and maintained their unique identity.", "zh": "儘管經歷了這場被稱為「大動盪」的磨難，阿卡迪亞人存活了下來，並保持了自己獨特的身分。"},
+          {"en": "Today, Acadian culture is flourishing and is a lively part of French-speaking Canada.", "zh": "今天，阿卡迪亞文化蓬勃發展，是法語加拿大生氣勃勃的一部分。"}
+        ],
+        [
+          {"en": "Quebecers are the people of Quebec, the vast majority French-speaking.", "zh": "魁北克人是魁北克省的居民，絕大多數說法語。"},
+          {"en": "Most are descendants of 8,500 French settlers from the 1600s and 1700s and maintain a unique identity, culture and language.", "zh": "他們大多是 1600 和 1700 年代八千五百名法國移民的後裔，並保有獨特的身分、文化和語言。"},
+          {"en": "The House of Commons recognized in 2006 that the Quebecois form a nation within a united Canada.", "zh": "眾議院在 2006 年承認魁北克人在統一的加拿大之內構成一個「民族」（nation）。"},
+          {"en": "One million Anglo-Quebecers have a heritage of 250 years and form a vibrant part of the Quebec fabric.", "zh": "一百萬名英語魁北克人擁有 250 年的傳承，是魁北克社會充滿活力的一部分。"}
+        ],
+        [
+          {"en": "The basic way of life in English-speaking areas was established by hundreds of thousands of English, Welsh, Scottish and Irish settlers, soldiers and migrants from the 1600s to the 20th century.", "zh": "從 1600 年代到 20 世紀，數十萬名英格蘭、威爾斯、蘇格蘭和愛爾蘭的拓荒者、士兵和移民，奠定了英語地區的基本生活方式。"},
+          {"en": "Generations of pioneers and builders of British origins, as well as other groups, invested and endured hardship in laying the foundations of our country.", "zh": "一代又一代英國裔的開拓者和建設者，以及其他族群，投入心力並忍受艱苦，為我們的國家打下基礎。"},
+          {"en": "This helps explain why Anglophones (English speakers) are generally referred to as English Canadians.", "zh": "這也解釋了為什麼說英語的人通常被稱為「英裔加拿大人」。"}
+        ]
+      ]
+    },
+    {
+      "title_en": "Becoming Canadian",
+      "title_zh": "成為加拿大人",
+      "paras": [
+        [
+          {"en": "Some Canadians immigrate from places where they have experienced warfare or conflict.", "zh": "有些加拿大人來自經歷過戰爭或衝突的地方。"},
+          {"en": "Such experiences do not justify bringing to Canada violent, extreme or hateful prejudices.", "zh": "這樣的經歷並不能成為把暴力、極端或仇恨的偏見帶進加拿大的理由。"},
+          {"en": "In becoming Canadian, newcomers are expected to embrace democratic principles such as the rule of law.", "zh": "成為加拿大人時，新移民被期待擁抱法治等民主原則。"}
+        ]
+      ]
+    },
+    {
+      "title_en": "Diversity in Canada",
+      "title_zh": "加拿大的多元",
+      "paras": [
+        [
+          {"en": "The majority of Canadians were born in this country and this has been true since the 1800s.", "zh": "大多數加拿大人都是在這個國家出生的，從 1800 年代以來一直如此。"},
+          {"en": "However, Canada is often referred to as a land of immigrants because, over the past 200 years, millions of newcomers have helped to build and defend our way of life.", "zh": "不過，加拿大常被稱為「移民之地」，因為過去兩百年來，數百萬名新移民幫助建立並捍衛了我們的生活方式。"}
+        ],
+        [
+          {"en": "Many ethnic and religious groups live and work in peace as proud Canadians.", "zh": "許多族裔和宗教團體以身為加拿大人為榮，和平地在這裡生活與工作。"},
+          {"en": "The largest groups are the English, French, Scottish, Irish, German, Italian, Chinese, Aboriginal, Ukrainian, Dutch, South Asian and Scandinavian.", "zh": "最大的族群是英格蘭裔、法裔、蘇格蘭裔、愛爾蘭裔、德裔、義大利裔、華裔、原住民、烏克蘭裔、荷蘭裔、南亞裔和北歐裔。"},
+          {"en": "Since the 1970s, most immigrants have come from Asian countries.", "zh": "自 1970 年代以來，大多數移民來自亞洲國家。"}
+        ],
+        [
+          {"en": "Non-official languages are widely spoken in Canadian homes.", "zh": "非官方語言在加拿大家庭中被廣泛使用。"},
+          {"en": "Chinese languages are the second most-spoken at home, after English, in two of Canada's biggest cities.", "zh": "在加拿大兩個最大的城市裡，中文是家庭中使用第二多的語言，僅次於英語。"},
+          {"en": "In Vancouver, 13% of the population speak Chinese languages at home; in Toronto, the number is 7%.", "zh": "在溫哥華，13% 的人口在家說中文；在多倫多，這個數字是 7%。"}
+        ],
+        [
+          {"en": "The great majority of Canadians identify as Christians.", "zh": "絕大多數加拿大人自認為基督徒。"},
+          {"en": "The largest religious affiliation is Catholic, followed by various Protestant churches.", "zh": "最大的宗教派別是天主教，其次是各個新教教會。"},
+          {"en": "The numbers of Muslims, Jews, Hindus, Sikhs and members of other religions, as well as people who state \"no religion\" are also growing.", "zh": "穆斯林、猶太教徒、印度教徒、錫克教徒和其他宗教信徒的人數也在增加，自稱「沒有宗教」的人也在增加。"}
+        ],
+        [
+          {"en": "In Canada the state has traditionally partnered with faith communities to promote social welfare, harmony and mutual respect; to provide schools and health care; to resettle refugees; and to uphold religious freedom, religious expression and freedom of conscience.", "zh": "在加拿大，國家傳統上與宗教團體合作，促進社會福利、和諧與相互尊重；提供學校和醫療；安置難民；並維護宗教自由、宗教表達與良心自由。"}
+        ],
+        [
+          {"en": "Canada's diversity includes gay and lesbian Canadians, who enjoy the full protection of and equal treatment under the law, including access to civil marriage.", "zh": "加拿大的多元也包括同性戀加拿大人，他們受到法律的完整保護與平等對待，包括可以締結民事婚姻。"},
+          {"en": "Together, these diverse groups, sharing a common Canadian identity, make up today's multicultural society.", "zh": "這些多元的族群，共享同一個加拿大身分，共同構成今天的多元文化社會。"}
+        ],
+        [
+          {"en": "Olympian Marjorie Turner-Bailey of Nova Scotia is a descendant of black Loyalists, escaped slaves and freed men and women of African origin who in the 1780s fled to Canada from America, where slavery remained legal until 1863.", "zh": "新斯科細亞的奧運選手瑪喬麗・特納－貝利（Marjorie Turner-Bailey），是黑人效忠派的後裔——那些逃亡的奴隸和獲得自由的非洲裔男女，在 1780 年代從美國逃到加拿大；而美國的奴隸制一直到 1863 年才廢除。"}
+        ]
+      ]
+    }
+  ]
+}

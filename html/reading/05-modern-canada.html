@@ -1,0 +1,1050 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="加拿大公民考">
+<meta name="theme-color" content="#c8102e">
+<title>05 現代加拿大 人聲朗讀 · 加拿大公民考試</title>
+<style>
+:root {
+  --bg: #faf8f4;
+  --panel: #ffffff;
+  --ink: #1f2328;
+  --muted: #5d646d;
+  --line: #e7e2d6;
+  --accent: #c8102e;        /* maple red */
+  --accent-soft: #fbe9ec;
+  --en-bg: #f3efe6;
+  --en-ink: #2b2620;
+  --zh-bg: #ffffff;
+  --quote: #8a6d3b;
+  --max: 1180px;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: "Source Serif 4","Source Serif Pro","Noto Serif TC","Noto Serif CJK TC","PingFang TC","Songti TC", Georgia, serif;
+  font-size: 17px;
+  line-height: 1.75;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+.layout {
+  display: grid;
+  grid-template-columns: 240px minmax(0, 1fr);
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 0 24px;
+  gap: 36px;
+}
+nav.sidebar {
+  position: sticky;
+  top: 0;
+  align-self: start;
+  height: 100vh;
+  overflow-y: auto;
+  padding: 28px 0 40px;
+  border-right: 1px solid var(--line);
+  font-family: -apple-system, "Helvetica Neue", "PingFang TC", system-ui, sans-serif;
+  font-size: 14px;
+  line-height: 1.45;
+}
+nav.sidebar h1 {
+  font-family: inherit;
+  font-size: 14px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin: 0 0 10px;
+}
+nav.sidebar h2 {
+  font-family: inherit;
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin: 22px 0 6px;
+  font-weight: 600;
+}
+nav.sidebar a {
+  display: block;
+  color: var(--ink);
+  text-decoration: none;
+  padding: 4px 10px 4px 0;
+  border-radius: 4px;
+}
+nav.sidebar a:hover { color: var(--accent); }
+nav.sidebar a.current {
+  color: var(--accent);
+  font-weight: 600;
+}
+nav.sidebar .home {
+  display: inline-block;
+  font-weight: 700;
+  font-size: 18px;
+  color: var(--ink);
+  text-decoration: none;
+  margin-bottom: 14px;
+}
+nav.sidebar .home::before { content: "🍁 "; }
+main {
+  padding: 36px 0 80px;
+  min-width: 0;
+}
+main h1, main h2, main h3, main h4 {
+  font-family: -apple-system, "Helvetica Neue", "PingFang TC", system-ui, sans-serif;
+  line-height: 1.3;
+  color: var(--ink);
+}
+main h1 {
+  font-size: 28px;
+  margin: 0 0 8px;
+  letter-spacing: -0.01em;
+}
+main > p:first-of-type {
+  color: var(--muted);
+  margin-top: 4px;
+}
+main h2 {
+  font-size: 21px;
+  margin: 40px 0 12px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid var(--line);
+}
+main h3 { font-size: 18px; margin: 28px 0 8px; }
+main h4 { font-size: 16px; margin: 22px 0 6px; color: var(--muted); }
+main p { margin: 0 0 12px; }
+main ul, main ol { margin: 0 0 14px; padding-left: 1.4em; }
+main li { margin: 4px 0; }
+main hr {
+  border: none;
+  border-top: 1px solid var(--line);
+  margin: 32px 0;
+}
+main a { color: var(--accent); text-decoration: none; }
+main a:hover { text-decoration: underline; }
+main code {
+  font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.9em;
+  background: #f3efe6;
+  padding: 1px 5px;
+  border-radius: 4px;
+}
+main blockquote {
+  margin: 14px 0;
+  padding: 12px 18px;
+  background: var(--accent-soft);
+  border-left: 3px solid var(--accent);
+  color: var(--ink);
+  border-radius: 0 6px 6px 0;
+}
+main blockquote p:last-child { margin-bottom: 0; }
+main table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 14px 0 22px;
+  font-size: 15px;
+}
+main th, main td {
+  text-align: left;
+  padding: 8px 12px;
+  border-bottom: 1px solid var(--line);
+  vertical-align: top;
+}
+main th {
+  background: #f3efe6;
+  font-family: -apple-system, "Helvetica Neue", "PingFang TC", system-ui, sans-serif;
+  font-weight: 600;
+}
+
+/* --- bilingual pairing --- */
+.bilingual {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  margin: 14px 0;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  overflow: hidden;
+  background: var(--zh-bg);
+}
+.bilingual .en, .bilingual .zh {
+  padding: 16px 20px;
+}
+.bilingual .en {
+  background: var(--en-bg);
+  color: var(--en-ink);
+  font-family: "Source Serif 4","Source Serif Pro", Georgia, serif;
+  font-style: normal;
+  border-right: 1px solid var(--line);
+}
+.bilingual .en p, .bilingual .zh p { margin: 0 0 8px; }
+.bilingual .en p:last-child, .bilingual .zh p:last-child { margin-bottom: 0; }
+.bilingual .en ul, .bilingual .en ol,
+.bilingual .zh ul, .bilingual .zh ol {
+  margin: 0 0 6px;
+  padding-left: 1.3em;
+}
+.bilingual .en em { font-style: italic; }
+.bilingual .label {
+  display: inline-block;
+  font-family: -apple-system, "Helvetica Neue", system-ui, sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 6px;
+  font-weight: 600;
+}
+
+/* --- callouts (⚠️ blocks) --- */
+.callout {
+  margin: 18px 0;
+  padding: 14px 18px;
+  background: #fff8e1;
+  border-left: 4px solid #f0a500;
+  border-radius: 0 6px 6px 0;
+}
+.callout p { margin: 0 0 6px; }
+.callout p:last-child { margin: 0; }
+
+/* --- collapsible answers --- */
+details.answers {
+  margin: 22px 0;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 0;
+  overflow: hidden;
+}
+details.answers > summary {
+  cursor: pointer;
+  padding: 14px 18px;
+  font-family: -apple-system, "Helvetica Neue", "PingFang TC", system-ui, sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  background: #f3efe6;
+  border-bottom: 1px solid transparent;
+  user-select: none;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+details.answers > summary::-webkit-details-marker { display: none; }
+details.answers > summary::after {
+  content: "▸";
+  color: var(--muted);
+  transition: transform 0.18s ease;
+  font-size: 14px;
+}
+details.answers[open] > summary {
+  border-bottom-color: var(--line);
+}
+details.answers[open] > summary::after { transform: rotate(90deg); }
+details.answers .answers-body { padding: 14px 22px 6px; }
+details.answers .answers-body ol { margin: 0; padding-left: 1.4em; }
+details.answers .answers-body li { margin: 8px 0; }
+
+/* --- dashboard cards on index --- */
+.dash {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+  margin: 24px 0;
+}
+.dash a {
+  display: block;
+  padding: 18px 20px;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  color: var(--ink);
+  text-decoration: none;
+  transition: border-color 0.15s, transform 0.15s;
+}
+.dash a:hover {
+  border-color: var(--accent);
+  transform: translateY(-1px);
+}
+.dash a .kicker {
+  font-family: -apple-system, system-ui, sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+  display: block;
+  margin-bottom: 6px;
+}
+.dash a .title {
+  font-weight: 600;
+  font-size: 17px;
+  line-height: 1.35;
+}
+.dash a .meta {
+  display: block;
+  margin-top: 8px;
+  font-size: 13px;
+  color: var(--muted);
+  font-family: -apple-system, system-ui, sans-serif;
+}
+
+/* --- speak (TTS) button --- */
+.speak-btn {
+  appearance: none;
+  background: rgba(255,255,255,0.85);
+  border: 1px solid var(--line);
+  color: var(--muted);
+  cursor: pointer;
+  padding: 4px 9px;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 12px;
+  font-family: -apple-system, "Helvetica Neue", system-ui, sans-serif;
+  transition: all 0.15s;
+  -webkit-tap-highlight-color: transparent;
+  min-width: 64px;
+  justify-content: center;
+}
+.speak-btn .speak-icon { display: inline-flex; }
+.speak-btn svg { display: block; }
+.speak-btn:hover { color: var(--accent); border-color: var(--accent); }
+.speak-btn:active { transform: scale(0.96); }
+.speak-btn.speaking {
+  background: var(--accent);
+  color: #fff;
+  border-color: var(--accent);
+  animation: speak-pulse 1.4s ease-in-out infinite;
+}
+.speak-btn.paused {
+  background: #f0a500;
+  color: #fff;
+  border-color: #f0a500;
+  animation: none;
+}
+@keyframes speak-pulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(200,16,46,0.5); }
+  50%      { box-shadow: 0 0 0 6px rgba(200,16,46,0); }
+}
+
+/* --- per-word highlight during TTS + click-to-play-from-here --- */
+.w {
+  border-radius: 3px;
+  padding: 0 1px;
+  transition: color 0.08s ease, background 0.08s ease;
+  cursor: pointer;
+  -webkit-tap-highlight-color: rgba(200, 16, 46, 0.15);
+}
+.w:hover {
+  background: rgba(200, 16, 46, 0.07);
+  text-decoration: underline;
+  text-decoration-color: rgba(200, 16, 46, 0.3);
+  text-decoration-style: dotted;
+  text-underline-offset: 3px;
+}
+.w.current {
+  color: var(--accent);
+  background: rgba(200, 16, 46, 0.14);
+  font-weight: 600;
+  text-decoration: none;
+}
+.bilingual .en { position: relative; }
+.bilingual .en > .speak-btn {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+}
+.bilingual .en > .label + .speak-btn { /* fallback positioning if absolute fails */ }
+blockquote.speakable, .callout.speakable {
+  position: relative;
+  padding-right: 60px;
+}
+blockquote.speakable > .speak-btn,
+.callout.speakable > .speak-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: #fff;
+}
+
+/* --- mobile --- */
+@media (max-width: 900px) {
+  .layout { grid-template-columns: 1fr; padding: 0 16px; gap: 0; }
+  nav.sidebar {
+    position: static;
+    height: auto;
+    border-right: none;
+    border-bottom: 1px solid var(--line);
+    padding: 18px 0;
+  }
+  .bilingual { grid-template-columns: 1fr; }
+  .bilingual .en { border-right: none; border-bottom: 1px solid var(--line); }
+}
+
+/* --- print --- */
+@media print {
+  nav.sidebar { display: none; }
+  .layout { display: block; padding: 0; }
+  main { padding: 0; }
+  details.answers { border: 1px solid #999; }
+  details.answers > summary { display: none; }
+  details.answers > .answers-body { display: block !important; }
+  .bilingual { break-inside: avoid; }
+}
+</style>
+</head>
+<body>
+<div class="layout">
+<nav class="sidebar">
+<a href="../index.html" class="home">加拿大公民考試</a>
+<h2>🎧 人聲朗讀對照</h2>
+<a href="../reading/00-intro-oath.html">00 · 公民誓詞與給讀者的話</a>
+<a href="../reading/01-applying-citizenship.html">01 · 申請公民身分</a>
+<a href="../reading/02-rights-responsibilities.html">02 · 公民的權利與責任</a>
+<a href="../reading/03-who-we-are.html">03 · 我們是誰</a>
+<a href="../reading/04-canadas-history.html">04 · 加拿大歷史</a>
+<a href="../reading/05-modern-canada.html" class="current">05 · 現代加拿大</a>
+<a href="../reading/06-how-canadians-govern.html">06 · 加拿大人如何治理自己</a>
+<a href="../reading/07-federal-elections.html">07 · 聯邦選舉</a>
+<a href="../reading/08-justice-system.html">08 · 司法系統</a>
+<a href="../reading/09-canadian-symbols.html">09 · 加拿大的象徵</a>
+<a href="../reading/10-canadas-economy.html">10 · 加拿大的經濟</a>
+<a href="../reading/11-canadas-regions.html">11 · 加拿大的各個地區</a>
+<a href="../reading/12-study-questions.html">12 · 官方練習題</a>
+<h2>🧠 每章重點互動記憶</h2>
+<a href="../interactive/index.html">🎯 互動式入口</a>
+<a href="../interactive/history.html">📜 04 歷史時間軸</a>
+<a href="../interactive/story-04.html">📖 04 故事聽學</a>
+<a href="../interactive/modern.html">🇨🇦 05 現代加拿大</a>
+<a href="../interactive/government.html">🏛️ 06 政府架構</a>
+<a href="../interactive/elections.html">🗳️ 07 聯邦選舉</a>
+<a href="../interactive/justice.html">⚖️ 08 司法系統</a>
+<a href="../interactive/symbols.html">🍁 09 國家象徵</a>
+<a href="../interactive/economy.html">💼 10 加拿大經濟</a>
+<a href="../interactive/geography.html">🗺️ 11 地圖與省份</a>
+<h2>📝 考題</h2>
+<a href="../practice/question-bank.html">220 題題庫（依章節）</a>
+<a href="../daily-quiz/day-01.html">驗收 Day 01</a>
+<a href="../daily-quiz/day-02.html">驗收 Day 02</a>
+<a href="../daily-quiz/day-03.html">驗收 Day 03</a>
+<a href="../daily-quiz/day-04.html">驗收 Day 04</a>
+<a href="../daily-quiz/day-05.html">驗收 Day 05</a>
+<a href="../daily-quiz/day-06.html">驗收 Day 06</a>
+<a href="../daily-quiz/day-07.html">驗收 Day 07</a>
+<a href="../daily-quiz/day-08.html">驗收 Day 08</a>
+<a href="../daily-quiz/day-09.html">驗收 Day 09</a>
+<a href="../daily-quiz/day-10.html">驗收 Day 10</a>
+<a href="../daily-quiz/day-11.html">驗收 Day 11</a>
+<a href="../daily-quiz/day-12.html">驗收 Day 12</a>
+<a href="../daily-quiz/day-13.html">驗收 Day 13</a>
+<a href="../daily-quiz/day-14.html">驗收 Day 14</a>
+</nav>
+<main>
+<style>
+.layout { max-width: 1480px; }
+.rd-hero {
+  background: linear-gradient(135deg, #fff8f8 0%, #fef0e8 100%);
+  border-left: 4px solid var(--accent);
+  padding: 18px 22px; border-radius: 8px; margin: 16px 0 12px;
+}
+.rd-hero h1 { margin: 0 0 6px; border: none; padding: 0; }
+.rd-hero p { margin: 0; color: var(--muted); font-size: 14px; }
+.rd-bar {
+  position: sticky; top: 0; z-index: 5; background: var(--bg);
+  display: flex; align-items: center; gap: 10px; flex-wrap: wrap;
+  padding: 10px 0; border-bottom: 1px solid var(--line); margin-bottom: 8px;
+}
+.rd-btn {
+  appearance: none; border: 2px solid var(--accent); background: #fff; color: var(--accent);
+  padding: 7px 14px; border-radius: 20px; font-size: 14px; font-weight: 600; cursor: pointer;
+  font-family: -apple-system, system-ui, sans-serif;
+}
+.rd-btn.rd-main { background: var(--accent); color: #fff; }
+.rd-bar label { font-size: 13px; color: var(--muted); display: inline-flex; align-items: center; gap: 4px; }
+.rd-bar select { font-size: 13px; padding: 3px 6px; }
+.rd-status { font-size: 13px; color: var(--muted); margin-left: auto; }
+.rd-sec h2 { margin: 30px 0 6px; font-size: 18px; border-bottom: 2px solid var(--accent); padding-bottom: 4px; }
+.rd-sec h2 small { color: var(--muted); font-weight: 400; font-size: 13px; margin-left: 10px; }
+.rd-row {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 20px;
+  padding: 12px 0; border-bottom: 1px dashed var(--line);
+}
+.rd-cell { position: relative; padding: 4px 8px 4px 36px; line-height: 1.9; font-size: 16.5px; border-radius: 8px; }
+.rd-zh { font-family: "Noto Serif TC","Noto Serif CJK TC","PingFang TC","Songti TC",serif; }
+.rd-en { font-family: "Source Serif 4","Source Serif Pro",Georgia,serif; color: var(--en-ink); background: var(--en-bg); }
+.rd-row.playing .rd-cell { box-shadow: inset 0 0 0 2px #f0c86a; }
+.rd-play {
+  position: absolute; left: 6px; top: 9px; width: 24px; height: 24px; border-radius: 50%;
+  border: 1.5px solid var(--accent); background: #fff; color: var(--accent);
+  cursor: pointer; font-size: 10px; line-height: 1; padding: 0;
+}
+.rd-play.on { background: var(--accent); color: #fff; }
+.s { cursor: pointer; border-radius: 3px; padding: 1px 2px; transition: background 0.15s; }
+.s:hover { background: #f3efe6; }
+.rd-en .s:hover { background: #ebe4d3; }
+.s.on { background: #ffe08a !important; }
+@media (max-width: 820px) {
+  .rd-row { grid-template-columns: 1fr; gap: 8px; }
+}
+</style>
+
+<div class="rd" id="rd-05">
+<div class="rd-hero">
+  <h1>🎧 05 現代加拿大 <small style="font-weight:400;color:var(--muted)">Modern Canada</small></h1>
+  <p>左中文、右英文，句對句對照。按段落左邊的 ▶ 朗讀該段；點任何一句從那句開始念；念到哪一句，中英文同時標黃。空白鍵＝暫停／繼續。</p>
+</div>
+<div class="rd-bar">
+  <button class="rd-btn rd-main rd-all-en" type="button">▶ English 全章</button>
+  <button class="rd-btn rd-all-zh" type="button">▶ 中文全章</button>
+  <button class="rd-btn rd-pause" type="button">❚❚ 暫停／繼續</button>
+  <button class="rd-btn rd-stop" type="button">■ 停</button>
+  <label><input type="checkbox" class="rd-cont" checked> 連續播放下一段</label>
+  <label>速度 <select class="rd-rate">
+    <option value="0.8">0.8×</option><option value="0.9">0.9×</option>
+    <option value="1" selected>1×</option><option value="1.15">1.15×</option><option value="1.3">1.3×</option>
+  </select></label>
+  <span class="rd-status"></span>
+</div>
+<section class="rd-sec"><h2>貿易與經濟成長<small>Trade and economic growth</small></h2>
+<div class="rd-row" data-p="0">
+  <div class="rd-cell rd-zh"><button class="rd-play" data-lang="zh" data-p="0" type="button" title="朗讀中文">▶</button><span class="s" data-i="0">戰後的加拿大享有空前的繁榮與物質進步。</span><span class="s" data-i="1">大蕭條時期世界各國的限制性貿易政策，被《關稅暨貿易總協定》（GATT，現在的世界貿易組織 WTO）等條約所打開。</span><span class="s" data-i="2">1947 年在亞伯達發現石油，開啟了加拿大的現代能源產業。</span><span class="s" data-i="3">1951 年，大多數加拿大人第一次能夠負擔足夠的食物、住所和衣物。</span><span class="s" data-i="4">1945 年到 1970 年間，隨著加拿大與美國及其他貿易夥伴關係更緊密，這個國家擁有工業化國家中最強勁的經濟之一。</span><span class="s" data-i="5">今天，加拿大人享有世界上最高的生活水準之一——靠的是加拿大人的努力工作，以及與其他國家、特別是美國的貿易。</span></div>
+  <div class="rd-cell rd-en"><button class="rd-play" data-lang="en" data-p="0" type="button" title="Read English">▶</button><span class="s" data-i="0">Postwar Canada enjoyed record prosperity and material progress.</span> <span class="s" data-i="1">The world&#x27;s restrictive trading policies in the Depression era were opened up by such treaties as the General Agreement on Tariffs and Trade (GATT), now the World Trade Organization (WTO).</span> <span class="s" data-i="2">The discovery of oil in Alberta in 1947 began Canada&#x27;s modern energy industry.</span> <span class="s" data-i="3">In 1951, for the first time, a majority of Canadians were able to afford adequate food, shelter and clothing.</span> <span class="s" data-i="4">Between 1945 and 1970, as Canada drew closer to the United States and other trading partners, the country enjoyed one of the strongest economies among industrialized nations.</span> <span class="s" data-i="5">Today, Canadians enjoy one of the world&#x27;s highest standards of living—maintained by the hard work of Canadians and by trade with other nations, in particular the United States.</span></div>
+</div>
+<div class="rd-row" data-p="1">
+  <div class="rd-cell rd-zh"><button class="rd-play" data-lang="zh" data-p="1" type="button" title="朗讀中文">▶</button><span class="s" data-i="0">隨著繁榮增長，支撐社會救助計畫的能力也隨之提高。</span><span class="s" data-i="1">《加拿大健康法》確保了共同的要素和基本的保障標準。</span><span class="s" data-i="2">失業保險（現在叫「就業保險」）由聯邦政府在 1940 年推出。</span><span class="s" data-i="3">老年保障金早在 1927 年就設立了，加拿大退休金計畫和魁北克退休金計畫則在 1965 年設立。</span><span class="s" data-i="4">公費教育由各省和地區提供。</span></div>
+  <div class="rd-cell rd-en"><button class="rd-play" data-lang="en" data-p="1" type="button" title="Read English">▶</button><span class="s" data-i="0">As prosperity grew, so did the ability to support social assistance programs.</span> <span class="s" data-i="1">The Canada Health Act ensures common elements and a basic standard of coverage.</span> <span class="s" data-i="2">Unemployment insurance (now called &quot;employment insurance&quot;) was introduced by the federal government in 1940.</span> <span class="s" data-i="3">Old Age Security was devised as early as 1927, and the Canada and Quebec Pension Plans in 1965.</span> <span class="s" data-i="4">Publicly funded education is provided by the provinces and territories.</span></div>
+</div></section><section class="rd-sec"><h2>國際參與<small>International engagement</small></h2>
+<div class="rd-row" data-p="2">
+  <div class="rd-cell rd-zh"><button class="rd-play" data-lang="zh" data-p="2" type="button" title="朗讀中文">▶</button><span class="s" data-i="0">和澳洲、紐西蘭等國家一樣，加拿大逐步發展出自主地位，並有能力在國際上做出重大貢獻。</span></div>
+  <div class="rd-cell rd-en"><button class="rd-play" data-lang="en" data-p="2" type="button" title="Read English">▶</button><span class="s" data-i="0">Like Australia, New Zealand and other countries, Canada developed its autonomy gradually with a capacity to make significant contributions internationally.</span></div>
+</div>
+<div class="rd-row" data-p="3">
+  <div class="rd-cell rd-zh"><button class="rd-play" data-lang="zh" data-p="3" type="button" title="朗讀中文">▶</button><span class="s" data-i="0">當東歐幾個獲得解放的國家成為由獨裁者史達林統治的蘇聯所控制的共產集團的一部分，冷戰就開始了。</span><span class="s" data-i="1">加拿大與其他西方民主國家共同組成軍事同盟「北大西洋公約組織」（NATO），並與美國共同組成「北美航太防禦司令部」（NORAD）。</span></div>
+  <div class="rd-cell rd-en"><button class="rd-play" data-lang="en" data-p="3" type="button" title="Read English">▶</button><span class="s" data-i="0">The Cold War began when several liberated countries of eastern Europe became part of a Communist bloc controlled by the Soviet Union under the dictator Josef Stalin.</span> <span class="s" data-i="1">Canada joined with other democratic countries of the West to form the North Atlantic Treaty Organization (NATO), a military alliance, and with the United States in the North American Aerospace Defence Command (NORAD).</span></div>
+</div>
+<div class="rd-row" data-p="4">
+  <div class="rd-cell rd-zh"><button class="rd-play" data-lang="zh" data-p="4" type="button" title="朗讀中文">▶</button><span class="s" data-i="0">加拿大加入了聯合國（UN）等國際組織。</span><span class="s" data-i="1">在韓戰（1950 至 53 年）中，加拿大參與了聯合國保衛南韓的行動，500 人陣亡、1,000 人受傷。</span><span class="s" data-i="2">加拿大參與過許多聯合國維和任務，地點包括埃及、賽普勒斯和海地等，也參與過前南斯拉夫和阿富汗等其他國際安全行動。</span></div>
+  <div class="rd-cell rd-en"><button class="rd-play" data-lang="en" data-p="4" type="button" title="Read English">▶</button><span class="s" data-i="0">Canada joined international organizations such as the United Nations (UN).</span> <span class="s" data-i="1">It participated in the UN operation defending South Korea in the Korean War (1950–53), with 500 dead and 1,000 wounded.</span> <span class="s" data-i="2">Canada has taken part in numerous UN peacekeeping missions in places as varied as Egypt, Cyprus and Haiti, as well as in other international security operations such as those in the former Yugoslavia and Afghanistan.</span></div>
+</div></section><section class="rd-sec"><h2>加拿大與魁北克<small>Canada and Quebec</small></h2>
+<div class="rd-row" data-p="5">
+  <div class="rd-cell rd-zh"><button class="rd-play" data-lang="zh" data-p="5" type="button" title="朗讀中文">▶</button><span class="s" data-i="0">法裔加拿大的社會與文化在戰後蓬勃發展。</span><span class="s" data-i="1">魁北克在 1960 年代經歷了一段快速變革的時期，稱為「寧靜革命」。</span><span class="s" data-i="2">許多魁北克人尋求脫離加拿大。</span><span class="s" data-i="3">1963 年，國會成立了「雙語與雙文化皇家委員會」。</span><span class="s" data-i="4">這促成了 1969 年的《官方語言法》，保障聯邦政府在全加拿大提供法語和英語服務。</span><span class="s" data-i="5">1970 年，加拿大協助創立了「法語國家組織」（La Francophonie），這是法語國家的國際組織。</span></div>
+  <div class="rd-cell rd-en"><button class="rd-play" data-lang="en" data-p="5" type="button" title="Read English">▶</button><span class="s" data-i="0">French-Canadian society and culture flourished in the postwar years.</span> <span class="s" data-i="1">Quebec experienced an era of rapid change in the 1960s known as the Quiet Revolution.</span> <span class="s" data-i="2">Many Quebecers sought to separate from Canada.</span> <span class="s" data-i="3">In 1963 Parliament established the Royal Commission on Bilingualism and Biculturalism.</span> <span class="s" data-i="4">This led to the Official Languages Act (1969), which guarantees French and English services in the federal government across Canada.</span> <span class="s" data-i="5">In 1970, Canada helped found La Francophonie, an international association of French-speaking countries.</span></div>
+</div>
+<div class="rd-row" data-p="6">
+  <div class="rd-cell rd-zh"><button class="rd-play" data-lang="zh" data-p="6" type="button" title="朗讀中文">▶</button><span class="s" data-i="0">魁北克主權運動聲勢壯大，但在 1980 年的省內公投中失敗。</span><span class="s" data-i="1">經過多次談判，1982 年憲法在未獲魁北克同意的情況下完成修訂。</span><span class="s" data-i="2">雖然主權運動在 1995 年的第二次公投中再度失敗，魁北克在加拿大之內的自主權仍是熱門話題——這是持續塑造我們國家的動力之一。</span></div>
+  <div class="rd-cell rd-en"><button class="rd-play" data-lang="en" data-p="6" type="button" title="Read English">▶</button><span class="s" data-i="0">The movement for Quebec sovereignty gained strength but was defeated in a referendum in the province in 1980.</span> <span class="s" data-i="1">After much negotiation, in 1982 the Constitution was amended without the agreement of Quebec.</span> <span class="s" data-i="2">Though sovereignty was again defeated in a second referendum in 1995, the autonomy of Quebec within Canada remains a lively topic—part of the dynamic that continues to shape our country.</span></div>
+</div></section><section class="rd-sec"><h2>變遷中的社會<small>A Changing Society</small></h2>
+<div class="rd-row" data-p="7">
+  <div class="rd-cell rd-zh"><button class="rd-play" data-lang="zh" data-p="7" type="button" title="朗讀中文">▶</button><span class="s" data-i="0">五十多年來，隨著社會價值觀的改變，加拿大變成一個更有彈性、更開放的社會。</span><span class="s" data-i="1">許多人把握了中學和高等教育擴大的機會，越來越多的女性進入專業職場。</span></div>
+  <div class="rd-cell rd-en"><button class="rd-play" data-lang="en" data-p="7" type="button" title="Read English">▶</button><span class="s" data-i="0">As social values changed over more than 50 years, Canada became a more flexible and open society.</span> <span class="s" data-i="1">Many took advantage of expanding secondary and postsecondary educational opportunities and a growing number of women entered the professional work force.</span></div>
+</div>
+<div class="rd-row" data-p="8">
+  <div class="rd-cell rd-zh"><button class="rd-play" data-lang="zh" data-p="8" type="button" title="朗讀中文">▶</button><span class="s" data-i="0">過去，大多數亞裔加拿大人在聯邦和省選舉中被剝奪投票權。</span><span class="s" data-i="1">1948 年，最後一批——日裔加拿大人——獲得了投票權。</span><span class="s" data-i="2">原住民在 1960 年獲得投票權。</span><span class="s" data-i="3">今天，每一位 18 歲以上的公民都可以投票。</span></div>
+  <div class="rd-cell rd-en"><button class="rd-play" data-lang="en" data-p="8" type="button" title="Read English">▶</button><span class="s" data-i="0">Most Canadians of Asian descent had in the past been denied the vote in federal and provincial elections.</span> <span class="s" data-i="1">In 1948 the last of these, the Japanese-Canadians, gained the right to vote.</span> <span class="s" data-i="2">Aboriginal people were granted the vote in 1960.</span> <span class="s" data-i="3">Today every citizen over the age of 18 may vote.</span></div>
+</div>
+<div class="rd-row" data-p="9">
+  <div class="rd-cell rd-zh"><button class="rd-play" data-lang="zh" data-p="9" type="button" title="朗讀中文">▶</button><span class="s" data-i="0">加拿大接納了數千名逃離共產壓迫的難民，包括 1956 年約三萬七千名逃離蘇聯暴政的匈牙利人。</span><span class="s" data-i="1">1975 年越戰共產黨獲勝後，許多越南人出逃，其中超過五萬人到加拿大尋求庇護。</span></div>
+  <div class="rd-cell rd-en"><button class="rd-play" data-lang="en" data-p="9" type="button" title="Read English">▶</button><span class="s" data-i="0">Canada welcomed thousands of refugees from Communist oppression, including about 37,000 who escaped Soviet tyranny in Hungary in 1956.</span> <span class="s" data-i="1">With the Communist victory in the Vietnam War in 1975, many Vietnamese fled, including over 50,000 who sought refuge in Canada.</span></div>
+</div>
+<div class="rd-row" data-p="10">
+  <div class="rd-cell rd-zh"><button class="rd-play" data-lang="zh" data-p="10" type="button" title="朗讀中文">▶</button><span class="s" data-i="0">由於 19 和 20 世紀的移民，多元文化的理念獲得了新的推動力。</span><span class="s" data-i="1">到 1960 年代，三分之一的加拿大人既非英裔也非法裔，他們以在加拿大社會中保存自己獨特的文化為榮。</span><span class="s" data-i="2">今天，多元豐富了加拿大人的生活，特別是在我們的城市裡。</span></div>
+  <div class="rd-cell rd-en"><button class="rd-play" data-lang="en" data-p="10" type="button" title="Read English">▶</button><span class="s" data-i="0">The idea of multiculturalism, as a result of 19th- and 20th-century immigration, gained a new impetus.</span> <span class="s" data-i="1">By the 1960s, one-third of Canadians had origins that were neither British nor French, and took pride in preserving their distinct culture in the Canadian fabric.</span> <span class="s" data-i="2">Today, diversity enriches Canadians&#x27; lives, particularly in our cities.</span></div>
+</div></section><section class="rd-sec"><h2>加拿大的藝術與文化<small>Arts and culture in Canada</small></h2>
+<div class="rd-row" data-p="11">
+  <div class="rd-cell rd-zh"><button class="rd-play" data-lang="zh" data-p="11" type="button" title="朗讀中文">▶</button><span class="s" data-i="0">加拿大藝術家有著悠久的成就史，加拿大人引以為傲。</span><span class="s" data-i="1">來自各地區的藝術家反映並定義了我們的文化和創作表達形式，在國內外都取得了卓越成就。</span></div>
+  <div class="rd-cell rd-en"><button class="rd-play" data-lang="en" data-p="11" type="button" title="Read English">▶</button><span class="s" data-i="0">Canadian artists have a long history of achievement in which Canadians take pride.</span> <span class="s" data-i="1">Artists from all regions reflect and define our culture and forms of creative expression and have achieved greatness both at home and abroad.</span></div>
+</div>
+<div class="rd-row" data-p="12">
+  <div class="rd-cell rd-zh"><button class="rd-play" data-lang="zh" data-p="12" type="button" title="朗讀中文">▶</button><span class="s" data-i="0">加拿大人對英語和法語文學都做出了重大貢獻。</span><span class="s" data-i="1">小說家、詩人、歷史學家、教育家和音樂家都產生了重大的文化影響。</span><span class="s" data-i="2">文學家包括史蒂芬・里柯克（Stephen Leacock）、路易・埃蒙（Louis Hémon）、查爾斯・G・D・羅伯茨爵士、寶琳・強森（Pauline Johnson）、艾米爾・內利根（Émile Nelligan）、羅伯森・戴維斯（Robertson Davies）、瑪格麗特・勞倫斯（Margaret Laurence）和莫迪凱・里奇勒（Mordecai Richler）。</span><span class="s" data-i="3">音樂家如歐內斯特・麥克米蘭爵士（Sir Ernest MacMillan）和希利・威蘭（Healey Willan）在國內外享有盛名。</span><span class="s" data-i="4">作家如小川樂（Joy Kogawa）、麥可・翁達傑（Michael Ondaatje）和羅辛頓・米斯崔（Rohinton Mistry）使加拿大的文學經驗更加多元。</span></div>
+  <div class="rd-cell rd-en"><button class="rd-play" data-lang="en" data-p="12" type="button" title="Read English">▶</button><span class="s" data-i="0">Canadians have made significant contributions to literature in English and in French.</span> <span class="s" data-i="1">Novelists, poets, historians, educators and musicians have had a significant cultural impact.</span> <span class="s" data-i="2">Men and women of letters included Stephen Leacock, Louis Hémon, Sir Charles G.D. Roberts, Pauline Johnson, Émile Nelligan, Robertson Davies, Margaret Laurence and Mordecai Richler.</span> <span class="s" data-i="3">Musicians such as Sir Ernest MacMillan and Healey Willan won renown in Canada and abroad.</span> <span class="s" data-i="4">Writers such as Joy Kogawa, Michael Ondaatje and Rohinton Mistry have diversified Canada&#x27;s literary experience.</span></div>
+</div>
+<div class="rd-row" data-p="13">
+  <div class="rd-cell rd-zh"><button class="rd-play" data-lang="zh" data-p="13" type="button" title="朗讀中文">▶</button><span class="s" data-i="0">在視覺藝術方面，加拿大歷史上最著名的也許是 1920 年成立的「七人畫派」（Group of Seven），他們發展出一種捕捉粗獷荒野景色的繪畫風格。</span><span class="s" data-i="1">艾蜜莉・卡爾（Emily Carr）描繪了西海岸的森林和原住民文物。</span><span class="s" data-i="2">魁北克的「自動主義畫派」（Les Automatistes）是 1950 年代現代抽象藝術的先驅，最著名的是尚－保羅・里奧佩爾（Jean-Paul Riopelle）。</span><span class="s" data-i="3">魁北克的路易－菲利普・埃貝爾（Louis-Philippe Hébert）是著名的歷史人物雕塑家。</span><span class="s" data-i="4">肯諾朱阿克・阿舍瓦克（Kenojuak Ashevak）以蝕刻、版畫和皂石雕塑開創了現代因紐特藝術。</span></div>
+  <div class="rd-cell rd-en"><button class="rd-play" data-lang="en" data-p="13" type="button" title="Read English">▶</button><span class="s" data-i="0">In the visual arts, Canada is historically perhaps best known for the Group of Seven, founded in 1920, who developed a style of painting to capture the rugged wilderness landscapes.</span> <span class="s" data-i="1">Emily Carr painted the forests and Aboriginal artifacts of the West Coast.</span> <span class="s" data-i="2">Les Automatistes of Quebec were pioneers of modern abstract art in the 1950s, most notably Jean-Paul Riopelle.</span> <span class="s" data-i="3">Quebec&#x27;s Louis-Philippe Hébert was a celebrated sculptor of historical figures.</span> <span class="s" data-i="4">Kenojuak Ashevak pioneered modern Inuit art with etchings, prints and soapstone sculptures.</span></div>
+</div>
+<div class="rd-row" data-p="14">
+  <div class="rd-cell rd-zh"><button class="rd-play" data-lang="zh" data-p="14" type="button" title="朗讀中文">▶</button><span class="s" data-i="0">加拿大有悠久且受尊敬的表演藝術歷史，擁有遍布各地的區域劇院網絡和世界知名的表演藝術團體。</span><span class="s" data-i="1">丹尼斯・阿坎德（Denys Arcand）的電影在魁北克和全國都很受歡迎，並贏得國際獎項。</span><span class="s" data-i="2">其他值得一提的加拿大電影導演包括諾曼・傑維森（Norman Jewison）和艾騰・伊格言（Atom Egoyan）。</span><span class="s" data-i="3">加拿大的電視節目也擁有廣大的觀眾。</span></div>
+  <div class="rd-cell rd-en"><button class="rd-play" data-lang="en" data-p="14" type="button" title="Read English">▶</button><span class="s" data-i="0">Canada has a long and respected performing arts history, with a network of regional theatres and world-renowned performing arts companies.</span> <span class="s" data-i="1">The films of Denys Arcand have been popular in Quebec and across the country, and have won international awards.</span> <span class="s" data-i="2">Other noteworthy Canadian filmmakers include Norman Jewison and Atom Egoyan.</span> <span class="s" data-i="3">Canadian television has had a popular following.</span></div>
+</div></section><section class="rd-sec"><h2>體育<small>Sports</small></h2>
+<div class="rd-row" data-p="15">
+  <div class="rd-cell rd-zh"><button class="rd-play" data-lang="zh" data-p="15" type="button" title="朗讀中文">▶</button><span class="s" data-i="0">體育蓬勃發展，各省和地區都培養出業餘和職業明星運動員以及奧運獎牌得主。</span><span class="s" data-i="1">籃球是加拿大人詹姆斯・奈史密斯（James Naismith）在 1891 年發明的。</span><span class="s" data-i="2">許多職業聯盟運動都有加拿大好手，而在國家運動冰上曲棍球方面，加拿大隊更是稱霸世界。</span><span class="s" data-i="3">1996 年夏季奧運，多諾萬・貝利（Donovan Bailey）成為短跑世界紀錄保持人和奧運雙金得主。</span><span class="s" data-i="4">尚塔爾・珀蒂克萊爾（Chantal Petitclerc）成為輪椅競速世界冠軍和帕運金牌得主。</span><span class="s" data-i="5">史上最偉大的曲棍球員之一韋恩・格雷茨基（Wayne Gretzky），1979 年到 1988 年效力於艾德蒙頓油人隊。</span></div>
+  <div class="rd-cell rd-en"><button class="rd-play" data-lang="en" data-p="15" type="button" title="Read English">▶</button><span class="s" data-i="0">Sports have flourished as all provinces and territories have produced amateur and professional star athletes and Olympic medal winners.</span> <span class="s" data-i="1">Basketball was invented by Canadian James Naismith in 1891.</span> <span class="s" data-i="2">Many major league sports boast Canadian talent and in the national sport of ice hockey, Canadian teams have dominated the world.</span> <span class="s" data-i="3">In 1996 at the Olympic Summer Games, Donovan Bailey became a world record sprinter and double Olympic gold medallist.</span> <span class="s" data-i="4">Chantal Petitclerc became a world champion wheelchair racer and Paralympic gold medalist.</span> <span class="s" data-i="5">One of the greatest hockey players of all time, Wayne Gretzky, played for the Edmonton Oilers from 1979 to 1988.</span></div>
+</div>
+<div class="rd-row" data-p="16">
+  <div class="rd-cell rd-zh"><button class="rd-play" data-lang="zh" data-p="16" type="button" title="朗讀中文">▶</button><span class="s" data-i="0">1980 年，18 歲時因癌症失去右腿的卑詩省人泰瑞・福克斯（Terry Fox），開始了橫越全國的長跑「希望馬拉松」，為癌症研究募款。</span><span class="s" data-i="1">他成為加拿大人心中的英雄。</span><span class="s" data-i="2">雖然他沒能跑完全程，最終也不敵癌症，但他的精神透過每年以他為名的募款活動延續下去。</span><span class="s" data-i="3">1985 年，同樣來自卑詩省的瑞克・韓森（Rick Hansen）坐著輪椅環繞全球，為脊髓研究募款。</span></div>
+  <div class="rd-cell rd-en"><button class="rd-play" data-lang="en" data-p="16" type="button" title="Read English">▶</button><span class="s" data-i="0">In 1980, Terry Fox, a British Columbian who lost his right leg to cancer at the age of 18, began a cross-country run, the &quot;Marathon of Hope,&quot; to raise money for cancer research.</span> <span class="s" data-i="1">He became a hero to Canadians.</span> <span class="s" data-i="2">While he did not finish the run and ultimately lost his battle with cancer, his legacy continues through yearly fundraising events in his name.</span> <span class="s" data-i="3">In 1985, fellow British Columbian Rick Hansen circled the globe in a wheelchair to raise funds for spinal cord research.</span></div>
+</div>
+<div class="rd-row" data-p="17">
+  <div class="rd-cell rd-zh"><button class="rd-play" data-lang="zh" data-p="17" type="button" title="朗讀中文">▶</button><span class="s" data-i="0">加拿大式足球是一項受歡迎的運動，與美式足球有許多不同之處。</span><span class="s" data-i="1">加拿大足球聯盟（CFL）的職業球隊爭奪冠軍「格雷盃」（Grey Cup），這座獎盃是總督格雷勳爵在 1909 年捐贈的。</span><span class="s" data-i="2">1972 年，保羅・亨德森（Paul Henderson）在加拿大對蘇聯的高峰系列賽中為加拿大射進致勝球。</span><span class="s" data-i="3">這一球常被稱為「全世界都聽到的一球」，至今仍被視為體育與文化史上的重要事件。</span></div>
+  <div class="rd-cell rd-en"><button class="rd-play" data-lang="en" data-p="17" type="button" title="Read English">▶</button><span class="s" data-i="0">Canadian football is a popular game that differs in a number of ways from American football.</span> <span class="s" data-i="1">Professional teams in the Canadian Football League (CFL) compete for the championship Grey Cup, donated by Lord Grey, the Governor General, in 1909.</span> <span class="s" data-i="2">In 1972, Paul Henderson scored the winning goal for Canada in the Canada-Soviet Summit Series.</span> <span class="s" data-i="3">This goal is often referred to as &quot;the goal heard around the world&quot; and is still remembered today as an important event in both sports and cultural history.</span></div>
+</div></section><section class="rd-sec"><h2>科學與技術<small>Science and technology</small></h2>
+<div class="rd-row" data-p="18">
+  <div class="rd-cell rd-zh"><button class="rd-play" data-lang="zh" data-p="18" type="button" title="朗讀中文">▶</button><span class="s" data-i="0">加拿大在科學與技術上的進展舉世聞名，改變了世界溝通與經商的方式。</span><span class="s" data-i="1">馬歇爾・麥克魯漢（Marshall McLuhan）和哈羅德・英尼斯（Harold Innis）是先驅思想家。</span><span class="s" data-i="2">加拿大的科學與研究贏得國際肯定，吸引了世界一流的學生、學者和創業家，投入醫學研究、電信和其他領域。</span><span class="s" data-i="3">自 1989 年以來，加拿大太空總署和加拿大太空人參與太空探索，經常使用加拿大設計製造的「加拿大臂」（Canadarm）。</span><span class="s" data-i="4">從納粹德國逃來的格哈德・赫茨伯格（Gerhard Herzberg）、約翰・波蘭尼（John Polanyi）、西德尼・奧特曼（Sidney Altman）、理查・E・泰勒（Richard E. Taylor）、麥可・史密斯（Michael Smith）和伯特倫・布羅克豪斯（Bertram Brockhouse），都是諾貝爾獎得主科學家。</span></div>
+  <div class="rd-cell rd-en"><button class="rd-play" data-lang="en" data-p="18" type="button" title="Read English">▶</button><span class="s" data-i="0">Canadian advances in science and technology are world renowned and have changed the way the world communicates and does business.</span> <span class="s" data-i="1">Marshall McLuhan and Harold Innis were pioneer thinkers.</span> <span class="s" data-i="2">Science and research in Canada have won international recognition and attracted world-class students, academics and entrepreneurs engaged in medical research, telecommunications and other fields.</span> <span class="s" data-i="3">Since 1989, the Canadian Space Agency and Canadian astronauts have participated in space exploration, often using the Canadian-designed and built Canadarm.</span> <span class="s" data-i="4">Gerhard Herzberg, a refugee from Nazi Germany, John Polanyi, Sidney Altman, Richard E. Taylor, Michael Smith and Bertram Brockhouse were Nobel Prize-winning scientists.</span></div>
+</div></section><section class="rd-sec"><h2>加拿大的重大發現與發明<small>Great Canadian discoveries and inventions</small></h2>
+<div class="rd-row" data-p="19">
+  <div class="rd-cell rd-zh"><button class="rd-play" data-lang="zh" data-p="19" type="button" title="朗讀中文">▶</button><span class="s" data-i="0">加拿大人做出了許多發現和發明。以下列出一些最著名的。</span><span class="s" data-i="1">亞歷山大・格拉漢姆・貝爾（Alexander Graham Bell）在他加拿大的避暑住宅想出了電話的點子。</span><span class="s" data-i="2">約瑟夫－阿爾芒・龐巴迪（Joseph-Armand Bombardier）發明了雪上摩托車，一種輕型的冬季交通工具。</span><span class="s" data-i="3">桑福德・弗萊明爵士（Sir Sandford Fleming）發明了全球標準時區系統。</span><span class="s" data-i="4">馬修・伊凡斯（Matthew Evans）和亨利・伍德沃德（Henry Woodward）共同發明了第一個電燈泡，後來把專利賣給了更有名的湯瑪斯・愛迪生，由他將電燈泡商業化。</span><span class="s" data-i="5">雷金納德・費森登（Reginald Fessenden）對無線電的發明有所貢獻，發送了世界上第一則無線語音訊息。</span><span class="s" data-i="6">懷爾德・潘菲爾德醫師（Dr. Wilder Penfield）是蒙特婁麥基爾大學的腦外科先驅，被譽為「在世最偉大的加拿大人」。</span><span class="s" data-i="7">約翰・A・霍普斯醫師（Dr. John A. Hopps）發明了第一個心律調節器，今天用來拯救心臟病患者的生命。</span><span class="s" data-i="8">SPAR 航太公司和國家研究委員會發明了「加拿大臂」，一種用於外太空的機械手臂。</span><span class="s" data-i="9">Research in Motion（RIM）的麥克・拉扎里迪斯（Mike Lazaridis）和吉姆・巴爾西利（Jim Balsillie）建立了一家無線通訊公司，以其最著名的發明「黑莓機」（BlackBerry）聞名。</span><span class="s" data-i="10">多倫多的弗雷德里克・班廷爵士（Sir Frederick Banting）和查爾斯・貝斯特（Charles Best）發現了胰島素——一種治療糖尿病的荷爾蒙，在全世界拯救了一千六百萬條生命。</span></div>
+  <div class="rd-cell rd-en"><button class="rd-play" data-lang="en" data-p="19" type="button" title="Read English">▶</button><span class="s" data-i="0">Canadians have made various discoveries and inventions. Some of the most famous are listed below.</span> <span class="s" data-i="1">Alexander Graham Bell hit on the idea of the telephone at his summer house in Canada.</span> <span class="s" data-i="2">Joseph-Armand Bombardier invented the snowmobile, a light-weight winter vehicle.</span> <span class="s" data-i="3">Sir Sandford Fleming invented the worldwide system of standard time zones.</span> <span class="s" data-i="4">Matthew Evans and Henry Woodward together invented the first electric light bulb and later sold the patent to Thomas Edison who, more famously, commercialized the light bulb.</span> <span class="s" data-i="5">Reginald Fessenden contributed to the invention of radio, sending the first wireless voice message in the world.</span> <span class="s" data-i="6">Dr. Wilder Penfield was a pioneering brain surgeon at McGill University in Montreal, and was known as &quot;the greatest living Canadian.&quot;</span> <span class="s" data-i="7">Dr. John A. Hopps invented the first cardiac pacemaker, used today to save the lives of people with heart disorders.</span> <span class="s" data-i="8">SPAR Aerospace and the National Research Council invented the Canadarm, a robotic arm used in outer space.</span> <span class="s" data-i="9">Mike Lazaridis and Jim Balsillie of Research in Motion (RIM) built a wireless communications company known for its most famous invention: the BlackBerry.</span> <span class="s" data-i="10">Sir Frederick Banting of Toronto and Charles Best discovered insulin, a hormone to treat diabetes that has saved 16 million lives worldwide.</span></div>
+</div></section><section class="rd-sec"><h2>更多學習資源<small>Learning more</small></h2>
+<div class="rd-row" data-p="20">
+  <div class="rd-cell rd-zh"><button class="rd-play" data-lang="zh" data-p="20" type="button" title="朗讀中文">▶</button><span class="s" data-i="0">想更了解加拿大的歷史嗎？去參觀博物館或國家歷史遺址吧！</span><span class="s" data-i="1">博物館透過文物、藝術品、故事、影像和文件，探索構成加拿大歷史的各種事件與成就。</span><span class="s" data-i="2">加拿大幾乎每個城市和城鎮都有博物館。</span><span class="s" data-i="3">國家歷史遺址遍布所有省份和地區，包括戰場、考古遺址、建築和聖地等各種地方。</span></div>
+  <div class="rd-cell rd-en"><button class="rd-play" data-lang="en" data-p="20" type="button" title="Read English">▶</button><span class="s" data-i="0">Want to learn more about Canada&#x27;s history? Visit a museum or national historic site!</span> <span class="s" data-i="1">Through artifacts, works of art, stories, images and documents, museums explore the diverse events and accomplishments that formed Canada&#x27;s history.</span> <span class="s" data-i="2">Museums can be found in almost every city and town across Canada.</span> <span class="s" data-i="3">National historic sites are located in all provinces and territories and include such diverse places as battlefields, archaeological sites, buildings and sacred spaces.</span></div>
+</div>
+<div class="rd-row" data-p="21">
+  <div class="rd-cell rd-zh"><button class="rd-play" data-lang="zh" data-p="21" type="button" title="朗讀中文">▶</button><span class="s" data-i="0">我們國家的繁榮與多元，仰賴所有加拿大人共同努力面對未來的挑戰。</span><span class="s" data-i="1">當你尋求成為公民時，你正在加入一個有了你的積極參與、將持續成長茁壯的國家。</span><span class="s" data-i="2">你會如何為加拿大做出貢獻？</span></div>
+  <div class="rd-cell rd-en"><button class="rd-play" data-lang="en" data-p="21" type="button" title="Read English">▶</button><span class="s" data-i="0">The prosperity and diversity of our country depend on all Canadians working together to face challenges of the future.</span> <span class="s" data-i="1">In seeking to become a citizen, you are joining a country that, with your active participation, will continue to grow and thrive.</span> <span class="s" data-i="2">How will you make your contribution to Canada?</span></div>
+</div></section>
+</div>
+<script type="application/json" id="rd-05-timings">{"en": [[[0.0, 4.493], [4.493, 16.382], [16.382, 22.14], [22.14, 30.0], [30.0, 42.109], [42.109, 52.825]], [[0.0, 5.081], [5.081, 9.633], [9.633, 16.924], [16.924, 24.993], [24.993, 29.451]], [[0.0, 9.678]], [[0.0, 10.258], [10.258, 23.876]], [[0.0, 4.951], [4.951, 15.562], [15.562, 29.576]], [[0.0, 4.245], [4.245, 10.05], [10.05, 12.814], [12.814, 18.99], [18.99, 28.359], [28.359, 35.616]], [[0.0, 6.893], [6.893, 13.58], [13.58, 25.921]], [[0.0, 6.835], [6.835, 15.972]], [[0.0, 6.265], [6.265, 11.872], [11.872, 15.576], [15.576, 18.803]], [[0.0, 9.746], [9.746, 19.069]], [[0.0, 7.227], [7.227, 17.165], [17.165, 21.925]], [[0.0, 4.727], [4.727, 12.958]], [[0.0, 5.168], [5.168, 11.937], [11.937, 25.625], [25.625, 31.151], [31.151, 38.535]], [[0.0, 11.733], [11.733, 16.435], [16.435, 24.214], [24.214, 29.38], [29.38, 35.336]], [[0.0, 8.236], [8.236, 14.959], [14.959, 19.951], [19.951, 22.761]], [[0.0, 8.228], [8.228, 12.86], [12.86, 20.488], [20.488, 28.812], [28.812, 34.629], [34.629, 43.627]], [[0.0, 12.454], [12.454, 14.845], [14.845, 23.738], [23.738, 31.842]], [[0.0, 5.118], [5.118, 15.81], [15.81, 22.486], [22.486, 30.834]], [[0.0, 7.595], [7.595, 11.171], [11.171, 23.036], [23.036, 34.158], [34.158, 46.546]], [[0.0, 6.213], [6.213, 11.043], [11.043, 16.5], [16.5, 21.376], [21.376, 32.115], [32.115, 39.104], [39.104, 47.069], [47.069, 54.789], [54.789, 61.593], [61.593, 71.659], [71.659, 80.726]], [[0.0, 5.476], [5.476, 15.077], [15.077, 19.489], [19.489, 30.379]], [[0.0, 6.88], [6.88, 14.462], [14.462, 16.818]]], "zh": [[[0.0, 3.782], [3.782, 14.231], [14.231, 20.314], [20.314, 27.257], [27.257, 38.542], [38.542, 49.792]], [[0.0, 5.326], [5.326, 9.831], [9.831, 16.693], [16.693, 25.563], [25.563, 28.395]], [[0.0, 9.282]], [[0.0, 9.424], [9.424, 21.998]], [[0.0, 3.306], [3.306, 13.523], [13.523, 25.052]], [[0.0, 3.873], [3.873, 10.688], [10.688, 13.893], [13.893, 20.069], [20.069, 27.871], [27.871, 37.136]], [[0.0, 6.185], [6.185, 12.919], [12.919, 24.343]], [[0.0, 8.282], [8.282, 14.993]], [[0.0, 5.825], [5.825, 12.373], [12.373, 15.972], [15.972, 20.302]], [[0.0, 8.426], [8.426, 16.82]], [[0.0, 5.983], [5.983, 15.759], [15.759, 21.599]], [[0.0, 5.233], [5.233, 13.221]], [[0.0, 4.305], [4.305, 11.805], [11.805, 31.948], [31.948, 40.226], [40.226, 50.292]], [[0.0, 13.09], [13.09, 17.816], [17.816, 29.553], [29.553, 35.718], [35.718, 42.998]], [[0.0, 8.38], [8.38, 15.311], [15.311, 22.939], [22.939, 26.178]], [[0.0, 7.183], [7.183, 12.745], [12.745, 21.835], [21.835, 30.032], [30.032, 37.067], [37.067, 45.74]], [[0.0, 12.64], [12.64, 15.647], [15.647, 24.459], [24.459, 32.737]], [[0.0, 6.348], [6.348, 16.716], [16.716, 25.481], [25.481, 33.608]], [[0.0, 6.626], [6.626, 12.547], [12.547, 23.89], [23.89, 35.512], [35.512, 54.204]], [[0.0, 5.93], [5.93, 12.664], [12.664, 20.802], [20.802, 26.12], [26.12, 38.148], [38.148, 46.426], [46.426, 56.515], [56.515, 65.849], [65.849, 73.825], [73.825, 86.457], [86.457, 99.773]], [[0.0, 5.988], [5.988, 15.334], [15.334, 19.142], [19.142, 27.629]], [[0.0, 6.541], [6.541, 14.679], [14.679, 17.547]]]}</script>
+
+<script>
+(function() {
+  var root = document.getElementById('rd-05');
+  if (!root) return;
+  var T = JSON.parse(document.getElementById('rd-05-timings').textContent || '{}');
+  T.en = T.en || []; T.zh = T.zh || [];
+  var base = (location.pathname.indexOf('/reading/') >= 0 ? '../' : '') + 'audio/05/';
+  var audio = new Audio();
+  var cur = { lang: null, p: -1, i: -1 };
+  var loadedSrc = '';
+  var rate = 1;
+  var status = root.querySelector('.rd-status');
+  var nParas = root.querySelectorAll('.rd-row').length;
+
+  function clearMarks() {
+    root.querySelectorAll('.s.on').forEach(function(e){ e.classList.remove('on'); });
+    root.querySelectorAll('.rd-row.playing').forEach(function(e){ e.classList.remove('playing'); });
+    root.querySelectorAll('.rd-play.on').forEach(function(e){ e.classList.remove('on'); e.textContent = '▶'; });
+  }
+  function mark(p, i) {
+    clearMarks();
+    var row = root.querySelector('.rd-row[data-p="' + p + '"]');
+    if (!row) return;
+    row.classList.add('playing');
+    row.querySelectorAll('.s[data-i="' + i + '"]').forEach(function(e){ e.classList.add('on'); });
+    var btn = row.querySelector('.rd-play[data-lang="' + cur.lang + '"]');
+    if (btn) { btn.classList.add('on'); btn.textContent = '❚❚'; }
+    var el = row.querySelector('.rd-' + cur.lang + ' .s[data-i="' + i + '"]') || row;
+    var r = el.getBoundingClientRect();
+    if (r.top < 90 || r.bottom > window.innerHeight - 40) el.scrollIntoView({ block: 'center', behavior: 'smooth' });
+    if (status) status.textContent = (cur.lang === 'en' ? 'English' : '中文') + ' · 第 ' + (p + 1) + ' / ' + nParas + ' 段';
+  }
+  function seekStart(lang, p, i) {
+    var t = T[lang] && T[lang][p];
+    return (t && t[i]) ? t[i][0] : 0;
+  }
+  function play(lang, p, i) {
+    if (p < 0 || p >= nParas) { stop(); return; }
+    cur = { lang: lang, p: p, i: i };
+    var src = base + lang + '/p' + p + '.m4a';
+    var at = seekStart(lang, p, i);
+    if (loadedSrc !== src) {
+      loadedSrc = src;
+      audio.src = src;
+      var onMeta = function() {
+        audio.removeEventListener('loadedmetadata', onMeta);
+        audio.currentTime = at;
+        audio.playbackRate = rate;
+        audio.play().catch(function(){});
+      };
+      audio.addEventListener('loadedmetadata', onMeta);
+      audio.load();
+    } else {
+      audio.currentTime = at;
+      audio.playbackRate = rate;
+      audio.play().catch(function(){});
+    }
+    mark(p, i);
+  }
+  function stop() {
+    audio.pause();
+    clearMarks();
+    cur = { lang: null, p: -1, i: -1 };
+    if (status) status.textContent = '';
+  }
+  function pause() {
+    audio.pause();
+    var row = root.querySelector('.rd-row.playing .rd-play.on');
+    if (row) { row.classList.remove('on'); row.textContent = '▶'; }
+  }
+  function resume() {
+    if (cur.p < 0) return;
+    audio.playbackRate = rate;
+    audio.play().catch(function(){});
+    mark(cur.p, cur.i);
+  }
+
+  audio.addEventListener('timeupdate', function() {
+    if (cur.p < 0) return;
+    var t = T[cur.lang] && T[cur.lang][cur.p];
+    if (!t) return;
+    var tt = audio.currentTime;
+    for (var k = 0; k < t.length; k++) {
+      var last = (k === t.length - 1);
+      if (tt >= t[k][0] - 0.05 && (last || tt < t[k + 1][0])) {
+        if (k !== cur.i) { cur.i = k; mark(cur.p, k); }
+        break;
+      }
+    }
+  });
+  audio.addEventListener('ended', function() {
+    var cont = root.querySelector('.rd-cont');
+    if (cont && cont.checked && cur.p + 1 < nParas) play(cur.lang, cur.p + 1, 0);
+    else stop();
+  });
+
+  root.addEventListener('click', function(e) {
+    var btn = e.target.closest && e.target.closest('.rd-play');
+    if (btn) {
+      var p = parseInt(btn.dataset.p, 10), lang = btn.dataset.lang;
+      if (cur.p === p && cur.lang === lang) {
+        if (audio.paused) resume(); else pause();
+      } else {
+        play(lang, p, 0);
+      }
+      return;
+    }
+    var s = e.target.closest && e.target.closest('.s');
+    if (s) {
+      var sel = window.getSelection && window.getSelection();
+      if (sel && sel.toString().length) return;
+      var cell = s.closest('.rd-cell');
+      var row = s.closest('.rd-row');
+      var lang2 = cell.classList.contains('rd-en') ? 'en' : 'zh';
+      play(lang2, parseInt(row.dataset.p, 10), parseInt(s.dataset.i, 10));
+    }
+  });
+
+  var bar = root.querySelector('.rd-bar');
+  bar.querySelector('.rd-all-zh').addEventListener('click', function(){ play('zh', 0, 0); });
+  bar.querySelector('.rd-all-en').addEventListener('click', function(){ play('en', 0, 0); });
+  bar.querySelector('.rd-pause').addEventListener('click', function(){
+    if (cur.p < 0) return;
+    if (audio.paused) resume(); else pause();
+  });
+  bar.querySelector('.rd-stop').addEventListener('click', stop);
+  bar.querySelector('.rd-rate').addEventListener('change', function(e){
+    rate = parseFloat(e.target.value) || 1;
+    audio.playbackRate = rate;
+  });
+  document.addEventListener('keydown', function(e) {
+    if (e.code !== 'Space' || cur.p < 0) return;
+    if (/input|select|textarea/i.test(e.target.tagName)) return;
+    e.preventDefault();
+    if (audio.paused) resume(); else pause();
+  });
+  window.addEventListener('hashchange', stop);
+  window.addEventListener('pagehide', function(){ audio.pause(); });
+})();
+</script>
+
+</main>
+</div>
+<script>
+(function() {
+  if (!('speechSynthesis' in window)) return;
+  var synth = window.speechSynthesis;
+  var voicesReady = false;
+
+  var ICON_SPEAKER = '<svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 10v4h4l5 4V6L7 10H3zm12.5 2c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM13 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg>';
+  var ICON_PAUSE = '<svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6 5h4v14H6zM14 5h4v14h-4z"/></svg>';
+  var ICON_PLAY = '<svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>';
+
+  // single global state — only one TTS session at a time
+  var state = {
+    btn: null, chunks: null, words: null, chunkIdx: 0, paused: false
+  };
+
+  function ensureVoices(cb) {
+    if (voicesReady) return cb();
+    var v = synth.getVoices();
+    if (v && v.length) { voicesReady = true; return cb(); }
+    synth.onvoiceschanged = function() { voicesReady = true; cb(); };
+    setTimeout(function(){ if (!voicesReady) { voicesReady = true; cb(); } }, 500);
+  }
+
+  function pickVoice() {
+    var voices = synth.getVoices();
+    function find(pred){ for (var i=0;i<voices.length;i++) if (pred(voices[i])) return voices[i]; return null; }
+    return find(function(v){return v.lang==='en-CA' && /Samantha|Karen|Tessa|Victoria|Allison|Siri/i.test(v.name);})
+        || find(function(v){return v.lang==='en-CA';})
+        || find(function(v){return v.lang==='en-US' && /Samantha|Karen|Allison|Ava|Siri/i.test(v.name);})
+        || find(function(v){return v.lang==='en-US';})
+        || find(function(v){return v.lang && v.lang.indexOf('en')===0;})
+        || null;
+  }
+
+  // Wrap each word in container in a <span class="w" data-idx="N"> for highlighting.
+  function wrapWords(container) {
+    if (container.dataset.wrapped === '1') return;
+    var walker = document.createTreeWalker(container, NodeFilter.SHOW_TEXT, null, false);
+    var nodes = [];
+    var n;
+    while ((n = walker.nextNode())) {
+      if (!n.parentElement) continue;
+      if (n.parentElement.closest('.speak-btn, .label')) continue;
+      if (!/\S/.test(n.nodeValue)) continue;
+      nodes.push(n);
+    }
+    var idx = 0;
+    nodes.forEach(function(tn) {
+      var text = tn.nodeValue;
+      var tokens = text.split(/(\s+)/);
+      var frag = document.createDocumentFragment();
+      tokens.forEach(function(tok) {
+        if (tok.length === 0) return;
+        if (/^\s+$/.test(tok)) {
+          frag.appendChild(document.createTextNode(tok));
+        } else {
+          var sp = document.createElement('span');
+          sp.className = 'w';
+          sp.setAttribute('data-idx', idx++);
+          sp.textContent = tok;
+          frag.appendChild(sp);
+        }
+      });
+      tn.parentNode.replaceChild(frag, tn);
+    });
+    container.dataset.wrapped = '1';
+  }
+
+  // Group words into chunks split on punctuation, with a pause duration after each chunk.
+  function buildChunks(words) {
+    var chunks = [];
+    var cur = { words: [] };
+    function commit(pauseMs) {
+      if (!cur.words.length) return;
+      cur.text = cur.words.map(function(w){ return w.text; }).join(' ');
+      cur.pauseAfterMs = pauseMs;
+      chunks.push(cur);
+      cur = { words: [] };
+    }
+    words.forEach(function(wEl, i) {
+      var text = wEl.textContent;
+      cur.words.push({ el: wEl, idx: i, text: text });
+      // sentence-ending punctuation → long pause
+      if (/[.!?]+["')\]]*$/.test(text) && text.length > 1) {
+        commit(420);
+      }
+      // semicolon / colon → medium pause
+      else if (/[;:]+["')\]]*$/.test(text)) {
+        commit(300);
+      }
+      // comma or em-dash → short pause
+      else if (/[,—–][")'\]]*$/.test(text)) {
+        commit(220);
+      }
+    });
+    commit(0);
+    return chunks;
+  }
+
+  function highlight(globalIdx) {
+    if (!state.words) return;
+    for (var i = 0; i < state.words.length; i++) {
+      if (i === globalIdx) state.words[i].classList.add('current');
+      else state.words[i].classList.remove('current');
+    }
+  }
+
+  function clearHighlight() {
+    if (!state.words) return;
+    state.words.forEach(function(w){ w.classList.remove('current'); });
+  }
+
+  function findWordAtChar(chunk, charIndex) {
+    var pos = 0;
+    for (var i = 0; i < chunk.words.length; i++) {
+      var len = chunk.words[i].text.length;
+      if (charIndex >= pos && charIndex < pos + len) return i;
+      pos += len + 1; // space
+    }
+    return -1;
+  }
+
+  function setBtnState(btn, s) {
+    if (!btn) return;
+    btn.classList.remove('speaking', 'paused');
+    if (s === 'speaking') btn.classList.add('speaking');
+    else if (s === 'paused') btn.classList.add('paused');
+    btn.setAttribute('data-state', s);
+    var icon = btn.querySelector('.speak-icon');
+    var label = btn.querySelector('.speak-label');
+    if (s === 'idle')     { if (icon) icon.innerHTML = ICON_SPEAKER; if (label) label.textContent = '朗讀'; }
+    else if (s === 'speaking') { if (icon) icon.innerHTML = ICON_PAUSE;   if (label) label.textContent = '暫停'; }
+    else if (s === 'paused')   { if (icon) icon.innerHTML = ICON_PLAY;    if (label) label.textContent = '繼續'; }
+  }
+
+  function stopAll() {
+    state.suppressNextEnd = true;  // ignore the cancel-induced end/error
+    synth.cancel();
+    if (state.btn) setBtnState(state.btn, 'idle');
+    clearHighlight();
+    state.btn = null; state.chunks = null; state.words = null;
+    state.chunkIdx = 0; state.paused = false;
+    // reset suppression on next tick
+    setTimeout(function(){ state.suppressNextEnd = false; }, 100);
+  }
+
+  function findChunkForWord(chunks, wordIdx) {
+    for (var i = 0; i < chunks.length; i++) {
+      for (var j = 0; j < chunks[i].words.length; j++) {
+        if (chunks[i].words[j].idx === wordIdx) return i;
+      }
+    }
+    return -1;
+  }
+
+  function speakFrom(chunkIdx) {
+    if (!state.chunks || chunkIdx >= state.chunks.length) { stopAll(); return; }
+    state.chunkIdx = chunkIdx;
+    var chunk = state.chunks[chunkIdx];
+    var u = new SpeechSynthesisUtterance(chunk.text);
+    u.lang = 'en-CA';
+    u.rate = 0.92;
+    u.pitch = 1.0;
+    var v = pickVoice();
+    if (v) u.voice = v;
+
+    u.onstart = function() {
+      if (chunk.words[0]) highlight(chunk.words[0].idx);
+    };
+    u.onboundary = function(e) {
+      if (e.name && e.name !== 'word') return;
+      var w = findWordAtChar(chunk, e.charIndex || 0);
+      if (w >= 0) highlight(chunk.words[w].idx);
+    };
+    u.onend = function() {
+      // ignore the end event if it was triggered by our own cancel (pause/jump/stop)
+      if (state.suppressNextEnd) { state.suppressNextEnd = false; return; }
+      if (state.paused) return;
+      var next = chunkIdx + 1;
+      if (next >= state.chunks.length) { stopAll(); return; }
+      setTimeout(function() {
+        if (!state.paused && state.chunks) speakFrom(next);
+      }, chunk.pauseAfterMs);
+    };
+    u.onerror = function() {
+      if (state.suppressNextEnd) { state.suppressNextEnd = false; return; }
+      if (state.paused) return; // user paused — keep state for resume
+      stopAll();
+    };
+
+    synth.speak(u);
+  }
+
+  // Start fresh speech for a container, optionally from a specific chunk index.
+  function startFresh(container, btn, fromChunk) {
+    stopAll();
+    wrapWords(container);
+    var words = Array.prototype.slice.call(container.querySelectorAll('.w'));
+    if (!words.length) return;
+    state.btn = btn;
+    state.words = words;
+    state.chunks = buildChunks(words);
+    state.chunkIdx = Math.max(0, Math.min(fromChunk || 0, state.chunks.length - 1));
+    state.paused = false;
+    setBtnState(btn, 'speaking');
+    speakFrom(state.chunkIdx);
+  }
+
+  // Jump speech to a specific word — restart the chunk containing it.
+  function jumpToWord(container, btn, wordIdx) {
+    // Same container that's currently speaking/paused → in-place jump
+    if (state.btn === btn && state.chunks && state.words) {
+      var ci = findChunkForWord(state.chunks, wordIdx);
+      if (ci < 0) return;
+      state.suppressNextEnd = true;
+      synth.cancel();
+      state.chunkIdx = ci;
+      state.paused = false;
+      setBtnState(btn, 'speaking');
+      setTimeout(function() {
+        state.suppressNextEnd = false;
+        if (state.chunks) speakFrom(ci);
+      }, 60);
+      return;
+    }
+    // Different container or fresh start — figure out chunk first
+    wrapWords(container);
+    var words = Array.prototype.slice.call(container.querySelectorAll('.w'));
+    if (!words.length) return;
+    var chunks = buildChunks(words);
+    var ci2 = findChunkForWord(chunks, wordIdx);
+    startFresh(container, btn, ci2 >= 0 ? ci2 : 0);
+  }
+
+  function speakableContainerOf(el) {
+    return el.closest && el.closest('.bilingual .en, blockquote.speakable, .callout.speakable');
+  }
+
+  document.addEventListener('click', function(e) {
+    // --- speak button ---
+    var btn = e.target.closest && e.target.closest('.speak-btn');
+    if (btn) {
+      e.preventDefault();
+      var s = btn.getAttribute('data-state') || 'idle';
+      if (s === 'speaking') {
+        // pause: set flag BEFORE cancel so onend/onerror preserve state
+        state.paused = true;
+        synth.cancel();
+        setBtnState(btn, 'paused');
+        return;
+      }
+      if (s === 'paused') {
+        // resume: restart current chunk
+        state.paused = false;
+        setBtnState(btn, 'speaking');
+        if (state.chunks) speakFrom(state.chunkIdx);
+        return;
+      }
+      // idle → new speech from start
+      ensureVoices(function() { startFresh(btn.parentElement, btn, 0); });
+      return;
+    }
+
+    // --- word click (play from here) ---
+    var w = e.target.closest && e.target.closest('.w');
+    if (!w) return;
+    // skip if user is selecting text
+    var sel = window.getSelection && window.getSelection();
+    if (sel && sel.toString && sel.toString().length > 0) return;
+    var container = speakableContainerOf(w);
+    if (!container) return;
+    var speakBtn = container.querySelector('.speak-btn');
+    if (!speakBtn) return;
+    e.preventDefault();
+    var widx = parseInt(w.getAttribute('data-idx'), 10);
+    if (isNaN(widx)) return;
+    ensureVoices(function() { jumpToWord(container, speakBtn, widx); });
+  });
+
+  // Pre-wrap all speakable containers during idle time so word-click works without first hitting the button
+  function preWrapAll() {
+    var containers = document.querySelectorAll('.bilingual .en, blockquote.speakable, .callout.speakable');
+    var i = 0;
+    function step() {
+      if (i >= containers.length) return;
+      try { wrapWords(containers[i]); } catch (e) {}
+      i++;
+      if (window.requestIdleCallback) requestIdleCallback(step, { timeout: 200 });
+      else setTimeout(step, 0);
+    }
+    step();
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', preWrapAll);
+  else preWrapAll();
+
+  window.addEventListener('hashchange', stopAll);
+  window.addEventListener('pagehide', stopAll);
+})();
+</script>
+</body>
+</html>

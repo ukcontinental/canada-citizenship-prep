@@ -1,0 +1,139 @@
+{
+  "num": "07",
+  "title_en": "Federal Elections",
+  "title_zh": "聯邦選舉",
+  "sections": [
+    {
+      "title_en": "Federal Elections",
+      "title_zh": "聯邦選舉",
+      "paras": [
+        [
+          {"en": "Canadians vote in elections for the people they want to represent them in the House of Commons.", "zh": "加拿大人在選舉中投票，選出他們希望在眾議院代表自己的人。"},
+          {"en": "In each election, voters may re-elect the same members of the House of Commons or choose new ones.", "zh": "每次選舉，選民可以讓同一批眾議院議員連任，也可以選出新的人。"},
+          {"en": "Members of the House of Commons are also known as members of Parliament or MPs.", "zh": "眾議院的成員也稱為國會議員（MP）。"}
+        ],
+        [
+          {"en": "Under legislation passed by Parliament, federal elections must be held on the third Monday in October every four years following the most recent general election.", "zh": "依據國會通過的法律，聯邦選舉必須在最近一次大選之後每四年的十月第三個星期一舉行。"},
+          {"en": "The Prime Minister may ask the Governor General to call an earlier election.", "zh": "總理可以請總督提前舉行選舉。"}
+        ],
+        [
+          {"en": "Canada is divided into 308 electoral districts, also known as ridings or constituencies.", "zh": "加拿大分為 308 個選區（electoral districts，也叫 ridings 或 constituencies）。"},
+          {"en": "Note: 308 is the figure in this 2021 edition; the number of ridings grows with the population, so check elections.ca for the current total before your test.", "zh": "注意：308 是這本 2021 年版的數字；選區數會隨人口增加，考前請到 elections.ca 查最新總數。"},
+          {"en": "An electoral district is a geographical area represented by a member of Parliament (MP).", "zh": "選區是由一位國會議員代表的地理區域。"},
+          {"en": "The citizens in each electoral district elect one MP who sits in the House of Commons to represent them, as well as all Canadians.", "zh": "每個選區的公民選出一位國會議員，在眾議院代表他們，也代表全體加拿大人。"}
+        ],
+        [
+          {"en": "Canadian citizens who are 18 years old or older may run in a federal election.", "zh": "18 歲以上的加拿大公民可以參選聯邦選舉。"},
+          {"en": "The people who run for office are called candidates.", "zh": "參選的人稱為候選人。"},
+          {"en": "There can be many candidates in an electoral district.", "zh": "一個選區可以有很多候選人。"}
+        ],
+        [
+          {"en": "The people in each electoral district vote for the candidate and political party of their choice.", "zh": "每個選區的人民投票給自己選擇的候選人和政黨。"},
+          {"en": "The candidate who receives the most votes becomes the MP for that electoral district.", "zh": "得票最多的候選人成為該選區的國會議員。"}
+        ]
+      ]
+    },
+    {
+      "title_en": "Voting",
+      "title_zh": "投票",
+      "paras": [
+        [
+          {"en": "One of the privileges of Canadian citizenship is the right to vote.", "zh": "加拿大公民的特權之一就是投票權。"},
+          {"en": "You are eligible to vote in a federal election or cast a ballot in a federal referendum if you are a Canadian citizen, at least 18 years old on voting day, and on the voters' list.", "zh": "如果你是加拿大公民、投票日當天年滿 18 歲，並且在選民名冊上，你就有資格在聯邦選舉中投票，或在聯邦公投中投票。"}
+        ],
+        [
+          {"en": "The voters' lists used during federal elections and referendums are produced from the National Register of Electors by a neutral agency of Parliament called Elections Canada.", "zh": "聯邦選舉和公投使用的選民名冊，是由國會的中立機構「加拿大選舉局」（Elections Canada）根據「全國選民登記冊」製作的。"},
+          {"en": "This is a permanent database of Canadian citizens 18 years of age or older who are qualified to vote in federal elections and referendums.", "zh": "這是一個永久性的資料庫，記錄有資格在聯邦選舉和公投中投票的 18 歲以上加拿大公民。"}
+        ],
+        [
+          {"en": "Once an election has been called, Elections Canada mails a voter information card to each elector whose name is in the National Register of Electors.", "zh": "選舉一經宣布，加拿大選舉局會寄一張「選民資訊卡」給每一位名字在全國選民登記冊上的選民。"},
+          {"en": "The card lists when and where you vote and the number to call if you require an interpreter or other special services.", "zh": "卡片上列出你投票的時間和地點，以及需要口譯或其他特殊服務時可以撥打的電話號碼。"}
+        ],
+        [
+          {"en": "Even if you choose not to be listed in the National Register of Electors or do not receive a voter information card, you can still be added to the voters' list at any time, including on election day.", "zh": "即使你選擇不列入全國選民登記冊，或沒有收到選民資訊卡，你仍然可以隨時被加入選民名冊，包括在選舉日當天。"},
+          {"en": "To vote either on election day or at advance polls, go to the polling station listed on your voter information card.", "zh": "不論是在選舉日或提前投票，都到你選民資訊卡上列出的投票站去投票。"}
+        ]
+      ]
+    },
+    {
+      "title_en": "Secret ballot",
+      "title_zh": "不記名投票",
+      "paras": [
+        [
+          {"en": "Canadian law secures the right to a secret ballot.", "zh": "加拿大法律保障不記名投票的權利。"},
+          {"en": "This means that no one can watch you vote and no one should look at how you voted.", "zh": "這表示沒有人可以看你投票，也沒有人應該看你投給了誰。"},
+          {"en": "You may choose to discuss how you voted with others, but no one, including family members, your employer or union representative, has the right to insist that you tell them how you voted.", "zh": "你可以選擇跟別人討論你投給誰，但沒有人——包括家人、雇主或工會代表——有權利堅持要你告訴他們你投給了誰。"},
+          {"en": "Immediately after the polling stations close, election officers count the ballots and the results are announced on radio and television, and in the newspapers.", "zh": "投票站一關閉，選務人員就立刻開票，結果會在廣播、電視和報紙上公布。"}
+        ]
+      ]
+    },
+    {
+      "title_en": "After an election",
+      "title_zh": "選舉之後",
+      "paras": [
+        [
+          {"en": "Ordinarily, after an election, the leader of the political party with the most seats in the House of Commons is invited by the Governor General to form the government.", "zh": "通常在選舉之後，總督會邀請在眾議院席次最多的政黨領袖組成政府。"},
+          {"en": "After being appointed by the Governor General, the leader of this party becomes the Prime Minister.", "zh": "經總督任命後，這個政黨的領袖就成為總理。"},
+          {"en": "If the party in power holds at least half of the seats in the House of Commons, this is called a majority government.", "zh": "如果執政黨在眾議院擁有至少一半的席次，就稱為「多數政府」。"},
+          {"en": "If the party in power holds less than half of the seats in the House of Commons, this is called a minority government.", "zh": "如果執政黨在眾議院的席次不到一半，就稱為「少數政府」。"}
+        ],
+        [
+          {"en": "The Prime Minister and the party in power run the government as long as they have the support or confidence of the majority of the MPs.", "zh": "只要獲得多數國會議員的支持或信任，總理和執政黨就能繼續執政。"},
+          {"en": "When the House of Commons votes on a major issue such as the budget, this is considered a matter of confidence.", "zh": "當眾議院就預算等重大議題投票時，這被視為信任投票。"},
+          {"en": "If a majority of the members of the House of Commons vote against a major government decision, the party in power is defeated, which usually results in the Prime Minister asking the Governor General, on behalf of the Sovereign, to call an election.", "zh": "如果多數眾議院議員投票反對政府的重大決定，執政黨就被擊敗，通常會導致總理請總督代表君主宣布舉行選舉。"}
+        ],
+        [
+          {"en": "The Prime Minister chooses the ministers of the Crown, most of them from among members of the House of Commons.", "zh": "總理挑選各部部長，大多數來自眾議院議員。"},
+          {"en": "Cabinet ministers are responsible for running the federal government departments.", "zh": "內閣部長負責管理聯邦政府各部門。"},
+          {"en": "The Prime Minister and the Cabinet ministers are called the Cabinet and they make important decisions about how the country is governed.", "zh": "總理和內閣部長合稱「內閣」，他們對國家如何治理做出重要決定。"},
+          {"en": "They prepare the budget and propose most new laws.", "zh": "他們編列預算，並提出大多數的新法律。"},
+          {"en": "Their decisions can be questioned by all members of the House of Commons.", "zh": "他們的決定可以受到所有眾議院議員的質詢。"}
+        ],
+        [
+          {"en": "The other parties that are not in power are known as opposition parties.", "zh": "其他沒有執政的政黨稱為反對黨。"},
+          {"en": "The opposition party with the most members of the House of Commons is the Official Opposition or Her Majesty's Loyal Opposition.", "zh": "在眾議院席次最多的反對黨是「官方反對黨」，或稱「女王陛下的忠誠反對黨」。"},
+          {"en": "The role of opposition parties is to peacefully oppose or try to improve government proposals.", "zh": "反對黨的角色是和平地反對政府的提案，或設法改善它們。"},
+          {"en": "There are three major political parties currently represented in the House of Commons: the Conservative Party, the New Democratic Party, and the Liberal Party.", "zh": "目前在眾議院有席次的三大政黨是：保守黨、新民主黨和自由黨。"}
+        ]
+      ]
+    },
+    {
+      "title_en": "Voting procedures during an election period",
+      "title_zh": "選舉期間的投票程序",
+      "paras": [
+        [
+          {"en": "Step 1: Voter information card. Electors whose information is in the National Register of Electors will receive a voter information card.", "zh": "第一步：選民資訊卡。資料在全國選民登記冊上的選民會收到一張選民資訊卡。"},
+          {"en": "This confirms that your name is on the voters' list and states when and where you vote.", "zh": "這張卡確認你的名字在選民名冊上，並說明你投票的時間和地點。"}
+        ],
+        [
+          {"en": "Step 2: I did not get a card. If you do not receive a voter information card, call your local elections office to ensure that you are on the voters' list.", "zh": "第二步：我沒收到卡。如果你沒有收到選民資訊卡，請打電話給當地的選舉辦公室，確認你在選民名冊上。"},
+          {"en": "If you do not have the number, call Elections Canada, in Ottawa, at 1-800-463-6868.", "zh": "如果你沒有電話號碼，請撥打渥太華的加拿大選舉局：1-800-463-6868。"}
+        ],
+        [
+          {"en": "Step 3: Advance poll and special ballot. If you cannot or do not wish to vote on election day, you can vote at the advance polls or by special ballot.", "zh": "第三步：提前投票與特別選票。如果你在選舉日不能或不想投票，可以提前投票，或用特別選票投票。"},
+          {"en": "The dates and location are on your voter information card.", "zh": "日期和地點都在你的選民資訊卡上。"}
+        ],
+        [
+          {"en": "Step 4: On election day. Go to your polling station.", "zh": "第四步：選舉日當天。前往你的投票站。"},
+          {"en": "The location is on your voter information card.", "zh": "地點在你的選民資訊卡上。"},
+          {"en": "Bring this card and proof of your identity and address to the polling station.", "zh": "帶著這張卡，以及你的身分和地址證明到投票站。"}
+        ],
+        [
+          {"en": "Step 5: Marking the ballot. Mark an \"X\" in the circle next to the name of the candidate of your choice.", "zh": "第五步：畫選票。在你選擇的候選人姓名旁邊的圓圈裡畫一個「X」。"}
+        ],
+        [
+          {"en": "Step 6: Voting is secret. Your vote is secret.", "zh": "第六步：投票是不記名的。你的投票是秘密的。"},
+          {"en": "You will be invited to go behind the screen to mark your ballot.", "zh": "你會被請到遮板後面畫選票。"},
+          {"en": "Once marked, fold it and present it to the poll officials.", "zh": "畫好後，把選票摺起來，交給投票站的工作人員。"}
+        ],
+        [
+          {"en": "Step 7: The ballot box. The poll official will tear off the ballot number and give your ballot back to you to deposit in the ballot box.", "zh": "第七步：投票箱。工作人員會撕下選票編號，再把選票交還給你，由你投進投票箱。"}
+        ],
+        [
+          {"en": "Step 8: The election results. When the polls close, every ballot is counted and the results are made public.", "zh": "第八步：選舉結果。投票結束後，每一張選票都會被計算，結果會公開。"},
+          {"en": "You can see the results on television or on the Elections Canada website.", "zh": "你可以在電視上或加拿大選舉局的網站上看到結果。"}
+        ]
+      ]
+    }
+  ]
+}

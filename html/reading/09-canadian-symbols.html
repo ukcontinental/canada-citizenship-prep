@@ -1,0 +1,1038 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="加拿大公民考">
+<meta name="theme-color" content="#c8102e">
+<title>09 加拿大的象徵 人聲朗讀 · 加拿大公民考試</title>
+<style>
+:root {
+  --bg: #faf8f4;
+  --panel: #ffffff;
+  --ink: #1f2328;
+  --muted: #5d646d;
+  --line: #e7e2d6;
+  --accent: #c8102e;        /* maple red */
+  --accent-soft: #fbe9ec;
+  --en-bg: #f3efe6;
+  --en-ink: #2b2620;
+  --zh-bg: #ffffff;
+  --quote: #8a6d3b;
+  --max: 1180px;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: "Source Serif 4","Source Serif Pro","Noto Serif TC","Noto Serif CJK TC","PingFang TC","Songti TC", Georgia, serif;
+  font-size: 17px;
+  line-height: 1.75;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+.layout {
+  display: grid;
+  grid-template-columns: 240px minmax(0, 1fr);
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 0 24px;
+  gap: 36px;
+}
+nav.sidebar {
+  position: sticky;
+  top: 0;
+  align-self: start;
+  height: 100vh;
+  overflow-y: auto;
+  padding: 28px 0 40px;
+  border-right: 1px solid var(--line);
+  font-family: -apple-system, "Helvetica Neue", "PingFang TC", system-ui, sans-serif;
+  font-size: 14px;
+  line-height: 1.45;
+}
+nav.sidebar h1 {
+  font-family: inherit;
+  font-size: 14px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin: 0 0 10px;
+}
+nav.sidebar h2 {
+  font-family: inherit;
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin: 22px 0 6px;
+  font-weight: 600;
+}
+nav.sidebar a {
+  display: block;
+  color: var(--ink);
+  text-decoration: none;
+  padding: 4px 10px 4px 0;
+  border-radius: 4px;
+}
+nav.sidebar a:hover { color: var(--accent); }
+nav.sidebar a.current {
+  color: var(--accent);
+  font-weight: 600;
+}
+nav.sidebar .home {
+  display: inline-block;
+  font-weight: 700;
+  font-size: 18px;
+  color: var(--ink);
+  text-decoration: none;
+  margin-bottom: 14px;
+}
+nav.sidebar .home::before { content: "🍁 "; }
+main {
+  padding: 36px 0 80px;
+  min-width: 0;
+}
+main h1, main h2, main h3, main h4 {
+  font-family: -apple-system, "Helvetica Neue", "PingFang TC", system-ui, sans-serif;
+  line-height: 1.3;
+  color: var(--ink);
+}
+main h1 {
+  font-size: 28px;
+  margin: 0 0 8px;
+  letter-spacing: -0.01em;
+}
+main > p:first-of-type {
+  color: var(--muted);
+  margin-top: 4px;
+}
+main h2 {
+  font-size: 21px;
+  margin: 40px 0 12px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid var(--line);
+}
+main h3 { font-size: 18px; margin: 28px 0 8px; }
+main h4 { font-size: 16px; margin: 22px 0 6px; color: var(--muted); }
+main p { margin: 0 0 12px; }
+main ul, main ol { margin: 0 0 14px; padding-left: 1.4em; }
+main li { margin: 4px 0; }
+main hr {
+  border: none;
+  border-top: 1px solid var(--line);
+  margin: 32px 0;
+}
+main a { color: var(--accent); text-decoration: none; }
+main a:hover { text-decoration: underline; }
+main code {
+  font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.9em;
+  background: #f3efe6;
+  padding: 1px 5px;
+  border-radius: 4px;
+}
+main blockquote {
+  margin: 14px 0;
+  padding: 12px 18px;
+  background: var(--accent-soft);
+  border-left: 3px solid var(--accent);
+  color: var(--ink);
+  border-radius: 0 6px 6px 0;
+}
+main blockquote p:last-child { margin-bottom: 0; }
+main table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 14px 0 22px;
+  font-size: 15px;
+}
+main th, main td {
+  text-align: left;
+  padding: 8px 12px;
+  border-bottom: 1px solid var(--line);
+  vertical-align: top;
+}
+main th {
+  background: #f3efe6;
+  font-family: -apple-system, "Helvetica Neue", "PingFang TC", system-ui, sans-serif;
+  font-weight: 600;
+}
+
+/* --- bilingual pairing --- */
+.bilingual {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  margin: 14px 0;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  overflow: hidden;
+  background: var(--zh-bg);
+}
+.bilingual .en, .bilingual .zh {
+  padding: 16px 20px;
+}
+.bilingual .en {
+  background: var(--en-bg);
+  color: var(--en-ink);
+  font-family: "Source Serif 4","Source Serif Pro", Georgia, serif;
+  font-style: normal;
+  border-right: 1px solid var(--line);
+}
+.bilingual .en p, .bilingual .zh p { margin: 0 0 8px; }
+.bilingual .en p:last-child, .bilingual .zh p:last-child { margin-bottom: 0; }
+.bilingual .en ul, .bilingual .en ol,
+.bilingual .zh ul, .bilingual .zh ol {
+  margin: 0 0 6px;
+  padding-left: 1.3em;
+}
+.bilingual .en em { font-style: italic; }
+.bilingual .label {
+  display: inline-block;
+  font-family: -apple-system, "Helvetica Neue", system-ui, sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 6px;
+  font-weight: 600;
+}
+
+/* --- callouts (⚠️ blocks) --- */
+.callout {
+  margin: 18px 0;
+  padding: 14px 18px;
+  background: #fff8e1;
+  border-left: 4px solid #f0a500;
+  border-radius: 0 6px 6px 0;
+}
+.callout p { margin: 0 0 6px; }
+.callout p:last-child { margin: 0; }
+
+/* --- collapsible answers --- */
+details.answers {
+  margin: 22px 0;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 0;
+  overflow: hidden;
+}
+details.answers > summary {
+  cursor: pointer;
+  padding: 14px 18px;
+  font-family: -apple-system, "Helvetica Neue", "PingFang TC", system-ui, sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  background: #f3efe6;
+  border-bottom: 1px solid transparent;
+  user-select: none;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+details.answers > summary::-webkit-details-marker { display: none; }
+details.answers > summary::after {
+  content: "▸";
+  color: var(--muted);
+  transition: transform 0.18s ease;
+  font-size: 14px;
+}
+details.answers[open] > summary {
+  border-bottom-color: var(--line);
+}
+details.answers[open] > summary::after { transform: rotate(90deg); }
+details.answers .answers-body { padding: 14px 22px 6px; }
+details.answers .answers-body ol { margin: 0; padding-left: 1.4em; }
+details.answers .answers-body li { margin: 8px 0; }
+
+/* --- dashboard cards on index --- */
+.dash {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+  margin: 24px 0;
+}
+.dash a {
+  display: block;
+  padding: 18px 20px;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  color: var(--ink);
+  text-decoration: none;
+  transition: border-color 0.15s, transform 0.15s;
+}
+.dash a:hover {
+  border-color: var(--accent);
+  transform: translateY(-1px);
+}
+.dash a .kicker {
+  font-family: -apple-system, system-ui, sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+  display: block;
+  margin-bottom: 6px;
+}
+.dash a .title {
+  font-weight: 600;
+  font-size: 17px;
+  line-height: 1.35;
+}
+.dash a .meta {
+  display: block;
+  margin-top: 8px;
+  font-size: 13px;
+  color: var(--muted);
+  font-family: -apple-system, system-ui, sans-serif;
+}
+
+/* --- speak (TTS) button --- */
+.speak-btn {
+  appearance: none;
+  background: rgba(255,255,255,0.85);
+  border: 1px solid var(--line);
+  color: var(--muted);
+  cursor: pointer;
+  padding: 4px 9px;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 12px;
+  font-family: -apple-system, "Helvetica Neue", system-ui, sans-serif;
+  transition: all 0.15s;
+  -webkit-tap-highlight-color: transparent;
+  min-width: 64px;
+  justify-content: center;
+}
+.speak-btn .speak-icon { display: inline-flex; }
+.speak-btn svg { display: block; }
+.speak-btn:hover { color: var(--accent); border-color: var(--accent); }
+.speak-btn:active { transform: scale(0.96); }
+.speak-btn.speaking {
+  background: var(--accent);
+  color: #fff;
+  border-color: var(--accent);
+  animation: speak-pulse 1.4s ease-in-out infinite;
+}
+.speak-btn.paused {
+  background: #f0a500;
+  color: #fff;
+  border-color: #f0a500;
+  animation: none;
+}
+@keyframes speak-pulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(200,16,46,0.5); }
+  50%      { box-shadow: 0 0 0 6px rgba(200,16,46,0); }
+}
+
+/* --- per-word highlight during TTS + click-to-play-from-here --- */
+.w {
+  border-radius: 3px;
+  padding: 0 1px;
+  transition: color 0.08s ease, background 0.08s ease;
+  cursor: pointer;
+  -webkit-tap-highlight-color: rgba(200, 16, 46, 0.15);
+}
+.w:hover {
+  background: rgba(200, 16, 46, 0.07);
+  text-decoration: underline;
+  text-decoration-color: rgba(200, 16, 46, 0.3);
+  text-decoration-style: dotted;
+  text-underline-offset: 3px;
+}
+.w.current {
+  color: var(--accent);
+  background: rgba(200, 16, 46, 0.14);
+  font-weight: 600;
+  text-decoration: none;
+}
+.bilingual .en { position: relative; }
+.bilingual .en > .speak-btn {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+}
+.bilingual .en > .label + .speak-btn { /* fallback positioning if absolute fails */ }
+blockquote.speakable, .callout.speakable {
+  position: relative;
+  padding-right: 60px;
+}
+blockquote.speakable > .speak-btn,
+.callout.speakable > .speak-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: #fff;
+}
+
+/* --- mobile --- */
+@media (max-width: 900px) {
+  .layout { grid-template-columns: 1fr; padding: 0 16px; gap: 0; }
+  nav.sidebar {
+    position: static;
+    height: auto;
+    border-right: none;
+    border-bottom: 1px solid var(--line);
+    padding: 18px 0;
+  }
+  .bilingual { grid-template-columns: 1fr; }
+  .bilingual .en { border-right: none; border-bottom: 1px solid var(--line); }
+}
+
+/* --- print --- */
+@media print {
+  nav.sidebar { display: none; }
+  .layout { display: block; padding: 0; }
+  main { padding: 0; }
+  details.answers { border: 1px solid #999; }
+  details.answers > summary { display: none; }
+  details.answers > .answers-body { display: block !important; }
+  .bilingual { break-inside: avoid; }
+}
+</style>
+</head>
+<body>
+<div class="layout">
+<nav class="sidebar">
+<a href="../index.html" class="home">加拿大公民考試</a>
+<h2>🎧 人聲朗讀對照</h2>
+<a href="../reading/00-intro-oath.html">00 · 公民誓詞與給讀者的話</a>
+<a href="../reading/01-applying-citizenship.html">01 · 申請公民身分</a>
+<a href="../reading/02-rights-responsibilities.html">02 · 公民的權利與責任</a>
+<a href="../reading/03-who-we-are.html">03 · 我們是誰</a>
+<a href="../reading/04-canadas-history.html">04 · 加拿大歷史</a>
+<a href="../reading/05-modern-canada.html">05 · 現代加拿大</a>
+<a href="../reading/06-how-canadians-govern.html">06 · 加拿大人如何治理自己</a>
+<a href="../reading/07-federal-elections.html">07 · 聯邦選舉</a>
+<a href="../reading/08-justice-system.html">08 · 司法系統</a>
+<a href="../reading/09-canadian-symbols.html" class="current">09 · 加拿大的象徵</a>
+<a href="../reading/10-canadas-economy.html">10 · 加拿大的經濟</a>
+<a href="../reading/11-canadas-regions.html">11 · 加拿大的各個地區</a>
+<a href="../reading/12-study-questions.html">12 · 官方練習題</a>
+<h2>🧠 每章重點互動記憶</h2>
+<a href="../interactive/index.html">🎯 互動式入口</a>
+<a href="../interactive/history.html">📜 04 歷史時間軸</a>
+<a href="../interactive/story-04.html">📖 04 故事聽學</a>
+<a href="../interactive/modern.html">🇨🇦 05 現代加拿大</a>
+<a href="../interactive/government.html">🏛️ 06 政府架構</a>
+<a href="../interactive/elections.html">🗳️ 07 聯邦選舉</a>
+<a href="../interactive/justice.html">⚖️ 08 司法系統</a>
+<a href="../interactive/symbols.html">🍁 09 國家象徵</a>
+<a href="../interactive/economy.html">💼 10 加拿大經濟</a>
+<a href="../interactive/geography.html">🗺️ 11 地圖與省份</a>
+<h2>📝 考題</h2>
+<a href="../practice/question-bank.html">220 題題庫（依章節）</a>
+<a href="../daily-quiz/day-01.html">驗收 Day 01</a>
+<a href="../daily-quiz/day-02.html">驗收 Day 02</a>
+<a href="../daily-quiz/day-03.html">驗收 Day 03</a>
+<a href="../daily-quiz/day-04.html">驗收 Day 04</a>
+<a href="../daily-quiz/day-05.html">驗收 Day 05</a>
+<a href="../daily-quiz/day-06.html">驗收 Day 06</a>
+<a href="../daily-quiz/day-07.html">驗收 Day 07</a>
+<a href="../daily-quiz/day-08.html">驗收 Day 08</a>
+<a href="../daily-quiz/day-09.html">驗收 Day 09</a>
+<a href="../daily-quiz/day-10.html">驗收 Day 10</a>
+<a href="../daily-quiz/day-11.html">驗收 Day 11</a>
+<a href="../daily-quiz/day-12.html">驗收 Day 12</a>
+<a href="../daily-quiz/day-13.html">驗收 Day 13</a>
+<a href="../daily-quiz/day-14.html">驗收 Day 14</a>
+</nav>
+<main>
+<style>
+.layout { max-width: 1480px; }
+.rd-hero {
+  background: linear-gradient(135deg, #fff8f8 0%, #fef0e8 100%);
+  border-left: 4px solid var(--accent);
+  padding: 18px 22px; border-radius: 8px; margin: 16px 0 12px;
+}
+.rd-hero h1 { margin: 0 0 6px; border: none; padding: 0; }
+.rd-hero p { margin: 0; color: var(--muted); font-size: 14px; }
+.rd-bar {
+  position: sticky; top: 0; z-index: 5; background: var(--bg);
+  display: flex; align-items: center; gap: 10px; flex-wrap: wrap;
+  padding: 10px 0; border-bottom: 1px solid var(--line); margin-bottom: 8px;
+}
+.rd-btn {
+  appearance: none; border: 2px solid var(--accent); background: #fff; color: var(--accent);
+  padding: 7px 14px; border-radius: 20px; font-size: 14px; font-weight: 600; cursor: pointer;
+  font-family: -apple-system, system-ui, sans-serif;
+}
+.rd-btn.rd-main { background: var(--accent); color: #fff; }
+.rd-bar label { font-size: 13px; color: var(--muted); display: inline-flex; align-items: center; gap: 4px; }
+.rd-bar select { font-size: 13px; padding: 3px 6px; }
+.rd-status { font-size: 13px; color: var(--muted); margin-left: auto; }
+.rd-sec h2 { margin: 30px 0 6px; font-size: 18px; border-bottom: 2px solid var(--accent); padding-bottom: 4px; }
+.rd-sec h2 small { color: var(--muted); font-weight: 400; font-size: 13px; margin-left: 10px; }
+.rd-row {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 20px;
+  padding: 12px 0; border-bottom: 1px dashed var(--line);
+}
+.rd-cell { position: relative; padding: 4px 8px 4px 36px; line-height: 1.9; font-size: 16.5px; border-radius: 8px; }
+.rd-zh { font-family: "Noto Serif TC","Noto Serif CJK TC","PingFang TC","Songti TC",serif; }
+.rd-en { font-family: "Source Serif 4","Source Serif Pro",Georgia,serif; color: var(--en-ink); background: var(--en-bg); }
+.rd-row.playing .rd-cell { box-shadow: inset 0 0 0 2px #f0c86a; }
+.rd-play {
+  position: absolute; left: 6px; top: 9px; width: 24px; height: 24px; border-radius: 50%;
+  border: 1.5px solid var(--accent); background: #fff; color: var(--accent);
+  cursor: pointer; font-size: 10px; line-height: 1; padding: 0;
+}
+.rd-play.on { background: var(--accent); color: #fff; }
+.s { cursor: pointer; border-radius: 3px; padding: 1px 2px; transition: background 0.15s; }
+.s:hover { background: #f3efe6; }
+.rd-en .s:hover { background: #ebe4d3; }
+.s.on { background: #ffe08a !important; }
+@media (max-width: 820px) {
+  .rd-row { grid-template-columns: 1fr; gap: 8px; }
+}
+</style>
+
+<div class="rd" id="rd-09">
+<div class="rd-hero">
+  <h1>🎧 09 加拿大的象徵 <small style="font-weight:400;color:var(--muted)">Canadian Symbols</small></h1>
+  <p>左中文、右英文，句對句對照。按段落左邊的 ▶ 朗讀該段；點任何一句從那句開始念；念到哪一句，中英文同時標黃。空白鍵＝暫停／繼續。</p>
+</div>
+<div class="rd-bar">
+  <button class="rd-btn rd-main rd-all-en" type="button">▶ English 全章</button>
+  <button class="rd-btn rd-all-zh" type="button">▶ 中文全章</button>
+  <button class="rd-btn rd-pause" type="button">❚❚ 暫停／繼續</button>
+  <button class="rd-btn rd-stop" type="button">■ 停</button>
+  <label><input type="checkbox" class="rd-cont" checked> 連續播放下一段</label>
+  <label>速度 <select class="rd-rate">
+    <option value="0.8">0.8×</option><option value="0.9">0.9×</option>
+    <option value="1" selected>1×</option><option value="1.15">1.15×</option><option value="1.3">1.3×</option>
+  </select></label>
+  <span class="rd-status"></span>
+</div>
+<section class="rd-sec"><h2>加拿大的象徵<small>Canadian Symbols</small></h2>
+<div class="rd-row" data-p="0">
+  <div class="rd-cell rd-zh"><button class="rd-play" data-lang="zh" data-p="0" type="button" title="朗讀中文">▶</button><span class="s" data-i="0">加拿大有許多重要的象徵——具有特殊意義的物品、事件和人物。</span><span class="s" data-i="1">它們共同幫助說明身為加拿大人的意義，並表達我們的國家認同。</span><span class="s" data-i="2">重要的加拿大象徵出現在這本手冊的各個地方。</span></div>
+  <div class="rd-cell rd-en"><button class="rd-play" data-lang="en" data-p="0" type="button" title="Read English">▶</button><span class="s" data-i="0">Canada has many important symbols — objects, events, and people that have special meaning.</span> <span class="s" data-i="1">Together they help explain what it means to be Canadian and express our national identity.</span> <span class="s" data-i="2">Important Canadian symbols appear throughout this booklet.</span></div>
+</div></section><section class="rd-sec"><h2>加拿大的王權<small>The Canadian Crown</small></h2>
+<div class="rd-row" data-p="1">
+  <div class="rd-cell rd-zh"><button class="rd-play" data-lang="zh" data-p="1" type="button" title="朗讀中文">▶</button><span class="s" data-i="0">四百年來，王權一直是加拿大國家的象徵。</span><span class="s" data-i="1">自 1867 年維多利亞女王在位期間的聯邦成立以來，加拿大本身就是一個君主立憲國。</span><span class="s" data-i="2">伊莉莎白二世女王自 1952 年起擔任加拿大女王，2002 年慶祝登基金禧，2012 年慶祝鑽禧（在位 60 年）。</span><span class="s" data-i="3">注意：伊莉莎白二世女王於 2022 年 9 月過世，現在加拿大的國王是查理三世。</span><span class="s" data-i="4">王權是政府的象徵，包括國會、各級議會、法院、警察機關和加拿大軍隊。</span></div>
+  <div class="rd-cell rd-en"><button class="rd-play" data-lang="en" data-p="1" type="button" title="Read English">▶</button><span class="s" data-i="0">The Crown has been a symbol of the state in Canada for 400 years.</span> <span class="s" data-i="1">Canada has been a constitutional monarchy in its own right since Confederation in 1867 during Queen Victoria&#x27;s reign.</span> <span class="s" data-i="2">Queen Elizabeth II, who has been Queen of Canada since 1952, marked her Golden Jubilee in 2002, and celebrates her Diamond Jubilee (60 years as Sovereign) in 2012.</span> <span class="s" data-i="3">Note: Queen Elizabeth II died in September 2022; King Charles III is now King of Canada.</span> <span class="s" data-i="4">The Crown is a symbol of government, including Parliament, the legislatures, the courts, police services and the Canadian Forces.</span></div>
+</div></section><section class="rd-sec"><h2>加拿大的旗幟<small>Flags in Canada</small></h2>
+<div class="rd-row" data-p="2">
+  <div class="rd-cell rd-zh"><button class="rd-play" data-lang="zh" data-p="2" type="button" title="朗讀中文">▶</button><span class="s" data-i="0">新的加拿大國旗在 1965 年第一次升起。</span><span class="s" data-i="1">紅－白－紅的圖案來自 1876 年創立的京士頓皇家軍事學院的旗幟。</span><span class="s" data-i="2">紅色和白色自中世紀以來就是法國和英國的顏色，自 1921 年起成為加拿大的國家代表色。</span><span class="s" data-i="3">英國國旗（Union Jack）是我們正式的王室旗幟。</span><span class="s" data-i="4">加拿大紅船旗（Canadian Red Ensign）曾作為加拿大國旗約一百年。</span><span class="s" data-i="5">各省和地區也有體現各自獨特傳統的旗幟。</span></div>
+  <div class="rd-cell rd-en"><button class="rd-play" data-lang="en" data-p="2" type="button" title="Read English">▶</button><span class="s" data-i="0">A new Canadian flag was raised for the first time in 1965.</span> <span class="s" data-i="1">The red-white-red pattern comes from the flag of the Royal Military College, Kingston, founded in 1876.</span> <span class="s" data-i="2">Red and white had been colours of France and England since the Middle Ages and the national colours of Canada since 1921.</span> <span class="s" data-i="3">The Union Jack is our official Royal Flag.</span> <span class="s" data-i="4">The Canadian Red Ensign served as the Canadian flag for about 100 years.</span> <span class="s" data-i="5">The provinces and territories also have flags that embody their distinct traditions.</span></div>
+</div></section><section class="rd-sec"><h2>楓葉<small>The maple leaf</small></h2>
+<div class="rd-row" data-p="3">
+  <div class="rd-cell rd-zh"><button class="rd-play" data-lang="zh" data-p="3" type="button" title="朗讀中文">▶</button><span class="s" data-i="0">楓葉是加拿大最著名的象徵。</span><span class="s" data-i="1">楓葉在 1700 年代被法裔加拿大人採用為象徵，自 1850 年代起出現在加拿大的軍服和徽章上，也刻在我們安葬於海外和加拿大的陣亡將士墓碑上。</span></div>
+  <div class="rd-cell rd-en"><button class="rd-play" data-lang="en" data-p="3" type="button" title="Read English">▶</button><span class="s" data-i="0">The maple leaf is Canada&#x27;s best-known symbol.</span> <span class="s" data-i="1">Maple leaves were adopted as a symbol by French Canadians in the 1700s, have appeared on Canadian uniforms and insignia since the 1850s, and are carved into the headstones of our fallen soldiers buried overseas and in Canada.</span></div>
+</div></section><section class="rd-sec"><h2>百合花飾<small>The fleur-de-lys</small></h2>
+<div class="rd-row" data-p="4">
+  <div class="rd-cell rd-zh"><button class="rd-play" data-lang="zh" data-p="4" type="button" title="朗讀中文">▶</button><span class="s" data-i="0">據說百合花飾（fleur-de-lys）是法國國王在西元 496 年採用的。</span><span class="s" data-i="1">它成為法國王室的象徵超過一千年，包括新法蘭西殖民地時期。</span><span class="s" data-i="2">在聯邦成立時重新啟用，百合花飾被納入加拿大紅船旗。</span><span class="s" data-i="3">1948 年，魁北克採用了自己的省旗，以十字和百合花飾為基礎。</span></div>
+  <div class="rd-cell rd-en"><button class="rd-play" data-lang="en" data-p="4" type="button" title="Read English">▶</button><span class="s" data-i="0">It is said that the lily flower (&quot;fleur-de-lys&quot;) was adopted by the French king in the year 496.</span> <span class="s" data-i="1">It became the symbol of French royalty for more than 1,000 years, including the colony of New France.</span> <span class="s" data-i="2">Revived at Confederation, the fleur-de-lys was included in the Canadian Red Ensign.</span> <span class="s" data-i="3">In 1948 Quebec adopted its own flag, based on the Cross and the fleur-de-lys.</span></div>
+</div></section><section class="rd-sec"><h2>國徽與國家格言<small>Coat of arms and motto</small></h2>
+<div class="rd-row" data-p="5">
+  <div class="rd-cell rd-zh"><button class="rd-play" data-lang="zh" data-p="5" type="button" title="朗讀中文">▶</button><span class="s" data-i="0">第一次世界大戰後，為了表達國家的驕傲，加拿大採用了正式的國徽和國家格言「A mari usque ad mare」，拉丁文的意思是「從海到海」。</span><span class="s" data-i="1">國徽包含英格蘭、法國、蘇格蘭和愛爾蘭的象徵，以及紅色楓葉。</span><span class="s" data-i="2">今天可以在紙鈔、政府文件和公共建築上看到國徽。</span></div>
+  <div class="rd-cell rd-en"><button class="rd-play" data-lang="en" data-p="5" type="button" title="Read English">▶</button><span class="s" data-i="0">As an expression of national pride after the First World War, Canada adopted an official coat of arms and a national motto, A mari usque ad mare, which in Latin means &quot;from sea to sea.&quot;</span> <span class="s" data-i="1">The arms contain symbols of England, France, Scotland and Ireland as well as red maple leaves.</span> <span class="s" data-i="2">Today the arms can be seen on dollar bills, government documents and public buildings.</span></div>
+</div></section><section class="rd-sec"><h2>國會大廈<small>Parliament buildings</small></h2>
+<div class="rd-row" data-p="6">
+  <div class="rd-cell rd-zh"><button class="rd-play" data-lang="zh" data-p="6" type="button" title="朗讀中文">▶</button><span class="s" data-i="0">國會大廈的塔樓、拱門、雕塑和彩繪玻璃，體現了法國、英國和原住民的傳統，以及維多利亞女王時代流行的哥德復興式建築。</span><span class="s" data-i="1">這些建築在 1860 年代完工。</span><span class="s" data-i="2">中央大樓在 1916 年因意外火災被毀，1922 年重建。</span><span class="s" data-i="3">圖書館是原始建築唯一保留下來的部分。</span><span class="s" data-i="4">和平塔於 1927 年完工，紀念第一次世界大戰。</span><span class="s" data-i="5">塔內的紀念廳存放著《紀念名冊》，上面寫著在戰爭中或執勤時為加拿大犧牲的陸海空軍將士的名字。</span></div>
+  <div class="rd-cell rd-en"><button class="rd-play" data-lang="en" data-p="6" type="button" title="Read English">▶</button><span class="s" data-i="0">The towers, arches, sculptures and stained glass of the Parliament Buildings embody the French, English and Aboriginal traditions and the Gothic Revival architecture popular in the time of Queen Victoria.</span> <span class="s" data-i="1">The buildings were completed in the 1860s.</span> <span class="s" data-i="2">The Centre Block was destroyed by an accidental fire in 1916 and rebuilt in 1922.</span> <span class="s" data-i="3">The Library is the only part of the original building remaining.</span> <span class="s" data-i="4">The Peace Tower was completed in 1927 in memory of the First World War.</span> <span class="s" data-i="5">The Memorial Chamber within the Tower contains the Books of Remembrance in which are written the names of soldiers, sailors and airmen who died serving Canada in wars or while on duty.</span></div>
+</div>
+<div class="rd-row" data-p="7">
+  <div class="rd-cell rd-zh"><button class="rd-play" data-lang="zh" data-p="7" type="button" title="朗讀中文">▶</button><span class="s" data-i="0">各省的議會大廈都是建築珍寶。</span><span class="s" data-i="1">魁北克國民議會採用法國第二帝國風格，其他省的議會大廈則是巴洛克、羅馬式和新古典主義風格，反映了民主起源的西方文明的希臘羅馬傳統。</span></div>
+  <div class="rd-cell rd-en"><button class="rd-play" data-lang="en" data-p="7" type="button" title="Read English">▶</button><span class="s" data-i="0">The provincial legislatures are architectural treasures.</span> <span class="s" data-i="1">The Quebec National Assembly is built in the French Second Empire style, while the legislatures of the other provinces are Baroque, Romanesque and neoclassical, reflecting the Greco-Roman heritage of Western civilization in which democracy originated.</span></div>
+</div></section><section class="rd-sec"><h2>熱門運動<small>Popular sports</small></h2>
+<div class="rd-row" data-p="8">
+  <div class="rd-cell rd-zh"><button class="rd-play" data-lang="zh" data-p="8" type="button" title="朗讀中文">▶</button><span class="s" data-i="0">曲棍球是加拿大最受歡迎的觀賞運動，被視為國家冬季運動。</span><span class="s" data-i="1">冰上曲棍球是 1800 年代在加拿大發展起來的。</span><span class="s" data-i="2">國家冰球聯盟爭奪冠軍「史丹利盃」，這座獎盃是總督史丹利勳爵在 1892 年捐贈的。</span><span class="s" data-i="3">「克拉克森盃」由第 26 任總督伍冰枝（Adrienne Clarkson，第一位亞裔總督）在 2005 年設立，頒給女子曲棍球。</span><span class="s" data-i="4">許多加拿大年輕人在學校、曲棍球聯盟或安靜的街道上打曲棍球——路上曲棍球或街頭曲棍球——父母也會帶他們去溜冰場。</span><span class="s" data-i="5">加拿大的孩子們世世代代都收集曲棍球卡。</span></div>
+  <div class="rd-cell rd-en"><button class="rd-play" data-lang="en" data-p="8" type="button" title="Read English">▶</button><span class="s" data-i="0">Hockey is Canada&#x27;s most popular spectator sport and is considered to be the national winter sport.</span> <span class="s" data-i="1">Ice hockey was developed in Canada in the 1800s.</span> <span class="s" data-i="2">The National Hockey League plays for the championship Stanley Cup, donated by Lord Stanley, the Governor General, in 1892.</span> <span class="s" data-i="3">The Clarkson Cup, established in 2005 by Adrienne Clarkson, the 26th Governor General (and the first of Asian origin), is awarded for women&#x27;s hockey.</span> <span class="s" data-i="4">Many young Canadians play hockey at school, in a hockey league or on quiet streets—road hockey or street hockey—and are taken to the hockey rink by their parents.</span> <span class="s" data-i="5">Canadian children have collected hockey cards for generations.</span></div>
+</div>
+<div class="rd-row" data-p="9">
+  <div class="rd-cell rd-zh"><button class="rd-play" data-lang="zh" data-p="9" type="button" title="朗讀中文">▶</button><span class="s" data-i="0">加拿大式足球是第二受歡迎的運動。</span><span class="s" data-i="1">冰壺，一種由蘇格蘭拓荒者引進的冰上運動，很受歡迎。</span><span class="s" data-i="2">袋棍球（lacrosse），一種最早由原住民玩的古老運動，是官方的夏季運動。</span><span class="s" data-i="3">足球是加拿大註冊球員最多的運動。</span></div>
+  <div class="rd-cell rd-en"><button class="rd-play" data-lang="en" data-p="9" type="button" title="Read English">▶</button><span class="s" data-i="0">Canadian football is the second most popular sport.</span> <span class="s" data-i="1">Curling, an ice game introduced by Scottish pioneers, is popular.</span> <span class="s" data-i="2">Lacrosse, an ancient sport first played by Aboriginals, is the official summer sport.</span> <span class="s" data-i="3">Soccer has the most registered players of any game in Canada.</span></div>
+</div></section><section class="rd-sec"><h2>海狸<small>The beaver</small></h2>
+<div class="rd-row" data-p="10">
+  <div class="rd-cell rd-zh"><button class="rd-play" data-lang="zh" data-p="10" type="button" title="朗讀中文">▶</button><span class="s" data-i="0">幾百年前，海狸被哈德遜灣公司採用為象徵。</span><span class="s" data-i="1">1834 年，它成為法裔加拿大愛國組織「聖讓－巴蒂斯特協會」的標誌，其他團體也採用它。</span><span class="s" data-i="2">這種勤勞的齧齒動物出現在五分硬幣上、薩克其萬和亞伯達的省徽上，以及蒙特婁和多倫多等城市的市徽上。</span></div>
+  <div class="rd-cell rd-en"><button class="rd-play" data-lang="en" data-p="10" type="button" title="Read English">▶</button><span class="s" data-i="0">The beaver was adopted centuries ago as a symbol of the Hudson&#x27;s Bay Company.</span> <span class="s" data-i="1">It became an emblem of the St. Jean Baptiste Society, a French-Canadian patriotic association, in 1834, and was also adopted by other groups.</span> <span class="s" data-i="2">This industrious rodent can be seen on the five-cent coin, on the coats of arms of Saskatchewan and Alberta, and of cities such as Montreal and Toronto.</span></div>
+</div></section><section class="rd-sec"><h2>加拿大的官方語言<small>Canada&#x27;s official languages</small></h2>
+<div class="rd-row" data-p="11">
+  <div class="rd-cell rd-zh"><button class="rd-play" data-lang="zh" data-p="11" type="button" title="朗讀中文">▶</button><span class="s" data-i="0">英語和法語是兩種官方語言，也是重要的身分象徵。</span><span class="s" data-i="1">說英語的人和說法語的人在夥伴關係與良性張力中共同生活了三百多年。</span><span class="s" data-i="2">要成為加拿大公民，你必須具備足夠的英語或法語能力。</span><span class="s" data-i="3">55 歲以上的成年申請人免除這項要求。</span></div>
+  <div class="rd-cell rd-en"><button class="rd-play" data-lang="en" data-p="11" type="button" title="Read English">▶</button><span class="s" data-i="0">English and French are the two official languages and are important symbols of identity.</span> <span class="s" data-i="1">English speakers (Anglophones) and French speakers (Francophones) have lived together in partnership and creative tension for more than 300 years.</span> <span class="s" data-i="2">You must have adequate knowledge of English or French to become a Canadian citizen.</span> <span class="s" data-i="3">Adult applicants 55 years of age or over are exempted from this requirement.</span></div>
+</div>
+<div class="rd-row" data-p="12">
+  <div class="rd-cell rd-zh"><button class="rd-play" data-lang="zh" data-p="12" type="button" title="朗讀中文">▶</button><span class="s" data-i="0">國會在 1969 年通過《官方語言法》。它有三個主要目標：</span><span class="s" data-i="1">在國會、加拿大政府和受該法規範的機構中，建立法語和英語的平等。</span><span class="s" data-i="2">維持並發展加拿大的官方語言少數社群。</span><span class="s" data-i="3">在加拿大社會中促進法語和英語的平等。</span></div>
+  <div class="rd-cell rd-en"><button class="rd-play" data-lang="en" data-p="12" type="button" title="Read English">▶</button><span class="s" data-i="0">Parliament passed the Official Languages Act in 1969. It has three main objectives:</span> <span class="s" data-i="1">Establish equality between French and English in Parliament, the Government of Canada and institutions subject to the Act.</span> <span class="s" data-i="2">Maintain and develop official language minority communities in Canada.</span> <span class="s" data-i="3">Promote equality of French and English in Canadian society.</span></div>
+</div></section><section class="rd-sec"><h2>國歌<small>National Anthem</small></h2>
+<div class="rd-row" data-p="13">
+  <div class="rd-cell rd-zh"><button class="rd-play" data-lang="zh" data-p="13" type="button" title="朗讀中文">▶</button><span class="s" data-i="0">《噢！加拿大》在 1980 年被宣布為國歌。</span><span class="s" data-i="1">它在 1880 年首次於魁北克市演唱。</span><span class="s" data-i="2">法裔和英裔加拿大人唱的國歌歌詞不同。</span></div>
+  <div class="rd-cell rd-en"><button class="rd-play" data-lang="en" data-p="13" type="button" title="Read English">▶</button><span class="s" data-i="0">O Canada was proclaimed as the national anthem in 1980.</span> <span class="s" data-i="1">It was first sung in Québec City in 1880.</span> <span class="s" data-i="2">French and English Canadians sing different words to the national anthem.</span></div>
+</div>
+<div class="rd-row" data-p="14">
+  <div class="rd-cell rd-zh"><button class="rd-play" data-lang="zh" data-p="14" type="button" title="朗讀中文">▶</button><span class="s" data-i="0">噢！加拿大！我們的家園與故土！你所有的兒女滿懷真摯的愛國心。</span><span class="s" data-i="1">我們懷著熱切的心看著你崛起，真正的北方，強大而自由！</span><span class="s" data-i="2">從四面八方，噢！加拿大，我們為你守望。</span><span class="s" data-i="3">願上帝保佑我們的土地光榮而自由！噢！加拿大，我們為你守望。噢！加拿大，我們為你守望。</span><span class="s" data-i="4">注意：2018 年起，官方英文歌詞把「in all thy sons command」改成「in all of us command」。</span></div>
+  <div class="rd-cell rd-en"><button class="rd-play" data-lang="en" data-p="14" type="button" title="Read English">▶</button><span class="s" data-i="0">O Canada! Our home and native land! True patriot love in all thy sons command.</span> <span class="s" data-i="1">With glowing hearts we see thee rise, the true North strong and free!</span> <span class="s" data-i="2">From far and wide, O Canada, we stand on guard for thee.</span> <span class="s" data-i="3">God keep our land glorious and free! O Canada, we stand on guard for thee. O Canada, we stand on guard for thee.</span> <span class="s" data-i="4">Note: since 2018 the official English lyric is &quot;in all of us command&quot; instead of &quot;in all thy sons command.&quot;</span></div>
+</div></section><section class="rd-sec"><h2>皇家國歌<small>Royal Anthem</small></h2>
+<div class="rd-row" data-p="15">
+  <div class="rd-cell rd-zh"><button class="rd-play" data-lang="zh" data-p="15" type="button" title="朗讀中文">▶</button><span class="s" data-i="0">加拿大的皇家國歌《天佑女王（或國王）》，可以在加拿大人想向君主致敬的任何場合演奏或演唱。</span><span class="s" data-i="1">天佑我們仁慈的女王！我們高貴的女王萬歲！天佑女王！</span><span class="s" data-i="2">願她勝利、幸福而光榮，長久統治我們，天佑女王！</span></div>
+  <div class="rd-cell rd-en"><button class="rd-play" data-lang="en" data-p="15" type="button" title="Read English">▶</button><span class="s" data-i="0">The Royal Anthem of Canada, &quot;God Save the Queen (or King),&quot; can be played or sung on any occasion when Canadians wish to honour the Sovereign.</span> <span class="s" data-i="1">God save our gracious Queen! Long live our noble Queen! God save the Queen!</span> <span class="s" data-i="2">Send her victorious, happy and glorious, long to reign over us, God save the Queen!</span></div>
+</div></section><section class="rd-sec"><h2>加拿大勳章與其他榮譽<small>The Order of Canada and other honours</small></h2>
+<div class="rd-row" data-p="16">
+  <div class="rd-cell rd-zh"><button class="rd-play" data-lang="zh" data-p="16" type="button" title="朗讀中文">▶</button><span class="s" data-i="0">所有國家都有表彰傑出公民的方式。</span><span class="s" data-i="1">官方的獎勵稱為「榮譽」，包括勳章、勳飾和獎章。</span><span class="s" data-i="2">在使用英國榮譽制度多年之後，加拿大在 1967 年——聯邦成立一百週年——以「加拿大勳章」開始了自己的榮譽制度。</span><span class="s" data-i="3">如果你認識值得表彰的公民，歡迎提名他們。</span></div>
+  <div class="rd-cell rd-en"><button class="rd-play" data-lang="en" data-p="16" type="button" title="Read English">▶</button><span class="s" data-i="0">All countries have ways to recognize outstanding citizens.</span> <span class="s" data-i="1">Official awards are called honours, consisting of orders, decorations and medals.</span> <span class="s" data-i="2">After using British honours for many years, Canada started its own honours system with the Order of Canada in 1967, the centennial of Confederation.</span> <span class="s" data-i="3">If you know of fellow citizens who you think are worthy of recognition, you are welcome to nominate them.</span></div>
+</div></section><section class="rd-sec"><h2>維多利亞十字勳章<small>The Victoria Cross</small></h2>
+<div class="rd-row" data-p="17">
+  <div class="rd-cell rd-zh"><button class="rd-play" data-lang="zh" data-p="17" type="button" title="朗讀中文">▶</button><span class="s" data-i="0">維多利亞十字勳章（V.C.）是加拿大人能獲得的最高榮譽，頒給在敵人面前表現出最卓越的勇敢、英勇或自我犧牲的行為，或極度忠於職守的人。</span><span class="s" data-i="1">自 1854 年以來，已有 96 位加拿大人獲頒維多利亞十字勳章，包括：</span><span class="s" data-i="2">當時的中尉亞歷山大・羅伯茨・鄧恩（Alexander Roberts Dunn），生於今天的多倫多，在克里米亞戰爭中隨英軍參加 1854 年巴拉克拉瓦的輕騎兵衝鋒，是第一位獲頒維多利亞十字勳章的加拿大人。</span><span class="s" data-i="3">新斯科細亞霍頓的一等水兵威廉・霍爾（William Hall），父母是美國奴隸，因在 1857 年印度起義的勒克瑙圍城戰中的表現，成為第一位獲頒 V.C. 的黑人。</span><span class="s" data-i="4">生於烏克蘭的下士菲利普・科諾瓦爾（Filip Konowal），在 1917 年的 70 高地戰役中展現非凡的勇氣，成為加拿大軍團中第一位非大英帝國出生而獲頒 V.C. 的人。</span><span class="s" data-i="5">王牌飛行員比利・畢曉普上尉（Billy Bishop），生於安大略歐文桑德，在第一次世界大戰中於皇家飛行隊獲頒 V.C.，後來成為皇家加拿大空軍的榮譽空軍元帥。</span><span class="s" data-i="6">魁北克卡巴諾的保羅・特里凱上尉（Paul Triquet），在第二次世界大戰 1943 年義大利的卡薩貝拉爾迪攻擊戰中率領部下和幾輛坦克，獲頒 V.C.，後來成為准將。</span><span class="s" data-i="7">生於卑詩省特雷爾的海軍飛行員羅伯特・漢普頓・格雷中尉（Robert Hampton Gray），在 1945 年 8 月第二次世界大戰結束前幾天轟炸並擊沉一艘日本軍艦時陣亡，是至今最後一位獲頒 V.C. 的加拿大人。</span></div>
+  <div class="rd-cell rd-en"><button class="rd-play" data-lang="en" data-p="17" type="button" title="Read English">▶</button><span class="s" data-i="0">The Victoria Cross (V.C.) is the highest honour available to Canadians and is awarded for the most conspicuous bravery, a daring or pre-eminent act of valour or self-sacrifice, or extreme devotion to duty in the presence of the enemy.</span> <span class="s" data-i="1">The V.C. has been awarded to 96 Canadians since 1854, including:</span> <span class="s" data-i="2">Then Lieutenant Alexander Roberts Dunn, born in present-day Toronto, served in the British Army in the Charge of the Light Brigade at Balaclava (1854) in the Crimean War, and was the first Canadian to be awarded the Victoria Cross.</span> <span class="s" data-i="3">Able Seaman William Hall of Horton, Nova Scotia, whose parents were American slaves, was the first black man to be awarded the V.C. for his role in the Siege of Lucknow during the Indian Rebellion of 1857.</span> <span class="s" data-i="4">Corporal Filip Konowal, born in Ukraine, showed exceptional courage in the Battle of Hill 70 in 1917, and became the first member of the Canadian Corps not born in the British Empire to be awarded the V.C.</span> <span class="s" data-i="5">Flying ace Captain Billy Bishop, born in Owen Sound, Ontario, earned the V.C. in the Royal Flying Corps during the First World War, and was later an honorary Air Marshal of the Royal Canadian Air Force.</span> <span class="s" data-i="6">Captain Paul Triquet of Cabano, Quebec, earned the V.C. leading his men and a handful of tanks in the attack on Casa Berardi in Italy in 1943 during the Second World War, and was later a Brigadier.</span> <span class="s" data-i="7">Lieutenant Robert Hampton Gray, a navy pilot born in Trail, B.C., was killed while bombing and sinking a Japanese warship in August 1945, a few days before the end of the Second World War, and was the last Canadian to receive the V.C. to date.</span></div>
+</div></section><section class="rd-sec"><h2>國定假日與其他重要日期<small>National Public Holidays and Other Important Dates</small></h2>
+<div class="rd-row" data-p="18">
+  <div class="rd-cell rd-zh"><button class="rd-play" data-lang="zh" data-p="18" type="button" title="朗讀中文">▶</button><span class="s" data-i="0">元旦：1 月 1 日。</span><span class="s" data-i="1">約翰・A・麥克唐納爵士日：1 月 11 日。</span><span class="s" data-i="2">耶穌受難日：復活節星期日之前的星期五。</span><span class="s" data-i="3">復活節星期一：復活節星期日之後的星期一。</span><span class="s" data-i="4">維米日：4 月 9 日。</span><span class="s" data-i="5">維多利亞日：5 月 25 日之前的星期一（君主誕辰）。</span><span class="s" data-i="6">魁北克國慶日：6 月 24 日（施洗者聖約翰節）。</span><span class="s" data-i="7">加拿大日：7 月 1 日。</span><span class="s" data-i="8">勞動節：9 月的第一個星期一。</span><span class="s" data-i="9">感恩節：10 月的第二個星期一。</span><span class="s" data-i="10">國殤紀念日：11 月 11 日。</span><span class="s" data-i="11">威爾弗里德・勞里埃爵士日：11 月 20 日。</span><span class="s" data-i="12">聖誕節：12 月 25 日。</span><span class="s" data-i="13">節禮日：12 月 26 日。</span><span class="s" data-i="14">注意：2021 年起，9 月 30 日也是「全國真相與和解日」。</span></div>
+  <div class="rd-cell rd-en"><button class="rd-play" data-lang="en" data-p="18" type="button" title="Read English">▶</button><span class="s" data-i="0">New Year&#x27;s Day: January 1.</span> <span class="s" data-i="1">Sir John A. Macdonald Day: January 11.</span> <span class="s" data-i="2">Good Friday: Friday immediately preceding Easter Sunday.</span> <span class="s" data-i="3">Easter Monday: Monday immediately following Easter Sunday.</span> <span class="s" data-i="4">Vimy Day: April 9.</span> <span class="s" data-i="5">Victoria Day: Monday preceding May 25 (Sovereign&#x27;s birthday).</span> <span class="s" data-i="6">Fête nationale (Quebec): June 24 (Feast of St. John the Baptist).</span> <span class="s" data-i="7">Canada Day: July 1.</span> <span class="s" data-i="8">Labour Day: First Monday of September.</span> <span class="s" data-i="9">Thanksgiving Day: Second Monday of October.</span> <span class="s" data-i="10">Remembrance Day: November 11.</span> <span class="s" data-i="11">Sir Wilfrid Laurier Day: November 20.</span> <span class="s" data-i="12">Christmas Day: December 25.</span> <span class="s" data-i="13">Boxing Day: December 26.</span> <span class="s" data-i="14">Note: since 2021, September 30 is also the National Day for Truth and Reconciliation.</span></div>
+</div></section>
+</div>
+<script type="application/json" id="rd-09-timings">{"en": [[[0.0, 5.659], [5.659, 10.744], [10.744, 13.879]], [[0.0, 4.126], [4.126, 12.242], [12.242, 25.64], [25.64, 33.43], [33.43, 40.837]], [[0.0, 4.616], [4.616, 11.965], [11.965, 19.744], [19.744, 22.484], [22.484, 27.174], [27.174, 32.074]], [[0.0, 2.793], [2.793, 17.549]], [[0.0, 6.206], [6.206, 12.626], [12.626, 17.63], [17.63, 22.854]], [[0.0, 11.975], [11.975, 18.824], [18.824, 23.735]], [[0.0, 12.544], [12.544, 15.644], [15.644, 22.111], [22.111, 25.78], [25.78, 31.027], [31.027, 40.954]], [[0.0, 3.326], [3.326, 18.686]], [[0.0, 6.008], [6.008, 9.607], [9.607, 18.628], [18.628, 29.472], [29.472, 39.944], [39.944, 43.729]], [[0.0, 3.341], [3.341, 8.194], [8.194, 13.79], [13.79, 17.506]], [[0.0, 4.388], [4.388, 15.116], [15.116, 24.775]], [[0.0, 4.849], [4.849, 14.404], [14.404, 18.979], [18.979, 23.89]], [[0.0, 6.264], [6.264, 13.358], [13.358, 17.665], [17.665, 21.392]], [[0.0, 3.814], [3.814, 6.995], [6.995, 11.14]], [[0.0, 5.755], [5.755, 10.074], [10.074, 13.975], [13.975, 21.893], [21.893, 29.358]], [[0.0, 8.55], [8.55, 14.216], [14.216, 19.8]], [[0.0, 3.804], [3.804, 9.052], [9.052, 19.013], [19.013, 24.319]], [[0.0, 15.576], [15.576, 21.335], [21.335, 37.078], [37.078, 51.73], [51.73, 64.849], [64.849, 77.69], [77.69, 90.774], [90.774, 108.259]], [[0.0, 2.596], [2.596, 6.148], [6.148, 10.514], [10.514, 14.635], [14.635, 16.586], [16.586, 21.624], [21.624, 27.011], [27.011, 29.299], [29.299, 32.247], [32.247, 35.429], [35.429, 38.122], [38.122, 41.489], [41.489, 44.159], [44.159, 46.841], [46.841, 53.993]]], "zh": [[[0.0, 6.673], [6.673, 12.803], [12.803, 16.681]], [[0.0, 4.522], [4.522, 12.324], [12.324, 22.413], [22.413, 29.82], [29.82, 38.052]], [[0.0, 3.782], [3.782, 10.121], [10.121, 18.562], [18.562, 22.323], [22.323, 27.246], [27.246, 30.834]], [[0.0, 3.04], [3.04, 15.834]], [[0.0, 5.419], [5.419, 11.584], [11.584, 17.32], [17.32, 23.926]], [[0.0, 12.815], [12.815, 20.396], [20.396, 25.76]], [[0.0, 12.454], [12.454, 15.624], [15.624, 21.51], [21.51, 25.341], [25.341, 30.519], [30.519, 38.751]], [[0.0, 3.027], [3.027, 15.949]], [[0.0, 6.151], [6.151, 10.388], [10.388, 18.933], [18.933, 28.941], [28.941, 40.713], [40.713, 44.266]], [[0.0, 3.469], [3.469, 9.599], [9.599, 17.052], [17.052, 20.524]], [[0.0, 4.827], [4.827, 15.067], [15.067, 24.982]], [[0.0, 5.268], [5.268, 12.071], [12.071, 17.516], [17.516, 21.301]], [[0.0, 6.115], [6.115, 12.884], [12.884, 16.727], [16.727, 20.36]], [[0.0, 4.234], [4.234, 7.833], [7.833, 11.351]], [[0.0, 7.322], [7.322, 13.267], [13.267, 18.654], [18.654, 29.3], [29.3, 38.495]], [[0.0, 8.229], [8.229, 14.521], [14.521, 20.5]], [[0.0, 3.396], [3.396, 9.538], [9.538, 21.415], [21.415, 25.85]], [[0.0, 14.412], [14.412, 22.121], [22.121, 36.866], [36.866, 50.775], [50.775, 64.591], [64.591, 78.848], [78.848, 93.43], [93.43, 111.588]], [[0.0, 2.233], [2.233, 6.25], [6.25, 10.616], [10.616, 15.271], [15.271, 17.918], [17.918, 22.853], [22.853, 27.694], [27.694, 30.434], [30.434, 33.929], [33.929, 37.377], [37.377, 40.871], [40.871, 44.958], [44.958, 48.058], [48.058, 51.111], [51.111, 57.764]]]}</script>
+
+<script>
+(function() {
+  var root = document.getElementById('rd-09');
+  if (!root) return;
+  var T = JSON.parse(document.getElementById('rd-09-timings').textContent || '{}');
+  T.en = T.en || []; T.zh = T.zh || [];
+  var base = (location.pathname.indexOf('/reading/') >= 0 ? '../' : '') + 'audio/09/';
+  var audio = new Audio();
+  var cur = { lang: null, p: -1, i: -1 };
+  var loadedSrc = '';
+  var rate = 1;
+  var status = root.querySelector('.rd-status');
+  var nParas = root.querySelectorAll('.rd-row').length;
+
+  function clearMarks() {
+    root.querySelectorAll('.s.on').forEach(function(e){ e.classList.remove('on'); });
+    root.querySelectorAll('.rd-row.playing').forEach(function(e){ e.classList.remove('playing'); });
+    root.querySelectorAll('.rd-play.on').forEach(function(e){ e.classList.remove('on'); e.textContent = '▶'; });
+  }
+  function mark(p, i) {
+    clearMarks();
+    var row = root.querySelector('.rd-row[data-p="' + p + '"]');
+    if (!row) return;
+    row.classList.add('playing');
+    row.querySelectorAll('.s[data-i="' + i + '"]').forEach(function(e){ e.classList.add('on'); });
+    var btn = row.querySelector('.rd-play[data-lang="' + cur.lang + '"]');
+    if (btn) { btn.classList.add('on'); btn.textContent = '❚❚'; }
+    var el = row.querySelector('.rd-' + cur.lang + ' .s[data-i="' + i + '"]') || row;
+    var r = el.getBoundingClientRect();
+    if (r.top < 90 || r.bottom > window.innerHeight - 40) el.scrollIntoView({ block: 'center', behavior: 'smooth' });
+    if (status) status.textContent = (cur.lang === 'en' ? 'English' : '中文') + ' · 第 ' + (p + 1) + ' / ' + nParas + ' 段';
+  }
+  function seekStart(lang, p, i) {
+    var t = T[lang] && T[lang][p];
+    return (t && t[i]) ? t[i][0] : 0;
+  }
+  function play(lang, p, i) {
+    if (p < 0 || p >= nParas) { stop(); return; }
+    cur = { lang: lang, p: p, i: i };
+    var src = base + lang + '/p' + p + '.m4a';
+    var at = seekStart(lang, p, i);
+    if (loadedSrc !== src) {
+      loadedSrc = src;
+      audio.src = src;
+      var onMeta = function() {
+        audio.removeEventListener('loadedmetadata', onMeta);
+        audio.currentTime = at;
+        audio.playbackRate = rate;
+        audio.play().catch(function(){});
+      };
+      audio.addEventListener('loadedmetadata', onMeta);
+      audio.load();
+    } else {
+      audio.currentTime = at;
+      audio.playbackRate = rate;
+      audio.play().catch(function(){});
+    }
+    mark(p, i);
+  }
+  function stop() {
+    audio.pause();
+    clearMarks();
+    cur = { lang: null, p: -1, i: -1 };
+    if (status) status.textContent = '';
+  }
+  function pause() {
+    audio.pause();
+    var row = root.querySelector('.rd-row.playing .rd-play.on');
+    if (row) { row.classList.remove('on'); row.textContent = '▶'; }
+  }
+  function resume() {
+    if (cur.p < 0) return;
+    audio.playbackRate = rate;
+    audio.play().catch(function(){});
+    mark(cur.p, cur.i);
+  }
+
+  audio.addEventListener('timeupdate', function() {
+    if (cur.p < 0) return;
+    var t = T[cur.lang] && T[cur.lang][cur.p];
+    if (!t) return;
+    var tt = audio.currentTime;
+    for (var k = 0; k < t.length; k++) {
+      var last = (k === t.length - 1);
+      if (tt >= t[k][0] - 0.05 && (last || tt < t[k + 1][0])) {
+        if (k !== cur.i) { cur.i = k; mark(cur.p, k); }
+        break;
+      }
+    }
+  });
+  audio.addEventListener('ended', function() {
+    var cont = root.querySelector('.rd-cont');
+    if (cont && cont.checked && cur.p + 1 < nParas) play(cur.lang, cur.p + 1, 0);
+    else stop();
+  });
+
+  root.addEventListener('click', function(e) {
+    var btn = e.target.closest && e.target.closest('.rd-play');
+    if (btn) {
+      var p = parseInt(btn.dataset.p, 10), lang = btn.dataset.lang;
+      if (cur.p === p && cur.lang === lang) {
+        if (audio.paused) resume(); else pause();
+      } else {
+        play(lang, p, 0);
+      }
+      return;
+    }
+    var s = e.target.closest && e.target.closest('.s');
+    if (s) {
+      var sel = window.getSelection && window.getSelection();
+      if (sel && sel.toString().length) return;
+      var cell = s.closest('.rd-cell');
+      var row = s.closest('.rd-row');
+      var lang2 = cell.classList.contains('rd-en') ? 'en' : 'zh';
+      play(lang2, parseInt(row.dataset.p, 10), parseInt(s.dataset.i, 10));
+    }
+  });
+
+  var bar = root.querySelector('.rd-bar');
+  bar.querySelector('.rd-all-zh').addEventListener('click', function(){ play('zh', 0, 0); });
+  bar.querySelector('.rd-all-en').addEventListener('click', function(){ play('en', 0, 0); });
+  bar.querySelector('.rd-pause').addEventListener('click', function(){
+    if (cur.p < 0) return;
+    if (audio.paused) resume(); else pause();
+  });
+  bar.querySelector('.rd-stop').addEventListener('click', stop);
+  bar.querySelector('.rd-rate').addEventListener('change', function(e){
+    rate = parseFloat(e.target.value) || 1;
+    audio.playbackRate = rate;
+  });
+  document.addEventListener('keydown', function(e) {
+    if (e.code !== 'Space' || cur.p < 0) return;
+    if (/input|select|textarea/i.test(e.target.tagName)) return;
+    e.preventDefault();
+    if (audio.paused) resume(); else pause();
+  });
+  window.addEventListener('hashchange', stop);
+  window.addEventListener('pagehide', function(){ audio.pause(); });
+})();
+</script>
+
+</main>
+</div>
+<script>
+(function() {
+  if (!('speechSynthesis' in window)) return;
+  var synth = window.speechSynthesis;
+  var voicesReady = false;
+
+  var ICON_SPEAKER = '<svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 10v4h4l5 4V6L7 10H3zm12.5 2c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM13 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg>';
+  var ICON_PAUSE = '<svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6 5h4v14H6zM14 5h4v14h-4z"/></svg>';
+  var ICON_PLAY = '<svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>';
+
+  // single global state — only one TTS session at a time
+  var state = {
+    btn: null, chunks: null, words: null, chunkIdx: 0, paused: false
+  };
+
+  function ensureVoices(cb) {
+    if (voicesReady) return cb();
+    var v = synth.getVoices();
+    if (v && v.length) { voicesReady = true; return cb(); }
+    synth.onvoiceschanged = function() { voicesReady = true; cb(); };
+    setTimeout(function(){ if (!voicesReady) { voicesReady = true; cb(); } }, 500);
+  }
+
+  function pickVoice() {
+    var voices = synth.getVoices();
+    function find(pred){ for (var i=0;i<voices.length;i++) if (pred(voices[i])) return voices[i]; return null; }
+    return find(function(v){return v.lang==='en-CA' && /Samantha|Karen|Tessa|Victoria|Allison|Siri/i.test(v.name);})
+        || find(function(v){return v.lang==='en-CA';})
+        || find(function(v){return v.lang==='en-US' && /Samantha|Karen|Allison|Ava|Siri/i.test(v.name);})
+        || find(function(v){return v.lang==='en-US';})
+        || find(function(v){return v.lang && v.lang.indexOf('en')===0;})
+        || null;
+  }
+
+  // Wrap each word in container in a <span class="w" data-idx="N"> for highlighting.
+  function wrapWords(container) {
+    if (container.dataset.wrapped === '1') return;
+    var walker = document.createTreeWalker(container, NodeFilter.SHOW_TEXT, null, false);
+    var nodes = [];
+    var n;
+    while ((n = walker.nextNode())) {
+      if (!n.parentElement) continue;
+      if (n.parentElement.closest('.speak-btn, .label')) continue;
+      if (!/\S/.test(n.nodeValue)) continue;
+      nodes.push(n);
+    }
+    var idx = 0;
+    nodes.forEach(function(tn) {
+      var text = tn.nodeValue;
+      var tokens = text.split(/(\s+)/);
+      var frag = document.createDocumentFragment();
+      tokens.forEach(function(tok) {
+        if (tok.length === 0) return;
+        if (/^\s+$/.test(tok)) {
+          frag.appendChild(document.createTextNode(tok));
+        } else {
+          var sp = document.createElement('span');
+          sp.className = 'w';
+          sp.setAttribute('data-idx', idx++);
+          sp.textContent = tok;
+          frag.appendChild(sp);
+        }
+      });
+      tn.parentNode.replaceChild(frag, tn);
+    });
+    container.dataset.wrapped = '1';
+  }
+
+  // Group words into chunks split on punctuation, with a pause duration after each chunk.
+  function buildChunks(words) {
+    var chunks = [];
+    var cur = { words: [] };
+    function commit(pauseMs) {
+      if (!cur.words.length) return;
+      cur.text = cur.words.map(function(w){ return w.text; }).join(' ');
+      cur.pauseAfterMs = pauseMs;
+      chunks.push(cur);
+      cur = { words: [] };
+    }
+    words.forEach(function(wEl, i) {
+      var text = wEl.textContent;
+      cur.words.push({ el: wEl, idx: i, text: text });
+      // sentence-ending punctuation → long pause
+      if (/[.!?]+["')\]]*$/.test(text) && text.length > 1) {
+        commit(420);
+      }
+      // semicolon / colon → medium pause
+      else if (/[;:]+["')\]]*$/.test(text)) {
+        commit(300);
+      }
+      // comma or em-dash → short pause
+      else if (/[,—–][")'\]]*$/.test(text)) {
+        commit(220);
+      }
+    });
+    commit(0);
+    return chunks;
+  }
+
+  function highlight(globalIdx) {
+    if (!state.words) return;
+    for (var i = 0; i < state.words.length; i++) {
+      if (i === globalIdx) state.words[i].classList.add('current');
+      else state.words[i].classList.remove('current');
+    }
+  }
+
+  function clearHighlight() {
+    if (!state.words) return;
+    state.words.forEach(function(w){ w.classList.remove('current'); });
+  }
+
+  function findWordAtChar(chunk, charIndex) {
+    var pos = 0;
+    for (var i = 0; i < chunk.words.length; i++) {
+      var len = chunk.words[i].text.length;
+      if (charIndex >= pos && charIndex < pos + len) return i;
+      pos += len + 1; // space
+    }
+    return -1;
+  }
+
+  function setBtnState(btn, s) {
+    if (!btn) return;
+    btn.classList.remove('speaking', 'paused');
+    if (s === 'speaking') btn.classList.add('speaking');
+    else if (s === 'paused') btn.classList.add('paused');
+    btn.setAttribute('data-state', s);
+    var icon = btn.querySelector('.speak-icon');
+    var label = btn.querySelector('.speak-label');
+    if (s === 'idle')     { if (icon) icon.innerHTML = ICON_SPEAKER; if (label) label.textContent = '朗讀'; }
+    else if (s === 'speaking') { if (icon) icon.innerHTML = ICON_PAUSE;   if (label) label.textContent = '暫停'; }
+    else if (s === 'paused')   { if (icon) icon.innerHTML = ICON_PLAY;    if (label) label.textContent = '繼續'; }
+  }
+
+  function stopAll() {
+    state.suppressNextEnd = true;  // ignore the cancel-induced end/error
+    synth.cancel();
+    if (state.btn) setBtnState(state.btn, 'idle');
+    clearHighlight();
+    state.btn = null; state.chunks = null; state.words = null;
+    state.chunkIdx = 0; state.paused = false;
+    // reset suppression on next tick
+    setTimeout(function(){ state.suppressNextEnd = false; }, 100);
+  }
+
+  function findChunkForWord(chunks, wordIdx) {
+    for (var i = 0; i < chunks.length; i++) {
+      for (var j = 0; j < chunks[i].words.length; j++) {
+        if (chunks[i].words[j].idx === wordIdx) return i;
+      }
+    }
+    return -1;
+  }
+
+  function speakFrom(chunkIdx) {
+    if (!state.chunks || chunkIdx >= state.chunks.length) { stopAll(); return; }
+    state.chunkIdx = chunkIdx;
+    var chunk = state.chunks[chunkIdx];
+    var u = new SpeechSynthesisUtterance(chunk.text);
+    u.lang = 'en-CA';
+    u.rate = 0.92;
+    u.pitch = 1.0;
+    var v = pickVoice();
+    if (v) u.voice = v;
+
+    u.onstart = function() {
+      if (chunk.words[0]) highlight(chunk.words[0].idx);
+    };
+    u.onboundary = function(e) {
+      if (e.name && e.name !== 'word') return;
+      var w = findWordAtChar(chunk, e.charIndex || 0);
+      if (w >= 0) highlight(chunk.words[w].idx);
+    };
+    u.onend = function() {
+      // ignore the end event if it was triggered by our own cancel (pause/jump/stop)
+      if (state.suppressNextEnd) { state.suppressNextEnd = false; return; }
+      if (state.paused) return;
+      var next = chunkIdx + 1;
+      if (next >= state.chunks.length) { stopAll(); return; }
+      setTimeout(function() {
+        if (!state.paused && state.chunks) speakFrom(next);
+      }, chunk.pauseAfterMs);
+    };
+    u.onerror = function() {
+      if (state.suppressNextEnd) { state.suppressNextEnd = false; return; }
+      if (state.paused) return; // user paused — keep state for resume
+      stopAll();
+    };
+
+    synth.speak(u);
+  }
+
+  // Start fresh speech for a container, optionally from a specific chunk index.
+  function startFresh(container, btn, fromChunk) {
+    stopAll();
+    wrapWords(container);
+    var words = Array.prototype.slice.call(container.querySelectorAll('.w'));
+    if (!words.length) return;
+    state.btn = btn;
+    state.words = words;
+    state.chunks = buildChunks(words);
+    state.chunkIdx = Math.max(0, Math.min(fromChunk || 0, state.chunks.length - 1));
+    state.paused = false;
+    setBtnState(btn, 'speaking');
+    speakFrom(state.chunkIdx);
+  }
+
+  // Jump speech to a specific word — restart the chunk containing it.
+  function jumpToWord(container, btn, wordIdx) {
+    // Same container that's currently speaking/paused → in-place jump
+    if (state.btn === btn && state.chunks && state.words) {
+      var ci = findChunkForWord(state.chunks, wordIdx);
+      if (ci < 0) return;
+      state.suppressNextEnd = true;
+      synth.cancel();
+      state.chunkIdx = ci;
+      state.paused = false;
+      setBtnState(btn, 'speaking');
+      setTimeout(function() {
+        state.suppressNextEnd = false;
+        if (state.chunks) speakFrom(ci);
+      }, 60);
+      return;
+    }
+    // Different container or fresh start — figure out chunk first
+    wrapWords(container);
+    var words = Array.prototype.slice.call(container.querySelectorAll('.w'));
+    if (!words.length) return;
+    var chunks = buildChunks(words);
+    var ci2 = findChunkForWord(chunks, wordIdx);
+    startFresh(container, btn, ci2 >= 0 ? ci2 : 0);
+  }
+
+  function speakableContainerOf(el) {
+    return el.closest && el.closest('.bilingual .en, blockquote.speakable, .callout.speakable');
+  }
+
+  document.addEventListener('click', function(e) {
+    // --- speak button ---
+    var btn = e.target.closest && e.target.closest('.speak-btn');
+    if (btn) {
+      e.preventDefault();
+      var s = btn.getAttribute('data-state') || 'idle';
+      if (s === 'speaking') {
+        // pause: set flag BEFORE cancel so onend/onerror preserve state
+        state.paused = true;
+        synth.cancel();
+        setBtnState(btn, 'paused');
+        return;
+      }
+      if (s === 'paused') {
+        // resume: restart current chunk
+        state.paused = false;
+        setBtnState(btn, 'speaking');
+        if (state.chunks) speakFrom(state.chunkIdx);
+        return;
+      }
+      // idle → new speech from start
+      ensureVoices(function() { startFresh(btn.parentElement, btn, 0); });
+      return;
+    }
+
+    // --- word click (play from here) ---
+    var w = e.target.closest && e.target.closest('.w');
+    if (!w) return;
+    // skip if user is selecting text
+    var sel = window.getSelection && window.getSelection();
+    if (sel && sel.toString && sel.toString().length > 0) return;
+    var container = speakableContainerOf(w);
+    if (!container) return;
+    var speakBtn = container.querySelector('.speak-btn');
+    if (!speakBtn) return;
+    e.preventDefault();
+    var widx = parseInt(w.getAttribute('data-idx'), 10);
+    if (isNaN(widx)) return;
+    ensureVoices(function() { jumpToWord(container, speakBtn, widx); });
+  });
+
+  // Pre-wrap all speakable containers during idle time so word-click works without first hitting the button
+  function preWrapAll() {
+    var containers = document.querySelectorAll('.bilingual .en, blockquote.speakable, .callout.speakable');
+    var i = 0;
+    function step() {
+      if (i >= containers.length) return;
+      try { wrapWords(containers[i]); } catch (e) {}
+      i++;
+      if (window.requestIdleCallback) requestIdleCallback(step, { timeout: 200 });
+      else setTimeout(step, 0);
+    }
+    step();
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', preWrapAll);
+  else preWrapAll();
+
+  window.addEventListener('hashchange', stopAll);
+  window.addEventListener('pagehide', stopAll);
+})();
+</script>
+</body>
+</html>

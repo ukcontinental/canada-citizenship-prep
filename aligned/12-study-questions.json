@@ -1,0 +1,91 @@
+{
+  "num": "12",
+  "title_en": "Study Questions",
+  "title_zh": "官方練習題",
+  "sections": [
+    {
+      "title_en": "Study Questions",
+      "title_zh": "官方練習題",
+      "paras": [
+        [
+          {"en": "One of the basic requirements of citizenship is to demonstrate that you have adequate knowledge of Canada.", "zh": "公民身分的基本要求之一，是證明你對加拿大有足夠的了解。"},
+          {"en": "The citizenship test is used to assess your knowledge of Canada and the rights and responsibilities of being a citizen in Canada.", "zh": "公民考試用來評估你對加拿大以及身為加拿大公民的權利與責任的了解。"},
+          {"en": "All the citizenship test questions are based on information provided in this study guide.", "zh": "所有公民考試的題目都根據這本學習指南提供的資訊出題。"},
+          {"en": "You will be asked about facts and ideas presented in the guide.", "zh": "你會被問到指南中提到的事實和概念。"},
+          {"en": "The questions below are similar to the questions that are found on the citizenship test.", "zh": "下面的題目和公民考試中的題目類似。"},
+          {"en": "Use these questions to prepare for your test. All the answers can be found in this study guide.", "zh": "用這些題目來準備你的考試。所有答案都可以在這本學習指南裡找到。"}
+        ]
+      ]
+    },
+    {
+      "title_en": "Sample multiple-choice questions",
+      "title_zh": "選擇題範例",
+      "paras": [
+        [
+          {"en": "What are three responsibilities of citizenship?", "zh": "公民的三項責任是什麼？"},
+          {"en": "a) Being loyal to Canada, recycling newspapers, serving in the navy, army or air force.", "zh": "a）效忠加拿大、回收報紙、在海軍、陸軍或空軍服役。"},
+          {"en": "b) Obeying the law, taking responsibility for oneself and one's family, serving on a jury.", "zh": "b）遵守法律、為自己和家人負責、擔任陪審員。"},
+          {"en": "c) Learning both official languages, voting in elections, belonging to a union.", "zh": "c）學習兩種官方語言、在選舉中投票、加入工會。"},
+          {"en": "d) Buying Canadian products, owning your own business, using less water.", "zh": "d）購買加拿大產品、擁有自己的事業、少用水。"},
+          {"en": "The answer is b.", "zh": "答案是 b。"}
+        ],
+        [
+          {"en": "What is the meaning of the Remembrance Day poppy?", "zh": "國殤紀念日的罌粟花有什麼意義？"},
+          {"en": "a) To remember our Sovereign, Queen Elizabeth II.", "zh": "a）紀念我們的君主伊莉莎白二世女王。"},
+          {"en": "b) To celebrate Confederation.", "zh": "b）慶祝聯邦成立。"},
+          {"en": "c) To honour prime ministers who have died.", "zh": "c）向已故的總理致敬。"},
+          {"en": "d) To remember the sacrifice of Canadians who have served or died in wars up to the present day.", "zh": "d）紀念至今在戰爭中服役或犧牲的加拿大人。"},
+          {"en": "The answer is d.", "zh": "答案是 d。"}
+        ],
+        [
+          {"en": "How are members of Parliament chosen?", "zh": "國會議員是怎麼產生的？"},
+          {"en": "a) They are appointed by the United Nations.", "zh": "a）由聯合國任命。"},
+          {"en": "b) They are chosen by the provincial premiers.", "zh": "b）由各省省長挑選。"},
+          {"en": "c) They are elected by voters in their local constituency (riding).", "zh": "c）由他們所在選區的選民選出。"},
+          {"en": "d) They are elected by landowners and police chiefs.", "zh": "d）由地主和警察局長選出。"},
+          {"en": "The answer is c.", "zh": "答案是 c。"}
+        ]
+      ]
+    },
+    {
+      "title_en": "Other study questions",
+      "title_zh": "其他練習題",
+      "paras": [
+        [
+          {"en": "Name two key documents that contain our rights and freedoms.", "zh": "說出兩份包含我們權利與自由的重要文件。"},
+          {"en": "Identify four rights that Canadians enjoy.", "zh": "指出加拿大人享有的四項權利。"},
+          {"en": "Name four fundamental freedoms that Canadians enjoy.", "zh": "說出加拿大人享有的四項基本自由。"},
+          {"en": "What is meant by the equality of women and men?", "zh": "「男女平等」是什麼意思？"},
+          {"en": "What are some examples of taking responsibility for yourself and your family?", "zh": "「為自己和家人負責」有哪些例子？"},
+          {"en": "Who were the founding peoples of Canada?", "zh": "加拿大的奠基民族是誰？"},
+          {"en": "Who are the Métis?", "zh": "梅蒂人是誰？"},
+          {"en": "What does the word \"Inuit\" mean?", "zh": "「Inuit」這個詞是什麼意思？"},
+          {"en": "What is meant by the term \"responsible government\"?", "zh": "「責任政府」這個詞是什麼意思？"},
+          {"en": "Who was Sir Louis-Hippolyte La Fontaine?", "zh": "路易－伊波利特・拉方丹爵士是誰？"}
+        ],
+        [
+          {"en": "What did the Canadian Pacific Railway symbolize?", "zh": "加拿大太平洋鐵路象徵什麼？"},
+          {"en": "What does Confederation mean?", "zh": "「聯邦」（Confederation）是什麼意思？"},
+          {"en": "What is the significance of the discovery of insulin by Sir Frederick Banting and Charles Best?", "zh": "弗雷德里克・班廷爵士和查爾斯・貝斯特發現胰島素有什麼重要意義？"},
+          {"en": "What does it mean to say that Canada is a constitutional monarchy?", "zh": "說加拿大是「君主立憲國」是什麼意思？"},
+          {"en": "What are the three branches of government?", "zh": "政府的三個部門是什麼？"},
+          {"en": "What is the difference between the role of the Queen and that of the Prime Minister?", "zh": "女王的角色和總理的角色有什麼不同？"},
+          {"en": "What is the highest honour that Canadians can receive?", "zh": "加拿大人能獲得的最高榮譽是什麼？"},
+          {"en": "When you go to vote on election day, what do you do?", "zh": "選舉日去投票時，你要做什麼？"},
+          {"en": "Who is entitled to vote in Canadian federal elections?", "zh": "誰有資格在加拿大聯邦選舉中投票？"},
+          {"en": "In Canada, are you obliged to tell other people how you voted?", "zh": "在加拿大，你有義務告訴別人你投給了誰嗎？"}
+        ],
+        [
+          {"en": "After an election, which party forms the government?", "zh": "選舉之後，哪個政黨組成政府？"},
+          {"en": "Who is your member of Parliament?", "zh": "你的國會議員是誰？"},
+          {"en": "What are the three levels of government?", "zh": "三級政府是哪三級？"},
+          {"en": "What is the role of the courts in Canada?", "zh": "法院在加拿大的角色是什麼？"},
+          {"en": "In Canada, are you allowed to question the police about their service or conduct?", "zh": "在加拿大，你可以質疑警察的服務或行為嗎？"},
+          {"en": "Name two Canadian symbols.", "zh": "說出兩個加拿大的象徵。"},
+          {"en": "What provinces are referred to as the Atlantic Provinces?", "zh": "哪些省被稱為大西洋省份？"},
+          {"en": "What is the capital of the province or territory that you live in?", "zh": "你居住的省或地區的首府是哪裡？"}
+        ]
+      ]
+    }
+  ]
+}

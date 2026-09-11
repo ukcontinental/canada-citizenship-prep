@@ -450,36 +450,27 @@ def make_sidebar(current: str) -> str:
     home = up + "index.html"
 
     parts = [f'<a href="{home}" class="home">加拿大公民考試</a>']
-    parts.append(f'<a href="{up}curriculum/14-day-plan.html"' +
-                 (' class="current"' if current == "curriculum/14-day-plan.html" else "") +
-                 ">📅 14 天計畫表</a>")
-    parts.append(f'<a href="{up}practice/question-bank.html"' +
-                 (' class="current"' if current == "practice/question-bank.html" else "") +
-                 ">📝 220 題題庫</a>")
 
-    parts.append('<h2>中英對照（13 章）</h2>')
-    for fn, label in bilingual_items:
-        key = f"bilingual/{fn}"
+    parts.append('<h2>🎧 人聲朗讀對照</h2>')
+    for fn, label in READING_ITEMS:
+        key = f"reading/{fn}"
         cls = ' class="current"' if current == key else ""
-        parts.append(f'<a href="{up}bilingual/{fn}"{cls}>{label}</a>')
+        parts.append(f'<a href="{up}reading/{fn}"{cls}>{label}</a>')
 
-    parts.append('<h2>每日驗收（14 天）</h2>')
-    for fn, label in quiz_items:
-        key = f"daily-quiz/{fn}"
-        cls = ' class="current"' if current == key else ""
-        parts.append(f'<a href="{up}daily-quiz/{fn}"{cls}>{label}</a>')
-
-    parts.append('<h2>互動式（圖解）</h2>')
+    parts.append('<h2>🧠 每章重點互動記憶</h2>')
     for fn, label in INTERACTIVE_ITEMS:
         key = f"interactive/{fn}"
         cls = ' class="current"' if current == key else ""
         parts.append(f'<a href="{up}interactive/{fn}"{cls}>{label}</a>')
 
-    parts.append('<h2>人聲朗讀對照</h2>')
-    for fn, label in READING_ITEMS:
-        key = f"reading/{fn}"
+    parts.append('<h2>📝 考題</h2>')
+    parts.append(f'<a href="{up}practice/question-bank.html"' +
+                 (' class="current"' if current == "practice/question-bank.html" else "") +
+                 ">220 題題庫（依章節）</a>")
+    for fn, label in quiz_items:
+        key = f"daily-quiz/{fn}"
         cls = ' class="current"' if current == key else ""
-        parts.append(f'<a href="{up}reading/{fn}"{cls}>{label}</a>')
+        parts.append(f'<a href="{up}daily-quiz/{fn}"{cls}>驗收 {label}</a>')
 
     return '<nav class="sidebar">\n' + "\n".join(parts) + "\n</nav>"
 
@@ -1043,6 +1034,10 @@ def rewrite_md_links(html_str: str) -> str:
         if href.startswith(("http://", "https://", "#", "mailto:")):
             return m.group(0)
         new = href.replace(".md", ".html")
+        # old bilingual pages are gone; the human-voice reader uses the same stems
+        new = new.replace("bilingual/README.html", "reading/00-intro-oath.html")
+        new = new.replace("bilingual/", "reading/")
+        new = new.replace("curriculum/14-day-plan.html", "index.html")
         return f'href="{new}"'
     return re.sub(r'href="([^"]+)"', repl, html_str)
 
@@ -1059,29 +1054,29 @@ def title_from_md(md_path: Path) -> str:
 
 INDEX_INTRO = """
 <h1>加拿大公民考試 · 學習中心</h1>
-<p>對照 IRCC 官方《Discover Canada》（2024-12-18 最新版本），14 天衝刺到考試合格。</p>
+<p>整本 IRCC 官方《Discover Canada》：左中文、右英文、真人聲朗讀、念到哪句標到哪。三步走：先聽讀全書 → 用互動圖解記重點 → 做考題驗收。</p>
 
-<h2>從這裡開始</h2>
+<h2>🎧 一、人聲朗讀對照（全書 13 章）</h2>
 <div class="dash">
-  <a href="curriculum/14-day-plan.html">
-    <span class="kicker">總覽</span>
-    <span class="title">14 天計畫表</span>
-    <span class="meta">每日主題、驗收門檻、進度儀表板</span>
-  </a>
-  <a href="daily-quiz/day-01.html">
-    <span class="kicker">今天 · Day 1</span>
-    <span class="title">入籍誓詞＋權利義務</span>
-    <span class="meta">PDF p.2–9 · 20 題驗收 · 通過 15/20</span>
-  </a>
-  <a href="bilingual/00-intro-oath.html">
-    <span class="kicker">對照精讀</span>
-    <span class="title">中英對照原文（13 章）</span>
-    <span class="meta">EN 左 · 中 右 · 逐段對照</span>
-  </a>
+__READING_CARDS__
+</div>
+
+<h2>🧠 二、每章重點互動記憶</h2>
+<div class="dash">
+__INTERACTIVE_CARDS__
+</div>
+
+<h2>📝 三、考題</h2>
+<div class="dash">
   <a href="practice/question-bank.html">
-    <span class="kicker">考前衝刺</span>
+    <span class="kicker">題庫</span>
     <span class="title">220+ 題題庫</span>
     <span class="meta">依章節分類，反覆練習弱點</span>
+  </a>
+  <a href="reading/12-study-questions.html">
+    <span class="kicker">官方</span>
+    <span class="title">官方練習題（人聲版）</span>
+    <span class="meta">Discover Canada 第 52–53 頁全部題目</span>
   </a>
 </div>
 
@@ -1096,7 +1091,7 @@ INDEX_INTRO = """
 <tr><td>考試語言</td><td>英文或法文（自選）</td></tr>
 </table>
 
-<h2>每日 14 天</h2>
+<h2>每日驗收（14 天）</h2>
 <div class="dash">
 """
 
@@ -1118,8 +1113,43 @@ DAY_TOPICS = [
 ]
 
 
+INTERACTIVE_META = {
+    "index.html": "所有圖解模組的入口",
+    "history.html": "41 事件時間軸、5 時代色標",
+    "story-04.html": "中文故事＋記憶卡＋小測驗",
+    "modern.html": "14 位總理畫廊 + 11 件里程碑",
+    "government.html": "三級政府、國會三部分、法案 7 步驟",
+    "elections.html": "5 大政黨卡 + 投票流程",
+    "justice.html": "5 原則 + 4 級法院金字塔",
+    "symbols.html": "10 象徵 + 鈔票人物 + 12 假日",
+    "economy.html": "三大產業圓餅圖 + 5 事實",
+    "geography.html": "13 省領地互動地圖",
+}
+
+
 def build_index_body() -> str:
-    parts = [INDEX_INTRO]
+    reading_cards = ""
+    for js in sorted((ROOT / "aligned").glob("*.json")):
+        d = json.loads(js.read_text(encoding="utf-8"))
+        n_para = sum(len(p) for s in d["sections"] for p in s["paras"])
+        reading_cards += (
+            f'<a href="reading/{js.stem}.html">'
+            f'<span class="kicker">第 {d["num"]} 章</span>'
+            f'<span class="title">{html.escape(d["title_zh"])}</span>'
+            f'<span class="meta">{html.escape(d["title_en"])} · {n_para} 句</span>'
+            f'</a>\n'
+        )
+    interactive_cards = ""
+    for fn, label in INTERACTIVE_ITEMS:
+        interactive_cards += (
+            f'<a href="interactive/{fn}">'
+            f'<span class="kicker">互動</span>'
+            f'<span class="title">{label}</span>'
+            f'<span class="meta">{INTERACTIVE_META.get(fn, "")}</span>'
+            f'</a>\n'
+        )
+    intro = INDEX_INTRO.replace("__READING_CARDS__", reading_cards).replace("__INTERACTIVE_CARDS__", interactive_cards)
+    parts = [intro]
     for i, (day, title, meta) in enumerate(DAY_TOPICS, start=1):
         parts.append(
             f'<a href="daily-quiz/day-{i:02d}.html">'
@@ -1221,35 +1251,19 @@ def make_single_sidebar() -> str:
         ("12-study-questions", "12 · 官方練習題"),
     ]
     quiz_items = [(f"day-{i:02d}", f"Day {i:02d}") for i in range(1, 15)]
-    interactive_items = [
-        ("index", "🎯 互動式入口"),
-        ("history", "📜 04 歷史時間軸"),
-        ("story-04", "📖 04 故事聽學"),
-        ("modern", "🇨🇦 05 現代加拿大"),
-        ("government", "🏛️ 06 政府架構"),
-        ("elections", "🗳️ 07 聯邦選舉"),
-        ("justice", "⚖️ 08 司法系統"),
-        ("symbols", "🍁 09 國家象徵"),
-        ("economy", "💼 10 加拿大經濟"),
-        ("geography", "🗺️ 11 地圖"),
-    ]
 
     parts = ['<nav class="sidebar">']
     parts.append('<a href="#home" class="home">加拿大公民考試</a>')
-    parts.append('<a href="#curriculum-14-day-plan">📅 14 天計畫表</a>')
-    parts.append('<a href="#practice-question-bank">📝 220 題題庫</a>')
-    parts.append('<h2>中英對照（13 章）</h2>')
-    for slug, label in bilingual_items:
-        parts.append(f'<a href="#bilingual-{slug}">{label}</a>')
-    parts.append('<h2>每日驗收（14 天）</h2>')
-    for slug, label in quiz_items:
-        parts.append(f'<a href="#daily-quiz-{slug}">{label}</a>')
-    parts.append('<h2>互動式（圖解）</h2>')
-    for slug, label in interactive_items:
-        parts.append(f'<a href="#interactive-{slug}">{label}</a>')
-    parts.append('<h2>人聲朗讀對照</h2>')
+    parts.append('<h2>🎧 人聲朗讀對照</h2>')
     for fn, label in READING_ITEMS:
         parts.append(f'<a href="#reading-{fn[:-5]}">{label}</a>')
+    parts.append('<h2>🧠 每章重點互動記憶</h2>')
+    for fn, label in INTERACTIVE_ITEMS:
+        parts.append(f'<a href="#interactive-{fn[:-5]}">{label}</a>')
+    parts.append('<h2>📝 考題</h2>')
+    parts.append('<a href="#practice-question-bank">220 題題庫（依章節）</a>')
+    for slug, label in quiz_items:
+        parts.append(f'<a href="#daily-quiz-{slug}">驗收 {label}</a>')
     parts.append('</nav>')
     return "\n".join(parts)
 
@@ -1271,21 +1285,9 @@ def build_single():
         sid = section_id(rel)
         sections.append(f'<section id="{sid}" class="page">{body}</section>')
 
-    # bilingual
-    for md_file in sorted((ROOT / "bilingual").glob("*.md")):
-        if md_file.name == "README.md":
-            body = render_plain(md_file)
-        else:
-            body = render_bilingual(md_file)
-        add_section(f"bilingual/{md_file.stem}.html", body)
-
     # daily-quiz
     for md_file in sorted((ROOT / "daily-quiz").glob("*.md")):
         add_section(f"daily-quiz/{md_file.stem}.html", render_daily_quiz(md_file))
-
-    # curriculum
-    for md_file in sorted((ROOT / "curriculum").glob("*.md")):
-        add_section(f"curriculum/{md_file.stem}.html", render_plain(md_file))
 
     # practice
     for md_file in sorted((ROOT / "practice").glob("*.md")):
@@ -1346,9 +1348,15 @@ def build_single():
 
 # ----------------------------- reading (human voice) ----------------------------- #
 
-READING_ITEMS = [
-    ("04-canadas-history.html", "🎧 04 · 加拿大歷史"),
-]
+def _reading_items() -> list[tuple[str, str]]:
+    items = []
+    for js in sorted((ROOT / "aligned").glob("*.json")):
+        d = json.loads(js.read_text(encoding="utf-8"))
+        items.append((f"{js.stem}.html", f"{d['num']} · {d['title_zh']}"))
+    return items
+
+
+READING_ITEMS = _reading_items()
 
 READING_CSS = r"""
 <style>
@@ -1615,11 +1623,10 @@ def build():
         shutil.move(str(OUT / "audio"), str(audio_keep))
     if OUT.exists():
         shutil.rmtree(OUT)
-    (OUT / "bilingual").mkdir(parents=True)
+    OUT.mkdir(parents=True)
     if audio_keep is not None:
         shutil.move(str(audio_keep), str(OUT / "audio"))
     (OUT / "daily-quiz").mkdir()
-    (OUT / "curriculum").mkdir()
     (OUT / "practice").mkdir()
     (OUT / "interactive").mkdir()
 
@@ -1628,21 +1635,9 @@ def build():
         body = rewrite_md_links(body)
         (OUT / rel).write_text(wrap_page(title, body, rel), encoding="utf-8")
 
-    # bilingual
-    for md_file in sorted((ROOT / "bilingual").glob("*.md")):
-        if md_file.name == "README.md":
-            body = render_plain(md_file)
-        else:
-            body = render_bilingual(md_file)
-        write(f"bilingual/{md_file.stem}.html", title_from_md(md_file), body)
-
     # daily quiz
     for md_file in sorted((ROOT / "daily-quiz").glob("*.md")):
         write(f"daily-quiz/{md_file.stem}.html", title_from_md(md_file), render_daily_quiz(md_file))
-
-    # curriculum
-    for md_file in sorted((ROOT / "curriculum").glob("*.md")):
-        write(f"curriculum/{md_file.stem}.html", title_from_md(md_file), render_plain(md_file))
 
     # practice
     for md_file in sorted((ROOT / "practice").glob("*.md")):

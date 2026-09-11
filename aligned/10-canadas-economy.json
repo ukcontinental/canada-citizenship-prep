@@ -1,0 +1,64 @@
+{
+  "num": "10",
+  "title_en": "Canada's Economy",
+  "title_zh": "加拿大的經濟",
+  "sections": [
+    {
+      "title_en": "A trading nation",
+      "title_zh": "貿易之國",
+      "paras": [
+        [
+          {"en": "Canada has always been a trading nation and commerce remains the engine of economic growth.", "zh": "加拿大一直是一個貿易國家，商業仍然是經濟成長的引擎。"},
+          {"en": "As Canadians, we could not maintain our standard of living without engaging in trade with other nations.", "zh": "身為加拿大人，如果不與其他國家貿易，我們就無法維持我們的生活水準。"}
+        ],
+        [
+          {"en": "In 1988, Canada enacted free trade with the United States.", "zh": "1988 年，加拿大與美國實施自由貿易。"},
+          {"en": "Mexico became a partner in 1994 in the broader North American Free Trade Agreement (NAFTA), with over 444 million people and over $1 trillion in merchandise trade in 2008.", "zh": "1994 年，墨西哥加入更大範圍的《北美自由貿易協定》（NAFTA），涵蓋超過 4 億 4 千 4 百萬人口，2008 年的商品貿易額超過一兆美元。"},
+          {"en": "Note: NAFTA was replaced in 2020 by the Canada-United States-Mexico Agreement (CUSMA).", "zh": "注意：NAFTA 在 2020 年被《加美墨協定》（CUSMA）取代。"}
+        ],
+        [
+          {"en": "Today, Canada has one of the ten largest economies in the world and is part of the G8 group of leading industrialized countries with the United States, Germany, the United Kingdom, Italy, France, Japan and Russia.", "zh": "今天，加拿大是世界十大經濟體之一，也是主要工業化國家 G8 的成員，其他成員有美國、德國、英國、義大利、法國、日本和俄羅斯。"},
+          {"en": "Note: since Russia's suspension in 2014 the group has been the G7.", "zh": "注意：2014 年俄羅斯被停權後，這個組織就變成 G7。"}
+        ]
+      ]
+    },
+    {
+      "title_en": "Three main types of industries",
+      "title_zh": "三大產業類型",
+      "paras": [
+        [
+          {"en": "Canada's economy includes three main types of industries:", "zh": "加拿大的經濟包括三大類產業："},
+          {"en": "Service industries provide thousands of different jobs in areas like transportation, education, health care, construction, banking, communications, retail services, tourism and government.", "zh": "服務業在運輸、教育、醫療、建築、銀行、通訊、零售、旅遊和政府等領域提供成千上萬種不同的工作。"},
+          {"en": "More than 75% of working Canadians now have jobs in service industries.", "zh": "現在超過 75% 的加拿大就業人口從事服務業。"}
+        ],
+        [
+          {"en": "Manufacturing industries make products to sell in Canada and around the world.", "zh": "製造業生產產品，在加拿大和世界各地銷售。"},
+          {"en": "Manufactured products include paper, high technology equipment, aerospace technology, automobiles, machinery, food, clothing and many other goods.", "zh": "製造的產品包括紙張、高科技設備、航太技術、汽車、機械、食品、衣物和許多其他商品。"},
+          {"en": "Our largest international trading partner is the United States.", "zh": "我們最大的國際貿易夥伴是美國。"}
+        ],
+        [
+          {"en": "Natural resources industries include forestry, fishing, agriculture, mining and energy.", "zh": "自然資源產業包括林業、漁業、農業、礦業和能源。"},
+          {"en": "These industries have played an important part in the country's history and development.", "zh": "這些產業在國家的歷史和發展中扮演了重要角色。"},
+          {"en": "Today, the economy of many areas of the country still depends on developing natural resources, and a large percentage of Canada's exports are natural resources commodities.", "zh": "今天，國內許多地區的經濟仍依賴開發自然資源，加拿大出口中有很大一部分是自然資源商品。"}
+        ]
+      ]
+    },
+    {
+      "title_en": "Canada and the United States",
+      "title_zh": "加拿大與美國",
+      "paras": [
+        [
+          {"en": "Canada enjoys close relations with the United States and each is the other's largest trading partner.", "zh": "加拿大與美國關係密切，彼此都是對方最大的貿易夥伴。"},
+          {"en": "Over three-quarters of Canadian exports are destined for the U.S.A.", "zh": "加拿大超過四分之三的出口銷往美國。"},
+          {"en": "In fact we have the biggest bilateral trading relationship in the world.", "zh": "事實上，我們擁有世界上最大的雙邊貿易關係。"},
+          {"en": "Integrated Canada-U.S.A. supply chains compete with the rest of the world.", "zh": "加美一體化的供應鏈與世界其他地區競爭。"},
+          {"en": "Canada exports billions of dollars worth of energy products, industrial goods, machinery, equipment, automotive, agricultural, fishing and forestry products, and consumer goods every year.", "zh": "加拿大每年出口價值數十億美元的能源產品、工業品、機械、設備、汽車、農產品、漁產品、林產品和消費品。"},
+          {"en": "Millions of Canadians and Americans cross every year and in safety what is traditionally known as \"the world's longest undefended border.\"", "zh": "每年有數百萬加拿大人和美國人安全地穿越這條傳統上被稱為「世界最長不設防邊界」的國界。"}
+        ],
+        [
+          {"en": "At Blaine in the State of Washington, the Peace Arch, inscribed with the words \"children of a common mother\" and \"brethren dwelling together in unity,\" symbolizes our close ties and common interests.", "zh": "在華盛頓州的布萊恩，「和平拱門」上刻著「同一位母親的子女」和「兄弟和睦同居」的字句，象徵著我們緊密的關係和共同的利益。"}
+        ]
+      ]
+    }
+  ]
+}
