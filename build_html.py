@@ -1309,9 +1309,10 @@ def build_single():
     for rel, body in iv_pages:
         add_section(rel, body)
 
-    # reading (human-voice bilingual)
+    # reading (human-voice bilingual); dictionary loaded once for the whole file
     for js in sorted((ROOT / "aligned").glob("*.json")):
-        add_section(f"reading/{js.stem}.html", render_reading(js))
+        add_section(f"reading/{js.stem}.html", render_reading(js, dict_src=""))
+    sections.append('<script src="dict/words.js"></script>')
 
     body_html = "\n".join(sections)
     sidebar = make_single_sidebar()
@@ -1402,6 +1403,26 @@ READING_CSS = r"""
 .s:hover { background: #f3efe6; }
 .rd-en .s:hover { background: #ebe4d3; }
 .s.on { background: #ffe08a !important; }
+.rd-en .w { cursor: pointer; border-bottom: 1px dotted transparent; border-radius: 2px; }
+.rd-en .w:hover { border-bottom-color: var(--accent); background: #fff3d6; }
+.rd-pop {
+  position: fixed; z-index: 60; width: 320px; max-width: calc(100vw - 24px);
+  background: #fff; border: 1px solid var(--line); border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.16); padding: 14px 16px 12px;
+  font-family: -apple-system, system-ui, sans-serif;
+}
+.rd-pop.hidden { display: none; }
+.rd-pop-w { font-family: Georgia, "Source Serif 4", serif; font-size: 26px; font-weight: 700; color: #3f1a1f; padding-right: 24px; }
+.rd-pop-p { font-size: 15px; color: var(--muted); margin: 2px 0 8px; font-family: "Charis SIL", "Doulos SIL", "Gentium Plus", Georgia, serif; }
+.rd-pop-t { font-size: 14.5px; line-height: 1.6; white-space: pre-line; margin-bottom: 10px; color: var(--ink); }
+.rd-pop-btns { display: flex; gap: 6px; flex-wrap: wrap; }
+.rd-pop-btns button {
+  appearance: none; border: 1.5px solid var(--accent); background: #fff; color: var(--accent);
+  border-radius: 16px; padding: 5px 11px; font-size: 13px; cursor: pointer; font-family: inherit;
+}
+.rd-pop-btns button.main { background: var(--accent); color: #fff; }
+.rd-pop-x { position: absolute; top: 6px; right: 10px; border: none; background: none; font-size: 20px; color: var(--muted); cursor: pointer; }
+.rd-pop-note { font-size: 11px; color: var(--muted); margin-top: 8px; }
 @media (max-width: 820px) {
   .rd-row { grid-template-columns: 1fr; gap: 8px; }
 }
@@ -1505,7 +1526,72 @@ READING_JS = r"""
     else stop();
   });
 
+  // ---------- word dictionary popup ----------
+  var pop = root.querySelector('.rd-pop');
+  var wordAudio = new Audio();
+  var popCtx = null;
+  var wordBase = (location.pathname.indexOf('/reading/') >= 0 ? '../' : '') + 'audio/words/';
+  function dictLookup(w) {
+    var D = window.CIT_DICT || {};
+    var k = w.replace(/’/g, "'");
+    var tries = [k, k.toLowerCase()];
+    if (/'s$/i.test(k)) tries.push(k.slice(0, -2), k.slice(0, -2).toLowerCase());
+    for (var i = 0; i < tries.length; i++) if (D[tries[i]]) return D[tries[i]];
+    return null;
+  }
+  function sayWord(rate) {
+    if (!popCtx) return;
+    if (!audio.paused) pause();
+    var key = popCtx.word.toLowerCase().replace(/’/g, "'");
+    wordAudio.pause();
+    wordAudio.src = wordBase + encodeURIComponent(key) + '.m4a';
+    wordAudio.playbackRate = rate;
+    try { wordAudio.preservesPitch = true; wordAudio.mozPreservesPitch = true; } catch (err) {}
+    wordAudio.onerror = function() {
+      if (!window.speechSynthesis) return;
+      var u = new SpeechSynthesisUtterance(popCtx.word);
+      u.lang = 'en-US'; u.rate = 0.7 * rate;
+      window.speechSynthesis.cancel(); window.speechSynthesis.speak(u);
+    };
+    wordAudio.play().catch(function(){});
+  }
+  function positionPop(el) {
+    var r = el.getBoundingClientRect();
+    pop.style.top = Math.min(r.bottom + 8, window.innerHeight - pop.offsetHeight - 8) + 'px';
+    var left = r.left;
+    var maxLeft = document.documentElement.clientWidth - pop.offsetWidth - 12;
+    if (left > maxLeft) left = Math.max(12, maxLeft);
+    pop.style.left = left + 'px';
+  }
+  function showPop(el) {
+    var w = el.textContent.trim();
+    var e = dictLookup(w);
+    pop.querySelector('.rd-pop-w').textContent = w;
+    pop.querySelector('.rd-pop-p').textContent = (e && e.p) ? '/' + e.p + '/' : '';
+    pop.querySelector('.rd-pop-t').textContent = e ? (e.x ? e.t + '\n（原形：' + e.x + '）' : e.t) : '字典裡沒有這個字';
+    var s = el.closest('.s'), row = el.closest('.rd-row');
+    popCtx = { word: w, p: parseInt(row.dataset.p, 10), i: parseInt(s.dataset.i, 10) };
+    pop.classList.remove('hidden');
+    positionPop(el);
+    sayWord(1);
+  }
+  function hidePop() { pop.classList.add('hidden'); popCtx = null; wordAudio.pause(); }
+  pop.querySelector('.rd-pop-slow').addEventListener('click', function(){ sayWord(1); });
+  pop.querySelector('.rd-pop-normal').addEventListener('click', function(){ sayWord(1.45); });
+  pop.querySelector('.rd-pop-sent').addEventListener('click', function(){
+    if (!popCtx) return; var c = popCtx; hidePop(); play('en', c.p, c.i);
+  });
+  pop.querySelector('.rd-pop-x').addEventListener('click', hidePop);
+  document.addEventListener('click', function(e) {
+    if (pop.classList.contains('hidden')) return;
+    if (pop.contains(e.target) || (e.target.closest && e.target.closest('.rd-en .w'))) return;
+    hidePop();
+  });
+  document.addEventListener('keydown', function(e) { if (e.key === 'Escape') hidePop(); });
+
   root.addEventListener('click', function(e) {
+    var wEl = e.target.closest && e.target.closest('.rd-en .w');
+    if (wEl) { e.preventDefault(); showPop(wEl); return; }
     var btn = e.target.closest && e.target.closest('.rd-play');
     if (btn) {
       var p = parseInt(btn.dataset.p, 10), lang = btn.dataset.lang;
@@ -1552,7 +1638,21 @@ READING_JS = r"""
 """
 
 
-def render_reading(json_path: Path) -> str:
+EN_WORD_RE = re.compile(r"[^\W\d_](?:[^\W\d_'’\-]|['’\-](?=[^\W\d_]))*")
+
+
+def wrap_words(en: str) -> str:
+    out = []
+    pos = 0
+    for m in EN_WORD_RE.finditer(en):
+        out.append(html.escape(en[pos:m.start()]))
+        out.append(f'<span class="w">{html.escape(m.group(0))}</span>')
+        pos = m.end()
+    out.append(html.escape(en[pos:]))
+    return "".join(out)
+
+
+def render_reading(json_path: Path, dict_src: str = "../dict/words.js") -> str:
     data = json.loads(json_path.read_text(encoding="utf-8"))
     num = data["num"]
     tpath = OUT / "audio" / num / "timings.json"
@@ -1571,7 +1671,7 @@ def render_reading(json_path: Path) -> str:
                 for i, p in enumerate(para)
             )
             en = " ".join(
-                f'<span class="s" data-i="{i}">{html.escape(p["en"])}</span>'
+                f'<span class="s" data-i="{i}">{wrap_words(p["en"])}</span>'
                 for i, p in enumerate(para)
             )
             rows += f'''
@@ -1590,7 +1690,19 @@ def render_reading(json_path: Path) -> str:
 <div class="rd" id="rd-{num}">
 <div class="rd-hero">
   <h1>🎧 {num} {html.escape(data["title_zh"])} <small style="font-weight:400;color:var(--muted)">{html.escape(data["title_en"])}</small></h1>
-  <p>左中文、右英文，句對句對照。按段落左邊的 ▶ 朗讀該段；點任何一句從那句開始念；念到哪一句，中英文同時標黃。空白鍵＝暫停／繼續。</p>
+  <p>左中文、右英文，句對句對照。按段落左邊的 ▶ 朗讀該段；點中文任一句從那句開始念；念到哪一句，中英文同時標黃。<strong>點任何一個英文字</strong>會跳出字典卡並用慢速念這個字。空白鍵＝暫停／繼續。</p>
+</div>
+<div class="rd-pop hidden" role="dialog" aria-label="字典">
+  <button class="rd-pop-x" type="button" aria-label="關閉">×</button>
+  <div class="rd-pop-w"></div>
+  <div class="rd-pop-p"></div>
+  <div class="rd-pop-t"></div>
+  <div class="rd-pop-btns">
+    <button class="rd-pop-slow main" type="button">🔊 慢速再聽</button>
+    <button class="rd-pop-normal" type="button">🔊 正常速</button>
+    <button class="rd-pop-sent" type="button">▶ 從這句開始念</button>
+  </div>
+  <div class="rd-pop-note">釋義來源：ECDICT 開源字典＋加拿大語境補充。點其他地方或按 Esc 關閉。</div>
 </div>
 <div class="rd-bar">
   <button class="rd-btn rd-main rd-all-en" type="button">▶ English 全章</button>
@@ -1607,6 +1719,7 @@ def render_reading(json_path: Path) -> str:
 {secs_html}
 </div>
 <script type="application/json" id="rd-{num}-timings">{tjson}</script>
+{f'<script src="{dict_src}"></script>' if dict_src else ''}
 {READING_JS.replace("__NUM__", num)}
 '''
 
@@ -1614,18 +1727,21 @@ def render_reading(json_path: Path) -> str:
 # ----------------------------- build ----------------------------- #
 
 def build():
-    # html/audio is produced by build_audio.py (slow); keep it across rebuilds.
-    audio_keep = None
-    if (OUT / "audio").exists():
-        audio_keep = ROOT / ".audio_keep"
-        if audio_keep.exists():
-            shutil.rmtree(audio_keep)
-        shutil.move(str(OUT / "audio"), str(audio_keep))
+    # html/audio (build_audio.py, tools/build_word_audio.py) and html/dict
+    # (tools/build_dict.py) are slow to produce; keep them across rebuilds.
+    kept = {}
+    for name in ("audio", "dict"):
+        if (OUT / name).exists():
+            park = ROOT / f".{name}_keep"
+            if park.exists():
+                shutil.rmtree(park)
+            shutil.move(str(OUT / name), str(park))
+            kept[name] = park
     if OUT.exists():
         shutil.rmtree(OUT)
     OUT.mkdir(parents=True)
-    if audio_keep is not None:
-        shutil.move(str(audio_keep), str(OUT / "audio"))
+    for name, park in kept.items():
+        shutil.move(str(park), str(OUT / name))
     (OUT / "daily-quiz").mkdir()
     (OUT / "practice").mkdir()
     (OUT / "interactive").mkdir()

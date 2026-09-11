@@ -11,6 +11,7 @@ __pycache__/
 
 # build_html.py parks html/audio here during a rebuild
 .audio_keep/
+.dict_keep/
 
 # compiled by build_audio.py from tools/tts_align.swift
 tools/tts_align

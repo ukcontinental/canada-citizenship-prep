@@ -490,6 +490,26 @@ blockquote.speakable > .speak-btn,
 .s:hover { background: #f3efe6; }
 .rd-en .s:hover { background: #ebe4d3; }
 .s.on { background: #ffe08a !important; }
+.rd-en .w { cursor: pointer; border-bottom: 1px dotted transparent; border-radius: 2px; }
+.rd-en .w:hover { border-bottom-color: var(--accent); background: #fff3d6; }
+.rd-pop {
+  position: fixed; z-index: 60; width: 320px; max-width: calc(100vw - 24px);
+  background: #fff; border: 1px solid var(--line); border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.16); padding: 14px 16px 12px;
+  font-family: -apple-system, system-ui, sans-serif;
+}
+.rd-pop.hidden { display: none; }
+.rd-pop-w { font-family: Georgia, "Source Serif 4", serif; font-size: 26px; font-weight: 700; color: #3f1a1f; padding-right: 24px; }
+.rd-pop-p { font-size: 15px; color: var(--muted); margin: 2px 0 8px; font-family: "Charis SIL", "Doulos SIL", "Gentium Plus", Georgia, serif; }
+.rd-pop-t { font-size: 14.5px; line-height: 1.6; white-space: pre-line; margin-bottom: 10px; color: var(--ink); }
+.rd-pop-btns { display: flex; gap: 6px; flex-wrap: wrap; }
+.rd-pop-btns button {
+  appearance: none; border: 1.5px solid var(--accent); background: #fff; color: var(--accent);
+  border-radius: 16px; padding: 5px 11px; font-size: 13px; cursor: pointer; font-family: inherit;
+}
+.rd-pop-btns button.main { background: var(--accent); color: #fff; }
+.rd-pop-x { position: absolute; top: 6px; right: 10px; border: none; background: none; font-size: 20px; color: var(--muted); cursor: pointer; }
+.rd-pop-note { font-size: 11px; color: var(--muted); margin-top: 8px; }
 @media (max-width: 820px) {
   .rd-row { grid-template-columns: 1fr; gap: 8px; }
 }
@@ -498,7 +518,19 @@ blockquote.speakable > .speak-btn,
 <div class="rd" id="rd-08">
 <div class="rd-hero">
   <h1>🎧 08 司法系統 <small style="font-weight:400;color:var(--muted)">The Justice System</small></h1>
-  <p>左中文、右英文，句對句對照。按段落左邊的 ▶ 朗讀該段；點任何一句從那句開始念；念到哪一句，中英文同時標黃。空白鍵＝暫停／繼續。</p>
+  <p>左中文、右英文，句對句對照。按段落左邊的 ▶ 朗讀該段；點中文任一句從那句開始念；念到哪一句，中英文同時標黃。<strong>點任何一個英文字</strong>會跳出字典卡並用慢速念這個字。空白鍵＝暫停／繼續。</p>
+</div>
+<div class="rd-pop hidden" role="dialog" aria-label="字典">
+  <button class="rd-pop-x" type="button" aria-label="關閉">×</button>
+  <div class="rd-pop-w"></div>
+  <div class="rd-pop-p"></div>
+  <div class="rd-pop-t"></div>
+  <div class="rd-pop-btns">
+    <button class="rd-pop-slow main" type="button">🔊 慢速再聽</button>
+    <button class="rd-pop-normal" type="button">🔊 正常速</button>
+    <button class="rd-pop-sent" type="button">▶ 從這句開始念</button>
+  </div>
+  <div class="rd-pop-note">釋義來源：ECDICT 開源字典＋加拿大語境補充。點其他地方或按 Esc 關閉。</div>
 </div>
 <div class="rd-bar">
   <button class="rd-btn rd-main rd-all-en" type="button">▶ English 全章</button>
@@ -515,46 +547,47 @@ blockquote.speakable > .speak-btn,
 <section class="rd-sec"><h2>司法系統<small>The Justice System</small></h2>
 <div class="rd-row" data-p="0">
   <div class="rd-cell rd-zh"><button class="rd-play" data-lang="zh" data-p="0" type="button" title="朗讀中文">▶</button><span class="s" data-i="0">加拿大的司法系統保障每個人依法享有正當程序。</span><span class="s" data-i="1">我們的司法制度在刑事案件上建立在「無罪推定」的基礎上，意思是每個人在被證明有罪之前都是無辜的。</span></div>
-  <div class="rd-cell rd-en"><button class="rd-play" data-lang="en" data-p="0" type="button" title="Read English">▶</button><span class="s" data-i="0">The Canadian justice system guarantees everyone due process under the law.</span> <span class="s" data-i="1">Our judicial system is founded on the presumption of innocence in criminal matters, meaning everyone is innocent until proven guilty.</span></div>
+  <div class="rd-cell rd-en"><button class="rd-play" data-lang="en" data-p="0" type="button" title="Read English">▶</button><span class="s" data-i="0"><span class="w">The</span> <span class="w">Canadian</span> <span class="w">justice</span> <span class="w">system</span> <span class="w">guarantees</span> <span class="w">everyone</span> <span class="w">due</span> <span class="w">process</span> <span class="w">under</span> <span class="w">the</span> <span class="w">law</span>.</span> <span class="s" data-i="1"><span class="w">Our</span> <span class="w">judicial</span> <span class="w">system</span> <span class="w">is</span> <span class="w">founded</span> <span class="w">on</span> <span class="w">the</span> <span class="w">presumption</span> <span class="w">of</span> <span class="w">innocence</span> <span class="w">in</span> <span class="w">criminal</span> <span class="w">matters</span>, <span class="w">meaning</span> <span class="w">everyone</span> <span class="w">is</span> <span class="w">innocent</span> <span class="w">until</span> <span class="w">proven</span> <span class="w">guilty</span>.</span></div>
 </div>
 <div class="rd-row" data-p="1">
   <div class="rd-cell rd-zh"><button class="rd-play" data-lang="zh" data-p="1" type="button" title="朗讀中文">▶</button><span class="s" data-i="0">加拿大的法律制度建立在一項傳統之上，包括法治、法律之下的自由、民主原則和正當程序。</span><span class="s" data-i="1">正當程序的原則是：政府必須尊重一個人依法享有的所有法律權利。</span></div>
-  <div class="rd-cell rd-en"><button class="rd-play" data-lang="en" data-p="1" type="button" title="Read English">▶</button><span class="s" data-i="0">Canada&#x27;s legal system is based on a heritage that includes the rule of law, freedom under the law, democratic principles and due process.</span> <span class="s" data-i="1">Due process is the principle that the government must respect all the legal rights a person is entitled to under the law.</span></div>
+  <div class="rd-cell rd-en"><button class="rd-play" data-lang="en" data-p="1" type="button" title="Read English">▶</button><span class="s" data-i="0"><span class="w">Canada&#x27;s</span> <span class="w">legal</span> <span class="w">system</span> <span class="w">is</span> <span class="w">based</span> <span class="w">on</span> <span class="w">a</span> <span class="w">heritage</span> <span class="w">that</span> <span class="w">includes</span> <span class="w">the</span> <span class="w">rule</span> <span class="w">of</span> <span class="w">law</span>, <span class="w">freedom</span> <span class="w">under</span> <span class="w">the</span> <span class="w">law</span>, <span class="w">democratic</span> <span class="w">principles</span> <span class="w">and</span> <span class="w">due</span> <span class="w">process</span>.</span> <span class="s" data-i="1"><span class="w">Due</span> <span class="w">process</span> <span class="w">is</span> <span class="w">the</span> <span class="w">principle</span> <span class="w">that</span> <span class="w">the</span> <span class="w">government</span> <span class="w">must</span> <span class="w">respect</span> <span class="w">all</span> <span class="w">the</span> <span class="w">legal</span> <span class="w">rights</span> <span class="w">a</span> <span class="w">person</span> <span class="w">is</span> <span class="w">entitled</span> <span class="w">to</span> <span class="w">under</span> <span class="w">the</span> <span class="w">law</span>.</span></div>
 </div>
 <div class="rd-row" data-p="2">
   <div class="rd-cell rd-zh"><button class="rd-play" data-lang="zh" data-p="2" type="button" title="朗讀中文">▶</button><span class="s" data-i="0">加拿大由一套有系統的法律來治理。</span><span class="s" data-i="1">這些法律是為了引導社會中的人們而制定的成文規則。</span><span class="s" data-i="2">它們由民選的代表制定。</span><span class="s" data-i="3">法院解決糾紛，警察執行法律。</span><span class="s" data-i="4">加拿大的法律適用於每一個人，包括法官、政治人物和警察。</span><span class="s" data-i="5">我們的法律旨在為社會提供秩序、提供和平解決糾紛的方式，並表達加拿大人的價值觀與信念。</span></div>
-  <div class="rd-cell rd-en"><button class="rd-play" data-lang="en" data-p="2" type="button" title="Read English">▶</button><span class="s" data-i="0">Canada is governed by an organized system of laws.</span> <span class="s" data-i="1">These laws are the written rules intended to guide people in our society.</span> <span class="s" data-i="2">They are made by elected representatives.</span> <span class="s" data-i="3">The courts settle disputes and the police enforce the laws.</span> <span class="s" data-i="4">The law in Canada applies to everyone, including judges, politicians and the police.</span> <span class="s" data-i="5">Our laws are intended to provide order in society and a peaceful way to settle disputes, and to express the values and beliefs of Canadians.</span></div>
+  <div class="rd-cell rd-en"><button class="rd-play" data-lang="en" data-p="2" type="button" title="Read English">▶</button><span class="s" data-i="0"><span class="w">Canada</span> <span class="w">is</span> <span class="w">governed</span> <span class="w">by</span> <span class="w">an</span> <span class="w">organized</span> <span class="w">system</span> <span class="w">of</span> <span class="w">laws</span>.</span> <span class="s" data-i="1"><span class="w">These</span> <span class="w">laws</span> <span class="w">are</span> <span class="w">the</span> <span class="w">written</span> <span class="w">rules</span> <span class="w">intended</span> <span class="w">to</span> <span class="w">guide</span> <span class="w">people</span> <span class="w">in</span> <span class="w">our</span> <span class="w">society</span>.</span> <span class="s" data-i="2"><span class="w">They</span> <span class="w">are</span> <span class="w">made</span> <span class="w">by</span> <span class="w">elected</span> <span class="w">representatives</span>.</span> <span class="s" data-i="3"><span class="w">The</span> <span class="w">courts</span> <span class="w">settle</span> <span class="w">disputes</span> <span class="w">and</span> <span class="w">the</span> <span class="w">police</span> <span class="w">enforce</span> <span class="w">the</span> <span class="w">laws</span>.</span> <span class="s" data-i="4"><span class="w">The</span> <span class="w">law</span> <span class="w">in</span> <span class="w">Canada</span> <span class="w">applies</span> <span class="w">to</span> <span class="w">everyone</span>, <span class="w">including</span> <span class="w">judges</span>, <span class="w">politicians</span> <span class="w">and</span> <span class="w">the</span> <span class="w">police</span>.</span> <span class="s" data-i="5"><span class="w">Our</span> <span class="w">laws</span> <span class="w">are</span> <span class="w">intended</span> <span class="w">to</span> <span class="w">provide</span> <span class="w">order</span> <span class="w">in</span> <span class="w">society</span> <span class="w">and</span> <span class="w">a</span> <span class="w">peaceful</span> <span class="w">way</span> <span class="w">to</span> <span class="w">settle</span> <span class="w">disputes</span>, <span class="w">and</span> <span class="w">to</span> <span class="w">express</span> <span class="w">the</span> <span class="w">values</span> <span class="w">and</span> <span class="w">beliefs</span> <span class="w">of</span> <span class="w">Canadians</span>.</span></div>
 </div>
 <div class="rd-row" data-p="3">
   <div class="rd-cell rd-zh"><button class="rd-play" data-lang="zh" data-p="3" type="button" title="朗讀中文">▶</button><span class="s" data-i="0">蒙著眼睛的正義女神象徵我們法律執行的公正方式：除了事實之外，對一切考量都視而不見。</span></div>
-  <div class="rd-cell rd-en"><button class="rd-play" data-lang="en" data-p="3" type="button" title="Read English">▶</button><span class="s" data-i="0">The blindfolded Lady Justice symbolizes the impartial manner in which our laws are administered: blind to all considerations but the facts.</span></div>
+  <div class="rd-cell rd-en"><button class="rd-play" data-lang="en" data-p="3" type="button" title="Read English">▶</button><span class="s" data-i="0"><span class="w">The</span> <span class="w">blindfolded</span> <span class="w">Lady</span> <span class="w">Justice</span> <span class="w">symbolizes</span> <span class="w">the</span> <span class="w">impartial</span> <span class="w">manner</span> <span class="w">in</span> <span class="w">which</span> <span class="w">our</span> <span class="w">laws</span> <span class="w">are</span> <span class="w">administered</span>: <span class="w">blind</span> <span class="w">to</span> <span class="w">all</span> <span class="w">considerations</span> <span class="w">but</span> <span class="w">the</span> <span class="w">facts</span>.</span></div>
 </div></section><section class="rd-sec"><h2>法院<small>Courts</small></h2>
 <div class="rd-row" data-p="4">
   <div class="rd-cell rd-zh"><button class="rd-play" data-lang="zh" data-p="4" type="button" title="朗讀中文">▶</button><span class="s" data-i="0">加拿大最高法院是我們國家的最高法院。</span><span class="s" data-i="1">加拿大聯邦法院處理與聯邦政府有關的事務。</span><span class="s" data-i="2">大多數省份有上訴法院和審判法院，審判法院有時稱為「女王座法院」或「最高法院」。</span><span class="s" data-i="3">另外還有審理較輕罪行的省法院、家事法院、交通法院，以及審理小額民事案件的小額索賠法院。</span></div>
-  <div class="rd-cell rd-en"><button class="rd-play" data-lang="en" data-p="4" type="button" title="Read English">▶</button><span class="s" data-i="0">The Supreme Court of Canada is our country&#x27;s highest court.</span> <span class="s" data-i="1">The Federal Court of Canada deals with matters concerning the federal government.</span> <span class="s" data-i="2">In most provinces there is an appeal court and a trial court, sometimes called the Court of Queen&#x27;s Bench or the Supreme Court.</span> <span class="s" data-i="3">There are also provincial courts for lesser offences, family courts, traffic courts and small claims courts for civil cases involving small sums of money.</span></div>
+  <div class="rd-cell rd-en"><button class="rd-play" data-lang="en" data-p="4" type="button" title="Read English">▶</button><span class="s" data-i="0"><span class="w">The</span> <span class="w">Supreme</span> <span class="w">Court</span> <span class="w">of</span> <span class="w">Canada</span> <span class="w">is</span> <span class="w">our</span> <span class="w">country&#x27;s</span> <span class="w">highest</span> <span class="w">court</span>.</span> <span class="s" data-i="1"><span class="w">The</span> <span class="w">Federal</span> <span class="w">Court</span> <span class="w">of</span> <span class="w">Canada</span> <span class="w">deals</span> <span class="w">with</span> <span class="w">matters</span> <span class="w">concerning</span> <span class="w">the</span> <span class="w">federal</span> <span class="w">government</span>.</span> <span class="s" data-i="2"><span class="w">In</span> <span class="w">most</span> <span class="w">provinces</span> <span class="w">there</span> <span class="w">is</span> <span class="w">an</span> <span class="w">appeal</span> <span class="w">court</span> <span class="w">and</span> <span class="w">a</span> <span class="w">trial</span> <span class="w">court</span>, <span class="w">sometimes</span> <span class="w">called</span> <span class="w">the</span> <span class="w">Court</span> <span class="w">of</span> <span class="w">Queen&#x27;s</span> <span class="w">Bench</span> <span class="w">or</span> <span class="w">the</span> <span class="w">Supreme</span> <span class="w">Court</span>.</span> <span class="s" data-i="3"><span class="w">There</span> <span class="w">are</span> <span class="w">also</span> <span class="w">provincial</span> <span class="w">courts</span> <span class="w">for</span> <span class="w">lesser</span> <span class="w">offences</span>, <span class="w">family</span> <span class="w">courts</span>, <span class="w">traffic</span> <span class="w">courts</span> <span class="w">and</span> <span class="w">small</span> <span class="w">claims</span> <span class="w">courts</span> <span class="w">for</span> <span class="w">civil</span> <span class="w">cases</span> <span class="w">involving</span> <span class="w">small</span> <span class="w">sums</span> <span class="w">of</span> <span class="w">money</span>.</span></div>
 </div></section><section class="rd-sec"><h2>警察<small>Police</small></h2>
 <div class="rd-row" data-p="5">
   <div class="rd-cell rd-zh"><button class="rd-play" data-lang="zh" data-p="5" type="button" title="朗讀中文">▶</button><span class="s" data-i="0">警察的職責是保護人民安全並執行法律。</span><span class="s" data-i="1">在各種情況下你都可以向警察求助——發生意外、東西被偷、遭到攻擊、目睹犯罪，或認識的人失蹤時。</span></div>
-  <div class="rd-cell rd-en"><button class="rd-play" data-lang="en" data-p="5" type="button" title="Read English">▶</button><span class="s" data-i="0">The police are there to keep people safe and to enforce the law.</span> <span class="s" data-i="1">You can ask the police for help in all kinds of situations—if there&#x27;s been an accident, if someone has stolen something from you, if you are a victim of assault, if you see a crime taking place or if someone you know has gone missing.</span></div>
+  <div class="rd-cell rd-en"><button class="rd-play" data-lang="en" data-p="5" type="button" title="Read English">▶</button><span class="s" data-i="0"><span class="w">The</span> <span class="w">police</span> <span class="w">are</span> <span class="w">there</span> <span class="w">to</span> <span class="w">keep</span> <span class="w">people</span> <span class="w">safe</span> <span class="w">and</span> <span class="w">to</span> <span class="w">enforce</span> <span class="w">the</span> <span class="w">law</span>.</span> <span class="s" data-i="1"><span class="w">You</span> <span class="w">can</span> <span class="w">ask</span> <span class="w">the</span> <span class="w">police</span> <span class="w">for</span> <span class="w">help</span> <span class="w">in</span> <span class="w">all</span> <span class="w">kinds</span> <span class="w">of</span> <span class="w">situations</span>—<span class="w">if</span> <span class="w">there&#x27;s</span> <span class="w">been</span> <span class="w">an</span> <span class="w">accident</span>, <span class="w">if</span> <span class="w">someone</span> <span class="w">has</span> <span class="w">stolen</span> <span class="w">something</span> <span class="w">from</span> <span class="w">you</span>, <span class="w">if</span> <span class="w">you</span> <span class="w">are</span> <span class="w">a</span> <span class="w">victim</span> <span class="w">of</span> <span class="w">assault</span>, <span class="w">if</span> <span class="w">you</span> <span class="w">see</span> <span class="w">a</span> <span class="w">crime</span> <span class="w">taking</span> <span class="w">place</span> <span class="w">or</span> <span class="w">if</span> <span class="w">someone</span> <span class="w">you</span> <span class="w">know</span> <span class="w">has</span> <span class="w">gone</span> <span class="w">missing</span>.</span></div>
 </div>
 <div class="rd-row" data-p="6">
   <div class="rd-cell rd-zh"><button class="rd-play" data-lang="zh" data-p="6" type="button" title="朗讀中文">▶</button><span class="s" data-i="0">加拿大有不同種類的警察。</span><span class="s" data-i="1">安大略和魁北克有省警察，所有省份都有市警察局。</span><span class="s" data-i="2">皇家加拿大騎警（RCMP）在全加拿大執行聯邦法律，並在安大略和魁北克以外的所有省和地區擔任省警察，也在一些市鎮服務。</span><span class="s" data-i="3">記住，警察是來幫助你的。</span></div>
-  <div class="rd-cell rd-en"><button class="rd-play" data-lang="en" data-p="6" type="button" title="Read English">▶</button><span class="s" data-i="0">There are different types of police in Canada.</span> <span class="s" data-i="1">There are provincial police forces in Ontario and Quebec and municipal police departments in all provinces.</span> <span class="s" data-i="2">The Royal Canadian Mounted Police (RCMP) enforce federal laws throughout Canada, and serve as the provincial police in all provinces and territories except Ontario and Quebec, as well as in some municipalities.</span> <span class="s" data-i="3">Remember, the police are there to help you.</span></div>
+  <div class="rd-cell rd-en"><button class="rd-play" data-lang="en" data-p="6" type="button" title="Read English">▶</button><span class="s" data-i="0"><span class="w">There</span> <span class="w">are</span> <span class="w">different</span> <span class="w">types</span> <span class="w">of</span> <span class="w">police</span> <span class="w">in</span> <span class="w">Canada</span>.</span> <span class="s" data-i="1"><span class="w">There</span> <span class="w">are</span> <span class="w">provincial</span> <span class="w">police</span> <span class="w">forces</span> <span class="w">in</span> <span class="w">Ontario</span> <span class="w">and</span> <span class="w">Quebec</span> <span class="w">and</span> <span class="w">municipal</span> <span class="w">police</span> <span class="w">departments</span> <span class="w">in</span> <span class="w">all</span> <span class="w">provinces</span>.</span> <span class="s" data-i="2"><span class="w">The</span> <span class="w">Royal</span> <span class="w">Canadian</span> <span class="w">Mounted</span> <span class="w">Police</span> (<span class="w">RCMP</span>) <span class="w">enforce</span> <span class="w">federal</span> <span class="w">laws</span> <span class="w">throughout</span> <span class="w">Canada</span>, <span class="w">and</span> <span class="w">serve</span> <span class="w">as</span> <span class="w">the</span> <span class="w">provincial</span> <span class="w">police</span> <span class="w">in</span> <span class="w">all</span> <span class="w">provinces</span> <span class="w">and</span> <span class="w">territories</span> <span class="w">except</span> <span class="w">Ontario</span> <span class="w">and</span> <span class="w">Quebec</span>, <span class="w">as</span> <span class="w">well</span> <span class="w">as</span> <span class="w">in</span> <span class="w">some</span> <span class="w">municipalities</span>.</span> <span class="s" data-i="3"><span class="w">Remember</span>, <span class="w">the</span> <span class="w">police</span> <span class="w">are</span> <span class="w">there</span> <span class="w">to</span> <span class="w">help</span> <span class="w">you</span>.</span></div>
 </div>
 <div class="rd-row" data-p="7">
   <div class="rd-cell rd-zh"><button class="rd-play" data-lang="zh" data-p="7" type="button" title="朗讀中文">▶</button><span class="s" data-i="0">如果你覺得有必要，你也可以就警察的服務或行為提出質疑。</span><span class="s" data-i="1">加拿大幾乎所有警察機關都有一套程序，讓你可以向警方反映你的疑慮並要求處理。</span></div>
-  <div class="rd-cell rd-en"><button class="rd-play" data-lang="en" data-p="7" type="button" title="Read English">▶</button><span class="s" data-i="0">You can also question the police about their service or conduct if you feel you need to.</span> <span class="s" data-i="1">Almost all police forces in Canada have a process by which you can bring your concerns to the police and seek action.</span></div>
+  <div class="rd-cell rd-en"><button class="rd-play" data-lang="en" data-p="7" type="button" title="Read English">▶</button><span class="s" data-i="0"><span class="w">You</span> <span class="w">can</span> <span class="w">also</span> <span class="w">question</span> <span class="w">the</span> <span class="w">police</span> <span class="w">about</span> <span class="w">their</span> <span class="w">service</span> <span class="w">or</span> <span class="w">conduct</span> <span class="w">if</span> <span class="w">you</span> <span class="w">feel</span> <span class="w">you</span> <span class="w">need</span> <span class="w">to</span>.</span> <span class="s" data-i="1"><span class="w">Almost</span> <span class="w">all</span> <span class="w">police</span> <span class="w">forces</span> <span class="w">in</span> <span class="w">Canada</span> <span class="w">have</span> <span class="w">a</span> <span class="w">process</span> <span class="w">by</span> <span class="w">which</span> <span class="w">you</span> <span class="w">can</span> <span class="w">bring</span> <span class="w">your</span> <span class="w">concerns</span> <span class="w">to</span> <span class="w">the</span> <span class="w">police</span> <span class="w">and</span> <span class="w">seek</span> <span class="w">action</span>.</span></div>
 </div>
 <div class="rd-row" data-p="8">
   <div class="rd-cell rd-zh"><button class="rd-play" data-lang="zh" data-p="8" type="button" title="朗讀中文">▶</button><span class="s" data-i="0">監獄在懲罰罪犯和嚇阻犯罪方面扮演重要角色。</span></div>
-  <div class="rd-cell rd-en"><button class="rd-play" data-lang="en" data-p="8" type="button" title="Read English">▶</button><span class="s" data-i="0">Prisons have an essential role in punishing criminals and deterring crime.</span></div>
+  <div class="rd-cell rd-en"><button class="rd-play" data-lang="en" data-p="8" type="button" title="Read English">▶</button><span class="s" data-i="0"><span class="w">Prisons</span> <span class="w">have</span> <span class="w">an</span> <span class="w">essential</span> <span class="w">role</span> <span class="w">in</span> <span class="w">punishing</span> <span class="w">criminals</span> <span class="w">and</span> <span class="w">deterring</span> <span class="w">crime</span>.</span></div>
 </div></section><section class="rd-sec"><h2>尋求法律協助<small>Getting legal help</small></h2>
 <div class="rd-row" data-p="9">
   <div class="rd-cell rd-zh"><button class="rd-play" data-lang="zh" data-p="9" type="button" title="朗讀中文">▶</button><span class="s" data-i="0">律師可以幫你處理法律問題，並在法庭上代表你。</span><span class="s" data-i="1">如果你付不起律師費，大多數社區都有免費或低收費的法律援助服務。</span></div>
-  <div class="rd-cell rd-en"><button class="rd-play" data-lang="en" data-p="9" type="button" title="Read English">▶</button><span class="s" data-i="0">Lawyers can help you with legal problems and act for you in court.</span> <span class="s" data-i="1">If you cannot pay for a lawyer, in most communities there are legal aid services available free of charge or at a low cost.</span></div>
+  <div class="rd-cell rd-en"><button class="rd-play" data-lang="en" data-p="9" type="button" title="Read English">▶</button><span class="s" data-i="0"><span class="w">Lawyers</span> <span class="w">can</span> <span class="w">help</span> <span class="w">you</span> <span class="w">with</span> <span class="w">legal</span> <span class="w">problems</span> <span class="w">and</span> <span class="w">act</span> <span class="w">for</span> <span class="w">you</span> <span class="w">in</span> <span class="w">court</span>.</span> <span class="s" data-i="1"><span class="w">If</span> <span class="w">you</span> <span class="w">cannot</span> <span class="w">pay</span> <span class="w">for</span> <span class="w">a</span> <span class="w">lawyer</span>, <span class="w">in</span> <span class="w">most</span> <span class="w">communities</span> <span class="w">there</span> <span class="w">are</span> <span class="w">legal</span> <span class="w">aid</span> <span class="w">services</span> <span class="w">available</span> <span class="w">free</span> <span class="w">of</span> <span class="w">charge</span> <span class="w">or</span> <span class="w">at</span> <span class="w">a</span> <span class="w">low</span> <span class="w">cost</span>.</span></div>
 </div></section>
 </div>
 <script type="application/json" id="rd-08-timings">{"en": [[[0.0, 4.352], [4.352, 11.864]], [[0.0, 8.492], [8.492, 15.237]], [[0.0, 3.407], [3.407, 7.447], [7.447, 10.001], [10.001, 13.368], [13.368, 18.79], [18.79, 26.87]], [[0.0, 8.378]], [[0.0, 3.502], [3.502, 7.995], [7.995, 15.333], [15.333, 25.108]], [[0.0, 3.693], [3.693, 17.288]], [[0.0, 2.605], [2.605, 9.2], [9.2, 23.271], [23.271, 25.93]], [[0.0, 4.744], [4.744, 11.675]], [[0.0, 3.885]], [[0.0, 3.886], [3.886, 10.712]]], "zh": [[[0.0, 4.339], [4.339, 14.115]], [[0.0, 9.32], [9.32, 15.357]], [[0.0, 3.271], [3.271, 7.671], [7.671, 10.272], [10.272, 14.045], [14.045, 20.338], [20.338, 28.976]], [[0.0, 8.375]], [[0.0, 3.829], [3.829, 7.985], [7.985, 17.656], [17.656, 27.188]], [[0.0, 3.585], [3.585, 14.289]], [[0.0, 2.668], [2.668, 8.113], [8.113, 19.398], [19.398, 22.161]], [[0.0, 5.627], [5.627, 12.628]], [[0.0, 4.293]], [[0.0, 4.907], [4.907, 11.107]]]}</script>
+<script src="../dict/words.js"></script>
 
 <script>
 (function() {
@@ -652,7 +685,72 @@ blockquote.speakable > .speak-btn,
     else stop();
   });
 
+  // ---------- word dictionary popup ----------
+  var pop = root.querySelector('.rd-pop');
+  var wordAudio = new Audio();
+  var popCtx = null;
+  var wordBase = (location.pathname.indexOf('/reading/') >= 0 ? '../' : '') + 'audio/words/';
+  function dictLookup(w) {
+    var D = window.CIT_DICT || {};
+    var k = w.replace(/’/g, "'");
+    var tries = [k, k.toLowerCase()];
+    if (/'s$/i.test(k)) tries.push(k.slice(0, -2), k.slice(0, -2).toLowerCase());
+    for (var i = 0; i < tries.length; i++) if (D[tries[i]]) return D[tries[i]];
+    return null;
+  }
+  function sayWord(rate) {
+    if (!popCtx) return;
+    if (!audio.paused) pause();
+    var key = popCtx.word.toLowerCase().replace(/’/g, "'");
+    wordAudio.pause();
+    wordAudio.src = wordBase + encodeURIComponent(key) + '.m4a';
+    wordAudio.playbackRate = rate;
+    try { wordAudio.preservesPitch = true; wordAudio.mozPreservesPitch = true; } catch (err) {}
+    wordAudio.onerror = function() {
+      if (!window.speechSynthesis) return;
+      var u = new SpeechSynthesisUtterance(popCtx.word);
+      u.lang = 'en-US'; u.rate = 0.7 * rate;
+      window.speechSynthesis.cancel(); window.speechSynthesis.speak(u);
+    };
+    wordAudio.play().catch(function(){});
+  }
+  function positionPop(el) {
+    var r = el.getBoundingClientRect();
+    pop.style.top = Math.min(r.bottom + 8, window.innerHeight - pop.offsetHeight - 8) + 'px';
+    var left = r.left;
+    var maxLeft = document.documentElement.clientWidth - pop.offsetWidth - 12;
+    if (left > maxLeft) left = Math.max(12, maxLeft);
+    pop.style.left = left + 'px';
+  }
+  function showPop(el) {
+    var w = el.textContent.trim();
+    var e = dictLookup(w);
+    pop.querySelector('.rd-pop-w').textContent = w;
+    pop.querySelector('.rd-pop-p').textContent = (e && e.p) ? '/' + e.p + '/' : '';
+    pop.querySelector('.rd-pop-t').textContent = e ? (e.x ? e.t + '\n（原形：' + e.x + '）' : e.t) : '字典裡沒有這個字';
+    var s = el.closest('.s'), row = el.closest('.rd-row');
+    popCtx = { word: w, p: parseInt(row.dataset.p, 10), i: parseInt(s.dataset.i, 10) };
+    pop.classList.remove('hidden');
+    positionPop(el);
+    sayWord(1);
+  }
+  function hidePop() { pop.classList.add('hidden'); popCtx = null; wordAudio.pause(); }
+  pop.querySelector('.rd-pop-slow').addEventListener('click', function(){ sayWord(1); });
+  pop.querySelector('.rd-pop-normal').addEventListener('click', function(){ sayWord(1.45); });
+  pop.querySelector('.rd-pop-sent').addEventListener('click', function(){
+    if (!popCtx) return; var c = popCtx; hidePop(); play('en', c.p, c.i);
+  });
+  pop.querySelector('.rd-pop-x').addEventListener('click', hidePop);
+  document.addEventListener('click', function(e) {
+    if (pop.classList.contains('hidden')) return;
+    if (pop.contains(e.target) || (e.target.closest && e.target.closest('.rd-en .w'))) return;
+    hidePop();
+  });
+  document.addEventListener('keydown', function(e) { if (e.key === 'Escape') hidePop(); });
+
   root.addEventListener('click', function(e) {
+    var wEl = e.target.closest && e.target.closest('.rd-en .w');
+    if (wEl) { e.preventDefault(); showPop(wEl); return; }
     var btn = e.target.closest && e.target.closest('.rd-play');
     if (btn) {
       var p = parseInt(btn.dataset.p, 10), lang = btn.dataset.lang;

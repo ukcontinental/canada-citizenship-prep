@@ -490,6 +490,26 @@ blockquote.speakable > .speak-btn,
 .s:hover { background: #f3efe6; }
 .rd-en .s:hover { background: #ebe4d3; }
 .s.on { background: #ffe08a !important; }
+.rd-en .w { cursor: pointer; border-bottom: 1px dotted transparent; border-radius: 2px; }
+.rd-en .w:hover { border-bottom-color: var(--accent); background: #fff3d6; }
+.rd-pop {
+  position: fixed; z-index: 60; width: 320px; max-width: calc(100vw - 24px);
+  background: #fff; border: 1px solid var(--line); border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.16); padding: 14px 16px 12px;
+  font-family: -apple-system, system-ui, sans-serif;
+}
+.rd-pop.hidden { display: none; }
+.rd-pop-w { font-family: Georgia, "Source Serif 4", serif; font-size: 26px; font-weight: 700; color: #3f1a1f; padding-right: 24px; }
+.rd-pop-p { font-size: 15px; color: var(--muted); margin: 2px 0 8px; font-family: "Charis SIL", "Doulos SIL", "Gentium Plus", Georgia, serif; }
+.rd-pop-t { font-size: 14.5px; line-height: 1.6; white-space: pre-line; margin-bottom: 10px; color: var(--ink); }
+.rd-pop-btns { display: flex; gap: 6px; flex-wrap: wrap; }
+.rd-pop-btns button {
+  appearance: none; border: 1.5px solid var(--accent); background: #fff; color: var(--accent);
+  border-radius: 16px; padding: 5px 11px; font-size: 13px; cursor: pointer; font-family: inherit;
+}
+.rd-pop-btns button.main { background: var(--accent); color: #fff; }
+.rd-pop-x { position: absolute; top: 6px; right: 10px; border: none; background: none; font-size: 20px; color: var(--muted); cursor: pointer; }
+.rd-pop-note { font-size: 11px; color: var(--muted); margin-top: 8px; }
 @media (max-width: 820px) {
   .rd-row { grid-template-columns: 1fr; gap: 8px; }
 }
@@ -498,7 +518,19 @@ blockquote.speakable > .speak-btn,
 <div class="rd" id="rd-01">
 <div class="rd-hero">
   <h1>🎧 01 申請公民身分 <small style="font-weight:400;color:var(--muted)">Applying for Citizenship</small></h1>
-  <p>左中文、右英文，句對句對照。按段落左邊的 ▶ 朗讀該段；點任何一句從那句開始念；念到哪一句，中英文同時標黃。空白鍵＝暫停／繼續。</p>
+  <p>左中文、右英文，句對句對照。按段落左邊的 ▶ 朗讀該段；點中文任一句從那句開始念；念到哪一句，中英文同時標黃。<strong>點任何一個英文字</strong>會跳出字典卡並用慢速念這個字。空白鍵＝暫停／繼續。</p>
+</div>
+<div class="rd-pop hidden" role="dialog" aria-label="字典">
+  <button class="rd-pop-x" type="button" aria-label="關閉">×</button>
+  <div class="rd-pop-w"></div>
+  <div class="rd-pop-p"></div>
+  <div class="rd-pop-t"></div>
+  <div class="rd-pop-btns">
+    <button class="rd-pop-slow main" type="button">🔊 慢速再聽</button>
+    <button class="rd-pop-normal" type="button">🔊 正常速</button>
+    <button class="rd-pop-sent" type="button">▶ 從這句開始念</button>
+  </div>
+  <div class="rd-pop-note">釋義來源：ECDICT 開源字典＋加拿大語境補充。點其他地方或按 Esc 關閉。</div>
 </div>
 <div class="rd-bar">
   <button class="rd-btn rd-main rd-all-en" type="button">▶ English 全章</button>
@@ -515,26 +547,27 @@ blockquote.speakable > .speak-btn,
 <section class="rd-sec"><h2>申請公民身分<small>Applying for Citizenship</small></h2>
 <div class="rd-row" data-p="0">
   <div class="rd-cell rd-zh"><button class="rd-play" data-lang="zh" data-p="0" type="button" title="朗讀中文">▶</button><span class="s" data-i="0">當你申請公民身分時，官員會查核你的身分狀態、確認你沒有被禁止申請，並確保你符合各項要求。</span><span class="s" data-i="1">你的申請可能需要好幾個月。</span><span class="s" data-i="2">在申請處理期間，請確保客服中心隨時有你正確的地址。</span></div>
-  <div class="rd-cell rd-en"><button class="rd-play" data-lang="en" data-p="0" type="button" title="Read English">▶</button><span class="s" data-i="0">When you apply for citizenship, officials will check your status, verify that you are not prohibited from applying, and ensure that you meet the requirements.</span> <span class="s" data-i="1">Your application may take several months.</span> <span class="s" data-i="2">Please ensure that the Call Centre always has your correct address while your application is being processed.</span></div>
+  <div class="rd-cell rd-en"><button class="rd-play" data-lang="en" data-p="0" type="button" title="Read English">▶</button><span class="s" data-i="0"><span class="w">When</span> <span class="w">you</span> <span class="w">apply</span> <span class="w">for</span> <span class="w">citizenship</span>, <span class="w">officials</span> <span class="w">will</span> <span class="w">check</span> <span class="w">your</span> <span class="w">status</span>, <span class="w">verify</span> <span class="w">that</span> <span class="w">you</span> <span class="w">are</span> <span class="w">not</span> <span class="w">prohibited</span> <span class="w">from</span> <span class="w">applying</span>, <span class="w">and</span> <span class="w">ensure</span> <span class="w">that</span> <span class="w">you</span> <span class="w">meet</span> <span class="w">the</span> <span class="w">requirements</span>.</span> <span class="s" data-i="1"><span class="w">Your</span> <span class="w">application</span> <span class="w">may</span> <span class="w">take</span> <span class="w">several</span> <span class="w">months</span>.</span> <span class="s" data-i="2"><span class="w">Please</span> <span class="w">ensure</span> <span class="w">that</span> <span class="w">the</span> <span class="w">Call</span> <span class="w">Centre</span> <span class="w">always</span> <span class="w">has</span> <span class="w">your</span> <span class="w">correct</span> <span class="w">address</span> <span class="w">while</span> <span class="w">your</span> <span class="w">application</span> <span class="w">is</span> <span class="w">being</span> <span class="w">processed</span>.</span></div>
 </div></section><section class="rd-sec"><h2>如何用這本手冊準備公民考試<small>How to use this booklet to prepare for the citizenship test</small></h2>
 <div class="rd-row" data-p="1">
   <div class="rd-cell rd-zh"><button class="rd-play" data-lang="zh" data-p="1" type="button" title="朗讀中文">▶</button><span class="s" data-i="0">這本手冊會幫助你準備公民考試。</span><span class="s" data-i="1">你應該研讀這本指南。</span><span class="s" data-i="2">請朋友或家人幫你練習回答關於加拿大的問題。</span><span class="s" data-i="3">打電話給當地的學校或教育局、學院、社區中心，或為移民提供服務的地方組織，詢問公民課程的資訊。</span><span class="s" data-i="4">參加加拿大政府免費提供的英語或法語課程。</span></div>
-  <div class="rd-cell rd-en"><button class="rd-play" data-lang="en" data-p="1" type="button" title="Read English">▶</button><span class="s" data-i="0">This booklet will help you prepare for the citizenship test.</span> <span class="s" data-i="1">You should study this guide.</span> <span class="s" data-i="2">Ask a friend or family member to help you practise answering questions about Canada.</span> <span class="s" data-i="3">Call a local school or school board, a college, a community centre or a local organization that provides services to immigrants and ask for information on citizenship classes.</span> <span class="s" data-i="4">Take English or French language classes, which the Government of Canada offers free of charge.</span></div>
+  <div class="rd-cell rd-en"><button class="rd-play" data-lang="en" data-p="1" type="button" title="Read English">▶</button><span class="s" data-i="0"><span class="w">This</span> <span class="w">booklet</span> <span class="w">will</span> <span class="w">help</span> <span class="w">you</span> <span class="w">prepare</span> <span class="w">for</span> <span class="w">the</span> <span class="w">citizenship</span> <span class="w">test</span>.</span> <span class="s" data-i="1"><span class="w">You</span> <span class="w">should</span> <span class="w">study</span> <span class="w">this</span> <span class="w">guide</span>.</span> <span class="s" data-i="2"><span class="w">Ask</span> <span class="w">a</span> <span class="w">friend</span> <span class="w">or</span> <span class="w">family</span> <span class="w">member</span> <span class="w">to</span> <span class="w">help</span> <span class="w">you</span> <span class="w">practise</span> <span class="w">answering</span> <span class="w">questions</span> <span class="w">about</span> <span class="w">Canada</span>.</span> <span class="s" data-i="3"><span class="w">Call</span> <span class="w">a</span> <span class="w">local</span> <span class="w">school</span> <span class="w">or</span> <span class="w">school</span> <span class="w">board</span>, <span class="w">a</span> <span class="w">college</span>, <span class="w">a</span> <span class="w">community</span> <span class="w">centre</span> <span class="w">or</span> <span class="w">a</span> <span class="w">local</span> <span class="w">organization</span> <span class="w">that</span> <span class="w">provides</span> <span class="w">services</span> <span class="w">to</span> <span class="w">immigrants</span> <span class="w">and</span> <span class="w">ask</span> <span class="w">for</span> <span class="w">information</span> <span class="w">on</span> <span class="w">citizenship</span> <span class="w">classes</span>.</span> <span class="s" data-i="4"><span class="w">Take</span> <span class="w">English</span> <span class="w">or</span> <span class="w">French</span> <span class="w">language</span> <span class="w">classes</span>, <span class="w">which</span> <span class="w">the</span> <span class="w">Government</span> <span class="w">of</span> <span class="w">Canada</span> <span class="w">offers</span> <span class="w">free</span> <span class="w">of</span> <span class="w">charge</span>.</span></div>
 </div></section><section class="rd-sec"><h2>關於公民考試<small>About the citizenship test</small></h2>
 <div class="rd-row" data-p="2">
   <div class="rd-cell rd-zh"><button class="rd-play" data-lang="zh" data-p="2" type="button" title="朗讀中文">▶</button><span class="s" data-i="0">公民考試通常是筆試，但也可能是面試。</span><span class="s" data-i="1">考試會測驗公民身分的兩項基本要求：一是對加拿大以及公民權利與責任的了解，二是足夠的英語或法語能力。</span><span class="s" data-i="2">55 歲以上的成年申請人不需要參加公民考試。</span><span class="s" data-i="3">《公民法規》說明了如何判定你是否符合「了解加拿大」這項要求。</span><span class="s" data-i="4">所有公民考試的題目都根據《公民法規》列出的主題範圍出題，而所有需要的資訊都在這本學習指南裡。</span></div>
-  <div class="rd-cell rd-en"><button class="rd-play" data-lang="en" data-p="2" type="button" title="Read English">▶</button><span class="s" data-i="0">The citizenship test is usually a written test, but it could be an interview.</span> <span class="s" data-i="1">You will be tested on two basic requirements for citizenship: knowledge of Canada and of the rights and responsibilities of citizenship, and adequate knowledge of English or French.</span> <span class="s" data-i="2">Adult applicants 55 years of age and over do not need to write the citizenship test.</span> <span class="s" data-i="3">The Citizenship Regulations provide information on how your ability to meet the knowledge of Canada requirement is determined.</span> <span class="s" data-i="4">All the citizenship test questions are based on the subject areas noted in the Citizenship Regulations, and all required information is provided in this study guide.</span></div>
+  <div class="rd-cell rd-en"><button class="rd-play" data-lang="en" data-p="2" type="button" title="Read English">▶</button><span class="s" data-i="0"><span class="w">The</span> <span class="w">citizenship</span> <span class="w">test</span> <span class="w">is</span> <span class="w">usually</span> <span class="w">a</span> <span class="w">written</span> <span class="w">test</span>, <span class="w">but</span> <span class="w">it</span> <span class="w">could</span> <span class="w">be</span> <span class="w">an</span> <span class="w">interview</span>.</span> <span class="s" data-i="1"><span class="w">You</span> <span class="w">will</span> <span class="w">be</span> <span class="w">tested</span> <span class="w">on</span> <span class="w">two</span> <span class="w">basic</span> <span class="w">requirements</span> <span class="w">for</span> <span class="w">citizenship</span>: <span class="w">knowledge</span> <span class="w">of</span> <span class="w">Canada</span> <span class="w">and</span> <span class="w">of</span> <span class="w">the</span> <span class="w">rights</span> <span class="w">and</span> <span class="w">responsibilities</span> <span class="w">of</span> <span class="w">citizenship</span>, <span class="w">and</span> <span class="w">adequate</span> <span class="w">knowledge</span> <span class="w">of</span> <span class="w">English</span> <span class="w">or</span> <span class="w">French</span>.</span> <span class="s" data-i="2"><span class="w">Adult</span> <span class="w">applicants</span> 55 <span class="w">years</span> <span class="w">of</span> <span class="w">age</span> <span class="w">and</span> <span class="w">over</span> <span class="w">do</span> <span class="w">not</span> <span class="w">need</span> <span class="w">to</span> <span class="w">write</span> <span class="w">the</span> <span class="w">citizenship</span> <span class="w">test</span>.</span> <span class="s" data-i="3"><span class="w">The</span> <span class="w">Citizenship</span> <span class="w">Regulations</span> <span class="w">provide</span> <span class="w">information</span> <span class="w">on</span> <span class="w">how</span> <span class="w">your</span> <span class="w">ability</span> <span class="w">to</span> <span class="w">meet</span> <span class="w">the</span> <span class="w">knowledge</span> <span class="w">of</span> <span class="w">Canada</span> <span class="w">requirement</span> <span class="w">is</span> <span class="w">determined</span>.</span> <span class="s" data-i="4"><span class="w">All</span> <span class="w">the</span> <span class="w">citizenship</span> <span class="w">test</span> <span class="w">questions</span> <span class="w">are</span> <span class="w">based</span> <span class="w">on</span> <span class="w">the</span> <span class="w">subject</span> <span class="w">areas</span> <span class="w">noted</span> <span class="w">in</span> <span class="w">the</span> <span class="w">Citizenship</span> <span class="w">Regulations</span>, <span class="w">and</span> <span class="w">all</span> <span class="w">required</span> <span class="w">information</span> <span class="w">is</span> <span class="w">provided</span> <span class="w">in</span> <span class="w">this</span> <span class="w">study</span> <span class="w">guide</span>.</span></div>
 </div></section><section class="rd-sec"><h2>考試之後<small>After the test</small></h2>
 <div class="rd-row" data-p="3">
   <div class="rd-cell rd-zh"><button class="rd-play" data-lang="zh" data-p="3" type="button" title="朗讀中文">▶</button><span class="s" data-i="0">如果你通過考試並符合其他所有要求，你會收到一份「宣誓入籍出席通知」。</span><span class="s" data-i="1">這份文件會告訴你公民宣誓儀式的日期、時間和地點。</span></div>
-  <div class="rd-cell rd-en"><button class="rd-play" data-lang="en" data-p="3" type="button" title="Read English">▶</button><span class="s" data-i="0">If you pass the test and meet all the other requirements, you will receive a Notice to Appear to Take the Oath of Citizenship.</span> <span class="s" data-i="1">This document tells you the date, time and place of your citizenship ceremony.</span></div>
+  <div class="rd-cell rd-en"><button class="rd-play" data-lang="en" data-p="3" type="button" title="Read English">▶</button><span class="s" data-i="0"><span class="w">If</span> <span class="w">you</span> <span class="w">pass</span> <span class="w">the</span> <span class="w">test</span> <span class="w">and</span> <span class="w">meet</span> <span class="w">all</span> <span class="w">the</span> <span class="w">other</span> <span class="w">requirements</span>, <span class="w">you</span> <span class="w">will</span> <span class="w">receive</span> <span class="w">a</span> <span class="w">Notice</span> <span class="w">to</span> <span class="w">Appear</span> <span class="w">to</span> <span class="w">Take</span> <span class="w">the</span> <span class="w">Oath</span> <span class="w">of</span> <span class="w">Citizenship</span>.</span> <span class="s" data-i="1"><span class="w">This</span> <span class="w">document</span> <span class="w">tells</span> <span class="w">you</span> <span class="w">the</span> <span class="w">date</span>, <span class="w">time</span> <span class="w">and</span> <span class="w">place</span> <span class="w">of</span> <span class="w">your</span> <span class="w">citizenship</span> <span class="w">ceremony</span>.</span></div>
 </div>
 <div class="rd-row" data-p="4">
   <div class="rd-cell rd-zh"><button class="rd-play" data-lang="zh" data-p="4" type="button" title="朗讀中文">▶</button><span class="s" data-i="0">在儀式上，你會宣讀公民誓詞、簽署誓詞表格，並領取你的加拿大公民證書。</span><span class="s" data-i="1">如果你沒有通過考試，你會收到一份通知，說明接下來的步驟。</span><span class="s" data-i="2">我們鼓勵你帶家人和朋友一起來慶祝這個時刻。</span></div>
-  <div class="rd-cell rd-en"><button class="rd-play" data-lang="en" data-p="4" type="button" title="Read English">▶</button><span class="s" data-i="0">At the ceremony, you will take the Oath of Citizenship, sign the oath form, and receive your Canadian Citizenship Certificate.</span> <span class="s" data-i="1">If you do not pass the test, you will receive a notification indicating the next steps.</span> <span class="s" data-i="2">You are encouraged to bring your family and friends to celebrate this occasion.</span></div>
+  <div class="rd-cell rd-en"><button class="rd-play" data-lang="en" data-p="4" type="button" title="Read English">▶</button><span class="s" data-i="0"><span class="w">At</span> <span class="w">the</span> <span class="w">ceremony</span>, <span class="w">you</span> <span class="w">will</span> <span class="w">take</span> <span class="w">the</span> <span class="w">Oath</span> <span class="w">of</span> <span class="w">Citizenship</span>, <span class="w">sign</span> <span class="w">the</span> <span class="w">oath</span> <span class="w">form</span>, <span class="w">and</span> <span class="w">receive</span> <span class="w">your</span> <span class="w">Canadian</span> <span class="w">Citizenship</span> <span class="w">Certificate</span>.</span> <span class="s" data-i="1"><span class="w">If</span> <span class="w">you</span> <span class="w">do</span> <span class="w">not</span> <span class="w">pass</span> <span class="w">the</span> <span class="w">test</span>, <span class="w">you</span> <span class="w">will</span> <span class="w">receive</span> <span class="w">a</span> <span class="w">notification</span> <span class="w">indicating</span> <span class="w">the</span> <span class="w">next</span> <span class="w">steps</span>.</span> <span class="s" data-i="2"><span class="w">You</span> <span class="w">are</span> <span class="w">encouraged</span> <span class="w">to</span> <span class="w">bring</span> <span class="w">your</span> <span class="w">family</span> <span class="w">and</span> <span class="w">friends</span> <span class="w">to</span> <span class="w">celebrate</span> <span class="w">this</span> <span class="w">occasion</span>.</span></div>
 </div></section>
 </div>
 <script type="application/json" id="rd-01-timings">{"en": [[[0.0, 9.631], [9.631, 12.127], [12.127, 17.956]], [[0.0, 3.45], [3.45, 5.238], [5.238, 10.195], [10.195, 20.888], [20.888, 26.287]], [[0.0, 4.66], [4.66, 15.19], [15.19, 20.775], [20.775, 28.147], [28.147, 37.667]], [[0.0, 6.507], [6.507, 11.151]], [[0.0, 7.554], [7.554, 12.813], [12.813, 16.888]]], "zh": [[[0.0, 10.283], [10.283, 13.128], [13.128, 18.364]], [[0.0, 3.34], [3.34, 5.79], [5.79, 9.912], [9.912, 20.663], [20.663, 24.564]], [[0.0, 4.35], [4.35, 14.404], [14.404, 18.688], [18.688, 25.062], [25.062, 33.166]], [[0.0, 7.717], [7.717, 12.837]], [[0.0, 7.927], [7.927, 14.498], [14.498, 18.178]]]}</script>
+<script src="../dict/words.js"></script>
 
 <script>
 (function() {
@@ -632,7 +665,72 @@ blockquote.speakable > .speak-btn,
     else stop();
   });
 
+  // ---------- word dictionary popup ----------
+  var pop = root.querySelector('.rd-pop');
+  var wordAudio = new Audio();
+  var popCtx = null;
+  var wordBase = (location.pathname.indexOf('/reading/') >= 0 ? '../' : '') + 'audio/words/';
+  function dictLookup(w) {
+    var D = window.CIT_DICT || {};
+    var k = w.replace(/’/g, "'");
+    var tries = [k, k.toLowerCase()];
+    if (/'s$/i.test(k)) tries.push(k.slice(0, -2), k.slice(0, -2).toLowerCase());
+    for (var i = 0; i < tries.length; i++) if (D[tries[i]]) return D[tries[i]];
+    return null;
+  }
+  function sayWord(rate) {
+    if (!popCtx) return;
+    if (!audio.paused) pause();
+    var key = popCtx.word.toLowerCase().replace(/’/g, "'");
+    wordAudio.pause();
+    wordAudio.src = wordBase + encodeURIComponent(key) + '.m4a';
+    wordAudio.playbackRate = rate;
+    try { wordAudio.preservesPitch = true; wordAudio.mozPreservesPitch = true; } catch (err) {}
+    wordAudio.onerror = function() {
+      if (!window.speechSynthesis) return;
+      var u = new SpeechSynthesisUtterance(popCtx.word);
+      u.lang = 'en-US'; u.rate = 0.7 * rate;
+      window.speechSynthesis.cancel(); window.speechSynthesis.speak(u);
+    };
+    wordAudio.play().catch(function(){});
+  }
+  function positionPop(el) {
+    var r = el.getBoundingClientRect();
+    pop.style.top = Math.min(r.bottom + 8, window.innerHeight - pop.offsetHeight - 8) + 'px';
+    var left = r.left;
+    var maxLeft = document.documentElement.clientWidth - pop.offsetWidth - 12;
+    if (left > maxLeft) left = Math.max(12, maxLeft);
+    pop.style.left = left + 'px';
+  }
+  function showPop(el) {
+    var w = el.textContent.trim();
+    var e = dictLookup(w);
+    pop.querySelector('.rd-pop-w').textContent = w;
+    pop.querySelector('.rd-pop-p').textContent = (e && e.p) ? '/' + e.p + '/' : '';
+    pop.querySelector('.rd-pop-t').textContent = e ? (e.x ? e.t + '\n（原形：' + e.x + '）' : e.t) : '字典裡沒有這個字';
+    var s = el.closest('.s'), row = el.closest('.rd-row');
+    popCtx = { word: w, p: parseInt(row.dataset.p, 10), i: parseInt(s.dataset.i, 10) };
+    pop.classList.remove('hidden');
+    positionPop(el);
+    sayWord(1);
+  }
+  function hidePop() { pop.classList.add('hidden'); popCtx = null; wordAudio.pause(); }
+  pop.querySelector('.rd-pop-slow').addEventListener('click', function(){ sayWord(1); });
+  pop.querySelector('.rd-pop-normal').addEventListener('click', function(){ sayWord(1.45); });
+  pop.querySelector('.rd-pop-sent').addEventListener('click', function(){
+    if (!popCtx) return; var c = popCtx; hidePop(); play('en', c.p, c.i);
+  });
+  pop.querySelector('.rd-pop-x').addEventListener('click', hidePop);
+  document.addEventListener('click', function(e) {
+    if (pop.classList.contains('hidden')) return;
+    if (pop.contains(e.target) || (e.target.closest && e.target.closest('.rd-en .w'))) return;
+    hidePop();
+  });
+  document.addEventListener('keydown', function(e) { if (e.key === 'Escape') hidePop(); });
+
   root.addEventListener('click', function(e) {
+    var wEl = e.target.closest && e.target.closest('.rd-en .w');
+    if (wEl) { e.preventDefault(); showPop(wEl); return; }
     var btn = e.target.closest && e.target.closest('.rd-play');
     if (btn) {
       var p = parseInt(btn.dataset.p, 10), lang = btn.dataset.lang;
