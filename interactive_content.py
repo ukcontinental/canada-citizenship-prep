@@ -19,6 +19,7 @@ IV_SHARED_CSS = """
 }
 .iv-hero h1 { margin: 0 0 6px; border: none; padding: 0; }
 .iv-hero p { margin: 0; color: var(--muted); }
+.iv-hero h1 small, .iv-section-title small { font-size: 0.6em; font-weight: 400; color: var(--muted); font-family: Georgia, serif; font-style: italic; margin-left: 8px; }
 
 .iv-section-title {
   margin: 32px 0 14px; padding-bottom: 6px;
@@ -265,14 +266,14 @@ table.iv-quick th {{ font-size: 12px; }}
 .iv-dot {{ display: inline-block; width: 10px; height: 10px; border-radius: 50%; margin-right: 8px; vertical-align: middle; }}
 </style>
 <div class="iv-hero">
-  <h1>🗺️ 加拿大地理（互動地圖）</h1>
+  <h1>🗺️ 加拿大地理 <small>Canada's Regions</small></h1>
   <p>點任何省份看它的首府、省長、產業重點。<strong>Ontario ⭐</strong> 是考試重點省，預設展開。</p>
 </div>
 {map_svg}
 {detail}
-<h2 class="iv-section-title">5 大區域速記</h2>
+<h2 class="iv-section-title">5 大區域速記 <small>The Five Regions</small></h2>
 <div class="iv-region-row">{region_cards}</div>
-<h2 class="iv-section-title">速查表</h2>
+<h2 class="iv-section-title">速查表 <small>Provinces &amp; Capitals</small></h2>
 <table class="iv-quick"><thead><tr><th>代碼</th><th>英文名</th><th>中文</th><th>首府</th><th>省長</th></tr></thead><tbody>{table_rows}</tbody></table>
 <script>
 (function() {{
@@ -563,7 +564,7 @@ def build_history_body():
 }}
 </style>
 <div class="iv-hero">
-  <h1>📜 加拿大歷史時間軸</h1>
+  <h1>📜 加拿大歷史時間軸 <small>Canada's History Timeline</small></h1>
   <p>1497 → 2021 共 41 件考試重點事件。按時代色標分區，⭐ = 高頻考點。點時代按鈕篩選。</p>
 </div>
 <div class="iv-era-filter">
@@ -694,12 +695,12 @@ def build_modern_body():
 .iv-ms-en {{ color: var(--muted); font-size: 13px; font-style: italic; }}
 </style>
 <div class="iv-hero">
-  <h1>🇨🇦 現代加拿大（PM 與里程碑）</h1>
+  <h1>🇨🇦 現代加拿大 <small>Modern Canada: Prime Ministers &amp; Milestones</small></h1>
   <p>14 位戰後總理畫廊 + 11 件現代加拿大關鍵法案／事件。⭐ = 考試重點。</p>
 </div>
-<h2 class="iv-section-title">歷任總理（建國至今 14 位重要人物）</h2>
+<h2 class="iv-section-title">歷任總理 <small>Prime Ministers since Confederation</small></h2>
 <div class="iv-pm-grid">{pm_cards}</div>
-<h2 class="iv-section-title">現代加拿大里程碑</h2>
+<h2 class="iv-section-title">現代加拿大里程碑 <small>Modern Milestones</small></h2>
 <div class="iv-milestones">{milestone_html}</div>
 '''
 
@@ -730,11 +731,11 @@ def build_government_body():
 .iv-bill-step .desc {{ font-size: 12px; color: var(--muted); }}
 </style>
 <div class="iv-hero">
-  <h1>🏛️ 加拿大政府架構（圖解）</h1>
+  <h1>🏛️ 加拿大政府架構 <small>How Canadians Govern Themselves</small></h1>
   <p>三張流程圖：三級政府職責、國會三部分、法案如何變法律。</p>
 </div>
 
-<h2 class="iv-section-title">圖 1：三級政府（誰管什麼）</h2>
+<h2 class="iv-section-title">圖 1：三級政府 <small>Three Levels of Government</small></h2>
 <div class="iv-gov-diagram">
 <svg viewBox="0 0 800 380" class="iv-gov-svg">
   <!-- Federal box -->
@@ -774,7 +775,7 @@ def build_government_body():
 </div>
 </div>
 
-<h2 class="iv-section-title">圖 2：國會 Parliament 三部分</h2>
+<h2 class="iv-section-title">圖 2：國會三部分 <small>The Three Parts of Parliament</small></h2>
 <div class="iv-gov-diagram">
 <svg viewBox="0 0 800 400" class="iv-gov-svg">
   <!-- Sovereign -->
@@ -808,7 +809,7 @@ def build_government_body():
 </svg>
 </div>
 
-<h2 class="iv-section-title">圖 3：法案如何變法律（7 步驟）</h2>
+<h2 class="iv-section-title">圖 3：法案如何變法律 <small>How a Bill Becomes Law (7 steps)</small></h2>
 <div class="iv-gov-diagram">
 <div class="iv-bill-flow">
   <div class="iv-bill-step"><div class="num">1</div><div class="title">一讀 First Reading</div><div class="desc">眾議院介紹法案</div></div>
@@ -873,14 +874,14 @@ def build_elections_body():
 .iv-fact-row strong {{ color: var(--accent); }}
 </style>
 <div class="iv-hero">
-  <h1>🗳️ 加拿大聯邦選舉</h1>
+  <h1>🗳️ 加拿大聯邦選舉 <small>Federal Elections</small></h1>
   <p>5 大政黨 + 投票資格 + 選舉流程 + 5 個必考重點。</p>
 </div>
 
-<h2 class="iv-section-title">5 大主要政黨</h2>
+<h2 class="iv-section-title">5 大主要政黨 <small>Major Political Parties</small></h2>
 <div class="iv-party-grid">{party_cards}</div>
 
-<h2 class="iv-section-title">投票資格 & 流程</h2>
+<h2 class="iv-section-title">投票資格 &amp; 流程 <small>Who Can Vote &amp; Voting Procedures</small></h2>
 <div class="iv-vote-steps">
   <div class="iv-vote-step"><div class="icon">🇨🇦</div><strong>1. 公民身份</strong><p>必須是 Canadian Citizen（永久居民不能投）</p></div>
   <div class="iv-vote-step"><div class="icon">🎂</div><strong>2. 年滿 18 歲</strong><p>投票日當天滿 18</p></div>
@@ -889,7 +890,7 @@ def build_elections_body():
   <div class="iv-vote-step"><div class="icon">✏️</div><strong>5. 圈選候選人</strong><p>選你選區（Riding）的 MP 候選人</p></div>
 </div>
 
-<h2 class="iv-section-title">考試 5 大必背重點</h2>
+<h2 class="iv-section-title">考試 5 大必背重點 <small>Five Must-Know Facts</small></h2>
 <div class="iv-facts">
   <div class="iv-fact-row"><strong>選舉週期</strong><span>每 <strong>4 年</strong>最長一次（PM 可提早解散）</span></div>
   <div class="iv-fact-row"><strong>眾議院席次</strong><span>共 <strong>338 位 MP</strong>（每個選區 Riding 一位）</span></div>
@@ -932,14 +933,14 @@ def build_justice_body():
 .iv-rcmp ul {{ margin: 8px 0 0; padding-left: 20px; font-size: 14px; }}
 </style>
 <div class="iv-hero">
-  <h1>⚖️ 加拿大司法系統</h1>
+  <h1>⚖️ 加拿大司法系統 <small>The Justice System</small></h1>
   <p>5 大法律原則 + 4 級法院階層 + RCMP 角色。</p>
 </div>
 
-<h2 class="iv-section-title">5 大法律原則</h2>
+<h2 class="iv-section-title">5 大法律原則 <small>Five Principles of Canadian Law</small></h2>
 <div class="iv-principles-grid">{principles_cards}</div>
 
-<h2 class="iv-section-title">4 級法院階層（金字塔）</h2>
+<h2 class="iv-section-title">4 級法院階層 <small>The Courts</small></h2>
 <div class="iv-court-hierarchy">
 <svg viewBox="0 0 800 480" class="iv-court-svg">
   <!-- Top: Supreme Court -->
@@ -1093,17 +1094,17 @@ def build_symbols_body():
 .iv-hol-row .hol-zh {{ color: var(--muted); }}
 </style>
 <div class="iv-hero">
-  <h1>🍁 加拿大國家象徵圖鑑</h1>
+  <h1>🍁 加拿大國家象徵圖鑑 <small>Canadian Symbols</small></h1>
   <p>象徵、鈔票、硬幣、國定假日——視覺整理一次到位。</p>
 </div>
 
-<h2 class="iv-section-title">10 大國家象徵</h2>
+<h2 class="iv-section-title">10 大國家象徵 <small>Ten National Symbols</small></h2>
 <div class="iv-sym-grid">{symbol_cards}</div>
 
-<h2 class="iv-section-title">鈔票上的人物</h2>
+<h2 class="iv-section-title">鈔票上的人物 <small>Faces on Banknotes</small></h2>
 <div>{currency_rows}</div>
 
-<h2 class="iv-section-title">硬幣上的動物</h2>
+<h2 class="iv-section-title">硬幣上的動物 <small>Animals on Coins</small></h2>
 <div class="iv-card-grid" style="grid-template-columns:repeat(auto-fit,minmax(140px,1fr))">
   <div class="iv-card"><strong>1¢</strong> Maple Leaf 楓葉<br><span class="meta">已停產 2013</span></div>
   <div class="iv-card"><strong>5¢</strong> Beaver 河狸 🦫</div>
@@ -1113,7 +1114,7 @@ def build_symbols_body():
   <div class="iv-card"><strong>$2 Toonie</strong> Polar Bear 北極熊 🐻‍❄️</div>
 </div>
 
-<h2 class="iv-section-title">12 個國定/重要假日</h2>
+<h2 class="iv-section-title">12 個國定/重要假日 <small>National Public Holidays</small></h2>
 <div>{holidays_rows}</div>
 '''
 
@@ -1194,17 +1195,17 @@ def build_economy_body():
 .iv-trade-row .note {{ font-size: 12px; color: var(--muted); margin-top: 2px; }}
 </style>
 <div class="iv-hero">
-  <h1>💼 加拿大經濟</h1>
+  <h1>💼 加拿大經濟 <small>Canada's Economy</small></h1>
   <p>三大產業比例 + 5 個必考經濟事實。</p>
 </div>
 
-<h2 class="iv-section-title">三大產業（GDP / 就業比重）</h2>
+<h2 class="iv-section-title">三大產業 <small>Three Main Types of Industries</small></h2>
 <div class="iv-pie-wrap">
   <svg viewBox="0 0 300 300" class="iv-pie">{pie_segments}</svg>
   <div class="iv-ind-cards">{industry_cards}</div>
 </div>
 
-<h2 class="iv-section-title">5 大必背經濟事實</h2>
+<h2 class="iv-section-title">5 大必背經濟事實 <small>Five Economic Facts</small></h2>
 <div>{trade_rows}</div>
 
 <div class="iv-hero" style="margin-top:24px">
@@ -1248,7 +1249,7 @@ def build_interactive_index_body():
 </style>
 
 <div class="iv-hub-hero">
-  <h1>🎯 互動式學習中心</h1>
+  <h1>🎯 每章重點互動記憶 <small>Interactive Memory Modules</small></h1>
   <p>把抽象的考試內容變成圖、地圖、時間軸、流程——用視覺記憶取代死背。對應教材 04~11 章。</p>
 </div>
 
