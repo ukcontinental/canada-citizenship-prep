@@ -1403,6 +1403,7 @@ READING_CSS = r"""
 .s:hover { background: #f3efe6; }
 .rd-en .s:hover { background: #ebe4d3; }
 .s.on { background: #ffe08a !important; }
+.s.ans { display: block; margin-top: 6px; padding: 6px 10px; border-left: 3px solid #2e7d46; background: #f1f8f2; border-radius: 0 6px 6px 0; }
 .rd-en .w { cursor: pointer; border-bottom: 1px dotted transparent; border-radius: 2px; }
 .rd-en .w:hover { border-bottom-color: var(--accent); background: #fff3d6; }
 .rd-pop {
@@ -1666,12 +1667,14 @@ def render_reading(json_path: Path, dict_src: str = "../dict/words.js") -> str:
     for sec in data["sections"]:
         rows = ""
         for para in sec["paras"]:
+            def scls(p):
+                return "s ans" if p["en"].startswith("Answer:") else "s"
             zh = "".join(
-                f'<span class="s" data-i="{i}">{html.escape(p["zh"])}</span>'
+                f'<span class="{scls(p)}" data-i="{i}">{html.escape(p["zh"])}</span>'
                 for i, p in enumerate(para)
             )
             en = " ".join(
-                f'<span class="s" data-i="{i}">{wrap_words(p["en"])}</span>'
+                f'<span class="{scls(p)}" data-i="{i}">{wrap_words(p["en"])}</span>'
                 for i, p in enumerate(para)
             )
             rows += f'''

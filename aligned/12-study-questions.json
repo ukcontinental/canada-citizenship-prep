@@ -1,89 +1,184 @@
 {
   "num": "12",
-  "title_en": "Study Questions",
-  "title_zh": "官方練習題",
+  "title_en": "Study Questions with Answers",
+  "title_zh": "官方練習題與解答",
   "sections": [
     {
-      "title_en": "Study Questions",
-      "title_zh": "官方練習題",
+      "title_en": "About the test",
+      "title_zh": "關於考試",
       "paras": [
         [
           {"en": "One of the basic requirements of citizenship is to demonstrate that you have adequate knowledge of Canada.", "zh": "公民身分的基本要求之一，是證明你對加拿大有足夠的了解。"},
           {"en": "The citizenship test is used to assess your knowledge of Canada and the rights and responsibilities of being a citizen in Canada.", "zh": "公民考試用來評估你對加拿大以及身為加拿大公民的權利與責任的了解。"},
           {"en": "All the citizenship test questions are based on information provided in this study guide.", "zh": "所有公民考試的題目都根據這本學習指南提供的資訊出題。"},
-          {"en": "You will be asked about facts and ideas presented in the guide.", "zh": "你會被問到指南中提到的事實和概念。"},
-          {"en": "The questions below are similar to the questions that are found on the citizenship test.", "zh": "下面的題目和公民考試中的題目類似。"},
-          {"en": "Use these questions to prepare for your test. All the answers can be found in this study guide.", "zh": "用這些題目來準備你的考試。所有答案都可以在這本學習指南裡找到。"}
+          {"en": "The questions below are similar to the questions that are found on the citizenship test. All the answers can be found in this study guide.", "zh": "下面的題目和公民考試中的題目類似。所有答案都可以在這本學習指南裡找到。"},
+          {"en": "The real test has 20 multiple-choice or true-false questions in English or French, 30 minutes, and you pass with 15 correct answers.", "zh": "真正的考試有 20 題選擇或是非題，英文或法文，30 分鐘，答對 15 題就通過。"}
         ]
       ]
     },
     {
-      "title_en": "Sample multiple-choice questions",
-      "title_zh": "選擇題範例",
+      "title_en": "Official sample questions (multiple choice)",
+      "title_zh": "官方選擇題範例",
       "paras": [
         [
-          {"en": "What are three responsibilities of citizenship?", "zh": "公民的三項責任是什麼？"},
+          {"en": "Question 1. What are three responsibilities of citizenship?", "zh": "第 1 題。公民的三項責任是什麼？"},
           {"en": "a) Being loyal to Canada, recycling newspapers, serving in the navy, army or air force.", "zh": "a）效忠加拿大、回收報紙、在海軍、陸軍或空軍服役。"},
           {"en": "b) Obeying the law, taking responsibility for oneself and one's family, serving on a jury.", "zh": "b）遵守法律、為自己和家人負責、擔任陪審員。"},
           {"en": "c) Learning both official languages, voting in elections, belonging to a union.", "zh": "c）學習兩種官方語言、在選舉中投票、加入工會。"},
           {"en": "d) Buying Canadian products, owning your own business, using less water.", "zh": "d）購買加拿大產品、擁有自己的事業、少用水。"},
-          {"en": "The answer is b.", "zh": "答案是 b。"}
+          {"en": "Answer: b. The six responsibilities in the guide are obeying the law, taking responsibility for oneself and one's family, serving on a jury, voting in elections, helping others in the community, and protecting our heritage and environment. (Chapter 2)", "zh": "答：b。書中列的六項責任是：遵守法律、為自己和家人負責、擔任陪審員、在選舉中投票、幫助社區裡的他人、保護我們的遺產與環境。（第 2 章）"}
         ],
         [
-          {"en": "What is the meaning of the Remembrance Day poppy?", "zh": "國殤紀念日的罌粟花有什麼意義？"},
+          {"en": "Question 2. What is the meaning of the Remembrance Day poppy?", "zh": "第 2 題。國殤紀念日的罌粟花有什麼意義？"},
           {"en": "a) To remember our Sovereign, Queen Elizabeth II.", "zh": "a）紀念我們的君主伊莉莎白二世女王。"},
           {"en": "b) To celebrate Confederation.", "zh": "b）慶祝聯邦成立。"},
           {"en": "c) To honour prime ministers who have died.", "zh": "c）向已故的總理致敬。"},
           {"en": "d) To remember the sacrifice of Canadians who have served or died in wars up to the present day.", "zh": "d）紀念至今在戰爭中服役或犧牲的加拿大人。"},
-          {"en": "The answer is d.", "zh": "答案是 d。"}
+          {"en": "Answer: d. Canadians wear the red poppy and observe a moment of silence at 11 a.m. on November 11 to honour those who served and the 110,000 who gave their lives. (Chapter 4)", "zh": "答：d。加拿大人佩戴紅色罌粟花，在 11 月 11 日上午 11 時默哀，向服役者以及十一萬名獻出生命的人致敬。（第 4 章）"}
         ],
         [
-          {"en": "How are members of Parliament chosen?", "zh": "國會議員是怎麼產生的？"},
+          {"en": "Question 3. How are members of Parliament chosen?", "zh": "第 3 題。國會議員是怎麼產生的？"},
           {"en": "a) They are appointed by the United Nations.", "zh": "a）由聯合國任命。"},
           {"en": "b) They are chosen by the provincial premiers.", "zh": "b）由各省省長挑選。"},
           {"en": "c) They are elected by voters in their local constituency (riding).", "zh": "c）由他們所在選區的選民選出。"},
           {"en": "d) They are elected by landowners and police chiefs.", "zh": "d）由地主和警察局長選出。"},
-          {"en": "The answer is c.", "zh": "答案是 c。"}
+          {"en": "Answer: c. The citizens in each electoral district, or riding, elect one MP to represent them in the House of Commons; the candidate with the most votes wins. (Chapter 7)", "zh": "答：c。每個選區的公民選出一位國會議員到眾議院代表他們；得票最多的候選人當選。（第 7 章）"}
         ]
       ]
     },
     {
-      "title_en": "Other study questions",
-      "title_zh": "其他練習題",
+      "title_en": "Rights and responsibilities",
+      "title_zh": "權利與責任",
       "paras": [
         [
-          {"en": "Name two key documents that contain our rights and freedoms.", "zh": "說出兩份包含我們權利與自由的重要文件。"},
-          {"en": "Identify four rights that Canadians enjoy.", "zh": "指出加拿大人享有的四項權利。"},
-          {"en": "Name four fundamental freedoms that Canadians enjoy.", "zh": "說出加拿大人享有的四項基本自由。"},
-          {"en": "What is meant by the equality of women and men?", "zh": "「男女平等」是什麼意思？"},
-          {"en": "What are some examples of taking responsibility for yourself and your family?", "zh": "「為自己和家人負責」有哪些例子？"},
-          {"en": "Who were the founding peoples of Canada?", "zh": "加拿大的奠基民族是誰？"},
-          {"en": "Who are the Métis?", "zh": "梅蒂人是誰？"},
-          {"en": "What does the word \"Inuit\" mean?", "zh": "「Inuit」這個詞是什麼意思？"},
-          {"en": "What is meant by the term \"responsible government\"?", "zh": "「責任政府」這個詞是什麼意思？"},
-          {"en": "Who was Sir Louis-Hippolyte La Fontaine?", "zh": "路易－伊波利特・拉方丹爵士是誰？"}
+          {"en": "Question 4. Name two key documents that contain our rights and freedoms.", "zh": "第 4 題。說出兩份包含我們權利與自由的重要文件。"},
+          {"en": "Answer: The Magna Carta of 1215, also called the Great Charter of Freedoms, and the Canadian Charter of Rights and Freedoms, which was entrenched in the Constitution in 1982. (Chapter 2)", "zh": "答：1215 年的《大憲章》（又稱《自由大憲章》），以及 1982 年寫入憲法的《加拿大權利與自由憲章》。（第 2 章）"}
         ],
         [
-          {"en": "What did the Canadian Pacific Railway symbolize?", "zh": "加拿大太平洋鐵路象徵什麼？"},
-          {"en": "What does Confederation mean?", "zh": "「聯邦」（Confederation）是什麼意思？"},
-          {"en": "What is the significance of the discovery of insulin by Sir Frederick Banting and Charles Best?", "zh": "弗雷德里克・班廷爵士和查爾斯・貝斯特發現胰島素有什麼重要意義？"},
-          {"en": "What does it mean to say that Canada is a constitutional monarchy?", "zh": "說加拿大是「君主立憲國」是什麼意思？"},
-          {"en": "What are the three branches of government?", "zh": "政府的三個部門是什麼？"},
-          {"en": "What is the difference between the role of the Queen and that of the Prime Minister?", "zh": "女王的角色和總理的角色有什麼不同？"},
-          {"en": "What is the highest honour that Canadians can receive?", "zh": "加拿大人能獲得的最高榮譽是什麼？"},
-          {"en": "When you go to vote on election day, what do you do?", "zh": "選舉日去投票時，你要做什麼？"},
-          {"en": "Who is entitled to vote in Canadian federal elections?", "zh": "誰有資格在加拿大聯邦選舉中投票？"},
-          {"en": "In Canada, are you obliged to tell other people how you voted?", "zh": "在加拿大，你有義務告訴別人你投給了誰嗎？"}
+          {"en": "Question 5. Identify four rights that Canadians enjoy.", "zh": "第 5 題。指出加拿大人享有的四項權利。"},
+          {"en": "Answer: Mobility rights, Aboriginal peoples' rights, official language rights and minority language educational rights, and multiculturalism. (Chapter 2)", "zh": "答：遷徙權、原住民權利、官方語言權利與少數語言教育權利，以及多元文化。（第 2 章）"}
         ],
         [
-          {"en": "After an election, which party forms the government?", "zh": "選舉之後，哪個政黨組成政府？"},
-          {"en": "Who is your member of Parliament?", "zh": "你的國會議員是誰？"},
-          {"en": "What are the three levels of government?", "zh": "三級政府是哪三級？"},
-          {"en": "What is the role of the courts in Canada?", "zh": "法院在加拿大的角色是什麼？"},
-          {"en": "In Canada, are you allowed to question the police about their service or conduct?", "zh": "在加拿大，你可以質疑警察的服務或行為嗎？"},
-          {"en": "Name two Canadian symbols.", "zh": "說出兩個加拿大的象徵。"},
-          {"en": "What provinces are referred to as the Atlantic Provinces?", "zh": "哪些省被稱為大西洋省份？"},
-          {"en": "What is the capital of the province or territory that you live in?", "zh": "你居住的省或地區的首府是哪裡？"}
+          {"en": "Question 6. Name four fundamental freedoms that Canadians enjoy.", "zh": "第 6 題。說出加拿大人享有的四項基本自由。"},
+          {"en": "Answer: Freedom of conscience and religion; freedom of thought, belief, opinion and expression, including freedom of speech and of the press; freedom of peaceful assembly; and freedom of association. (Chapter 2)", "zh": "答：良心與宗教自由；思想、信仰、意見與表達的自由，包括言論自由和新聞自由；和平集會的自由；以及結社的自由。（第 2 章）"}
+        ],
+        [
+          {"en": "Question 7. What is meant by the equality of women and men?", "zh": "第 7 題。「男女平等」是什麼意思？"},
+          {"en": "Answer: In Canada, men and women are equal under the law. Canada does not tolerate spousal abuse, honour killings, female genital mutilation, forced marriage or other gender-based violence; those guilty of these crimes are severely punished. (Chapter 2)", "zh": "答：在加拿大，男女在法律之下一律平等。加拿大不容忍配偶虐待、榮譽殺人、女性割禮、強迫婚姻或其他性別暴力；犯下這些罪行的人會受到嚴厲懲罰。（第 2 章）"}
+        ],
+        [
+          {"en": "Question 8. What are some examples of taking responsibility for yourself and your family?", "zh": "第 8 題。「為自己和家人負責」有哪些例子？"},
+          {"en": "Answer: Getting a job, taking care of one's family, and working hard in keeping with one's abilities. Work contributes to personal dignity and to Canada's prosperity. (Chapter 2)", "zh": "答：找工作、照顧家人、盡自己的能力努力工作。工作有助於個人的尊嚴，也有助於加拿大的繁榮。（第 2 章）"}
+        ]
+      ]
+    },
+    {
+      "title_en": "Who we are and our history",
+      "title_zh": "我們是誰與歷史",
+      "paras": [
+        [
+          {"en": "Question 9. Who were the founding peoples of Canada?", "zh": "第 9 題。加拿大的奠基民族是誰？"},
+          {"en": "Answer: The three founding peoples are Aboriginal, French and British. (Chapter 3)", "zh": "答：三個奠基民族是原住民、法裔和英裔。（第 3 章）"}
+        ],
+        [
+          {"en": "Question 10. Who are the Métis?", "zh": "第 10 題。梅蒂人是誰？"},
+          {"en": "Answer: The Métis are a distinct people of mixed Aboriginal and European ancestry. Most live in the Prairie provinces, they come from both French- and English-speaking backgrounds, and they speak their own dialect, Michif. (Chapter 3)", "zh": "答：梅蒂人是原住民與歐洲人混血的獨特民族。大多數住在草原省份，有法語和英語兩種背景，並說自己的方言米奇夫語。（第 3 章）"}
+        ],
+        [
+          {"en": "Question 11. What does the word \"Inuit\" mean?", "zh": "第 11 題。「Inuit」這個詞是什麼意思？"},
+          {"en": "Answer: \"Inuit\" means \"the people\" in the Inuktitut language. The Inuit live in small, scattered communities across the Arctic. (Chapter 3)", "zh": "答：「Inuit」在因紐特語中的意思是「人」。因紐特人住在北極各地零星分散的小社區。（第 3 章）"}
+        ],
+        [
+          {"en": "Question 12. What is meant by the term \"responsible government\"?", "zh": "第 12 題。「責任政府」這個詞是什麼意思？"},
+          {"en": "Answer: The ministers of the Crown must have the support of a majority of the elected representatives in order to govern. If the government loses a confidence vote in the assembly, it must resign. (Chapter 4)", "zh": "答：王室的大臣們必須得到多數民選代表的支持才能執政。政府如果在議會的信任投票中落敗，就必須辭職。（第 4 章）"}
+        ],
+        [
+          {"en": "Question 13. Who was Sir Louis-Hippolyte La Fontaine?", "zh": "第 13 題。路易－伊波利特・拉方丹爵士是誰？"},
+          {"en": "Answer: A champion of democracy and French language rights, and the first leader of a responsible government in the Canadas, in 1849. (Chapter 4)", "zh": "答：民主與法語權利的捍衛者，也是 1849 年加拿大第一位責任政府的領袖。（第 4 章）"}
+        ],
+        [
+          {"en": "Question 14. What did the Canadian Pacific Railway symbolize?", "zh": "第 14 題。加拿大太平洋鐵路象徵什麼？"},
+          {"en": "Answer: A powerful symbol of unity. When the last spike was driven on November 7, 1885, the railway linked Canada from sea to sea and fulfilled a national dream. (Chapter 4)", "zh": "答：國家統一的有力象徵。1885 年 11 月 7 日敲下最後一根道釘時，鐵路把加拿大從海到海連接起來，實現了一個國家的夢想。（第 4 章）"}
+        ],
+        [
+          {"en": "Question 15. What does Confederation mean?", "zh": "第 15 題。「聯邦」（Confederation）是什麼意思？"},
+          {"en": "Answer: The joining of Nova Scotia, New Brunswick and the Province of Canada, which became Ontario and Quebec, into one new country, the Dominion of Canada, on July 1, 1867, with two levels of government, federal and provincial. (Chapter 4)", "zh": "答：新斯科細亞、新布藍瑞克和加拿大省（拆成安大略與魁北克）在 1867 年 7 月 1 日聯合組成一個新國家「加拿大自治領」，設有聯邦和省兩級政府。（第 4 章）"}
+        ],
+        [
+          {"en": "Question 16. What is the significance of the discovery of insulin by Sir Frederick Banting and Charles Best?", "zh": "第 16 題。弗雷德里克・班廷爵士和查爾斯・貝斯特發現胰島素有什麼重要意義？"},
+          {"en": "Answer: Insulin is a hormone to treat diabetes, and their discovery has saved 16 million lives worldwide. (Chapter 5)", "zh": "答：胰島素是治療糖尿病的荷爾蒙，他們的發現在全世界拯救了一千六百萬條生命。（第 5 章）"}
+        ]
+      ]
+    },
+    {
+      "title_en": "Government and elections",
+      "title_zh": "政府與選舉",
+      "paras": [
+        [
+          {"en": "Question 17. What does it mean to say that Canada is a constitutional monarchy?", "zh": "第 17 題。說加拿大是「君主立憲國」是什麼意思？"},
+          {"en": "Answer: Canada's Head of State is a hereditary Sovereign, the King or Queen, who reigns in accordance with the Constitution, that is, the rule of law. The Sovereign is represented in Canada by the Governor General, while the Prime Minister, as head of government, actually directs the governing of the country. (Chapter 6)", "zh": "答：加拿大的國家元首是世襲的君主（國王或女王），依據憲法——也就是法治——統治。君主在加拿大由總督代表，而總理作為政府首長，實際指揮國家的治理。（第 6 章）"}
+        ],
+        [
+          {"en": "Question 18. What are the three branches of government?", "zh": "第 18 題。政府的三個部門是什麼？"},
+          {"en": "Answer: The Executive, the Legislative and the Judicial branches. They work together, but sometimes in creative tension, to secure the rights and freedoms of Canadians. (Chapter 6)", "zh": "答：行政、立法和司法三個部門。它們既合作又時有良性的張力，以保障加拿大人的權利與自由。（第 6 章）"}
+        ],
+        [
+          {"en": "Question 19. What is the difference between the role of the Queen and that of the Prime Minister?", "zh": "第 19 題。女王的角色和總理的角色有什麼不同？"},
+          {"en": "Answer: The Sovereign is the head of state, a non-partisan symbol of Canadian sovereignty and the focus of citizenship and allegiance. The Prime Minister is the head of government, who actually directs the governing of the country. (Chapter 6)", "zh": "答：君主是國家元首，是超越黨派的加拿大主權象徵，也是公民身分與效忠的核心。總理是政府首長，實際指揮國家的治理。（第 6 章）"}
+        ],
+        [
+          {"en": "Question 20. What is the highest honour that Canadians can receive?", "zh": "第 20 題。加拿大人能獲得的最高榮譽是什麼？"},
+          {"en": "Answer: The Victoria Cross, awarded for the most conspicuous bravery in the presence of the enemy. It has been awarded to 96 Canadians since 1854. (Chapter 9)", "zh": "答：維多利亞十字勳章，頒給在敵人面前表現最卓越勇敢的人。自 1854 年以來已有 96 位加拿大人獲頒。（第 9 章）"}
+        ],
+        [
+          {"en": "Question 21. When you go to vote on election day, what do you do?", "zh": "第 21 題。選舉日去投票時，你要做什麼？"},
+          {"en": "Answer: Go to the polling station listed on your voter information card, bringing the card and proof of your identity and address. Go behind the screen, mark an X in the circle next to the candidate of your choice, fold the ballot and present it to the poll officials, who tear off the ballot number and give it back to you to deposit in the ballot box. (Chapter 7)", "zh": "答：帶著選民資訊卡以及身分和地址證明，到卡上列出的投票站。到遮板後面，在你選擇的候選人姓名旁邊的圓圈裡畫一個 X，把選票摺起來交給工作人員；工作人員撕下選票編號後交還給你，由你投進投票箱。（第 7 章）"}
+        ],
+        [
+          {"en": "Question 22. Who is entitled to vote in Canadian federal elections?", "zh": "第 22 題。誰有資格在加拿大聯邦選舉中投票？"},
+          {"en": "Answer: A Canadian citizen who is at least 18 years old on voting day and is on the voters' list. (Chapter 7)", "zh": "答：投票日當天年滿 18 歲、並且在選民名冊上的加拿大公民。（第 7 章）"}
+        ],
+        [
+          {"en": "Question 23. In Canada, are you obliged to tell other people how you voted?", "zh": "第 23 題。在加拿大，你有義務告訴別人你投給了誰嗎？"},
+          {"en": "Answer: No. Canadian law secures the right to a secret ballot. No one, including family members, your employer or a union representative, has the right to insist that you tell them how you voted. (Chapter 7)", "zh": "答：沒有。加拿大法律保障不記名投票的權利。沒有人——包括家人、雇主或工會代表——有權堅持要你告訴他們你投給了誰。（第 7 章）"}
+        ],
+        [
+          {"en": "Question 24. After an election, which party forms the government?", "zh": "第 24 題。選舉之後，哪個政黨組成政府？"},
+          {"en": "Answer: The party with the most seats in the House of Commons. Its leader is invited by the Governor General to form the government and becomes the Prime Minister. With at least half the seats it is a majority government; with fewer, a minority government. (Chapter 7)", "zh": "答：在眾議院席次最多的政黨。總督邀請該黨領袖組成政府，該領袖成為總理。席次達一半以上是多數政府，不到一半是少數政府。（第 7 章）"}
+        ],
+        [
+          {"en": "Question 25. Who is your member of Parliament?", "zh": "第 25 題。你的國會議員是誰？"},
+          {"en": "Answer: This depends on where you live. Find your federal riding and its MP by entering your postal code at elections.ca, then write the name down and memorize it. For the Ontario questions, also check the current Premier and Lieutenant Governor. (Chapter 7)", "zh": "答：這要看你住在哪裡。到 elections.ca 輸入郵遞區號，查出你的聯邦選區和國會議員，把名字寫下來背熟。安大略省題也要一併確認現任省長和省督。（第 7 章）"}
+        ],
+        [
+          {"en": "Question 26. What are the three levels of government?", "zh": "第 26 題。三級政府是哪三級？"},
+          {"en": "Answer: Federal, provincial or territorial, and municipal (local). (Chapter 6)", "zh": "答：聯邦、省或地區，以及市鎮（地方）。（第 6 章）"}
+        ]
+      ]
+    },
+    {
+      "title_en": "Justice, symbols and regions",
+      "title_zh": "司法、象徵與地區",
+      "paras": [
+        [
+          {"en": "Question 27. What is the role of the courts in Canada?", "zh": "第 27 題。法院在加拿大的角色是什麼？"},
+          {"en": "Answer: The courts settle disputes, while the police enforce the laws. The Supreme Court of Canada is the highest court. (Chapter 8)", "zh": "答：法院解決糾紛，警察執行法律。加拿大最高法院是最高的法院。（第 8 章）"}
+        ],
+        [
+          {"en": "Question 28. In Canada, are you allowed to question the police about their service or conduct?", "zh": "第 28 題。在加拿大，你可以質疑警察的服務或行為嗎？"},
+          {"en": "Answer: Yes. You can question the police about their service or conduct, and almost all police forces have a process by which you can bring your concerns to them and seek action. (Chapter 8)", "zh": "答：可以。你可以就警察的服務或行為提出質疑，幾乎所有警察機關都有程序讓你反映疑慮並要求處理。（第 8 章）"}
+        ],
+        [
+          {"en": "Question 29. Name two Canadian symbols.", "zh": "第 29 題。說出兩個加拿大的象徵。"},
+          {"en": "Answer: For example, the maple leaf and the beaver. Others include the Canadian flag, the Crown, the coat of arms, the Parliament buildings, the national anthem O Canada, and the RCMP. (Chapter 9)", "zh": "答：例如楓葉和海狸。其他還有加拿大國旗、王權、國徽、國會大廈、國歌《噢！加拿大》，以及皇家加拿大騎警。（第 9 章）"}
+        ],
+        [
+          {"en": "Question 30. What provinces are referred to as the Atlantic Provinces?", "zh": "第 30 題。哪些省被稱為大西洋省份？"},
+          {"en": "Answer: Newfoundland and Labrador, Prince Edward Island, Nova Scotia and New Brunswick. (Chapter 11)", "zh": "答：紐芬蘭與拉布拉多、愛德華王子島、新斯科細亞和新布藍瑞克。（第 11 章）"}
+        ],
+        [
+          {"en": "Question 31. What is the capital of the province or territory that you live in?", "zh": "第 31 題。你居住的省或地區的首府是哪裡？"},
+          {"en": "Answer: For Ontario, the capital is Toronto. The capital of Canada is Ottawa. (Chapter 11)", "zh": "答：安大略的首府是多倫多。加拿大的首都是渥太華。（第 11 章）"}
         ]
       ]
     }
