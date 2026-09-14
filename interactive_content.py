@@ -5,6 +5,24 @@ Common interactive styles live in IV_SHARED_CSS; per-module CSS in each function
 """
 
 import json
+import re as _re
+
+from interactive_data import (PROVINCES, HISTORY_EVENTS, PRIME_MINISTERS, PARTIES, VOTE_STEPS,
+                              MUST_KNOW_FACTS, JUSTICE_PRINCIPLES, RCMP_FACTS, SYMBOLS,
+                              CURRENCY_FIGURES, NATIONAL_HOLIDAYS, COINS, INDUSTRIES, TRADE_FACTS,
+                              BILL_STEPS, GOV_LEGEND)
+
+
+def _strong(t: str) -> str:
+    return _re.sub(r"\*\*(.+?)\*\*", r"<strong>\1</strong>", t)
+
+
+def bi(text: str) -> str:
+    """'中文｜English' -> two stacked spans; plain text passes through."""
+    if "｜" in text:
+        zh, en = text.split("｜", 1)
+        return f'<span class="bi-zh">{_strong(zh)}</span><span class="bi-en">{_strong(en)}</span>'
+    return _strong(text)
 
 # ============================================================================
 # SHARED CSS
@@ -61,84 +79,41 @@ IV_SHARED_CSS = """
   letter-spacing: 0.04em; margin-right: 6px;
 }
 .iv-tag.accent { background: var(--accent-soft); color: var(--accent); font-weight: 600; }
+.bi-zh { display: block; }
+.bi-en { display: block; color: var(--muted); font-size: 0.92em; font-family: "Source Serif 4", Georgia, serif; font-style: italic; line-height: 1.45; }
 </style>
 """
+
+
+
+def _gov_legend_html():
+    return "".join(f'<div class="iv-gov-leg-item"><div class="iv-gov-dot" style="background:{c}"></div><div><strong>{t}</strong>{bi(d)}</div></div>' for c, t, d in GOV_LEGEND)
+
+
+def _bill_steps_html():
+    return "".join(f'<div class="iv-bill-step"><div class="num">{i}</div><div class="title">{t}</div><div class="desc">{bi(d)}</div></div>' for i, (t, d) in enumerate(BILL_STEPS, 1))
+
+
+def _vote_steps_html():
+    return "".join(f'<div class="iv-vote-step"><div class="icon">{ic}</div><strong>{bi(t)}</strong><p>{bi(d)}</p></div>' for ic, t, d in VOTE_STEPS)
+
+
+def _must_know_html():
+    return "".join(f'<div class="iv-fact-row"><strong>{bi(k)}</strong><span>{bi(v)}</span></div>' for k, v in MUST_KNOW_FACTS)
+
+
+def _rcmp_html():
+    return "".join(f'<li><strong>{bi(k)}</strong>{bi(v)}</li>' for k, v in RCMP_FACTS)
+
+
+def _coins_html():
+    return "".join(f'<div class="iv-card"><strong>{d}</strong> {n}<br><span class="meta">{bi(x)}</span></div>' for d, n, x in COINS)
 
 
 # ============================================================================
 # 11. GEOGRAPHY (already complete)
 # ============================================================================
 
-PROVINCES = [
-    ("BC", "British Columbia", "卑詩省（不列顛哥倫比亞）", "West Coast",
-     "Victoria 維多利亞", "David Eby（NDP）", "Wendy Cocchia（Lt. Governor）",
-     ["木材、礦業、鮭魚捕撈、電影業（Hollywood North）",
-      "華人移民歷史悠久，溫哥華是亞太門戶",
-      "Vancouver 是大城，**Victoria** 才是首府（位於溫哥華島）"]),
-    ("AB", "Alberta", "亞伯達省", "Prairie Provinces",
-     "Edmonton 愛德蒙頓", "Danielle Smith（UCP）", "Salma Lakhani（Lt. Governor）",
-     ["石油、天然氣（油砂 Oil Sands）、農業、牛肉",
-      "Rocky Mountains 落磯山脈、Banff/Jasper 國家公園",
-      "**Calgary** 是最大城但 **Edmonton** 才是首府"]),
-    ("SK", "Saskatchewan", "薩斯喀徹溫省（沙省）", "Prairie Provinces",
-     "Regina 雷吉納", "Scott Moe（Sask Party）", "Russ Mirasty（Lt. Governor）",
-     ["小麥（Wheat Province）、鉀礦、鈾礦", "加拿大穀倉",
-      "Saskatoon 是大城但 **Regina** 才是首府"]),
-    ("MB", "Manitoba", "曼尼托巴省（曼省）", "Prairie Provinces",
-     "Winnipeg 溫尼伯", "Wab Kinew（NDP，首位原住民省長）", "Anita Neville（Lt. Governor）",
-     ["農業、礦業、水力發電", "Louis Riel 反抗運動的核心地（Métis 文化）",
-      "1870 年加入聯邦（第 5 省）"]),
-    ("ON", "Ontario ⭐", "安大略省（安省）", "Central Canada",
-     "Toronto 多倫多", "Doug Ford（Progressive Conservative）",
-     "Edith Dumont（Lt. Governor，首位法裔安省人，2023 起）",
-     ["製造業、金融、服務業、科技",
-      "**國都 Ottawa 渥太華位於此省**（不是 Toronto！）",
-      "人口最多的省（約 1,500 萬，全國 40%）",
-      "主要城市：Toronto、Ottawa、Hamilton、Mississauga、London",
-      "**考試 Ontario 省題重點**：省長 Doug Ford 自 2018 連任至今，省督 Edith Dumont 2023 起",
-      "你的選區記住：聯邦議員 MP & 省議員 MPP",
-      "與美國邊境最長，五大湖區（Great Lakes）"]),
-    ("QC", "Quebec", "魁北克省", "Central Canada",
-     "Quebec City 魁北克市", "François Legault（CAQ）", "Manon Jeannotte（Lt. Governor）",
-     ["航太、水電、礦業、軟體", "**唯一以法語為唯一官方語言的省**",
-      "Montreal 蒙特婁是大城但 **Quebec City** 才是首府",
-      "天主教文化深厚、有獨特民法系統",
-      "1995 公投差點獨立（50.58% 反對）"]),
-    ("NB", "New Brunswick", "新布倫瑞克省", "Atlantic Canada",
-     "Fredericton 弗雷德里克頓", "Susan Holt（Liberal，2024 起）", "Louise Imbeault（Lt. Governor）",
-     ["林業、漁業、食品加工", "**加拿大唯一官方雙語（英＋法）的省份**",
-      "Acadian 文化重鎮（法裔但獨立於魁北克）"]),
-    ("NS", "Nova Scotia", "新斯科舍省", "Atlantic Canada",
-     "Halifax 哈利法克斯", "Tim Houston (Progressive Conservative)", "Mike Savage (Lt. Governor)",
-     ["漁業、造船、旅遊", "**Bluenose 帆船**——10 分硬幣圖案",
-      "**Pier 21** 全國移民登陸博物館", "**Bay of Fundy** 全球最高潮汐",
-      "1605 法國人 Port-Royal 北美第一個歐洲殖民地"]),
-    ("PE", "Prince Edward Island", "愛德華王子島（PEI）", "Atlantic Canada",
-     "Charlottetown 夏洛特鎮", "Rob Lantz (PC, 2025 起)", "Wassim Salamoun (Lt. Governor)",
-     ["馬鈴薯（產量全國第一）、觀光業、漁業", "**面積最小的省**",
-      "**Confederation 發源地**——1864 Charlottetown Conference",
-      "《清秀佳人 Anne of Green Gables》故鄉"]),
-    ("NL", "Newfoundland and Labrador", "紐芬蘭與拉布拉多省", "Atlantic Canada",
-     "St. John's 聖約翰斯", "Andrew Furey (Liberal)", "Joan Marie Aylward (Lt. Governor)",
-     ["漁業（鱈魚 Cod）、海上石油、水電", "**最晚加入聯邦的省（1949）**",
-      "**最東邊的省份**（時區比其他省早 30 分鐘）",
-      "獨特方言；維京人 L'Anse aux Meadows 北美最早歐洲遺址"]),
-    ("YT", "Yukon", "育空地區", "Northern Territories",
-     "Whitehorse 白馬市", "Ranj Pillai (Liberal)", "Adeline Webber (Commissioner)",
-     ["礦業、觀光", "**1898 Klondike 淘金潮**（人口曾經高達 4 萬）",
-      "Yukon River、Mount Logan 加拿大最高峰"]),
-    ("NT", "Northwest Territories", "西北地區", "Northern Territories",
-     "Yellowknife 黃刀鎮", "R.J. Simpson (Independent)", "Gerald W. Kisoun (Commissioner)",
-     ["鑽石、石油、天然氣", "Great Bear / Great Slave 兩大湖泊",
-      "Dene 原住民、Métis 為主要族群",
-      "11 種官方語言（含英、法、9 種原住民語）"]),
-    ("NU", "Nunavut", "努納武特地區", "Northern Territories",
-     "Iqaluit 伊魁特", "P.J. Akeeagok", "Eva Aariak (Commissioner)",
-     ["礦業（金、鐵、鑽石）、傳統手工藝", "**1999 從 NT 分出來新建**（最年輕的領地）",
-      "**Inuit 因紐特人為多數**（85%）",
-      "**面積最大的領地**（佔加拿大 20% 土地）",
-      "Inuktitut 為官方語言之一"]),
-]
 
 PROVINCE_BY_CODE = {p[0]: p for p in PROVINCES}
 
@@ -194,7 +169,7 @@ def build_geography_body():
 
     p = PROVINCE_BY_CODE["ON"]
     code, en, zh, region, capital, premier, lt_gov, facts = p
-    facts_html = "".join(f"<li>{f}</li>" for f in facts)
+    facts_html = "".join(f"<li>{bi(f)}</li>" for f in facts)
     detail = f'''<div class="iv-detail" id="iv-prov-detail" data-current="ON">
   <div class="iv-detail-head">
     <h2><span class="iv-detail-code">{code}</span> {en} <span class="iv-detail-zh">{zh}</span></h2>
@@ -213,7 +188,7 @@ def build_geography_body():
     for p in PROVINCES:
         c, en, zh, region, capital, premier, lt_gov, facts = p
         data[c] = {"en": en, "zh": zh, "region": region, "capital": capital,
-                   "premier": premier, "lt_gov": lt_gov, "facts": facts}
+                   "premier": premier, "lt_gov": lt_gov, "facts": [bi(f) for f in facts]}
     data_json = json.dumps(data, ensure_ascii=False)
 
     table_rows = ""
@@ -320,158 +295,6 @@ table.iv-quick th {{ font-size: 12px; }}
 # ============================================================================
 
 # (year_label, title_zh, title_en, era, brief, details[])
-HISTORY_EVENTS = [
-    ("1497", "John Cabot 抵達加拿大東岸", "John Cabot reaches Atlantic shores", "new-france",
-     "為英王 Henry VII 宣稱大西洋岸土地，是歐洲人首次有記錄登陸加東",
-     ["威尼斯航海家受英王委派", "登陸地點可能是 Newfoundland", "為日後英國對加宣稱主權奠基"]),
-    ("1534", "Cartier 命名 'Canada'", "Cartier names 'Canada'", "new-france",
-     "Jacques Cartier 第一次航行，從原住民 Iroquois 學到 'kanata'（村莊）一詞",
-     ["第一次航行 1534、第二次 1535、第三次 1541", "為法王 François I 宣稱聖羅倫斯地區",
-      "'Canada' 名字源自 Iroquois 語 'kanata'（kanata = 村莊/居住地）"]),
-    ("1604", "首座歐洲永久定居 Port-Royal", "Port-Royal — first permanent settlement", "new-france",
-     "Pierre du Gua de Monts 與 Samuel de Champlain 在 Acadia 建立",
-     ["位於今日 Nova Scotia", "1605 年是北美第一個永久歐洲殖民地",
-      "Acadia 文化由此開始"]),
-    ("1608", "Champlain 建立 Québec City", "Champlain founds Quebec City", "new-france",
-     "Samuel de Champlain 在聖羅倫斯河岸建立 Québec City，'Father of New France'",
-     ["這是 New France 的首都", "Champlain 與原住民結盟貿易毛皮",
-      "為法屬北美奠定基石"]),
-    ("1670", "Hudson's Bay Company 成立", "Hudson's Bay Company chartered", "new-france",
-     "英王 Charles II 給予 HBC 對 Hudson Bay 流域的貿易壟斷權",
-     ["HBC 是現存最古老的商業公司之一", "推動英國在北方的擴張",
-      "與法國的毛皮貿易競爭白熱化"]),
-    ("1701", "Great Peace of Montreal", "Great Peace of Montreal", "new-france",
-     "法國與 39 個原住民族在 Montreal 簽訂大和平條約",
-     ["結束 Iroquois 與法國/盟友的戰爭", "新法蘭西進入和平擴張期"]),
-    ("1755", "Acadian 大流亡", "Acadian Deportation", "new-france",
-     "英國驅逐 Acadia 地區法裔居民（約 1 萬人）",
-     ["稱為 'Le Grand Dérangement'",
-      "部分人流亡到 Louisiana（後來變成 Cajun）",
-      "部分人返回成為今日的 Acadian"]),
-    ("1759", "Plains of Abraham 之戰 ⚔️", "Battle of the Plains of Abraham", "british",
-     "**英軍 James Wolfe vs. 法軍 Montcalm**，英軍奪下 Québec City，新法蘭西結束",
-     ["**考試重點戰役**", "兩位將軍都陣亡", "1763 Paris 條約正式將北美交給英國"]),
-    ("1763", "Treaty of Paris：法割讓北美", "Treaty of Paris", "british",
-     "七年戰爭結束，法國將北美除聖皮埃爾與密克隆外全部割讓給英國",
-     ["新法蘭西成為英國殖民地 'Province of Quebec'",
-      "Royal Proclamation 1763 承認原住民權利"]),
-    ("1774", "Quebec Act 保障法裔權利", "Quebec Act", "british",
-     "英國保障 Québec 法裔居民的天主教信仰、法國民法、語言",
-     ["保留 French Civil Law（民事）", "保留天主教",
-      "**為 Québec 法語文化存續的關鍵法案**"]),
-    ("1776-83", "美國革命，Loyalists 北逃", "American Revolution — Loyalists flee north", "british",
-     "約 4 萬 'United Empire Loyalists' 從美國逃到英屬北美",
-     ["大量英裔人口湧入加拿大", "在 Nova Scotia、New Brunswick、Ontario 建立新社區",
-      "1791 Constitutional Act 將 Quebec 分為 Upper / Lower Canada"]),
-    ("1812-14", "1812 戰爭 — 加拿大守住了 ⚔️", "War of 1812 — Canada survives", "british",
-     "美國入侵英屬北美，**加拿大、英軍、原住民聯軍擊退美軍**",
-     ["**考試重點**", "Sir Isaac Brock 在 Queenston Heights 陣亡（英雄）",
-      "原住民領袖 Tecumseh 也陣亡",
-      "Laura Secord 徒步通報英軍美軍動向",
-      "1814 英軍燒了 Washington 白宮"]),
-    ("1837-38", "Upper / Lower Canada 叛亂", "Rebellions of 1837-38", "british",
-     "改革派要求 'responsible government' 起義被鎮壓但促成改革",
-     ["Upper Canada（今 Ontario）：William Lyon Mackenzie",
-      "Lower Canada（今 Quebec）：Louis-Joseph Papineau",
-      "促成 Lord Durham 報告 → 1840 Act of Union"]),
-    ("1840", "Act of Union 統一兩 Canada", "Act of Union", "british",
-     "Upper + Lower Canada 合併為 'Province of Canada'",
-     ["Durham 報告建議責任政府", "1848 'Responsible Government' 實現於 Nova Scotia 與 Canada"]),
-    ("1864", "Charlottetown Conference", "Charlottetown Conference", "confederation",
-     "Confederation 規劃會議在 PEI Charlottetown 舉行",
-     ["**'Birthplace of Confederation'**", "PEI 因此被稱為邦聯發源地",
-      "與會者後稱 'Fathers of Confederation'"]),
-    ("1867 ⭐", "邦聯誕生 — Dominion of Canada", "Confederation — Dominion of Canada", "confederation",
-     "**英國國會通過 British North America Act**，加拿大成為英聯邦下的 Dominion",
-     ["**考試最重要日期之一**",
-      "成立四省：Ontario、Quebec、Nova Scotia、New Brunswick",
-      "**首任總理 Sir John A. Macdonald**（保守黨）",
-      "George-Étienne Cartier 是法裔共同創建者",
-      "7 月 1 日 = **Canada Day**"]),
-    ("1869-70", "Manitoba 加入 + Riel 起義", "Manitoba joins + Riel Rebellion", "confederation",
-     "Métis 領袖 Louis Riel 起義，Manitoba 隨後加入聯邦",
-     ["1870 Manitoba 加入（第 5 省）", "Louis Riel 是 Métis 民族英雄",
-      "1885 Riel 第二次起義（North-West Rebellion）後被處決"]),
-    ("1871", "British Columbia 加入", "British Columbia joins", "confederation",
-     "BC 同意加入聯邦，條件是建一條橫貫鐵路", []),
-    ("1873", "Prince Edward Island 加入", "PEI joins", "confederation", "PEI 1873 加入", []),
-    ("1885", "太平洋鐵路完成 🚂", "Canadian Pacific Railway completed", "confederation",
-     "鐵路橫貫加拿大東西，把 BC 連入聯邦",
-     ["**Last Spike** 在 BC Craigellachie 釘下", "華工大量參與築路（許多人罹難）",
-      "為加拿大統一的物理象徵"]),
-    ("1898", "Yukon Territory 與 Klondike 淘金潮", "Yukon Territory & Klondike Gold Rush", "confederation",
-     "Klondike 淘金潮帶來人口爆炸，Yukon 正式成為 territory", []),
-    ("1905", "Alberta、Saskatchewan 加入", "Alberta & Saskatchewan join", "confederation",
-     "兩省同時從 North-West Territories 切出", []),
-    ("1914-18", "WWI — Vimy Ridge 🌹", "WWI — Vimy Ridge", "wars",
-     "**1917 加拿大四師團首次合作攻下 Vimy Ridge**——加拿大民族認同的關鍵時刻",
-     ["**考試重點**", "Vimy Ridge：1917 年 4 月，攻下英法都打不下的據點",
-      "Passchendaele、Somme 也是慘烈戰役",
-      "全國陣亡 ~6 萬", "1918 第一次世界大戰結束"]),
-    ("1916-18", "婦女選舉權", "Women's suffrage", "wars",
-     "Manitoba 1916 首先給女性投票權，聯邦 1918 跟進",
-     ["Nellie McClung 等 'Famous Five' 推動",
-      "**Manitoba 1916 = 第一個給女性投票權的省**"]),
-    ("1929", "Persons Case — 女性是 'persons'", "Persons Case — women as legal persons", "wars",
-     "Privy Council 裁定加拿大女性在法律上是 'persons'，可被任命為參議員",
-     ["**Famous Five**：Emily Murphy 等 5 位女性推動",
-      "勝訴後 Cairine Wilson 1930 成為首位女參議員"]),
-    ("1931", "Statute of Westminster", "Statute of Westminster", "wars",
-     "英國國會確認加拿大等 Dominion 在外交與立法上完全自主",
-     ["加拿大實質獨立的法律基礎"]),
-    ("1939-45", "WWII — D-Day Juno Beach", "WWII — D-Day at Juno Beach", "wars",
-     "加軍在 D-Day（1944/6/6）登陸 Juno Beach，意大利戰役也激烈",
-     ["**考試重點**", "Juno Beach 是五個 D-Day 灘頭之一（加拿大負責）",
-      "全國陣亡 ~4 萬",
-      "二戰結束後加拿大成為世界第 4 大空軍"]),
-    ("1947", "Canadian Citizenship Act 通過", "Canadian Citizenship Act", "wars",
-     "**加拿大公民身份首次法定**——之前是英國臣民",
-     ["**考試重點**：首次有 'Canadian citizen' 這個身份",
-      "首任公民身份證頒給總理 Mackenzie King"]),
-    ("1949", "Newfoundland 加入（最後一省）", "Newfoundland joins (last province)", "wars",
-     "公投通過後 Newfoundland 1949 加入聯邦，完成 10 省版圖",
-     ["**考試重點**", "之前是英國自治領"]),
-    ("1960", "原住民獲聯邦投票權", "Indigenous federal vote", "modern",
-     "Status Indians 終於可以在聯邦選舉投票（不必放棄身份）", []),
-    ("1965 ⭐", "楓葉旗誕生", "Maple Leaf flag adopted", "modern",
-     "**2 月 15 日新國旗首次升起**——紅白楓葉旗取代英國 Red Ensign",
-     ["**考試重點**", "Lester B. Pearson 總理推動",
-      "**2 月 15 日 = National Flag of Canada Day**"]),
-    ("1967", "Centennial / Expo '67", "Centennial / Expo '67", "modern",
-     "聯邦 100 週年慶 + Montreal 世博會，是加拿大現代認同的形成期",
-     ["Bobby Gimby 名曲 'Ca-na-da'", "Pierre Trudeau 1968 上任"]),
-    ("1969", "Official Languages Act", "Official Languages Act", "modern",
-     "聯邦政府所有服務必須英法雙語",
-     ["**考試重點**", "Pierre Trudeau 推動",
-      "聯邦政府工作必須提供雙語服務"]),
-    ("1971", "多元文化主義政策", "Multiculturalism policy", "modern",
-     "**加拿大成為世界第一個正式採取多元文化主義為國策**",
-     ["1988 Canadian Multiculturalism Act 入法",
-      "**'Mosaic' 而不是 'Melting Pot'**"]),
-    ("1976", "Quebec PQ 上台 + 1980 公投", "Quebec PQ + 1980 referendum", "modern",
-     "Parti Québécois 1976 上台，1980 第一次主權公投（59.6% No）", []),
-    ("1982 ⭐", "Constitution Act / Charter", "Constitution Act + Charter", "modern",
-     "**Constitution Act 1982**：憲法回到加拿大，含《加拿大權利與自由憲章》",
-     ["**考試最重要日期**", "Pierre Trudeau 推動",
-      "**Charter of Rights and Freedoms 保障：4 大自由、6 項權利、Aboriginal、Mobility、Official Language**",
-      "Queen Elizabeth II 在 Ottawa 簽署"]),
-    ("1995", "第二次 Quebec 公投", "Second Quebec referendum", "modern",
-     "**50.58% No vs 49.42% Yes** — 差 5 萬票",
-     ["1999 Clarity Act 規範未來公投程序"]),
-    ("1999", "Nunavut 從 NT 分出", "Nunavut created", "modern",
-     "**第三個 territory**，從 Northwest Territories 切出",
-     ["**考試重點**：Nunavut 1999 年成立",
-      "Inuit 為多數人口", "首府 Iqaluit"]),
-    ("2008", "PM Harper 為寄宿學校道歉", "Harper apologizes for residential schools", "modern",
-     "Stephen Harper 代表加拿大政府對 Indian Residential Schools 倖存者正式道歉", []),
-    ("2015", "TRC 真相與和解報告", "TRC report", "modern",
-     "Truth and Reconciliation Commission 發表報告與 94 項行動呼籲",
-     ["揭露寄宿學校系統性暴力與文化滅絕"]),
-    ("2021 ⭐", "TRC Day 國定假日", "TRC Day becomes national holiday", "modern",
-     "**National Day for Truth and Reconciliation（9/30）正式列為國定假日**",
-     ["**考試重點**：Truth and Reconciliation Day = 9 月 30 日",
-      "穿橘色衣（Orange Shirt Day）紀念寄宿學校受害者"]),
-]
 
 ERAS = [
     ("new-france", "新法蘭西時期 (1497-1763)", "#4a6fa5"),
@@ -490,7 +313,7 @@ def build_history_body():
         color = ERA_COLOR[era]
         details_html = ""
         if details:
-            details_html = "<ul class='iv-tl-details'>" + "".join(f"<li>{d}</li>" for d in details) + "</ul>"
+            details_html = "<ul class='iv-tl-details'>" + "".join(f"<li>{bi(d)}</li>" for d in details) + "</ul>"
         is_star = "⭐" in year or "⭐" in title_zh
         timeline_html += f'''
 <div class="iv-tl-event {'iv-tl-star' if is_star else ''}" data-era="{era}">
@@ -499,7 +322,7 @@ def build_history_body():
   <div class="iv-tl-content">
     <h3 class="iv-tl-title">{title_zh}</h3>
     <div class="iv-tl-en">{title_en}</div>
-    <p class="iv-tl-brief">{brief}</p>
+    <p class="iv-tl-brief">{bi(brief)}</p>
     {details_html}
   </div>
 </div>'''
@@ -598,44 +421,6 @@ def build_history_body():
 # ============================================================================
 
 # (name_en, name_zh, party, years, key_facts[])
-PRIME_MINISTERS = [
-    ("Sir John A. Macdonald", "麥當勞爵士", "Conservative", "1867-1873, 1878-1891",
-     ["**首任總理（建國之父）**", "推動 Confederation 與太平洋鐵路", "Kingston ON 紀念雕像"]),
-    ("Wilfrid Laurier", "勞瑞葉", "Liberal", "1896-1911",
-     ["**第一位法裔總理**", "推動 Alberta、Saskatchewan 1905 加入", "$5 鈔票人物"]),
-    ("Sir Robert Borden", "波頓爵士", "Conservative", "1911-1920",
-     ["帶領加拿大度過 WWI", "**Vimy Ridge 1917** 期間任內", "$100 鈔票人物"]),
-    ("William Lyon Mackenzie King", "麥肯齊·金", "Liberal", "1921-1930, 1935-1948",
-     ["**任期最長的總理**（22 年）", "**1947 Canadian Citizenship Act** 首位公民身份證得主",
-      "$50 鈔票人物"]),
-    ("Louis St-Laurent", "聖羅倫", "Liberal", "1948-1957",
-     ["推動 Newfoundland 1949 加入", "創建 NATO 北約", "建立 Trans-Canada Highway"]),
-    ("John Diefenbaker", "迪芬貝克", "Progressive Conservative", "1957-1963",
-     ["**1960 通過 Canadian Bill of Rights**", "**1960 給原住民聯邦投票權**",
-      "Saskatchewan 出身"]),
-    ("Lester B. Pearson", "皮爾遜", "Liberal", "1963-1968",
-     ["**諾貝爾和平獎得主**（1957，推動 UN 維和）", "**1965 推動楓葉旗誕生**",
-      "**1966 全民健保 Medicare** 立法", "Toronto Pearson 機場以他命名"]),
-    ("Pierre Trudeau", "老杜魯道", "Liberal", "1968-1979, 1980-1984",
-     ["**1969 Official Languages Act**", "**1971 多元文化主義**",
-      "**1982 Constitution Act + Charter ⭐**", "魅力型總理"]),
-    ("Brian Mulroney", "穆隆尼", "Progressive Conservative", "1984-1993",
-     ["1988 **Multiculturalism Act 入法**", "**1989 USFTA 自由貿易協定**（後 NAFTA、CUSMA）",
-      "1991 GST 消費稅"]),
-    ("Jean Chrétien", "克雷蒂安", "Liberal", "1993-2003",
-     ["**1995 第二次 Quebec 公投**期間任內", "1999 創建 Nunavut", "拒絕加入 2003 伊拉克戰爭"]),
-    ("Paul Martin", "馬丁", "Liberal", "2003-2006",
-     ["前財政部長，被譽為平衡預算之父", "短暫任期"]),
-    ("Stephen Harper", "哈珀", "Conservative", "2006-2015",
-     ["**2008 為寄宿學校道歉 ⭐**", "Alberta 出身", "推動經濟保守政策"]),
-    ("Justin Trudeau", "小杜魯道", "Liberal", "2015-2025",
-     ["**老杜魯道之子**", "**2021 TRC Day 國定假日 ⭐**", "推動大麻合法化（2018）",
-      "**多次原住民和解政策**"]),
-    ("Mark Carney", "卡尼", "Liberal", "2025-至今",
-     ["**前 Bank of Canada 與 Bank of England 行長**",
-      "**2025 春季就任，2026 大選後續任**",
-      "金融專業背景"]),
-]
 
 MODERN_MILESTONES = [
     ("1947", "公民身份法案", "Canadian Citizenship Act"),
@@ -655,7 +440,7 @@ MODERN_MILESTONES = [
 def build_modern_body():
     pm_cards = ""
     for name_en, name_zh, party, years, facts in PRIME_MINISTERS:
-        facts_html = "".join(f"<li>{f}</li>" for f in facts)
+        facts_html = "".join(f"<li>{bi(f)}</li>" for f in facts)
         party_color = {
             "Liberal": "#d71920", "Conservative": "#1A4782",
             "Progressive Conservative": "#1A4782", "NDP": "#F58220",
@@ -768,11 +553,7 @@ def build_government_body():
   <line x1="600" y1="260" x2="480" y2="310" stroke="#1f2328" stroke-width="2"/>
   <line x1="400" y1="110" x2="400" y2="310" stroke="#1f2328" stroke-width="2" stroke-dasharray="4 4"/>
 </svg>
-<div class="iv-gov-legend">
-  <div class="iv-gov-leg-item"><div class="iv-gov-dot" style="background:#c8102e"></div><div><strong>聯邦 Federal</strong>管全國事務，總理 Mark Carney（2025-）</div></div>
-  <div class="iv-gov-leg-item"><div class="iv-gov-dot" style="background:#4a6fa5"></div><div><strong>省 Provincial</strong>管教育/醫療，Ontario 省長 Doug Ford</div></div>
-  <div class="iv-gov-leg-item"><div class="iv-gov-dot" style="background:#5a9460"></div><div><strong>市政 Municipal</strong>管在地事務，Toronto 市長 Olivia Chow</div></div>
-</div>
+<div class="iv-gov-legend">{_gov_legend_html()}</div>
 </div>
 
 <h2 class="iv-section-title">圖 2：國會三部分 <small>The Three Parts of Parliament</small></h2>
@@ -794,7 +575,7 @@ def build_government_body():
   <!-- House of Commons -->
   <rect x="460" y="150" width="280" height="100" rx="10" fill="#5a9460"/>
   <text x="600" y="178" text-anchor="middle" font-size="17" font-weight="700" fill="#fff">眾議院 House of Commons</text>
-  <text x="600" y="200" text-anchor="middle" font-size="13" fill="#fff">338 位 MPs（國會議員）</text>
+  <text x="600" y="200" text-anchor="middle" font-size="13" fill="#fff">MPs 國會議員（席次隨人口重劃增加）</text>
   <text x="600" y="218" text-anchor="middle" font-size="11" fill="#d0e0d0">由公民投票選出（每 4 年）</text>
   <text x="600" y="234" text-anchor="middle" font-size="11" fill="#d0e0d0">"the people's house" 立法主力</text>
 
@@ -811,15 +592,7 @@ def build_government_body():
 
 <h2 class="iv-section-title">圖 3：法案如何變法律 <small>How a Bill Becomes Law (7 steps)</small></h2>
 <div class="iv-gov-diagram">
-<div class="iv-bill-flow">
-  <div class="iv-bill-step"><div class="num">1</div><div class="title">一讀 First Reading</div><div class="desc">眾議院介紹法案</div></div>
-  <div class="iv-bill-step"><div class="num">2</div><div class="title">二讀 Second Reading</div><div class="desc">辯論原則</div></div>
-  <div class="iv-bill-step"><div class="num">3</div><div class="title">委員會 Committee</div><div class="desc">逐條審議</div></div>
-  <div class="iv-bill-step"><div class="num">4</div><div class="title">報告 Report</div><div class="desc">考慮修正</div></div>
-  <div class="iv-bill-step"><div class="num">5</div><div class="title">三讀 Third Reading</div><div class="desc">最後辯論與表決</div></div>
-  <div class="iv-bill-step"><div class="num">6</div><div class="title">參議院 Senate</div><div class="desc">同樣 3 讀流程</div></div>
-  <div class="iv-bill-step"><div class="num">7</div><div class="title">御准 Royal Assent</div><div class="desc">GG 代簽 → 法律</div></div>
-</div>
+<div class="iv-bill-flow">{_bill_steps_html()}</div>
 <p style="font-size:13px; color:var(--muted); margin-top:8px">⭐ <strong>考試重點</strong>：3 讀＋委員會＋送參議院＋御准。法案在每院都要 3 讀。</p>
 </div>
 '''
@@ -829,30 +602,18 @@ def build_government_body():
 # 07. FEDERAL ELECTIONS
 # ============================================================================
 
-PARTIES = [
-    ("Liberal Party", "自由黨", "#d71920", "Mark Carney", "現執政黨（2025-）",
-     ["中間偏左", "支持多元文化、社會福利", "現任 PM 政黨"]),
-    ("Conservative Party", "保守黨", "#1A4782", "Pierre Poilievre", "主要在野黨",
-     ["中間偏右", "支持經濟自由、傳統價值", "前身 PC 黨於 2003 與聯盟黨合併"]),
-    ("New Democratic Party (NDP)", "新民主黨", "#F58220", "Don Davies (interim, 2025)",
-     "第三大黨", ["左派、勞工", "推動社會醫療與社福"]),
-    ("Bloc Québécois", "魁北克集團", "#0088CE", "Yves-François Blanchet", "只在魁北克省競選",
-     ["主張魁北克利益與獨立可能", "只在 Quebec 推候選人"]),
-    ("Green Party", "綠黨", "#3D9B35", "Jonathan Pedneault & Elizabeth May",
-     "環保政黨", ["氣候變遷、永續政策", "規模較小但在西岸有支持"]),
-]
 
 
 def build_elections_body():
     party_cards = ""
     for en, zh, color, leader, status, facts in PARTIES:
-        facts_html = "".join(f"<li>{f}</li>" for f in facts)
+        facts_html = "".join(f"<li>{bi(f)}</li>" for f in facts)
         party_cards += f'''
 <div class="iv-party-card" style="border-top-color:{color}">
   <div class="iv-party-name">{en}</div>
   <div class="iv-party-zh">{zh}</div>
   <div class="iv-party-leader">領袖：<strong>{leader}</strong></div>
-  <div class="iv-party-status">{status}</div>
+  <div class="iv-party-status">{bi(status)}</div>
   <ul class="iv-party-facts">{facts_html}</ul>
 </div>'''
 
@@ -882,22 +643,10 @@ def build_elections_body():
 <div class="iv-party-grid">{party_cards}</div>
 
 <h2 class="iv-section-title">投票資格 &amp; 流程 <small>Who Can Vote &amp; Voting Procedures</small></h2>
-<div class="iv-vote-steps">
-  <div class="iv-vote-step"><div class="icon">🇨🇦</div><strong>1. 公民身份</strong><p>必須是 Canadian Citizen（永久居民不能投）</p></div>
-  <div class="iv-vote-step"><div class="icon">🎂</div><strong>2. 年滿 18 歲</strong><p>投票日當天滿 18</p></div>
-  <div class="iv-vote-step"><div class="icon">📬</div><strong>3. 收 Voter Card</strong><p>Elections Canada 寄出</p></div>
-  <div class="iv-vote-step"><div class="icon">🏠</div><strong>4. 到指定投票所</strong><p>帶身份證明 + 地址證明</p></div>
-  <div class="iv-vote-step"><div class="icon">✏️</div><strong>5. 圈選候選人</strong><p>選你選區（Riding）的 MP 候選人</p></div>
-</div>
+<div class="iv-vote-steps">{_vote_steps_html()}</div>
 
 <h2 class="iv-section-title">考試 5 大必背重點 <small>Five Must-Know Facts</small></h2>
-<div class="iv-facts">
-  <div class="iv-fact-row"><strong>選舉週期</strong><span>每 <strong>4 年</strong>最長一次（PM 可提早解散）</span></div>
-  <div class="iv-fact-row"><strong>眾議院席次</strong><span>共 <strong>338 位 MP</strong>（每個選區 Riding 一位）</span></div>
-  <div class="iv-fact-row"><strong>誰當總理 PM</strong><span>眾議院席次最多政黨的領袖通常成為 PM</span></div>
-  <div class="iv-fact-row"><strong>誰能投票</strong><span>公民 + 18 歲 + 在 Voter List 上</span></div>
-  <div class="iv-fact-row"><strong>Ontario 你的選區</strong><span>記住你的 <strong>MP（聯邦）</strong>和 <strong>MPP（省議員）</strong>姓名</span></div>
-</div>
+<div class="iv-facts">{_must_know_html()}</div>
 '''
 
 
@@ -905,19 +654,12 @@ def build_elections_body():
 # 08. JUSTICE SYSTEM — Court hierarchy
 # ============================================================================
 
-JUSTICE_PRINCIPLES = [
-    ("法治", "Rule of Law", "沒人凌駕於法律之上，包括政府"),
-    ("無罪推定", "Presumption of Innocence", "被告在被定罪前推定無罪"),
-    ("人身保護令", "Habeas Corpus", "防止任意拘禁，被拘留者可請求出庭"),
-    ("公平審判", "Fair Trial", "公開、獨立、公正、由陪審團或法官審理"),
-    ("法律之前人人平等", "Equality before the Law", "Charter 第 15 條"),
-]
 
 
 def build_justice_body():
     principles_cards = ""
     for zh, en, desc in JUSTICE_PRINCIPLES:
-        principles_cards += f'<div class="iv-principle"><h4>{zh}</h4><div class="en">{en}</div><p>{desc}</p></div>'
+        principles_cards += f'<div class="iv-principle"><h4>{zh}</h4><div class="en">{en}</div><p>{bi(desc)}</p></div>'
 
     return f'''{IV_SHARED_CSS}
 <style>
@@ -980,14 +722,7 @@ def build_justice_body():
 <h2 class="iv-section-title">皇家騎警 RCMP（Royal Canadian Mounted Police）</h2>
 <div class="iv-rcmp">
 <h3>🐎 加拿大國家警察</h3>
-<ul>
-  <li><strong>聯邦警察</strong>：執行聯邦法律（毒品、洗錢、跨省犯罪）</li>
-  <li><strong>省/地方警察</strong>：8 省與 3 領地外包 RCMP 為省警（Ontario 跟 Quebec 例外有自己的省警）</li>
-  <li><strong>市政警察</strong>：少數小鎮外包 RCMP</li>
-  <li><strong>象徵</strong>：紅色制服 Red Serge、Stetson 帽、Musical Ride 表演</li>
-  <li><strong>歷史</strong>：1873 成立為 North-West Mounted Police</li>
-  <li><strong>總部</strong>：Ottawa</li>
-</ul>
+<ul>{_rcmp_html()}</ul>
 </div>
 '''
 
@@ -996,77 +731,25 @@ def build_justice_body():
 # 09. NATIONAL SYMBOLS — visual gallery
 # ============================================================================
 
-SYMBOLS = [
-    ("🍁", "楓葉", "Maple Leaf", "國家象徵植物，國旗中心",
-     ["1965 楓葉旗誕生", "11 個葉尖代表 10 省 3 領地的整體", "硬幣 1¢ 圖案"]),
-    ("🚩", "國旗", "National Flag", "紅白楓葉旗",
-     ["**1965 年 2 月 15 日**首次升起", "Pearson 總理推動",
-      "**2/15 = National Flag Day**", "前身是 Red Ensign（含 Union Jack）"]),
-    ("👑", "皇冠 / 君主", "The Crown", "King Charles III",
-     ["**2022 年 9 月 8 日 Elizabeth II 過世，Charles III 即位**",
-      "加拿大是 Constitutional Monarchy", "Governor General Mary Simon 代表"]),
-    ("🦫", "河狸", "Beaver", "國家動物，5 分硬幣圖案",
-     ["毛皮貿易歷史核心", "Hudson's Bay Company 早期主要交易商品",
-      "1975 正式列為國家象徵"]),
-    ("🛡️", "皇家紋章", "Coat of Arms", "1921 採用，加拿大政府正式徽記",
-     ["四等分顯示英、蘇、愛、法歷史血脈", "獅與獨角獸守護",
-      "底部楓葉與 'A Mari Usque Ad Mare'（from sea to sea）"]),
-    ("🎵", "國歌", "O Canada", "1980 正式國歌",
-     ["1880 由 Calixa Lavallée 譜曲（英法雙詞）",
-      "**2018 改 'in all of us command'**（去性別化）",
-      "皇室國歌仍是 'God Save the King'"]),
-    ("🌹", "Vimy Ridge", "Vimy Ridge", "1917 加拿大關鍵戰役",
-     ["四師團首次合作", "民族認同的關鍵時刻", "法國 Vimy 有加拿大紀念碑"]),
-    ("🪶", "Order of Canada", "楓葉勳章", "1967 設立的最高榮譽制度",
-     ["3 級：Companion、Officer、Member",
-      "格言：'Desiderantes meliorem patriam'（願望更好的祖國）"]),
-    ("💰", "Loonie & Toonie", "1元、2元硬幣", "Loonie 1987、Toonie 1996",
-     ["Loonie：1 元，刻 Loon 潛鳥", "Toonie：2 元，刻 Polar Bear 北極熊",
-      "都是 1987 後設計"]),
-    ("📜", "Magna Carta", "大憲章 1215", "權利傳統 800 年起源",
-     ["雖在英國，但影響加拿大法律", "**Habeas Corpus** 源於此",
-      "Charter 序言提及"]),
-]
 
-CURRENCY_FIGURES = [
-    ("$5", "Wilfrid Laurier", "勞瑞葉", "第一位法裔總理"),
-    ("$10", "Viola Desmond ⭐", "Viola Desmond", "**2018 起首位非白人女性**——民權運動先驅"),
-    ("$20", "Queen Elizabeth II", "伊莉莎白二世", "（2024 起印新版可能換 Charles III）"),
-    ("$50", "Mackenzie King", "麥肯齊·金", "任期最長的總理"),
-    ("$100", "Robert Borden", "波頓爵士", "WWI 期間總理"),
-]
 
-NATIONAL_HOLIDAYS = [
-    ("1/1", "New Year's Day", "元旦"),
-    ("4 月", "Good Friday & Easter Monday", "復活節週五與週一"),
-    ("5 月 月底週一", "Victoria Day", "維多利亞日（女王生日）"),
-    ("6/24", "Saint-Jean-Baptiste Day（QC only）", "聖讓巴蒂斯特日（魁省）"),
-    ("7/1 ⭐", "Canada Day", "加拿大國慶日（邦聯 1867）"),
-    ("8 月 第一個週一", "Civic Holiday（多省）", "公民日"),
-    ("9 月 第一個週一", "Labour Day", "勞動節"),
-    ("9/30 ⭐", "Truth and Reconciliation Day", "真相與和解日（2021 起）"),
-    ("10 月 第二個週一", "Thanksgiving", "感恩節"),
-    ("11/11", "Remembrance Day", "陣亡將士紀念日（戴紅罌粟）"),
-    ("12/25", "Christmas Day", "聖誕節"),
-    ("12/26", "Boxing Day", "節禮日"),
-]
 
 
 def build_symbols_body():
     symbol_cards = ""
     for emoji, zh, en, brief, facts in SYMBOLS:
-        facts_html = "".join(f"<li>{f}</li>" for f in facts)
+        facts_html = "".join(f"<li>{bi(f)}</li>" for f in facts)
         symbol_cards += f'''
 <div class="iv-sym-card">
   <div class="iv-sym-emoji">{emoji}</div>
   <h3>{zh} <span class="en">{en}</span></h3>
-  <p class="brief">{brief}</p>
+  <p class="brief">{bi(brief)}</p>
   <ul>{facts_html}</ul>
 </div>'''
 
     currency_rows = ""
     for denom, en, zh, note in CURRENCY_FIGURES:
-        currency_rows += f'<div class="iv-bill-row"><div class="denom">{denom}</div><div class="figure"><strong>{en}</strong><div class="zh">{zh}</div></div><div class="note">{note}</div></div>'
+        currency_rows += f'<div class="iv-bill-row"><div class="denom">{denom}</div><div class="figure"><strong>{en}</strong><div class="zh">{zh}</div></div><div class="note">{bi(note)}</div></div>'
 
     holidays_rows = ""
     for date, en, zh in NATIONAL_HOLIDAYS:
@@ -1106,12 +789,7 @@ def build_symbols_body():
 
 <h2 class="iv-section-title">硬幣上的動物 <small>Animals on Coins</small></h2>
 <div class="iv-card-grid" style="grid-template-columns:repeat(auto-fit,minmax(140px,1fr))">
-  <div class="iv-card"><strong>1¢</strong> Maple Leaf 楓葉<br><span class="meta">已停產 2013</span></div>
-  <div class="iv-card"><strong>5¢</strong> Beaver 河狸 🦫</div>
-  <div class="iv-card"><strong>10¢</strong> Bluenose 帆船 ⛵</div>
-  <div class="iv-card"><strong>25¢</strong> Caribou 馴鹿 🦌</div>
-  <div class="iv-card"><strong>$1 Loonie</strong> Loon 潛鳥</div>
-  <div class="iv-card"><strong>$2 Toonie</strong> Polar Bear 北極熊 🐻‍❄️</div>
+  {_coins_html()}
 </div>
 
 <h2 class="iv-section-title">12 個國定/重要假日 <small>National Public Holidays</small></h2>
@@ -1123,23 +801,7 @@ def build_symbols_body():
 # 10. CANADA'S ECONOMY
 # ============================================================================
 
-INDUSTRIES = [
-    ("服務業", "Services Industries", 75, "#c8102e",
-     "金融、零售、教育、醫療、政府、餐飲、IT —— 約四分之三的工作"),
-    ("製造業", "Manufacturing", 13, "#4a6fa5",
-     "汽車（Ontario）、航太（Quebec）、鋼鐵、紙業 —— Ontario / Quebec 為主"),
-    ("天然資源", "Natural Resources", 12, "#5a9460",
-     "石油天然氣（AB/SK）、礦業（鈾、鉀、鎳）、林業、漁業 —— 草原省與大西洋"),
-]
 
-TRADE_FACTS = [
-    ("最大貿易夥伴", "United States 美國", "75%+ 的出口都到美國"),
-    ("USMCA / CUSMA", "美加墨自由貿易協定", "2020 年取代 NAFTA"),
-    ("國際組織會員", "G7、G20、NATO、UN、WTO、APEC、Commonwealth、La Francophonie",
-     "G7 等於老牌工業大國（從 G8 改回 G7，因 2014 俄羅斯被剔除）"),
-    ("貨幣", "Canadian Dollar（CAD / $）", "由 Bank of Canada 發行管理"),
-    ("經濟體規模", "全球第 9 大經濟體（GDP 約 $2.2 兆美元）", "人均高度發達"),
-]
 
 
 def build_economy_body():
@@ -1173,12 +835,12 @@ def build_economy_body():
   <div class="iv-ind-pct" style="color:{color}">{pct}%</div>
   <h4>{zh}</h4>
   <div class="en">{en}</div>
-  <p>{desc}</p>
+  <p>{bi(desc)}</p>
 </div>'''
 
     trade_rows = ""
     for k, v, note in TRADE_FACTS:
-        trade_rows += f'<div class="iv-trade-row"><div class="key">{k}</div><div class="val"><strong>{v}</strong><div class="note">{note}</div></div></div>'
+        trade_rows += f'<div class="iv-trade-row"><div class="key">{bi(k)}</div><div class="val"><strong>{bi(v)}</strong><div class="note">{bi(note)}</div></div></div>'
 
     return f'''{IV_SHARED_CSS}
 <style>

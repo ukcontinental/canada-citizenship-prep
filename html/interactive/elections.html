@@ -499,6 +499,8 @@ blockquote.speakable > .speak-btn,
   letter-spacing: 0.04em; margin-right: 6px;
 }
 .iv-tag.accent { background: var(--accent-soft); color: var(--accent); font-weight: 600; }
+.bi-zh { display: block; }
+.bi-en { display: block; color: var(--muted); font-size: 0.92em; font-family: "Source Serif 4", Georgia, serif; font-style: italic; line-height: 1.45; }
 </style>
 
 <style>
@@ -528,55 +530,43 @@ blockquote.speakable > .speak-btn,
   <div class="iv-party-name">Liberal Party</div>
   <div class="iv-party-zh">自由黨</div>
   <div class="iv-party-leader">領袖：<strong>Mark Carney</strong></div>
-  <div class="iv-party-status">現執政黨（2025-）</div>
-  <ul class="iv-party-facts"><li>中間偏左</li><li>支持多元文化、社會福利</li><li>現任 PM 政黨</li></ul>
+  <div class="iv-party-status"><span class="bi-zh">現執政黨（2025-）</span><span class="bi-en">Governing party (since 2025)</span></div>
+  <ul class="iv-party-facts"><li><span class="bi-zh">中間偏左</span><span class="bi-en">Centre-left</span></li><li><span class="bi-zh">支持多元文化、社會福利</span><span class="bi-en">Multiculturalism, social programs</span></li><li><span class="bi-zh">現任 PM 政黨</span><span class="bi-en">The Prime Minister's party</span></li></ul>
 </div>
 <div class="iv-party-card" style="border-top-color:#1A4782">
   <div class="iv-party-name">Conservative Party</div>
   <div class="iv-party-zh">保守黨</div>
   <div class="iv-party-leader">領袖：<strong>Pierre Poilievre</strong></div>
-  <div class="iv-party-status">主要在野黨</div>
-  <ul class="iv-party-facts"><li>中間偏右</li><li>支持經濟自由、傳統價值</li><li>前身 PC 黨於 2003 與聯盟黨合併</li></ul>
+  <div class="iv-party-status"><span class="bi-zh">官方反對黨</span><span class="bi-en">Official Opposition</span></div>
+  <ul class="iv-party-facts"><li><span class="bi-zh">中間偏右</span><span class="bi-en">Centre-right</span></li><li><span class="bi-zh">支持經濟自由、傳統價值</span><span class="bi-en">Economic freedom, traditional values</span></li><li><span class="bi-zh">2003 由 PC 黨與聯盟黨合併</span><span class="bi-en">Formed in 2003 by merging the PC and Alliance parties</span></li></ul>
 </div>
 <div class="iv-party-card" style="border-top-color:#F58220">
   <div class="iv-party-name">New Democratic Party (NDP)</div>
   <div class="iv-party-zh">新民主黨</div>
   <div class="iv-party-leader">領袖：<strong>Don Davies (interim, 2025)</strong></div>
-  <div class="iv-party-status">第三大黨</div>
-  <ul class="iv-party-facts"><li>左派、勞工</li><li>推動社會醫療與社福</li></ul>
+  <div class="iv-party-status"><span class="bi-zh">第三大黨</span><span class="bi-en">Third party</span></div>
+  <ul class="iv-party-facts"><li><span class="bi-zh">左派、勞工</span><span class="bi-en">Left, labour</span></li><li><span class="bi-zh">推動社會醫療與社福</span><span class="bi-en">Public health care and social programs</span></li></ul>
 </div>
 <div class="iv-party-card" style="border-top-color:#0088CE">
   <div class="iv-party-name">Bloc Québécois</div>
   <div class="iv-party-zh">魁北克集團</div>
   <div class="iv-party-leader">領袖：<strong>Yves-François Blanchet</strong></div>
-  <div class="iv-party-status">只在魁北克省競選</div>
-  <ul class="iv-party-facts"><li>主張魁北克利益與獨立可能</li><li>只在 Quebec 推候選人</li></ul>
+  <div class="iv-party-status"><span class="bi-zh">只在魁北克省競選</span><span class="bi-en">Runs only in Quebec</span></div>
+  <ul class="iv-party-facts"><li><span class="bi-zh">主張魁北克利益與主權</span><span class="bi-en">Quebec interests and sovereignty</span></li><li><span class="bi-zh">只在 Quebec 推候選人</span><span class="bi-en">Candidates only in Quebec</span></li></ul>
 </div>
 <div class="iv-party-card" style="border-top-color:#3D9B35">
   <div class="iv-party-name">Green Party</div>
   <div class="iv-party-zh">綠黨</div>
   <div class="iv-party-leader">領袖：<strong>Jonathan Pedneault & Elizabeth May</strong></div>
-  <div class="iv-party-status">環保政黨</div>
-  <ul class="iv-party-facts"><li>氣候變遷、永續政策</li><li>規模較小但在西岸有支持</li></ul>
+  <div class="iv-party-status"><span class="bi-zh">環保政黨</span><span class="bi-en">Environmental party</span></div>
+  <ul class="iv-party-facts"><li><span class="bi-zh">氣候變遷、永續政策</span><span class="bi-en">Climate and sustainability</span></li><li><span class="bi-zh">規模較小，在西岸有支持</span><span class="bi-en">Small party with West Coast support</span></li></ul>
 </div></div>
 
 <h2 class="iv-section-title">投票資格 &amp; 流程 <small>Who Can Vote &amp; Voting Procedures</small></h2>
-<div class="iv-vote-steps">
-  <div class="iv-vote-step"><div class="icon">🇨🇦</div><strong>1. 公民身份</strong><p>必須是 Canadian Citizen（永久居民不能投）</p></div>
-  <div class="iv-vote-step"><div class="icon">🎂</div><strong>2. 年滿 18 歲</strong><p>投票日當天滿 18</p></div>
-  <div class="iv-vote-step"><div class="icon">📬</div><strong>3. 收 Voter Card</strong><p>Elections Canada 寄出</p></div>
-  <div class="iv-vote-step"><div class="icon">🏠</div><strong>4. 到指定投票所</strong><p>帶身份證明 + 地址證明</p></div>
-  <div class="iv-vote-step"><div class="icon">✏️</div><strong>5. 圈選候選人</strong><p>選你選區（Riding）的 MP 候選人</p></div>
-</div>
+<div class="iv-vote-steps"><div class="iv-vote-step"><div class="icon">🇨🇦</div><strong><span class="bi-zh">1. 公民身份</span><span class="bi-en">1. Citizenship</span></strong><p><span class="bi-zh">必須是 Canadian Citizen（永久居民不能投）</span><span class="bi-en">You must be a Canadian citizen (permanent residents cannot vote)</span></p></div><div class="iv-vote-step"><div class="icon">🎂</div><strong><span class="bi-zh">2. 年滿 18 歲</span><span class="bi-en">2. Age 18</span></strong><p><span class="bi-zh">投票日當天滿 18</span><span class="bi-en">At least 18 years old on voting day</span></p></div><div class="iv-vote-step"><div class="icon">📬</div><strong><span class="bi-zh">3. 選民資訊卡</span><span class="bi-en">3. Voter information card</span></strong><p><span class="bi-zh">Elections Canada 寄出，列出投票時間地點</span><span class="bi-en">Mailed by Elections Canada; lists when and where to vote</span></p></div><div class="iv-vote-step"><div class="icon">🏠</div><strong><span class="bi-zh">4. 到投票站</span><span class="bi-en">4. Go to the polling station</span></strong><p><span class="bi-zh">帶卡片＋身分與地址證明</span><span class="bi-en">Bring the card and proof of identity and address</span></p></div><div class="iv-vote-step"><div class="icon">✏️</div><strong><span class="bi-zh">5. 圈選候選人</span><span class="bi-en">5. Mark your ballot</span></strong><p><span class="bi-zh">在候選人旁的圓圈畫 X，摺好交給工作人員</span><span class="bi-en">Mark an X beside your candidate, fold it and hand it to the poll official</span></p></div></div>
 
 <h2 class="iv-section-title">考試 5 大必背重點 <small>Five Must-Know Facts</small></h2>
-<div class="iv-facts">
-  <div class="iv-fact-row"><strong>選舉週期</strong><span>每 <strong>4 年</strong>最長一次（PM 可提早解散）</span></div>
-  <div class="iv-fact-row"><strong>眾議院席次</strong><span>共 <strong>338 位 MP</strong>（每個選區 Riding 一位）</span></div>
-  <div class="iv-fact-row"><strong>誰當總理 PM</strong><span>眾議院席次最多政黨的領袖通常成為 PM</span></div>
-  <div class="iv-fact-row"><strong>誰能投票</strong><span>公民 + 18 歲 + 在 Voter List 上</span></div>
-  <div class="iv-fact-row"><strong>Ontario 你的選區</strong><span>記住你的 <strong>MP（聯邦）</strong>和 <strong>MPP（省議員）</strong>姓名</span></div>
-</div>
+<div class="iv-facts"><div class="iv-fact-row"><strong><span class="bi-zh">選舉週期</span><span class="bi-en">Election cycle</span></strong><span><span class="bi-zh">每 4 年 10 月第三個星期一（PM 可請 GG 提前）</span><span class="bi-en">Third Monday in October every four years (the PM may ask the Governor General for an earlier election)</span></span></div><div class="iv-fact-row"><strong><span class="bi-zh">選區與議員</span><span class="bi-en">Ridings and MPs</span></strong><span><span class="bi-zh">每個選區選一位 MP；得票最多者當選</span><span class="bi-en">Each riding elects one MP; the candidate with the most votes wins</span></span></div><div class="iv-fact-row"><strong><span class="bi-zh">誰當總理</span><span class="bi-en">Who becomes PM</span></strong><span><span class="bi-zh">眾議院席次最多政黨的領袖，由總督邀請組閣</span><span class="bi-en">The leader of the party with the most seats, invited by the Governor General</span></span></div><div class="iv-fact-row"><strong><span class="bi-zh">多數／少數政府</span><span class="bi-en">Majority / minority</span></strong><span><span class="bi-zh">席次過半＝多數政府；不到一半＝少數政府</span><span class="bi-en">At least half the seats = majority; fewer = minority government</span></span></div><div class="iv-fact-row"><strong><span class="bi-zh">Ontario 你的選區</span><span class="bi-en">Your Ontario riding</span></strong><span><span class="bi-zh">記住你的 MP（聯邦）和 MPP（省議員）姓名</span><span class="bi-en">Know the names of your MP (federal) and MPP (provincial)</span></span></div></div>
 </main>
 </div>
 <script>

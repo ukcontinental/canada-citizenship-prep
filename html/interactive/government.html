@@ -499,6 +499,8 @@ blockquote.speakable > .speak-btn,
   letter-spacing: 0.04em; margin-right: 6px;
 }
 .iv-tag.accent { background: var(--accent-soft); color: var(--accent); font-weight: 600; }
+.bi-zh { display: block; }
+.bi-en { display: block; color: var(--muted); font-size: 0.92em; font-family: "Source Serif 4", Georgia, serif; font-style: italic; line-height: 1.45; }
 </style>
 
 <style>
@@ -558,11 +560,7 @@ blockquote.speakable > .speak-btn,
   <line x1="600" y1="260" x2="480" y2="310" stroke="#1f2328" stroke-width="2"/>
   <line x1="400" y1="110" x2="400" y2="310" stroke="#1f2328" stroke-width="2" stroke-dasharray="4 4"/>
 </svg>
-<div class="iv-gov-legend">
-  <div class="iv-gov-leg-item"><div class="iv-gov-dot" style="background:#c8102e"></div><div><strong>聯邦 Federal</strong>管全國事務，總理 Mark Carney（2025-）</div></div>
-  <div class="iv-gov-leg-item"><div class="iv-gov-dot" style="background:#4a6fa5"></div><div><strong>省 Provincial</strong>管教育/醫療，Ontario 省長 Doug Ford</div></div>
-  <div class="iv-gov-leg-item"><div class="iv-gov-dot" style="background:#5a9460"></div><div><strong>市政 Municipal</strong>管在地事務，Toronto 市長 Olivia Chow</div></div>
-</div>
+<div class="iv-gov-legend"><div class="iv-gov-leg-item"><div class="iv-gov-dot" style="background:#c8102e"></div><div><strong>聯邦 Federal</strong><span class="bi-zh">國防、外交、貨幣、刑法、公民身分；總理 Mark Carney</span><span class="bi-en">Defence, foreign policy, currency, criminal law, citizenship; PM Mark Carney</span></div></div><div class="iv-gov-leg-item"><div class="iv-gov-dot" style="background:#4a6fa5"></div><div><strong>省 Provincial</strong><span class="bi-zh">教育、醫療、自然資源、公路；Ontario 省長 Doug Ford</span><span class="bi-en">Education, health, natural resources, highways; Ontario Premier Doug Ford</span></div></div><div class="iv-gov-leg-item"><div class="iv-gov-dot" style="background:#5a9460"></div><div><strong>市鎮 Municipal</strong><span class="bi-zh">除雪、消防、大眾運輸、地方法規；Toronto 市長 Olivia Chow</span><span class="bi-en">Snow removal, firefighting, transit, by-laws; Toronto Mayor Olivia Chow</span></div></div></div>
 </div>
 
 <h2 class="iv-section-title">圖 2：國會三部分 <small>The Three Parts of Parliament</small></h2>
@@ -584,7 +582,7 @@ blockquote.speakable > .speak-btn,
   <!-- House of Commons -->
   <rect x="460" y="150" width="280" height="100" rx="10" fill="#5a9460"/>
   <text x="600" y="178" text-anchor="middle" font-size="17" font-weight="700" fill="#fff">眾議院 House of Commons</text>
-  <text x="600" y="200" text-anchor="middle" font-size="13" fill="#fff">338 位 MPs（國會議員）</text>
+  <text x="600" y="200" text-anchor="middle" font-size="13" fill="#fff">MPs 國會議員（席次隨人口重劃增加）</text>
   <text x="600" y="218" text-anchor="middle" font-size="11" fill="#d0e0d0">由公民投票選出（每 4 年）</text>
   <text x="600" y="234" text-anchor="middle" font-size="11" fill="#d0e0d0">"the people's house" 立法主力</text>
 
@@ -601,15 +599,7 @@ blockquote.speakable > .speak-btn,
 
 <h2 class="iv-section-title">圖 3：法案如何變法律 <small>How a Bill Becomes Law (7 steps)</small></h2>
 <div class="iv-gov-diagram">
-<div class="iv-bill-flow">
-  <div class="iv-bill-step"><div class="num">1</div><div class="title">一讀 First Reading</div><div class="desc">眾議院介紹法案</div></div>
-  <div class="iv-bill-step"><div class="num">2</div><div class="title">二讀 Second Reading</div><div class="desc">辯論原則</div></div>
-  <div class="iv-bill-step"><div class="num">3</div><div class="title">委員會 Committee</div><div class="desc">逐條審議</div></div>
-  <div class="iv-bill-step"><div class="num">4</div><div class="title">報告 Report</div><div class="desc">考慮修正</div></div>
-  <div class="iv-bill-step"><div class="num">5</div><div class="title">三讀 Third Reading</div><div class="desc">最後辯論與表決</div></div>
-  <div class="iv-bill-step"><div class="num">6</div><div class="title">參議院 Senate</div><div class="desc">同樣 3 讀流程</div></div>
-  <div class="iv-bill-step"><div class="num">7</div><div class="title">御准 Royal Assent</div><div class="desc">GG 代簽 → 法律</div></div>
-</div>
+<div class="iv-bill-flow"><div class="iv-bill-step"><div class="num">1</div><div class="title">一讀 First Reading</div><div class="desc"><span class="bi-zh">法案視為第一次宣讀並印製</span><span class="bi-en">The bill is read for the first time and printed</span></div></div><div class="iv-bill-step"><div class="num">2</div><div class="title">二讀 Second Reading</div><div class="desc"><span class="bi-zh">辯論法案原則</span><span class="bi-en">Members debate the bill's principle</span></div></div><div class="iv-bill-step"><div class="num">3</div><div class="title">委員會 Committee Stage</div><div class="desc"><span class="bi-zh">逐條審議</span><span class="bi-en">Studied clause by clause</span></div></div><div class="iv-bill-step"><div class="num">4</div><div class="title">報告 Report Stage</div><div class="desc"><span class="bi-zh">提出修正</span><span class="bi-en">Members can make amendments</span></div></div><div class="iv-bill-step"><div class="num">5</div><div class="title">三讀 Third Reading</div><div class="desc"><span class="bi-zh">辯論並表決</span><span class="bi-en">Members debate and vote</span></div></div><div class="iv-bill-step"><div class="num">6</div><div class="title">參議院 Senate</div><div class="desc"><span class="bi-zh">同樣的程序</span><span class="bi-en">A similar process in the Senate</span></div></div><div class="iv-bill-step"><div class="num">7</div><div class="title">御准 Royal Assent</div><div class="desc"><span class="bi-zh">總督代君主簽署 → 成為法律</span><span class="bi-en">The Governor General grants royal assent → law</span></div></div></div>
 <p style="font-size:13px; color:var(--muted); margin-top:8px">⭐ <strong>考試重點</strong>：3 讀＋委員會＋送參議院＋御准。法案在每院都要 3 讀。</p>
 </div>
 </main>
