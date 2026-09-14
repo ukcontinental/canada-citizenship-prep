@@ -19,6 +19,7 @@ from pathlib import Path
 import markdown as md
 
 import interactive_content as iv
+import quiz_content as qz
 
 ROOT = Path(__file__).parent
 OUT = ROOT / "html"
@@ -464,9 +465,15 @@ def make_sidebar(current: str) -> str:
         parts.append(f'<a href="{up}interactive/{fn}"{cls}>{label}</a>')
 
     parts.append('<h2>📝 考題</h2>')
+    parts.append(f'<a href="{up}quiz/practice.html"' +
+                 (' class="current"' if current == "quiz/practice.html" else "") +
+                 ">英文選擇題練習</a>")
+    parts.append(f'<a href="{up}quiz/mock.html"' +
+                 (' class="current"' if current == "quiz/mock.html" else "") +
+                 ">⏱ 模擬考（20 題／30 分）</a>")
     parts.append(f'<a href="{up}practice/question-bank.html"' +
                  (' class="current"' if current == "practice/question-bank.html" else "") +
-                 ">220 題題庫（依章節）</a>")
+                 ">220 題中文題庫（舊）</a>")
     for fn, label in quiz_items:
         key = f"daily-quiz/{fn}"
         cls = ' class="current"' if current == key else ""
@@ -1068,10 +1075,20 @@ __INTERACTIVE_CARDS__
 
 <h2>📝 三、考題</h2>
 <div class="dash">
+  <a href="quiz/practice.html">
+    <span class="kicker">練習</span>
+    <span class="title">英文選擇題練習</span>
+    <span class="meta">真考格式 · 即時對錯 · 中文可切換 · 錯題本</span>
+  </a>
+  <a href="quiz/mock.html">
+    <span class="kicker">模擬考</span>
+    <span class="title">⏱ 20 題 30 分鐘</span>
+    <span class="meta">隨機抽題含安大略省題，15 題通過</span>
+  </a>
   <a href="practice/question-bank.html">
-    <span class="kicker">題庫</span>
-    <span class="title">220+ 題題庫</span>
-    <span class="meta">依章節分類，反覆練習弱點</span>
+    <span class="kicker">舊題庫</span>
+    <span class="title">220 題中文問答</span>
+    <span class="meta">中文問答式，適合口頭複習</span>
   </a>
   <a href="reading/12-study-questions.html">
     <span class="kicker">官方</span>
@@ -1261,7 +1278,9 @@ def make_single_sidebar() -> str:
     for fn, label in INTERACTIVE_ITEMS:
         parts.append(f'<a href="#interactive-{fn[:-5]}">{label}</a>')
     parts.append('<h2>📝 考題</h2>')
-    parts.append('<a href="#practice-question-bank">220 題題庫（依章節）</a>')
+    parts.append('<a href="#quiz-practice">英文選擇題練習</a>')
+    parts.append('<a href="#quiz-mock">⏱ 模擬考（20 題／30 分）</a>')
+    parts.append('<a href="#practice-question-bank">220 題中文題庫（舊）</a>')
     for slug, label in quiz_items:
         parts.append(f'<a href="#daily-quiz-{slug}">驗收 {label}</a>')
     parts.append('</nav>')
@@ -1313,6 +1332,11 @@ def build_single():
     for js in sorted((ROOT / "aligned").glob("*.json")):
         add_section(f"reading/{js.stem}.html", render_reading(js, dict_src=""))
     sections.append('<script src="dict/words.js"></script>')
+
+    # quiz pages (questions loaded once)
+    sections.append('<script src="quiz/questions.js"></script>')
+    add_section("quiz/practice.html", qz.build_practice_body())
+    add_section("quiz/mock.html", qz.build_mock_body())
 
     body_html = "\n".join(sections)
     sidebar = make_single_sidebar()
@@ -1678,7 +1702,7 @@ def render_reading(json_path: Path, dict_src: str = "../dict/words.js") -> str:
                 for i, p in enumerate(para)
             )
             rows += f'''
-<div class="rd-row" data-p="{pi}">
+<div class="rd-row" data-p="{pi}" id="p{pi}">
   <div class="rd-cell rd-zh"><button class="rd-play" data-lang="zh" data-p="{pi}" type="button" title="朗讀中文">▶</button>{zh}</div>
   <div class="rd-cell rd-en"><button class="rd-play" data-lang="en" data-p="{pi}" type="button" title="Read English">▶</button>{en}</div>
 </div>'''
@@ -1782,6 +1806,14 @@ def build():
         # Interactive pages contain raw HTML (not markdown), so skip TTS-augmentation
         # and only rewrite md links (which there aren't any).
         (OUT / rel).write_text(wrap_page(title, body, rel), encoding="utf-8")
+
+    # quiz pages
+    (OUT / "quiz").mkdir(exist_ok=True)
+    (OUT / "quiz" / "questions.js").write_text(qz.questions_js(), encoding="utf-8")
+    for rel, title, body in (("quiz/practice.html", "英文選擇題練習", qz.build_practice_body()),
+                             ("quiz/mock.html", "模擬考", qz.build_mock_body())):
+        (OUT / rel).write_text(
+            wrap_page(title, '<script src="questions.js"></script>' + body, rel), encoding="utf-8")
 
     # reading pages (human-voice bilingual, audio already in html/audio/)
     (OUT / "reading").mkdir(exist_ok=True)
