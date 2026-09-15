@@ -471,9 +471,9 @@ def make_sidebar(current: str) -> str:
     parts.append(f'<a href="{up}quiz/mock.html"' +
                  (' class="current"' if current == "quiz/mock.html" else "") +
                  ">⏱ 模擬考（20 題／30 分）</a>")
-    parts.append(f'<a href="{up}practice/question-bank.html"' +
-                 (' class="current"' if current == "practice/question-bank.html" else "") +
-                 ">220 題中文題庫（舊）</a>")
+    parts.append(f'<a href="{up}reading/{QB_ITEM[0]}"' +
+                 (' class="current"' if current == f"reading/{QB_ITEM[0]}" else "") +
+                 f">{QB_ITEM[1]}</a>")
     for fn, label in quiz_items:
         key = f"daily-quiz/{fn}"
         cls = ' class="current"' if current == key else ""
@@ -1085,10 +1085,10 @@ __INTERACTIVE_CARDS__
     <span class="title">⏱ 20 題 30 分鐘</span>
     <span class="meta">隨機抽題含安大略省題，15 題通過</span>
   </a>
-  <a href="practice/question-bank.html">
-    <span class="kicker">舊題庫</span>
-    <span class="title">220 題中文問答</span>
-    <span class="meta">中文問答式，適合口頭複習</span>
+  <a href="reading/90-question-bank.html">
+    <span class="kicker">問答</span>
+    <span class="title">220 題中英問答</span>
+    <span class="meta">題目與答案皆中英對照，有人聲朗讀與字典</span>
   </a>
   <a href="reading/12-study-questions.html">
     <span class="kicker">官方</span>
@@ -1148,6 +1148,8 @@ def build_index_body() -> str:
     reading_cards = ""
     for js in sorted((ROOT / "aligned").glob("*.json")):
         d = json.loads(js.read_text(encoding="utf-8"))
+        if not d["num"].isdigit():
+            continue
         n_para = sum(len(p) for s in d["sections"] for p in s["paras"])
         reading_cards += (
             f'<a href="reading/{js.stem}.html">'
@@ -1280,7 +1282,7 @@ def make_single_sidebar() -> str:
     parts.append('<h2>📝 考題</h2>')
     parts.append('<a href="#quiz-practice">英文選擇題練習</a>')
     parts.append('<a href="#quiz-mock">⏱ 模擬考（20 題／30 分）</a>')
-    parts.append('<a href="#practice-question-bank">220 題中文題庫（舊）</a>')
+    parts.append(f'<a href="#reading-{QB_ITEM[0][:-5]}">{QB_ITEM[1]}</a>')
     for slug, label in quiz_items:
         parts.append(f'<a href="#daily-quiz-{slug}">驗收 {label}</a>')
     parts.append('</nav>')
@@ -1377,8 +1379,13 @@ def _reading_items() -> list[tuple[str, str]]:
     items = []
     for js in sorted((ROOT / "aligned").glob("*.json")):
         d = json.loads(js.read_text(encoding="utf-8"))
+        if not d["num"].isdigit():
+            continue  # non-chapter files (e.g. the QB question bank) are listed under 考題
         items.append((f"{js.stem}.html", f"{d['num']} · {d['title_zh']}"))
     return items
+
+
+QB_ITEM = ("90-question-bank.html", "220 題中英問答（人聲）")
 
 
 READING_ITEMS = _reading_items()
@@ -1716,7 +1723,7 @@ def render_reading(json_path: Path, dict_src: str = "../dict/words.js") -> str:
     return f'''{READING_CSS}
 <div class="rd" id="rd-{num}">
 <div class="rd-hero">
-  <h1>🎧 {num} {html.escape(data["title_zh"])} <small style="font-weight:400;color:var(--muted)">{html.escape(data["title_en"])}</small></h1>
+  <h1>🎧 {num + " " if num.isdigit() else ""}{html.escape(data["title_zh"])} <small style="font-weight:400;color:var(--muted)">{html.escape(data["title_en"])}</small></h1>
   <p>左中文、右英文，句對句對照。按段落左邊的 ▶ 朗讀該段；點中文任一句從那句開始念；念到哪一句，中英文同時標黃。<strong>點任何一個英文字</strong>會跳出字典卡並用慢速念這個字。空白鍵＝暫停／繼續。</p>
 </div>
 <div class="rd-pop hidden" role="dialog" aria-label="字典">

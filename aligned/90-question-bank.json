@@ -1,0 +1,2243 @@
+{
+ "num": "QB",
+ "title_en": "220 Review Questions with Answers",
+ "title_zh": "220 題中英問答題庫",
+ "sections": [
+  {
+   "title_en": "Chapter 1 — Citizenship, Rights and Responsibilities (25)",
+   "title_zh": "第 1 部分 — 公民、權利、責任（25 題）",
+   "paras": [
+    [
+     {
+      "en": "1. To whom do you swear allegiance in the Oath of Citizenship?",
+      "zh": "1. 加拿大入籍誓詞中效忠的對象是？"
+     },
+     {
+      "en": "Answer: King Charles the Third, King of Canada, his heirs and successors.",
+      "zh": "答：加拿大國王查理三世，及其繼承人與後嗣。"
+     }
+    ],
+    [
+     {
+      "en": "2. Which three Aboriginal peoples' treaty rights does the Oath specifically recognize?",
+      "zh": "2. 入籍誓詞特別承認哪三類原住民條約權利？"
+     },
+     {
+      "en": "Answer: First Nations, Inuit and Métis.",
+      "zh": "答：第一民族、因紐特人、梅蒂人。"
+     }
+    ],
+    [
+     {
+      "en": "3. What are the four fundamental freedoms in the Charter?",
+      "zh": "3. 公民的 4 大基本自由依憲章是？"
+     },
+     {
+      "en": "Answer: Freedom of conscience and religion; freedom of thought, belief, opinion and expression (including the press); freedom of peaceful assembly; freedom of association.",
+      "zh": "答：良知／宗教自由；思想、信仰、意見與表達自由（含新聞）；和平集會自由；結社自由。"
+     }
+    ],
+    [
+     {
+      "en": "4. What are the six responsibilities of citizenship?",
+      "zh": "4. 公民的 6 大責任？"
+     },
+     {
+      "en": "Answer: Obeying the law, taking responsibility for oneself and one's family, serving on a jury, voting in elections, helping others in the community, and protecting and enjoying our heritage and environment.",
+      "zh": "答：守法、照顧自己與家庭、擔任陪審員、投票、協助社區、保護加拿大遺產與環境。"
+     }
+    ],
+    [
+     {
+      "en": "5. What are Mobility Rights?",
+      "zh": "5. 「Mobility Rights」指什麼？"
+     },
+     {
+      "en": "Answer: The right to live and work anywhere in Canada, to enter and leave the country freely, and to apply for a passport.",
+      "zh": "答：在加拿大任意居住、工作、自由進出國境並申請護照的權利。"
+     }
+    ],
+    [
+     {
+      "en": "6. What right is habeas corpus?",
+      "zh": "6. 「Habeas Corpus」是什麼權利？"
+     },
+     {
+      "en": "Answer: The right to challenge unlawful detention by the state; it comes from English common law.",
+      "zh": "答：被拘留者可挑戰拘留合法性的權利；來自英國普通法。"
+     }
+    ],
+    [
+     {
+      "en": "7. Do citizens have a right not to work?",
+      "zh": "7. 公民有沒有不工作的權利？"
+     },
+     {
+      "en": "Answer: There is no such guarantee, but no one is forced into a particular job. Getting a job and working hard is described as a responsibility and a Canadian value.",
+      "zh": "答：沒有此項保障，但也不強迫做特定工作。找工作、努力工作被視為責任與加拿大價值。"
+     }
+    ],
+    [
+     {
+      "en": "8. Are men and women equal under Canadian law?",
+      "zh": "8. 加拿大男女在法律上是否平等？"
+     },
+     {
+      "en": "Answer: Yes.",
+      "zh": "答：是。"
+     }
+    ],
+    [
+     {
+      "en": "9. Is forced marriage a civil or a criminal matter in Canada?",
+      "zh": "9. 強迫婚姻在加拿大是民事還是刑事？"
+     },
+     {
+      "en": "Answer: Criminal — those guilty are severely punished under Canada's criminal laws.",
+      "zh": "答：刑事——犯者依加拿大刑法嚴懲。"
+     }
+    ],
+    [
+     {
+      "en": "10. What is Canada's most important legal document of 1982?",
+      "zh": "10. 加拿大 1982 年的最重要法律文件是什麼？"
+     },
+     {
+      "en": "Answer: The Canadian Charter of Rights and Freedoms, entrenched in the Constitution in 1982.",
+      "zh": "答：《加拿大權利與自由憲章》，1982 年寫入憲法。"
+     }
+    ],
+    [
+     {
+      "en": "11. In what year was Magna Carta signed in England?",
+      "zh": "11. Magna Carta 是哪一年的英國文件？"
+     },
+     {
+      "en": "Answer: 1215.",
+      "zh": "答：1215 年。"
+     }
+    ],
+    [
+     {
+      "en": "12. Is serving on a jury a right or a responsibility?",
+      "zh": "12. 服務陪審團屬權利還是責任？"
+     },
+     {
+      "en": "Answer: A responsibility — when called, you are legally required to serve.",
+      "zh": "答：責任——被傳喚時依法必須擔任。"
+     }
+    ],
+    [
+     {
+      "en": "13. Is voting a right or a responsibility?",
+      "zh": "13. 投票屬權利還是責任？"
+     },
+     {
+      "en": "Answer: Both — the right to vote comes with the responsibility to vote.",
+      "zh": "答：兩者皆是——投票權伴隨投票的責任。"
+     }
+    ],
+    [
+     {
+      "en": "14. Can permanent residents vote in federal elections?",
+      "zh": "14. 永久居民可不可以投票？"
+     },
+     {
+      "en": "Answer: No — only Canadian citizens aged 18 or older on the voters' list.",
+      "zh": "答：不可以——只有 18 歲以上且在選民名冊上的加拿大公民可以。"
+     }
+    ],
+    [
+     {
+      "en": "15. What are the three traditions that Canadian law comes from?",
+      "zh": "15. 加拿大法律來自哪三大傳統？"
+     },
+     {
+      "en": "Answer: The unwritten British constitution, English common law, and the civil code of France, plus laws passed by Parliament and the provinces.",
+      "zh": "答：英國不成文憲政、英國普通法、法國民法，加上國會與各省通過的法律。"
+     }
+    ],
+    [
+     {
+      "en": "16. What does the rule of law mean?",
+      "zh": "16. 「Rule of Law」是什麼意思？"
+     },
+     {
+      "en": "Answer: Both government and people are bound by the law; no person or group is above the law.",
+      "zh": "答：政府與人民都受法律約束，沒有人凌駕於法律之上。"
+     }
+    ],
+    [
+     {
+      "en": "17. Does freedom of expression include freedom of the press?",
+      "zh": "17. 言論自由是否包含新聞自由？"
+     },
+     {
+      "en": "Answer: Yes — freedom of thought, belief, opinion and expression includes freedom of speech and of the press.",
+      "zh": "答：是——表達自由包含言論自由與新聞自由。"
+     }
+    ],
+    [
+     {
+      "en": "18. Is multiculturalism a right or a responsibility?",
+      "zh": "18. 多元文化遺產屬於權利還是責任？"
+     },
+     {
+      "en": "Answer: A right — the Charter lists multiculturalism as a fundamental characteristic of Canadian heritage and identity.",
+      "zh": "答：權利——憲章把多元文化列為加拿大傳統與身分的基本特徵。"
+     }
+    ],
+    [
+     {
+      "en": "19. Is obeying the law a right or a responsibility?",
+      "zh": "19. 守法屬於權利還是責任？"
+     },
+     {
+      "en": "Answer: A responsibility.",
+      "zh": "答：責任。"
+     }
+    ],
+    [
+     {
+      "en": "20. Which of these may you NOT do: (A) choose your religion, (B) assemble publicly, (C) refuse to obey the law, (D) associate peacefully?",
+      "zh": "20. 你不可以做以下哪一項：（A）信仰自選（B）公開集會（C）拒絕守法（D）和平結社"
+     },
+     {
+      "en": "Answer: C — obeying the law is a responsibility of every citizen.",
+      "zh": "答：C——守法是每位公民的責任。"
+     }
+    ],
+    [
+     {
+      "en": "21. What is 'equality before the law' in Chinese?",
+      "zh": "21. 「Equality before the law」中文是？"
+     },
+     {
+      "en": "Answer: Everyone is equal before the law.",
+      "zh": "答：法律之前人人平等。"
+     }
+    ],
+    [
+     {
+      "en": "22. What is one of the biggest differences between a citizen and a permanent resident?",
+      "zh": "22. 公民與永久居民的最大差別之一是什麼？"
+     },
+     {
+      "en": "Answer: Citizens can vote, run for office and hold a Canadian passport.",
+      "zh": "答：投票權、競選公職、持加拿大護照。"
+     }
+    ],
+    [
+     {
+      "en": "23. Is helping others in the community a responsibility of citizenship?",
+      "zh": "23. 「協助社區」是公民責任嗎？"
+     },
+     {
+      "en": "Answer: Yes — millions of volunteers help others without pay.",
+      "zh": "答：是——數百萬志工無償幫助他人。"
+     }
+    ],
+    [
+     {
+      "en": "24. Is protecting Canada's heritage and environment a responsibility or a right?",
+      "zh": "24. 「保護加拿大遺產與環境」是責任還是權利？"
+     },
+     {
+      "en": "Answer: A responsibility.",
+      "zh": "答：責任。"
+     }
+    ],
+    [
+     {
+      "en": "25. Which document does 'the Constitution' in the Oath include?",
+      "zh": "25. 申請入籍時誓詞中說的「Constitution」包含哪一份文件？"
+     },
+     {
+      "en": "Answer: The Canadian Charter of Rights and Freedoms, which recognizes and affirms Aboriginal and treaty rights.",
+      "zh": "答：《加拿大權利與自由憲章》，其中承認並確認原住民與條約權利。"
+     }
+    ]
+   ]
+  },
+  {
+   "title_en": "Chapter 2 — Who We Are, Languages, Aboriginal Peoples (20)",
+   "title_zh": "第 2 部分 — 我們是誰、語言、原住民（20 題）",
+   "paras": [
+    [
+     {
+      "en": "1. Who are Canada's three founding peoples?",
+      "zh": "1. 加拿大三大開國民族？"
+     },
+     {
+      "en": "Answer: Aboriginal, French and British.",
+      "zh": "答：原住民、法裔、英裔。"
+     }
+    ],
+    [
+     {
+      "en": "2. What are the three groups of Aboriginal peoples and their share of the Aboriginal population?",
+      "zh": "2. 原住民 3 大類別與占原住民人口比例？"
+     },
+     {
+      "en": "Answer: First Nations about 65%, Métis 30%, Inuit 4%.",
+      "zh": "答：第一民族約 65%、梅蒂人 30%、因紐特人 4%。"
+     }
+    ],
+    [
+     {
+      "en": "3. Which Aboriginal people live in the Arctic?",
+      "zh": "3. 哪一族原住民住在北極區？"
+     },
+     {
+      "en": "Answer: The Inuit.",
+      "zh": "答：因紐特人。"
+     }
+    ],
+    [
+     {
+      "en": "4. Which Aboriginal people are of mixed Aboriginal and European ancestry?",
+      "zh": "4. 哪一族原住民是歐裔與原住民混血？"
+     },
+     {
+      "en": "Answer: The Métis.",
+      "zh": "答：梅蒂人。"
+     }
+    ],
+    [
+     {
+      "en": "5. What are the two official languages?",
+      "zh": "5. 兩種官方語言？"
+     },
+     {
+      "en": "Answer: English and French.",
+      "zh": "答：英語與法語。"
+     }
+    ],
+    [
+     {
+      "en": "6. In what year was the Official Languages Act passed?",
+      "zh": "6. 官方語言法哪一年通過？"
+     },
+     {
+      "en": "Answer: 1969.",
+      "zh": "答：1969 年。"
+     }
+    ],
+    [
+     {
+      "en": "7. In what year did multiculturalism become official policy?",
+      "zh": "7. 多元文化主義哪一年成為加拿大官方政策？"
+     },
+     {
+      "en": "Answer: 1971.",
+      "zh": "答：1971 年。"
+     }
+    ],
+    [
+     {
+      "en": "8. Which prime minister introduced multiculturalism?",
+      "zh": "8. 推動多元文化主義的總理是？"
+     },
+     {
+      "en": "Answer: Pierre Elliott Trudeau.",
+      "zh": "答：皮埃爾・艾略特・杜魯道（老杜魯道）。"
+     }
+    ],
+    [
+     {
+      "en": "9. What is the largest religious tradition in Canada?",
+      "zh": "9. 加拿大最大宗教傳統是？"
+     },
+     {
+      "en": "Answer: Christianity — Catholics are the largest group, followed by Protestants.",
+      "zh": "答：基督宗教——天主教最多，其次是新教。"
+     }
+    ],
+    [
+     {
+      "en": "10. What is Canada's population today?",
+      "zh": "10. 加拿大目前人口大約多少？"
+     },
+     {
+      "en": "Answer: About 40 million (the 2021 guide says about 34 million).",
+      "zh": "答：約 4,000 萬（2021 年版指南寫約 3,400 萬）。"
+     }
+    ],
+    [
+     {
+      "en": "11. What are Canada's three largest metropolitan areas?",
+      "zh": "11. 三大都會是？"
+     },
+     {
+      "en": "Answer: Toronto, Montreal and Vancouver.",
+      "zh": "答：多倫多、蒙特婁、溫哥華。"
+     }
+    ],
+    [
+     {
+      "en": "12. How many Francophones are there?",
+      "zh": "12. 法裔人口大約多少？"
+     },
+     {
+      "en": "Answer: About seven million speak French as their first language; most live in Quebec.",
+      "zh": "答：約 700 萬以法語為第一語言，多數住魁北克。"
+     }
+    ],
+    [
+     {
+      "en": "13. Which province has French as its only official language?",
+      "zh": "13. 哪個省以法文為唯一官方語言？"
+     },
+     {
+      "en": "Answer: Quebec.",
+      "zh": "答：魁北克。"
+     }
+    ],
+    [
+     {
+      "en": "14. Who are the Acadians?",
+      "zh": "14. Acadians 是指什麼人？"
+     },
+     {
+      "en": "Answer: Descendants of French colonists who began settling in the Maritimes in 1604.",
+      "zh": "答：1604 年起在濱海省份定居的法國殖民者後代。"
+     }
+    ],
+    [
+     {
+      "en": "15. Who are Quebecers?",
+      "zh": "15. Quebecers 是指什麼人？"
+     },
+     {
+      "en": "Answer: The people of Quebec, the vast majority French-speaking.",
+      "zh": "答：魁北克的居民，絕大多數說法語。"
+     }
+    ],
+    [
+     {
+      "en": "16. What were residential schools?",
+      "zh": "16. 「Residential Schools」是什麼？"
+     },
+     {
+      "en": "Answer: Schools where the federal government placed Aboriginal children to assimilate them; languages and culture were mostly prohibited and many students suffered.",
+      "zh": "答：聯邦政府強制原住民兒童入住、禁止母語與傳統文化、以同化為目的的學校，許多學生受苦。"
+     }
+    ],
+    [
+     {
+      "en": "17. When did the government apologize for residential schools, and who spoke?",
+      "zh": "17. 加拿大政府哪一年正式為寄宿學校道歉？由誰代表？"
+     },
+     {
+      "en": "Answer: 2008; Prime Minister Stephen Harper.",
+      "zh": "答：2008 年；總理史蒂芬・哈珀。"
+     }
+    ],
+    [
+     {
+      "en": "18. Do most Canadians live in cities or rural areas?",
+      "zh": "18. 80% 的加拿大人住城市還是鄉村？"
+     },
+     {
+      "en": "Answer: Cities — the majority live in urban areas.",
+      "zh": "答：城市。"
+     }
+    ],
+    [
+     {
+      "en": "19. When were treaties with Aboriginal peoples first guaranteed?",
+      "zh": "19. 與原住民簽訂條約最早從哪一年開始？"
+     },
+     {
+      "en": "Answer: The Royal Proclamation of 1763 established the basis for negotiating treaties.",
+      "zh": "答：1763 年《皇家公告》奠定了條約談判的基礎。"
+     }
+    ],
+    [
+     {
+      "en": "20. Does Canada respect religious freedom?",
+      "zh": "20. 加拿大尊重宗教自由嗎？"
+     },
+     {
+      "en": "Answer: Yes — freedom of conscience and religion is a fundamental freedom.",
+      "zh": "答：是——良知與宗教自由是基本自由。"
+     }
+    ]
+   ]
+  },
+  {
+   "title_en": "Chapter 3 — History (45)",
+   "title_zh": "第 3 部分 — 歷史（45 題）",
+   "paras": [
+    [
+     {
+      "en": "1. Which language does the word 'Canada' come from, and what does it mean?",
+      "zh": "1. 「Canada」一詞來自哪族語言？意思？"
+     },
+     {
+      "en": "Answer: Iroquoian — kanata means 'village'.",
+      "zh": "答：易洛魁語——kanata 意為「村莊」。"
+     }
+    ],
+    [
+     {
+      "en": "2. Who were the first Europeans to reach North America, where, and when?",
+      "zh": "2. 第一批抵達北美的歐洲人是哪族？地點？年代？"
+     },
+     {
+      "en": "Answer: The Vikings; L'Anse aux Meadows, Newfoundland; about 1,000 years ago.",
+      "zh": "答：維京人；紐芬蘭的蘭塞奧茲牧草地；約一千年前。"
+     }
+    ],
+    [
+     {
+      "en": "3. Which Italian explorer sailing for England mapped Canada's East Coast in 1497?",
+      "zh": "3. 1497 探勘加拿大東岸的義裔英國探險家？"
+     },
+     {
+      "en": "Answer: John Cabot.",
+      "zh": "答：約翰・卡伯特。"
+     }
+    ],
+    [
+     {
+      "en": "4. Which Frenchman explored the Gulf of St. Lawrence in 1534–35?",
+      "zh": "4. 1534/1535 探勘 St. Lawrence Gulf 的法國人？"
+     },
+     {
+      "en": "Answer: Jacques Cartier.",
+      "zh": "答：雅克・卡蒂亞。"
+     }
+    ],
+    [
+     {
+      "en": "5. Who founded Quebec City in 1608, and what is he called?",
+      "zh": "5. 1608 建立 Quebec City 者？被稱什麼？"
+     },
+     {
+      "en": "Answer: Samuel de Champlain; the Father of New France.",
+      "zh": "答：薩繆爾・德・尚普蘭；新法蘭西之父。"
+     }
+    ],
+    [
+     {
+      "en": "6. Which great trading company was chartered in 1670, and by which king?",
+      "zh": "6. 1670 成立的最大殖民貿易公司？由哪位英王授權？"
+     },
+     {
+      "en": "Answer: The Hudson's Bay Company; King Charles II.",
+      "zh": "答：哈德遜灣公司；英王查理二世。"
+     }
+    ],
+    [
+     {
+      "en": "7. What was the Hudson's Bay Company's territory called?",
+      "zh": "7. 哈德遜灣公司的領地稱為？"
+     },
+     {
+      "en": "Answer: Rupert's Land.",
+      "zh": "答：魯珀特地。"
+     }
+    ],
+    [
+     {
+      "en": "8. What was the battle of 1759, and where?",
+      "zh": "8. 1759 戰役名稱與地點？"
+     },
+     {
+      "en": "Answer: The Battle of the Plains of Abraham, outside Quebec City.",
+      "zh": "答：亞伯拉罕平原戰役，魁北克市城外。"
+     }
+    ],
+    [
+     {
+      "en": "9. Who were the two commanders in 1759, and what was the result?",
+      "zh": "9. 1759 英法兩將軍是誰？結果？"
+     },
+     {
+      "en": "Answer: Wolfe (British) and Montcalm (French); both were killed and the British won.",
+      "zh": "答：沃爾夫（英）與蒙卡姆（法）；雙雙陣亡，英軍勝。"
+     }
+    ],
+    [
+     {
+      "en": "10. By which treaty did France cede Canada in 1763?",
+      "zh": "10. 1763 法國割讓加拿大的條約？"
+     },
+     {
+      "en": "Answer: The Treaty of Paris, 1763.",
+      "zh": "答：1763 年《巴黎條約》。"
+     }
+    ],
+    [
+     {
+      "en": "11. Which three rights did the Quebec Act of 1774 preserve for French Canadians?",
+      "zh": "11. 1774《Quebec Act》保留法裔哪三項權利？"
+     },
+     {
+      "en": "Answer: Religious freedom for Catholics, the right to hold public office, and French civil law.",
+      "zh": "答：天主教信仰自由、擔任公職的權利、法國民法。"
+     }
+    ],
+    [
+     {
+      "en": "12. What were the British loyalists who fled north in 1775–83 called?",
+      "zh": "12. 1775–83 北逃加拿大的英裔保皇黨稱？"
+     },
+     {
+      "en": "Answer: Loyalists, or United Empire Loyalists.",
+      "zh": "答：效忠派／聯合帝國效忠派。"
+     }
+    ],
+    [
+     {
+      "en": "13. Roughly how many Loyalists fled to Canada?",
+      "zh": "13. Loyalists 大致逃了多少人？"
+     },
+     {
+      "en": "Answer: More than 40,000.",
+      "zh": "答：超過四萬人。"
+     }
+    ],
+    [
+     {
+      "en": "14. Which country did Canada fight in the War of 1812?",
+      "zh": "14. 1812 戰爭加拿大對抗哪國？"
+     },
+     {
+      "en": "Answer: The United States.",
+      "zh": "答：美國。"
+     }
+    ],
+    [
+     {
+      "en": "15. Who was the 'Saviour of Upper Canada' in 1812?",
+      "zh": "15. 1812「Saviour of Upper Canada」是誰？"
+     },
+     {
+      "en": "Answer: Major-General Sir Isaac Brock.",
+      "zh": "答：少將艾薩克・布洛克爵士。"
+     }
+    ],
+    [
+     {
+      "en": "16. Which First Nations chief allied with the British in 1812?",
+      "zh": "16. 1812 與英軍結盟的原住民首領是？"
+     },
+     {
+      "en": "Answer: Chief Tecumseh.",
+      "zh": "答：酋長特庫姆塞。"
+     }
+    ],
+    [
+     {
+      "en": "17. What did Laura Secord do?",
+      "zh": "17. Laura Secord 做了什麼事？"
+     },
+     {
+      "en": "Answer: She walked 30 km to warn the British of an American attack, helping win the Battle of Beaver Dams.",
+      "zh": "答：步行 30 公里向英軍通報美軍進攻，促成比佛丹戰役勝利。"
+     }
+    ],
+    [
+     {
+      "en": "18. Which city did the Americans burn in 1813, and what is it called today?",
+      "zh": "18. 1813 美軍焚毀的城市？今天叫什麼？"
+     },
+     {
+      "en": "Answer: York; today Toronto.",
+      "zh": "答：約克；今天的多倫多。"
+     }
+    ],
+    [
+     {
+      "en": "19. Which building did the British burn in 1814?",
+      "zh": "19. 1814 英軍焚毀的建築是？"
+     },
+     {
+      "en": "Answer: The White House in Washington, D.C.",
+      "zh": "答：華盛頓特區的白宮。"
+     }
+    ],
+    [
+     {
+      "en": "20. What did the British Empire do in 1833–34?",
+      "zh": "20. 1834 大英帝國通過什麼？"
+     },
+     {
+      "en": "Answer: It abolished slavery throughout the Empire (1833).",
+      "zh": "答：全帝國廢除奴隸制度（1833 年）。"
+     }
+    ],
+    [
+     {
+      "en": "21. What was the Underground Railroad?",
+      "zh": "21. Underground Railroad 是什麼？"
+     },
+     {
+      "en": "Answer: A Christian anti-slavery network that helped American slaves escape to Canada.",
+      "zh": "答：協助美國黑奴秘密逃往加拿大的基督教反奴隸網絡。"
+     }
+    ],
+    [
+     {
+      "en": "22. Who were the two rebel leaders of 1837–38?",
+      "zh": "22. 1837–38 兩位叛亂領袖？"
+     },
+     {
+      "en": "Answer: William Lyon Mackenzie (Upper Canada) and Louis-Joseph Papineau (Lower Canada).",
+      "zh": "答：威廉・萊昂・麥肯齊（上加拿大）與路易－約瑟夫・帕皮諾（下加拿大）。"
+     }
+    ],
+    [
+     {
+      "en": "23. Which Act united Upper and Lower Canada in 1840?",
+      "zh": "23. 1840 統一上下加拿大的法案？"
+     },
+     {
+      "en": "Answer: The Act of Union, 1840.",
+      "zh": "答：1840 年《聯合法案》。"
+     }
+    ],
+    [
+     {
+      "en": "24. Which pair achieved responsible government in 1848–49?",
+      "zh": "24. 1848/49 達成責任政府的雙人組？"
+     },
+     {
+      "en": "Answer: Robert Baldwin and Louis-Hippolyte La Fontaine.",
+      "zh": "答：羅伯特・鮑德溫與路易－伊波利特・拉方丹。"
+     }
+    ],
+    [
+     {
+      "en": "25. Which law created Confederation on July 1, 1867?",
+      "zh": "25. 1867/7/1 邦聯誕生的法律文件名稱？"
+     },
+     {
+      "en": "Answer: The British North America Act, 1867.",
+      "zh": "答：1867 年《英屬北美法案》。"
+     }
+    ],
+    [
+     {
+      "en": "26. Which four provinces formed Canada in 1867?",
+      "zh": "26. 1867 建國 4 個省？"
+     },
+     {
+      "en": "Answer: Ontario, Quebec, Nova Scotia and New Brunswick.",
+      "zh": "答：安大略、魁北克、新斯科細亞、新布藍瑞克。"
+     }
+    ],
+    [
+     {
+      "en": "27. Who was Canada's first prime minister?",
+      "zh": "27. 加拿大首任總理？"
+     },
+     {
+      "en": "Answer: Sir John A. Macdonald.",
+      "zh": "答：約翰・A・麥克唐納爵士。"
+     }
+    ],
+    [
+     {
+      "en": "28. Where does the word 'Dominion' come from?",
+      "zh": "28. Dominion 字源出自聖經？"
+     },
+     {
+      "en": "Answer: Psalm 72:8 — 'dominion from sea to sea'.",
+      "zh": "答：《詩篇》72 篇 8 節——「從這海直到那海」。"
+     }
+    ],
+    [
+     {
+      "en": "29. What is Canada's motto in Chinese?",
+      "zh": "29. 國徽箴言中文？"
+     },
+     {
+      "en": "Answer: A mari usque ad mare — from sea to sea.",
+      "zh": "答：從海到海。"
+     }
+    ],
+    [
+     {
+      "en": "30. When did Manitoba and the Northwest Territories join?",
+      "zh": "30. Manitoba 與 NWT 加入年份？"
+     },
+     {
+      "en": "Answer: 1870.",
+      "zh": "答：1870 年。"
+     }
+    ],
+    [
+     {
+      "en": "31. When did British Columbia join?",
+      "zh": "31. BC 加入年份？"
+     },
+     {
+      "en": "Answer: 1871.",
+      "zh": "答：1871 年。"
+     }
+    ],
+    [
+     {
+      "en": "32. When did Prince Edward Island join?",
+      "zh": "32. PEI 加入年份？"
+     },
+     {
+      "en": "Answer: 1873.",
+      "zh": "答：1873 年。"
+     }
+    ],
+    [
+     {
+      "en": "33. When was Yukon Territory created?",
+      "zh": "33. Yukon 加入年份？"
+     },
+     {
+      "en": "Answer: 1898.",
+      "zh": "答：1898 年。"
+     }
+    ],
+    [
+     {
+      "en": "34. When did Alberta and Saskatchewan join?",
+      "zh": "34. Alberta、Saskatchewan 加入年份？"
+     },
+     {
+      "en": "Answer: 1905.",
+      "zh": "答：1905 年。"
+     }
+    ],
+    [
+     {
+      "en": "35. When did Newfoundland and Labrador join?",
+      "zh": "35. Newfoundland and Labrador 加入年份？"
+     },
+     {
+      "en": "Answer: 1949.",
+      "zh": "答：1949 年。"
+     }
+    ],
+    [
+     {
+      "en": "36. When was Nunavut created?",
+      "zh": "36. Nunavut 成立年份？"
+     },
+     {
+      "en": "Answer: 1999.",
+      "zh": "答：1999 年。"
+     }
+    ],
+    [
+     {
+      "en": "37. When was the Canadian Pacific Railway completed?",
+      "zh": "37. CPR 完工年份？"
+     },
+     {
+      "en": "Answer: 1885.",
+      "zh": "答：1885 年。"
+     }
+    ],
+    [
+     {
+      "en": "38. How many Chinese workers built the CPR, and when and by whom was the apology made?",
+      "zh": "38. CPR 多少華工參與？哪一年道歉？哪位總理？"
+     },
+     {
+      "en": "Answer: About 15,000; the apology for the Head Tax came in 2006 from Prime Minister Stephen Harper.",
+      "zh": "答：約 15,000 人；2006 年由總理史蒂芬・哈珀為人頭稅道歉。"
+     }
+    ],
+    [
+     {
+      "en": "39. When were Louis Riel's two uprisings, and what happened to him?",
+      "zh": "39. Métis 領袖 Louis Riel 兩次抵抗年份？最終下場？"
+     },
+     {
+      "en": "Answer: Red River 1869–70 and the North-West Rebellion 1885; he was hanged for high treason.",
+      "zh": "答：1869–70 紅河；1885 西北叛亂；以叛國罪處絞。"
+     }
+    ],
+    [
+     {
+      "en": "40. Which province first gave women the provincial vote, in 1916?",
+      "zh": "40. 1916 首個給予婦女省級投票權的省？"
+     },
+     {
+      "en": "Answer: Manitoba.",
+      "zh": "答：曼尼托巴。"
+     }
+    ],
+    [
+     {
+      "en": "41. Who was the first woman MP, in 1921?",
+      "zh": "41. 1921 首位女性 MP？"
+     },
+     {
+      "en": "Answer: Agnes Macphail.",
+      "zh": "答：艾格妮絲・麥克費爾。"
+     }
+    ],
+    [
+     {
+      "en": "42. What was the 1929 case that recognized women as 'persons'?",
+      "zh": "42. 1929 婦女被法律承認為「人」的案件名稱？"
+     },
+     {
+      "en": "Answer: The Persons Case, won by the Famous Five.",
+      "zh": "答：「人格案」（Persons Case），由 Famous Five 打贏。"
+     }
+    ],
+    [
+     {
+      "en": "43. How many Canadians served and died in the First World War?",
+      "zh": "43. WWI 加拿大服役/陣亡人數？"
+     },
+     {
+      "en": "Answer: More than 600,000 served; 60,000 were killed.",
+      "zh": "答：超過 60 萬人服役；6 萬人陣亡。"
+     }
+    ],
+    [
+     {
+      "en": "44. Which 1917 battle is seen as the birth of Canadian national identity?",
+      "zh": "44. 1917 加拿大民族認同誕生的戰役？"
+     },
+     {
+      "en": "Answer: Vimy Ridge.",
+      "zh": "答：維米嶺。"
+     }
+    ],
+    [
+     {
+      "en": "45. When did Canada declare war on Germany, how many died, and which D-Day beach did Canadians take?",
+      "zh": "45. WWII 加拿大何時對德宣戰？陣亡人數約？D-Day 加軍負責灘頭？"
+     },
+     {
+      "en": "Answer: September 1939; about 44,000 killed; Juno Beach.",
+      "zh": "答：1939 年 9 月；約 44,000 人陣亡；朱諾海灘。"
+     }
+    ]
+   ]
+  },
+  {
+   "title_en": "Chapter 4 — Modern Canada (25)",
+   "title_zh": "第 4 部分 — 現代加拿大（25 題）",
+   "paras": [
+    [
+     {
+      "en": "1. When did Canada join the United Nations?",
+      "zh": "1. 加拿大何時加入 UN？"
+     },
+     {
+      "en": "Answer: 1945.",
+      "zh": "答：1945 年。"
+     }
+    ],
+    [
+     {
+      "en": "2. When did Canada join NATO?",
+      "zh": "2. 加拿大何時加入 NATO？"
+     },
+     {
+      "en": "Answer: 1949.",
+      "zh": "答：1949 年。"
+     }
+    ],
+    [
+     {
+      "en": "3. How many Canadians served in the Korean War?",
+      "zh": "3. 韓戰加拿大派兵多少？"
+     },
+     {
+      "en": "Answer: More than 26,000; 500 died and 1,000 were wounded.",
+      "zh": "答：超過 26,000 人；500 人陣亡、1,000 人受傷。"
+     }
+    ],
+    [
+     {
+      "en": "4. When did Lester Pearson win the Nobel Peace Prize?",
+      "zh": "4. Lester Pearson 何時獲諾貝爾和平獎？"
+     },
+     {
+      "en": "Answer: 1957.",
+      "zh": "答：1957 年。"
+     }
+    ],
+    [
+     {
+      "en": "5. For what contribution did Pearson win the prize?",
+      "zh": "5. 因什麼貢獻獲獎？"
+     },
+     {
+      "en": "Answer: Proposing the UN peacekeeping force during the 1956 Suez Crisis.",
+      "zh": "答：1956 年蘇伊士危機時提出聯合國維和部隊。"
+     }
+    ],
+    [
+     {
+      "en": "6. In what year was the current flag adopted?",
+      "zh": "6. 國旗哪一年啟用？"
+     },
+     {
+      "en": "Answer: 1965.",
+      "zh": "答：1965 年。"
+     }
+    ],
+    [
+     {
+      "en": "7. In what year was the Official Languages Act passed?",
+      "zh": "7. 官方語言法哪一年？"
+     },
+     {
+      "en": "Answer: 1969.",
+      "zh": "答：1969 年。"
+     }
+    ],
+    [
+     {
+      "en": "8. In what year did multiculturalism become official policy?",
+      "zh": "8. 多元文化哪一年成官方政策？"
+     },
+     {
+      "en": "Answer: 1971.",
+      "zh": "答：1971 年。"
+     }
+    ],
+    [
+     {
+      "en": "9. Who signed the patriated Constitution in 1982?",
+      "zh": "9. 1982 憲法歸國誰簽署？"
+     },
+     {
+      "en": "Answer: Queen Elizabeth II, in Ottawa.",
+      "zh": "答：伊莉莎白二世女王，在渥太華。"
+     }
+    ],
+    [
+     {
+      "en": "10. What did the 1982 Constitution include?",
+      "zh": "10. 1982 憲法包含什麼？"
+     },
+     {
+      "en": "Answer: The Canadian Charter of Rights and Freedoms.",
+      "zh": "答：《加拿大權利與自由憲章》。"
+     }
+    ],
+    [
+     {
+      "en": "11. What was the result of the 1995 Quebec referendum?",
+      "zh": "11. 1995 Quebec 公投結果？"
+     },
+     {
+      "en": "Answer: About 50.6% voted to stay, 49.4% to separate.",
+      "zh": "答：留下 50.6%；獨立 49.4%。"
+     }
+    ],
+    [
+     {
+      "en": "12. Which prime minister decriminalized homosexuality in 1969?",
+      "zh": "12. 1969 同性戀除罪化由哪位總理推動？"
+     },
+     {
+      "en": "Answer: Pierre Elliott Trudeau.",
+      "zh": "答：皮埃爾・艾略特・杜魯道。"
+     }
+    ],
+    [
+     {
+      "en": "13. Which two Canadian scientists discovered insulin in 1922?",
+      "zh": "13. 1922 發現胰島素的兩位加拿大科學家？"
+     },
+     {
+      "en": "Answer: Sir Frederick Banting and Charles Best.",
+      "zh": "答：弗雷德里克・班廷爵士與查爾斯・貝斯特。"
+     }
+    ],
+    [
+     {
+      "en": "14. Which Scottish-born Canadian invented the telephone?",
+      "zh": "14. 發明電話的加拿大裔蘇格蘭人？"
+     },
+     {
+      "en": "Answer: Alexander Graham Bell.",
+      "zh": "答：亞歷山大・格拉漢姆・貝爾。"
+     }
+    ],
+    [
+     {
+      "en": "15. Who invented the snowmobile?",
+      "zh": "15. 發明 Snowmobile 的人？"
+     },
+     {
+      "en": "Answer: Joseph-Armand Bombardier.",
+      "zh": "答：約瑟夫－阿爾芒・龐巴迪。"
+     }
+    ],
+    [
+     {
+      "en": "16. Which Canadian invented worldwide standard time zones?",
+      "zh": "16. 全球時區是哪位加拿大人？"
+     },
+     {
+      "en": "Answer: Sir Sandford Fleming.",
+      "zh": "答：桑福德・弗萊明爵士。"
+     }
+    ],
+    [
+     {
+      "en": "17. Which Canadian invented basketball, and when?",
+      "zh": "17. 發明籃球的加拿大人？哪一年？"
+     },
+     {
+      "en": "Answer: James Naismith, in 1891.",
+      "zh": "答：詹姆斯・奈史密斯；1891 年。"
+     }
+    ],
+    [
+     {
+      "en": "18. Who were the two founders of BlackBerry?",
+      "zh": "18. BlackBerry 兩位創辦人？"
+     },
+     {
+      "en": "Answer: Mike Lazaridis and Jim Balsillie.",
+      "zh": "答：麥克・拉扎里迪斯與吉姆・巴爾西利。"
+     }
+    ],
+    [
+     {
+      "en": "19. Who ran the Marathon of Hope after losing a leg to cancer?",
+      "zh": "19. 帶癌截肢跑「希望馬拉松」的英雄？"
+     },
+     {
+      "en": "Answer: Terry Fox.",
+      "zh": "答：泰瑞・福克斯。"
+     }
+    ],
+    [
+     {
+      "en": "20. In what year did astronaut Chris Hadfield command the International Space Station?",
+      "zh": "20. 加拿大太空人 Chris Hadfield 哪一年擔任 ISS 指揮官？"
+     },
+     {
+      "en": "Answer: 2013.",
+      "zh": "答：2013 年。"
+     }
+    ],
+    [
+     {
+      "en": "21. Who received an apology in 1988, and from which prime minister?",
+      "zh": "21. 1988 道歉的對象與總理？"
+     },
+     {
+      "en": "Answer: Japanese Canadians; Brian Mulroney.",
+      "zh": "答：日裔加拿大人；布萊恩・穆隆尼。"
+     }
+    ],
+    [
+     {
+      "en": "22. Who received an apology in 2006, and from which prime minister?",
+      "zh": "22. 2006 道歉的對象與總理？"
+     },
+     {
+      "en": "Answer: Chinese Canadians for the Head Tax; Stephen Harper.",
+      "zh": "答：華工人頭稅；史蒂芬・哈珀。"
+     }
+    ],
+    [
+     {
+      "en": "23. Who received an apology in 2008, and from which prime minister?",
+      "zh": "23. 2008 道歉的對象與總理？"
+     },
+     {
+      "en": "Answer: Residential school survivors; Stephen Harper.",
+      "zh": "答：寄宿學校原住民；史蒂芬・哈珀。"
+     }
+    ],
+    [
+     {
+      "en": "24. In what year was the CBC founded?",
+      "zh": "24. CBC 哪一年成立？"
+     },
+     {
+      "en": "Answer: 1936.",
+      "zh": "答：1936 年。"
+     }
+    ],
+    [
+     {
+      "en": "25. What were the 1989 Canada-U.S. agreement, the 1994 three-way agreement, and the 2020 replacement called?",
+      "zh": "25. 1989 加美自由貿易協定？1994 三方？2020 取代後叫？"
+     },
+     {
+      "en": "Answer: The Canada-U.S. Free Trade Agreement; NAFTA; USMCA / CUSMA.",
+      "zh": "答：加美自由貿易協定；NAFTA；USMCA／CUSMA。"
+     }
+    ]
+   ]
+  },
+  {
+   "title_en": "Chapter 5 — Government, Elections, Justice (35)",
+   "title_zh": "第 5 部分 — 政府、選舉、司法（35 題）",
+   "paras": [
+    [
+     {
+      "en": "1. What are the three key words describing Canada's system of government?",
+      "zh": "1. 加拿大政體三個關鍵詞？"
+     },
+     {
+      "en": "Answer: Constitutional monarchy, parliamentary democracy, federal state.",
+      "zh": "答：君主立憲、議會民主、聯邦國家。"
+     }
+    ],
+    [
+     {
+      "en": "2. What are the three levels of government?",
+      "zh": "2. 政府 3 層級？"
+     },
+     {
+      "en": "Answer: Federal, provincial or territorial, and municipal.",
+      "zh": "答：聯邦、省（地區）、市鎮。"
+     }
+    ],
+    [
+     {
+      "en": "3. Is health care a federal or a provincial responsibility?",
+      "zh": "3. 醫療是聯邦還是省？"
+     },
+     {
+      "en": "Answer: Provincial.",
+      "zh": "答：省。"
+     }
+    ],
+    [
+     {
+      "en": "4. Is immigration federal or provincial?",
+      "zh": "4. 移民是聯邦還是省？"
+     },
+     {
+      "en": "Answer: Shared, but led federally — the guide lists immigration as a shared jurisdiction.",
+      "zh": "答：聯邦為主，指南列為聯邦與省共同管轄。"
+     }
+    ],
+    [
+     {
+      "en": "5. What are the three parts of Parliament?",
+      "zh": "5. 國會 3 部分？"
+     },
+     {
+      "en": "Answer: The Sovereign, the Senate and the House of Commons.",
+      "zh": "答：君主、參議院、眾議院。"
+     }
+    ],
+    [
+     {
+      "en": "6. Who is the current Sovereign?",
+      "zh": "6. 現任君主？"
+     },
+     {
+      "en": "Answer: King Charles III.",
+      "zh": "答：國王查理三世。"
+     }
+    ],
+    [
+     {
+      "en": "7. Who represents the Sovereign in Canada?",
+      "zh": "7. 在加拿大代表君主的職位？"
+     },
+     {
+      "en": "Answer: The Governor General.",
+      "zh": "答：總督。"
+     }
+    ],
+    [
+     {
+      "en": "8. Who is the current Governor General, and why is that historic?",
+      "zh": "8. 現任總督？歷史意義？"
+     },
+     {
+      "en": "Answer: Mary Simon; the first Indigenous Governor General (since 2021).",
+      "zh": "答：瑪麗・西蒙；首位原住民總督（2021 年起）。"
+     }
+    ],
+    [
+     {
+      "en": "9. How are senators chosen, and until what age do they serve?",
+      "zh": "9. 參議員如何產生？任期至幾歲？"
+     },
+     {
+      "en": "Answer: Appointed by the Governor General on the advice of the Prime Minister; they serve until age 75.",
+      "zh": "答：由總督依總理建議任命；任職至 75 歲。"
+     }
+    ],
+    [
+     {
+      "en": "10. How many seats are in the House of Commons, and what is the maximum term?",
+      "zh": "10. 眾議院多少席？任期最多幾年？"
+     },
+     {
+      "en": "Answer: The 2021 guide says 308; seats grow with the population (check elections.ca). Maximum term four years.",
+      "zh": "答：2021 年版指南寫 308 席；席次隨人口增加（查 elections.ca）。任期最多 4 年。"
+     }
+    ],
+    [
+     {
+      "en": "11. What is the abbreviation for a member of the House of Commons?",
+      "zh": "11. 眾議員縮寫？"
+     },
+     {
+      "en": "Answer: MP — Member of Parliament.",
+      "zh": "答：MP——國會議員。"
+     }
+    ],
+    [
+     {
+      "en": "12. What are the seven stages of a bill becoming law?",
+      "zh": "12. 法案立法 7 個階段？"
+     },
+     {
+      "en": "Answer: First Reading, Second Reading, Committee Stage, Report Stage, Third Reading, Senate, Royal Assent.",
+      "zh": "答：一讀、二讀、委員會、報告、三讀、參議院、御准。"
+     }
+    ],
+    [
+     {
+      "en": "13. Who grants Royal Assent?",
+      "zh": "13. Royal Assent 由誰簽署？"
+     },
+     {
+      "en": "Answer: The Governor General, on behalf of the Sovereign.",
+      "zh": "答：總督（代表君主）。"
+     }
+    ],
+    [
+     {
+      "en": "14. How does someone become Prime Minister?",
+      "zh": "14. 總理如何產生？"
+     },
+     {
+      "en": "Answer: The leader of the party with the most seats in the House of Commons is invited by the Governor General to form the government.",
+      "zh": "答：眾議院席次最多政黨的黨魁，由總督邀請組閣。"
+     }
+    ],
+    [
+     {
+      "en": "15. In which chamber are money bills introduced?",
+      "zh": "15. 「Money bills」由哪一院提？"
+     },
+     {
+      "en": "Answer: The House of Commons.",
+      "zh": "答：眾議院。"
+     }
+    ],
+    [
+     {
+      "en": "16. What is the voting age?",
+      "zh": "16. 投票年齡？"
+     },
+     {
+      "en": "Answer: 18.",
+      "zh": "答：18 歲。"
+     }
+    ],
+    [
+     {
+      "en": "17. What is the name of the federal election agency?",
+      "zh": "17. 大選機構名稱？"
+     },
+     {
+      "en": "Answer: Elections Canada.",
+      "zh": "答：加拿大選舉局。"
+     }
+    ],
+    [
+     {
+      "en": "18. How many electoral districts are there?",
+      "zh": "18. 加拿大選區數？"
+     },
+     {
+      "en": "Answer: The 2021 guide says 308; the number rises with population — check elections.ca before the test.",
+      "zh": "答：2021 年版指南寫 308；隨人口增加——考前查 elections.ca。"
+     }
+    ],
+    [
+     {
+      "en": "19. What electoral system does Canada use?",
+      "zh": "19. 哪種選制？"
+     },
+     {
+      "en": "Answer: First-past-the-post — the candidate with the most votes wins the riding.",
+      "zh": "答：單一選區相對多數決——得票最多者當選。"
+     }
+    ],
+    [
+     {
+      "en": "20. What is the difference between a majority and a minority government?",
+      "zh": "20. 多數政府 vs 少數政府差別？"
+     },
+     {
+      "en": "Answer: A majority holds at least half the seats; a minority holds fewer and must seek support from other parties.",
+      "zh": "答：多數政府席次過半；少數政府未過半，須與其他黨合作。"
+     }
+    ],
+    [
+     {
+      "en": "21. What are the five major political parties?",
+      "zh": "21. 5 大主要政黨？"
+     },
+     {
+      "en": "Answer: Liberal, Conservative, NDP, Bloc Québécois, Green.",
+      "zh": "答：自由黨、保守黨、新民主黨、魁北克集團、綠黨。"
+     }
+    ],
+    [
+     {
+      "en": "22. Which party runs candidates only in Quebec?",
+      "zh": "22. 只在 Quebec 競選的黨？"
+     },
+     {
+      "en": "Answer: The Bloc Québécois.",
+      "zh": "答：魁北克集團。"
+     }
+    ],
+    [
+     {
+      "en": "23. What is the role of the Leader of the Official Opposition?",
+      "zh": "23. Official Opposition 黨魁職責？"
+     },
+     {
+      "en": "Answer: To hold the government accountable — peacefully oppose or improve government proposals.",
+      "zh": "答：讓政府向人民負責——和平反對或改善政府提案。"
+     }
+    ],
+    [
+     {
+      "en": "24. What is the Shadow Cabinet?",
+      "zh": "24. Shadow Cabinet 是？"
+     },
+     {
+      "en": "Answer: Opposition members assigned to critique each government department.",
+      "zh": "答：反對黨對應每個部會的批評者組成。"
+     }
+    ],
+    [
+     {
+      "en": "25. What is the voter information card?",
+      "zh": "25. Voter Information Card 是？"
+     },
+     {
+      "en": "Answer: A card from Elections Canada confirming you are on the voters' list and stating when and where to vote.",
+      "zh": "答：加拿大選舉局寄的卡，確認你在選民名冊上並載明投票時間地點。"
+     }
+    ],
+    [
+     {
+      "en": "26. What are the three levels of police?",
+      "zh": "26. 警察 3 層？"
+     },
+     {
+      "en": "Answer: Federal (RCMP), provincial, and municipal.",
+      "zh": "答：聯邦（RCMP）、省、市鎮。"
+     }
+    ],
+    [
+     {
+      "en": "27. Which provinces have their own provincial police?",
+      "zh": "27. 哪三省有自己的省警？"
+     },
+     {
+      "en": "Answer: Ontario and Quebec (Newfoundland and Labrador also has the Royal Newfoundland Constabulary in some areas).",
+      "zh": "答：安大略與魁北克（紐芬蘭與拉布拉多部分地區有皇家紐芬蘭警隊）。"
+     }
+    ],
+    [
+     {
+      "en": "28. How many Supreme Court judges are there, and who appoints them?",
+      "zh": "28. 最高法院法官人數？由誰任命？"
+     },
+     {
+      "en": "Answer: Nine, appointed by the Governor General on the advice of the federal government.",
+      "zh": "答：9 位，由總督依聯邦政府建議任命。"
+     }
+    ],
+    [
+     {
+      "en": "29. How many people sit on a jury?",
+      "zh": "29. 陪審團人數？"
+     },
+     {
+      "en": "Answer: Twelve in a criminal trial.",
+      "zh": "答：刑事案件 12 人。"
+     }
+    ],
+    [
+     {
+      "en": "30. What are the core principles of the justice system?",
+      "zh": "30. 司法 3 核心原則？"
+     },
+     {
+      "en": "Answer: Presumption of innocence, due process, the rule of law and independent courts.",
+      "zh": "答：無罪推定、正當程序、法治、獨立司法。"
+     }
+    ],
+    [
+     {
+      "en": "31. What principle protects judges?",
+      "zh": "31. 法官受什麼原則保障？"
+     },
+     {
+      "en": "Answer: Judicial independence.",
+      "zh": "答：司法獨立。"
+     }
+    ],
+    [
+     {
+      "en": "32. What is the English term for the presumption that an accused person is innocent until proven guilty?",
+      "zh": "32. 加拿大重大刑案無罪推定的英文？"
+     },
+     {
+      "en": "Answer: Presumption of innocence.",
+      "zh": "答：Presumption of innocence。"
+     }
+    ],
+    [
+     {
+      "en": "33. Which section of the Charter guarantees equality before the law?",
+      "zh": "33. Equality before the law 哪一條保障？"
+     },
+     {
+      "en": "Answer: Section 15 of the Charter.",
+      "zh": "答：憲章第 15 條。"
+     }
+    ],
+    [
+     {
+      "en": "34. What is the abbreviation for an Ontario provincial legislator?",
+      "zh": "34. Ontario 省議員縮寫？"
+     },
+     {
+      "en": "Answer: MPP — Member of the Provincial Parliament.",
+      "zh": "答：MPP——省議會議員。"
+     }
+    ],
+    [
+     {
+      "en": "35. What is Quebec's provincial legislature called?",
+      "zh": "35. Quebec 省議會名稱？"
+     },
+     {
+      "en": "Answer: The National Assembly.",
+      "zh": "答：國民議會。"
+     }
+    ]
+   ]
+  },
+  {
+   "title_en": "Chapter 6 — Symbols, Holidays, Money, Economy, Geography, Ontario (70)",
+   "title_zh": "第 6 部分 — 象徵、節日、貨幣、經濟、地理、Ontario（70 題）",
+   "paras": [
+    [
+     {
+      "en": "1. When was the flag adopted?",
+      "zh": "1. 國旗哪年啟用？"
+     },
+     {
+      "en": "Answer: 1965.",
+      "zh": "答：1965 年。"
+     }
+    ],
+    [
+     {
+      "en": "2. When is National Flag Day?",
+      "zh": "2. 國旗日是哪天？"
+     },
+     {
+      "en": "Answer: February 15.",
+      "zh": "答：2 月 15 日。"
+     }
+    ],
+    [
+     {
+      "en": "3. What is the national motto in Latin and in Chinese?",
+      "zh": "3. 國徽箴言（拉丁）與中文？"
+     },
+     {
+      "en": "Answer: A Mari Usque Ad Mare — from sea to sea.",
+      "zh": "答：A Mari Usque Ad Mare——從海到海。"
+     }
+    ],
+    [
+     {
+      "en": "4. What is the national anthem, who composed it, and when?",
+      "zh": "4. 國歌名稱、作曲者、年份？"
+     },
+     {
+      "en": "Answer: O Canada; Calixa Lavallée; 1880.",
+      "zh": "答：《噢！加拿大》；卡利薩・拉瓦利；1880 年。"
+     }
+    ],
+    [
+     {
+      "en": "5. When did O Canada officially become the national anthem?",
+      "zh": "5. 國歌哪一年正式為加拿大國歌？"
+     },
+     {
+      "en": "Answer: 1980.",
+      "zh": "答：1980 年。"
+     }
+    ],
+    [
+     {
+      "en": "6. What is the Royal Anthem?",
+      "zh": "6. 皇室國歌？"
+     },
+     {
+      "en": "Answer: God Save the King.",
+      "zh": "答：《天佑國王》。"
+     }
+    ],
+    [
+     {
+      "en": "7. What are Canada's official winter and summer sports?",
+      "zh": "7. 加拿大冬／夏兩官方國民運動？"
+     },
+     {
+      "en": "Answer: Hockey (winter) and lacrosse (summer).",
+      "zh": "答：曲棍球（冬）與袋棍球（夏）。"
+     }
+    ],
+    [
+     {
+      "en": "8. When is Canada Day?",
+      "zh": "8. Canada Day？"
+     },
+     {
+      "en": "Answer: July 1.",
+      "zh": "答：7 月 1 日。"
+     }
+    ],
+    [
+     {
+      "en": "9. When is Victoria Day?",
+      "zh": "9. Victoria Day 約何時？"
+     },
+     {
+      "en": "Answer: The Monday preceding May 25.",
+      "zh": "答：5 月 25 日之前的星期一。"
+     }
+    ],
+    [
+     {
+      "en": "10. When is Remembrance Day, and what do people wear?",
+      "zh": "10. Remembrance Day 是哪天？佩戴什麼？"
+     },
+     {
+      "en": "Answer: November 11; the red poppy.",
+      "zh": "答：11 月 11 日；紅罌粟花。"
+     }
+    ],
+    [
+     {
+      "en": "11. Which poem is the poppy tradition from, and who wrote it?",
+      "zh": "11. Remembrance 罌粟花典故出自哪首詩？作者？"
+     },
+     {
+      "en": "Answer: In Flanders Fields, by John McCrae.",
+      "zh": "答：〈在法蘭德斯戰場〉，約翰・麥克雷。"
+     }
+    ],
+    [
+     {
+      "en": "12. When is Truth and Reconciliation Day, and what does it commemorate?",
+      "zh": "12. Truth and Reconciliation Day 是哪天？紀念什麼？"
+     },
+     {
+      "en": "Answer: September 30; the victims and survivors of residential schools.",
+      "zh": "答：9 月 30 日；紀念寄宿學校受害者。"
+     }
+    ],
+    [
+     {
+      "en": "13. When is Thanksgiving?",
+      "zh": "13. Thanksgiving 是哪天？"
+     },
+     {
+      "en": "Answer: The second Monday of October.",
+      "zh": "答：10 月第二個星期一。"
+     }
+    ],
+    [
+     {
+      "en": "14. When is Boxing Day?",
+      "zh": "14. Boxing Day 是哪天？"
+     },
+     {
+      "en": "Answer: December 26.",
+      "zh": "答：12 月 26 日。"
+     }
+    ],
+    [
+     {
+      "en": "15. When is New Year's Day?",
+      "zh": "15. New Year's Day 是哪天？"
+     },
+     {
+      "en": "Answer: January 1.",
+      "zh": "答：1 月 1 日。"
+     }
+    ],
+    [
+     {
+      "en": "16. What is Canada's highest civilian honour?",
+      "zh": "16. 加拿大最高平民榮譽？"
+     },
+     {
+      "en": "Answer: The Order of Canada.",
+      "zh": "答：加拿大勳章。"
+     }
+    ],
+    [
+     {
+      "en": "17. What is the highest military honour?",
+      "zh": "17. 軍事最高榮譽？"
+     },
+     {
+      "en": "Answer: The Victoria Cross.",
+      "zh": "答：維多利亞十字勳章。"
+     }
+    ],
+    [
+     {
+      "en": "18. Who is on the $5 bill?",
+      "zh": "18. $5 鈔票人物？"
+     },
+     {
+      "en": "Answer: Sir Wilfrid Laurier.",
+      "zh": "答：威爾弗里德・勞里埃爵士。"
+     }
+    ],
+    [
+     {
+      "en": "19. Who is on the $10 bill, and why is it significant?",
+      "zh": "19. $10 鈔票人物？歷史意義？"
+     },
+     {
+      "en": "Answer: Viola Desmond, a black civil rights pioneer (since 2018).",
+      "zh": "答：薇奧拉・戴斯蒙，黑人民權英雄（2018 年起）。"
+     }
+    ],
+    [
+     {
+      "en": "20. Who is on the $20 bill?",
+      "zh": "20. $20 鈔票人物？"
+     },
+     {
+      "en": "Answer: Queen Elizabeth II (to be replaced by King Charles III).",
+      "zh": "答：伊莉莎白二世女王（即將換成查理三世）。"
+     }
+    ],
+    [
+     {
+      "en": "21. Who is on the $50 bill?",
+      "zh": "21. $50 鈔票人物？"
+     },
+     {
+      "en": "Answer: William Lyon Mackenzie King.",
+      "zh": "答：威廉・萊昂・麥肯齊・金。"
+     }
+    ],
+    [
+     {
+      "en": "22. Who is on the $100 bill?",
+      "zh": "22. $100 鈔票人物？"
+     },
+     {
+      "en": "Answer: Sir Robert Borden.",
+      "zh": "答：羅伯特・博登爵士。"
+     }
+    ],
+    [
+     {
+      "en": "23. What is a loonie worth, and what animal is on it?",
+      "zh": "23. Loonie 幣值？動物？"
+     },
+     {
+      "en": "Answer: One dollar; a loon.",
+      "zh": "答：1 元；潛鳥。"
+     }
+    ],
+    [
+     {
+      "en": "24. What is a toonie worth?",
+      "zh": "24. Toonie 幣值？"
+     },
+     {
+      "en": "Answer: Two dollars.",
+      "zh": "答：2 元。"
+     }
+    ],
+    [
+     {
+      "en": "25. Name at least four international organizations Canada belongs to.",
+      "zh": "25. 加拿大屬於哪些國際組織（至少 4 個）？"
+     },
+     {
+      "en": "Answer: UN, NATO, G7, G20, OECD, APEC, the Commonwealth, La Francophonie.",
+      "zh": "答：聯合國、北約、G7、G20、OECD、APEC、大英國協、法語國家組織。"
+     }
+    ],
+    [
+     {
+      "en": "26. What are the three main types of industries?",
+      "zh": "26. 三大產業類別？"
+     },
+     {
+      "en": "Answer: Service, manufacturing and natural resources.",
+      "zh": "答：服務業、製造業、自然資源。"
+     }
+    ],
+    [
+     {
+      "en": "27. What share of workers are in service industries?",
+      "zh": "27. 服務業就業比例？"
+     },
+     {
+      "en": "Answer: About 75%.",
+      "zh": "答：約 75%。"
+     }
+    ],
+    [
+     {
+      "en": "28. Who is Canada's largest trading partner?",
+      "zh": "28. 最大貿易夥伴？"
+     },
+     {
+      "en": "Answer: The United States.",
+      "zh": "答：美國。"
+     }
+    ],
+    [
+     {
+      "en": "29. What were the 1989 and 2020 trade agreements?",
+      "zh": "29. 1989 / 2020 兩個貿易協定？"
+     },
+     {
+      "en": "Answer: The Canada-U.S. Free Trade Agreement (1989) and USMCA / CUSMA (2020).",
+      "zh": "答：加美自由貿易協定（1989）；USMCA／CUSMA（2020）。"
+     }
+    ],
+    [
+     {
+      "en": "30. What is CETA?",
+      "zh": "30. CETA 是誰跟誰？"
+     },
+     {
+      "en": "Answer: The trade agreement between Canada and the European Union.",
+      "zh": "答：加拿大與歐盟的貿易協定。"
+     }
+    ],
+    [
+     {
+      "en": "31. What is the CPTPP?",
+      "zh": "31. CPTPP 是？"
+     },
+     {
+      "en": "Answer: The Comprehensive and Progressive Agreement for Trans-Pacific Partnership.",
+      "zh": "答：跨太平洋夥伴全面進步協定。"
+     }
+    ],
+    [
+     {
+      "en": "32. What are the main crops of the Prairie provinces?",
+      "zh": "32. 草原省主要農產？"
+     },
+     {
+      "en": "Answer: Wheat and canola.",
+      "zh": "答：小麥、芥花。"
+     }
+    ],
+    [
+     {
+      "en": "33. Which three provinces produce oil?",
+      "zh": "33. 石油產區三省？"
+     },
+     {
+      "en": "Answer: Alberta, Saskatchewan, and Newfoundland and Labrador.",
+      "zh": "答：亞伯達、薩克其萬、紐芬蘭與拉布拉多。"
+     }
+    ],
+    [
+     {
+      "en": "34. In which city is the TSX?",
+      "zh": "34. TSX 在哪個城市？"
+     },
+     {
+      "en": "Answer: Toronto.",
+      "zh": "答：多倫多。"
+     }
+    ],
+    [
+     {
+      "en": "35. What is the TSX in full?",
+      "zh": "35. 加拿大證交所英文？"
+     },
+     {
+      "en": "Answer: The Toronto Stock Exchange.",
+      "zh": "答：多倫多證券交易所。"
+     }
+    ],
+    [
+     {
+      "en": "36. What is Toronto's financial street?",
+      "zh": "36. Toronto 金融街？"
+     },
+     {
+      "en": "Answer: Bay Street.",
+      "zh": "答：灣街。"
+     }
+    ],
+    [
+     {
+      "en": "37. How large is Canada among the world's countries?",
+      "zh": "37. 加拿大世界第幾大國？"
+     },
+     {
+      "en": "Answer: The second largest.",
+      "zh": "答：第二大。"
+     }
+    ],
+    [
+     {
+      "en": "38. Which three oceans border Canada?",
+      "zh": "38. 環繞三大洋？"
+     },
+     {
+      "en": "Answer: The Atlantic, Arctic and Pacific.",
+      "zh": "答：大西洋、北冰洋、太平洋。"
+     }
+    ],
+    [
+     {
+      "en": "39. What is the capital of Canada, and in which province?",
+      "zh": "39. 首都？省？"
+     },
+     {
+      "en": "Answer: Ottawa, in Ontario.",
+      "zh": "答：渥太華；安大略省。"
+     }
+    ],
+    [
+     {
+      "en": "40. What are the five regions?",
+      "zh": "40. 五大地理區？"
+     },
+     {
+      "en": "Answer: Atlantic, Central, Prairie, West Coast and Northern.",
+      "zh": "答：大西洋、中部、草原、西海岸、北方。"
+     }
+    ],
+    [
+     {
+      "en": "41. Which four provinces are the Atlantic Provinces?",
+      "zh": "41. Atlantic Provinces 4 省？"
+     },
+     {
+      "en": "Answer: Newfoundland and Labrador, PEI, Nova Scotia, New Brunswick.",
+      "zh": "答：紐芬蘭與拉布拉多、愛德華王子島、新斯科細亞、新布藍瑞克。"
+     }
+    ],
+    [
+     {
+      "en": "42. Which two provinces are Central Canada?",
+      "zh": "42. Central Canada 2 省？"
+     },
+     {
+      "en": "Answer: Quebec and Ontario.",
+      "zh": "答：魁北克、安大略。"
+     }
+    ],
+    [
+     {
+      "en": "43. Which three provinces are the Prairies?",
+      "zh": "43. Prairie 3 省？"
+     },
+     {
+      "en": "Answer: Manitoba, Saskatchewan and Alberta.",
+      "zh": "答：曼尼托巴、薩克其萬、亞伯達。"
+     }
+    ],
+    [
+     {
+      "en": "44. Which province is the West Coast?",
+      "zh": "44. West Coast 是哪省？"
+     },
+     {
+      "en": "Answer: British Columbia.",
+      "zh": "答：卑詩省。"
+     }
+    ],
+    [
+     {
+      "en": "45. What are the three northern territories?",
+      "zh": "45. 北方 3 領地？"
+     },
+     {
+      "en": "Answer: Yukon, Northwest Territories and Nunavut.",
+      "zh": "答：育空、西北地區、努納福特。"
+     }
+    ],
+    [
+     {
+      "en": "46. What is the capital of Newfoundland and Labrador?",
+      "zh": "46. Newfoundland and Labrador 首府？"
+     },
+     {
+      "en": "Answer: St. John's.",
+      "zh": "答：聖約翰斯。"
+     }
+    ],
+    [
+     {
+      "en": "47. What is the capital of PEI?",
+      "zh": "47. PEI 首府？"
+     },
+     {
+      "en": "Answer: Charlottetown.",
+      "zh": "答：夏洛特敦。"
+     }
+    ],
+    [
+     {
+      "en": "48. What is the capital of Nova Scotia?",
+      "zh": "48. Nova Scotia 首府？"
+     },
+     {
+      "en": "Answer: Halifax.",
+      "zh": "答：哈利法克斯。"
+     }
+    ],
+    [
+     {
+      "en": "49. What is the capital of New Brunswick, and what is special about the province?",
+      "zh": "49. New Brunswick 首府？特殊地位？"
+     },
+     {
+      "en": "Answer: Fredericton; the only officially bilingual province.",
+      "zh": "答：弗雷德里克頓；唯一官方雙語省。"
+     }
+    ],
+    [
+     {
+      "en": "50. What is the capital of Quebec?",
+      "zh": "50. Quebec 首府？"
+     },
+     {
+      "en": "Answer: Quebec City.",
+      "zh": "答：魁北克市。"
+     }
+    ],
+    [
+     {
+      "en": "51. What is the capital of Ontario?",
+      "zh": "51. Ontario 首府？"
+     },
+     {
+      "en": "Answer: Toronto.",
+      "zh": "答：多倫多。"
+     }
+    ],
+    [
+     {
+      "en": "52. What is the capital of Manitoba?",
+      "zh": "52. Manitoba 首府？"
+     },
+     {
+      "en": "Answer: Winnipeg.",
+      "zh": "答：溫尼伯。"
+     }
+    ],
+    [
+     {
+      "en": "53. What is the capital of Saskatchewan, and which police force is headquartered there?",
+      "zh": "53. Saskatchewan 首府？哪間警隊總部？"
+     },
+     {
+      "en": "Answer: Regina; the RCMP training academy.",
+      "zh": "答：里賈納；皇家騎警訓練學院。"
+     }
+    ],
+    [
+     {
+      "en": "54. What is the capital of Alberta, and which two national parks are there?",
+      "zh": "54. Alberta 首府？哪兩個國家公園？"
+     },
+     {
+      "en": "Answer: Edmonton; Banff and Jasper.",
+      "zh": "答：艾德蒙頓；班夫與賈斯珀。"
+     }
+    ],
+    [
+     {
+      "en": "55. What is the capital of BC, and which city hosted the 2010 Winter Olympics?",
+      "zh": "55. BC 首府？2010 冬奧城市？"
+     },
+     {
+      "en": "Answer: Victoria; Vancouver.",
+      "zh": "答：維多利亞；溫哥華。"
+     }
+    ],
+    [
+     {
+      "en": "56. What is the capital of Yukon?",
+      "zh": "56. Yukon 首府？"
+     },
+     {
+      "en": "Answer: Whitehorse.",
+      "zh": "答：白馬市。"
+     }
+    ],
+    [
+     {
+      "en": "57. What is the capital of the Northwest Territories?",
+      "zh": "57. NWT 首府？"
+     },
+     {
+      "en": "Answer: Yellowknife.",
+      "zh": "答：黃刀鎮。"
+     }
+    ],
+    [
+     {
+      "en": "58. When was Nunavut created, and what is its capital?",
+      "zh": "58. Nunavut 哪年成立？首府？"
+     },
+     {
+      "en": "Answer: 1999; Iqaluit.",
+      "zh": "答：1999 年；伊魁特。"
+     }
+    ],
+    [
+     {
+      "en": "59. What is Canada's highest mountain, and where?",
+      "zh": "59. 加拿大最高峰？領地？"
+     },
+     {
+      "en": "Answer: Mount Logan, in Yukon.",
+      "zh": "答：洛根山；育空。"
+     }
+    ],
+    [
+     {
+      "en": "60. Which of the five Great Lakes lies entirely in the United States?",
+      "zh": "60. 五大湖 4 個共享 1 個全在美國，哪一個？"
+     },
+     {
+      "en": "Answer: Lake Michigan.",
+      "zh": "答：密西根湖。"
+     }
+    ],
+    [
+     {
+      "en": "61. Who is Ontario's current Premier, and which party?",
+      "zh": "61. Ontario 現任 Premier？哪黨？"
+     },
+     {
+      "en": "Answer: Doug Ford; Progressive Conservative (confirm on ontario.ca before the test).",
+      "zh": "答：道格・福特；進步保守黨（考前到 ontario.ca 確認）。"
+     }
+    ],
+    [
+     {
+      "en": "62. Who is Ontario's current Lieutenant Governor, and why is it historic?",
+      "zh": "62. Ontario 現任 Lt. Governor？歷史意義？"
+     },
+     {
+      "en": "Answer: Edith Dumont; the first Franco-Ontarian in the role.",
+      "zh": "答：伊迪絲・杜蒙；首位法裔安大略人。"
+     }
+    ],
+    [
+     {
+      "en": "63. What is the abbreviation for an Ontario provincial legislator?",
+      "zh": "63. Ontario 省議員縮寫？"
+     },
+     {
+      "en": "Answer: MPP.",
+      "zh": "答：MPP。"
+     }
+    ],
+    [
+     {
+      "en": "64. What are three main industries of Ontario?",
+      "zh": "64. Ontario 主要產業 3 個？"
+     },
+     {
+      "en": "Answer: Manufacturing, finance and technology.",
+      "zh": "答：製造、金融、科技。"
+     }
+    ],
+    [
+     {
+      "en": "65. Is Toronto Canada's largest city?",
+      "zh": "65. Toronto 是加拿大第幾大城市？"
+     },
+     {
+      "en": "Answer: Yes — the largest.",
+      "zh": "答：第 1 大。"
+     }
+    ],
+    [
+     {
+      "en": "66. Which province is Ottawa in?",
+      "zh": "66. Ottawa 屬於哪省？"
+     },
+     {
+      "en": "Answer: Ontario.",
+      "zh": "答：安大略。"
+     }
+    ],
+    [
+     {
+      "en": "67. Niagara Falls lies between which two lakes?",
+      "zh": "67. Niagara Falls 位於哪兩湖之間？"
+     },
+     {
+      "en": "Answer: Lake Erie and Lake Ontario.",
+      "zh": "答：伊利湖與安大略湖。"
+     }
+    ],
+    [
+     {
+      "en": "68. Where are Mississauga and Brampton in the Greater Toronto Area?",
+      "zh": "68. Mississauga 與 Brampton 在大 Toronto 哪一帶？"
+     },
+     {
+      "en": "Answer: West of Toronto, in the western GTA.",
+      "zh": "答：大多倫多西邊。"
+     }
+    ],
+    [
+     {
+      "en": "69. What is Waterloo known for?",
+      "zh": "69. Waterloo 因為什麼出名？"
+     },
+     {
+      "en": "Answer: Technology, BlackBerry (RIM) and its universities.",
+      "zh": "答：科技、黑莓（RIM）、大學。"
+     }
+    ],
+    [
+     {
+      "en": "70. Which American city faces Windsor across the river?",
+      "zh": "70. Windsor 對岸是美國哪個城市？"
+     },
+     {
+      "en": "Answer: Detroit.",
+      "zh": "答：底特律。"
+     }
+    ]
+   ]
+  }
+ ]
+}

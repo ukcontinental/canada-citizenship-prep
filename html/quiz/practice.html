@@ -432,7 +432,7 @@ blockquote.speakable > .speak-btn,
 <h2>📝 考題</h2>
 <a href="../quiz/practice.html" class="current">英文選擇題練習</a>
 <a href="../quiz/mock.html">⏱ 模擬考（20 題／30 分）</a>
-<a href="../practice/question-bank.html">220 題中文題庫（舊）</a>
+<a href="../reading/90-question-bank.html">220 題中英問答（人聲）</a>
 <a href="../daily-quiz/day-01.html">驗收 Day 01</a>
 <a href="../daily-quiz/day-02.html">驗收 Day 02</a>
 <a href="../daily-quiz/day-03.html">驗收 Day 03</a>
@@ -641,6 +641,12 @@ blockquote.speakable > .speak-btn,
     var rest = shuffle(ALL.filter(function(q){ return !/^ONTARIO/.test(q.q); })).slice(0, 20 - ont.length);
     var qs = shuffle(ont.concat(rest));
     list.innerHTML = qs.map(function(q, i) { return card(q, i + 1); }).join('');
+    var paperNo = 1;
+    try { paperNo = (parseInt(localStorage.getItem('cit_mock_count') || '0', 10) || 0) + 1; localStorage.setItem('cit_mock_count', String(paperNo)); } catch (e) {}
+    var dist = {};
+    qs.forEach(function(q){ dist[q.ch] = (dist[q.ch] || 0) + 1; });
+    var distText = Object.keys(dist).sort().map(function(c){ return c + '章×' + dist[c]; }).join('　');
+    root.querySelector('.qz-paper').textContent = '第 ' + paperNo + ' 份考卷（每次隨機重抽 20 題，可無限次）· 本份章節分布：' + distText;
     root.querySelector('.qz-start').style.display = 'none';
     root.querySelector('.qz-result').style.display = 'none';
     root.querySelector('.qz-submit').disabled = false;

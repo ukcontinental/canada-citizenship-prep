@@ -23,7 +23,7 @@ CHAPTER_NAMES = {
 
 def load_questions() -> list[dict]:
     out = []
-    for f in sorted(QUIZ_DIR.glob("q*.json")):
+    for f in sorted(QUIZ_DIR.glob("q[0-9]*.json")):
         for q in json.loads(f.read_text(encoding="utf-8")):
             q = dict(q)
             q["id"] = f"q{len(out) + 1:04d}"
@@ -235,6 +235,12 @@ QUIZ_JS = r"""
     var rest = shuffle(ALL.filter(function(q){ return !/^ONTARIO/.test(q.q); })).slice(0, 20 - ont.length);
     var qs = shuffle(ont.concat(rest));
     list.innerHTML = qs.map(function(q, i) { return card(q, i + 1); }).join('');
+    var paperNo = 1;
+    try { paperNo = (parseInt(localStorage.getItem('cit_mock_count') || '0', 10) || 0) + 1; localStorage.setItem('cit_mock_count', String(paperNo)); } catch (e) {}
+    var dist = {};
+    qs.forEach(function(q){ dist[q.ch] = (dist[q.ch] || 0) + 1; });
+    var distText = Object.keys(dist).sort().map(function(c){ return c + '章×' + dist[c]; }).join('　');
+    root.querySelector('.qz-paper').textContent = '第 ' + paperNo + ' 份考卷（每次隨機重抽 20 題，可無限次）· 本份章節分布：' + distText;
     root.querySelector('.qz-start').style.display = 'none';
     root.querySelector('.qz-result').style.display = 'none';
     root.querySelector('.qz-submit').disabled = false;
@@ -309,7 +315,8 @@ def build_mock_body() -> str:
 <p>照真考規格：隨機 20 題（含 1–2 題安大略省題）、30 分鐘倒數、答對 15 題通過。作答中不顯示對錯，交卷後才看解說。</p></div>'''
     bar = '''<div class="qz-bar"><span class="qz-timer">30:00</span>
 <button class="qz-btn main qz-submit" type="button" disabled>交卷</button>
-<span class="qz-status"></span></div>'''
+<span class="qz-status"></span></div>
+<p class="qz-paper" style="font-size:13px;color:var(--muted);margin:0 0 8px"></p>'''
     extra = '''<div class="qz-start"><button class="qz-btn main qz-begin" type="button" style="font-size:18px;padding:12px 28px">開始模擬考</button>
 <p>考試時可以按每題的「中」偷看中文，但真考沒有——建議先不看。</p></div>
 <div class="qz-result" style="display:none"></div>'''

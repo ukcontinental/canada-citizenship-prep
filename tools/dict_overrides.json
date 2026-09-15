@@ -140,5 +140,12 @@
   "five-cent": {"p": "faɪv sent", "t": "adj. 五分錢的（five-cent coin 五分硬幣，上面是海狸）"},
   "gender-based": {"p": "ˈdʒendər beɪst", "t": "adj. 基於性別的（gender-based violence 性別暴力）"},
   "race-based": {"p": "reɪs beɪst", "t": "adj. 基於種族的"},
-  "Canadian-designed": {"p": "", "t": "adj. 加拿大設計的"}
+  "Canadian-designed": {"p": "", "t": "adj. 加拿大設計的"},
+  "CPTPP": {"p": "", "t": "n. 跨太平洋夥伴全面進步協定（Comprehensive and Progressive Agreement for Trans-Pacific Partnership）"},
+  "Trans-Pacific": {"p": "trænz pəˈsɪfɪk", "t": "adj. 跨太平洋的"},
+  "USMCA": {"p": "", "t": "n. 美墨加協定（＝CUSMA，2020 年取代 NAFTA）"},
+  "Calixa": {"p": "kaˈliksa", "t": "卡利薩（Calixa Lavallée，《噢！加拿大》作曲者）"},
+  "Lavallée": {"p": "lavaˈle", "t": "拉瓦利（Calixa Lavallée，1880 年為國歌譜曲）"},
+  "Franco-Ontarian": {"p": "ˌfræŋkoʊ ɒnˈteəriən", "t": "n./adj. 法裔安大略人（的）"},
+  "Québécois": {"p": "ˌkeɪbeˈkwɑː", "t": "n. 魁北克人（Bloc Québécois 魁北克集團）"}
 }
