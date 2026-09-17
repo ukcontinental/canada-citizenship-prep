@@ -10,6 +10,8 @@ Run: python3 tools/build_quiz_podcast.py [out_dir]
 
 from __future__ import annotations
 import array
+import re
+import shutil
 import subprocess
 import sys
 import tempfile
@@ -27,7 +29,9 @@ ZH_VOICE = "com.apple.voice.premium.zh-TW.Meijia"
 EN_RATE, ZH_RATE = "0.47", "0.5"
 SR = 22050
 LETTERS = "ABCDE"
-DEFAULT_OUT = Path.home() / "Library/Mobile Documents/com~apple~CloudDocs/加拿大公民考試/題庫朗讀"
+ICLOUD = Path.home() / "Library/Mobile Documents/com~apple~CloudDocs/加拿大公民考試"
+DEFAULT_OUT = ICLOUD / "題庫朗讀_電腦用"     # .m4a，Mac 上聽
+PHONE_OUT = ICLOUD / "題庫朗讀_手機用"       # .m4b，手機用 VLC 聽（見設定檔）
 
 
 def say(text: str, lang: str, wav: Path) -> Path:
@@ -102,6 +106,33 @@ def build_chapter(ch: str, questions: list[dict], out_dir: Path, tmp: Path) -> P
     return m4a
 
 
+def make_phone_copies(src: Path, dst: Path) -> None:
+    """m4a -> m4b（有聲書容器）＋書名/章序標籤。手機端用 VLC 播，見設定檔「手機聽題庫」。"""
+    try:
+        from mutagen.mp4 import MP4
+    except ImportError:
+        print("! 跳過手機版：pip3 install mutagen", flush=True)
+        return
+    dst.mkdir(parents=True, exist_ok=True)
+    files = sorted(src.glob("公民考試題庫_*.m4a"))
+    for i, f in enumerate(files, 1):
+        m = re.match(r"公民考試題庫_(\d+)_(.+)$", f.stem)
+        num, name = m.group(1), m.group(2)
+        out = dst / f"{num} {name}.m4b"
+        shutil.copyfile(f, out)
+        a = MP4(out)
+        a["\xa9nam"] = [f"第{num}章 {name}"]
+        a["\xa9alb"] = ["加拿大公民考試 328 題題庫"]
+        a["\xa9ART"] = ["Ava ＆ 美佳 人聲朗讀"]
+        a["aART"] = ["加拿大公民考試學習站"]
+        a["\xa9gen"] = ["Audiobook"]
+        a["trkn"] = [(i, len(files))]
+        a["stik"] = [2]          # 2 = Audiobook
+        a["pgap"] = True
+        a.save()
+    print(f"手機版 {len(files)} 個 .m4b -> {dst}", flush=True)
+
+
 def main():
     out_dir = Path(sys.argv[1]) if len(sys.argv) > 1 else DEFAULT_OUT
     qs = load_questions()
@@ -119,6 +150,8 @@ def main():
                 f.unlink()
             (tmp / f"chapter_{ch}.wav").unlink(missing_ok=True)
     print(f"done: {total/1e6:.0f} MB in {out_dir}", flush=True)
+    if out_dir == DEFAULT_OUT:
+        make_phone_copies(out_dir, PHONE_OUT)
 
 
 if __name__ == "__main__":
