@@ -59,6 +59,7 @@ h2 button { font-size: 12px; padding: 3px 10px; border-radius: 12px; border: 1px
 .q.playing { background: #fff8e6; }
 .pl { width: 30px; height: 30px; border-radius: 50%; border: 1.5px solid #c8102e; background: #fff; color: #c8102e; cursor: pointer; font-size: 12px; margin-top: 2px; }
 .pl.on { background: #c8102e; color: #fff; }
+.pz { width: 30px; height: 30px; border-radius: 50%; border: 1.5px solid #8a6d3b; background: #fff; color: #8a6d3b; cursor: pointer; font-size: 12px; margin-top: 4px; display: block; }
 .n { font-weight: 700; color: #c8102e; margin-right: 4px; }
 .qt { font-weight: 700; margin-bottom: 3px; }
 .o { padding-left: 22px; text-indent: -22px; }
@@ -75,13 +76,15 @@ WEB_JS = """
   var audio=new Audio(); var cur=null; var chain=null;
   function reset(q){ if(!q) return; q.classList.remove('playing'); var b=q.querySelector('.pl'); b.classList.remove('on'); b.textContent='\\u25b6'; }
   function stop(){ audio.pause(); reset(cur); cur=null; chain=null; document.getElementById('st').textContent=''; }
+  var lang='en';
   function play(q, next){ reset(cur);
     cur=q; chain=next||null; q.classList.add('playing'); var b=q.querySelector('.pl'); b.classList.add('on'); b.textContent='\\u275a\\u275a';
-    audio.src='audio/'+q.dataset.id+'.m4a'; audio.play(); q.scrollIntoView({block:'center',behavior:'smooth'});
+    audio.src='audio/'+lang+'/'+q.dataset.id+'.m4a'; audio.play(); q.scrollIntoView({block:'center',behavior:'smooth'});
     document.getElementById('st').textContent='\\u64ad\\u653e\\u7b2c '+q.dataset.n+' \\u984c'; }
   audio.addEventListener('ended', function(){ if(chain && chain.length){ play(chain.shift(), chain); } else stop(); });
   document.addEventListener('click', function(e){
-    var b=e.target.closest('.pl'); if(b){ var q=b.closest('.q');
+    var z=e.target.closest('.pz'); if(z){ var qz=z.closest('.q'); lang='zh'; play(qz); return; }
+    var b=e.target.closest('.pl'); if(b){ var q=b.closest('.q'); lang='en';
       if(cur===q && !audio.paused){ audio.pause(); b.textContent='\\u25b6'; }
       else if(cur===q){ audio.play(); b.textContent='\\u275a\\u275a'; } else play(q); return; }
     var c=e.target.closest('.chap'); if(c){ var list=[].slice.call(document.querySelectorAll('.q[data-ch="'+c.dataset.ch+'"]')); play(list.shift(), list); return; }
@@ -103,7 +106,8 @@ def question_block(q: dict, n: int, web: bool) -> str:
     ex = f"<div class='ex'><b>答案 {L[q['a']]}</b>　{E(q['ze'])}　<span class='en'>{E(q['e'])}</span></div>"
     if web:
         return (f"<div class='q' data-id='{q['id']}' data-ch='{q['ch']}' data-n='{n}'>"
-                f"<button class='pl' title='念這題'>▶</button>{zh}{en}{ex}</div>")
+                f"<div><button class='pl' title='念英文'>▶</button>"
+                f"<button class='pz' title='念中文'>中</button></div>{zh}{en}{ex}</div>")
     return f"<div class='q'>{zh}{en}{ex}</div>"
 
 
@@ -144,13 +148,20 @@ def main():
 
     # ---- offline listenable ----
     web_dir = dest / f"模擬考題庫_{len(qs)}題_可朗讀版"
+    # build_quiz_audio.py now writes html/audio/quiz/{en,zh}/<id>.m4a — take both,
+    # so the offline copy can read the question in either language like the site does.
     audio_out = web_dir / "audio"
-    audio_out.mkdir(parents=True, exist_ok=True)
     src_audio = ROOT / "html" / "audio" / "quiz"
-    for q in qs:
-        f = src_audio / f"{q['id']}.m4a"
-        if f.exists():
-            shutil.copy2(f, audio_out / f.name)
+    copied = 0
+    for lang in ("en", "zh"):
+        (audio_out / lang).mkdir(parents=True, exist_ok=True)
+        for q in qs:
+            f = src_audio / lang / f"{q['id']}.m4a"
+            if f.exists():
+                shutil.copy2(f, audio_out / lang / f.name)
+                copied += 1
+    if not copied:
+        raise SystemExit(f"沒有找到任何題目音檔：{src_audio}/{{en,zh}} 是空的，先跑 tools/build_quiz_audio.py")
     opts = "".join(f"<option value='{c}'>第 {c} 章 {CHAPTER_NAMES.get(c,'')}（{n} 題）</option>"
                    for c, n in sorted(cnt.items()))
     page = (f"<!DOCTYPE html><html lang='zh-Hant'><head><meta charset='utf-8'>"
@@ -158,7 +169,7 @@ def main():
             f"<title>模擬考題庫 {len(qs)} 題（可朗讀）</title><style>{WEB_CSS}</style></head><body>"
             f"<h1>加拿大公民考試 · 模擬考題庫 {len(qs)} 題（可朗讀）</h1>"
             f"<div class='sub'>左中文、右英文；<span style='color:#1a7f37;font-weight:700'>綠字＝正確答案</span>。"
-            f"每題 ▶ 用 Ava 念英文題目與選項；「連續播放本章」一題接一題念。離線可用，"
+            f"每題 ▶ 念英文、中 念中文；「連續播放本章」一題接一題念英文。離線可用，"
             f"音檔在同資料夾的 audio/ 裡，<b>請整個資料夾一起搬</b>。{note}</div>"
             f"<div class='bar'><button class='main' id='all'>▶ 從頭連續播放全部</button>"
             f"<button id='stop'>■ 停</button><button id='hide'>隱藏答案（自測）</button>"
