@@ -1,6 +1,9 @@
-"""Narrate each quiz question (question + lettered options) with Ava Premium.
+"""Narrate each quiz question (question + lettered options) in both languages.
 
-Output: html/audio/quiz/<id>.m4a. Skips ids whose text hash is unchanged.
+English with Ava Premium, Chinese with Meijia Premium — the quiz pages show the
+two side by side, so both need a voice.
+
+Output: html/audio/quiz/{en,zh}/<id>.m4a. Skips ids whose text hash is unchanged.
 Run: python3 tools/build_quiz_audio.py
 """
 
@@ -19,52 +22,64 @@ from quiz_content import load_questions  # noqa: E402
 
 OUT = ROOT / "html" / "audio" / "quiz"
 TOOL = ROOT / "tools" / "tts_align"
-VOICE = "com.apple.voice.premium.en-US.Ava"
-RATE = "0.47"
+VOICE = {"en": "com.apple.voice.premium.en-US.Ava",
+         "zh": "com.apple.voice.premium.zh-TW.Meijia"}
+RATE = {"en": "0.47", "zh": "0.5"}
 LETTERS = "ABCDE"
 
 
-def text_of(q: dict) -> str:
+def text_of(q: dict, lang: str) -> str:
+    if lang == "zh":
+        opts = "。".join(f"{LETTERS[i]}、{o}" for i, o in enumerate(q["zo"]))
+        return f"{q['zq']} {opts}。"
     opts = ". ".join(f"{LETTERS[i]}. {o}" for i, o in enumerate(q["o"]))
     return f"{q['q']} {opts}."
 
 
-def synth(qid: str, text: str) -> str:
+def synth(qid: str, lang: str, text: str) -> str:
     with tempfile.TemporaryDirectory() as td:
         tmp = Path(td)
         (tmp / "q.txt").write_text(text, encoding="utf-8")
-        subprocess.run([str(TOOL), VOICE, RATE, str(tmp / "q.txt"), str(tmp / "q.wav"), str(tmp / "q.json")],
+        subprocess.run([str(TOOL), VOICE[lang], RATE[lang], str(tmp / "q.txt"), str(tmp / "q.wav"), str(tmp / "q.json")],
                        check=True, capture_output=True)
-        subprocess.run(["afconvert", "-f", "m4af", "-d", "aac", "-b", "48000", str(tmp / "q.wav"), str(OUT / f"{qid}.m4a")],
+        subprocess.run(["afconvert", "-f", "m4af", "-d", "aac", "-b", "48000",
+                        str(tmp / "q.wav"), str(OUT / lang / f"{qid}.m4a")],
                        check=True, capture_output=True)
     return qid
 
 
 def main():
-    OUT.mkdir(parents=True, exist_ok=True)
+    for lang in ("en", "zh"):
+        (OUT / lang).mkdir(parents=True, exist_ok=True)
+    # clips used to live flat in html/audio/quiz/ (English only)
+    for old in OUT.glob("*.m4a"):
+        old.rename(OUT / "en" / old.name)
+
     hpath = OUT / "hashes.json"
     hashes = json.loads(hpath.read_text()) if hpath.exists() else {}
     todo = []
     for q in load_questions():
-        t = text_of(q)
-        h = hashlib.md5((VOICE + RATE + t).encode()).hexdigest()
-        if hashes.get(q["id"]) == h and (OUT / f"{q['id']}.m4a").exists():
-            continue
-        todo.append((q["id"], t, h))
-    print(f"{len(todo)} questions to narrate", flush=True)
+        for lang in ("en", "zh"):
+            t = text_of(q, lang)
+            hk = f"{q['id']}:{lang}"
+            h = hashlib.md5((VOICE[lang] + RATE[lang] + t).encode()).hexdigest()
+            if hashes.get(hk) == h and (OUT / lang / f"{q['id']}.m4a").exists():
+                continue
+            todo.append((q["id"], lang, t, h))
+    print(f"{len(todo)} clips to narrate", flush=True)
     with ThreadPoolExecutor(max_workers=3) as ex:
-        futs = {ex.submit(synth, qid, t): (qid, h) for qid, t, h in todo}
+        futs = {ex.submit(synth, qid, lang, t): (f"{qid}:{lang}", h) for qid, lang, t, h in todo}
         for i, f in enumerate(as_completed(futs), 1):
-            qid, h = futs[f]
+            hk, h = futs[f]
             try:
-                f.result(); hashes[qid] = h
+                f.result(); hashes[hk] = h
             except Exception as e:
-                print("  FAILED", qid, e, flush=True)
-            if i % 25 == 0:
+                print("  FAILED", hk, e, flush=True)
+            if i % 50 == 0:
                 print(f"  {i}/{len(todo)}", flush=True)
     hpath.write_text(json.dumps(hashes))
-    n = len(list(OUT.glob("*.m4a")))
-    print(f"done: {n} files, {sum(p.stat().st_size for p in OUT.glob('*.m4a'))/1e6:.1f} MB", flush=True)
+    files = [p for lang in ("en", "zh") for p in (OUT / lang).glob("*.m4a")]
+    print(f"done: {len(files)} files, {sum(p.stat().st_size for p in files)/1e6:.1f} MB", flush=True)
 
 
 if __name__ == "__main__":

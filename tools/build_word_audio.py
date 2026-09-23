@@ -11,6 +11,7 @@ from __future__ import annotations
 import json
 import re
 import subprocess
+import sys
 import tempfile
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from pathlib import Path
@@ -30,15 +31,10 @@ def key(w: str) -> str:
 
 
 def all_words() -> dict[str, str]:
-    seen: dict[str, str] = {}
-    for f in sorted(ALIGNED.glob("*.json")):
-        d = json.loads(f.read_text(encoding="utf-8"))
-        for s in d["sections"]:
-            for p in s["paras"]:
-                for pair in p:
-                    for w in WORD_RE.findall(pair["en"]):
-                        seen.setdefault(key(w), w)
-    return seen
+    """Every tappable word on the whole site — see tools/site_words.py."""
+    sys.path.insert(0, str(ROOT / "tools"))
+    import site_words
+    return site_words.all_surface_forms()
 
 
 def synth_word(k: str, surface: str) -> str:

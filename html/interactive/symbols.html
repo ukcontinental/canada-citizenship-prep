@@ -457,7 +457,7 @@ blockquote.speakable > .speak-btn,
 }
 .iv-hero h1 { margin: 0 0 6px; border: none; padding: 0; }
 .iv-hero p { margin: 0; color: var(--muted); }
-.iv-hero h1 small, .iv-section-title small { font-size: 0.6em; font-weight: 400; color: var(--muted); font-family: Georgia, serif; font-style: italic; margin-left: 8px; }
+.iv-hero h1 small, .iv-section-title small { font-size: 0.8em; font-weight: 400; color: #45403a; font-family: "Source Serif 4", Georgia, serif; margin-left: 8px; }
 
 .iv-section-title {
   margin: 32px 0 14px; padding-bottom: 6px;
@@ -499,8 +499,6 @@ blockquote.speakable > .speak-btn,
   letter-spacing: 0.04em; margin-right: 6px;
 }
 .iv-tag.accent { background: var(--accent-soft); color: var(--accent); font-weight: 600; }
-.bi-zh { display: block; }
-.bi-en { display: block; color: var(--muted); font-size: 0.92em; font-family: "Source Serif 4", Georgia, serif; font-style: italic; line-height: 1.45; }
 </style>
 
 <style>
@@ -508,7 +506,7 @@ blockquote.speakable > .speak-btn,
 .iv-sym-card { background: #fff; border: 1px solid var(--line); border-radius: 10px; padding: 14px 16px; }
 .iv-sym-emoji { font-size: 40px; line-height: 1; }
 .iv-sym-card h3 { margin: 8px 0 4px; font-size: 16px; }
-.iv-sym-card h3 .en { color: var(--muted); font-weight: 400; font-size: 13px; font-style: italic; }
+.iv-sym-card h3 .en { color: #45403a; font-weight: 400; font-size: 16px; font-family: "Source Serif 4", Georgia, serif; }
 .iv-sym-card .brief { font-size: 13px; color: var(--muted); margin: 0 0 8px; }
 .iv-sym-card ul { margin: 0; padding-left: 18px; font-size: 13px; }
 .iv-sym-card ul li { margin: 3px 0; }
@@ -516,11 +514,11 @@ blockquote.speakable > .speak-btn,
 .iv-bill-row .denom { font-family: monospace; font-weight: 700; font-size: 20px; color: var(--accent); }
 .iv-bill-row .zh { font-size: 12px; color: var(--muted); }
 .iv-bill-row .note { font-size: 13px; }
-.iv-hol-row { display: grid; grid-template-columns: 130px 1fr 1fr; gap: 10px; padding: 6px 10px; border-bottom: 1px dashed var(--line); font-size: 13px; align-items: center; }
+.iv-hol-row { display: grid; grid-template-columns: 120px 1fr 1fr; gap: 10px; padding: 7px 10px; border-bottom: 1px dashed var(--line); font-size: 15px; align-items: center; }
 .iv-hol-row.star { background: linear-gradient(90deg, #fff8e8 0%, transparent 100%); border-radius: 4px; }
 .iv-hol-row .date { font-family: monospace; font-size: 12px; color: var(--muted); }
 .iv-hol-row .hol-en { font-weight: 600; }
-.iv-hol-row .hol-zh { color: var(--muted); }
+.iv-hol-row .hol-zh { color: var(--ink); font-weight: 600; }
 </style>
 <div class="iv-hero">
   <h1>🍁 加拿大國家象徵圖鑑 <small>Canadian Symbols</small></h1>
@@ -532,74 +530,216 @@ blockquote.speakable > .speak-btn,
 <div class="iv-sym-card">
   <div class="iv-sym-emoji">🍁</div>
   <h3>楓葉 <span class="en">Maple Leaf</span></h3>
-  <p class="brief"><span class="bi-zh">加拿大最著名的象徵</span><span class="bi-en">Canada's best-known symbol</span></p>
-  <ul><li><span class="bi-zh">1700 年代法裔加拿大人採用</span><span class="bi-en">Adopted by French Canadians in the 1700s</span></li><li><span class="bi-zh">1850 年代起出現在軍服上</span><span class="bi-en">On Canadian uniforms since the 1850s</span></li><li><span class="bi-zh">刻在陣亡將士墓碑上</span><span class="bi-en">Carved on the headstones of fallen soldiers</span></li></ul>
+  <p class="brief"><span class="bi"><span class="bi-zh">加拿大最著名的象徵<button class="say" type="button" data-lang="zh" data-k="f1347f82ec0a874d" aria-label="朗讀">🔊</button></span><span class="bi-en"><span class="w">Canada&#x27;s</span> <span class="w">best-known</span> <span class="w">symbol</span><button class="say" type="button" data-lang="en" data-k="93d239591d99c04b" aria-label="朗讀">🔊</button></span></span></p>
+  <ul><li><span class="bi"><span class="bi-zh">1700 年代法裔加拿大人採用<button class="say" type="button" data-lang="zh" data-k="b256e25fdb96f904" aria-label="朗讀">🔊</button></span><span class="bi-en"><span class="w">Adopted</span> <span class="w">by</span> <span class="w">French</span> <span class="w">Canadians</span> <span class="w">in</span> <span class="w">the</span> 1700<span class="w">s</span><button class="say" type="button" data-lang="en" data-k="46368ea742b9dd7e" aria-label="朗讀">🔊</button></span></span></li><li><span class="bi"><span class="bi-zh">1850 年代起出現在軍服上<button class="say" type="button" data-lang="zh" data-k="0c0fbf07f411fb39" aria-label="朗讀">🔊</button></span><span class="bi-en"><span class="w">On</span> <span class="w">Canadian</span> <span class="w">uniforms</span> <span class="w">since</span> <span class="w">the</span> 1850<span class="w">s</span><button class="say" type="button" data-lang="en" data-k="ace8333a6967feab" aria-label="朗讀">🔊</button></span></span></li><li><span class="bi"><span class="bi-zh">刻在陣亡將士墓碑上<button class="say" type="button" data-lang="zh" data-k="e3f9041d8c542aee" aria-label="朗讀">🔊</button></span><span class="bi-en"><span class="w">Carved</span> <span class="w">on</span> <span class="w">the</span> <span class="w">headstones</span> <span class="w">of</span> <span class="w">fallen</span> <span class="w">soldiers</span><button class="say" type="button" data-lang="en" data-k="332d0081335187b3" aria-label="朗讀">🔊</button></span></span></li></ul>
 </div>
 <div class="iv-sym-card">
   <div class="iv-sym-emoji">🚩</div>
   <h3>國旗 <span class="en">National Flag</span></h3>
-  <p class="brief"><span class="bi-zh">紅白楓葉旗</span><span class="bi-en">The red-and-white maple leaf flag</span></p>
-  <ul><li><span class="bi-zh"><strong>1965 年</strong>首次升起</span><span class="bi-en"><strong>First raised in 1965</strong></span></li><li><span class="bi-zh">紅白色來自皇家軍事學院旗；1921 起為國家代表色</span><span class="bi-en">Red and white come from the Royal Military College flag; national colours since 1921</span></li><li><span class="bi-zh">前身 Red Ensign 用了約 100 年</span><span class="bi-en">The Red Ensign served for about 100 years</span></li></ul>
+  <p class="brief"><span class="bi"><span class="bi-zh">紅白楓葉旗<button class="say" type="button" data-lang="zh" data-k="33060ecae6829d25" aria-label="朗讀">🔊</button></span><span class="bi-en"><span class="w">The</span> <span class="w">red-and-white</span> <span class="w">maple</span> <span class="w">leaf</span> <span class="w">flag</span><button class="say" type="button" data-lang="en" data-k="94ecefa9416ebf24" aria-label="朗讀">🔊</button></span></span></p>
+  <ul><li><span class="bi"><span class="bi-zh"><strong>1965 年</strong>首次升起<button class="say" type="button" data-lang="zh" data-k="60a07bb9fc6a928f" aria-label="朗讀">🔊</button></span><span class="bi-en"><strong><span class="w">First</span> <span class="w">raised</span> <span class="w">in</span> 1965</strong><button class="say" type="button" data-lang="en" data-k="754229cf1a41c9e6" aria-label="朗讀">🔊</button></span></span></li><li><span class="bi"><span class="bi-zh">紅白色來自皇家軍事學院旗；1921 起為國家代表色<button class="say" type="button" data-lang="zh" data-k="b1a49aeeb3b59c3e" aria-label="朗讀">🔊</button></span><span class="bi-en"><span class="w">Red</span> <span class="w">and</span> <span class="w">white</span> <span class="w">come</span> <span class="w">from</span> <span class="w">the</span> <span class="w">Royal</span> <span class="w">Military</span> <span class="w">College</span> <span class="w">flag</span>; <span class="w">national</span> <span class="w">colours</span> <span class="w">since</span> 1921<button class="say" type="button" data-lang="en" data-k="7fae363e8c2bcbae" aria-label="朗讀">🔊</button></span></span></li><li><span class="bi"><span class="bi-zh">前身 Red Ensign 用了約 100 年<button class="say" type="button" data-lang="zh" data-k="51c5ded3cb24e026" aria-label="朗讀">🔊</button></span><span class="bi-en"><span class="w">The</span> <span class="w">Red</span> <span class="w">Ensign</span> <span class="w">served</span> <span class="w">for</span> <span class="w">about</span> 100 <span class="w">years</span><button class="say" type="button" data-lang="en" data-k="bfdc8c2a3522f1cc" aria-label="朗讀">🔊</button></span></span></li></ul>
 </div>
 <div class="iv-sym-card">
   <div class="iv-sym-emoji">👑</div>
   <h3>王權 / 君主 <span class="en">The Crown</span></h3>
-  <p class="brief"><span class="bi-zh">King Charles III</span><span class="bi-en">King Charles III</span></p>
-  <ul><li><span class="bi-zh"><strong>2022 年 9 月 Elizabeth II 過世，Charles III 即位</strong></span><span class="bi-en"><strong>Elizabeth II died in September 2022; Charles III became King</strong></span></li><li><span class="bi-zh">王權象徵政府：國會、法院、警察、軍隊</span><span class="bi-en">The Crown symbolizes government: Parliament, courts, police, the Forces</span></li><li><span class="bi-zh">Governor General Mary Simon 代表君主</span><span class="bi-en">Represented by Governor General Mary Simon</span></li></ul>
+  <p class="brief"><span class="bi"><span class="bi-zh">King Charles III<button class="say" type="button" data-lang="zh" data-k="1fdce01aec34a4b2" aria-label="朗讀">🔊</button></span><span class="bi-en"><span class="w">King</span> <span class="w">Charles</span> <span class="w">III</span><button class="say" type="button" data-lang="en" data-k="1fdce01aec34a4b2" aria-label="朗讀">🔊</button></span></span></p>
+  <ul><li><span class="bi"><span class="bi-zh"><strong>2022 年 9 月 Elizabeth II 過世，Charles III 即位</strong><button class="say" type="button" data-lang="zh" data-k="687df7b134fc2768" aria-label="朗讀">🔊</button></span><span class="bi-en"><strong><span class="w">Elizabeth</span> <span class="w">II</span> <span class="w">died</span> <span class="w">in</span> <span class="w">September</span> 2022; <span class="w">Charles</span> <span class="w">III</span> <span class="w">became</span> <span class="w">King</span></strong><button class="say" type="button" data-lang="en" data-k="9427cff348e2585b" aria-label="朗讀">🔊</button></span></span></li><li><span class="bi"><span class="bi-zh">王權象徵政府：國會、法院、警察、軍隊<button class="say" type="button" data-lang="zh" data-k="536b432e08e0fb06" aria-label="朗讀">🔊</button></span><span class="bi-en"><span class="w">The</span> <span class="w">Crown</span> <span class="w">symbolizes</span> <span class="w">government</span>: <span class="w">Parliament</span>, <span class="w">courts</span>, <span class="w">police</span>, <span class="w">the</span> <span class="w">Forces</span><button class="say" type="button" data-lang="en" data-k="6abc91c496d57c8a" aria-label="朗讀">🔊</button></span></span></li><li><span class="bi"><span class="bi-zh">Governor General Mary Simon 代表君主<button class="say" type="button" data-lang="zh" data-k="074eb5a1ed17f768" aria-label="朗讀">🔊</button></span><span class="bi-en"><span class="w">Represented</span> <span class="w">by</span> <span class="w">Governor</span> <span class="w">General</span> <span class="w">Mary</span> <span class="w">Simon</span><button class="say" type="button" data-lang="en" data-k="25bfa7805019cd6b" aria-label="朗讀">🔊</button></span></span></li></ul>
 </div>
 <div class="iv-sym-card">
   <div class="iv-sym-emoji">🦫</div>
   <h3>海狸 <span class="en">Beaver</span></h3>
-  <p class="brief"><span class="bi-zh">5 分硬幣上的勤勞動物</span><span class="bi-en">The industrious animal on the five-cent coin</span></p>
-  <ul><li><span class="bi-zh">哈德遜灣公司的象徵</span><span class="bi-en">Symbol of the Hudson's Bay Company</span></li><li><span class="bi-zh">1834 成為 St. Jean Baptiste Society 標誌</span><span class="bi-en">Emblem of the St. Jean Baptiste Society from 1834</span></li><li><span class="bi-zh">也在 Saskatchewan、Alberta 省徽上</span><span class="bi-en">Also on the arms of Saskatchewan and Alberta</span></li></ul>
+  <p class="brief"><span class="bi"><span class="bi-zh">5 分硬幣上的勤勞動物<button class="say" type="button" data-lang="zh" data-k="aaa7187c1f14a054" aria-label="朗讀">🔊</button></span><span class="bi-en"><span class="w">The</span> <span class="w">industrious</span> <span class="w">animal</span> <span class="w">on</span> <span class="w">the</span> <span class="w">five-cent</span> <span class="w">coin</span><button class="say" type="button" data-lang="en" data-k="dbab59ae937c6012" aria-label="朗讀">🔊</button></span></span></p>
+  <ul><li><span class="bi"><span class="bi-zh">哈德遜灣公司的象徵<button class="say" type="button" data-lang="zh" data-k="1b264431c7f33364" aria-label="朗讀">🔊</button></span><span class="bi-en"><span class="w">Symbol</span> <span class="w">of</span> <span class="w">the</span> <span class="w">Hudson&#x27;s</span> <span class="w">Bay</span> <span class="w">Company</span><button class="say" type="button" data-lang="en" data-k="e80704432822c511" aria-label="朗讀">🔊</button></span></span></li><li><span class="bi"><span class="bi-zh">1834 成為 St. Jean Baptiste Society 標誌<button class="say" type="button" data-lang="zh" data-k="0445173b51561023" aria-label="朗讀">🔊</button></span><span class="bi-en"><span class="w">Emblem</span> <span class="w">of</span> <span class="w">the</span> <span class="w">St</span>. <span class="w">Jean</span> <span class="w">Baptiste</span> <span class="w">Society</span> <span class="w">from</span> 1834<button class="say" type="button" data-lang="en" data-k="42cb5713c79eaa75" aria-label="朗讀">🔊</button></span></span></li><li><span class="bi"><span class="bi-zh">也在 Saskatchewan、Alberta 省徽上<button class="say" type="button" data-lang="zh" data-k="fb6cbe0d8ee1c696" aria-label="朗讀">🔊</button></span><span class="bi-en"><span class="w">Also</span> <span class="w">on</span> <span class="w">the</span> <span class="w">arms</span> <span class="w">of</span> <span class="w">Saskatchewan</span> <span class="w">and</span> <span class="w">Alberta</span><button class="say" type="button" data-lang="en" data-k="1d26a890726b8782" aria-label="朗讀">🔊</button></span></span></li></ul>
 </div>
 <div class="iv-sym-card">
   <div class="iv-sym-emoji">🛡️</div>
   <h3>國徽與格言 <span class="en">Coat of Arms</span></h3>
-  <p class="brief"><span class="bi-zh">一戰後採用</span><span class="bi-en">Adopted after the First World War</span></p>
-  <ul><li><span class="bi-zh">含英、法、蘇、愛象徵與紅楓葉</span><span class="bi-en">Symbols of England, France, Scotland and Ireland, with red maple leaves</span></li><li><span class="bi-zh">格言 'A mari usque ad mare'＝從海到海</span><span class="bi-en">Motto A mari usque ad mare = "from sea to sea"</span></li><li><span class="bi-zh">出現在鈔票、政府文件、公共建築</span><span class="bi-en">Seen on dollar bills, government documents and public buildings</span></li></ul>
+  <p class="brief"><span class="bi"><span class="bi-zh">一戰後採用<button class="say" type="button" data-lang="zh" data-k="26bef8b78fc14b25" aria-label="朗讀">🔊</button></span><span class="bi-en"><span class="w">Adopted</span> <span class="w">after</span> <span class="w">the</span> <span class="w">First</span> <span class="w">World</span> <span class="w">War</span><button class="say" type="button" data-lang="en" data-k="ec76bb3170ac5987" aria-label="朗讀">🔊</button></span></span></p>
+  <ul><li><span class="bi"><span class="bi-zh">含英、法、蘇、愛象徵與紅楓葉<button class="say" type="button" data-lang="zh" data-k="b71bf405ec7f816d" aria-label="朗讀">🔊</button></span><span class="bi-en"><span class="w">Symbols</span> <span class="w">of</span> <span class="w">England</span>, <span class="w">France</span>, <span class="w">Scotland</span> <span class="w">and</span> <span class="w">Ireland</span>, <span class="w">with</span> <span class="w">red</span> <span class="w">maple</span> <span class="w">leaves</span><button class="say" type="button" data-lang="en" data-k="073559ee776e32e6" aria-label="朗讀">🔊</button></span></span></li><li><span class="bi"><span class="bi-zh">格言 &#x27;A mari usque ad mare&#x27;＝從海到海<button class="say" type="button" data-lang="zh" data-k="3164478cc22c1e3d" aria-label="朗讀">🔊</button></span><span class="bi-en"><span class="w">Motto</span> <span class="w">A</span> <span class="w">mari</span> <span class="w">usque</span> <span class="w">ad</span> <span class="w">mare</span> = &quot;<span class="w">from</span> <span class="w">sea</span> <span class="w">to</span> <span class="w">sea</span>&quot;<button class="say" type="button" data-lang="en" data-k="96f39e266c7b4615" aria-label="朗讀">🔊</button></span></span></li><li><span class="bi"><span class="bi-zh">出現在鈔票、政府文件、公共建築<button class="say" type="button" data-lang="zh" data-k="6b2a7435917717ba" aria-label="朗讀">🔊</button></span><span class="bi-en"><span class="w">Seen</span> <span class="w">on</span> <span class="w">dollar</span> <span class="w">bills</span>, <span class="w">government</span> <span class="w">documents</span> <span class="w">and</span> <span class="w">public</span> <span class="w">buildings</span><button class="say" type="button" data-lang="en" data-k="5958b96714787345" aria-label="朗讀">🔊</button></span></span></li></ul>
 </div>
 <div class="iv-sym-card">
   <div class="iv-sym-emoji">🎵</div>
   <h3>國歌 <span class="en">O Canada</span></h3>
-  <p class="brief"><span class="bi-zh">1980 正式國歌</span><span class="bi-en">Proclaimed the national anthem in 1980</span></p>
-  <ul><li><span class="bi-zh">1880 首次在 Québec City 演唱</span><span class="bi-en">First sung in Québec City in 1880</span></li><li><span class="bi-zh"><strong>2018 改 'in all of us command'</strong></span><span class="bi-en"><strong>Lyric changed to "in all of us command" in 2018</strong></span></li><li><span class="bi-zh">皇家國歌是 'God Save the King'</span><span class="bi-en">The Royal Anthem is "God Save the King"</span></li></ul>
+  <p class="brief"><span class="bi"><span class="bi-zh">1980 正式國歌<button class="say" type="button" data-lang="zh" data-k="e222115b7e692b63" aria-label="朗讀">🔊</button></span><span class="bi-en"><span class="w">Proclaimed</span> <span class="w">the</span> <span class="w">national</span> <span class="w">anthem</span> <span class="w">in</span> 1980<button class="say" type="button" data-lang="en" data-k="ca2a43a667ba5eba" aria-label="朗讀">🔊</button></span></span></p>
+  <ul><li><span class="bi"><span class="bi-zh">1880 首次在 Québec City 演唱<button class="say" type="button" data-lang="zh" data-k="ca2bab7fedd7c43d" aria-label="朗讀">🔊</button></span><span class="bi-en"><span class="w">First</span> <span class="w">sung</span> <span class="w">in</span> <span class="w">Québec</span> <span class="w">City</span> <span class="w">in</span> 1880<button class="say" type="button" data-lang="en" data-k="1858b4abd58eb4c6" aria-label="朗讀">🔊</button></span></span></li><li><span class="bi"><span class="bi-zh"><strong>2018 改 &#x27;in all of us command&#x27;</strong><button class="say" type="button" data-lang="zh" data-k="d2fadad42a990903" aria-label="朗讀">🔊</button></span><span class="bi-en"><strong><span class="w">Lyric</span> <span class="w">changed</span> <span class="w">to</span> &quot;<span class="w">in</span> <span class="w">all</span> <span class="w">of</span> <span class="w">us</span> <span class="w">command</span>&quot; <span class="w">in</span> 2018</strong><button class="say" type="button" data-lang="en" data-k="1d0eca264493bd0d" aria-label="朗讀">🔊</button></span></span></li><li><span class="bi"><span class="bi-zh">皇家國歌是 &#x27;God Save the King&#x27;<button class="say" type="button" data-lang="zh" data-k="8f215df52b19a271" aria-label="朗讀">🔊</button></span><span class="bi-en"><span class="w">The</span> <span class="w">Royal</span> <span class="w">Anthem</span> <span class="w">is</span> &quot;<span class="w">God</span> <span class="w">Save</span> <span class="w">the</span> <span class="w">King</span>&quot;<button class="say" type="button" data-lang="en" data-k="2ea52888479282e1" aria-label="朗讀">🔊</button></span></span></li></ul>
 </div>
 <div class="iv-sym-card">
   <div class="iv-sym-emoji">🌹</div>
   <h3>Vimy Ridge <span class="en">Vimy Ridge</span></h3>
-  <p class="brief"><span class="bi-zh">1917 加拿大關鍵戰役</span><span class="bi-en">Canada's defining battle of 1917</span></p>
-  <ul><li><span class="bi-zh">4 月 9 日 = Vimy Day</span><span class="bi-en">April 9 is Vimy Day</span></li><li><span class="bi-zh">「大英帝國突擊部隊」美名</span><span class="bi-en">Won the reputation of "shock troops of the British Empire"</span></li><li><span class="bi-zh">法國 Vimy 有加拿大紀念碑</span><span class="bi-en">The Vimy Memorial stands in France</span></li></ul>
+  <p class="brief"><span class="bi"><span class="bi-zh">1917 加拿大關鍵戰役<button class="say" type="button" data-lang="zh" data-k="2f5b24a14243aa75" aria-label="朗讀">🔊</button></span><span class="bi-en"><span class="w">Canada&#x27;s</span> <span class="w">defining</span> <span class="w">battle</span> <span class="w">of</span> 1917<button class="say" type="button" data-lang="en" data-k="5ba769e4f4a870dd" aria-label="朗讀">🔊</button></span></span></p>
+  <ul><li><span class="bi"><span class="bi-zh">4 月 9 日 = Vimy Day<button class="say" type="button" data-lang="zh" data-k="5166c1350ea8d387" aria-label="朗讀">🔊</button></span><span class="bi-en"><span class="w">April</span> 9 <span class="w">is</span> <span class="w">Vimy</span> <span class="w">Day</span><button class="say" type="button" data-lang="en" data-k="2d90756f3ea5ab20" aria-label="朗讀">🔊</button></span></span></li><li><span class="bi"><span class="bi-zh">「大英帝國突擊部隊」美名<button class="say" type="button" data-lang="zh" data-k="921ca7851d1c162a" aria-label="朗讀">🔊</button></span><span class="bi-en"><span class="w">Won</span> <span class="w">the</span> <span class="w">reputation</span> <span class="w">of</span> &quot;<span class="w">shock</span> <span class="w">troops</span> <span class="w">of</span> <span class="w">the</span> <span class="w">British</span> <span class="w">Empire</span>&quot;<button class="say" type="button" data-lang="en" data-k="2a16add038a80d98" aria-label="朗讀">🔊</button></span></span></li><li><span class="bi"><span class="bi-zh">法國 Vimy 有加拿大紀念碑<button class="say" type="button" data-lang="zh" data-k="730d32c13fa86a42" aria-label="朗讀">🔊</button></span><span class="bi-en"><span class="w">The</span> <span class="w">Vimy</span> <span class="w">Memorial</span> <span class="w">stands</span> <span class="w">in</span> <span class="w">France</span><button class="say" type="button" data-lang="en" data-k="2335f196c8b2ecde" aria-label="朗讀">🔊</button></span></span></li></ul>
 </div>
 <div class="iv-sym-card">
   <div class="iv-sym-emoji">🎖️</div>
   <h3>Order of Canada <span class="en">加拿大勳章</span></h3>
-  <p class="brief"><span class="bi-zh">1967 設立</span><span class="bi-en">Established in 1967, the centennial</span></p>
-  <ul><li><span class="bi-zh">加拿大自己的榮譽制度</span><span class="bi-en">Canada's own honours system</span></li><li><span class="bi-zh">最高榮譽是維多利亞十字勳章（96 位加拿大人）</span><span class="bi-en">The highest honour is the Victoria Cross (96 Canadians)</span></li></ul>
+  <p class="brief"><span class="bi"><span class="bi-zh">1967 設立<button class="say" type="button" data-lang="zh" data-k="d3a875e0f2925cbd" aria-label="朗讀">🔊</button></span><span class="bi-en"><span class="w">Established</span> <span class="w">in</span> 1967, <span class="w">the</span> <span class="w">centennial</span><button class="say" type="button" data-lang="en" data-k="700a88dbdf32a761" aria-label="朗讀">🔊</button></span></span></p>
+  <ul><li><span class="bi"><span class="bi-zh">加拿大自己的榮譽制度<button class="say" type="button" data-lang="zh" data-k="8eb72c74f67b3a30" aria-label="朗讀">🔊</button></span><span class="bi-en"><span class="w">Canada&#x27;s</span> <span class="w">own</span> <span class="w">honours</span> <span class="w">system</span><button class="say" type="button" data-lang="en" data-k="75994ce44bde0326" aria-label="朗讀">🔊</button></span></span></li><li><span class="bi"><span class="bi-zh">最高榮譽是維多利亞十字勳章（96 位加拿大人）<button class="say" type="button" data-lang="zh" data-k="f7a58b521910d65c" aria-label="朗讀">🔊</button></span><span class="bi-en"><span class="w">The</span> <span class="w">highest</span> <span class="w">honour</span> <span class="w">is</span> <span class="w">the</span> <span class="w">Victoria</span> <span class="w">Cross</span> (96 <span class="w">Canadians</span>)<button class="say" type="button" data-lang="en" data-k="e79052eac5f33161" aria-label="朗讀">🔊</button></span></span></li></ul>
 </div>
 <div class="iv-sym-card">
   <div class="iv-sym-emoji">💰</div>
   <h3>Loonie & Toonie <span class="en">1 元、2 元硬幣</span></h3>
-  <p class="brief"><span class="bi-zh">Loonie 1987、Toonie 1996</span><span class="bi-en">Loonie 1987, Toonie 1996</span></p>
-  <ul><li><span class="bi-zh">Loonie：1 元，刻 Loon 潛鳥</span><span class="bi-en">Loonie: $1 with a loon</span></li><li><span class="bi-zh">Toonie：2 元，刻 Polar Bear 北極熊</span><span class="bi-en">Toonie: $2 with a polar bear</span></li></ul>
+  <p class="brief"><span class="bi"><span class="bi-zh">Loonie 1987、Toonie 1996<button class="say" type="button" data-lang="zh" data-k="e8c27d410d2c47d0" aria-label="朗讀">🔊</button></span><span class="bi-en"><span class="w">Loonie</span> 1987, <span class="w">Toonie</span> 1996<button class="say" type="button" data-lang="en" data-k="b0c42edaf6ae2318" aria-label="朗讀">🔊</button></span></span></p>
+  <ul><li><span class="bi"><span class="bi-zh">Loonie：1 元，刻 Loon 潛鳥<button class="say" type="button" data-lang="zh" data-k="1ec03334e63d6a3a" aria-label="朗讀">🔊</button></span><span class="bi-en"><span class="w">Loonie</span>: $1 <span class="w">with</span> <span class="w">a</span> <span class="w">loon</span><button class="say" type="button" data-lang="en" data-k="5d0fda296cbdd0d6" aria-label="朗讀">🔊</button></span></span></li><li><span class="bi"><span class="bi-zh">Toonie：2 元，刻 Polar Bear 北極熊<button class="say" type="button" data-lang="zh" data-k="48f484880686f663" aria-label="朗讀">🔊</button></span><span class="bi-en"><span class="w">Toonie</span>: $2 <span class="w">with</span> <span class="w">a</span> <span class="w">polar</span> <span class="w">bear</span><button class="say" type="button" data-lang="en" data-k="eadb8ad955a5482d" aria-label="朗讀">🔊</button></span></span></li></ul>
 </div>
 <div class="iv-sym-card">
   <div class="iv-sym-emoji">📜</div>
   <h3>Magna Carta <span class="en">大憲章 1215</span></h3>
-  <p class="brief"><span class="bi-zh">有序自由 800 年的起源</span><span class="bi-en">Origin of 800 years of ordered liberty</span></p>
-  <ul><li><span class="bi-zh">1215 年英國簽署</span><span class="bi-en">Signed in England in 1215</span></li><li><span class="bi-zh"><strong>Habeas Corpus</strong> 來自英國普通法</span><span class="bi-en"><strong>Habeas corpus</strong> comes from English common law</span></li><li><span class="bi-zh">憲章序言承認上帝至高與法治</span><span class="bi-en">The Charter's preamble recognizes the supremacy of God and the rule of law</span></li></ul>
+  <p class="brief"><span class="bi"><span class="bi-zh">有序自由 800 年的起源<button class="say" type="button" data-lang="zh" data-k="94e8dfac816f7eee" aria-label="朗讀">🔊</button></span><span class="bi-en"><span class="w">Origin</span> <span class="w">of</span> 800 <span class="w">years</span> <span class="w">of</span> <span class="w">ordered</span> <span class="w">liberty</span><button class="say" type="button" data-lang="en" data-k="ea9777bc5aa1f4ff" aria-label="朗讀">🔊</button></span></span></p>
+  <ul><li><span class="bi"><span class="bi-zh">1215 年英國簽署<button class="say" type="button" data-lang="zh" data-k="3af22a78b418cdfd" aria-label="朗讀">🔊</button></span><span class="bi-en"><span class="w">Signed</span> <span class="w">in</span> <span class="w">England</span> <span class="w">in</span> 1215<button class="say" type="button" data-lang="en" data-k="7283e4a2de4d421d" aria-label="朗讀">🔊</button></span></span></li><li><span class="bi"><span class="bi-zh"><strong>Habeas Corpus</strong> 來自英國普通法<button class="say" type="button" data-lang="zh" data-k="70d033a32facf260" aria-label="朗讀">🔊</button></span><span class="bi-en"><strong><span class="w">Habeas</span> <span class="w">corpus</span></strong> <span class="w">comes</span> <span class="w">from</span> <span class="w">English</span> <span class="w">common</span> <span class="w">law</span><button class="say" type="button" data-lang="en" data-k="a9d5215571e648fc" aria-label="朗讀">🔊</button></span></span></li><li><span class="bi"><span class="bi-zh">憲章序言承認上帝至高與法治<button class="say" type="button" data-lang="zh" data-k="6f3861f745e883fb" aria-label="朗讀">🔊</button></span><span class="bi-en"><span class="w">The</span> <span class="w">Charter&#x27;s</span> <span class="w">preamble</span> <span class="w">recognizes</span> <span class="w">the</span> <span class="w">supremacy</span> <span class="w">of</span> <span class="w">God</span> <span class="w">and</span> <span class="w">the</span> <span class="w">rule</span> <span class="w">of</span> <span class="w">law</span><button class="say" type="button" data-lang="en" data-k="598b2d584a374db6" aria-label="朗讀">🔊</button></span></span></li></ul>
 </div></div>
 
 <h2 class="iv-section-title">鈔票上的人物 <small>Faces on Banknotes</small></h2>
-<div><div class="iv-bill-row"><div class="denom">$5</div><div class="figure"><strong>Wilfrid Laurier</strong><div class="zh">勞里埃</div></div><div class="note"><span class="bi-zh">第一位法裔總理</span><span class="bi-en">First French-Canadian Prime Minister</span></div></div><div class="iv-bill-row"><div class="denom">$10</div><div class="figure"><strong>Viola Desmond ⭐</strong><div class="zh">Viola Desmond</div></div><div class="note"><span class="bi-zh"><strong>2018 起首位非白人女性</strong>——民權先驅（2021 版指南仍寫 Macdonald）</span><span class="bi-en"><strong>First non-white woman on a bill (2018)</strong>, a civil rights pioneer (the 2021 guide still says Macdonald)</span></div></div><div class="iv-bill-row"><div class="denom">$20</div><div class="figure"><strong>Queen Elizabeth II</strong><div class="zh">伊莉莎白二世</div></div><div class="note"><span class="bi-zh">新版將換 King Charles III</span><span class="bi-en">New notes will show King Charles III</span></div></div><div class="iv-bill-row"><div class="denom">$50</div><div class="figure"><strong>Mackenzie King</strong><div class="zh">麥肯齊・金</div></div><div class="note"><span class="bi-zh">任期最長的總理</span><span class="bi-en">Longest-serving Prime Minister</span></div></div><div class="iv-bill-row"><div class="denom">$100</div><div class="figure"><strong>Robert Borden</strong><div class="zh">博登爵士</div></div><div class="note"><span class="bi-zh">一戰期間總理</span><span class="bi-en">Prime Minister during the First World War</span></div></div></div>
+<div><div class="iv-bill-row"><div class="denom">$5</div><div class="figure"><strong>Wilfrid Laurier</strong><div class="zh">勞里埃</div></div><div class="note"><span class="bi"><span class="bi-zh">第一位法裔總理<button class="say" type="button" data-lang="zh" data-k="6f5b2c24ae5672f5" aria-label="朗讀">🔊</button></span><span class="bi-en"><span class="w">First</span> <span class="w">French-Canadian</span> <span class="w">Prime</span> <span class="w">Minister</span><button class="say" type="button" data-lang="en" data-k="2cb13c99f1b8650a" aria-label="朗讀">🔊</button></span></span></div></div><div class="iv-bill-row"><div class="denom">$10</div><div class="figure"><strong>Viola Desmond ⭐</strong><div class="zh">Viola Desmond</div></div><div class="note"><span class="bi"><span class="bi-zh"><strong>2018 起首位非白人女性</strong>——民權先驅（2021 版指南仍寫 Macdonald）<button class="say" type="button" data-lang="zh" data-k="2e2f9e9650fd2acf" aria-label="朗讀">🔊</button></span><span class="bi-en"><strong><span class="w">First</span> <span class="w">non-white</span> <span class="w">woman</span> <span class="w">on</span> <span class="w">a</span> <span class="w">bill</span> (2018)</strong>, <span class="w">a</span> <span class="w">civil</span> <span class="w">rights</span> <span class="w">pioneer</span> (<span class="w">the</span> 2021 <span class="w">guide</span> <span class="w">still</span> <span class="w">says</span> <span class="w">Macdonald</span>)<button class="say" type="button" data-lang="en" data-k="9399c00db62aa75b" aria-label="朗讀">🔊</button></span></span></div></div><div class="iv-bill-row"><div class="denom">$20</div><div class="figure"><strong>Queen Elizabeth II</strong><div class="zh">伊莉莎白二世</div></div><div class="note"><span class="bi"><span class="bi-zh">新版將換 King Charles III<button class="say" type="button" data-lang="zh" data-k="ff5bd1e2192cfdca" aria-label="朗讀">🔊</button></span><span class="bi-en"><span class="w">New</span> <span class="w">notes</span> <span class="w">will</span> <span class="w">show</span> <span class="w">King</span> <span class="w">Charles</span> <span class="w">III</span><button class="say" type="button" data-lang="en" data-k="3895ef694809cc9c" aria-label="朗讀">🔊</button></span></span></div></div><div class="iv-bill-row"><div class="denom">$50</div><div class="figure"><strong>Mackenzie King</strong><div class="zh">麥肯齊・金</div></div><div class="note"><span class="bi"><span class="bi-zh">任期最長的總理<button class="say" type="button" data-lang="zh" data-k="69594e650767d5b5" aria-label="朗讀">🔊</button></span><span class="bi-en"><span class="w">Longest-serving</span> <span class="w">Prime</span> <span class="w">Minister</span><button class="say" type="button" data-lang="en" data-k="8113d9c832381a96" aria-label="朗讀">🔊</button></span></span></div></div><div class="iv-bill-row"><div class="denom">$100</div><div class="figure"><strong>Robert Borden</strong><div class="zh">博登爵士</div></div><div class="note"><span class="bi"><span class="bi-zh">一戰期間總理<button class="say" type="button" data-lang="zh" data-k="67e81636a2d7f11b" aria-label="朗讀">🔊</button></span><span class="bi-en"><span class="w">Prime</span> <span class="w">Minister</span> <span class="w">during</span> <span class="w">the</span> <span class="w">First</span> <span class="w">World</span> <span class="w">War</span><button class="say" type="button" data-lang="en" data-k="d255f271902a4f57" aria-label="朗讀">🔊</button></span></span></div></div></div>
 
 <h2 class="iv-section-title">硬幣上的動物 <small>Animals on Coins</small></h2>
 <div class="iv-card-grid" style="grid-template-columns:repeat(auto-fit,minmax(140px,1fr))">
-  <div class="iv-card"><strong>1¢</strong> Maple Leaf 楓葉<br><span class="meta"><span class="bi-zh">已停產 2013</span><span class="bi-en">Discontinued in 2013</span></span></div><div class="iv-card"><strong>5¢</strong> Beaver 海狸 🦫<br><span class="meta"><span class="bi-zh">國家動物</span><span class="bi-en">The national animal</span></span></div><div class="iv-card"><strong>10¢</strong> Bluenose 帆船 ⛵<br><span class="meta"><span class="bi-zh">Nova Scotia 的名船</span><span class="bi-en">Nova Scotia's famous schooner</span></span></div><div class="iv-card"><strong>25¢</strong> Caribou 馴鹿 🦌<br><span class="meta"><span class="bi-zh">北方的象徵</span><span class="bi-en">A symbol of the North</span></span></div><div class="iv-card"><strong>$1 Loonie</strong> Loon 潛鳥<br><span class="meta"><span class="bi-zh">1987 起</span><span class="bi-en">Since 1987</span></span></div><div class="iv-card"><strong>$2 Toonie</strong> Polar Bear 北極熊 🐻‍❄️<br><span class="meta"><span class="bi-zh">1996 起</span><span class="bi-en">Since 1996</span></span></div>
+  <div class="iv-card"><strong>1¢</strong> Maple Leaf 楓葉<br><span class="meta"><span class="bi"><span class="bi-zh">已停產 2013<button class="say" type="button" data-lang="zh" data-k="44a3e9b3cf384d00" aria-label="朗讀">🔊</button></span><span class="bi-en"><span class="w">Discontinued</span> <span class="w">in</span> 2013<button class="say" type="button" data-lang="en" data-k="cd8da572380edd51" aria-label="朗讀">🔊</button></span></span></span></div><div class="iv-card"><strong>5¢</strong> Beaver 海狸 🦫<br><span class="meta"><span class="bi"><span class="bi-zh">國家動物<button class="say" type="button" data-lang="zh" data-k="886832babb656d20" aria-label="朗讀">🔊</button></span><span class="bi-en"><span class="w">The</span> <span class="w">national</span> <span class="w">animal</span><button class="say" type="button" data-lang="en" data-k="2620dfe474560762" aria-label="朗讀">🔊</button></span></span></span></div><div class="iv-card"><strong>10¢</strong> Bluenose 帆船 ⛵<br><span class="meta"><span class="bi"><span class="bi-zh">Nova Scotia 的名船<button class="say" type="button" data-lang="zh" data-k="38c22926e3356305" aria-label="朗讀">🔊</button></span><span class="bi-en"><span class="w">Nova</span> <span class="w">Scotia&#x27;s</span> <span class="w">famous</span> <span class="w">schooner</span><button class="say" type="button" data-lang="en" data-k="2b497067a517b53e" aria-label="朗讀">🔊</button></span></span></span></div><div class="iv-card"><strong>25¢</strong> Caribou 馴鹿 🦌<br><span class="meta"><span class="bi"><span class="bi-zh">北方的象徵<button class="say" type="button" data-lang="zh" data-k="ca23c0bba7d521bc" aria-label="朗讀">🔊</button></span><span class="bi-en"><span class="w">A</span> <span class="w">symbol</span> <span class="w">of</span> <span class="w">the</span> <span class="w">North</span><button class="say" type="button" data-lang="en" data-k="54963b18b6f83032" aria-label="朗讀">🔊</button></span></span></span></div><div class="iv-card"><strong>$1 Loonie</strong> Loon 潛鳥<br><span class="meta"><span class="bi"><span class="bi-zh">1987 起<button class="say" type="button" data-lang="zh" data-k="3f8c2ee65eb97fb0" aria-label="朗讀">🔊</button></span><span class="bi-en"><span class="w">Since</span> 1987<button class="say" type="button" data-lang="en" data-k="c726e5f21e235554" aria-label="朗讀">🔊</button></span></span></span></div><div class="iv-card"><strong>$2 Toonie</strong> Polar Bear 北極熊 🐻‍❄️<br><span class="meta"><span class="bi"><span class="bi-zh">1996 起<button class="say" type="button" data-lang="zh" data-k="336d98e0ab35a38a" aria-label="朗讀">🔊</button></span><span class="bi-en"><span class="w">Since</span> 1996<button class="say" type="button" data-lang="en" data-k="ce72cb5ca2c45587" aria-label="朗讀">🔊</button></span></span></span></div>
 </div>
 
 <h2 class="iv-section-title">12 個國定/重要假日 <small>National Public Holidays</small></h2>
 <div><div class="iv-hol-row "><div class="date">1/1</div><div class="hol-en">New Year's Day</div><div class="hol-zh">元旦</div></div><div class="iv-hol-row "><div class="date">1/11</div><div class="hol-en">Sir John A. Macdonald Day</div><div class="hol-zh">麥克唐納爵士日</div></div><div class="iv-hol-row "><div class="date">復活節前週五、後週一</div><div class="hol-en">Good Friday & Easter Monday</div><div class="hol-zh">耶穌受難日與復活節星期一</div></div><div class="iv-hol-row "><div class="date">4/9</div><div class="hol-en">Vimy Day</div><div class="hol-zh">維米日</div></div><div class="iv-hol-row "><div class="date">5/25 前的週一</div><div class="hol-en">Victoria Day</div><div class="hol-zh">維多利亞日（君主誕辰）</div></div><div class="iv-hol-row "><div class="date">6/24</div><div class="hol-en">Fête nationale（Quebec）</div><div class="hol-zh">魁北克國慶日</div></div><div class="iv-hol-row star"><div class="date">7/1 ⭐</div><div class="hol-en">Canada Day</div><div class="hol-zh">加拿大日（聯邦 1867）</div></div><div class="iv-hol-row "><div class="date">9 月第一個週一</div><div class="hol-en">Labour Day</div><div class="hol-zh">勞動節</div></div><div class="iv-hol-row star"><div class="date">9/30 ⭐</div><div class="hol-en">National Day for Truth and Reconciliation</div><div class="hol-zh">真相與和解日（2021 起）</div></div><div class="iv-hol-row "><div class="date">10 月第二個週一</div><div class="hol-en">Thanksgiving Day</div><div class="hol-zh">感恩節</div></div><div class="iv-hol-row star"><div class="date">11/11 ⭐</div><div class="hol-en">Remembrance Day</div><div class="hol-zh">國殤紀念日（戴紅罌粟，11 時默哀）</div></div><div class="iv-hol-row "><div class="date">11/20</div><div class="hol-en">Sir Wilfrid Laurier Day</div><div class="hol-zh">勞里埃爵士日</div></div><div class="iv-hol-row "><div class="date">12/25</div><div class="hol-en">Christmas Day</div><div class="hol-zh">聖誕節</div></div><div class="iv-hol-row "><div class="date">12/26</div><div class="hol-en">Boxing Day</div><div class="hol-zh">節禮日</div></div></div>
+
+<style>
+/* 中／英同級：夠寬就左右並排，不夠就自動上下堆疊 */
+.bi { display: flex; flex-wrap: wrap; gap: 3px 18px; align-items: flex-start; }
+.bi-zh, .bi-en { flex: 1 1 240px; min-width: 0; }
+.bi-en {
+  color: #45403a; font-family: "Source Serif 4", Georgia, serif;
+  line-height: 1.5; border-left: 2px solid var(--line); padding-left: 10px;
+}
+.say {
+  border: none; background: none; cursor: pointer; padding: 0 2px;
+  font-size: 0.82em; line-height: 1; opacity: 0.32; vertical-align: baseline;
+  transition: opacity 0.12s, transform 0.12s;
+}
+.say:hover { opacity: 0.85; }
+.say.playing { opacity: 1; transform: scale(1.25); }
+/* 名稱列：中文與英文同級並排（省名、總理、政黨、節日…） */
+.nm { display: inline-flex; flex-wrap: wrap; gap: 0 8px; align-items: baseline; }
+.nm-en { font-family: "Source Serif 4", Georgia, serif; color: #45403a; }
+
+.w { cursor: pointer; border-radius: 3px; padding: 0 0.5px; }
+.w:hover { background: #ffe9c7; }
+.wd-pop {
+  position: fixed; z-index: 90; width: min(340px, calc(100vw - 24px));
+  background: #fff; border: 1px solid var(--line); border-radius: 12px;
+  box-shadow: 0 8px 28px rgba(0,0,0,0.16); padding: 14px 16px 12px;
+}
+.wd-pop.hidden { display: none; }
+.wd-w { font-family: Georgia, "Source Serif 4", serif; font-size: 26px; font-weight: 700; color: #3f1a1f; padding-right: 24px; }
+.wd-p { font-size: 15px; color: var(--muted); margin: 2px 0 8px; font-family: "Charis SIL", "Doulos SIL", "Gentium Plus", Georgia, serif; }
+.wd-t { font-size: 14.5px; line-height: 1.6; white-space: pre-line; margin-bottom: 10px; color: var(--ink); }
+.wd-btns { display: flex; gap: 6px; flex-wrap: wrap; }
+.wd-btns button {
+  font: inherit; font-size: 12.5px; padding: 5px 10px; border-radius: 6px;
+  border: 1px solid var(--line); background: #fff; cursor: pointer; color: var(--ink);
+}
+.wd-btns button.main { background: var(--accent); color: #fff; border-color: var(--accent); }
+.wd-x { position: absolute; top: 6px; right: 10px; border: none; background: none; font-size: 20px; color: var(--muted); cursor: pointer; }
+.wd-note { font-size: 11px; color: var(--muted); margin-top: 8px; }
+</style>
+
+<div class="wd-pop hidden" role="dialog" aria-label="字典">
+  <button class="wd-x" type="button" aria-label="關閉">×</button>
+  <div class="wd-w"></div>
+  <div class="wd-p"></div>
+  <div class="wd-t"></div>
+  <div class="wd-btns">
+    <button class="wd-slow main" type="button">🔊 慢速再聽</button>
+    <button class="wd-normal" type="button">🔊 正常速</button>
+  </div>
+  <div class="wd-note">釋義來源：ECDICT 開源字典＋加拿大語境補充。點其他地方或按 Esc 關閉。</div>
+</div>
+<script src="../dict/words.js"></script>
+<script>
+(function () {
+  var WORD_BASE = '../audio/words/', LINE_BASE = '../audio/iv/';
+  var pop = document.querySelector('.wd-pop');
+  var wordAudio = new Audio(), lineAudio = new Audio();
+  var ctx = null, playingBtn = null;
+
+  // ---------- per-line narration (the 🔊 buttons next to 中文 / English) ----------
+  function stopLine() {
+    lineAudio.pause();
+    if (playingBtn) { playingBtn.classList.remove('playing'); playingBtn = null; }
+  }
+  lineAudio.addEventListener('ended', stopLine);
+  document.addEventListener('click', function (e) {
+    var b = e.target.closest && e.target.closest('.say');
+    if (!b) return;
+    e.stopPropagation();
+    var wasPlaying = (b === playingBtn);
+    stopLine();
+    if (wasPlaying) return;
+    lineAudio.src = LINE_BASE + b.dataset.lang + '/' + b.dataset.k + '.m4a';
+    lineAudio.playbackRate = 1;
+    playingBtn = b; b.classList.add('playing');
+    lineAudio.play().catch(function () {
+      // no clip for this line (content changed since the last audio build)
+      stopLine();
+      if (!window.speechSynthesis) return;
+      var host = b.parentElement;
+      var txt = host ? host.textContent.replace(/🔊/g, '').trim() : '';
+      var u = new SpeechSynthesisUtterance(txt);
+      u.lang = (b.dataset.lang === 'zh') ? 'zh-TW' : 'en-US'; u.rate = 0.85;
+      window.speechSynthesis.cancel(); window.speechSynthesis.speak(u);
+    });
+  });
+
+  // ---------- word dictionary ----------
+  if (!pop) return;
+  function lookup(w) {
+    var D = window.CIT_DICT || {};
+    var k = w.replace(/’/g, "'");
+    var tries = [k, k.toLowerCase()];
+    if (/'s$/i.test(k)) tries.push(k.slice(0, -2), k.slice(0, -2).toLowerCase());
+    for (var i = 0; i < tries.length; i++) if (D[tries[i]]) return D[tries[i]];
+    return null;
+  }
+  function say(rate) {
+    if (!ctx) return;
+    stopLine();
+    var key = ctx.word.toLowerCase().replace(/’/g, "'");
+    wordAudio.pause();
+    wordAudio.src = WORD_BASE + encodeURIComponent(key) + '.m4a';
+    wordAudio.playbackRate = rate;
+    try { wordAudio.preservesPitch = true; wordAudio.mozPreservesPitch = true; } catch (err) {}
+    wordAudio.onerror = function () {
+      if (!window.speechSynthesis) return;
+      var u = new SpeechSynthesisUtterance(ctx.word);
+      u.lang = 'en-US'; u.rate = 0.7 * rate;
+      window.speechSynthesis.cancel(); window.speechSynthesis.speak(u);
+    };
+    wordAudio.play().catch(function () {});
+  }
+  function place(el) {
+    var r = el.getBoundingClientRect();
+    pop.style.top = Math.max(8, Math.min(r.bottom + 8, window.innerHeight - pop.offsetHeight - 8)) + 'px';
+    var maxLeft = document.documentElement.clientWidth - pop.offsetWidth - 12;
+    pop.style.left = Math.max(12, Math.min(r.left, maxLeft)) + 'px';
+  }
+  function show(el) {
+    var w = el.textContent.trim(), e = lookup(w);
+    pop.querySelector('.wd-w').textContent = w;
+    pop.querySelector('.wd-p').textContent = (e && e.p) ? '/' + e.p + '/' : '';
+    pop.querySelector('.wd-t').textContent = e ? (e.x ? e.t + '\n（原形：' + e.x + '）' : e.t) : '字典裡沒有這個字';
+    ctx = { word: w };
+    pop.classList.remove('hidden');
+    place(el);
+    say(1);
+  }
+  function hide() { pop.classList.add('hidden'); ctx = null; wordAudio.pause(); }
+  pop.querySelector('.wd-slow').addEventListener('click', function (e) { e.stopPropagation(); say(1); });
+  pop.querySelector('.wd-normal').addEventListener('click', function (e) { e.stopPropagation(); say(1.45); });
+  pop.querySelector('.wd-x').addEventListener('click', hide);
+  document.addEventListener('click', function (e) {
+    var wEl = e.target.closest && e.target.closest('.w');
+    if (wEl) { e.stopPropagation(); show(wEl); return; }
+    if (!pop.classList.contains('hidden') && !pop.contains(e.target)) hide();
+  });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') hide(); });
+})();
+</script>
 </main>
 </div>
 <script>

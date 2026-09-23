@@ -20,6 +20,7 @@ import markdown as md
 
 import interactive_content as iv
 import quiz_content as qz
+import word_dict as wd
 
 ROOT = Path(__file__).parent
 OUT = ROOT / "html"
@@ -811,6 +812,15 @@ SPEAK_BTN_HTML = (
 )
 
 
+def dict_bundle(depth: int) -> str:
+    """Word-tap dictionary + per-line 🔊 playback, for every page that is not a
+    reading page (those have their own, wired to sentence seeking)."""
+    up = "../" * depth
+    return (wd.DICT_CSS + wd.DICT_POPUP_HTML
+            + f'<script src="{up}dict/words.js"></script>'
+            + wd.dict_js(f"{up}audio/words/", f"{up}audio/iv/"))
+
+
 def wrap_page(title: str, body: str, current: str) -> str:
     return f"""<!doctype html>
 <html lang="zh-Hant">
@@ -985,13 +995,55 @@ def render_bilingual(md_path: Path) -> str:
     return "\n".join(out)
 
 
+# Markers markdown puts before the actual content of a line: list bullets,
+# ordered-list numbers, blockquotes, headings, checkboxes.
+_MD_LEAD_RE = re.compile(r"^(\s*(?:[-*+]\s+|\d+[.)]\s+|>\s*|#{1,6}\s+)?(?:\[[ xX]\]\s+)?)(.*)$")
+
+
+def bilingualize_md(text: str) -> str:
+    """Turn '中文｜English' lines into the same 中/英 pair the interactive modules
+    use (equal type size, side by side when wide, 🔊 on each half). The list
+    bullet or heading marker in front is left for markdown to handle."""
+    out = []
+    for line in text.split("\n"):
+        if "｜" not in line:
+            out.append(line)
+            continue
+        lead, body = _MD_LEAD_RE.match(line).groups()
+        out.append(lead + iv.bi(body.strip()))
+    return "\n".join(out)
+
+
+def wrap_words_in_html(h: str) -> str:
+    """Make every English word in already-rendered HTML tappable, without
+    re-wrapping the words bi() already wrapped and without touching tags."""
+    parts = re.split(r"(<[^>]+>)", h)
+    out, in_w = [], False
+    for part in parts:
+        if part.startswith("<"):
+            if part.startswith('<span class="w"'):
+                in_w = True
+            elif part == "</span>" and in_w:
+                in_w = False
+            out.append(part)
+        elif in_w:
+            out.append(part)
+        else:
+            # &amp; / &#39; must stay intact — otherwise "amp" becomes a word
+            out.append("".join(
+                seg if seg.startswith("&") else
+                wd.EN_WORD_RE.sub(lambda m: f'<span class="w">{m.group(0)}</span>', seg)
+                for seg in re.split(r"(&[a-zA-Z]+;|&#\d+;)", part)))
+    return "".join(out)
+
+
 def render_daily_quiz(md_path: Path) -> str:
     """Convert daily-quiz file; wrap '## 答案與解析' section in <details>."""
-    text = md_path.read_text(encoding="utf-8")
+    text = bilingualize_md(md_path.read_text(encoding="utf-8"))
     # Split at "## 答案與解析"
     m = re.search(r"^## 答案與解析\s*$", text, re.MULTILINE)
     if not m:
-        return md_to_html(text)
+        return wrap_words_in_html(md_to_html(text))
 
     pre = text[: m.start()]
     rest = text[m.end():]
@@ -1015,7 +1067,7 @@ def render_daily_quiz(md_path: Path) -> str:
         f'<div class="answers-body">{ans_html}</div>'
         '</details>'
     )
-    return pre_html + "\n" + detail + "\n" + post_html
+    return wrap_words_in_html(pre_html + "\n" + detail + "\n" + post_html)
 
 
 def render_plain(md_path: Path) -> str:
@@ -1787,7 +1839,8 @@ def build():
 
     # daily quiz
     for md_file in sorted((ROOT / "daily-quiz").glob("*.md")):
-        write(f"daily-quiz/{md_file.stem}.html", title_from_md(md_file), render_daily_quiz(md_file))
+        write(f"daily-quiz/{md_file.stem}.html", title_from_md(md_file),
+              render_daily_quiz(md_file) + dict_bundle(1))
 
     # practice
     for md_file in sorted((ROOT / "practice").glob("*.md")):
@@ -1812,7 +1865,8 @@ def build():
     for rel, title, body in interactive_pages:
         # Interactive pages contain raw HTML (not markdown), so skip TTS-augmentation
         # and only rewrite md links (which there aren't any).
-        (OUT / rel).write_text(wrap_page(title, body, rel), encoding="utf-8")
+        (OUT / rel).write_text(
+            wrap_page(title, body + dict_bundle(1), rel), encoding="utf-8")
 
     # quiz pages
     (OUT / "quiz").mkdir(exist_ok=True)
@@ -1820,7 +1874,8 @@ def build():
     for rel, title, body in (("quiz/practice.html", "英文選擇題練習", qz.build_practice_body()),
                              ("quiz/mock.html", "模擬考", qz.build_mock_body())):
         (OUT / rel).write_text(
-            wrap_page(title, '<script src="questions.js"></script>' + body, rel), encoding="utf-8")
+            wrap_page(title, '<script src="questions.js"></script>' + body + dict_bundle(1), rel),
+            encoding="utf-8")
 
     # reading pages (human-voice bilingual, audio already in html/audio/)
     (OUT / "reading").mkdir(exist_ok=True)

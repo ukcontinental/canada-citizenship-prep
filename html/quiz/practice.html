@@ -472,22 +472,27 @@ blockquote.speakable > .speak-btn,
   font-family: -apple-system, system-ui, sans-serif; }
 .qz-head .n { font-weight: 700; color: var(--accent); }
 .qz-text { font-size: 17px; line-height: 1.6; font-family: "Source Serif 4", Georgia, serif; color: var(--en-ink); }
-.qz-zh { font-size: 14.5px; color: var(--muted); margin-top: 4px; display: none; }
-.qz-q.zh .qz-zh { display: block; }
+.qz-zh { font-size: 17px; line-height: 1.6; color: var(--ink); }
+/* 中／英同級：夠寬左右並排，不夠自動上下 */
+.qz-pair { display: flex; flex-wrap: wrap; gap: 4px 20px; align-items: flex-start; }
+.qz-pair > * { flex: 1 1 250px; min-width: 0; }
+.qz-pair > .qz-text, .qz-pair > .e { border-left: 2px solid var(--line); padding-left: 12px; }
+.qz-q.nozh .qz-zh, .qz-q.nozh .qz-opt .z, .qz-q.nozh .qz-ex .zh { display: none; }
 .qz-opts { display: grid; gap: 8px; margin-top: 12px; }
 .qz-opt { appearance: none; text-align: left; padding: 10px 14px; border-radius: 10px; border: 1.5px solid var(--line);
   background: #faf8f4; cursor: pointer; font-size: 15px; font-family: "Source Serif 4", Georgia, serif; line-height: 1.5;
   display: grid; grid-template-columns: 26px 1fr; gap: 8px; align-items: start; color: var(--ink); }
 .qz-opt .k { font-weight: 700; color: var(--accent); font-family: -apple-system, system-ui, sans-serif; }
-.qz-opt .z { display: none; font-size: 13px; color: var(--muted); grid-column: 2; }
-.qz-q.zh .qz-opt .z { display: block; }
+.qz-opt .z { font-size: 15px; color: var(--ink); font-family: -apple-system, "PingFang TC", system-ui, sans-serif; }
+.qz-opt .e { font-size: 15px; }
 .qz-opt:hover { border-color: var(--accent); }
 .qz-opt.correct { border-color: #2e7d46; background: #e8f5ea; }
 .qz-opt.wrong { border-color: #c8102e; background: #fbe9ec; }
 .qz-opt.picked { box-shadow: inset 0 0 0 2px #3f1a1f; }
 .qz-opt:disabled { cursor: default; }
 .qz-ex { display: none; margin-top: 10px; padding: 10px 12px; background: #f3efe6; border-radius: 8px; font-size: 14px; line-height: 1.6; }
-.qz-ex .zh { color: var(--muted); font-size: 13.5px; margin-top: 4px; }
+.qz-ex .zh { color: var(--ink); font-size: 14px; }
+.qz-ex .en { font-family: "Source Serif 4", Georgia, serif; font-size: 14px; }
 .qz-ex a { color: var(--accent); }
 .qz-q.done .qz-ex { display: block; }
 .qz-tools { display: flex; gap: 6px; margin-top: 8px; flex-wrap: wrap; }
@@ -504,8 +509,8 @@ blockquote.speakable > .speak-btn,
 .qz-start p { color: var(--muted); }
 </style>
 <div class="qz" id="qz-practice"><div class="qz-hero"><h1>📝 英文選擇題練習</h1>
-<p>328 題，格式與真考相同（英文、四選一或是非）。按選項立刻看對錯與解說；按「中」看中文；「看原文」跳到人聲頁那一段。答錯的題自動進錯題本。</p></div><div class="qz-bar">
-<button class="qz-btn qz-allzh" type="button">全部顯示中文</button>
+<p>328 題，格式與真考相同（英文、四選一或是非）。中英左右對照、字級一樣；點任何英文單字查字典並聽發音；中英各有一顆朗讀鈕。要自我測驗就按「遮住中文」。答錯的題自動進錯題本。</p></div><div class="qz-bar">
+<button class="qz-btn qz-allzh" type="button">全部遮住中文（自我測驗）</button>
 <button class="qz-btn qz-wrong" type="button">只看錯題本</button>
 <button class="qz-btn qz-reset" type="button">重新作答</button>
 <span class="qz-status"></span></div><div class="qz-chips"></div><div class="qz-list"></div></div>
@@ -528,19 +533,37 @@ blockquote.speakable > .speak-btn,
   function esc(s) { return String(s).replace(/[&<>"]/g, function(c){ return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]; }); }
   function shuffle(a) { for (var i = a.length - 1; i > 0; i--) { var j = Math.floor(Math.random() * (i + 1)); var t = a[i]; a[i] = a[j]; a[j] = t; } return a; }
 
+  // Same word rule as word_dict.EN_WORD_RE: Latin script only, so Chinese
+  // characters in a mixed line never become tappable "words".
+  var WRE = /[A-Za-z\u00C0-\u024F\u1E00-\u1EFF](?:[A-Za-z\u00C0-\u024F\u1E00-\u1EFF]|['\u2019\-](?=[A-Za-z\u00C0-\u024F\u1E00-\u1EFF]))*/g;
+  function wrapW(s) {
+    s = String(s); var out = '', last = 0, m;
+    WRE.lastIndex = 0;
+    while ((m = WRE.exec(s)) !== null) {
+      out += esc(s.slice(last, m.index)) + '<span class="w">' + esc(m[0]) + '</span>';
+      last = m.index + m[0].length;
+    }
+    return out + esc(s.slice(last));
+  }
+
   function card(q, n) {
     var opts = q.o.map(function(o, i) {
-      return '<button class="qz-opt" type="button" data-i="' + i + '"><span class="k">' + LETTERS[i] + '</span><span>' + esc(o) +
-        '</span><span class="z">' + esc(q.zo[i]) + '</span></button>';
+      return '<button class="qz-opt" type="button" data-i="' + i + '"><span class="k">' + LETTERS[i] + '</span>' +
+        '<span class="qz-pair"><span class="z">' + esc(q.zo[i]) + '</span>' +
+        '<span class="e">' + wrapW(o) + '</span></span></button>';
     }).join('');
     var link = q.slug ? '<a href="' + base + 'reading/' + q.slug + '.html#p' + q.p + '">看原文 ↗</a>' : '';
     return '<div class="qz-q" data-id="' + q.id + '" data-ch="' + q.ch + '" data-a="' + q.a + '">' +
       '<div class="qz-head"><span class="n">' + n + '</span><span>第 ' + q.ch + ' 章 · ' + (CH_NAMES[q.ch] || '') + '</span></div>' +
-      '<div class="qz-text">' + esc(q.q) + '</div><div class="qz-zh">' + esc(q.zq) + '</div>' +
+      '<div class="qz-pair"><div class="qz-zh">' + esc(q.zq) + '</div>' +
+      '<div class="qz-text">' + wrapW(q.q) + '</div></div>' +
       '<div class="qz-opts">' + opts + '</div>' +
-      '<div class="qz-tools"><button class="qz-mini qz-tzh" type="button">中</button>' +
-      '<button class="qz-mini qz-say" type="button">🔊 念題目</button></div>' +
-      '<div class="qz-ex"><div class="en">' + esc(q.e) + ' ' + link + '</div><div class="zh">' + esc(q.ze) + '</div></div>' +
+      '<div class="qz-tools">' +
+      '<button class="qz-mini qz-say" data-lang="zh" type="button">🔊 中文</button>' +
+      '<button class="qz-mini qz-say" data-lang="en" type="button">🔊 English</button>' +
+      '<button class="qz-mini qz-tzh" type="button">遮住中文</button></div>' +
+      '<div class="qz-ex"><div class="qz-pair"><div class="zh">' + esc(q.ze) + '</div>' +
+      '<div class="en">' + wrapW(q.e) + ' ' + link + '</div></div></div>' +
       '</div>';
   }
 
@@ -572,14 +595,27 @@ blockquote.speakable > .speak-btn,
   root.addEventListener('click', function(e) {
     var t = e.target;
     var qEl = t.closest && t.closest('.qz-q');
-    if (t.closest('.qz-tzh') && qEl) { qEl.classList.toggle('zh'); t.closest('.qz-tzh').classList.toggle('on'); return; }
-    if (t.closest('.qz-say') && qEl) {
-      audio.pause(); audio.src = base + 'audio/quiz/' + qEl.dataset.id + '.m4a'; audio.play().catch(function(){});
+    if (t.closest('.qz-tzh') && qEl) {
+      var hid = qEl.classList.toggle('nozh');
+      var tb = t.closest('.qz-tzh');
+      tb.classList.toggle('on', hid); tb.textContent = hid ? '顯示中文' : '遮住中文';
+      return;
+    }
+    var sayBtn = t.closest && t.closest('.qz-say');
+    if (sayBtn && qEl) {
+      var lang = sayBtn.dataset.lang || 'en';
+      audio.pause();
+      audio.src = base + 'audio/quiz/' + lang + '/' + qEl.dataset.id + '.m4a';
+      audio.play().catch(function(){});
       audio.onerror = function() {
         if (!window.speechSynthesis) return;
         var q = ALL.find(function(x){ return x.id === qEl.dataset.id; });
-        var u = new SpeechSynthesisUtterance(q.q + '. ' + q.o.map(function(o,i){ return LETTERS[i] + '. ' + o; }).join('. '));
-        u.lang = 'en-US'; u.rate = 0.9; window.speechSynthesis.cancel(); window.speechSynthesis.speak(u);
+        var txt = (lang === 'zh')
+          ? q.zq + ' ' + q.zo.map(function(o,i){ return LETTERS[i] + '、' + o; }).join('。')
+          : q.q + '. ' + q.o.map(function(o,i){ return LETTERS[i] + '. ' + o; }).join('. ');
+        var u = new SpeechSynthesisUtterance(txt);
+        u.lang = (lang === 'zh') ? 'zh-TW' : 'en-US'; u.rate = 0.9;
+        window.speechSynthesis.cancel(); window.speechSynthesis.speak(u);
       };
       return;
     }
@@ -601,7 +637,10 @@ blockquote.speakable > .speak-btn,
     var qs = ALL.filter(function(q) { return (curCh === 'all' || q.ch === curCh) && (!onlyWrong || ws.has(q.id)); });
     list.innerHTML = qs.length ? qs.map(function(q, i) { return card(q, i + 1); }).join('') :
       '<p style="color:var(--muted)">這個範圍沒有題目' + (onlyWrong ? '（錯題本是空的，太棒了）' : '') + '。</p>';
-    if (root.querySelector('.qz-allzh').classList.contains('on')) list.querySelectorAll('.qz-q').forEach(function(q){ q.classList.add('zh'); });
+    if (root.querySelector('.qz-allzh').classList.contains('on')) {
+      list.querySelectorAll('.qz-q').forEach(function(q){ q.classList.add('nozh'); });
+      list.querySelectorAll('.qz-tzh').forEach(function(b){ b.classList.add('on'); b.textContent = '顯示中文'; });
+    }
     updatePracticeStatus();
   }
   function updatePracticeStatus() {
@@ -623,7 +662,10 @@ blockquote.speakable > .speak-btn,
     });
     root.querySelector('.qz-allzh').addEventListener('click', function() {
       this.classList.toggle('on'); var on = this.classList.contains('on');
-      list.querySelectorAll('.qz-q').forEach(function(q){ q.classList.toggle('zh', on); });
+      list.querySelectorAll('.qz-q').forEach(function(q){ q.classList.toggle('nozh', on); });
+      list.querySelectorAll('.qz-tzh').forEach(function(b){
+        b.classList.toggle('on', on); b.textContent = on ? '顯示中文' : '遮住中文';
+      });
     });
     root.querySelector('.qz-reset').addEventListener('click', function() { renderPractice(); window.scrollTo(0, 0); });
     renderPractice();
@@ -641,6 +683,9 @@ blockquote.speakable > .speak-btn,
     var rest = shuffle(ALL.filter(function(q){ return !/^ONTARIO/.test(q.q); })).slice(0, 20 - ont.length);
     var qs = shuffle(ont.concat(rest));
     list.innerHTML = qs.map(function(q, i) { return card(q, i + 1); }).join('');
+    // a real test paper is English-only; the Chinese is there as a lifeline, per question
+    list.querySelectorAll('.qz-q').forEach(function(q){ q.classList.add('nozh'); });
+    list.querySelectorAll('.qz-tzh').forEach(function(b){ b.classList.add('on'); b.textContent = '顯示中文'; });
     var paperNo = 1;
     try { paperNo = (parseInt(localStorage.getItem('cit_mock_count') || '0', 10) || 0) + 1; localStorage.setItem('cit_mock_count', String(paperNo)); } catch (e) {}
     var dist = {};
@@ -693,6 +738,148 @@ blockquote.speakable > .speak-btn,
     root.querySelector('.qz-begin').addEventListener('click', startMock);
     root.querySelector('.qz-submit').addEventListener('click', function(){ finishMock(false); });
   }
+})();
+</script>
+
+<style>
+/* 中／英同級：夠寬就左右並排，不夠就自動上下堆疊 */
+.bi { display: flex; flex-wrap: wrap; gap: 3px 18px; align-items: flex-start; }
+.bi-zh, .bi-en { flex: 1 1 240px; min-width: 0; }
+.bi-en {
+  color: #45403a; font-family: "Source Serif 4", Georgia, serif;
+  line-height: 1.5; border-left: 2px solid var(--line); padding-left: 10px;
+}
+.say {
+  border: none; background: none; cursor: pointer; padding: 0 2px;
+  font-size: 0.82em; line-height: 1; opacity: 0.32; vertical-align: baseline;
+  transition: opacity 0.12s, transform 0.12s;
+}
+.say:hover { opacity: 0.85; }
+.say.playing { opacity: 1; transform: scale(1.25); }
+/* 名稱列：中文與英文同級並排（省名、總理、政黨、節日…） */
+.nm { display: inline-flex; flex-wrap: wrap; gap: 0 8px; align-items: baseline; }
+.nm-en { font-family: "Source Serif 4", Georgia, serif; color: #45403a; }
+
+.w { cursor: pointer; border-radius: 3px; padding: 0 0.5px; }
+.w:hover { background: #ffe9c7; }
+.wd-pop {
+  position: fixed; z-index: 90; width: min(340px, calc(100vw - 24px));
+  background: #fff; border: 1px solid var(--line); border-radius: 12px;
+  box-shadow: 0 8px 28px rgba(0,0,0,0.16); padding: 14px 16px 12px;
+}
+.wd-pop.hidden { display: none; }
+.wd-w { font-family: Georgia, "Source Serif 4", serif; font-size: 26px; font-weight: 700; color: #3f1a1f; padding-right: 24px; }
+.wd-p { font-size: 15px; color: var(--muted); margin: 2px 0 8px; font-family: "Charis SIL", "Doulos SIL", "Gentium Plus", Georgia, serif; }
+.wd-t { font-size: 14.5px; line-height: 1.6; white-space: pre-line; margin-bottom: 10px; color: var(--ink); }
+.wd-btns { display: flex; gap: 6px; flex-wrap: wrap; }
+.wd-btns button {
+  font: inherit; font-size: 12.5px; padding: 5px 10px; border-radius: 6px;
+  border: 1px solid var(--line); background: #fff; cursor: pointer; color: var(--ink);
+}
+.wd-btns button.main { background: var(--accent); color: #fff; border-color: var(--accent); }
+.wd-x { position: absolute; top: 6px; right: 10px; border: none; background: none; font-size: 20px; color: var(--muted); cursor: pointer; }
+.wd-note { font-size: 11px; color: var(--muted); margin-top: 8px; }
+</style>
+
+<div class="wd-pop hidden" role="dialog" aria-label="字典">
+  <button class="wd-x" type="button" aria-label="關閉">×</button>
+  <div class="wd-w"></div>
+  <div class="wd-p"></div>
+  <div class="wd-t"></div>
+  <div class="wd-btns">
+    <button class="wd-slow main" type="button">🔊 慢速再聽</button>
+    <button class="wd-normal" type="button">🔊 正常速</button>
+  </div>
+  <div class="wd-note">釋義來源：ECDICT 開源字典＋加拿大語境補充。點其他地方或按 Esc 關閉。</div>
+</div>
+<script src="../dict/words.js"></script>
+<script>
+(function () {
+  var WORD_BASE = '../audio/words/', LINE_BASE = '../audio/iv/';
+  var pop = document.querySelector('.wd-pop');
+  var wordAudio = new Audio(), lineAudio = new Audio();
+  var ctx = null, playingBtn = null;
+
+  // ---------- per-line narration (the 🔊 buttons next to 中文 / English) ----------
+  function stopLine() {
+    lineAudio.pause();
+    if (playingBtn) { playingBtn.classList.remove('playing'); playingBtn = null; }
+  }
+  lineAudio.addEventListener('ended', stopLine);
+  document.addEventListener('click', function (e) {
+    var b = e.target.closest && e.target.closest('.say');
+    if (!b) return;
+    e.stopPropagation();
+    var wasPlaying = (b === playingBtn);
+    stopLine();
+    if (wasPlaying) return;
+    lineAudio.src = LINE_BASE + b.dataset.lang + '/' + b.dataset.k + '.m4a';
+    lineAudio.playbackRate = 1;
+    playingBtn = b; b.classList.add('playing');
+    lineAudio.play().catch(function () {
+      // no clip for this line (content changed since the last audio build)
+      stopLine();
+      if (!window.speechSynthesis) return;
+      var host = b.parentElement;
+      var txt = host ? host.textContent.replace(/🔊/g, '').trim() : '';
+      var u = new SpeechSynthesisUtterance(txt);
+      u.lang = (b.dataset.lang === 'zh') ? 'zh-TW' : 'en-US'; u.rate = 0.85;
+      window.speechSynthesis.cancel(); window.speechSynthesis.speak(u);
+    });
+  });
+
+  // ---------- word dictionary ----------
+  if (!pop) return;
+  function lookup(w) {
+    var D = window.CIT_DICT || {};
+    var k = w.replace(/’/g, "'");
+    var tries = [k, k.toLowerCase()];
+    if (/'s$/i.test(k)) tries.push(k.slice(0, -2), k.slice(0, -2).toLowerCase());
+    for (var i = 0; i < tries.length; i++) if (D[tries[i]]) return D[tries[i]];
+    return null;
+  }
+  function say(rate) {
+    if (!ctx) return;
+    stopLine();
+    var key = ctx.word.toLowerCase().replace(/’/g, "'");
+    wordAudio.pause();
+    wordAudio.src = WORD_BASE + encodeURIComponent(key) + '.m4a';
+    wordAudio.playbackRate = rate;
+    try { wordAudio.preservesPitch = true; wordAudio.mozPreservesPitch = true; } catch (err) {}
+    wordAudio.onerror = function () {
+      if (!window.speechSynthesis) return;
+      var u = new SpeechSynthesisUtterance(ctx.word);
+      u.lang = 'en-US'; u.rate = 0.7 * rate;
+      window.speechSynthesis.cancel(); window.speechSynthesis.speak(u);
+    };
+    wordAudio.play().catch(function () {});
+  }
+  function place(el) {
+    var r = el.getBoundingClientRect();
+    pop.style.top = Math.max(8, Math.min(r.bottom + 8, window.innerHeight - pop.offsetHeight - 8)) + 'px';
+    var maxLeft = document.documentElement.clientWidth - pop.offsetWidth - 12;
+    pop.style.left = Math.max(12, Math.min(r.left, maxLeft)) + 'px';
+  }
+  function show(el) {
+    var w = el.textContent.trim(), e = lookup(w);
+    pop.querySelector('.wd-w').textContent = w;
+    pop.querySelector('.wd-p').textContent = (e && e.p) ? '/' + e.p + '/' : '';
+    pop.querySelector('.wd-t').textContent = e ? (e.x ? e.t + '\n（原形：' + e.x + '）' : e.t) : '字典裡沒有這個字';
+    ctx = { word: w };
+    pop.classList.remove('hidden');
+    place(el);
+    say(1);
+  }
+  function hide() { pop.classList.add('hidden'); ctx = null; wordAudio.pause(); }
+  pop.querySelector('.wd-slow').addEventListener('click', function (e) { e.stopPropagation(); say(1); });
+  pop.querySelector('.wd-normal').addEventListener('click', function (e) { e.stopPropagation(); say(1.45); });
+  pop.querySelector('.wd-x').addEventListener('click', hide);
+  document.addEventListener('click', function (e) {
+    var wEl = e.target.closest && e.target.closest('.w');
+    if (wEl) { e.stopPropagation(); show(wEl); return; }
+    if (!pop.classList.contains('hidden') && !pop.contains(e.target)) hide();
+  });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') hide(); });
 })();
 </script>
 </main>

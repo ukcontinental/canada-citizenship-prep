@@ -457,7 +457,7 @@ blockquote.speakable > .speak-btn,
 }
 .iv-hero h1 { margin: 0 0 6px; border: none; padding: 0; }
 .iv-hero p { margin: 0; color: var(--muted); }
-.iv-hero h1 small, .iv-section-title small { font-size: 0.6em; font-weight: 400; color: var(--muted); font-family: Georgia, serif; font-style: italic; margin-left: 8px; }
+.iv-hero h1 small, .iv-section-title small { font-size: 0.8em; font-weight: 400; color: #45403a; font-family: "Source Serif 4", Georgia, serif; margin-left: 8px; }
 
 .iv-section-title {
   margin: 32px 0 14px; padding-bottom: 6px;
@@ -499,15 +499,13 @@ blockquote.speakable > .speak-btn,
   letter-spacing: 0.04em; margin-right: 6px;
 }
 .iv-tag.accent { background: var(--accent-soft); color: var(--accent); font-weight: 600; }
-.bi-zh { display: block; }
-.bi-en { display: block; color: var(--muted); font-size: 0.92em; font-family: "Source Serif 4", Georgia, serif; font-style: italic; line-height: 1.45; }
 </style>
 
 <style>
 .iv-party-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px; margin: 16px 0; }
 .iv-party-card { background: #fff; border: 1px solid var(--line); border-top-width: 4px; border-radius: 10px; padding: 14px 16px; }
 .iv-party-name { font-weight: 700; font-size: 15px; }
-.iv-party-zh { color: var(--muted); font-size: 13px; margin-bottom: 6px; }
+.iv-party-zh { color: var(--ink); font-size: 15px; font-weight: 700; margin-bottom: 6px; }
 .iv-party-leader { font-size: 13px; margin: 8px 0 4px; }
 .iv-party-status { font-size: 12px; color: var(--muted); font-style: italic; margin-bottom: 8px; }
 .iv-party-facts { margin: 0; padding-left: 18px; font-size: 13px; }
@@ -530,43 +528,185 @@ blockquote.speakable > .speak-btn,
   <div class="iv-party-name">Liberal Party</div>
   <div class="iv-party-zh">自由黨</div>
   <div class="iv-party-leader">領袖：<strong>Mark Carney</strong></div>
-  <div class="iv-party-status"><span class="bi-zh">現執政黨（2025-）</span><span class="bi-en">Governing party (since 2025)</span></div>
-  <ul class="iv-party-facts"><li><span class="bi-zh">中間偏左</span><span class="bi-en">Centre-left</span></li><li><span class="bi-zh">支持多元文化、社會福利</span><span class="bi-en">Multiculturalism, social programs</span></li><li><span class="bi-zh">現任 PM 政黨</span><span class="bi-en">The Prime Minister's party</span></li></ul>
+  <div class="iv-party-status"><span class="bi"><span class="bi-zh">現執政黨（2025-）<button class="say" type="button" data-lang="zh" data-k="a5f253493974661b" aria-label="朗讀">🔊</button></span><span class="bi-en"><span class="w">Governing</span> <span class="w">party</span> (<span class="w">since</span> 2025)<button class="say" type="button" data-lang="en" data-k="065985c6f0ca51bc" aria-label="朗讀">🔊</button></span></span></div>
+  <ul class="iv-party-facts"><li><span class="bi"><span class="bi-zh">中間偏左<button class="say" type="button" data-lang="zh" data-k="90ac2f3e1885ee17" aria-label="朗讀">🔊</button></span><span class="bi-en"><span class="w">Centre-left</span><button class="say" type="button" data-lang="en" data-k="9ba182731cc2273b" aria-label="朗讀">🔊</button></span></span></li><li><span class="bi"><span class="bi-zh">支持多元文化、社會福利<button class="say" type="button" data-lang="zh" data-k="aae4c6a6103d9bf2" aria-label="朗讀">🔊</button></span><span class="bi-en"><span class="w">Multiculturalism</span>, <span class="w">social</span> <span class="w">programs</span><button class="say" type="button" data-lang="en" data-k="02b50ebd1951fe19" aria-label="朗讀">🔊</button></span></span></li><li><span class="bi"><span class="bi-zh">現任 PM 政黨<button class="say" type="button" data-lang="zh" data-k="fa780fbf2201ec93" aria-label="朗讀">🔊</button></span><span class="bi-en"><span class="w">The</span> <span class="w">Prime</span> <span class="w">Minister&#x27;s</span> <span class="w">party</span><button class="say" type="button" data-lang="en" data-k="428c3dcfc6d289a6" aria-label="朗讀">🔊</button></span></span></li></ul>
 </div>
 <div class="iv-party-card" style="border-top-color:#1A4782">
   <div class="iv-party-name">Conservative Party</div>
   <div class="iv-party-zh">保守黨</div>
   <div class="iv-party-leader">領袖：<strong>Pierre Poilievre</strong></div>
-  <div class="iv-party-status"><span class="bi-zh">官方反對黨</span><span class="bi-en">Official Opposition</span></div>
-  <ul class="iv-party-facts"><li><span class="bi-zh">中間偏右</span><span class="bi-en">Centre-right</span></li><li><span class="bi-zh">支持經濟自由、傳統價值</span><span class="bi-en">Economic freedom, traditional values</span></li><li><span class="bi-zh">2003 由 PC 黨與聯盟黨合併</span><span class="bi-en">Formed in 2003 by merging the PC and Alliance parties</span></li></ul>
+  <div class="iv-party-status"><span class="bi"><span class="bi-zh">官方反對黨<button class="say" type="button" data-lang="zh" data-k="471bd82bfc5f8956" aria-label="朗讀">🔊</button></span><span class="bi-en"><span class="w">Official</span> <span class="w">Opposition</span><button class="say" type="button" data-lang="en" data-k="ad0b922ea31c6b23" aria-label="朗讀">🔊</button></span></span></div>
+  <ul class="iv-party-facts"><li><span class="bi"><span class="bi-zh">中間偏右<button class="say" type="button" data-lang="zh" data-k="bba65192cb0647a7" aria-label="朗讀">🔊</button></span><span class="bi-en"><span class="w">Centre-right</span><button class="say" type="button" data-lang="en" data-k="590ad28a0290ed00" aria-label="朗讀">🔊</button></span></span></li><li><span class="bi"><span class="bi-zh">支持經濟自由、傳統價值<button class="say" type="button" data-lang="zh" data-k="8b59fc33039b0103" aria-label="朗讀">🔊</button></span><span class="bi-en"><span class="w">Economic</span> <span class="w">freedom</span>, <span class="w">traditional</span> <span class="w">values</span><button class="say" type="button" data-lang="en" data-k="397c0f29ff026095" aria-label="朗讀">🔊</button></span></span></li><li><span class="bi"><span class="bi-zh">2003 由 PC 黨與聯盟黨合併<button class="say" type="button" data-lang="zh" data-k="c1d872a39a898142" aria-label="朗讀">🔊</button></span><span class="bi-en"><span class="w">Formed</span> <span class="w">in</span> 2003 <span class="w">by</span> <span class="w">merging</span> <span class="w">the</span> <span class="w">PC</span> <span class="w">and</span> <span class="w">Alliance</span> <span class="w">parties</span><button class="say" type="button" data-lang="en" data-k="fa2d199601ebdda9" aria-label="朗讀">🔊</button></span></span></li></ul>
 </div>
 <div class="iv-party-card" style="border-top-color:#F58220">
   <div class="iv-party-name">New Democratic Party (NDP)</div>
   <div class="iv-party-zh">新民主黨</div>
   <div class="iv-party-leader">領袖：<strong>Don Davies (interim, 2025)</strong></div>
-  <div class="iv-party-status"><span class="bi-zh">第三大黨</span><span class="bi-en">Third party</span></div>
-  <ul class="iv-party-facts"><li><span class="bi-zh">左派、勞工</span><span class="bi-en">Left, labour</span></li><li><span class="bi-zh">推動社會醫療與社福</span><span class="bi-en">Public health care and social programs</span></li></ul>
+  <div class="iv-party-status"><span class="bi"><span class="bi-zh">第三大黨<button class="say" type="button" data-lang="zh" data-k="2f4ec9d12e7a4d6e" aria-label="朗讀">🔊</button></span><span class="bi-en"><span class="w">Third</span> <span class="w">party</span><button class="say" type="button" data-lang="en" data-k="673c2c1bde621023" aria-label="朗讀">🔊</button></span></span></div>
+  <ul class="iv-party-facts"><li><span class="bi"><span class="bi-zh">左派、勞工<button class="say" type="button" data-lang="zh" data-k="2ef2a6ceb070d165" aria-label="朗讀">🔊</button></span><span class="bi-en"><span class="w">Left</span>, <span class="w">labour</span><button class="say" type="button" data-lang="en" data-k="6e39684d865e5db1" aria-label="朗讀">🔊</button></span></span></li><li><span class="bi"><span class="bi-zh">推動社會醫療與社福<button class="say" type="button" data-lang="zh" data-k="be4b198b95796d02" aria-label="朗讀">🔊</button></span><span class="bi-en"><span class="w">Public</span> <span class="w">health</span> <span class="w">care</span> <span class="w">and</span> <span class="w">social</span> <span class="w">programs</span><button class="say" type="button" data-lang="en" data-k="b74512f6ec5fe349" aria-label="朗讀">🔊</button></span></span></li></ul>
 </div>
 <div class="iv-party-card" style="border-top-color:#0088CE">
   <div class="iv-party-name">Bloc Québécois</div>
   <div class="iv-party-zh">魁北克集團</div>
   <div class="iv-party-leader">領袖：<strong>Yves-François Blanchet</strong></div>
-  <div class="iv-party-status"><span class="bi-zh">只在魁北克省競選</span><span class="bi-en">Runs only in Quebec</span></div>
-  <ul class="iv-party-facts"><li><span class="bi-zh">主張魁北克利益與主權</span><span class="bi-en">Quebec interests and sovereignty</span></li><li><span class="bi-zh">只在 Quebec 推候選人</span><span class="bi-en">Candidates only in Quebec</span></li></ul>
+  <div class="iv-party-status"><span class="bi"><span class="bi-zh">只在魁北克省競選<button class="say" type="button" data-lang="zh" data-k="8d1acfa137bcdfb6" aria-label="朗讀">🔊</button></span><span class="bi-en"><span class="w">Runs</span> <span class="w">only</span> <span class="w">in</span> <span class="w">Quebec</span><button class="say" type="button" data-lang="en" data-k="045c238cd5f0224f" aria-label="朗讀">🔊</button></span></span></div>
+  <ul class="iv-party-facts"><li><span class="bi"><span class="bi-zh">主張魁北克利益與主權<button class="say" type="button" data-lang="zh" data-k="d60d2b82ccbc598a" aria-label="朗讀">🔊</button></span><span class="bi-en"><span class="w">Quebec</span> <span class="w">interests</span> <span class="w">and</span> <span class="w">sovereignty</span><button class="say" type="button" data-lang="en" data-k="4ed28c87beeabf46" aria-label="朗讀">🔊</button></span></span></li><li><span class="bi"><span class="bi-zh">只在 Quebec 推候選人<button class="say" type="button" data-lang="zh" data-k="70e09e21e2ec8570" aria-label="朗讀">🔊</button></span><span class="bi-en"><span class="w">Candidates</span> <span class="w">only</span> <span class="w">in</span> <span class="w">Quebec</span><button class="say" type="button" data-lang="en" data-k="e9f8a72ec4a0a99e" aria-label="朗讀">🔊</button></span></span></li></ul>
 </div>
 <div class="iv-party-card" style="border-top-color:#3D9B35">
   <div class="iv-party-name">Green Party</div>
   <div class="iv-party-zh">綠黨</div>
   <div class="iv-party-leader">領袖：<strong>Jonathan Pedneault & Elizabeth May</strong></div>
-  <div class="iv-party-status"><span class="bi-zh">環保政黨</span><span class="bi-en">Environmental party</span></div>
-  <ul class="iv-party-facts"><li><span class="bi-zh">氣候變遷、永續政策</span><span class="bi-en">Climate and sustainability</span></li><li><span class="bi-zh">規模較小，在西岸有支持</span><span class="bi-en">Small party with West Coast support</span></li></ul>
+  <div class="iv-party-status"><span class="bi"><span class="bi-zh">環保政黨<button class="say" type="button" data-lang="zh" data-k="cc8b562e569c49a6" aria-label="朗讀">🔊</button></span><span class="bi-en"><span class="w">Environmental</span> <span class="w">party</span><button class="say" type="button" data-lang="en" data-k="322766b2d94c1259" aria-label="朗讀">🔊</button></span></span></div>
+  <ul class="iv-party-facts"><li><span class="bi"><span class="bi-zh">氣候變遷、永續政策<button class="say" type="button" data-lang="zh" data-k="6f5ac1b3265bf458" aria-label="朗讀">🔊</button></span><span class="bi-en"><span class="w">Climate</span> <span class="w">and</span> <span class="w">sustainability</span><button class="say" type="button" data-lang="en" data-k="d944823d5de84b24" aria-label="朗讀">🔊</button></span></span></li><li><span class="bi"><span class="bi-zh">規模較小，在西岸有支持<button class="say" type="button" data-lang="zh" data-k="87986cc2d6dd6660" aria-label="朗讀">🔊</button></span><span class="bi-en"><span class="w">Small</span> <span class="w">party</span> <span class="w">with</span> <span class="w">West</span> <span class="w">Coast</span> <span class="w">support</span><button class="say" type="button" data-lang="en" data-k="019b629762f3922f" aria-label="朗讀">🔊</button></span></span></li></ul>
 </div></div>
 
 <h2 class="iv-section-title">投票資格 &amp; 流程 <small>Who Can Vote &amp; Voting Procedures</small></h2>
-<div class="iv-vote-steps"><div class="iv-vote-step"><div class="icon">🇨🇦</div><strong><span class="bi-zh">1. 公民身份</span><span class="bi-en">1. Citizenship</span></strong><p><span class="bi-zh">必須是 Canadian Citizen（永久居民不能投）</span><span class="bi-en">You must be a Canadian citizen (permanent residents cannot vote)</span></p></div><div class="iv-vote-step"><div class="icon">🎂</div><strong><span class="bi-zh">2. 年滿 18 歲</span><span class="bi-en">2. Age 18</span></strong><p><span class="bi-zh">投票日當天滿 18</span><span class="bi-en">At least 18 years old on voting day</span></p></div><div class="iv-vote-step"><div class="icon">📬</div><strong><span class="bi-zh">3. 選民資訊卡</span><span class="bi-en">3. Voter information card</span></strong><p><span class="bi-zh">Elections Canada 寄出，列出投票時間地點</span><span class="bi-en">Mailed by Elections Canada; lists when and where to vote</span></p></div><div class="iv-vote-step"><div class="icon">🏠</div><strong><span class="bi-zh">4. 到投票站</span><span class="bi-en">4. Go to the polling station</span></strong><p><span class="bi-zh">帶卡片＋身分與地址證明</span><span class="bi-en">Bring the card and proof of identity and address</span></p></div><div class="iv-vote-step"><div class="icon">✏️</div><strong><span class="bi-zh">5. 圈選候選人</span><span class="bi-en">5. Mark your ballot</span></strong><p><span class="bi-zh">在候選人旁的圓圈畫 X，摺好交給工作人員</span><span class="bi-en">Mark an X beside your candidate, fold it and hand it to the poll official</span></p></div></div>
+<div class="iv-vote-steps"><div class="iv-vote-step"><div class="icon">🇨🇦</div><strong><span class="bi"><span class="bi-zh">1. 公民身份<button class="say" type="button" data-lang="zh" data-k="f5baab3929634f18" aria-label="朗讀">🔊</button></span><span class="bi-en">1. <span class="w">Citizenship</span><button class="say" type="button" data-lang="en" data-k="6b3160e3dc82c959" aria-label="朗讀">🔊</button></span></span></strong><p><span class="bi"><span class="bi-zh">必須是 Canadian Citizen（永久居民不能投）<button class="say" type="button" data-lang="zh" data-k="5f7c34ce9fdca86b" aria-label="朗讀">🔊</button></span><span class="bi-en"><span class="w">You</span> <span class="w">must</span> <span class="w">be</span> <span class="w">a</span> <span class="w">Canadian</span> <span class="w">citizen</span> (<span class="w">permanent</span> <span class="w">residents</span> <span class="w">cannot</span> <span class="w">vote</span>)<button class="say" type="button" data-lang="en" data-k="638df1d5b25c92e9" aria-label="朗讀">🔊</button></span></span></p></div><div class="iv-vote-step"><div class="icon">🎂</div><strong><span class="bi"><span class="bi-zh">2. 年滿 18 歲<button class="say" type="button" data-lang="zh" data-k="ab8a13490471aac4" aria-label="朗讀">🔊</button></span><span class="bi-en">2. <span class="w">Age</span> 18<button class="say" type="button" data-lang="en" data-k="91a6353eaafd80c8" aria-label="朗讀">🔊</button></span></span></strong><p><span class="bi"><span class="bi-zh">投票日當天滿 18<button class="say" type="button" data-lang="zh" data-k="bf928e64e16fbcdb" aria-label="朗讀">🔊</button></span><span class="bi-en"><span class="w">At</span> <span class="w">least</span> 18 <span class="w">years</span> <span class="w">old</span> <span class="w">on</span> <span class="w">voting</span> <span class="w">day</span><button class="say" type="button" data-lang="en" data-k="41456bb8f1178706" aria-label="朗讀">🔊</button></span></span></p></div><div class="iv-vote-step"><div class="icon">📬</div><strong><span class="bi"><span class="bi-zh">3. 選民資訊卡<button class="say" type="button" data-lang="zh" data-k="99a95f48a5c2d2de" aria-label="朗讀">🔊</button></span><span class="bi-en">3. <span class="w">Voter</span> <span class="w">information</span> <span class="w">card</span><button class="say" type="button" data-lang="en" data-k="b397aaf1f325df3d" aria-label="朗讀">🔊</button></span></span></strong><p><span class="bi"><span class="bi-zh">Elections Canada 寄出，列出投票時間地點<button class="say" type="button" data-lang="zh" data-k="14e4968521ae466c" aria-label="朗讀">🔊</button></span><span class="bi-en"><span class="w">Mailed</span> <span class="w">by</span> <span class="w">Elections</span> <span class="w">Canada</span>; <span class="w">lists</span> <span class="w">when</span> <span class="w">and</span> <span class="w">where</span> <span class="w">to</span> <span class="w">vote</span><button class="say" type="button" data-lang="en" data-k="cc577d5693717521" aria-label="朗讀">🔊</button></span></span></p></div><div class="iv-vote-step"><div class="icon">🏠</div><strong><span class="bi"><span class="bi-zh">4. 到投票站<button class="say" type="button" data-lang="zh" data-k="383c5a9c098119a5" aria-label="朗讀">🔊</button></span><span class="bi-en">4. <span class="w">Go</span> <span class="w">to</span> <span class="w">the</span> <span class="w">polling</span> <span class="w">station</span><button class="say" type="button" data-lang="en" data-k="60ae5d7b84b8880b" aria-label="朗讀">🔊</button></span></span></strong><p><span class="bi"><span class="bi-zh">帶卡片＋身分與地址證明<button class="say" type="button" data-lang="zh" data-k="05e2b317e8cf5ee4" aria-label="朗讀">🔊</button></span><span class="bi-en"><span class="w">Bring</span> <span class="w">the</span> <span class="w">card</span> <span class="w">and</span> <span class="w">proof</span> <span class="w">of</span> <span class="w">identity</span> <span class="w">and</span> <span class="w">address</span><button class="say" type="button" data-lang="en" data-k="a593f40d15978ba9" aria-label="朗讀">🔊</button></span></span></p></div><div class="iv-vote-step"><div class="icon">✏️</div><strong><span class="bi"><span class="bi-zh">5. 圈選候選人<button class="say" type="button" data-lang="zh" data-k="982ae380966d8274" aria-label="朗讀">🔊</button></span><span class="bi-en">5. <span class="w">Mark</span> <span class="w">your</span> <span class="w">ballot</span><button class="say" type="button" data-lang="en" data-k="031f4ea9ce72d154" aria-label="朗讀">🔊</button></span></span></strong><p><span class="bi"><span class="bi-zh">在候選人旁的圓圈畫 X，摺好交給工作人員<button class="say" type="button" data-lang="zh" data-k="253fcd0e8bb9028e" aria-label="朗讀">🔊</button></span><span class="bi-en"><span class="w">Mark</span> <span class="w">an</span> <span class="w">X</span> <span class="w">beside</span> <span class="w">your</span> <span class="w">candidate</span>, <span class="w">fold</span> <span class="w">it</span> <span class="w">and</span> <span class="w">hand</span> <span class="w">it</span> <span class="w">to</span> <span class="w">the</span> <span class="w">poll</span> <span class="w">official</span><button class="say" type="button" data-lang="en" data-k="418f1ab654368449" aria-label="朗讀">🔊</button></span></span></p></div></div>
 
 <h2 class="iv-section-title">考試 5 大必背重點 <small>Five Must-Know Facts</small></h2>
-<div class="iv-facts"><div class="iv-fact-row"><strong><span class="bi-zh">選舉週期</span><span class="bi-en">Election cycle</span></strong><span><span class="bi-zh">每 4 年 10 月第三個星期一（PM 可請 GG 提前）</span><span class="bi-en">Third Monday in October every four years (the PM may ask the Governor General for an earlier election)</span></span></div><div class="iv-fact-row"><strong><span class="bi-zh">選區與議員</span><span class="bi-en">Ridings and MPs</span></strong><span><span class="bi-zh">每個選區選一位 MP；得票最多者當選</span><span class="bi-en">Each riding elects one MP; the candidate with the most votes wins</span></span></div><div class="iv-fact-row"><strong><span class="bi-zh">誰當總理</span><span class="bi-en">Who becomes PM</span></strong><span><span class="bi-zh">眾議院席次最多政黨的領袖，由總督邀請組閣</span><span class="bi-en">The leader of the party with the most seats, invited by the Governor General</span></span></div><div class="iv-fact-row"><strong><span class="bi-zh">多數／少數政府</span><span class="bi-en">Majority / minority</span></strong><span><span class="bi-zh">席次過半＝多數政府；不到一半＝少數政府</span><span class="bi-en">At least half the seats = majority; fewer = minority government</span></span></div><div class="iv-fact-row"><strong><span class="bi-zh">Ontario 你的選區</span><span class="bi-en">Your Ontario riding</span></strong><span><span class="bi-zh">記住你的 MP（聯邦）和 MPP（省議員）姓名</span><span class="bi-en">Know the names of your MP (federal) and MPP (provincial)</span></span></div></div>
+<div class="iv-facts"><div class="iv-fact-row"><strong><span class="bi"><span class="bi-zh">選舉週期<button class="say" type="button" data-lang="zh" data-k="dee4f841c02b087b" aria-label="朗讀">🔊</button></span><span class="bi-en"><span class="w">Election</span> <span class="w">cycle</span><button class="say" type="button" data-lang="en" data-k="ffdf8a0f799fe4bf" aria-label="朗讀">🔊</button></span></span></strong><span><span class="bi"><span class="bi-zh">每 4 年 10 月第三個星期一（PM 可請 GG 提前）<button class="say" type="button" data-lang="zh" data-k="eb7c12bd8a4b9462" aria-label="朗讀">🔊</button></span><span class="bi-en"><span class="w">Third</span> <span class="w">Monday</span> <span class="w">in</span> <span class="w">October</span> <span class="w">every</span> <span class="w">four</span> <span class="w">years</span> (<span class="w">the</span> <span class="w">PM</span> <span class="w">may</span> <span class="w">ask</span> <span class="w">the</span> <span class="w">Governor</span> <span class="w">General</span> <span class="w">for</span> <span class="w">an</span> <span class="w">earlier</span> <span class="w">election</span>)<button class="say" type="button" data-lang="en" data-k="e2f90a70bc632bee" aria-label="朗讀">🔊</button></span></span></span></div><div class="iv-fact-row"><strong><span class="bi"><span class="bi-zh">選區與議員<button class="say" type="button" data-lang="zh" data-k="9066f9b1d135f621" aria-label="朗讀">🔊</button></span><span class="bi-en"><span class="w">Ridings</span> <span class="w">and</span> <span class="w">MPs</span><button class="say" type="button" data-lang="en" data-k="bf0593041901f548" aria-label="朗讀">🔊</button></span></span></strong><span><span class="bi"><span class="bi-zh">每個選區選一位 MP；得票最多者當選<button class="say" type="button" data-lang="zh" data-k="f1bde21c612398d0" aria-label="朗讀">🔊</button></span><span class="bi-en"><span class="w">Each</span> <span class="w">riding</span> <span class="w">elects</span> <span class="w">one</span> <span class="w">MP</span>; <span class="w">the</span> <span class="w">candidate</span> <span class="w">with</span> <span class="w">the</span> <span class="w">most</span> <span class="w">votes</span> <span class="w">wins</span><button class="say" type="button" data-lang="en" data-k="233f148012b5d06f" aria-label="朗讀">🔊</button></span></span></span></div><div class="iv-fact-row"><strong><span class="bi"><span class="bi-zh">誰當總理<button class="say" type="button" data-lang="zh" data-k="2de7c94b58ffbeff" aria-label="朗讀">🔊</button></span><span class="bi-en"><span class="w">Who</span> <span class="w">becomes</span> <span class="w">PM</span><button class="say" type="button" data-lang="en" data-k="857ed2f58cd56a2a" aria-label="朗讀">🔊</button></span></span></strong><span><span class="bi"><span class="bi-zh">眾議院席次最多政黨的領袖，由總督邀請組閣<button class="say" type="button" data-lang="zh" data-k="3144b3d313d441c2" aria-label="朗讀">🔊</button></span><span class="bi-en"><span class="w">The</span> <span class="w">leader</span> <span class="w">of</span> <span class="w">the</span> <span class="w">party</span> <span class="w">with</span> <span class="w">the</span> <span class="w">most</span> <span class="w">seats</span>, <span class="w">invited</span> <span class="w">by</span> <span class="w">the</span> <span class="w">Governor</span> <span class="w">General</span><button class="say" type="button" data-lang="en" data-k="d34529958d9b38e1" aria-label="朗讀">🔊</button></span></span></span></div><div class="iv-fact-row"><strong><span class="bi"><span class="bi-zh">多數／少數政府<button class="say" type="button" data-lang="zh" data-k="1e364526d564a489" aria-label="朗讀">🔊</button></span><span class="bi-en"><span class="w">Majority</span> / <span class="w">minority</span><button class="say" type="button" data-lang="en" data-k="c65fb9b8e9651cb4" aria-label="朗讀">🔊</button></span></span></strong><span><span class="bi"><span class="bi-zh">席次過半＝多數政府；不到一半＝少數政府<button class="say" type="button" data-lang="zh" data-k="c005aeddcf61543b" aria-label="朗讀">🔊</button></span><span class="bi-en"><span class="w">At</span> <span class="w">least</span> <span class="w">half</span> <span class="w">the</span> <span class="w">seats</span> = <span class="w">majority</span>; <span class="w">fewer</span> = <span class="w">minority</span> <span class="w">government</span><button class="say" type="button" data-lang="en" data-k="3d30c785e3579dd0" aria-label="朗讀">🔊</button></span></span></span></div><div class="iv-fact-row"><strong><span class="bi"><span class="bi-zh">Ontario 你的選區<button class="say" type="button" data-lang="zh" data-k="a8e86122f2efab00" aria-label="朗讀">🔊</button></span><span class="bi-en"><span class="w">Your</span> <span class="w">Ontario</span> <span class="w">riding</span><button class="say" type="button" data-lang="en" data-k="932485c3b5fea5d1" aria-label="朗讀">🔊</button></span></span></strong><span><span class="bi"><span class="bi-zh">記住你的 MP（聯邦）和 MPP（省議員）姓名<button class="say" type="button" data-lang="zh" data-k="5351bf9ae2fbbfdf" aria-label="朗讀">🔊</button></span><span class="bi-en"><span class="w">Know</span> <span class="w">the</span> <span class="w">names</span> <span class="w">of</span> <span class="w">your</span> <span class="w">MP</span> (<span class="w">federal</span>) <span class="w">and</span> <span class="w">MPP</span> (<span class="w">provincial</span>)<button class="say" type="button" data-lang="en" data-k="b543f06d7cd3bbcc" aria-label="朗讀">🔊</button></span></span></span></div></div>
+
+<style>
+/* 中／英同級：夠寬就左右並排，不夠就自動上下堆疊 */
+.bi { display: flex; flex-wrap: wrap; gap: 3px 18px; align-items: flex-start; }
+.bi-zh, .bi-en { flex: 1 1 240px; min-width: 0; }
+.bi-en {
+  color: #45403a; font-family: "Source Serif 4", Georgia, serif;
+  line-height: 1.5; border-left: 2px solid var(--line); padding-left: 10px;
+}
+.say {
+  border: none; background: none; cursor: pointer; padding: 0 2px;
+  font-size: 0.82em; line-height: 1; opacity: 0.32; vertical-align: baseline;
+  transition: opacity 0.12s, transform 0.12s;
+}
+.say:hover { opacity: 0.85; }
+.say.playing { opacity: 1; transform: scale(1.25); }
+/* 名稱列：中文與英文同級並排（省名、總理、政黨、節日…） */
+.nm { display: inline-flex; flex-wrap: wrap; gap: 0 8px; align-items: baseline; }
+.nm-en { font-family: "Source Serif 4", Georgia, serif; color: #45403a; }
+
+.w { cursor: pointer; border-radius: 3px; padding: 0 0.5px; }
+.w:hover { background: #ffe9c7; }
+.wd-pop {
+  position: fixed; z-index: 90; width: min(340px, calc(100vw - 24px));
+  background: #fff; border: 1px solid var(--line); border-radius: 12px;
+  box-shadow: 0 8px 28px rgba(0,0,0,0.16); padding: 14px 16px 12px;
+}
+.wd-pop.hidden { display: none; }
+.wd-w { font-family: Georgia, "Source Serif 4", serif; font-size: 26px; font-weight: 700; color: #3f1a1f; padding-right: 24px; }
+.wd-p { font-size: 15px; color: var(--muted); margin: 2px 0 8px; font-family: "Charis SIL", "Doulos SIL", "Gentium Plus", Georgia, serif; }
+.wd-t { font-size: 14.5px; line-height: 1.6; white-space: pre-line; margin-bottom: 10px; color: var(--ink); }
+.wd-btns { display: flex; gap: 6px; flex-wrap: wrap; }
+.wd-btns button {
+  font: inherit; font-size: 12.5px; padding: 5px 10px; border-radius: 6px;
+  border: 1px solid var(--line); background: #fff; cursor: pointer; color: var(--ink);
+}
+.wd-btns button.main { background: var(--accent); color: #fff; border-color: var(--accent); }
+.wd-x { position: absolute; top: 6px; right: 10px; border: none; background: none; font-size: 20px; color: var(--muted); cursor: pointer; }
+.wd-note { font-size: 11px; color: var(--muted); margin-top: 8px; }
+</style>
+
+<div class="wd-pop hidden" role="dialog" aria-label="字典">
+  <button class="wd-x" type="button" aria-label="關閉">×</button>
+  <div class="wd-w"></div>
+  <div class="wd-p"></div>
+  <div class="wd-t"></div>
+  <div class="wd-btns">
+    <button class="wd-slow main" type="button">🔊 慢速再聽</button>
+    <button class="wd-normal" type="button">🔊 正常速</button>
+  </div>
+  <div class="wd-note">釋義來源：ECDICT 開源字典＋加拿大語境補充。點其他地方或按 Esc 關閉。</div>
+</div>
+<script src="../dict/words.js"></script>
+<script>
+(function () {
+  var WORD_BASE = '../audio/words/', LINE_BASE = '../audio/iv/';
+  var pop = document.querySelector('.wd-pop');
+  var wordAudio = new Audio(), lineAudio = new Audio();
+  var ctx = null, playingBtn = null;
+
+  // ---------- per-line narration (the 🔊 buttons next to 中文 / English) ----------
+  function stopLine() {
+    lineAudio.pause();
+    if (playingBtn) { playingBtn.classList.remove('playing'); playingBtn = null; }
+  }
+  lineAudio.addEventListener('ended', stopLine);
+  document.addEventListener('click', function (e) {
+    var b = e.target.closest && e.target.closest('.say');
+    if (!b) return;
+    e.stopPropagation();
+    var wasPlaying = (b === playingBtn);
+    stopLine();
+    if (wasPlaying) return;
+    lineAudio.src = LINE_BASE + b.dataset.lang + '/' + b.dataset.k + '.m4a';
+    lineAudio.playbackRate = 1;
+    playingBtn = b; b.classList.add('playing');
+    lineAudio.play().catch(function () {
+      // no clip for this line (content changed since the last audio build)
+      stopLine();
+      if (!window.speechSynthesis) return;
+      var host = b.parentElement;
+      var txt = host ? host.textContent.replace(/🔊/g, '').trim() : '';
+      var u = new SpeechSynthesisUtterance(txt);
+      u.lang = (b.dataset.lang === 'zh') ? 'zh-TW' : 'en-US'; u.rate = 0.85;
+      window.speechSynthesis.cancel(); window.speechSynthesis.speak(u);
+    });
+  });
+
+  // ---------- word dictionary ----------
+  if (!pop) return;
+  function lookup(w) {
+    var D = window.CIT_DICT || {};
+    var k = w.replace(/’/g, "'");
+    var tries = [k, k.toLowerCase()];
+    if (/'s$/i.test(k)) tries.push(k.slice(0, -2), k.slice(0, -2).toLowerCase());
+    for (var i = 0; i < tries.length; i++) if (D[tries[i]]) return D[tries[i]];
+    return null;
+  }
+  function say(rate) {
+    if (!ctx) return;
+    stopLine();
+    var key = ctx.word.toLowerCase().replace(/’/g, "'");
+    wordAudio.pause();
+    wordAudio.src = WORD_BASE + encodeURIComponent(key) + '.m4a';
+    wordAudio.playbackRate = rate;
+    try { wordAudio.preservesPitch = true; wordAudio.mozPreservesPitch = true; } catch (err) {}
+    wordAudio.onerror = function () {
+      if (!window.speechSynthesis) return;
+      var u = new SpeechSynthesisUtterance(ctx.word);
+      u.lang = 'en-US'; u.rate = 0.7 * rate;
+      window.speechSynthesis.cancel(); window.speechSynthesis.speak(u);
+    };
+    wordAudio.play().catch(function () {});
+  }
+  function place(el) {
+    var r = el.getBoundingClientRect();
+    pop.style.top = Math.max(8, Math.min(r.bottom + 8, window.innerHeight - pop.offsetHeight - 8)) + 'px';
+    var maxLeft = document.documentElement.clientWidth - pop.offsetWidth - 12;
+    pop.style.left = Math.max(12, Math.min(r.left, maxLeft)) + 'px';
+  }
+  function show(el) {
+    var w = el.textContent.trim(), e = lookup(w);
+    pop.querySelector('.wd-w').textContent = w;
+    pop.querySelector('.wd-p').textContent = (e && e.p) ? '/' + e.p + '/' : '';
+    pop.querySelector('.wd-t').textContent = e ? (e.x ? e.t + '\n（原形：' + e.x + '）' : e.t) : '字典裡沒有這個字';
+    ctx = { word: w };
+    pop.classList.remove('hidden');
+    place(el);
+    say(1);
+  }
+  function hide() { pop.classList.add('hidden'); ctx = null; wordAudio.pause(); }
+  pop.querySelector('.wd-slow').addEventListener('click', function (e) { e.stopPropagation(); say(1); });
+  pop.querySelector('.wd-normal').addEventListener('click', function (e) { e.stopPropagation(); say(1.45); });
+  pop.querySelector('.wd-x').addEventListener('click', hide);
+  document.addEventListener('click', function (e) {
+    var wEl = e.target.closest && e.target.closest('.w');
+    if (wEl) { e.stopPropagation(); show(wEl); return; }
+    if (!pop.classList.contains('hidden') && !pop.contains(e.target)) hide();
+  });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') hide(); });
+})();
+</script>
 </main>
 </div>
 <script>

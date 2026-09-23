@@ -457,7 +457,7 @@ blockquote.speakable > .speak-btn,
 }
 .iv-hero h1 { margin: 0 0 6px; border: none; padding: 0; }
 .iv-hero p { margin: 0; color: var(--muted); }
-.iv-hero h1 small, .iv-section-title small { font-size: 0.6em; font-weight: 400; color: var(--muted); font-family: Georgia, serif; font-style: italic; margin-left: 8px; }
+.iv-hero h1 small, .iv-section-title small { font-size: 0.8em; font-weight: 400; color: #45403a; font-family: "Source Serif 4", Georgia, serif; margin-left: 8px; }
 
 .iv-section-title {
   margin: 32px 0 14px; padding-bottom: 6px;
@@ -499,8 +499,6 @@ blockquote.speakable > .speak-btn,
   letter-spacing: 0.04em; margin-right: 6px;
 }
 .iv-tag.accent { background: var(--accent-soft); color: var(--accent); font-weight: 600; }
-.bi-zh { display: block; }
-.bi-en { display: block; color: var(--muted); font-size: 0.92em; font-family: "Source Serif 4", Georgia, serif; font-style: italic; line-height: 1.45; }
 </style>
 
 <style>
@@ -560,7 +558,7 @@ blockquote.speakable > .speak-btn,
   <line x1="600" y1="260" x2="480" y2="310" stroke="#1f2328" stroke-width="2"/>
   <line x1="400" y1="110" x2="400" y2="310" stroke="#1f2328" stroke-width="2" stroke-dasharray="4 4"/>
 </svg>
-<div class="iv-gov-legend"><div class="iv-gov-leg-item"><div class="iv-gov-dot" style="background:#c8102e"></div><div><strong>聯邦 Federal</strong><span class="bi-zh">國防、外交、貨幣、刑法、公民身分；總理 Mark Carney</span><span class="bi-en">Defence, foreign policy, currency, criminal law, citizenship; PM Mark Carney</span></div></div><div class="iv-gov-leg-item"><div class="iv-gov-dot" style="background:#4a6fa5"></div><div><strong>省 Provincial</strong><span class="bi-zh">教育、醫療、自然資源、公路；Ontario 省長 Doug Ford</span><span class="bi-en">Education, health, natural resources, highways; Ontario Premier Doug Ford</span></div></div><div class="iv-gov-leg-item"><div class="iv-gov-dot" style="background:#5a9460"></div><div><strong>市鎮 Municipal</strong><span class="bi-zh">除雪、消防、大眾運輸、地方法規；Toronto 市長 Olivia Chow</span><span class="bi-en">Snow removal, firefighting, transit, by-laws; Toronto Mayor Olivia Chow</span></div></div></div>
+<div class="iv-gov-legend"><div class="iv-gov-leg-item"><div class="iv-gov-dot" style="background:#c8102e"></div><div><strong>聯邦 Federal</strong><span class="bi"><span class="bi-zh">國防、外交、貨幣、刑法、公民身分；總理 Mark Carney<button class="say" type="button" data-lang="zh" data-k="82b29de1fd687f76" aria-label="朗讀">🔊</button></span><span class="bi-en"><span class="w">Defence</span>, <span class="w">foreign</span> <span class="w">policy</span>, <span class="w">currency</span>, <span class="w">criminal</span> <span class="w">law</span>, <span class="w">citizenship</span>; <span class="w">PM</span> <span class="w">Mark</span> <span class="w">Carney</span><button class="say" type="button" data-lang="en" data-k="95c7ece636a0ecc1" aria-label="朗讀">🔊</button></span></span></div></div><div class="iv-gov-leg-item"><div class="iv-gov-dot" style="background:#4a6fa5"></div><div><strong>省 Provincial</strong><span class="bi"><span class="bi-zh">教育、醫療、自然資源、公路；Ontario 省長 Doug Ford<button class="say" type="button" data-lang="zh" data-k="da3e1cdebc1e19c9" aria-label="朗讀">🔊</button></span><span class="bi-en"><span class="w">Education</span>, <span class="w">health</span>, <span class="w">natural</span> <span class="w">resources</span>, <span class="w">highways</span>; <span class="w">Ontario</span> <span class="w">Premier</span> <span class="w">Doug</span> <span class="w">Ford</span><button class="say" type="button" data-lang="en" data-k="a53de90f4524de96" aria-label="朗讀">🔊</button></span></span></div></div><div class="iv-gov-leg-item"><div class="iv-gov-dot" style="background:#5a9460"></div><div><strong>市鎮 Municipal</strong><span class="bi"><span class="bi-zh">除雪、消防、大眾運輸、地方法規；Toronto 市長 Olivia Chow<button class="say" type="button" data-lang="zh" data-k="488b1df23780bc2e" aria-label="朗讀">🔊</button></span><span class="bi-en"><span class="w">Snow</span> <span class="w">removal</span>, <span class="w">firefighting</span>, <span class="w">transit</span>, <span class="w">by-laws</span>; <span class="w">Toronto</span> <span class="w">Mayor</span> <span class="w">Olivia</span> <span class="w">Chow</span><button class="say" type="button" data-lang="en" data-k="4f64614320082eb0" aria-label="朗讀">🔊</button></span></span></div></div></div>
 </div>
 
 <h2 class="iv-section-title">圖 2：國會三部分 <small>The Three Parts of Parliament</small></h2>
@@ -599,9 +597,151 @@ blockquote.speakable > .speak-btn,
 
 <h2 class="iv-section-title">圖 3：法案如何變法律 <small>How a Bill Becomes Law (7 steps)</small></h2>
 <div class="iv-gov-diagram">
-<div class="iv-bill-flow"><div class="iv-bill-step"><div class="num">1</div><div class="title">一讀 First Reading</div><div class="desc"><span class="bi-zh">法案視為第一次宣讀並印製</span><span class="bi-en">The bill is read for the first time and printed</span></div></div><div class="iv-bill-step"><div class="num">2</div><div class="title">二讀 Second Reading</div><div class="desc"><span class="bi-zh">辯論法案原則</span><span class="bi-en">Members debate the bill's principle</span></div></div><div class="iv-bill-step"><div class="num">3</div><div class="title">委員會 Committee Stage</div><div class="desc"><span class="bi-zh">逐條審議</span><span class="bi-en">Studied clause by clause</span></div></div><div class="iv-bill-step"><div class="num">4</div><div class="title">報告 Report Stage</div><div class="desc"><span class="bi-zh">提出修正</span><span class="bi-en">Members can make amendments</span></div></div><div class="iv-bill-step"><div class="num">5</div><div class="title">三讀 Third Reading</div><div class="desc"><span class="bi-zh">辯論並表決</span><span class="bi-en">Members debate and vote</span></div></div><div class="iv-bill-step"><div class="num">6</div><div class="title">參議院 Senate</div><div class="desc"><span class="bi-zh">同樣的程序</span><span class="bi-en">A similar process in the Senate</span></div></div><div class="iv-bill-step"><div class="num">7</div><div class="title">御准 Royal Assent</div><div class="desc"><span class="bi-zh">總督代君主簽署 → 成為法律</span><span class="bi-en">The Governor General grants royal assent → law</span></div></div></div>
+<div class="iv-bill-flow"><div class="iv-bill-step"><div class="num">1</div><div class="title">一讀 First Reading</div><div class="desc"><span class="bi"><span class="bi-zh">法案視為第一次宣讀並印製<button class="say" type="button" data-lang="zh" data-k="50ba8e048d34ecaf" aria-label="朗讀">🔊</button></span><span class="bi-en"><span class="w">The</span> <span class="w">bill</span> <span class="w">is</span> <span class="w">read</span> <span class="w">for</span> <span class="w">the</span> <span class="w">first</span> <span class="w">time</span> <span class="w">and</span> <span class="w">printed</span><button class="say" type="button" data-lang="en" data-k="9d8a9a4c30ef3ef7" aria-label="朗讀">🔊</button></span></span></div></div><div class="iv-bill-step"><div class="num">2</div><div class="title">二讀 Second Reading</div><div class="desc"><span class="bi"><span class="bi-zh">辯論法案原則<button class="say" type="button" data-lang="zh" data-k="b364ffac310db04d" aria-label="朗讀">🔊</button></span><span class="bi-en"><span class="w">Members</span> <span class="w">debate</span> <span class="w">the</span> <span class="w">bill&#x27;s</span> <span class="w">principle</span><button class="say" type="button" data-lang="en" data-k="343cdb942335b98a" aria-label="朗讀">🔊</button></span></span></div></div><div class="iv-bill-step"><div class="num">3</div><div class="title">委員會 Committee Stage</div><div class="desc"><span class="bi"><span class="bi-zh">逐條審議<button class="say" type="button" data-lang="zh" data-k="cac89f1c6faca6a2" aria-label="朗讀">🔊</button></span><span class="bi-en"><span class="w">Studied</span> <span class="w">clause</span> <span class="w">by</span> <span class="w">clause</span><button class="say" type="button" data-lang="en" data-k="8a0081da7fd6efec" aria-label="朗讀">🔊</button></span></span></div></div><div class="iv-bill-step"><div class="num">4</div><div class="title">報告 Report Stage</div><div class="desc"><span class="bi"><span class="bi-zh">提出修正<button class="say" type="button" data-lang="zh" data-k="717fb064a64a173e" aria-label="朗讀">🔊</button></span><span class="bi-en"><span class="w">Members</span> <span class="w">can</span> <span class="w">make</span> <span class="w">amendments</span><button class="say" type="button" data-lang="en" data-k="34fea49031238ab1" aria-label="朗讀">🔊</button></span></span></div></div><div class="iv-bill-step"><div class="num">5</div><div class="title">三讀 Third Reading</div><div class="desc"><span class="bi"><span class="bi-zh">辯論並表決<button class="say" type="button" data-lang="zh" data-k="e851c0f013e36868" aria-label="朗讀">🔊</button></span><span class="bi-en"><span class="w">Members</span> <span class="w">debate</span> <span class="w">and</span> <span class="w">vote</span><button class="say" type="button" data-lang="en" data-k="c39eff270a8cbac9" aria-label="朗讀">🔊</button></span></span></div></div><div class="iv-bill-step"><div class="num">6</div><div class="title">參議院 Senate</div><div class="desc"><span class="bi"><span class="bi-zh">同樣的程序<button class="say" type="button" data-lang="zh" data-k="4bd618281525a91c" aria-label="朗讀">🔊</button></span><span class="bi-en"><span class="w">A</span> <span class="w">similar</span> <span class="w">process</span> <span class="w">in</span> <span class="w">the</span> <span class="w">Senate</span><button class="say" type="button" data-lang="en" data-k="2548dd65b3a7c389" aria-label="朗讀">🔊</button></span></span></div></div><div class="iv-bill-step"><div class="num">7</div><div class="title">御准 Royal Assent</div><div class="desc"><span class="bi"><span class="bi-zh">總督代君主簽署 → 成為法律<button class="say" type="button" data-lang="zh" data-k="a4c647696960ed12" aria-label="朗讀">🔊</button></span><span class="bi-en"><span class="w">The</span> <span class="w">Governor</span> <span class="w">General</span> <span class="w">grants</span> <span class="w">royal</span> <span class="w">assent</span> → <span class="w">law</span><button class="say" type="button" data-lang="en" data-k="3436ae18d427a3c5" aria-label="朗讀">🔊</button></span></span></div></div></div>
 <p style="font-size:13px; color:var(--muted); margin-top:8px">⭐ <strong>考試重點</strong>：3 讀＋委員會＋送參議院＋御准。法案在每院都要 3 讀。</p>
 </div>
+
+<style>
+/* 中／英同級：夠寬就左右並排，不夠就自動上下堆疊 */
+.bi { display: flex; flex-wrap: wrap; gap: 3px 18px; align-items: flex-start; }
+.bi-zh, .bi-en { flex: 1 1 240px; min-width: 0; }
+.bi-en {
+  color: #45403a; font-family: "Source Serif 4", Georgia, serif;
+  line-height: 1.5; border-left: 2px solid var(--line); padding-left: 10px;
+}
+.say {
+  border: none; background: none; cursor: pointer; padding: 0 2px;
+  font-size: 0.82em; line-height: 1; opacity: 0.32; vertical-align: baseline;
+  transition: opacity 0.12s, transform 0.12s;
+}
+.say:hover { opacity: 0.85; }
+.say.playing { opacity: 1; transform: scale(1.25); }
+/* 名稱列：中文與英文同級並排（省名、總理、政黨、節日…） */
+.nm { display: inline-flex; flex-wrap: wrap; gap: 0 8px; align-items: baseline; }
+.nm-en { font-family: "Source Serif 4", Georgia, serif; color: #45403a; }
+
+.w { cursor: pointer; border-radius: 3px; padding: 0 0.5px; }
+.w:hover { background: #ffe9c7; }
+.wd-pop {
+  position: fixed; z-index: 90; width: min(340px, calc(100vw - 24px));
+  background: #fff; border: 1px solid var(--line); border-radius: 12px;
+  box-shadow: 0 8px 28px rgba(0,0,0,0.16); padding: 14px 16px 12px;
+}
+.wd-pop.hidden { display: none; }
+.wd-w { font-family: Georgia, "Source Serif 4", serif; font-size: 26px; font-weight: 700; color: #3f1a1f; padding-right: 24px; }
+.wd-p { font-size: 15px; color: var(--muted); margin: 2px 0 8px; font-family: "Charis SIL", "Doulos SIL", "Gentium Plus", Georgia, serif; }
+.wd-t { font-size: 14.5px; line-height: 1.6; white-space: pre-line; margin-bottom: 10px; color: var(--ink); }
+.wd-btns { display: flex; gap: 6px; flex-wrap: wrap; }
+.wd-btns button {
+  font: inherit; font-size: 12.5px; padding: 5px 10px; border-radius: 6px;
+  border: 1px solid var(--line); background: #fff; cursor: pointer; color: var(--ink);
+}
+.wd-btns button.main { background: var(--accent); color: #fff; border-color: var(--accent); }
+.wd-x { position: absolute; top: 6px; right: 10px; border: none; background: none; font-size: 20px; color: var(--muted); cursor: pointer; }
+.wd-note { font-size: 11px; color: var(--muted); margin-top: 8px; }
+</style>
+
+<div class="wd-pop hidden" role="dialog" aria-label="字典">
+  <button class="wd-x" type="button" aria-label="關閉">×</button>
+  <div class="wd-w"></div>
+  <div class="wd-p"></div>
+  <div class="wd-t"></div>
+  <div class="wd-btns">
+    <button class="wd-slow main" type="button">🔊 慢速再聽</button>
+    <button class="wd-normal" type="button">🔊 正常速</button>
+  </div>
+  <div class="wd-note">釋義來源：ECDICT 開源字典＋加拿大語境補充。點其他地方或按 Esc 關閉。</div>
+</div>
+<script src="../dict/words.js"></script>
+<script>
+(function () {
+  var WORD_BASE = '../audio/words/', LINE_BASE = '../audio/iv/';
+  var pop = document.querySelector('.wd-pop');
+  var wordAudio = new Audio(), lineAudio = new Audio();
+  var ctx = null, playingBtn = null;
+
+  // ---------- per-line narration (the 🔊 buttons next to 中文 / English) ----------
+  function stopLine() {
+    lineAudio.pause();
+    if (playingBtn) { playingBtn.classList.remove('playing'); playingBtn = null; }
+  }
+  lineAudio.addEventListener('ended', stopLine);
+  document.addEventListener('click', function (e) {
+    var b = e.target.closest && e.target.closest('.say');
+    if (!b) return;
+    e.stopPropagation();
+    var wasPlaying = (b === playingBtn);
+    stopLine();
+    if (wasPlaying) return;
+    lineAudio.src = LINE_BASE + b.dataset.lang + '/' + b.dataset.k + '.m4a';
+    lineAudio.playbackRate = 1;
+    playingBtn = b; b.classList.add('playing');
+    lineAudio.play().catch(function () {
+      // no clip for this line (content changed since the last audio build)
+      stopLine();
+      if (!window.speechSynthesis) return;
+      var host = b.parentElement;
+      var txt = host ? host.textContent.replace(/🔊/g, '').trim() : '';
+      var u = new SpeechSynthesisUtterance(txt);
+      u.lang = (b.dataset.lang === 'zh') ? 'zh-TW' : 'en-US'; u.rate = 0.85;
+      window.speechSynthesis.cancel(); window.speechSynthesis.speak(u);
+    });
+  });
+
+  // ---------- word dictionary ----------
+  if (!pop) return;
+  function lookup(w) {
+    var D = window.CIT_DICT || {};
+    var k = w.replace(/’/g, "'");
+    var tries = [k, k.toLowerCase()];
+    if (/'s$/i.test(k)) tries.push(k.slice(0, -2), k.slice(0, -2).toLowerCase());
+    for (var i = 0; i < tries.length; i++) if (D[tries[i]]) return D[tries[i]];
+    return null;
+  }
+  function say(rate) {
+    if (!ctx) return;
+    stopLine();
+    var key = ctx.word.toLowerCase().replace(/’/g, "'");
+    wordAudio.pause();
+    wordAudio.src = WORD_BASE + encodeURIComponent(key) + '.m4a';
+    wordAudio.playbackRate = rate;
+    try { wordAudio.preservesPitch = true; wordAudio.mozPreservesPitch = true; } catch (err) {}
+    wordAudio.onerror = function () {
+      if (!window.speechSynthesis) return;
+      var u = new SpeechSynthesisUtterance(ctx.word);
+      u.lang = 'en-US'; u.rate = 0.7 * rate;
+      window.speechSynthesis.cancel(); window.speechSynthesis.speak(u);
+    };
+    wordAudio.play().catch(function () {});
+  }
+  function place(el) {
+    var r = el.getBoundingClientRect();
+    pop.style.top = Math.max(8, Math.min(r.bottom + 8, window.innerHeight - pop.offsetHeight - 8)) + 'px';
+    var maxLeft = document.documentElement.clientWidth - pop.offsetWidth - 12;
+    pop.style.left = Math.max(12, Math.min(r.left, maxLeft)) + 'px';
+  }
+  function show(el) {
+    var w = el.textContent.trim(), e = lookup(w);
+    pop.querySelector('.wd-w').textContent = w;
+    pop.querySelector('.wd-p').textContent = (e && e.p) ? '/' + e.p + '/' : '';
+    pop.querySelector('.wd-t').textContent = e ? (e.x ? e.t + '\n（原形：' + e.x + '）' : e.t) : '字典裡沒有這個字';
+    ctx = { word: w };
+    pop.classList.remove('hidden');
+    place(el);
+    say(1);
+  }
+  function hide() { pop.classList.add('hidden'); ctx = null; wordAudio.pause(); }
+  pop.querySelector('.wd-slow').addEventListener('click', function (e) { e.stopPropagation(); say(1); });
+  pop.querySelector('.wd-normal').addEventListener('click', function (e) { e.stopPropagation(); say(1.45); });
+  pop.querySelector('.wd-x').addEventListener('click', hide);
+  document.addEventListener('click', function (e) {
+    var wEl = e.target.closest && e.target.closest('.w');
+    if (wEl) { e.stopPropagation(); show(wEl); return; }
+    if (!pop.classList.contains('hidden') && !pop.contains(e.target)) hide();
+  });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') hide(); });
+})();
+</script>
 </main>
 </div>
 <script>

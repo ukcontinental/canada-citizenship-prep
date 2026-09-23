@@ -3,7 +3,7 @@
 Each question: {ch, q, zq, o[], zo[], a, e, ze, p}
   ch = chapter number, p = paragraph index in the reading page (deep link),
   a  = index of the correct option.
-Audio (optional): html/audio/quiz/<id>.m4a produced by tools/build_quiz_audio.py.
+Audio: html/audio/quiz/{en,zh}/<id>.m4a produced by tools/build_quiz_audio.py.
 """
 
 from __future__ import annotations
@@ -69,22 +69,27 @@ QUIZ_CSS = r"""
   font-family: -apple-system, system-ui, sans-serif; }
 .qz-head .n { font-weight: 700; color: var(--accent); }
 .qz-text { font-size: 17px; line-height: 1.6; font-family: "Source Serif 4", Georgia, serif; color: var(--en-ink); }
-.qz-zh { font-size: 14.5px; color: var(--muted); margin-top: 4px; display: none; }
-.qz-q.zh .qz-zh { display: block; }
+.qz-zh { font-size: 17px; line-height: 1.6; color: var(--ink); }
+/* 中／英同級：夠寬左右並排，不夠自動上下 */
+.qz-pair { display: flex; flex-wrap: wrap; gap: 4px 20px; align-items: flex-start; }
+.qz-pair > * { flex: 1 1 250px; min-width: 0; }
+.qz-pair > .qz-text, .qz-pair > .e { border-left: 2px solid var(--line); padding-left: 12px; }
+.qz-q.nozh .qz-zh, .qz-q.nozh .qz-opt .z, .qz-q.nozh .qz-ex .zh { display: none; }
 .qz-opts { display: grid; gap: 8px; margin-top: 12px; }
 .qz-opt { appearance: none; text-align: left; padding: 10px 14px; border-radius: 10px; border: 1.5px solid var(--line);
   background: #faf8f4; cursor: pointer; font-size: 15px; font-family: "Source Serif 4", Georgia, serif; line-height: 1.5;
   display: grid; grid-template-columns: 26px 1fr; gap: 8px; align-items: start; color: var(--ink); }
 .qz-opt .k { font-weight: 700; color: var(--accent); font-family: -apple-system, system-ui, sans-serif; }
-.qz-opt .z { display: none; font-size: 13px; color: var(--muted); grid-column: 2; }
-.qz-q.zh .qz-opt .z { display: block; }
+.qz-opt .z { font-size: 15px; color: var(--ink); font-family: -apple-system, "PingFang TC", system-ui, sans-serif; }
+.qz-opt .e { font-size: 15px; }
 .qz-opt:hover { border-color: var(--accent); }
 .qz-opt.correct { border-color: #2e7d46; background: #e8f5ea; }
 .qz-opt.wrong { border-color: #c8102e; background: #fbe9ec; }
 .qz-opt.picked { box-shadow: inset 0 0 0 2px #3f1a1f; }
 .qz-opt:disabled { cursor: default; }
 .qz-ex { display: none; margin-top: 10px; padding: 10px 12px; background: #f3efe6; border-radius: 8px; font-size: 14px; line-height: 1.6; }
-.qz-ex .zh { color: var(--muted); font-size: 13.5px; margin-top: 4px; }
+.qz-ex .zh { color: var(--ink); font-size: 14px; }
+.qz-ex .en { font-family: "Source Serif 4", Georgia, serif; font-size: 14px; }
 .qz-ex a { color: var(--accent); }
 .qz-q.done .qz-ex { display: block; }
 .qz-tools { display: flex; gap: 6px; margin-top: 8px; flex-wrap: wrap; }
@@ -122,19 +127,37 @@ QUIZ_JS = r"""
   function esc(s) { return String(s).replace(/[&<>"]/g, function(c){ return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]; }); }
   function shuffle(a) { for (var i = a.length - 1; i > 0; i--) { var j = Math.floor(Math.random() * (i + 1)); var t = a[i]; a[i] = a[j]; a[j] = t; } return a; }
 
+  // Same word rule as word_dict.EN_WORD_RE: Latin script only, so Chinese
+  // characters in a mixed line never become tappable "words".
+  var WRE = /[A-Za-z\u00C0-\u024F\u1E00-\u1EFF](?:[A-Za-z\u00C0-\u024F\u1E00-\u1EFF]|['\u2019\-](?=[A-Za-z\u00C0-\u024F\u1E00-\u1EFF]))*/g;
+  function wrapW(s) {
+    s = String(s); var out = '', last = 0, m;
+    WRE.lastIndex = 0;
+    while ((m = WRE.exec(s)) !== null) {
+      out += esc(s.slice(last, m.index)) + '<span class="w">' + esc(m[0]) + '</span>';
+      last = m.index + m[0].length;
+    }
+    return out + esc(s.slice(last));
+  }
+
   function card(q, n) {
     var opts = q.o.map(function(o, i) {
-      return '<button class="qz-opt" type="button" data-i="' + i + '"><span class="k">' + LETTERS[i] + '</span><span>' + esc(o) +
-        '</span><span class="z">' + esc(q.zo[i]) + '</span></button>';
+      return '<button class="qz-opt" type="button" data-i="' + i + '"><span class="k">' + LETTERS[i] + '</span>' +
+        '<span class="qz-pair"><span class="z">' + esc(q.zo[i]) + '</span>' +
+        '<span class="e">' + wrapW(o) + '</span></span></button>';
     }).join('');
     var link = q.slug ? '<a href="' + base + 'reading/' + q.slug + '.html#p' + q.p + '">看原文 ↗</a>' : '';
     return '<div class="qz-q" data-id="' + q.id + '" data-ch="' + q.ch + '" data-a="' + q.a + '">' +
       '<div class="qz-head"><span class="n">' + n + '</span><span>第 ' + q.ch + ' 章 · ' + (CH_NAMES[q.ch] || '') + '</span></div>' +
-      '<div class="qz-text">' + esc(q.q) + '</div><div class="qz-zh">' + esc(q.zq) + '</div>' +
+      '<div class="qz-pair"><div class="qz-zh">' + esc(q.zq) + '</div>' +
+      '<div class="qz-text">' + wrapW(q.q) + '</div></div>' +
       '<div class="qz-opts">' + opts + '</div>' +
-      '<div class="qz-tools"><button class="qz-mini qz-tzh" type="button">中</button>' +
-      '<button class="qz-mini qz-say" type="button">🔊 念題目</button></div>' +
-      '<div class="qz-ex"><div class="en">' + esc(q.e) + ' ' + link + '</div><div class="zh">' + esc(q.ze) + '</div></div>' +
+      '<div class="qz-tools">' +
+      '<button class="qz-mini qz-say" data-lang="zh" type="button">🔊 中文</button>' +
+      '<button class="qz-mini qz-say" data-lang="en" type="button">🔊 English</button>' +
+      '<button class="qz-mini qz-tzh" type="button">遮住中文</button></div>' +
+      '<div class="qz-ex"><div class="qz-pair"><div class="zh">' + esc(q.ze) + '</div>' +
+      '<div class="en">' + wrapW(q.e) + ' ' + link + '</div></div></div>' +
       '</div>';
   }
 
@@ -166,14 +189,27 @@ QUIZ_JS = r"""
   root.addEventListener('click', function(e) {
     var t = e.target;
     var qEl = t.closest && t.closest('.qz-q');
-    if (t.closest('.qz-tzh') && qEl) { qEl.classList.toggle('zh'); t.closest('.qz-tzh').classList.toggle('on'); return; }
-    if (t.closest('.qz-say') && qEl) {
-      audio.pause(); audio.src = base + 'audio/quiz/' + qEl.dataset.id + '.m4a'; audio.play().catch(function(){});
+    if (t.closest('.qz-tzh') && qEl) {
+      var hid = qEl.classList.toggle('nozh');
+      var tb = t.closest('.qz-tzh');
+      tb.classList.toggle('on', hid); tb.textContent = hid ? '顯示中文' : '遮住中文';
+      return;
+    }
+    var sayBtn = t.closest && t.closest('.qz-say');
+    if (sayBtn && qEl) {
+      var lang = sayBtn.dataset.lang || 'en';
+      audio.pause();
+      audio.src = base + 'audio/quiz/' + lang + '/' + qEl.dataset.id + '.m4a';
+      audio.play().catch(function(){});
       audio.onerror = function() {
         if (!window.speechSynthesis) return;
         var q = ALL.find(function(x){ return x.id === qEl.dataset.id; });
-        var u = new SpeechSynthesisUtterance(q.q + '. ' + q.o.map(function(o,i){ return LETTERS[i] + '. ' + o; }).join('. '));
-        u.lang = 'en-US'; u.rate = 0.9; window.speechSynthesis.cancel(); window.speechSynthesis.speak(u);
+        var txt = (lang === 'zh')
+          ? q.zq + ' ' + q.zo.map(function(o,i){ return LETTERS[i] + '、' + o; }).join('。')
+          : q.q + '. ' + q.o.map(function(o,i){ return LETTERS[i] + '. ' + o; }).join('. ');
+        var u = new SpeechSynthesisUtterance(txt);
+        u.lang = (lang === 'zh') ? 'zh-TW' : 'en-US'; u.rate = 0.9;
+        window.speechSynthesis.cancel(); window.speechSynthesis.speak(u);
       };
       return;
     }
@@ -195,7 +231,10 @@ QUIZ_JS = r"""
     var qs = ALL.filter(function(q) { return (curCh === 'all' || q.ch === curCh) && (!onlyWrong || ws.has(q.id)); });
     list.innerHTML = qs.length ? qs.map(function(q, i) { return card(q, i + 1); }).join('') :
       '<p style="color:var(--muted)">這個範圍沒有題目' + (onlyWrong ? '（錯題本是空的，太棒了）' : '') + '。</p>';
-    if (root.querySelector('.qz-allzh').classList.contains('on')) list.querySelectorAll('.qz-q').forEach(function(q){ q.classList.add('zh'); });
+    if (root.querySelector('.qz-allzh').classList.contains('on')) {
+      list.querySelectorAll('.qz-q').forEach(function(q){ q.classList.add('nozh'); });
+      list.querySelectorAll('.qz-tzh').forEach(function(b){ b.classList.add('on'); b.textContent = '顯示中文'; });
+    }
     updatePracticeStatus();
   }
   function updatePracticeStatus() {
@@ -217,7 +256,10 @@ QUIZ_JS = r"""
     });
     root.querySelector('.qz-allzh').addEventListener('click', function() {
       this.classList.toggle('on'); var on = this.classList.contains('on');
-      list.querySelectorAll('.qz-q').forEach(function(q){ q.classList.toggle('zh', on); });
+      list.querySelectorAll('.qz-q').forEach(function(q){ q.classList.toggle('nozh', on); });
+      list.querySelectorAll('.qz-tzh').forEach(function(b){
+        b.classList.toggle('on', on); b.textContent = on ? '顯示中文' : '遮住中文';
+      });
     });
     root.querySelector('.qz-reset').addEventListener('click', function() { renderPractice(); window.scrollTo(0, 0); });
     renderPractice();
@@ -235,6 +277,9 @@ QUIZ_JS = r"""
     var rest = shuffle(ALL.filter(function(q){ return !/^ONTARIO/.test(q.q); })).slice(0, 20 - ont.length);
     var qs = shuffle(ont.concat(rest));
     list.innerHTML = qs.map(function(q, i) { return card(q, i + 1); }).join('');
+    // a real test paper is English-only; the Chinese is there as a lifeline, per question
+    list.querySelectorAll('.qz-q').forEach(function(q){ q.classList.add('nozh'); });
+    list.querySelectorAll('.qz-tzh').forEach(function(b){ b.classList.add('on'); b.textContent = '顯示中文'; });
     var paperNo = 1;
     try { paperNo = (parseInt(localStorage.getItem('cit_mock_count') || '0', 10) || 0) + 1; localStorage.setItem('cit_mock_count', String(paperNo)); } catch (e) {}
     var dist = {};
@@ -301,9 +346,9 @@ def _page(mode: str, root_id: str, hero: str, bar: str, extra: str = "") -> str:
 def build_practice_body() -> str:
     n = len(load_questions())
     hero = f'''<div class="qz-hero"><h1>📝 英文選擇題練習</h1>
-<p>{n} 題，格式與真考相同（英文、四選一或是非）。按選項立刻看對錯與解說；按「中」看中文；「看原文」跳到人聲頁那一段。答錯的題自動進錯題本。</p></div>'''
+<p>{n} 題，格式與真考相同（英文、四選一或是非）。中英左右對照、字級一樣；點任何英文單字查字典並聽發音；中英各有一顆朗讀鈕。要自我測驗就按「遮住中文」。答錯的題自動進錯題本。</p></div>'''
     bar = '''<div class="qz-bar">
-<button class="qz-btn qz-allzh" type="button">全部顯示中文</button>
+<button class="qz-btn qz-allzh" type="button">全部遮住中文（自我測驗）</button>
 <button class="qz-btn qz-wrong" type="button">只看錯題本</button>
 <button class="qz-btn qz-reset" type="button">重新作答</button>
 <span class="qz-status"></span></div><div class="qz-chips"></div>'''
@@ -312,12 +357,12 @@ def build_practice_body() -> str:
 
 def build_mock_body() -> str:
     hero = '''<div class="qz-hero"><h1>⏱ 模擬考</h1>
-<p>照真考規格：隨機 20 題（含 1–2 題安大略省題）、30 分鐘倒數、答對 15 題通過。作答中不顯示對錯，交卷後才看解說。</p></div>'''
+<p>照真考規格：隨機 20 題（含 1–2 題安大略省題）、30 分鐘倒數、答對 15 題通過。作答中不顯示對錯，交卷後才看解說。中文預設遮住，卡住可以逐題打開。</p></div>'''
     bar = '''<div class="qz-bar"><span class="qz-timer">30:00</span>
 <button class="qz-btn main qz-submit" type="button" disabled>交卷</button>
 <span class="qz-status"></span></div>
 <p class="qz-paper" style="font-size:13px;color:var(--muted);margin:0 0 8px"></p>'''
     extra = '''<div class="qz-start"><button class="qz-btn main qz-begin" type="button" style="font-size:18px;padding:12px 28px">開始模擬考</button>
-<p>考試時可以按每題的「中」偷看中文，但真考沒有——建議先不看。</p></div>
+<p>考卷預設就把中文遮起來（真考只有英文）。卡住時按該題的「顯示中文」，或點單字查字典。</p></div>
 <div class="qz-result" style="display:none"></div>'''
     return _page("mock", "qz-mock", hero, bar, extra)

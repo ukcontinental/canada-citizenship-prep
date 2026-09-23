@@ -457,7 +457,7 @@ blockquote.speakable > .speak-btn,
 }
 .iv-hero h1 { margin: 0 0 6px; border: none; padding: 0; }
 .iv-hero p { margin: 0; color: var(--muted); }
-.iv-hero h1 small, .iv-section-title small { font-size: 0.6em; font-weight: 400; color: var(--muted); font-family: Georgia, serif; font-style: italic; margin-left: 8px; }
+.iv-hero h1 small, .iv-section-title small { font-size: 0.8em; font-weight: 400; color: #45403a; font-family: "Source Serif 4", Georgia, serif; margin-left: 8px; }
 
 .iv-section-title {
   margin: 32px 0 14px; padding-bottom: 6px;
@@ -499,14 +499,15 @@ blockquote.speakable > .speak-btn,
   letter-spacing: 0.04em; margin-right: 6px;
 }
 .iv-tag.accent { background: var(--accent-soft); color: var(--accent); font-weight: 600; }
-.bi-zh { display: block; }
-.bi-en { display: block; color: var(--muted); font-size: 0.92em; font-family: "Source Serif 4", Georgia, serif; font-style: italic; line-height: 1.45; }
 </style>
 
 <style>
 .iv-era-filter { display: flex; flex-wrap: wrap; gap: 8px; margin: 16px 0 24px; }
+.iv-era-btn .era-zh { display: block; }
+.iv-era-btn .era-en { display: block; font-family: "Source Serif 4", Georgia, serif; font-weight: 400; }
+.iv-era-btn .era-yr { display: block; font-family: monospace; font-size: 11px; opacity: 0.75; }
 .iv-era-btn {
-  appearance: none; padding: 6px 12px; border-radius: 20px;
+  appearance: none; padding: 7px 14px; border-radius: 14px; text-align: left; line-height: 1.35;
   background: #fff; border: 2px solid var(--era-color);
   color: var(--era-color); cursor: pointer; font-size: 13px; font-weight: 600;
   font-family: -apple-system, system-ui, sans-serif;
@@ -546,7 +547,7 @@ blockquote.speakable > .speak-btn,
   border-color: #d4a943;
 }
 .iv-tl-title { margin: 0 0 2px; font-size: 16px; }
-.iv-tl-en { font-size: 12px; color: var(--muted); font-style: italic; margin-bottom: 6px; }
+.iv-tl-en { font-size: 16px; color: #45403a; font-family: "Source Serif 4", Georgia, serif; margin-bottom: 6px; }
 .iv-tl-brief { margin: 0 0 8px; font-size: 14px; }
 .iv-tl-details { margin: 6px 0 0; padding-left: 18px; font-size: 13px; color: var(--muted); }
 .iv-tl-details li { margin: 3px 0; }
@@ -562,7 +563,7 @@ blockquote.speakable > .speak-btn,
 </div>
 <div class="iv-era-filter">
   <button class="iv-era-btn iv-active" data-era="all" style="--era-color:#1f2328">全部</button>
-  <button class="iv-era-btn" data-era="new-france" style="--era-color:#4a6fa5">新法蘭西時期 (1497-1763)</button><button class="iv-era-btn" data-era="british" style="--era-color:#b0413e">英屬北美 (1763-1867)</button><button class="iv-era-btn" data-era="confederation" style="--era-color:#c8a040">邦聯時代 (1867-1914)</button><button class="iv-era-btn" data-era="wars" style="--era-color:#7a8c5c">兩戰與改革 (1914-1949)</button><button class="iv-era-btn" data-era="modern" style="--era-color:#5a9460">現代加拿大 (1949-至今)</button>
+  <button class="iv-era-btn" data-era="new-france" style="--era-color:#4a6fa5"><span class="era-zh">新法蘭西時期</span><span class="era-en">New France</span><span class="era-yr">1497-1763</span></button><button class="iv-era-btn" data-era="british" style="--era-color:#b0413e"><span class="era-zh">英屬北美</span><span class="era-en">British North America</span><span class="era-yr">1763-1867</span></button><button class="iv-era-btn" data-era="confederation" style="--era-color:#c8a040"><span class="era-zh">邦聯時代</span><span class="era-en">Confederation era</span><span class="era-yr">1867-1914</span></button><button class="iv-era-btn" data-era="wars" style="--era-color:#7a8c5c"><span class="era-zh">兩戰與改革</span><span class="era-en">The World Wars and reform</span><span class="era-yr">1914-1949</span></button><button class="iv-era-btn" data-era="modern" style="--era-color:#5a9460"><span class="era-zh">現代加拿大</span><span class="era-en">Modern Canada</span><span class="era-yr">1949-至今 / present</span></button>
 </div>
 <div class="iv-tl">
 
@@ -572,8 +573,8 @@ blockquote.speakable > .speak-btn,
   <div class="iv-tl-content">
     <h3 class="iv-tl-title">John Cabot 抵達加拿大東岸</h3>
     <div class="iv-tl-en">John Cabot reaches Atlantic shores</div>
-    <p class="iv-tl-brief"><span class="bi-zh">為英王宣稱大西洋岸土地，第一個繪製加拿大東岸地圖的人</span><span class="bi-en">Claimed the Atlantic coast for the English king and was the first to map Canada's East Coast</span></p>
-    <ul class='iv-tl-details'><li><span class="bi-zh">義大利航海家受英王委派</span><span class="bi-en">An Italian navigator sailing for the English king</span></li><li><span class="bi-zh">登陸地點可能是 Newfoundland</span><span class="bi-en">Probably landed in Newfoundland</span></li><li><span class="bi-zh">為日後英國對加宣稱主權奠基</span><span class="bi-en">Laid the basis for later British claims</span></li></ul>
+    <p class="iv-tl-brief"><span class="bi"><span class="bi-zh">為英王宣稱大西洋岸土地，第一個繪製加拿大東岸地圖的人<button class="say" type="button" data-lang="zh" data-k="31df4aafec740db8" aria-label="朗讀">🔊</button></span><span class="bi-en"><span class="w">Claimed</span> <span class="w">the</span> <span class="w">Atlantic</span> <span class="w">coast</span> <span class="w">for</span> <span class="w">the</span> <span class="w">English</span> <span class="w">king</span> <span class="w">and</span> <span class="w">was</span> <span class="w">the</span> <span class="w">first</span> <span class="w">to</span> <span class="w">map</span> <span class="w">Canada&#x27;s</span> <span class="w">East</span> <span class="w">Coast</span><button class="say" type="button" data-lang="en" data-k="f2dc0040e70f3f54" aria-label="朗讀">🔊</button></span></span></p>
+    <ul class='iv-tl-details'><li><span class="bi"><span class="bi-zh">義大利航海家受英王委派<button class="say" type="button" data-lang="zh" data-k="06a2d1be0ee77bc4" aria-label="朗讀">🔊</button></span><span class="bi-en"><span class="w">An</span> <span class="w">Italian</span> <span class="w">navigator</span> <span class="w">sailing</span> <span class="w">for</span> <span class="w">the</span> <span class="w">English</span> <span class="w">king</span><button class="say" type="button" data-lang="en" data-k="411d194f7bf7cdd3" aria-label="朗讀">🔊</button></span></span></li><li><span class="bi"><span class="bi-zh">登陸地點可能是 Newfoundland<button class="say" type="button" data-lang="zh" data-k="22b2312471b431b3" aria-label="朗讀">🔊</button></span><span class="bi-en"><span class="w">Probably</span> <span class="w">landed</span> <span class="w">in</span> <span class="w">Newfoundland</span><button class="say" type="button" data-lang="en" data-k="31d5aa7871191679" aria-label="朗讀">🔊</button></span></span></li><li><span class="bi"><span class="bi-zh">為日後英國對加宣稱主權奠基<button class="say" type="button" data-lang="zh" data-k="82f18b6c0c205d96" aria-label="朗讀">🔊</button></span><span class="bi-en"><span class="w">Laid</span> <span class="w">the</span> <span class="w">basis</span> <span class="w">for</span> <span class="w">later</span> <span class="w">British</span> <span class="w">claims</span><button class="say" type="button" data-lang="en" data-k="f70bd8bde09293be" aria-label="朗讀">🔊</button></span></span></li></ul>
   </div>
 </div>
 <div class="iv-tl-event " data-era="new-france">
@@ -582,8 +583,8 @@ blockquote.speakable > .speak-btn,
   <div class="iv-tl-content">
     <h3 class="iv-tl-title">Cartier 命名 'Canada'</h3>
     <div class="iv-tl-en">Cartier names 'Canada'</div>
-    <p class="iv-tl-brief"><span class="bi-zh">Jacques Cartier 三次航行（1534–42），從原住民聽到 'kanata'（村莊）一詞</span><span class="bi-en">Jacques Cartier made three voyages (1534–42) and heard the Iroquoian word kanata, "village"</span></p>
-    <ul class='iv-tl-details'><li><span class="bi-zh">為法王 François I 宣稱聖羅倫斯地區</span><span class="bi-en">Claimed the St. Lawrence region for King Francis I of France</span></li><li><span class="bi-zh">'Canada' 名字源自 Iroquois 語 'kanata'（村莊）</span><span class="bi-en">The name Canada comes from kanata, "village"</span></li><li><span class="bi-zh">1550 年代起 Canada 出現在地圖上</span><span class="bi-en">By the 1550s the name appeared on maps</span></li></ul>
+    <p class="iv-tl-brief"><span class="bi"><span class="bi-zh">Jacques Cartier 三次航行（1534–42），從原住民聽到 &#x27;kanata&#x27;（村莊）一詞<button class="say" type="button" data-lang="zh" data-k="06bda7482e610af6" aria-label="朗讀">🔊</button></span><span class="bi-en"><span class="w">Jacques</span> <span class="w">Cartier</span> <span class="w">made</span> <span class="w">three</span> <span class="w">voyages</span> (1534–42) <span class="w">and</span> <span class="w">heard</span> <span class="w">the</span> <span class="w">Iroquoian</span> <span class="w">word</span> <span class="w">kanata</span>, &quot;<span class="w">village</span>&quot;<button class="say" type="button" data-lang="en" data-k="f71f3c202b831086" aria-label="朗讀">🔊</button></span></span></p>
+    <ul class='iv-tl-details'><li><span class="bi"><span class="bi-zh">為法王 François I 宣稱聖羅倫斯地區<button class="say" type="button" data-lang="zh" data-k="0090d3d9a5ec8a02" aria-label="朗讀">🔊</button></span><span class="bi-en"><span class="w">Claimed</span> <span class="w">the</span> <span class="w">St</span>. <span class="w">Lawrence</span> <span class="w">region</span> <span class="w">for</span> <span class="w">King</span> <span class="w">Francis</span> <span class="w">I</span> <span class="w">of</span> <span class="w">France</span><button class="say" type="button" data-lang="en" data-k="b50b8f05ce08b512" aria-label="朗讀">🔊</button></span></span></li><li><span class="bi"><span class="bi-zh">&#x27;Canada&#x27; 名字源自 Iroquois 語 &#x27;kanata&#x27;（村莊）<button class="say" type="button" data-lang="zh" data-k="5f0bbeb0c143e5fa" aria-label="朗讀">🔊</button></span><span class="bi-en"><span class="w">The</span> <span class="w">name</span> <span class="w">Canada</span> <span class="w">comes</span> <span class="w">from</span> <span class="w">kanata</span>, &quot;<span class="w">village</span>&quot;<button class="say" type="button" data-lang="en" data-k="f6a19fe4e25cfce2" aria-label="朗讀">🔊</button></span></span></li><li><span class="bi"><span class="bi-zh">1550 年代起 Canada 出現在地圖上<button class="say" type="button" data-lang="zh" data-k="f4752ed4b4f2927f" aria-label="朗讀">🔊</button></span><span class="bi-en"><span class="w">By</span> <span class="w">the</span> 1550<span class="w">s</span> <span class="w">the</span> <span class="w">name</span> <span class="w">appeared</span> <span class="w">on</span> <span class="w">maps</span><button class="say" type="button" data-lang="en" data-k="e17073c78d83827d" aria-label="朗讀">🔊</button></span></span></li></ul>
   </div>
 </div>
 <div class="iv-tl-event " data-era="new-france">
@@ -592,8 +593,8 @@ blockquote.speakable > .speak-btn,
   <div class="iv-tl-content">
     <h3 class="iv-tl-title">首座歐洲永久定居 Port-Royal</h3>
     <div class="iv-tl-en">Port-Royal — first permanent settlement</div>
-    <p class="iv-tl-brief"><span class="bi-zh">Pierre de Monts 與 Samuel de Champlain 在 Acadia 建立佛羅里達以北第一個歐洲聚落</span><span class="bi-en">Pierre de Monts and Samuel de Champlain founded the first European settlement north of Florida, in Acadia</span></p>
-    <ul class='iv-tl-details'><li><span class="bi-zh">位於今日 Nova Scotia</span><span class="bi-en">In present-day Nova Scotia</span></li><li><span class="bi-zh">Acadia 文化由此開始</span><span class="bi-en">The beginning of Acadian culture</span></li></ul>
+    <p class="iv-tl-brief"><span class="bi"><span class="bi-zh">Pierre de Monts 與 Samuel de Champlain 在 Acadia 建立佛羅里達以北第一個歐洲聚落<button class="say" type="button" data-lang="zh" data-k="4e5e2eec54ca2ac3" aria-label="朗讀">🔊</button></span><span class="bi-en"><span class="w">Pierre</span> <span class="w">de</span> <span class="w">Monts</span> <span class="w">and</span> <span class="w">Samuel</span> <span class="w">de</span> <span class="w">Champlain</span> <span class="w">founded</span> <span class="w">the</span> <span class="w">first</span> <span class="w">European</span> <span class="w">settlement</span> <span class="w">north</span> <span class="w">of</span> <span class="w">Florida</span>, <span class="w">in</span> <span class="w">Acadia</span><button class="say" type="button" data-lang="en" data-k="7ef9af19e520ef91" aria-label="朗讀">🔊</button></span></span></p>
+    <ul class='iv-tl-details'><li><span class="bi"><span class="bi-zh">位於今日 Nova Scotia<button class="say" type="button" data-lang="zh" data-k="a03ffcdad73c32c9" aria-label="朗讀">🔊</button></span><span class="bi-en"><span class="w">In</span> <span class="w">present-day</span> <span class="w">Nova</span> <span class="w">Scotia</span><button class="say" type="button" data-lang="en" data-k="517fe9e63ae06783" aria-label="朗讀">🔊</button></span></span></li><li><span class="bi"><span class="bi-zh">Acadia 文化由此開始<button class="say" type="button" data-lang="zh" data-k="89cb96bf381c0eac" aria-label="朗讀">🔊</button></span><span class="bi-en"><span class="w">The</span> <span class="w">beginning</span> <span class="w">of</span> <span class="w">Acadian</span> <span class="w">culture</span><button class="say" type="button" data-lang="en" data-k="dc9e1fa187a2bacf" aria-label="朗讀">🔊</button></span></span></li></ul>
   </div>
 </div>
 <div class="iv-tl-event " data-era="new-france">
@@ -602,8 +603,8 @@ blockquote.speakable > .speak-btn,
   <div class="iv-tl-content">
     <h3 class="iv-tl-title">Champlain 建立 Québec City</h3>
     <div class="iv-tl-en">Champlain founds Quebec City</div>
-    <p class="iv-tl-brief"><span class="bi-zh">Samuel de Champlain 在聖羅倫斯河岸建立 Québec City，'Father of New France'</span><span class="bi-en">Champlain built a fortress at Québec City and is called the Father of New France</span></p>
-    <ul class='iv-tl-details'><li><span class="bi-zh">這是 New France 的首都</span><span class="bi-en">Capital of New France</span></li><li><span class="bi-zh">Champlain 與 Algonquin、Montagnais、Huron 結盟；法國與 Iroquois 1701 締和</span><span class="bi-en">Allied with the Algonquin, Montagnais and Huron; peace with the Iroquois in 1701</span></li><li><span class="bi-zh">毛皮貿易（海狸皮）是經濟核心</span><span class="bi-en">The fur trade (beaver pelts) drove the economy</span></li></ul>
+    <p class="iv-tl-brief"><span class="bi"><span class="bi-zh">Samuel de Champlain 在聖羅倫斯河岸建立 Québec City，&#x27;Father of New France&#x27;<button class="say" type="button" data-lang="zh" data-k="67bf0ef2acc09038" aria-label="朗讀">🔊</button></span><span class="bi-en"><span class="w">Champlain</span> <span class="w">built</span> <span class="w">a</span> <span class="w">fortress</span> <span class="w">at</span> <span class="w">Québec</span> <span class="w">City</span> <span class="w">and</span> <span class="w">is</span> <span class="w">called</span> <span class="w">the</span> <span class="w">Father</span> <span class="w">of</span> <span class="w">New</span> <span class="w">France</span><button class="say" type="button" data-lang="en" data-k="9f28aa023c439dab" aria-label="朗讀">🔊</button></span></span></p>
+    <ul class='iv-tl-details'><li><span class="bi"><span class="bi-zh">這是 New France 的首都<button class="say" type="button" data-lang="zh" data-k="84dc192d06c095f9" aria-label="朗讀">🔊</button></span><span class="bi-en"><span class="w">Capital</span> <span class="w">of</span> <span class="w">New</span> <span class="w">France</span><button class="say" type="button" data-lang="en" data-k="c66c2b7d9d079fe6" aria-label="朗讀">🔊</button></span></span></li><li><span class="bi"><span class="bi-zh">Champlain 與 Algonquin、Montagnais、Huron 結盟；法國與 Iroquois 1701 締和<button class="say" type="button" data-lang="zh" data-k="5b1af9ddb4c4d33f" aria-label="朗讀">🔊</button></span><span class="bi-en"><span class="w">Allied</span> <span class="w">with</span> <span class="w">the</span> <span class="w">Algonquin</span>, <span class="w">Montagnais</span> <span class="w">and</span> <span class="w">Huron</span>; <span class="w">peace</span> <span class="w">with</span> <span class="w">the</span> <span class="w">Iroquois</span> <span class="w">in</span> 1701<button class="say" type="button" data-lang="en" data-k="f76975f510a01df8" aria-label="朗讀">🔊</button></span></span></li><li><span class="bi"><span class="bi-zh">毛皮貿易（海狸皮）是經濟核心<button class="say" type="button" data-lang="zh" data-k="6965c3e97fc7b795" aria-label="朗讀">🔊</button></span><span class="bi-en"><span class="w">The</span> <span class="w">fur</span> <span class="w">trade</span> (<span class="w">beaver</span> <span class="w">pelts</span>) <span class="w">drove</span> <span class="w">the</span> <span class="w">economy</span><button class="say" type="button" data-lang="en" data-k="9fa24fc4bc355258" aria-label="朗讀">🔊</button></span></span></li></ul>
   </div>
 </div>
 <div class="iv-tl-event " data-era="new-france">
@@ -612,8 +613,8 @@ blockquote.speakable > .speak-btn,
   <div class="iv-tl-content">
     <h3 class="iv-tl-title">Hudson's Bay Company 成立</h3>
     <div class="iv-tl-en">Hudson's Bay Company chartered</div>
-    <p class="iv-tl-brief"><span class="bi-zh">英王 Charles II 給予 HBC 對 Hudson Bay 流域的貿易壟斷權</span><span class="bi-en">King Charles II granted the HBC exclusive trading rights over the Hudson Bay watershed</span></p>
-    <ul class='iv-tl-details'><li><span class="bi-zh">與 Montreal 商人競爭一百年</span><span class="bi-en">Competed with Montreal-based traders for 100 years</span></li><li><span class="bi-zh">voyageurs 與 coureurs des bois 乘獨木舟貿易</span><span class="bi-en">Voyageurs and coureurs des bois travelled by canoe</span></li></ul>
+    <p class="iv-tl-brief"><span class="bi"><span class="bi-zh">英王 Charles II 給予 HBC 對 Hudson Bay 流域的貿易壟斷權<button class="say" type="button" data-lang="zh" data-k="55a89baa610649f8" aria-label="朗讀">🔊</button></span><span class="bi-en"><span class="w">King</span> <span class="w">Charles</span> <span class="w">II</span> <span class="w">granted</span> <span class="w">the</span> <span class="w">HBC</span> <span class="w">exclusive</span> <span class="w">trading</span> <span class="w">rights</span> <span class="w">over</span> <span class="w">the</span> <span class="w">Hudson</span> <span class="w">Bay</span> <span class="w">watershed</span><button class="say" type="button" data-lang="en" data-k="9b1fa57c03f9c8a0" aria-label="朗讀">🔊</button></span></span></p>
+    <ul class='iv-tl-details'><li><span class="bi"><span class="bi-zh">與 Montreal 商人競爭一百年<button class="say" type="button" data-lang="zh" data-k="9af8f29821958042" aria-label="朗讀">🔊</button></span><span class="bi-en"><span class="w">Competed</span> <span class="w">with</span> <span class="w">Montreal-based</span> <span class="w">traders</span> <span class="w">for</span> 100 <span class="w">years</span><button class="say" type="button" data-lang="en" data-k="78ff2b7aee196878" aria-label="朗讀">🔊</button></span></span></li><li><span class="bi"><span class="bi-zh">voyageurs 與 coureurs des bois 乘獨木舟貿易<button class="say" type="button" data-lang="zh" data-k="be915183145c86c2" aria-label="朗讀">🔊</button></span><span class="bi-en"><span class="w">Voyageurs</span> <span class="w">and</span> <span class="w">coureurs</span> <span class="w">des</span> <span class="w">bois</span> <span class="w">travelled</span> <span class="w">by</span> <span class="w">canoe</span><button class="say" type="button" data-lang="en" data-k="88424b229e1a62a4" aria-label="朗讀">🔊</button></span></span></li></ul>
   </div>
 </div>
 <div class="iv-tl-event " data-era="new-france">
@@ -622,8 +623,8 @@ blockquote.speakable > .speak-btn,
   <div class="iv-tl-content">
     <h3 class="iv-tl-title">Acadian 大流亡</h3>
     <div class="iv-tl-en">Acadian Deportation</div>
-    <p class="iv-tl-brief"><span class="bi-zh">1755–63 英國驅逐三分之二以上的 Acadian</span><span class="bi-en">Between 1755 and 1763 the British deported more than two-thirds of the Acadians</span></p>
-    <ul class='iv-tl-details'><li><span class="bi-zh">稱為「大動盪」Great Upheaval</span><span class="bi-en">Known as the "Great Upheaval"</span></li><li><span class="bi-zh">Acadian 文化存活至今，是法語加拿大的一部分</span><span class="bi-en">Acadian culture survived and thrives today</span></li></ul>
+    <p class="iv-tl-brief"><span class="bi"><span class="bi-zh">1755–63 英國驅逐三分之二以上的 Acadian<button class="say" type="button" data-lang="zh" data-k="df1e8e45434e9035" aria-label="朗讀">🔊</button></span><span class="bi-en"><span class="w">Between</span> 1755 <span class="w">and</span> 1763 <span class="w">the</span> <span class="w">British</span> <span class="w">deported</span> <span class="w">more</span> <span class="w">than</span> <span class="w">two-thirds</span> <span class="w">of</span> <span class="w">the</span> <span class="w">Acadians</span><button class="say" type="button" data-lang="en" data-k="f083b5970d150cc9" aria-label="朗讀">🔊</button></span></span></p>
+    <ul class='iv-tl-details'><li><span class="bi"><span class="bi-zh">稱為「大動盪」Great Upheaval<button class="say" type="button" data-lang="zh" data-k="f61c0df61455b8b4" aria-label="朗讀">🔊</button></span><span class="bi-en"><span class="w">Known</span> <span class="w">as</span> <span class="w">the</span> &quot;<span class="w">Great</span> <span class="w">Upheaval</span>&quot;<button class="say" type="button" data-lang="en" data-k="10de23ea25d996df" aria-label="朗讀">🔊</button></span></span></li><li><span class="bi"><span class="bi-zh">Acadian 文化存活至今，是法語加拿大的一部分<button class="say" type="button" data-lang="zh" data-k="fe89fdf3f77afb29" aria-label="朗讀">🔊</button></span><span class="bi-en"><span class="w">Acadian</span> <span class="w">culture</span> <span class="w">survived</span> <span class="w">and</span> <span class="w">thrives</span> <span class="w">today</span><button class="say" type="button" data-lang="en" data-k="ef9a70c9a8c966be" aria-label="朗讀">🔊</button></span></span></li></ul>
   </div>
 </div>
 <div class="iv-tl-event " data-era="british">
@@ -632,8 +633,8 @@ blockquote.speakable > .speak-btn,
   <div class="iv-tl-content">
     <h3 class="iv-tl-title">Plains of Abraham 之戰 ⚔️</h3>
     <div class="iv-tl-en">Battle of the Plains of Abraham</div>
-    <p class="iv-tl-brief"><span class="bi-zh"><strong>英軍 James Wolfe vs. 法軍 Montcalm</strong>，英軍奪下 Québec City，法國在美洲的帝國結束</span><span class="bi-en"><strong>Wolfe (British) vs. Montcalm (French)</strong> — the British took Québec City and France's empire in America ended</span></p>
-    <ul class='iv-tl-details'><li><span class="bi-zh"><strong>考試重點戰役</strong></span><span class="bi-en"><strong>Key exam battle</strong></span></li><li><span class="bi-zh">兩位將軍都陣亡</span><span class="bi-en">Both commanders were killed</span></li><li><span class="bi-zh">殖民地改名 Province of Quebec</span><span class="bi-en">The colony was renamed the Province of Quebec</span></li></ul>
+    <p class="iv-tl-brief"><span class="bi"><span class="bi-zh"><strong>英軍 James Wolfe vs. 法軍 Montcalm</strong>，英軍奪下 Québec City，法國在美洲的帝國結束<button class="say" type="button" data-lang="zh" data-k="0063e1cc906db69a" aria-label="朗讀">🔊</button></span><span class="bi-en"><strong><span class="w">Wolfe</span> (<span class="w">British</span>) <span class="w">vs</span>. <span class="w">Montcalm</span> (<span class="w">French</span>)</strong> — <span class="w">the</span> <span class="w">British</span> <span class="w">took</span> <span class="w">Québec</span> <span class="w">City</span> <span class="w">and</span> <span class="w">France&#x27;s</span> <span class="w">empire</span> <span class="w">in</span> <span class="w">America</span> <span class="w">ended</span><button class="say" type="button" data-lang="en" data-k="5e1849e649f96420" aria-label="朗讀">🔊</button></span></span></p>
+    <ul class='iv-tl-details'><li><span class="bi"><span class="bi-zh"><strong>考試重點戰役</strong><button class="say" type="button" data-lang="zh" data-k="0ecc094ef3827bfb" aria-label="朗讀">🔊</button></span><span class="bi-en"><strong><span class="w">Key</span> <span class="w">exam</span> <span class="w">battle</span></strong><button class="say" type="button" data-lang="en" data-k="36bc2ea8bc4b395a" aria-label="朗讀">🔊</button></span></span></li><li><span class="bi"><span class="bi-zh">兩位將軍都陣亡<button class="say" type="button" data-lang="zh" data-k="1b40294783a9a5bf" aria-label="朗讀">🔊</button></span><span class="bi-en"><span class="w">Both</span> <span class="w">commanders</span> <span class="w">were</span> <span class="w">killed</span><button class="say" type="button" data-lang="en" data-k="ec77de97f3ba2f96" aria-label="朗讀">🔊</button></span></span></li><li><span class="bi"><span class="bi-zh">殖民地改名 Province of Quebec<button class="say" type="button" data-lang="zh" data-k="1980a24b7d1eb4c6" aria-label="朗讀">🔊</button></span><span class="bi-en"><span class="w">The</span> <span class="w">colony</span> <span class="w">was</span> <span class="w">renamed</span> <span class="w">the</span> <span class="w">Province</span> <span class="w">of</span> <span class="w">Quebec</span><button class="say" type="button" data-lang="en" data-k="ea75e68c2d69fab4" aria-label="朗讀">🔊</button></span></span></li></ul>
   </div>
 </div>
 <div class="iv-tl-event " data-era="british">
@@ -642,8 +643,8 @@ blockquote.speakable > .speak-btn,
   <div class="iv-tl-content">
     <h3 class="iv-tl-title">Treaty of Paris：法割讓北美</h3>
     <div class="iv-tl-en">Treaty of Paris</div>
-    <p class="iv-tl-brief"><span class="bi-zh">七年戰爭結束，新法蘭西正式割讓給英國</span><span class="bi-en">End of the Seven Years' War; New France was ceded to Britain</span></p>
-    <ul class='iv-tl-details'><li><span class="bi-zh">Royal Proclamation 1763 首次保障原住民領土權利</span><span class="bi-en">The Royal Proclamation of 1763 first guaranteed Aboriginal territorial rights</span></li></ul>
+    <p class="iv-tl-brief"><span class="bi"><span class="bi-zh">七年戰爭結束，新法蘭西正式割讓給英國<button class="say" type="button" data-lang="zh" data-k="a19842565308869a" aria-label="朗讀">🔊</button></span><span class="bi-en"><span class="w">End</span> <span class="w">of</span> <span class="w">the</span> <span class="w">Seven</span> <span class="w">Years</span>&#x27; <span class="w">War</span>; <span class="w">New</span> <span class="w">France</span> <span class="w">was</span> <span class="w">ceded</span> <span class="w">to</span> <span class="w">Britain</span><button class="say" type="button" data-lang="en" data-k="e567133c3996ea28" aria-label="朗讀">🔊</button></span></span></p>
+    <ul class='iv-tl-details'><li><span class="bi"><span class="bi-zh">Royal Proclamation 1763 首次保障原住民領土權利<button class="say" type="button" data-lang="zh" data-k="6c2a9b97c98de7b9" aria-label="朗讀">🔊</button></span><span class="bi-en"><span class="w">The</span> <span class="w">Royal</span> <span class="w">Proclamation</span> <span class="w">of</span> 1763 <span class="w">first</span> <span class="w">guaranteed</span> <span class="w">Aboriginal</span> <span class="w">territorial</span> <span class="w">rights</span><button class="say" type="button" data-lang="en" data-k="9546cef670ede3ab" aria-label="朗讀">🔊</button></span></span></li></ul>
   </div>
 </div>
 <div class="iv-tl-event " data-era="british">
@@ -652,8 +653,8 @@ blockquote.speakable > .speak-btn,
   <div class="iv-tl-content">
     <h3 class="iv-tl-title">Quebec Act 保障法裔權利</h3>
     <div class="iv-tl-en">Quebec Act</div>
-    <p class="iv-tl-brief"><span class="bi-zh">英國保障法裔的天主教信仰、擔任公職權利與法國民法</span><span class="bi-en">Britain allowed Catholics religious freedom and public office, and restored French civil law</span></p>
-    <ul class='iv-tl-details'><li><span class="bi-zh">加拿大憲政基礎之一</span><span class="bi-en">One of the constitutional foundations of Canada</span></li><li><span class="bi-zh">保留英國刑法</span><span class="bi-en">British criminal law was kept</span></li></ul>
+    <p class="iv-tl-brief"><span class="bi"><span class="bi-zh">英國保障法裔的天主教信仰、擔任公職權利與法國民法<button class="say" type="button" data-lang="zh" data-k="b65c2d5fbf006628" aria-label="朗讀">🔊</button></span><span class="bi-en"><span class="w">Britain</span> <span class="w">allowed</span> <span class="w">Catholics</span> <span class="w">religious</span> <span class="w">freedom</span> <span class="w">and</span> <span class="w">public</span> <span class="w">office</span>, <span class="w">and</span> <span class="w">restored</span> <span class="w">French</span> <span class="w">civil</span> <span class="w">law</span><button class="say" type="button" data-lang="en" data-k="a2748efcb83b7058" aria-label="朗讀">🔊</button></span></span></p>
+    <ul class='iv-tl-details'><li><span class="bi"><span class="bi-zh">加拿大憲政基礎之一<button class="say" type="button" data-lang="zh" data-k="073b88e40e4122a2" aria-label="朗讀">🔊</button></span><span class="bi-en"><span class="w">One</span> <span class="w">of</span> <span class="w">the</span> <span class="w">constitutional</span> <span class="w">foundations</span> <span class="w">of</span> <span class="w">Canada</span><button class="say" type="button" data-lang="en" data-k="34ed76e538bf33c8" aria-label="朗讀">🔊</button></span></span></li><li><span class="bi"><span class="bi-zh">保留英國刑法<button class="say" type="button" data-lang="zh" data-k="e5a6fad899babcc8" aria-label="朗讀">🔊</button></span><span class="bi-en"><span class="w">British</span> <span class="w">criminal</span> <span class="w">law</span> <span class="w">was</span> <span class="w">kept</span><button class="say" type="button" data-lang="en" data-k="1cd5de9fc7fc9256" aria-label="朗讀">🔊</button></span></span></li></ul>
   </div>
 </div>
 <div class="iv-tl-event " data-era="british">
@@ -662,8 +663,8 @@ blockquote.speakable > .speak-btn,
   <div class="iv-tl-content">
     <h3 class="iv-tl-title">美國革命，Loyalists 北逃</h3>
     <div class="iv-tl-en">American Revolution — Loyalists flee north</div>
-    <p class="iv-tl-brief"><span class="bi-zh">約 4 萬 'United Empire Loyalists' 從美國逃到 Nova Scotia 與 Quebec</span><span class="bi-en">Some 40,000 United Empire Loyalists fled to Nova Scotia and Quebec</span></p>
-    <ul class='iv-tl-details'><li><span class="bi-zh">Joseph Brant 率莫霍克族效忠派入加</span><span class="bi-en">Joseph Brant led Loyalist Mohawk into Canada</span></li><li><span class="bi-zh">約 3,000 黑人效忠派北上</span><span class="bi-en">About 3,000 black Loyalists came north</span></li><li><span class="bi-zh">1791 Constitutional Act 將 Quebec 分為 Upper／Lower Canada</span><span class="bi-en">The Constitutional Act of 1791 split Quebec into Upper and Lower Canada</span></li></ul>
+    <p class="iv-tl-brief"><span class="bi"><span class="bi-zh">約 4 萬 &#x27;United Empire Loyalists&#x27; 從美國逃到 Nova Scotia 與 Quebec<button class="say" type="button" data-lang="zh" data-k="1641d05e509d4929" aria-label="朗讀">🔊</button></span><span class="bi-en"><span class="w">Some</span> 40,000 <span class="w">United</span> <span class="w">Empire</span> <span class="w">Loyalists</span> <span class="w">fled</span> <span class="w">to</span> <span class="w">Nova</span> <span class="w">Scotia</span> <span class="w">and</span> <span class="w">Quebec</span><button class="say" type="button" data-lang="en" data-k="cec48d3504a3d5ec" aria-label="朗讀">🔊</button></span></span></p>
+    <ul class='iv-tl-details'><li><span class="bi"><span class="bi-zh">Joseph Brant 率莫霍克族效忠派入加<button class="say" type="button" data-lang="zh" data-k="75c130dd56b8070b" aria-label="朗讀">🔊</button></span><span class="bi-en"><span class="w">Joseph</span> <span class="w">Brant</span> <span class="w">led</span> <span class="w">Loyalist</span> <span class="w">Mohawk</span> <span class="w">into</span> <span class="w">Canada</span><button class="say" type="button" data-lang="en" data-k="191e86bd2476456d" aria-label="朗讀">🔊</button></span></span></li><li><span class="bi"><span class="bi-zh">約 3,000 黑人效忠派北上<button class="say" type="button" data-lang="zh" data-k="48fbcbf942f0722f" aria-label="朗讀">🔊</button></span><span class="bi-en"><span class="w">About</span> 3,000 <span class="w">black</span> <span class="w">Loyalists</span> <span class="w">came</span> <span class="w">north</span><button class="say" type="button" data-lang="en" data-k="d696b3eac082f910" aria-label="朗讀">🔊</button></span></span></li><li><span class="bi"><span class="bi-zh">1791 Constitutional Act 將 Quebec 分為 Upper／Lower Canada<button class="say" type="button" data-lang="zh" data-k="8d3cf10daa8dc9b6" aria-label="朗讀">🔊</button></span><span class="bi-en"><span class="w">The</span> <span class="w">Constitutional</span> <span class="w">Act</span> <span class="w">of</span> 1791 <span class="w">split</span> <span class="w">Quebec</span> <span class="w">into</span> <span class="w">Upper</span> <span class="w">and</span> <span class="w">Lower</span> <span class="w">Canada</span><button class="say" type="button" data-lang="en" data-k="e6233c7a56068960" aria-label="朗讀">🔊</button></span></span></li></ul>
   </div>
 </div>
 <div class="iv-tl-event " data-era="british">
@@ -672,8 +673,8 @@ blockquote.speakable > .speak-btn,
   <div class="iv-tl-content">
     <h3 class="iv-tl-title">上加拿大率先廢奴</h3>
     <div class="iv-tl-en">Upper Canada moves to abolish slavery</div>
-    <p class="iv-tl-brief"><span class="bi-zh">副總督 Simcoe 讓上加拿大成為大英帝國第一個邁向廢奴的省</span><span class="bi-en">Lieutenant Governor Simcoe made Upper Canada the first province in the Empire to move toward abolition</span></p>
-    <ul class='iv-tl-details'><li><span class="bi-zh">1833 全帝國廢奴</span><span class="bi-en">Slavery abolished throughout the Empire in 1833</span></li><li><span class="bi-zh">Underground Railroad 帶數千奴隸逃到加拿大</span><span class="bi-en">Thousands of slaves reached Canada via the Underground Railroad</span></li></ul>
+    <p class="iv-tl-brief"><span class="bi"><span class="bi-zh">副總督 Simcoe 讓上加拿大成為大英帝國第一個邁向廢奴的省<button class="say" type="button" data-lang="zh" data-k="631d045abf678c19" aria-label="朗讀">🔊</button></span><span class="bi-en"><span class="w">Lieutenant</span> <span class="w">Governor</span> <span class="w">Simcoe</span> <span class="w">made</span> <span class="w">Upper</span> <span class="w">Canada</span> <span class="w">the</span> <span class="w">first</span> <span class="w">province</span> <span class="w">in</span> <span class="w">the</span> <span class="w">Empire</span> <span class="w">to</span> <span class="w">move</span> <span class="w">toward</span> <span class="w">abolition</span><button class="say" type="button" data-lang="en" data-k="0cbbddc8285c9599" aria-label="朗讀">🔊</button></span></span></p>
+    <ul class='iv-tl-details'><li><span class="bi"><span class="bi-zh">1833 全帝國廢奴<button class="say" type="button" data-lang="zh" data-k="ea8b902d95ce5110" aria-label="朗讀">🔊</button></span><span class="bi-en"><span class="w">Slavery</span> <span class="w">abolished</span> <span class="w">throughout</span> <span class="w">the</span> <span class="w">Empire</span> <span class="w">in</span> 1833<button class="say" type="button" data-lang="en" data-k="7b1baa8e73ac1473" aria-label="朗讀">🔊</button></span></span></li><li><span class="bi"><span class="bi-zh">Underground Railroad 帶數千奴隸逃到加拿大<button class="say" type="button" data-lang="zh" data-k="24eb7182f509f100" aria-label="朗讀">🔊</button></span><span class="bi-en"><span class="w">Thousands</span> <span class="w">of</span> <span class="w">slaves</span> <span class="w">reached</span> <span class="w">Canada</span> <span class="w">via</span> <span class="w">the</span> <span class="w">Underground</span> <span class="w">Railroad</span><button class="say" type="button" data-lang="en" data-k="5a10d450995bc6a2" aria-label="朗讀">🔊</button></span></span></li></ul>
   </div>
 </div>
 <div class="iv-tl-event " data-era="british">
@@ -682,8 +683,8 @@ blockquote.speakable > .speak-btn,
   <div class="iv-tl-content">
     <h3 class="iv-tl-title">1812 戰爭 — 加拿大守住了 ⚔️</h3>
     <div class="iv-tl-en">War of 1812 — Canada survives</div>
-    <p class="iv-tl-brief"><span class="bi-zh">美國入侵，<strong>加拿大志願軍、英軍、原住民聯軍擊退美軍</strong></span><span class="bi-en">The U.S. invaded; <strong>Canadian volunteers, British troops and First Nations repelled the invasion</strong></span></p>
-    <ul class='iv-tl-details'><li><span class="bi-zh"><strong>考試重點</strong></span><span class="bi-en"><strong>Key exam topic</strong></span></li><li><span class="bi-zh">Sir Isaac Brock 攻下 Detroit，在 Queenston Heights 陣亡</span><span class="bi-en">Brock captured Detroit and was killed at Queenston Heights</span></li><li><span class="bi-zh">原住民領袖 Tecumseh 與英軍結盟</span><span class="bi-en">Chief Tecumseh allied with the British</span></li><li><span class="bi-zh">Laura Secord 徒步 30 公里通報美軍動向</span><span class="bi-en">Laura Secord walked 30 km to warn of an American attack</span></li><li><span class="bi-zh">1814 英軍燒了 Washington 白宮</span><span class="bi-en">In 1814 the British burned the White House in Washington</span></li></ul>
+    <p class="iv-tl-brief"><span class="bi"><span class="bi-zh">美國入侵，<strong>加拿大志願軍、英軍、原住民聯軍擊退美軍</strong><button class="say" type="button" data-lang="zh" data-k="3754063ba8f8eda2" aria-label="朗讀">🔊</button></span><span class="bi-en"><span class="w">The</span> <span class="w">U</span>.<span class="w">S</span>. <span class="w">invaded</span>; <strong><span class="w">Canadian</span> <span class="w">volunteers</span>, <span class="w">British</span> <span class="w">troops</span> <span class="w">and</span> <span class="w">First</span> <span class="w">Nations</span> <span class="w">repelled</span> <span class="w">the</span> <span class="w">invasion</span></strong><button class="say" type="button" data-lang="en" data-k="ed95e5f422ddda76" aria-label="朗讀">🔊</button></span></span></p>
+    <ul class='iv-tl-details'><li><span class="bi"><span class="bi-zh"><strong>考試重點</strong><button class="say" type="button" data-lang="zh" data-k="ed26c9d61898a54d" aria-label="朗讀">🔊</button></span><span class="bi-en"><strong><span class="w">Key</span> <span class="w">exam</span> <span class="w">topic</span></strong><button class="say" type="button" data-lang="en" data-k="1619e07dc3f7150a" aria-label="朗讀">🔊</button></span></span></li><li><span class="bi"><span class="bi-zh">Sir Isaac Brock 攻下 Detroit，在 Queenston Heights 陣亡<button class="say" type="button" data-lang="zh" data-k="7a5283f9efe5045b" aria-label="朗讀">🔊</button></span><span class="bi-en"><span class="w">Brock</span> <span class="w">captured</span> <span class="w">Detroit</span> <span class="w">and</span> <span class="w">was</span> <span class="w">killed</span> <span class="w">at</span> <span class="w">Queenston</span> <span class="w">Heights</span><button class="say" type="button" data-lang="en" data-k="e10f31cc87ccf2e7" aria-label="朗讀">🔊</button></span></span></li><li><span class="bi"><span class="bi-zh">原住民領袖 Tecumseh 與英軍結盟<button class="say" type="button" data-lang="zh" data-k="1f042da32c307d36" aria-label="朗讀">🔊</button></span><span class="bi-en"><span class="w">Chief</span> <span class="w">Tecumseh</span> <span class="w">allied</span> <span class="w">with</span> <span class="w">the</span> <span class="w">British</span><button class="say" type="button" data-lang="en" data-k="60441d609bb92af3" aria-label="朗讀">🔊</button></span></span></li><li><span class="bi"><span class="bi-zh">Laura Secord 徒步 30 公里通報美軍動向<button class="say" type="button" data-lang="zh" data-k="375a78e6473770fc" aria-label="朗讀">🔊</button></span><span class="bi-en"><span class="w">Laura</span> <span class="w">Secord</span> <span class="w">walked</span> 30 <span class="w">km</span> <span class="w">to</span> <span class="w">warn</span> <span class="w">of</span> <span class="w">an</span> <span class="w">American</span> <span class="w">attack</span><button class="say" type="button" data-lang="en" data-k="1a4c5f6a60a23ccc" aria-label="朗讀">🔊</button></span></span></li><li><span class="bi"><span class="bi-zh">1814 英軍燒了 Washington 白宮<button class="say" type="button" data-lang="zh" data-k="251b145916c1bac5" aria-label="朗讀">🔊</button></span><span class="bi-en"><span class="w">In</span> 1814 <span class="w">the</span> <span class="w">British</span> <span class="w">burned</span> <span class="w">the</span> <span class="w">White</span> <span class="w">House</span> <span class="w">in</span> <span class="w">Washington</span><button class="say" type="button" data-lang="en" data-k="8a79f9c7505b7a22" aria-label="朗讀">🔊</button></span></span></li></ul>
   </div>
 </div>
 <div class="iv-tl-event " data-era="british">
@@ -692,8 +693,8 @@ blockquote.speakable > .speak-btn,
   <div class="iv-tl-content">
     <h3 class="iv-tl-title">Upper / Lower Canada 叛亂</h3>
     <div class="iv-tl-en">Rebellions of 1837-38</div>
-    <p class="iv-tl-brief"><span class="bi-zh">改革派起義被鎮壓，但促成 Lord Durham 報告與責任政府</span><span class="bi-en">Reformers' rebellions were defeated but led to Lord Durham's report and responsible government</span></p>
-    <ul class='iv-tl-details'><li><span class="bi-zh">Durham 建議合併兩個加拿大並給予責任政府</span><span class="bi-en">Durham recommended uniting the Canadas and granting responsible government</span></li><li><span class="bi-zh">促成 1840 Act of Union</span><span class="bi-en">Led to the 1840 Act of Union</span></li></ul>
+    <p class="iv-tl-brief"><span class="bi"><span class="bi-zh">改革派起義被鎮壓，但促成 Lord Durham 報告與責任政府<button class="say" type="button" data-lang="zh" data-k="394a213fbddd58a6" aria-label="朗讀">🔊</button></span><span class="bi-en"><span class="w">Reformers</span>&#x27; <span class="w">rebellions</span> <span class="w">were</span> <span class="w">defeated</span> <span class="w">but</span> <span class="w">led</span> <span class="w">to</span> <span class="w">Lord</span> <span class="w">Durham&#x27;s</span> <span class="w">report</span> <span class="w">and</span> <span class="w">responsible</span> <span class="w">government</span><button class="say" type="button" data-lang="en" data-k="c152499c687fcf72" aria-label="朗讀">🔊</button></span></span></p>
+    <ul class='iv-tl-details'><li><span class="bi"><span class="bi-zh">Durham 建議合併兩個加拿大並給予責任政府<button class="say" type="button" data-lang="zh" data-k="dbd0c1865cd2301b" aria-label="朗讀">🔊</button></span><span class="bi-en"><span class="w">Durham</span> <span class="w">recommended</span> <span class="w">uniting</span> <span class="w">the</span> <span class="w">Canadas</span> <span class="w">and</span> <span class="w">granting</span> <span class="w">responsible</span> <span class="w">government</span><button class="say" type="button" data-lang="en" data-k="45b51fd1f9e91a01" aria-label="朗讀">🔊</button></span></span></li><li><span class="bi"><span class="bi-zh">促成 1840 Act of Union<button class="say" type="button" data-lang="zh" data-k="779f2ed7886f756d" aria-label="朗讀">🔊</button></span><span class="bi-en"><span class="w">Led</span> <span class="w">to</span> <span class="w">the</span> 1840 <span class="w">Act</span> <span class="w">of</span> <span class="w">Union</span><button class="say" type="button" data-lang="en" data-k="74b65857895fe871" aria-label="朗讀">🔊</button></span></span></li></ul>
   </div>
 </div>
 <div class="iv-tl-event " data-era="british">
@@ -702,8 +703,8 @@ blockquote.speakable > .speak-btn,
   <div class="iv-tl-content">
     <h3 class="iv-tl-title">Act of Union 統一兩 Canada</h3>
     <div class="iv-tl-en">Act of Union</div>
-    <p class="iv-tl-brief"><span class="bi-zh">Upper + Lower Canada 合併為 'Province of Canada'</span><span class="bi-en">Upper and Lower Canada were united as the Province of Canada</span></p>
-    <ul class='iv-tl-details'><li><span class="bi-zh">1847–48 Nova Scotia 第一個達成責任政府</span><span class="bi-en">Nova Scotia attained responsible government first (1847–48)</span></li><li><span class="bi-zh">La Fontaine 1849 成為加拿大第一位責任政府領袖</span><span class="bi-en">La Fontaine became the first leader of a responsible government in 1849</span></li></ul>
+    <p class="iv-tl-brief"><span class="bi"><span class="bi-zh">Upper + Lower Canada 合併為 &#x27;Province of Canada&#x27;<button class="say" type="button" data-lang="zh" data-k="d11a6500fb371925" aria-label="朗讀">🔊</button></span><span class="bi-en"><span class="w">Upper</span> <span class="w">and</span> <span class="w">Lower</span> <span class="w">Canada</span> <span class="w">were</span> <span class="w">united</span> <span class="w">as</span> <span class="w">the</span> <span class="w">Province</span> <span class="w">of</span> <span class="w">Canada</span><button class="say" type="button" data-lang="en" data-k="0c63429f6af51d4d" aria-label="朗讀">🔊</button></span></span></p>
+    <ul class='iv-tl-details'><li><span class="bi"><span class="bi-zh">1847–48 Nova Scotia 第一個達成責任政府<button class="say" type="button" data-lang="zh" data-k="50493fc2e7be2bd1" aria-label="朗讀">🔊</button></span><span class="bi-en"><span class="w">Nova</span> <span class="w">Scotia</span> <span class="w">attained</span> <span class="w">responsible</span> <span class="w">government</span> <span class="w">first</span> (1847–48)<button class="say" type="button" data-lang="en" data-k="2a0eb09b07dac969" aria-label="朗讀">🔊</button></span></span></li><li><span class="bi"><span class="bi-zh">La Fontaine 1849 成為加拿大第一位責任政府領袖<button class="say" type="button" data-lang="zh" data-k="dee2ae4be15d3436" aria-label="朗讀">🔊</button></span><span class="bi-en"><span class="w">La</span> <span class="w">Fontaine</span> <span class="w">became</span> <span class="w">the</span> <span class="w">first</span> <span class="w">leader</span> <span class="w">of</span> <span class="w">a</span> <span class="w">responsible</span> <span class="w">government</span> <span class="w">in</span> 1849<button class="say" type="button" data-lang="en" data-k="ae4d60835bf10122" aria-label="朗讀">🔊</button></span></span></li></ul>
   </div>
 </div>
 <div class="iv-tl-event " data-era="confederation">
@@ -712,8 +713,8 @@ blockquote.speakable > .speak-btn,
   <div class="iv-tl-content">
     <h3 class="iv-tl-title">Charlottetown Conference</h3>
     <div class="iv-tl-en">Charlottetown Conference</div>
-    <p class="iv-tl-brief"><span class="bi-zh">Confederation 規劃會議在 PEI Charlottetown 舉行</span><span class="bi-en">The conference that planned Confederation met in Charlottetown, PEI</span></p>
-    <ul class='iv-tl-details'><li><span class="bi-zh"><strong>'Birthplace of Confederation'</strong></span><span class="bi-en"><strong>"Birthplace of Confederation"</strong></span></li><li><span class="bi-zh">與會者後稱 'Fathers of Confederation'</span><span class="bi-en">The delegates became known as the Fathers of Confederation</span></li></ul>
+    <p class="iv-tl-brief"><span class="bi"><span class="bi-zh">Confederation 規劃會議在 PEI Charlottetown 舉行<button class="say" type="button" data-lang="zh" data-k="bc0792a2bc0d6878" aria-label="朗讀">🔊</button></span><span class="bi-en"><span class="w">The</span> <span class="w">conference</span> <span class="w">that</span> <span class="w">planned</span> <span class="w">Confederation</span> <span class="w">met</span> <span class="w">in</span> <span class="w">Charlottetown</span>, <span class="w">PEI</span><button class="say" type="button" data-lang="en" data-k="42afe3c02c1cae59" aria-label="朗讀">🔊</button></span></span></p>
+    <ul class='iv-tl-details'><li><span class="bi"><span class="bi-zh"><strong>&#x27;Birthplace of Confederation&#x27;</strong><button class="say" type="button" data-lang="zh" data-k="09675f26b8fa225b" aria-label="朗讀">🔊</button></span><span class="bi-en"><strong>&quot;<span class="w">Birthplace</span> <span class="w">of</span> <span class="w">Confederation</span>&quot;</strong><button class="say" type="button" data-lang="en" data-k="3465b904cd987ed1" aria-label="朗讀">🔊</button></span></span></li><li><span class="bi"><span class="bi-zh">與會者後稱 &#x27;Fathers of Confederation&#x27;<button class="say" type="button" data-lang="zh" data-k="a86dc9261f319b71" aria-label="朗讀">🔊</button></span><span class="bi-en"><span class="w">The</span> <span class="w">delegates</span> <span class="w">became</span> <span class="w">known</span> <span class="w">as</span> <span class="w">the</span> <span class="w">Fathers</span> <span class="w">of</span> <span class="w">Confederation</span><button class="say" type="button" data-lang="en" data-k="c0e216726a7928c5" aria-label="朗讀">🔊</button></span></span></li></ul>
   </div>
 </div>
 <div class="iv-tl-event iv-tl-star" data-era="confederation">
@@ -722,8 +723,8 @@ blockquote.speakable > .speak-btn,
   <div class="iv-tl-content">
     <h3 class="iv-tl-title">邦聯誕生 — Dominion of Canada</h3>
     <div class="iv-tl-en">Confederation — Dominion of Canada</div>
-    <p class="iv-tl-brief"><span class="bi-zh"><strong>英國國會通過 British North America Act</strong>，7 月 1 日加拿大自治領誕生</span><span class="bi-en"><strong>The British Parliament passed the British North America Act</strong>; the Dominion of Canada was born July 1</span></p>
-    <ul class='iv-tl-details'><li><span class="bi-zh"><strong>考試最重要日期之一</strong></span><span class="bi-en"><strong>One of the most important dates on the test</strong></span></li><li><span class="bi-zh">成立四省：Ontario、Quebec、Nova Scotia、New Brunswick</span><span class="bi-en">Four provinces: Ontario, Quebec, Nova Scotia, New Brunswick</span></li><li><span class="bi-zh"><strong>首任總理 Sir John A. Macdonald</strong></span><span class="bi-en"><strong>First Prime Minister: Sir John A. Macdonald</strong></span></li><li><span class="bi-zh">George-Étienne Cartier 是魁北克的聯邦之父</span><span class="bi-en">George-Étienne Cartier was the key architect from Quebec</span></li><li><span class="bi-zh">7 月 1 日 = <strong>Canada Day</strong>（1982 前叫 Dominion Day）</span><span class="bi-en">July 1 = <strong>Canada Day</strong> (Dominion Day until 1982)</span></li></ul>
+    <p class="iv-tl-brief"><span class="bi"><span class="bi-zh"><strong>英國國會通過 British North America Act</strong>，7 月 1 日加拿大自治領誕生<button class="say" type="button" data-lang="zh" data-k="a793f71c4a52bd32" aria-label="朗讀">🔊</button></span><span class="bi-en"><strong><span class="w">The</span> <span class="w">British</span> <span class="w">Parliament</span> <span class="w">passed</span> <span class="w">the</span> <span class="w">British</span> <span class="w">North</span> <span class="w">America</span> <span class="w">Act</span></strong>; <span class="w">the</span> <span class="w">Dominion</span> <span class="w">of</span> <span class="w">Canada</span> <span class="w">was</span> <span class="w">born</span> <span class="w">July</span> 1<button class="say" type="button" data-lang="en" data-k="b7e64e986b2c18c3" aria-label="朗讀">🔊</button></span></span></p>
+    <ul class='iv-tl-details'><li><span class="bi"><span class="bi-zh"><strong>考試最重要日期之一</strong><button class="say" type="button" data-lang="zh" data-k="4618c060cf52e018" aria-label="朗讀">🔊</button></span><span class="bi-en"><strong><span class="w">One</span> <span class="w">of</span> <span class="w">the</span> <span class="w">most</span> <span class="w">important</span> <span class="w">dates</span> <span class="w">on</span> <span class="w">the</span> <span class="w">test</span></strong><button class="say" type="button" data-lang="en" data-k="b8604ec107e80d4c" aria-label="朗讀">🔊</button></span></span></li><li><span class="bi"><span class="bi-zh">成立四省：Ontario、Quebec、Nova Scotia、New Brunswick<button class="say" type="button" data-lang="zh" data-k="f0e4e1bcac06fd91" aria-label="朗讀">🔊</button></span><span class="bi-en"><span class="w">Four</span> <span class="w">provinces</span>: <span class="w">Ontario</span>, <span class="w">Quebec</span>, <span class="w">Nova</span> <span class="w">Scotia</span>, <span class="w">New</span> <span class="w">Brunswick</span><button class="say" type="button" data-lang="en" data-k="e0077f368feffcb4" aria-label="朗讀">🔊</button></span></span></li><li><span class="bi"><span class="bi-zh"><strong>首任總理 Sir John A. Macdonald</strong><button class="say" type="button" data-lang="zh" data-k="ccace6a481385486" aria-label="朗讀">🔊</button></span><span class="bi-en"><strong><span class="w">First</span> <span class="w">Prime</span> <span class="w">Minister</span>: <span class="w">Sir</span> <span class="w">John</span> <span class="w">A</span>. <span class="w">Macdonald</span></strong><button class="say" type="button" data-lang="en" data-k="f4a790ba1bf79677" aria-label="朗讀">🔊</button></span></span></li><li><span class="bi"><span class="bi-zh">George-Étienne Cartier 是魁北克的聯邦之父<button class="say" type="button" data-lang="zh" data-k="04ce9e9703491680" aria-label="朗讀">🔊</button></span><span class="bi-en"><span class="w">George-Étienne</span> <span class="w">Cartier</span> <span class="w">was</span> <span class="w">the</span> <span class="w">key</span> <span class="w">architect</span> <span class="w">from</span> <span class="w">Quebec</span><button class="say" type="button" data-lang="en" data-k="b2a32ee828bc8a18" aria-label="朗讀">🔊</button></span></span></li><li><span class="bi"><span class="bi-zh">7 月 1 日 = <strong>Canada Day</strong>（1982 前叫 Dominion Day）<button class="say" type="button" data-lang="zh" data-k="a899ed21067b2df8" aria-label="朗讀">🔊</button></span><span class="bi-en"><span class="w">July</span> 1 = <strong><span class="w">Canada</span> <span class="w">Day</span></strong> (<span class="w">Dominion</span> <span class="w">Day</span> <span class="w">until</span> 1982)<button class="say" type="button" data-lang="en" data-k="b598047e1c5eba46" aria-label="朗讀">🔊</button></span></span></li></ul>
   </div>
 </div>
 <div class="iv-tl-event " data-era="confederation">
@@ -732,8 +733,8 @@ blockquote.speakable > .speak-btn,
   <div class="iv-tl-content">
     <h3 class="iv-tl-title">Manitoba 加入 + Riel 起義</h3>
     <div class="iv-tl-en">Manitoba joins + Riel Rebellion</div>
-    <p class="iv-tl-brief"><span class="bi-zh">Métis 領袖 Louis Riel 在 Red River 起義，Manitoba 1870 加入聯邦</span><span class="bi-en">Métis leader Louis Riel led the Red River uprising; Manitoba joined in 1870</span></p>
-    <ul class='iv-tl-details'><li><span class="bi-zh">Louis Riel 被許多人視為 Manitoba 之父</span><span class="bi-en">Riel is seen by many as the father of Manitoba</span></li><li><span class="bi-zh">1885 第二次起義（North-West Rebellion）後被處決</span><span class="bi-en">Executed after the 1885 North-West Rebellion</span></li><li><span class="bi-zh">1873 成立 North West Mounted Police</span><span class="bi-en">The North West Mounted Police was created in 1873</span></li></ul>
+    <p class="iv-tl-brief"><span class="bi"><span class="bi-zh">Métis 領袖 Louis Riel 在 Red River 起義，Manitoba 1870 加入聯邦<button class="say" type="button" data-lang="zh" data-k="e557889f37c4f1d9" aria-label="朗讀">🔊</button></span><span class="bi-en"><span class="w">Métis</span> <span class="w">leader</span> <span class="w">Louis</span> <span class="w">Riel</span> <span class="w">led</span> <span class="w">the</span> <span class="w">Red</span> <span class="w">River</span> <span class="w">uprising</span>; <span class="w">Manitoba</span> <span class="w">joined</span> <span class="w">in</span> 1870<button class="say" type="button" data-lang="en" data-k="f0454e3278902181" aria-label="朗讀">🔊</button></span></span></p>
+    <ul class='iv-tl-details'><li><span class="bi"><span class="bi-zh">Louis Riel 被許多人視為 Manitoba 之父<button class="say" type="button" data-lang="zh" data-k="bb19ac8c00ec2ed2" aria-label="朗讀">🔊</button></span><span class="bi-en"><span class="w">Riel</span> <span class="w">is</span> <span class="w">seen</span> <span class="w">by</span> <span class="w">many</span> <span class="w">as</span> <span class="w">the</span> <span class="w">father</span> <span class="w">of</span> <span class="w">Manitoba</span><button class="say" type="button" data-lang="en" data-k="9c8189b250617c80" aria-label="朗讀">🔊</button></span></span></li><li><span class="bi"><span class="bi-zh">1885 第二次起義（North-West Rebellion）後被處決<button class="say" type="button" data-lang="zh" data-k="261c35c38333b2cc" aria-label="朗讀">🔊</button></span><span class="bi-en"><span class="w">Executed</span> <span class="w">after</span> <span class="w">the</span> 1885 <span class="w">North-West</span> <span class="w">Rebellion</span><button class="say" type="button" data-lang="en" data-k="aae43a36f7b22416" aria-label="朗讀">🔊</button></span></span></li><li><span class="bi"><span class="bi-zh">1873 成立 North West Mounted Police<button class="say" type="button" data-lang="zh" data-k="d9aeb6ce8bf172dc" aria-label="朗讀">🔊</button></span><span class="bi-en"><span class="w">The</span> <span class="w">North</span> <span class="w">West</span> <span class="w">Mounted</span> <span class="w">Police</span> <span class="w">was</span> <span class="w">created</span> <span class="w">in</span> 1873<button class="say" type="button" data-lang="en" data-k="d15e3d9e7b04217a" aria-label="朗讀">🔊</button></span></span></li></ul>
   </div>
 </div>
 <div class="iv-tl-event " data-era="confederation">
@@ -742,7 +743,7 @@ blockquote.speakable > .speak-btn,
   <div class="iv-tl-content">
     <h3 class="iv-tl-title">British Columbia 加入</h3>
     <div class="iv-tl-en">British Columbia joins</div>
-    <p class="iv-tl-brief"><span class="bi-zh">BC 同意加入聯邦，條件是建一條橫貫鐵路</span><span class="bi-en">B.C. joined on the promise of a railway to the West Coast</span></p>
+    <p class="iv-tl-brief"><span class="bi"><span class="bi-zh">BC 同意加入聯邦，條件是建一條橫貫鐵路<button class="say" type="button" data-lang="zh" data-k="d31290a7eee7fcce" aria-label="朗讀">🔊</button></span><span class="bi-en"><span class="w">B</span>.<span class="w">C</span>. <span class="w">joined</span> <span class="w">on</span> <span class="w">the</span> <span class="w">promise</span> <span class="w">of</span> <span class="w">a</span> <span class="w">railway</span> <span class="w">to</span> <span class="w">the</span> <span class="w">West</span> <span class="w">Coast</span><button class="say" type="button" data-lang="en" data-k="1c4fcae0f70faca1" aria-label="朗讀">🔊</button></span></span></p>
     
   </div>
 </div>
@@ -752,7 +753,7 @@ blockquote.speakable > .speak-btn,
   <div class="iv-tl-content">
     <h3 class="iv-tl-title">Prince Edward Island 加入</h3>
     <div class="iv-tl-en">PEI joins</div>
-    <p class="iv-tl-brief"><span class="bi-zh">PEI 1873 加入</span><span class="bi-en">PEI joined in 1873</span></p>
+    <p class="iv-tl-brief"><span class="bi"><span class="bi-zh">PEI 1873 加入<button class="say" type="button" data-lang="zh" data-k="74bec47ec277112f" aria-label="朗讀">🔊</button></span><span class="bi-en"><span class="w">PEI</span> <span class="w">joined</span> <span class="w">in</span> 1873<button class="say" type="button" data-lang="en" data-k="bebeece199867956" aria-label="朗讀">🔊</button></span></span></p>
     
   </div>
 </div>
@@ -762,8 +763,8 @@ blockquote.speakable > .speak-btn,
   <div class="iv-tl-content">
     <h3 class="iv-tl-title">太平洋鐵路完成 🚂</h3>
     <div class="iv-tl-en">Canadian Pacific Railway completed</div>
-    <p class="iv-tl-brief"><span class="bi-zh">11 月 7 日打下最後一根道釘，鐵路橫貫東西</span><span class="bi-en">The last spike was driven on November 7; the railway linked Canada from sea to sea</span></p>
-    <ul class='iv-tl-details'><li><span class="bi-zh">Donald Smith（Lord Strathcona）打下 Last Spike</span><span class="bi-en">Donald Smith (Lord Strathcona) drove the last spike</span></li><li><span class="bi-zh">華工大量參與築路，之後遭人頭稅歧視；2006 政府道歉</span><span class="bi-en">Built with Chinese labour; the Head Tax followed; the government apologized in 2006</span></li><li><span class="bi-zh">為加拿大統一的象徵</span><span class="bi-en">A powerful symbol of unity</span></li></ul>
+    <p class="iv-tl-brief"><span class="bi"><span class="bi-zh">11 月 7 日打下最後一根道釘，鐵路橫貫東西<button class="say" type="button" data-lang="zh" data-k="63b95f3bcc2f2058" aria-label="朗讀">🔊</button></span><span class="bi-en"><span class="w">The</span> <span class="w">last</span> <span class="w">spike</span> <span class="w">was</span> <span class="w">driven</span> <span class="w">on</span> <span class="w">November</span> 7; <span class="w">the</span> <span class="w">railway</span> <span class="w">linked</span> <span class="w">Canada</span> <span class="w">from</span> <span class="w">sea</span> <span class="w">to</span> <span class="w">sea</span><button class="say" type="button" data-lang="en" data-k="77d3c69b58197239" aria-label="朗讀">🔊</button></span></span></p>
+    <ul class='iv-tl-details'><li><span class="bi"><span class="bi-zh">Donald Smith（Lord Strathcona）打下 Last Spike<button class="say" type="button" data-lang="zh" data-k="c9f06ba9f88ff29b" aria-label="朗讀">🔊</button></span><span class="bi-en"><span class="w">Donald</span> <span class="w">Smith</span> (<span class="w">Lord</span> <span class="w">Strathcona</span>) <span class="w">drove</span> <span class="w">the</span> <span class="w">last</span> <span class="w">spike</span><button class="say" type="button" data-lang="en" data-k="5eca2100f8a38d89" aria-label="朗讀">🔊</button></span></span></li><li><span class="bi"><span class="bi-zh">華工大量參與築路，之後遭人頭稅歧視；2006 政府道歉<button class="say" type="button" data-lang="zh" data-k="08630cd1aeedfcb8" aria-label="朗讀">🔊</button></span><span class="bi-en"><span class="w">Built</span> <span class="w">with</span> <span class="w">Chinese</span> <span class="w">labour</span>; <span class="w">the</span> <span class="w">Head</span> <span class="w">Tax</span> <span class="w">followed</span>; <span class="w">the</span> <span class="w">government</span> <span class="w">apologized</span> <span class="w">in</span> 2006<button class="say" type="button" data-lang="en" data-k="12b12efa708dea3a" aria-label="朗讀">🔊</button></span></span></li><li><span class="bi"><span class="bi-zh">為加拿大統一的象徵<button class="say" type="button" data-lang="zh" data-k="a9bd7684fefe0841" aria-label="朗讀">🔊</button></span><span class="bi-en"><span class="w">A</span> <span class="w">powerful</span> <span class="w">symbol</span> <span class="w">of</span> <span class="w">unity</span><button class="say" type="button" data-lang="en" data-k="52c5f6b3665fea92" aria-label="朗讀">🔊</button></span></span></li></ul>
   </div>
 </div>
 <div class="iv-tl-event " data-era="confederation">
@@ -772,7 +773,7 @@ blockquote.speakable > .speak-btn,
   <div class="iv-tl-content">
     <h3 class="iv-tl-title">Yukon Territory 與 Klondike 淘金潮</h3>
     <div class="iv-tl-en">Yukon Territory & Klondike Gold Rush</div>
-    <p class="iv-tl-brief"><span class="bi-zh">Klondike 淘金潮帶來人口爆炸，Yukon 正式成為 territory</span><span class="bi-en">The Klondike Gold Rush brought thousands; Yukon became a territory</span></p>
+    <p class="iv-tl-brief"><span class="bi"><span class="bi-zh">Klondike 淘金潮帶來人口爆炸，Yukon 正式成為 territory<button class="say" type="button" data-lang="zh" data-k="20caf95ddab0610d" aria-label="朗讀">🔊</button></span><span class="bi-en"><span class="w">The</span> <span class="w">Klondike</span> <span class="w">Gold</span> <span class="w">Rush</span> <span class="w">brought</span> <span class="w">thousands</span>; <span class="w">Yukon</span> <span class="w">became</span> <span class="w">a</span> <span class="w">territory</span><button class="say" type="button" data-lang="en" data-k="2ae4e37c892c43e2" aria-label="朗讀">🔊</button></span></span></p>
     
   </div>
 </div>
@@ -782,7 +783,7 @@ blockquote.speakable > .speak-btn,
   <div class="iv-tl-content">
     <h3 class="iv-tl-title">Alberta、Saskatchewan 加入</h3>
     <div class="iv-tl-en">Alberta & Saskatchewan join</div>
-    <p class="iv-tl-brief"><span class="bi-zh">兩省同時從 North-West Territories 切出</span><span class="bi-en">Both were carved from the North-West Territories</span></p>
+    <p class="iv-tl-brief"><span class="bi"><span class="bi-zh">兩省同時從 North-West Territories 切出<button class="say" type="button" data-lang="zh" data-k="e35c472472f11076" aria-label="朗讀">🔊</button></span><span class="bi-en"><span class="w">Both</span> <span class="w">were</span> <span class="w">carved</span> <span class="w">from</span> <span class="w">the</span> <span class="w">North-West</span> <span class="w">Territories</span><button class="say" type="button" data-lang="en" data-k="b36d682333a2cbdf" aria-label="朗讀">🔊</button></span></span></p>
     
   </div>
 </div>
@@ -792,8 +793,8 @@ blockquote.speakable > .speak-btn,
   <div class="iv-tl-content">
     <h3 class="iv-tl-title">WWI — Vimy Ridge 🌹</h3>
     <div class="iv-tl-en">WWI — Vimy Ridge</div>
-    <p class="iv-tl-brief"><span class="bi-zh"><strong>1917 年 4 月加拿大軍團攻下 Vimy Ridge</strong>——加拿大民族認同的關鍵時刻</span><span class="bi-en"><strong>In April 1917 the Canadian Corps captured Vimy Ridge</strong> — a defining moment for Canadian identity</span></p>
-    <ul class='iv-tl-details'><li><span class="bi-zh"><strong>考試重點</strong>：4 月 9 日 = Vimy Day</span><span class="bi-en"><strong>Exam point</strong>: April 9 is Vimy Day</span></li><li><span class="bi-zh">60 萬人服役、6 萬人陣亡</span><span class="bi-en">600,000 served, 60,000 killed</span></li><li><span class="bi-zh">1918 年 11 月 11 日停戰</span><span class="bi-en">Armistice on November 11, 1918</span></li></ul>
+    <p class="iv-tl-brief"><span class="bi"><span class="bi-zh"><strong>1917 年 4 月加拿大軍團攻下 Vimy Ridge</strong>——加拿大民族認同的關鍵時刻<button class="say" type="button" data-lang="zh" data-k="a361a6dd2fee65c2" aria-label="朗讀">🔊</button></span><span class="bi-en"><strong><span class="w">In</span> <span class="w">April</span> 1917 <span class="w">the</span> <span class="w">Canadian</span> <span class="w">Corps</span> <span class="w">captured</span> <span class="w">Vimy</span> <span class="w">Ridge</span></strong> — <span class="w">a</span> <span class="w">defining</span> <span class="w">moment</span> <span class="w">for</span> <span class="w">Canadian</span> <span class="w">identity</span><button class="say" type="button" data-lang="en" data-k="d59be4c4d6cd4300" aria-label="朗讀">🔊</button></span></span></p>
+    <ul class='iv-tl-details'><li><span class="bi"><span class="bi-zh"><strong>考試重點</strong>：4 月 9 日 = Vimy Day<button class="say" type="button" data-lang="zh" data-k="a79445abda19f7d8" aria-label="朗讀">🔊</button></span><span class="bi-en"><strong><span class="w">Exam</span> <span class="w">point</span></strong>: <span class="w">April</span> 9 <span class="w">is</span> <span class="w">Vimy</span> <span class="w">Day</span><button class="say" type="button" data-lang="en" data-k="cf8cad828a6f2fcc" aria-label="朗讀">🔊</button></span></span></li><li><span class="bi"><span class="bi-zh">60 萬人服役、6 萬人陣亡<button class="say" type="button" data-lang="zh" data-k="7e8c3a3cfd5bca02" aria-label="朗讀">🔊</button></span><span class="bi-en">600,000 <span class="w">served</span>, 60,000 <span class="w">killed</span><button class="say" type="button" data-lang="en" data-k="380675f44c37ace5" aria-label="朗讀">🔊</button></span></span></li><li><span class="bi"><span class="bi-zh">1918 年 11 月 11 日停戰<button class="say" type="button" data-lang="zh" data-k="48276ad054a6fb7c" aria-label="朗讀">🔊</button></span><span class="bi-en"><span class="w">Armistice</span> <span class="w">on</span> <span class="w">November</span> 11, 1918<button class="say" type="button" data-lang="en" data-k="bd942be3b3cc58d1" aria-label="朗讀">🔊</button></span></span></li></ul>
   </div>
 </div>
 <div class="iv-tl-event " data-era="wars">
@@ -802,8 +803,8 @@ blockquote.speakable > .speak-btn,
   <div class="iv-tl-content">
     <h3 class="iv-tl-title">婦女選舉權</h3>
     <div class="iv-tl-en">Women's suffrage</div>
-    <p class="iv-tl-brief"><span class="bi-zh">Manitoba 1916 首先給女性投票權，聯邦 1918 跟進</span><span class="bi-en">Manitoba gave women the vote in 1916; most women got the federal vote in 1918</span></p>
-    <ul class='iv-tl-details'><li><span class="bi-zh">Dr. Emily Stowe 創立婦女參政運動</span><span class="bi-en">Dr. Emily Stowe founded the suffrage movement</span></li><li><span class="bi-zh">1921 Agnes Macphail 第一位女性國會議員</span><span class="bi-en">Agnes Macphail became the first woman MP in 1921</span></li></ul>
+    <p class="iv-tl-brief"><span class="bi"><span class="bi-zh">Manitoba 1916 首先給女性投票權，聯邦 1918 跟進<button class="say" type="button" data-lang="zh" data-k="5bd641e8acbb7c34" aria-label="朗讀">🔊</button></span><span class="bi-en"><span class="w">Manitoba</span> <span class="w">gave</span> <span class="w">women</span> <span class="w">the</span> <span class="w">vote</span> <span class="w">in</span> 1916; <span class="w">most</span> <span class="w">women</span> <span class="w">got</span> <span class="w">the</span> <span class="w">federal</span> <span class="w">vote</span> <span class="w">in</span> 1918<button class="say" type="button" data-lang="en" data-k="ec885cbe38809fe6" aria-label="朗讀">🔊</button></span></span></p>
+    <ul class='iv-tl-details'><li><span class="bi"><span class="bi-zh">Dr. Emily Stowe 創立婦女參政運動<button class="say" type="button" data-lang="zh" data-k="fbd320f47240a7d7" aria-label="朗讀">🔊</button></span><span class="bi-en"><span class="w">Dr</span>. <span class="w">Emily</span> <span class="w">Stowe</span> <span class="w">founded</span> <span class="w">the</span> <span class="w">suffrage</span> <span class="w">movement</span><button class="say" type="button" data-lang="en" data-k="5663345fbdba63da" aria-label="朗讀">🔊</button></span></span></li><li><span class="bi"><span class="bi-zh">1921 Agnes Macphail 第一位女性國會議員<button class="say" type="button" data-lang="zh" data-k="32735f092b3f003e" aria-label="朗讀">🔊</button></span><span class="bi-en"><span class="w">Agnes</span> <span class="w">Macphail</span> <span class="w">became</span> <span class="w">the</span> <span class="w">first</span> <span class="w">woman</span> <span class="w">MP</span> <span class="w">in</span> 1921<button class="say" type="button" data-lang="en" data-k="bebf41267618233e" aria-label="朗讀">🔊</button></span></span></li></ul>
   </div>
 </div>
 <div class="iv-tl-event " data-era="wars">
@@ -812,8 +813,8 @@ blockquote.speakable > .speak-btn,
   <div class="iv-tl-content">
     <h3 class="iv-tl-title">Persons Case — 女性是 'persons'</h3>
     <div class="iv-tl-en">Persons Case — women as legal persons</div>
-    <p class="iv-tl-brief"><span class="bi-zh">Famous Five 打贏官司，女性法律上是 'persons'，可任參議員</span><span class="bi-en">The Famous Five won the Persons Case; women were legally "persons" and could sit in the Senate</span></p>
-    <ul class='iv-tl-details'><li><span class="bi-zh"><strong>Famous Five</strong>：Emily Murphy 等 5 位女性</span><span class="bi-en"><strong>Famous Five</strong>: Emily Murphy and four other women</span></li></ul>
+    <p class="iv-tl-brief"><span class="bi"><span class="bi-zh">Famous Five 打贏官司，女性法律上是 &#x27;persons&#x27;，可任參議員<button class="say" type="button" data-lang="zh" data-k="5c8546b4ac6e2bfd" aria-label="朗讀">🔊</button></span><span class="bi-en"><span class="w">The</span> <span class="w">Famous</span> <span class="w">Five</span> <span class="w">won</span> <span class="w">the</span> <span class="w">Persons</span> <span class="w">Case</span>; <span class="w">women</span> <span class="w">were</span> <span class="w">legally</span> &quot;<span class="w">persons</span>&quot; <span class="w">and</span> <span class="w">could</span> <span class="w">sit</span> <span class="w">in</span> <span class="w">the</span> <span class="w">Senate</span><button class="say" type="button" data-lang="en" data-k="c8b395947dfb8e22" aria-label="朗讀">🔊</button></span></span></p>
+    <ul class='iv-tl-details'><li><span class="bi"><span class="bi-zh"><strong>Famous Five</strong>：Emily Murphy 等 5 位女性<button class="say" type="button" data-lang="zh" data-k="271e39c5d53d90cf" aria-label="朗讀">🔊</button></span><span class="bi-en"><strong><span class="w">Famous</span> <span class="w">Five</span></strong>: <span class="w">Emily</span> <span class="w">Murphy</span> <span class="w">and</span> <span class="w">four</span> <span class="w">other</span> <span class="w">women</span><button class="say" type="button" data-lang="en" data-k="d3071e2ff6302259" aria-label="朗讀">🔊</button></span></span></li></ul>
   </div>
 </div>
 <div class="iv-tl-event " data-era="wars">
@@ -822,8 +823,8 @@ blockquote.speakable > .speak-btn,
   <div class="iv-tl-content">
     <h3 class="iv-tl-title">Statute of Westminster</h3>
     <div class="iv-tl-en">Statute of Westminster</div>
-    <p class="iv-tl-brief"><span class="bi-zh">英國國會確認加拿大等 Dominion 在外交與立法上完全自主</span><span class="bi-en">Britain confirmed the Dominions' full autonomy in foreign affairs and legislation</span></p>
-    <ul class='iv-tl-details'><li><span class="bi-zh">加拿大實質獨立的法律基礎</span><span class="bi-en">Legal basis of Canadian independence</span></li></ul>
+    <p class="iv-tl-brief"><span class="bi"><span class="bi-zh">英國國會確認加拿大等 Dominion 在外交與立法上完全自主<button class="say" type="button" data-lang="zh" data-k="bc5e6ff13cf8a8c2" aria-label="朗讀">🔊</button></span><span class="bi-en"><span class="w">Britain</span> <span class="w">confirmed</span> <span class="w">the</span> <span class="w">Dominions</span>&#x27; <span class="w">full</span> <span class="w">autonomy</span> <span class="w">in</span> <span class="w">foreign</span> <span class="w">affairs</span> <span class="w">and</span> <span class="w">legislation</span><button class="say" type="button" data-lang="en" data-k="91ac6e64ada0aa43" aria-label="朗讀">🔊</button></span></span></p>
+    <ul class='iv-tl-details'><li><span class="bi"><span class="bi-zh">加拿大實質獨立的法律基礎<button class="say" type="button" data-lang="zh" data-k="6834564c6f97c17f" aria-label="朗讀">🔊</button></span><span class="bi-en"><span class="w">Legal</span> <span class="w">basis</span> <span class="w">of</span> <span class="w">Canadian</span> <span class="w">independence</span><button class="say" type="button" data-lang="en" data-k="668041e275e19fac" aria-label="朗讀">🔊</button></span></span></li></ul>
   </div>
 </div>
 <div class="iv-tl-event " data-era="wars">
@@ -832,8 +833,8 @@ blockquote.speakable > .speak-btn,
   <div class="iv-tl-content">
     <h3 class="iv-tl-title">WWII — D-Day Juno Beach</h3>
     <div class="iv-tl-en">WWII — D-Day at Juno Beach</div>
-    <p class="iv-tl-brief"><span class="bi-zh">加軍在 D-Day（1944/6/6）登陸 Juno Beach；110 萬人服役、4.4 萬陣亡</span><span class="bi-en">Canadians stormed Juno Beach on D-Day, June 6, 1944; 1.1 million served, 44,000 killed</span></p>
-    <ul class='iv-tl-details'><li><span class="bi-zh"><strong>考試重點</strong></span><span class="bi-en"><strong>Key exam topic</strong></span></li><li><span class="bi-zh">Battle of the Atlantic：加拿大海軍護航</span><span class="bi-en">The Royal Canadian Navy fought the Battle of the Atlantic</span></li><li><span class="bi-zh">戰後加拿大擁有世界第三大海軍</span><span class="bi-en">Canada ended the war with the world's third-largest navy</span></li><li><span class="bi-zh">1988 為日裔加拿大人戰時遷移道歉</span><span class="bi-en">Apology in 1988 for the wartime relocation of Japanese Canadians</span></li></ul>
+    <p class="iv-tl-brief"><span class="bi"><span class="bi-zh">加軍在 D-Day（1944/6/6）登陸 Juno Beach；110 萬人服役、4.4 萬陣亡<button class="say" type="button" data-lang="zh" data-k="61c8c35fce165a36" aria-label="朗讀">🔊</button></span><span class="bi-en"><span class="w">Canadians</span> <span class="w">stormed</span> <span class="w">Juno</span> <span class="w">Beach</span> <span class="w">on</span> <span class="w">D-Day</span>, <span class="w">June</span> 6, 1944; 1.1 <span class="w">million</span> <span class="w">served</span>, 44,000 <span class="w">killed</span><button class="say" type="button" data-lang="en" data-k="93bf26ee8b5e20d4" aria-label="朗讀">🔊</button></span></span></p>
+    <ul class='iv-tl-details'><li><span class="bi"><span class="bi-zh"><strong>考試重點</strong><button class="say" type="button" data-lang="zh" data-k="ed26c9d61898a54d" aria-label="朗讀">🔊</button></span><span class="bi-en"><strong><span class="w">Key</span> <span class="w">exam</span> <span class="w">topic</span></strong><button class="say" type="button" data-lang="en" data-k="1619e07dc3f7150a" aria-label="朗讀">🔊</button></span></span></li><li><span class="bi"><span class="bi-zh">Battle of the Atlantic：加拿大海軍護航<button class="say" type="button" data-lang="zh" data-k="e2c87734a891bd0d" aria-label="朗讀">🔊</button></span><span class="bi-en"><span class="w">The</span> <span class="w">Royal</span> <span class="w">Canadian</span> <span class="w">Navy</span> <span class="w">fought</span> <span class="w">the</span> <span class="w">Battle</span> <span class="w">of</span> <span class="w">the</span> <span class="w">Atlantic</span><button class="say" type="button" data-lang="en" data-k="396c18a7b8ba3240" aria-label="朗讀">🔊</button></span></span></li><li><span class="bi"><span class="bi-zh">戰後加拿大擁有世界第三大海軍<button class="say" type="button" data-lang="zh" data-k="f0c6eddcf4fd2d96" aria-label="朗讀">🔊</button></span><span class="bi-en"><span class="w">Canada</span> <span class="w">ended</span> <span class="w">the</span> <span class="w">war</span> <span class="w">with</span> <span class="w">the</span> <span class="w">world&#x27;s</span> <span class="w">third-largest</span> <span class="w">navy</span><button class="say" type="button" data-lang="en" data-k="68e61835bf32d71f" aria-label="朗讀">🔊</button></span></span></li><li><span class="bi"><span class="bi-zh">1988 為日裔加拿大人戰時遷移道歉<button class="say" type="button" data-lang="zh" data-k="fe6d1ba928347292" aria-label="朗讀">🔊</button></span><span class="bi-en"><span class="w">Apology</span> <span class="w">in</span> 1988 <span class="w">for</span> <span class="w">the</span> <span class="w">wartime</span> <span class="w">relocation</span> <span class="w">of</span> <span class="w">Japanese</span> <span class="w">Canadians</span><button class="say" type="button" data-lang="en" data-k="4bca202f2be00f86" aria-label="朗讀">🔊</button></span></span></li></ul>
   </div>
 </div>
 <div class="iv-tl-event " data-era="wars">
@@ -842,8 +843,8 @@ blockquote.speakable > .speak-btn,
   <div class="iv-tl-content">
     <h3 class="iv-tl-title">Canadian Citizenship Act 通過</h3>
     <div class="iv-tl-en">Canadian Citizenship Act</div>
-    <p class="iv-tl-brief"><span class="bi-zh"><strong>加拿大公民身份首次法定</strong>——之前是英國臣民</span><span class="bi-en"><strong>Canadian citizenship became a legal status</strong> — before that Canadians were British subjects</span></p>
-    <ul class='iv-tl-details'><li><span class="bi-zh"><strong>考試重點</strong>：首次有 'Canadian citizen' 這個身份</span><span class="bi-en"><strong>Exam point</strong>: first time there was a "Canadian citizen"</span></li></ul>
+    <p class="iv-tl-brief"><span class="bi"><span class="bi-zh"><strong>加拿大公民身份首次法定</strong>——之前是英國臣民<button class="say" type="button" data-lang="zh" data-k="ed446644c9762420" aria-label="朗讀">🔊</button></span><span class="bi-en"><strong><span class="w">Canadian</span> <span class="w">citizenship</span> <span class="w">became</span> <span class="w">a</span> <span class="w">legal</span> <span class="w">status</span></strong> — <span class="w">before</span> <span class="w">that</span> <span class="w">Canadians</span> <span class="w">were</span> <span class="w">British</span> <span class="w">subjects</span><button class="say" type="button" data-lang="en" data-k="374864d0dcd363d7" aria-label="朗讀">🔊</button></span></span></p>
+    <ul class='iv-tl-details'><li><span class="bi"><span class="bi-zh"><strong>考試重點</strong>：首次有 &#x27;Canadian citizen&#x27; 這個身份<button class="say" type="button" data-lang="zh" data-k="b3b7c3a67ca40f97" aria-label="朗讀">🔊</button></span><span class="bi-en"><strong><span class="w">Exam</span> <span class="w">point</span></strong>: <span class="w">first</span> <span class="w">time</span> <span class="w">there</span> <span class="w">was</span> <span class="w">a</span> &quot;<span class="w">Canadian</span> <span class="w">citizen</span>&quot;<button class="say" type="button" data-lang="en" data-k="3d5474ab5edf0550" aria-label="朗讀">🔊</button></span></span></li></ul>
   </div>
 </div>
 <div class="iv-tl-event " data-era="wars">
@@ -852,8 +853,8 @@ blockquote.speakable > .speak-btn,
   <div class="iv-tl-content">
     <h3 class="iv-tl-title">Newfoundland 加入（最後一省）</h3>
     <div class="iv-tl-en">Newfoundland joins (last province)</div>
-    <p class="iv-tl-brief"><span class="bi-zh">Newfoundland 1949 加入聯邦，完成 10 省版圖</span><span class="bi-en">Newfoundland joined in 1949, completing the ten provinces</span></p>
-    <ul class='iv-tl-details'><li><span class="bi-zh"><strong>考試重點</strong></span><span class="bi-en"><strong>Key exam topic</strong></span></li></ul>
+    <p class="iv-tl-brief"><span class="bi"><span class="bi-zh">Newfoundland 1949 加入聯邦，完成 10 省版圖<button class="say" type="button" data-lang="zh" data-k="c022b44077f355cf" aria-label="朗讀">🔊</button></span><span class="bi-en"><span class="w">Newfoundland</span> <span class="w">joined</span> <span class="w">in</span> 1949, <span class="w">completing</span> <span class="w">the</span> <span class="w">ten</span> <span class="w">provinces</span><button class="say" type="button" data-lang="en" data-k="2fc9c2d7ff099f3c" aria-label="朗讀">🔊</button></span></span></p>
+    <ul class='iv-tl-details'><li><span class="bi"><span class="bi-zh"><strong>考試重點</strong><button class="say" type="button" data-lang="zh" data-k="ed26c9d61898a54d" aria-label="朗讀">🔊</button></span><span class="bi-en"><strong><span class="w">Key</span> <span class="w">exam</span> <span class="w">topic</span></strong><button class="say" type="button" data-lang="en" data-k="1619e07dc3f7150a" aria-label="朗讀">🔊</button></span></span></li></ul>
   </div>
 </div>
 <div class="iv-tl-event " data-era="modern">
@@ -862,7 +863,7 @@ blockquote.speakable > .speak-btn,
   <div class="iv-tl-content">
     <h3 class="iv-tl-title">原住民獲聯邦投票權</h3>
     <div class="iv-tl-en">Aboriginal people granted the vote</div>
-    <p class="iv-tl-brief"><span class="bi-zh">原住民終於可以在聯邦選舉投票；1948 日裔加拿大人已獲投票權</span><span class="bi-en">Aboriginal people were granted the vote in 1960; Japanese-Canadians in 1948</span></p>
+    <p class="iv-tl-brief"><span class="bi"><span class="bi-zh">原住民終於可以在聯邦選舉投票；1948 日裔加拿大人已獲投票權<button class="say" type="button" data-lang="zh" data-k="1cd5bf9a52bc76bd" aria-label="朗讀">🔊</button></span><span class="bi-en"><span class="w">Aboriginal</span> <span class="w">people</span> <span class="w">were</span> <span class="w">granted</span> <span class="w">the</span> <span class="w">vote</span> <span class="w">in</span> 1960; <span class="w">Japanese-Canadians</span> <span class="w">in</span> 1948<button class="say" type="button" data-lang="en" data-k="e25b5b1ba51114a1" aria-label="朗讀">🔊</button></span></span></p>
     
   </div>
 </div>
@@ -872,8 +873,8 @@ blockquote.speakable > .speak-btn,
   <div class="iv-tl-content">
     <h3 class="iv-tl-title">楓葉旗誕生</h3>
     <div class="iv-tl-en">Maple Leaf flag adopted</div>
-    <p class="iv-tl-brief"><span class="bi-zh"><strong>新國旗首次升起</strong>——紅白楓葉旗取代 Red Ensign</span><span class="bi-en"><strong>The new flag was raised for the first time</strong> — the maple leaf replaced the Red Ensign</span></p>
-    <ul class='iv-tl-details'><li><span class="bi-zh"><strong>考試重點</strong></span><span class="bi-en"><strong>Key exam topic</strong></span></li><li><span class="bi-zh">Lester B. Pearson 總理推動</span><span class="bi-en">Promoted by Prime Minister Lester B. Pearson</span></li><li><span class="bi-zh">紅白自 1921 年起是國家代表色</span><span class="bi-en">Red and white have been the national colours since 1921</span></li></ul>
+    <p class="iv-tl-brief"><span class="bi"><span class="bi-zh"><strong>新國旗首次升起</strong>——紅白楓葉旗取代 Red Ensign<button class="say" type="button" data-lang="zh" data-k="5ad0559d99492649" aria-label="朗讀">🔊</button></span><span class="bi-en"><strong><span class="w">The</span> <span class="w">new</span> <span class="w">flag</span> <span class="w">was</span> <span class="w">raised</span> <span class="w">for</span> <span class="w">the</span> <span class="w">first</span> <span class="w">time</span></strong> — <span class="w">the</span> <span class="w">maple</span> <span class="w">leaf</span> <span class="w">replaced</span> <span class="w">the</span> <span class="w">Red</span> <span class="w">Ensign</span><button class="say" type="button" data-lang="en" data-k="301b3c5a6ca0e89c" aria-label="朗讀">🔊</button></span></span></p>
+    <ul class='iv-tl-details'><li><span class="bi"><span class="bi-zh"><strong>考試重點</strong><button class="say" type="button" data-lang="zh" data-k="ed26c9d61898a54d" aria-label="朗讀">🔊</button></span><span class="bi-en"><strong><span class="w">Key</span> <span class="w">exam</span> <span class="w">topic</span></strong><button class="say" type="button" data-lang="en" data-k="1619e07dc3f7150a" aria-label="朗讀">🔊</button></span></span></li><li><span class="bi"><span class="bi-zh">Lester B. Pearson 總理推動<button class="say" type="button" data-lang="zh" data-k="d9b3fe2071c3c308" aria-label="朗讀">🔊</button></span><span class="bi-en"><span class="w">Promoted</span> <span class="w">by</span> <span class="w">Prime</span> <span class="w">Minister</span> <span class="w">Lester</span> <span class="w">B</span>. <span class="w">Pearson</span><button class="say" type="button" data-lang="en" data-k="718f81b1308d4d18" aria-label="朗讀">🔊</button></span></span></li><li><span class="bi"><span class="bi-zh">紅白自 1921 年起是國家代表色<button class="say" type="button" data-lang="zh" data-k="82ea3e91cd369ece" aria-label="朗讀">🔊</button></span><span class="bi-en"><span class="w">Red</span> <span class="w">and</span> <span class="w">white</span> <span class="w">have</span> <span class="w">been</span> <span class="w">the</span> <span class="w">national</span> <span class="w">colours</span> <span class="w">since</span> 1921<button class="say" type="button" data-lang="en" data-k="9f2105fe2791ee34" aria-label="朗讀">🔊</button></span></span></li></ul>
   </div>
 </div>
 <div class="iv-tl-event " data-era="modern">
@@ -882,8 +883,8 @@ blockquote.speakable > .speak-btn,
   <div class="iv-tl-content">
     <h3 class="iv-tl-title">Centennial / Order of Canada</h3>
     <div class="iv-tl-en">Centennial / Order of Canada</div>
-    <p class="iv-tl-brief"><span class="bi-zh">聯邦 100 週年；加拿大勳章制度創立</span><span class="bi-en">Centennial of Confederation; the Order of Canada was created</span></p>
-    <ul class='iv-tl-details'><li><span class="bi-zh">Montreal 世博會 Expo 67</span><span class="bi-en">Expo 67 in Montreal</span></li></ul>
+    <p class="iv-tl-brief"><span class="bi"><span class="bi-zh">聯邦 100 週年；加拿大勳章制度創立<button class="say" type="button" data-lang="zh" data-k="e27e1dc5edd3977f" aria-label="朗讀">🔊</button></span><span class="bi-en"><span class="w">Centennial</span> <span class="w">of</span> <span class="w">Confederation</span>; <span class="w">the</span> <span class="w">Order</span> <span class="w">of</span> <span class="w">Canada</span> <span class="w">was</span> <span class="w">created</span><button class="say" type="button" data-lang="en" data-k="3fc7a5780919ec5e" aria-label="朗讀">🔊</button></span></span></p>
+    <ul class='iv-tl-details'><li><span class="bi"><span class="bi-zh">Montreal 世博會 Expo 67<button class="say" type="button" data-lang="zh" data-k="0a8b6b5a8de493d8" aria-label="朗讀">🔊</button></span><span class="bi-en"><span class="w">Expo</span> 67 <span class="w">in</span> <span class="w">Montreal</span><button class="say" type="button" data-lang="en" data-k="a23a08dccf77553c" aria-label="朗讀">🔊</button></span></span></li></ul>
   </div>
 </div>
 <div class="iv-tl-event " data-era="modern">
@@ -892,8 +893,8 @@ blockquote.speakable > .speak-btn,
   <div class="iv-tl-content">
     <h3 class="iv-tl-title">Official Languages Act</h3>
     <div class="iv-tl-en">Official Languages Act</div>
-    <p class="iv-tl-brief"><span class="bi-zh">聯邦政府在全國提供英法雙語服務</span><span class="bi-en">Guarantees French and English services in the federal government across Canada</span></p>
-    <ul class='iv-tl-details'><li><span class="bi-zh"><strong>考試重點</strong></span><span class="bi-en"><strong>Key exam topic</strong></span></li><li><span class="bi-zh">Pierre Trudeau 推動；1970 加拿大協助創立 La Francophonie</span><span class="bi-en">Under Pierre Trudeau; Canada helped found La Francophonie in 1970</span></li></ul>
+    <p class="iv-tl-brief"><span class="bi"><span class="bi-zh">聯邦政府在全國提供英法雙語服務<button class="say" type="button" data-lang="zh" data-k="abc1a8f6e0ed51a4" aria-label="朗讀">🔊</button></span><span class="bi-en"><span class="w">Guarantees</span> <span class="w">French</span> <span class="w">and</span> <span class="w">English</span> <span class="w">services</span> <span class="w">in</span> <span class="w">the</span> <span class="w">federal</span> <span class="w">government</span> <span class="w">across</span> <span class="w">Canada</span><button class="say" type="button" data-lang="en" data-k="8adb0f7026f36263" aria-label="朗讀">🔊</button></span></span></p>
+    <ul class='iv-tl-details'><li><span class="bi"><span class="bi-zh"><strong>考試重點</strong><button class="say" type="button" data-lang="zh" data-k="ed26c9d61898a54d" aria-label="朗讀">🔊</button></span><span class="bi-en"><strong><span class="w">Key</span> <span class="w">exam</span> <span class="w">topic</span></strong><button class="say" type="button" data-lang="en" data-k="1619e07dc3f7150a" aria-label="朗讀">🔊</button></span></span></li><li><span class="bi"><span class="bi-zh">Pierre Trudeau 推動；1970 加拿大協助創立 La Francophonie<button class="say" type="button" data-lang="zh" data-k="c824f63ba9cfe55c" aria-label="朗讀">🔊</button></span><span class="bi-en"><span class="w">Under</span> <span class="w">Pierre</span> <span class="w">Trudeau</span>; <span class="w">Canada</span> <span class="w">helped</span> <span class="w">found</span> <span class="w">La</span> <span class="w">Francophonie</span> <span class="w">in</span> 1970<button class="say" type="button" data-lang="en" data-k="79e449b80f41bdfb" aria-label="朗讀">🔊</button></span></span></li></ul>
   </div>
 </div>
 <div class="iv-tl-event " data-era="modern">
@@ -902,8 +903,8 @@ blockquote.speakable > .speak-btn,
   <div class="iv-tl-content">
     <h3 class="iv-tl-title">多元文化主義政策</h3>
     <div class="iv-tl-en">Multiculturalism policy</div>
-    <p class="iv-tl-brief"><span class="bi-zh"><strong>加拿大成為世界第一個正式採取多元文化主義為國策的國家</strong></span><span class="bi-en"><strong>Canada became the first country to adopt multiculturalism as official policy</strong></span></p>
-    <ul class='iv-tl-details'><li><span class="bi-zh">1988 Canadian Multiculturalism Act 入法</span><span class="bi-en">Canadian Multiculturalism Act, 1988</span></li></ul>
+    <p class="iv-tl-brief"><span class="bi"><span class="bi-zh"><strong>加拿大成為世界第一個正式採取多元文化主義為國策的國家</strong><button class="say" type="button" data-lang="zh" data-k="c8a2783851a6e661" aria-label="朗讀">🔊</button></span><span class="bi-en"><strong><span class="w">Canada</span> <span class="w">became</span> <span class="w">the</span> <span class="w">first</span> <span class="w">country</span> <span class="w">to</span> <span class="w">adopt</span> <span class="w">multiculturalism</span> <span class="w">as</span> <span class="w">official</span> <span class="w">policy</span></strong><button class="say" type="button" data-lang="en" data-k="acd5318e29f8a7aa" aria-label="朗讀">🔊</button></span></span></p>
+    <ul class='iv-tl-details'><li><span class="bi"><span class="bi-zh">1988 Canadian Multiculturalism Act 入法<button class="say" type="button" data-lang="zh" data-k="7609b044e77d91ab" aria-label="朗讀">🔊</button></span><span class="bi-en"><span class="w">Canadian</span> <span class="w">Multiculturalism</span> <span class="w">Act</span>, 1988<button class="say" type="button" data-lang="en" data-k="1cd846f82e8bc850" aria-label="朗讀">🔊</button></span></span></li></ul>
   </div>
 </div>
 <div class="iv-tl-event " data-era="modern">
@@ -912,7 +913,7 @@ blockquote.speakable > .speak-btn,
   <div class="iv-tl-content">
     <h3 class="iv-tl-title">第一次 Quebec 公投</h3>
     <div class="iv-tl-en">First Quebec referendum</div>
-    <p class="iv-tl-brief"><span class="bi-zh">魁北克主權公投未通過</span><span class="bi-en">Quebec sovereignty was defeated in a referendum</span></p>
+    <p class="iv-tl-brief"><span class="bi"><span class="bi-zh">魁北克主權公投未通過<button class="say" type="button" data-lang="zh" data-k="2c83479f1a4d1770" aria-label="朗讀">🔊</button></span><span class="bi-en"><span class="w">Quebec</span> <span class="w">sovereignty</span> <span class="w">was</span> <span class="w">defeated</span> <span class="w">in</span> <span class="w">a</span> <span class="w">referendum</span><button class="say" type="button" data-lang="en" data-k="a78a20ec4549dbc8" aria-label="朗讀">🔊</button></span></span></p>
     
   </div>
 </div>
@@ -922,8 +923,8 @@ blockquote.speakable > .speak-btn,
   <div class="iv-tl-content">
     <h3 class="iv-tl-title">Constitution Act / Charter</h3>
     <div class="iv-tl-en">Constitution Act + Charter</div>
-    <p class="iv-tl-brief"><span class="bi-zh"><strong>憲法本土化</strong>，加入《加拿大權利與自由憲章》</span><span class="bi-en"><strong>The Constitution was patriated</strong> with the Canadian Charter of Rights and Freedoms</span></p>
-    <ul class='iv-tl-details'><li><span class="bi-zh"><strong>考試最重要日期</strong></span><span class="bi-en"><strong>One of the most important dates on the test</strong></span></li><li><span class="bi-zh">Pierre Trudeau 推動；未獲 Quebec 同意</span><span class="bi-en">Under Pierre Trudeau; without Quebec's agreement</span></li><li><span class="bi-zh"><strong>Charter：基本自由、遷徙權、原住民權利、官方語言權、多元文化</strong></span><span class="bi-en"><strong>Charter: fundamental freedoms, mobility rights, Aboriginal rights, language rights, multiculturalism</strong></span></li></ul>
+    <p class="iv-tl-brief"><span class="bi"><span class="bi-zh"><strong>憲法本土化</strong>，加入《加拿大權利與自由憲章》<button class="say" type="button" data-lang="zh" data-k="08501335e254ae2e" aria-label="朗讀">🔊</button></span><span class="bi-en"><strong><span class="w">The</span> <span class="w">Constitution</span> <span class="w">was</span> <span class="w">patriated</span></strong> <span class="w">with</span> <span class="w">the</span> <span class="w">Canadian</span> <span class="w">Charter</span> <span class="w">of</span> <span class="w">Rights</span> <span class="w">and</span> <span class="w">Freedoms</span><button class="say" type="button" data-lang="en" data-k="949781d9536d32ec" aria-label="朗讀">🔊</button></span></span></p>
+    <ul class='iv-tl-details'><li><span class="bi"><span class="bi-zh"><strong>考試最重要日期</strong><button class="say" type="button" data-lang="zh" data-k="917909df6489c1e9" aria-label="朗讀">🔊</button></span><span class="bi-en"><strong><span class="w">One</span> <span class="w">of</span> <span class="w">the</span> <span class="w">most</span> <span class="w">important</span> <span class="w">dates</span> <span class="w">on</span> <span class="w">the</span> <span class="w">test</span></strong><button class="say" type="button" data-lang="en" data-k="b8604ec107e80d4c" aria-label="朗讀">🔊</button></span></span></li><li><span class="bi"><span class="bi-zh">Pierre Trudeau 推動；未獲 Quebec 同意<button class="say" type="button" data-lang="zh" data-k="4620480f06ae5141" aria-label="朗讀">🔊</button></span><span class="bi-en"><span class="w">Under</span> <span class="w">Pierre</span> <span class="w">Trudeau</span>; <span class="w">without</span> <span class="w">Quebec&#x27;s</span> <span class="w">agreement</span><button class="say" type="button" data-lang="en" data-k="f8637d9032d46095" aria-label="朗讀">🔊</button></span></span></li><li><span class="bi"><span class="bi-zh"><strong>Charter：基本自由、遷徙權、原住民權利、官方語言權、多元文化</strong><button class="say" type="button" data-lang="zh" data-k="3e918d89290c1a02" aria-label="朗讀">🔊</button></span><span class="bi-en"><strong><span class="w">Charter</span>: <span class="w">fundamental</span> <span class="w">freedoms</span>, <span class="w">mobility</span> <span class="w">rights</span>, <span class="w">Aboriginal</span> <span class="w">rights</span>, <span class="w">language</span> <span class="w">rights</span>, <span class="w">multiculturalism</span></strong><button class="say" type="button" data-lang="en" data-k="1567c1850d8cfd01" aria-label="朗讀">🔊</button></span></span></li></ul>
   </div>
 </div>
 <div class="iv-tl-event " data-era="modern">
@@ -932,7 +933,7 @@ blockquote.speakable > .speak-btn,
   <div class="iv-tl-content">
     <h3 class="iv-tl-title">第二次 Quebec 公投</h3>
     <div class="iv-tl-en">Second Quebec referendum</div>
-    <p class="iv-tl-brief"><span class="bi-zh">主權再次以些微差距未通過</span><span class="bi-en">Sovereignty was narrowly defeated again</span></p>
+    <p class="iv-tl-brief"><span class="bi"><span class="bi-zh">主權再次以些微差距未通過<button class="say" type="button" data-lang="zh" data-k="d79f7e0e7f474023" aria-label="朗讀">🔊</button></span><span class="bi-en"><span class="w">Sovereignty</span> <span class="w">was</span> <span class="w">narrowly</span> <span class="w">defeated</span> <span class="w">again</span><button class="say" type="button" data-lang="en" data-k="476c773e5ea8cd34" aria-label="朗讀">🔊</button></span></span></p>
     
   </div>
 </div>
@@ -942,8 +943,8 @@ blockquote.speakable > .speak-btn,
   <div class="iv-tl-content">
     <h3 class="iv-tl-title">Nunavut 從 NT 分出</h3>
     <div class="iv-tl-en">Nunavut created</div>
-    <p class="iv-tl-brief"><span class="bi-zh"><strong>第三個 territory</strong>，從 Northwest Territories 東部切出</span><span class="bi-en"><strong>The third territory</strong>, created from the eastern Northwest Territories</span></p>
-    <ul class='iv-tl-details'><li><span class="bi-zh"><strong>考試重點</strong>：Nunavut 1999 年成立</span><span class="bi-en"><strong>Exam point</strong>: Nunavut was established in 1999</span></li><li><span class="bi-zh">Inuit 為多數人口，首府 Iqaluit</span><span class="bi-en">Mostly Inuit; capital Iqaluit</span></li></ul>
+    <p class="iv-tl-brief"><span class="bi"><span class="bi-zh"><strong>第三個 territory</strong>，從 Northwest Territories 東部切出<button class="say" type="button" data-lang="zh" data-k="860387577fee3129" aria-label="朗讀">🔊</button></span><span class="bi-en"><strong><span class="w">The</span> <span class="w">third</span> <span class="w">territory</span></strong>, <span class="w">created</span> <span class="w">from</span> <span class="w">the</span> <span class="w">eastern</span> <span class="w">Northwest</span> <span class="w">Territories</span><button class="say" type="button" data-lang="en" data-k="b40d20af9232aca3" aria-label="朗讀">🔊</button></span></span></p>
+    <ul class='iv-tl-details'><li><span class="bi"><span class="bi-zh"><strong>考試重點</strong>：Nunavut 1999 年成立<button class="say" type="button" data-lang="zh" data-k="e66b9daae30a7aad" aria-label="朗讀">🔊</button></span><span class="bi-en"><strong><span class="w">Exam</span> <span class="w">point</span></strong>: <span class="w">Nunavut</span> <span class="w">was</span> <span class="w">established</span> <span class="w">in</span> 1999<button class="say" type="button" data-lang="en" data-k="d9dd675aaa5c85f2" aria-label="朗讀">🔊</button></span></span></li><li><span class="bi"><span class="bi-zh">Inuit 為多數人口，首府 Iqaluit<button class="say" type="button" data-lang="zh" data-k="3ee256779d0e83e1" aria-label="朗讀">🔊</button></span><span class="bi-en"><span class="w">Mostly</span> <span class="w">Inuit</span>; <span class="w">capital</span> <span class="w">Iqaluit</span><button class="say" type="button" data-lang="en" data-k="c23808952bc12d9b" aria-label="朗讀">🔊</button></span></span></li></ul>
   </div>
 </div>
 <div class="iv-tl-event " data-era="modern">
@@ -952,7 +953,7 @@ blockquote.speakable > .speak-btn,
   <div class="iv-tl-content">
     <h3 class="iv-tl-title">PM Harper 為寄宿學校道歉</h3>
     <div class="iv-tl-en">Harper apologizes for residential schools</div>
-    <p class="iv-tl-brief"><span class="bi-zh">渥太華正式向寄宿學校前學生道歉</span><span class="bi-en">Ottawa formally apologized to former residential school students</span></p>
+    <p class="iv-tl-brief"><span class="bi"><span class="bi-zh">渥太華正式向寄宿學校前學生道歉<button class="say" type="button" data-lang="zh" data-k="4d174454c0ebe9bb" aria-label="朗讀">🔊</button></span><span class="bi-en"><span class="w">Ottawa</span> <span class="w">formally</span> <span class="w">apologized</span> <span class="w">to</span> <span class="w">former</span> <span class="w">residential</span> <span class="w">school</span> <span class="w">students</span><button class="say" type="button" data-lang="en" data-k="02d5c34d4bcb8af8" aria-label="朗讀">🔊</button></span></span></p>
     
   </div>
 </div>
@@ -962,8 +963,8 @@ blockquote.speakable > .speak-btn,
   <div class="iv-tl-content">
     <h3 class="iv-tl-title">TRC Day 國定假日</h3>
     <div class="iv-tl-en">Truth and Reconciliation Day</div>
-    <p class="iv-tl-brief"><span class="bi-zh"><strong>National Day for Truth and Reconciliation（9/30）正式列為國定假日</strong></span><span class="bi-en"><strong>September 30 became the National Day for Truth and Reconciliation</strong></span></p>
-    <ul class='iv-tl-details'><li><span class="bi-zh"><strong>考試重點</strong>：9 月 30 日</span><span class="bi-en"><strong>Exam point</strong>: September 30</span></li><li><span class="bi-zh">穿橘色衣（Orange Shirt Day）紀念寄宿學校受害者</span><span class="bi-en">Orange Shirt Day honours residential school survivors</span></li></ul>
+    <p class="iv-tl-brief"><span class="bi"><span class="bi-zh"><strong>National Day for Truth and Reconciliation（9/30）正式列為國定假日</strong><button class="say" type="button" data-lang="zh" data-k="5e2b9ef343e81aed" aria-label="朗讀">🔊</button></span><span class="bi-en"><strong><span class="w">September</span> 30 <span class="w">became</span> <span class="w">the</span> <span class="w">National</span> <span class="w">Day</span> <span class="w">for</span> <span class="w">Truth</span> <span class="w">and</span> <span class="w">Reconciliation</span></strong><button class="say" type="button" data-lang="en" data-k="b143219572bdf77b" aria-label="朗讀">🔊</button></span></span></p>
+    <ul class='iv-tl-details'><li><span class="bi"><span class="bi-zh"><strong>考試重點</strong>：9 月 30 日<button class="say" type="button" data-lang="zh" data-k="63b8be81e45826f2" aria-label="朗讀">🔊</button></span><span class="bi-en"><strong><span class="w">Exam</span> <span class="w">point</span></strong>: <span class="w">September</span> 30<button class="say" type="button" data-lang="en" data-k="dcd62da28f996607" aria-label="朗讀">🔊</button></span></span></li><li><span class="bi"><span class="bi-zh">穿橘色衣（Orange Shirt Day）紀念寄宿學校受害者<button class="say" type="button" data-lang="zh" data-k="0f9f92e09655725f" aria-label="朗讀">🔊</button></span><span class="bi-en"><span class="w">Orange</span> <span class="w">Shirt</span> <span class="w">Day</span> <span class="w">honours</span> <span class="w">residential</span> <span class="w">school</span> <span class="w">survivors</span><button class="say" type="button" data-lang="en" data-k="cdf7f68727faa9f2" aria-label="朗讀">🔊</button></span></span></li></ul>
   </div>
 </div>
 </div>
@@ -983,7 +984,149 @@ blockquote.speakable > .speak-btn,
     });
   });
 })();
-</script></main>
+</script>
+<style>
+/* 中／英同級：夠寬就左右並排，不夠就自動上下堆疊 */
+.bi { display: flex; flex-wrap: wrap; gap: 3px 18px; align-items: flex-start; }
+.bi-zh, .bi-en { flex: 1 1 240px; min-width: 0; }
+.bi-en {
+  color: #45403a; font-family: "Source Serif 4", Georgia, serif;
+  line-height: 1.5; border-left: 2px solid var(--line); padding-left: 10px;
+}
+.say {
+  border: none; background: none; cursor: pointer; padding: 0 2px;
+  font-size: 0.82em; line-height: 1; opacity: 0.32; vertical-align: baseline;
+  transition: opacity 0.12s, transform 0.12s;
+}
+.say:hover { opacity: 0.85; }
+.say.playing { opacity: 1; transform: scale(1.25); }
+/* 名稱列：中文與英文同級並排（省名、總理、政黨、節日…） */
+.nm { display: inline-flex; flex-wrap: wrap; gap: 0 8px; align-items: baseline; }
+.nm-en { font-family: "Source Serif 4", Georgia, serif; color: #45403a; }
+
+.w { cursor: pointer; border-radius: 3px; padding: 0 0.5px; }
+.w:hover { background: #ffe9c7; }
+.wd-pop {
+  position: fixed; z-index: 90; width: min(340px, calc(100vw - 24px));
+  background: #fff; border: 1px solid var(--line); border-radius: 12px;
+  box-shadow: 0 8px 28px rgba(0,0,0,0.16); padding: 14px 16px 12px;
+}
+.wd-pop.hidden { display: none; }
+.wd-w { font-family: Georgia, "Source Serif 4", serif; font-size: 26px; font-weight: 700; color: #3f1a1f; padding-right: 24px; }
+.wd-p { font-size: 15px; color: var(--muted); margin: 2px 0 8px; font-family: "Charis SIL", "Doulos SIL", "Gentium Plus", Georgia, serif; }
+.wd-t { font-size: 14.5px; line-height: 1.6; white-space: pre-line; margin-bottom: 10px; color: var(--ink); }
+.wd-btns { display: flex; gap: 6px; flex-wrap: wrap; }
+.wd-btns button {
+  font: inherit; font-size: 12.5px; padding: 5px 10px; border-radius: 6px;
+  border: 1px solid var(--line); background: #fff; cursor: pointer; color: var(--ink);
+}
+.wd-btns button.main { background: var(--accent); color: #fff; border-color: var(--accent); }
+.wd-x { position: absolute; top: 6px; right: 10px; border: none; background: none; font-size: 20px; color: var(--muted); cursor: pointer; }
+.wd-note { font-size: 11px; color: var(--muted); margin-top: 8px; }
+</style>
+
+<div class="wd-pop hidden" role="dialog" aria-label="字典">
+  <button class="wd-x" type="button" aria-label="關閉">×</button>
+  <div class="wd-w"></div>
+  <div class="wd-p"></div>
+  <div class="wd-t"></div>
+  <div class="wd-btns">
+    <button class="wd-slow main" type="button">🔊 慢速再聽</button>
+    <button class="wd-normal" type="button">🔊 正常速</button>
+  </div>
+  <div class="wd-note">釋義來源：ECDICT 開源字典＋加拿大語境補充。點其他地方或按 Esc 關閉。</div>
+</div>
+<script src="../dict/words.js"></script>
+<script>
+(function () {
+  var WORD_BASE = '../audio/words/', LINE_BASE = '../audio/iv/';
+  var pop = document.querySelector('.wd-pop');
+  var wordAudio = new Audio(), lineAudio = new Audio();
+  var ctx = null, playingBtn = null;
+
+  // ---------- per-line narration (the 🔊 buttons next to 中文 / English) ----------
+  function stopLine() {
+    lineAudio.pause();
+    if (playingBtn) { playingBtn.classList.remove('playing'); playingBtn = null; }
+  }
+  lineAudio.addEventListener('ended', stopLine);
+  document.addEventListener('click', function (e) {
+    var b = e.target.closest && e.target.closest('.say');
+    if (!b) return;
+    e.stopPropagation();
+    var wasPlaying = (b === playingBtn);
+    stopLine();
+    if (wasPlaying) return;
+    lineAudio.src = LINE_BASE + b.dataset.lang + '/' + b.dataset.k + '.m4a';
+    lineAudio.playbackRate = 1;
+    playingBtn = b; b.classList.add('playing');
+    lineAudio.play().catch(function () {
+      // no clip for this line (content changed since the last audio build)
+      stopLine();
+      if (!window.speechSynthesis) return;
+      var host = b.parentElement;
+      var txt = host ? host.textContent.replace(/🔊/g, '').trim() : '';
+      var u = new SpeechSynthesisUtterance(txt);
+      u.lang = (b.dataset.lang === 'zh') ? 'zh-TW' : 'en-US'; u.rate = 0.85;
+      window.speechSynthesis.cancel(); window.speechSynthesis.speak(u);
+    });
+  });
+
+  // ---------- word dictionary ----------
+  if (!pop) return;
+  function lookup(w) {
+    var D = window.CIT_DICT || {};
+    var k = w.replace(/’/g, "'");
+    var tries = [k, k.toLowerCase()];
+    if (/'s$/i.test(k)) tries.push(k.slice(0, -2), k.slice(0, -2).toLowerCase());
+    for (var i = 0; i < tries.length; i++) if (D[tries[i]]) return D[tries[i]];
+    return null;
+  }
+  function say(rate) {
+    if (!ctx) return;
+    stopLine();
+    var key = ctx.word.toLowerCase().replace(/’/g, "'");
+    wordAudio.pause();
+    wordAudio.src = WORD_BASE + encodeURIComponent(key) + '.m4a';
+    wordAudio.playbackRate = rate;
+    try { wordAudio.preservesPitch = true; wordAudio.mozPreservesPitch = true; } catch (err) {}
+    wordAudio.onerror = function () {
+      if (!window.speechSynthesis) return;
+      var u = new SpeechSynthesisUtterance(ctx.word);
+      u.lang = 'en-US'; u.rate = 0.7 * rate;
+      window.speechSynthesis.cancel(); window.speechSynthesis.speak(u);
+    };
+    wordAudio.play().catch(function () {});
+  }
+  function place(el) {
+    var r = el.getBoundingClientRect();
+    pop.style.top = Math.max(8, Math.min(r.bottom + 8, window.innerHeight - pop.offsetHeight - 8)) + 'px';
+    var maxLeft = document.documentElement.clientWidth - pop.offsetWidth - 12;
+    pop.style.left = Math.max(12, Math.min(r.left, maxLeft)) + 'px';
+  }
+  function show(el) {
+    var w = el.textContent.trim(), e = lookup(w);
+    pop.querySelector('.wd-w').textContent = w;
+    pop.querySelector('.wd-p').textContent = (e && e.p) ? '/' + e.p + '/' : '';
+    pop.querySelector('.wd-t').textContent = e ? (e.x ? e.t + '\n（原形：' + e.x + '）' : e.t) : '字典裡沒有這個字';
+    ctx = { word: w };
+    pop.classList.remove('hidden');
+    place(el);
+    say(1);
+  }
+  function hide() { pop.classList.add('hidden'); ctx = null; wordAudio.pause(); }
+  pop.querySelector('.wd-slow').addEventListener('click', function (e) { e.stopPropagation(); say(1); });
+  pop.querySelector('.wd-normal').addEventListener('click', function (e) { e.stopPropagation(); say(1.45); });
+  pop.querySelector('.wd-x').addEventListener('click', hide);
+  document.addEventListener('click', function (e) {
+    var wEl = e.target.closest && e.target.closest('.w');
+    if (wEl) { e.stopPropagation(); show(wEl); return; }
+    if (!pop.classList.contains('hidden') && !pop.contains(e.target)) hide();
+  });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') hide(); });
+})();
+</script>
+</main>
 </div>
 <script>
 (function() {

@@ -23,15 +23,11 @@ cc = opencc.OpenCC("s2twp")
 
 
 def surface_forms() -> set[str]:
-    forms = set()
-    for f in ALIGNED.glob("*.json"):
-        d = json.loads(f.read_text(encoding="utf-8"))
-        for s in d["sections"]:
-            for p in s["paras"]:
-                for pair in p:
-                    for w in WORD_RE.findall(pair["en"]):
-                        forms.add(w.replace("’", "'"))
-    return forms
+    """Every tappable word on the whole site, not just the reading pages —
+    see tools/site_words.py."""
+    sys.path.insert(0, str(ROOT / "tools"))
+    import site_words
+    return {w.replace("’", "'") for w in site_words.all_surface_forms().values()}
 
 
 def candidates(w: str) -> list[str]:

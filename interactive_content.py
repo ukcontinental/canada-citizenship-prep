@@ -4,9 +4,11 @@ Each function returns inner-body HTML, ready to be wrapped by build_html.wrap_pa
 Common interactive styles live in IV_SHARED_CSS; per-module CSS in each function.
 """
 
+import html as _html
 import json
 import re as _re
 
+import word_dict as _wd
 from interactive_data import (PROVINCES, HISTORY_EVENTS, PRIME_MINISTERS, PARTIES, VOTE_STEPS,
                               MUST_KNOW_FACTS, JUSTICE_PRINCIPLES, RCMP_FACTS, SYMBOLS,
                               CURRENCY_FIGURES, NATIONAL_HOLIDAYS, COINS, INDUSTRIES, TRADE_FACTS,
@@ -17,12 +19,42 @@ def _strong(t: str) -> str:
     return _re.sub(r"\*\*(.+?)\*\*", r"<strong>\1</strong>", t)
 
 
+# Every line that gets a 🔊 button is recorded here, so
+# tools/build_interactive_audio.py can synthesize exactly what the pages ask for
+# (no second list to keep in sync). Populated by calling the build_*_body().
+BI_SEEN: dict[str, tuple[str, str]] = {}   # key -> (lang, plain text)
+
+
+def say(text: str, lang: str) -> str:
+    """A 🔊 button for one line. The clip is keyed by the text itself, so
+    build_interactive_audio.py needs no index and stale clips simply 404 into
+    the speechSynthesis fallback."""
+    if not text.strip():
+        return ""
+    k = _wd.audio_key(text)
+    BI_SEEN[k] = (lang, _re.sub(r"\*\*", "", text).strip())
+    return (f'<button class="say" type="button" data-lang="{lang}" '
+            f'data-k="{k}" aria-label="朗讀">🔊</button>')
+
+
 def bi(text: str) -> str:
-    """'中文｜English' -> two stacked spans; plain text passes through."""
-    if "｜" in text:
-        zh, en = text.split("｜", 1)
-        return f'<span class="bi-zh">{_strong(zh)}</span><span class="bi-en">{_strong(en)}</span>'
-    return _strong(text)
+    """'中文｜English' -> a 中/英 pair, side by side when the box is wide enough
+    and stacked when it is not (plain flex-wrap, no container queries), both at
+    the same type size. English words are tappable for the dictionary."""
+    if "｜" not in text:
+        # Mixed line such as "Victoria 維多利亞" — no pairing to do, but the
+        # English inside it should still be tappable.
+        return _strong(_wd.wrap_words(text))
+    zh, en = text.split("｜", 1)
+    return (f'<span class="bi">'
+            f'<span class="bi-zh">{_strong(_html.escape(zh))}{say(zh, "zh")}</span>'
+            f'<span class="bi-en">{_strong(_wd.wrap_words(en))}{say(en, "en")}</span>'
+            f'</span>')
+
+
+def pair(zh: str, en: str) -> str:
+    """Same rendering as bi() for data tables that keep 中/英 in separate fields."""
+    return bi(f"{zh}｜{en}")
 
 # ============================================================================
 # SHARED CSS
@@ -37,7 +69,7 @@ IV_SHARED_CSS = """
 }
 .iv-hero h1 { margin: 0 0 6px; border: none; padding: 0; }
 .iv-hero p { margin: 0; color: var(--muted); }
-.iv-hero h1 small, .iv-section-title small { font-size: 0.6em; font-weight: 400; color: var(--muted); font-family: Georgia, serif; font-style: italic; margin-left: 8px; }
+.iv-hero h1 small, .iv-section-title small { font-size: 0.8em; font-weight: 400; color: #45403a; font-family: "Source Serif 4", Georgia, serif; margin-left: 8px; }
 
 .iv-section-title {
   margin: 32px 0 14px; padding-bottom: 6px;
@@ -79,8 +111,6 @@ IV_SHARED_CSS = """
   letter-spacing: 0.04em; margin-right: 6px;
 }
 .iv-tag.accent { background: var(--accent-soft); color: var(--accent); font-weight: 600; }
-.bi-zh { display: block; }
-.bi-en { display: block; color: var(--muted); font-size: 0.92em; font-family: "Source Serif 4", Georgia, serif; font-style: italic; line-height: 1.45; }
 </style>
 """
 
@@ -203,7 +233,9 @@ def build_geography_body():
         )
 
     region_cards = "".join(
-        f'<div class="iv-region-card" style="background:{color}"><div class="label">Region</div><div class="name">{zh}</div><div class="codes">{" · ".join(codes)}</div></div>'
+        f'<div class="iv-region-card" style="background:{color}"><div class="label">Region</div>'
+        f'<div class="name">{zh}</div><div class="name-en">{en}</div>'
+        f'<div class="codes">{" · ".join(codes)}</div></div>'
         for en, zh, color, codes in REGIONS
     )
 
@@ -219,7 +251,7 @@ def build_geography_body():
 .iv-detail-head {{ display: flex; align-items: baseline; flex-wrap: wrap; gap: 12px; margin-bottom: 14px; }}
 .iv-detail-head h2 {{ margin: 0; border: none; padding: 0; font-size: 22px; }}
 .iv-detail-code {{ display: inline-block; background: var(--accent); color: #fff; padding: 2px 10px; border-radius: 6px; font-family: monospace; font-size: 18px; margin-right: 4px; }}
-.iv-detail-zh {{ color: var(--muted); font-weight: 400; font-size: 18px; }}
+.iv-detail-zh {{ color: var(--ink); font-weight: 400; font-size: 22px; }}
 .iv-detail-region {{ display: inline-block; padding: 3px 10px; border-radius: 12px; background: #f3efe6; font-size: 12px; color: var(--muted); }}
 .iv-detail-grid {{ display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 12px; margin: 14px 0 20px; }}
 .iv-detail-stat {{ padding: 10px 12px; background: #faf8f4; border-radius: 6px; }}
@@ -231,7 +263,8 @@ def build_geography_body():
 .iv-region-row {{ display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 10px; margin: 16px 0 30px; }}
 .iv-region-card {{ padding: 12px 14px; border-radius: 8px; color: #fff; font-size: 14px; }}
 .iv-region-card .label {{ font-size: 11px; text-transform: uppercase; letter-spacing: 0.06em; opacity: 0.85; }}
-.iv-region-card .name {{ font-weight: 700; font-size: 15px; margin: 3px 0 6px; }}
+.iv-region-card .name {{ font-weight: 700; font-size: 15px; margin: 3px 0 1px; }}
+.iv-region-card .name-en {{ font-size: 15px; font-family: "Source Serif 4", Georgia, serif; margin: 0 0 6px; }}
 .iv-region-card .codes {{ font-family: monospace; font-size: 13px; }}
 table.iv-quick {{ width: 100%; font-size: 14px; }}
 table.iv-quick th {{ font-size: 12px; }}
@@ -297,14 +330,14 @@ table.iv-quick th {{ font-size: 12px; }}
 # (year_label, title_zh, title_en, era, brief, details[])
 
 ERAS = [
-    ("new-france", "新法蘭西時期 (1497-1763)", "#4a6fa5"),
-    ("british", "英屬北美 (1763-1867)", "#b0413e"),
-    ("confederation", "邦聯時代 (1867-1914)", "#c8a040"),
-    ("wars", "兩戰與改革 (1914-1949)", "#7a8c5c"),
-    ("modern", "現代加拿大 (1949-至今)", "#5a9460"),
+    ("new-france", "新法蘭西時期", "New France", "1497-1763", "#4a6fa5"),
+    ("british", "英屬北美", "British North America", "1763-1867", "#b0413e"),
+    ("confederation", "邦聯時代", "Confederation era", "1867-1914", "#c8a040"),
+    ("wars", "兩戰與改革", "The World Wars and reform", "1914-1949", "#7a8c5c"),
+    ("modern", "現代加拿大", "Modern Canada", "1949-至今 / present", "#5a9460"),
 ]
 
-ERA_COLOR = {era_id: color for era_id, _, color in ERAS}
+ERA_COLOR = {e[0]: e[4] for e in ERAS}
 
 
 def build_history_body():
@@ -328,15 +361,20 @@ def build_history_body():
 </div>'''
 
     era_filters = "".join(
-        f'<button class="iv-era-btn" data-era="{era_id}" style="--era-color:{color}">{label}</button>'
-        for era_id, label, color in ERAS
+        f'<button class="iv-era-btn" data-era="{era_id}" style="--era-color:{color}">'
+        f'<span class="era-zh">{zh}</span><span class="era-en">{en}</span>'
+        f'<span class="era-yr">{yr}</span></button>'
+        for era_id, zh, en, yr, color in ERAS
     )
 
     return f'''{IV_SHARED_CSS}
 <style>
 .iv-era-filter {{ display: flex; flex-wrap: wrap; gap: 8px; margin: 16px 0 24px; }}
+.iv-era-btn .era-zh {{ display: block; }}
+.iv-era-btn .era-en {{ display: block; font-family: "Source Serif 4", Georgia, serif; font-weight: 400; }}
+.iv-era-btn .era-yr {{ display: block; font-family: monospace; font-size: 11px; opacity: 0.75; }}
 .iv-era-btn {{
-  appearance: none; padding: 6px 12px; border-radius: 20px;
+  appearance: none; padding: 7px 14px; border-radius: 14px; text-align: left; line-height: 1.35;
   background: #fff; border: 2px solid var(--era-color);
   color: var(--era-color); cursor: pointer; font-size: 13px; font-weight: 600;
   font-family: -apple-system, system-ui, sans-serif;
@@ -376,7 +414,7 @@ def build_history_body():
   border-color: #d4a943;
 }}
 .iv-tl-title {{ margin: 0 0 2px; font-size: 16px; }}
-.iv-tl-en {{ font-size: 12px; color: var(--muted); font-style: italic; margin-bottom: 6px; }}
+.iv-tl-en {{ font-size: 16px; color: #45403a; font-family: "Source Serif 4", Georgia, serif; margin-bottom: 6px; }}
 .iv-tl-brief {{ margin: 0 0 8px; font-size: 14px; }}
 .iv-tl-details {{ margin: 6px 0 0; padding-left: 18px; font-size: 13px; color: var(--muted); }}
 .iv-tl-details li {{ margin: 3px 0; }}
@@ -467,17 +505,17 @@ def build_modern_body():
 .iv-pm-card:hover {{ border-color: var(--accent); }}
 .iv-pm-head {{ display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin-bottom: 4px; }}
 .iv-pm-head h3 {{ margin: 0; font-size: 16px; flex: 1; min-width: 200px; }}
-.iv-pm-zh {{ color: var(--muted); font-size: 14px; }}
+.iv-pm-zh {{ color: var(--ink); font-size: 16px; }}
 .iv-pm-party {{ display: inline-block; padding: 2px 8px; border-radius: 10px; font-size: 10px; color: #fff; letter-spacing: 0.04em; font-family: -apple-system, system-ui, sans-serif; }}
 .iv-pm-years {{ font-family: monospace; font-size: 12px; color: var(--muted); margin-bottom: 8px; }}
-.iv-pm-facts {{ margin: 0; padding-left: 18px; font-size: 13px; }}
+.iv-pm-facts {{ margin: 0; padding-left: 18px; font-size: 14px; }}
 .iv-pm-facts li {{ margin: 3px 0; }}
 .iv-milestones {{ background: #faf8f4; border-radius: 10px; padding: 12px 16px; margin: 16px 0; }}
 .iv-ms {{ display: grid; grid-template-columns: 70px 1fr 1.5fr; gap: 10px; padding: 6px 0; border-bottom: 1px dashed var(--line); align-items: center; }}
 .iv-ms:last-child {{ border-bottom: none; }}
 .iv-ms-year {{ font-family: monospace; font-weight: 700; color: var(--accent); }}
 .iv-ms-zh {{ font-weight: 600; font-size: 14px; }}
-.iv-ms-en {{ color: var(--muted); font-size: 13px; font-style: italic; }}
+.iv-ms-en {{ color: #45403a; font-size: 14px; font-family: "Source Serif 4", Georgia, serif; }}
 </style>
 <div class="iv-hero">
   <h1>🇨🇦 現代加拿大 <small>Modern Canada: Prime Ministers &amp; Milestones</small></h1>
@@ -622,7 +660,7 @@ def build_elections_body():
 .iv-party-grid {{ display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px; margin: 16px 0; }}
 .iv-party-card {{ background: #fff; border: 1px solid var(--line); border-top-width: 4px; border-radius: 10px; padding: 14px 16px; }}
 .iv-party-name {{ font-weight: 700; font-size: 15px; }}
-.iv-party-zh {{ color: var(--muted); font-size: 13px; margin-bottom: 6px; }}
+.iv-party-zh {{ color: var(--ink); font-size: 15px; font-weight: 700; margin-bottom: 6px; }}
 .iv-party-leader {{ font-size: 13px; margin: 8px 0 4px; }}
 .iv-party-status {{ font-size: 12px; color: var(--muted); font-style: italic; margin-bottom: 8px; }}
 .iv-party-facts {{ margin: 0; padding-left: 18px; font-size: 13px; }}
@@ -668,7 +706,7 @@ def build_justice_body():
 .iv-principles-grid {{ display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; margin: 16px 0; }}
 .iv-principle {{ background: #fff; border-left: 4px solid var(--accent); padding: 12px 16px; border-radius: 6px; }}
 .iv-principle h4 {{ margin: 0 0 2px; font-size: 15px; }}
-.iv-principle .en {{ font-size: 12px; color: var(--muted); font-style: italic; margin-bottom: 6px; }}
+.iv-principle .en {{ font-size: 15px; color: #45403a; font-family: "Source Serif 4", Georgia, serif; margin-bottom: 6px; }}
 .iv-principle p {{ margin: 0; font-size: 13px; }}
 .iv-rcmp {{ background: linear-gradient(135deg, #fff8f8 0%, #fef0e8 100%); padding: 20px 24px; border-radius: 10px; margin: 16px 0; }}
 .iv-rcmp h3 {{ margin: 0 0 8px; }}
@@ -762,7 +800,7 @@ def build_symbols_body():
 .iv-sym-card {{ background: #fff; border: 1px solid var(--line); border-radius: 10px; padding: 14px 16px; }}
 .iv-sym-emoji {{ font-size: 40px; line-height: 1; }}
 .iv-sym-card h3 {{ margin: 8px 0 4px; font-size: 16px; }}
-.iv-sym-card h3 .en {{ color: var(--muted); font-weight: 400; font-size: 13px; font-style: italic; }}
+.iv-sym-card h3 .en {{ color: #45403a; font-weight: 400; font-size: 16px; font-family: "Source Serif 4", Georgia, serif; }}
 .iv-sym-card .brief {{ font-size: 13px; color: var(--muted); margin: 0 0 8px; }}
 .iv-sym-card ul {{ margin: 0; padding-left: 18px; font-size: 13px; }}
 .iv-sym-card ul li {{ margin: 3px 0; }}
@@ -770,11 +808,11 @@ def build_symbols_body():
 .iv-bill-row .denom {{ font-family: monospace; font-weight: 700; font-size: 20px; color: var(--accent); }}
 .iv-bill-row .zh {{ font-size: 12px; color: var(--muted); }}
 .iv-bill-row .note {{ font-size: 13px; }}
-.iv-hol-row {{ display: grid; grid-template-columns: 130px 1fr 1fr; gap: 10px; padding: 6px 10px; border-bottom: 1px dashed var(--line); font-size: 13px; align-items: center; }}
+.iv-hol-row {{ display: grid; grid-template-columns: 120px 1fr 1fr; gap: 10px; padding: 7px 10px; border-bottom: 1px dashed var(--line); font-size: 15px; align-items: center; }}
 .iv-hol-row.star {{ background: linear-gradient(90deg, #fff8e8 0%, transparent 100%); border-radius: 4px; }}
 .iv-hol-row .date {{ font-family: monospace; font-size: 12px; color: var(--muted); }}
 .iv-hol-row .hol-en {{ font-weight: 600; }}
-.iv-hol-row .hol-zh {{ color: var(--muted); }}
+.iv-hol-row .hol-zh {{ color: var(--ink); font-weight: 600; }}
 </style>
 <div class="iv-hero">
   <h1>🍁 加拿大國家象徵圖鑑 <small>Canadian Symbols</small></h1>
@@ -850,7 +888,7 @@ def build_economy_body():
 .iv-ind-card {{ background: #fff; border: 1px solid var(--line); border-top-width: 4px; border-radius: 10px; padding: 14px 16px; }}
 .iv-ind-pct {{ font-size: 28px; font-weight: 700; font-family: monospace; }}
 .iv-ind-card h4 {{ margin: 4px 0; font-size: 16px; }}
-.iv-ind-card .en {{ font-size: 12px; color: var(--muted); font-style: italic; margin-bottom: 6px; }}
+.iv-ind-card .en {{ font-size: 16px; color: #45403a; font-family: "Source Serif 4", Georgia, serif; margin-bottom: 6px; }}
 .iv-ind-card p {{ margin: 0; font-size: 13px; }}
 .iv-trade-row {{ display: grid; grid-template-columns: 160px 1fr; gap: 16px; padding: 10px 0; border-bottom: 1px dashed var(--line); font-size: 14px; }}
 .iv-trade-row .key {{ font-weight: 600; color: var(--accent); }}
