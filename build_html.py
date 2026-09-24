@@ -1894,14 +1894,30 @@ def build():
     files = sorted(OUT.rglob("*.html"))
     print(f"Built {len(files)} HTML files into {OUT}")
 
-    # iCloud Drive sync
+    # iCloud Drive sync.
+    # Replace ONLY the entries this build produces. The same iCloud folder also
+    # holds things put there by hand — the question-bank PDFs and the 題庫朗讀_*
+    # folders the phone plays from — and an earlier rmtree(dest) deleted those on
+    # every rebuild (found 2026-09-24, after it had been silently wiping them).
     icloud_root = Path.home() / "Library/Mobile Documents/com~apple~CloudDocs"
     if icloud_root.exists():
         dest = icloud_root / "加拿大公民考試"
-        if dest.exists():
-            shutil.rmtree(dest)
-        shutil.copytree(OUT, dest)
+        dest.mkdir(parents=True, exist_ok=True)
+        ours = sorted(p.name for p in OUT.iterdir())
+        for name in ours:
+            src, dst = OUT / name, dest / name
+            if dst.is_dir() and not dst.is_symlink():
+                shutil.rmtree(dst)
+            elif dst.exists():
+                dst.unlink()
+            if src.is_dir():
+                shutil.copytree(src, dst)
+            else:
+                shutil.copy2(src, dst)
+        kept = [p.name for p in sorted(dest.iterdir()) if p.name not in ours]
         print(f"Synced to iCloud Drive: {dest}")
+        if kept:
+            print(f"  left untouched: {', '.join(kept)}")
         print("Mobile access:")
         print("  iPhone → Files App → iCloud Drive → 加拿大公民考試 → index.html → tap")
     else:
