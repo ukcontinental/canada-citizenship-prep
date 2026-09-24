@@ -25,6 +25,7 @@ TOOL = ROOT / "tools" / "tts_align"
 VOICE = {"en": "com.apple.voice.premium.en-US.Ava",
          "zh": "com.apple.voice.premium.zh-TW.Meijia"}
 RATE = {"en": "0.47", "zh": "0.5"}
+TTS_VER = "v2"   # tail-clipping fix, 2026-09-24
 LETTERS = "ABCDE"
 
 
@@ -62,7 +63,7 @@ def main():
         for lang in ("en", "zh"):
             t = text_of(q, lang)
             hk = f"{q['id']}:{lang}"
-            h = hashlib.md5((VOICE[lang] + RATE[lang] + t).encode()).hexdigest()
+            h = hashlib.md5((VOICE[lang] + RATE[lang] + TTS_VER + t).encode()).hexdigest()
             if hashes.get(hk) == h and (OUT / lang / f"{q['id']}.m4a").exists():
                 continue
             todo.append((q["id"], lang, t, h))

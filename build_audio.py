@@ -35,6 +35,9 @@ VOICE = {
 RATE = {"en": 0.5, "zh": 0.5}
 JOIN = {"en": " ", "zh": ""}
 AAC_BITRATE = "64000"
+# Bump whenever tools/tts_align.swift changes how the audio is produced,
+# so every cached paragraph is re-synthesized. v2 = tail-clipping fix (9/24).
+TTS_VER = "whole-v2"
 
 
 def ensure_tool() -> None:
@@ -90,7 +93,7 @@ def synth_paragraph(sentences: list[str], lang: str, m4a: Path, tmp: Path) -> li
 
 def para_hash(lang: str, sentences: list[str]) -> str:
     h = hashlib.md5()
-    h.update(f"{VOICE[lang]}|{RATE[lang]}|whole".encode())
+    h.update(f"{VOICE[lang]}|{RATE[lang]}|{TTS_VER}".encode())
     for s in sentences:
         h.update(b"\x00" + s.encode("utf-8"))
     return h.hexdigest()
@@ -140,7 +143,14 @@ def main():
     targets = sys.argv[1:]
     files = sorted(ALIGNED.glob("*.json"))
     if targets:
-        files = [f for f in files if f.name[:2] in targets]
+        # match either the filename prefix ("90") or the chapter num inside ("QB")
+        def wanted(f):
+            num = json.loads(f.read_text(encoding="utf-8"))["num"]
+            return f.name[:2] in targets or num in targets
+        files = [f for f in files if wanted(f)]
+        if not files:
+            sys.exit(f"no chapter matched {targets}; "
+                     f"available: {[json.loads(f.read_text(encoding='utf-8'))['num'] for f in sorted(ALIGNED.glob('*.json'))]}")
     for f in files:
         print(f"== {f.name}")
         build_chapter(f)
