@@ -11,7 +11,7 @@ concatenating is what made the first narration sound robotic.
 Also covers the Day 01-14 pages, which use the same bi() pairs.
 
 Output: html/audio/iv/{en,zh}/<key>.m4a   (existing files are skipped)
-Run:    python3 tools/build_interactive_audio.py [--prune]
+Run:    python3 tools/build_interactive_audio.py [--force] [--prune]
 """
 
 from __future__ import annotations
@@ -66,7 +66,12 @@ def main():
     for lang in ("en", "zh"):
         (OUT / lang).mkdir(parents=True, exist_ok=True)
     lines = collect()
-    todo = [(k, l, t) for k, (l, t) in lines.items() if not (OUT / l / f"{k}.m4a").exists()]
+    # --force re-synthesizes everything (e.g. after tools/tts_align.swift changes).
+    # Deliberately NOT "delete the folder then rebuild": a run that dies halfway
+    # would leave the site with no audio at all. Clips are overwritten in place.
+    force = "--force" in sys.argv
+    todo = [(k, l, t) for k, (l, t) in lines.items()
+            if force or not (OUT / l / f"{k}.m4a").exists()]
     print(f"{len(lines)} lines on the pages, {len(todo)} to synthesize", flush=True)
 
     done = failed = 0

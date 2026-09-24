@@ -51,7 +51,8 @@ def synth_word(k: str, surface: str) -> str:
 def main():
     OUT.mkdir(parents=True, exist_ok=True)
     words = all_words()
-    todo = {k: w for k, w in words.items() if not (OUT / f"{k}.m4a").exists()}
+    force = "--force" in sys.argv
+    todo = {k: w for k, w in words.items() if force or not (OUT / f"{k}.m4a").exists()}
     print(f"{len(todo)} words to synthesize ({len(words)} total)", flush=True)
     done = 0
     with ThreadPoolExecutor(max_workers=WORKERS) as ex:
