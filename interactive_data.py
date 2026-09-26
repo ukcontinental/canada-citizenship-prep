@@ -966,3 +966,89 @@ PEOPLE = [
      "2021 年，瑪麗・西蒙就任加拿大總督，是**第一位擔任這個職位的原住民**。｜In 2021 Mary Simon became Governor General — **the first Indigenous person to hold the office**.",
      ["**2021 版教材出版時還沒有這件事**，是本站補的。｜**This happened after the 2021 guide was written** — added here."]),
 ]
+
+
+# ============================================================================
+# JOINING — 聯邦擴張時間軸（哪一年加入、首府是哪裡）
+#
+# 年份全部照官方教材第 4 章的年表；首府與上面 PROVINCES 同源。
+# 省名與首府名一律中英並列 —— 考試考的是英文，只給中文等於沒用。
+# story 是給連續朗讀用的完整句子。
+# ============================================================================
+
+# (編號, 中文, English, 首府中文, 首府English, p=省 r=地區)
+# (年份, 標籤, [成員…], story, [補充…])
+JOINING = [
+    ("1867", "開國四省｜The four founding provinces",
+     [("1", "安大略", "Ontario", "多倫多", "Toronto", "p"),
+      ("2", "魁北克", "Quebec", "魁北克市", "Quebec City", "p"),
+      ("3", "新斯科細亞", "Nova Scotia", "哈利法克斯", "Halifax", "p"),
+      ("4", "新布藍瑞克", "New Brunswick", "弗雷德里克頓", "Fredericton", "p")],
+     "1867 年 7 月 1 日，安大略、魁北克、新斯科細亞、新布藍瑞克四個殖民地聯合組成加拿大自治領。｜On July 1, 1867, Ontario, Quebec, Nova Scotia and New Brunswick joined together to form the Dominion of Canada.",
+     ["這四個省的首府依序是多倫多、魁北克市、哈利法克斯、弗雷德里克頓。｜Their capitals, in the same order, are Toronto, Quebec City, Halifax and Fredericton."]),
+
+    ("1870", "",
+     [("5", "曼尼托巴", "Manitoba", "溫尼伯", "Winnipeg", "p"),
+      ("6", "西北地區", "Northwest Territories", "黃刀鎮", "Yellowknife", "r")],
+     "1870 年，曼尼托巴成為第五個省，首府溫尼伯；同一年西北地區也成立，首府黃刀鎮。｜In 1870 Manitoba became the fifth province, with Winnipeg as its capital, and the Northwest Territories were created the same year, with Yellowknife as its capital.",
+     ["起因是梅蒂斯領袖路易・瑞爾領導的紅河起義。｜This followed the Red River uprising led by the Métis leader Louis Riel."]),
+
+    ("1871", "",
+     [("7", "卑詩省", "British Columbia", "維多利亞", "Victoria", "p")],
+     "1871 年卑詩省加入，條件是渥太華要蓋一條通往西岸的鐵路。｜British Columbia joined in 1871, after Ottawa promised to build a railway to the West Coast.",
+     ["**首府維多利亞在溫哥華島上，不在大陸**；溫哥華比較大，但不是首府。｜**The capital, Victoria, is on Vancouver Island, not the mainland.** Vancouver is bigger, but it is not the capital."]),
+
+    ("1873", "",
+     [("8", "愛德華王子島", "Prince Edward Island", "夏洛特敦", "Charlottetown", "p")],
+     "1873 年愛德華王子島加入，首府夏洛特敦。｜Prince Edward Island joined in 1873; its capital is Charlottetown.",
+     ["有意思的是，1864 年規劃邦聯的會議就開在夏洛特敦——**邦聯的搖籃自己反而晚到**。｜Oddly enough, the 1864 conference that planned Confederation met in Charlottetown — **the birthplace of Confederation was one of the last to join**."]),
+
+    ("1880", "不是加入｜Not a new member",
+     [("", "北極群島", "The Arctic Islands", "劃入西北地區", "transferred to the Northwest Territories", "g")],
+     "1880 年，北極群島劃入西北地區。這一年沒有新的省或地區加入，只是西北地區變大了。｜In 1880 the Arctic Islands were transferred to the Northwest Territories. No new province or territory joined that year; the territory simply got bigger.",
+     []),
+
+    ("1898", "",
+     [("9", "育空地區", "Yukon Territory", "白馬市", "Whitehorse", "r")],
+     "1898 年育空成為地區，首府白馬市，因為 Klondike 淘金潮湧進大量人口。｜Yukon Territory was created in 1898, with Whitehorse as its capital, after the Klondike Gold Rush brought thousands of people north.",
+     []),
+
+    ("1905", "草原雙胞胎｜The Prairie twins",
+     [("10", "亞伯達", "Alberta", "艾德蒙頓", "Edmonton", "p"),
+      ("11", "薩克其萬", "Saskatchewan", "里賈納", "Regina", "p")],
+     "1905 年，亞伯達與薩克其萬同時從西北地區切出來，首府分別是艾德蒙頓和里賈納。｜In 1905 Alberta and Saskatchewan were both carved out of the Northwest Territories; their capitals are Edmonton and Regina.",
+     ["兩個省最大的城市其實是卡加利和薩斯卡通，**都不是首府**。｜The largest cities in those two provinces are Calgary and Saskatoon — **neither is the capital**."]),
+
+    ("1949", "",
+     [("12", "紐芬蘭與拉布拉多", "Newfoundland and Labrador", "聖約翰斯", "St. John's", "p")],
+     "1949 年紐芬蘭與拉布拉多加入，首府聖約翰斯，是**最後一個加入的省**，十個省到此完整。｜Newfoundland and Labrador joined in 1949, with St. John's as its capital — **the last province to join**, completing the ten.",
+     []),
+
+    ("1999", "",
+     [("13", "努納福特", "Nunavut", "伊魁特", "Iqaluit", "r")],
+     "1999 年努納福特從西北地區東部切出來，首府伊魁特，是最年輕的一塊。｜Nunavut was created in 1999 from the eastern part of the Northwest Territories, with Iqaluit as its capital — the newest of them all.",
+     ["努納福特在因紐特語裡是「我們的土地」的意思。｜Nunavut means \"our land\" in Inuktitut."]),
+]
+
+# 背誦小妙招：(標題, [內容行…])
+JOINING_TRICKS = [
+    ("九個年份，拆成兩排就不亂了｜Split the nine years into two rows",
+     ["**省**：67、70、71、73、05、49——六個年份湊出十個省。｜**Provinces**: 67, 70, 71, 73, 05, 49 — six years make ten provinces.",
+      "**地區**：70、98、99——只有三個。｜**Territories**: 70, 98, 99 — only three.",
+      "省那排：開國 67，接著 **70、71、73 連三年各來一個**（少了 72），05 草原兩個一起來，49 紐芬蘭收尾。｜In the province row: 67 at the founding, then **70, 71 and 73 — one a year for three years in a row** (no 72), two together in 05, and Newfoundland last in 49.",
+      "地區那排後兩個是 **98、99 連號**：九八育空、九九努納福特。｜The last two territory years run **98 then 99**: Yukon in 98, Nunavut in 99."]),
+
+    ("1880 是唯一的陷阱｜1880 is the only trap",
+     ["它不是誰加入，是**北極群島搬進西北地區**。問「哪一年有新省或新地區加入」時，1880 要排除。｜Nothing joined that year — **the Arctic Islands were simply transferred to the Northwest Territories**. If a question asks which year a new province or territory joined, 1880 is not the answer."]),
+
+    ("國都是渥太華，不是多倫多｜The national capital is Ottawa, not Toronto",
+     ["渥太華**在安大略省境內**，但它是**全國的首都**；多倫多只是安大略的省會。｜Ottawa **is in Ontario**, but it is **the capital of the whole country**; Toronto is only the capital of Ontario.",
+      "地圖上那顆橘色星星就是渥太華。｜The orange star on the map is Ottawa."]),
+
+    ("溫、卡、薩、蒙——四個大城都不是省會｜Four big cities that are not capitals",
+     ["**溫**哥華不是，卑詩的省會是**維多利亞**。｜**Vancouver** is not; British Columbia's capital is **Victoria**.",
+      "**卡**加利不是，亞伯達的省會是**艾德蒙頓**。｜**Calgary** is not; Alberta's capital is **Edmonton**.",
+      "**薩**斯卡通不是，薩克其萬的省會是**里賈納**。｜**Saskatoon** is not; Saskatchewan's capital is **Regina**.",
+      "**蒙**特婁不是，魁北克的省會是**魁北克市**。｜**Montreal** is not; Quebec's capital is **Quebec City**.",
+      "其餘各省的省會就是該省最有名的城市，照直覺答即可。｜For every other province, the capital is the province's best-known city — trust your instinct."]),
+]

@@ -422,6 +422,7 @@ blockquote.speakable > .speak-btn,
 <a href="../interactive/index.html">🎯 互動式入口</a>
 <a href="../interactive/history.html">📜 04 歷史時間軸</a>
 <a href="../interactive/people.html" class="current">👤 04–09 人物時間軸</a>
+<a href="../interactive/joining.html">🗺️ 04 聯邦擴張時間軸</a>
 <a href="../interactive/story-04.html">📖 04 故事聽學</a>
 <a href="../interactive/modern.html">🇨🇦 05 現代加拿大</a>
 <a href="../interactive/government.html">🏛️ 06 政府架構</a>
@@ -502,7 +503,6 @@ blockquote.speakable > .speak-btn,
 .iv-tag.accent { background: var(--accent-soft); color: var(--accent); font-weight: 600; }
 </style>
 
-<style>
 .pp-player {
   position: sticky; top: 0; z-index: 30;
   background: #fffdf8; border: 1px solid var(--line); border-bottom-width: 2px;
@@ -529,6 +529,15 @@ blockquote.speakable > .speak-btn,
 .pp-prog { font-size: 13px; color: var(--muted); margin-left: auto; font-variant-numeric: tabular-nums; }
 .pp-hint { flex-basis: 100%; font-size: 12px; color: var(--muted); margin: 0; }
 
+@media (max-width: 640px) {
+  /* 手機上這條固定在頂端，說明文字收起來，不要一直佔掉四分之一螢幕 */
+  .pp-player { padding: 8px 10px; gap: 6px 8px; }
+  .pp-hint { display: none; }
+  .pp-prog { flex-basis: 100%; margin-left: 0; text-align: right; }
+}
+
+
+<style>
 .pp-cat-filter { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 22px; }
 .pp-cat-btn {
   appearance: none; padding: 6px 13px; border-radius: 14px; text-align: left; line-height: 1.3;
@@ -581,10 +590,6 @@ blockquote.speakable > .speak-btn,
 .pp-cur { background: #ffe9b3; border-radius: 4px; }
 
 @media (max-width: 640px) {
-  /* 手機上這條是固定在頂端的，說明文字收起來，不要一直佔掉四分之一螢幕 */
-  .pp-player { padding: 8px 10px; gap: 6px 8px; }
-  .pp-hint { display: none; }
-  .pp-prog { flex-basis: 100%; margin-left: 0; text-align: right; }
   .pp-tl::before { left: 62px; }
   .pp-p { grid-template-columns: 54px 22px 1fr; gap: 5px; }
   .pp-year { font-size: 11.5px; }
@@ -620,7 +625,7 @@ blockquote.speakable > .speak-btn,
 
 <div class="pp-tl" id="pp-tl">
 
-<div class="pp-p" data-cat="explore">
+<div class="pp-p nr-card" data-cat="explore">
   <div class="pp-year">1497</div>
   <div class="pp-marker" style="background:#4a6fa5"></div>
   <div class="pp-card" style="--pp-c:#4a6fa5">
@@ -643,7 +648,7 @@ blockquote.speakable > .speak-btn,
     </div>
   </div>
 </div>
-<div class="pp-p" data-cat="explore">
+<div class="pp-p nr-card" data-cat="explore">
   <div class="pp-year">1534</div>
   <div class="pp-marker" style="background:#4a6fa5"></div>
   <div class="pp-card" style="--pp-c:#4a6fa5">
@@ -666,7 +671,7 @@ blockquote.speakable > .speak-btn,
     </div>
   </div>
 </div>
-<div class="pp-p" data-cat="explore">
+<div class="pp-p nr-card" data-cat="explore">
   <div class="pp-year">1604</div>
   <div class="pp-marker" style="background:#4a6fa5"></div>
   <div class="pp-card" style="--pp-c:#4a6fa5">
@@ -689,7 +694,7 @@ blockquote.speakable > .speak-btn,
     </div>
   </div>
 </div>
-<div class="pp-p" data-cat="explore">
+<div class="pp-p nr-card" data-cat="explore">
   <div class="pp-year">1608</div>
   <div class="pp-marker" style="background:#4a6fa5"></div>
   <div class="pp-card" style="--pp-c:#4a6fa5">
@@ -712,7 +717,7 @@ blockquote.speakable > .speak-btn,
     </div>
   </div>
 </div>
-<div class="pp-p" data-cat="explore">
+<div class="pp-p nr-card" data-cat="explore">
   <div class="pp-year">1660 年代</div>
   <div class="pp-marker" style="background:#4a6fa5"></div>
   <div class="pp-card" style="--pp-c:#4a6fa5">
@@ -735,7 +740,7 @@ blockquote.speakable > .speak-btn,
     </div>
   </div>
 </div>
-<div class="pp-p" data-cat="war">
+<div class="pp-p nr-card" data-cat="war">
   <div class="pp-year">1759</div>
   <div class="pp-marker" style="background:#7a8c5c"></div>
   <div class="pp-card" style="--pp-c:#7a8c5c">
@@ -758,7 +763,7 @@ blockquote.speakable > .speak-btn,
     </div>
   </div>
 </div>
-<div class="pp-p" data-cat="war">
+<div class="pp-p nr-card" data-cat="war">
   <div class="pp-year">1759</div>
   <div class="pp-marker" style="background:#7a8c5c"></div>
   <div class="pp-card" style="--pp-c:#7a8c5c">
@@ -781,7 +786,7 @@ blockquote.speakable > .speak-btn,
     </div>
   </div>
 </div>
-<div class="pp-p" data-cat="nation">
+<div class="pp-p nr-card" data-cat="nation">
   <div class="pp-year">1776</div>
   <div class="pp-marker" style="background:#b0413e"></div>
   <div class="pp-card" style="--pp-c:#b0413e">
@@ -804,7 +809,7 @@ blockquote.speakable > .speak-btn,
     </div>
   </div>
 </div>
-<div class="pp-p" data-cat="rights">
+<div class="pp-p nr-card" data-cat="rights">
   <div class="pp-year">1793</div>
   <div class="pp-marker" style="background:#9c5a9b"></div>
   <div class="pp-card" style="--pp-c:#9c5a9b">
@@ -827,7 +832,7 @@ blockquote.speakable > .speak-btn,
     </div>
   </div>
 </div>
-<div class="pp-p" data-cat="war">
+<div class="pp-p nr-card" data-cat="war">
   <div class="pp-year">1812</div>
   <div class="pp-marker" style="background:#7a8c5c"></div>
   <div class="pp-card" style="--pp-c:#7a8c5c">
@@ -850,7 +855,7 @@ blockquote.speakable > .speak-btn,
     </div>
   </div>
 </div>
-<div class="pp-p" data-cat="war">
+<div class="pp-p nr-card" data-cat="war">
   <div class="pp-year">1812</div>
   <div class="pp-marker" style="background:#7a8c5c"></div>
   <div class="pp-card" style="--pp-c:#7a8c5c">
@@ -873,7 +878,7 @@ blockquote.speakable > .speak-btn,
     </div>
   </div>
 </div>
-<div class="pp-p" data-cat="war">
+<div class="pp-p nr-card" data-cat="war">
   <div class="pp-year">1813</div>
   <div class="pp-marker" style="background:#7a8c5c"></div>
   <div class="pp-card" style="--pp-c:#7a8c5c">
@@ -896,7 +901,7 @@ blockquote.speakable > .speak-btn,
     </div>
   </div>
 </div>
-<div class="pp-p" data-cat="war">
+<div class="pp-p nr-card" data-cat="war">
   <div class="pp-year">1813</div>
   <div class="pp-marker" style="background:#7a8c5c"></div>
   <div class="pp-card" style="--pp-c:#7a8c5c">
@@ -919,7 +924,7 @@ blockquote.speakable > .speak-btn,
     </div>
   </div>
 </div>
-<div class="pp-p" data-cat="war">
+<div class="pp-p nr-card" data-cat="war">
   <div class="pp-year">1814</div>
   <div class="pp-marker" style="background:#7a8c5c"></div>
   <div class="pp-card" style="--pp-c:#7a8c5c">
@@ -942,7 +947,7 @@ blockquote.speakable > .speak-btn,
     </div>
   </div>
 </div>
-<div class="pp-p" data-cat="nation">
+<div class="pp-p nr-card" data-cat="nation">
   <div class="pp-year">1839</div>
   <div class="pp-marker" style="background:#b0413e"></div>
   <div class="pp-card" style="--pp-c:#b0413e">
@@ -965,7 +970,7 @@ blockquote.speakable > .speak-btn,
     </div>
   </div>
 </div>
-<div class="pp-p" data-cat="nation">
+<div class="pp-p nr-card" data-cat="nation">
   <div class="pp-year">1848</div>
   <div class="pp-marker" style="background:#b0413e"></div>
   <div class="pp-card" style="--pp-c:#b0413e">
@@ -988,7 +993,7 @@ blockquote.speakable > .speak-btn,
     </div>
   </div>
 </div>
-<div class="pp-p" data-cat="nation">
+<div class="pp-p nr-card" data-cat="nation">
   <div class="pp-year">1849</div>
   <div class="pp-marker" style="background:#b0413e"></div>
   <div class="pp-card" style="--pp-c:#b0413e">
@@ -1011,7 +1016,7 @@ blockquote.speakable > .speak-btn,
     </div>
   </div>
 </div>
-<div class="pp-p" data-cat="nation">
+<div class="pp-p nr-card" data-cat="nation">
   <div class="pp-year">1849</div>
   <div class="pp-marker" style="background:#b0413e"></div>
   <div class="pp-card" style="--pp-c:#b0413e">
@@ -1034,7 +1039,7 @@ blockquote.speakable > .speak-btn,
     </div>
   </div>
 </div>
-<div class="pp-p" data-cat="nation">
+<div class="pp-p nr-card" data-cat="nation">
   <div class="pp-year">1848</div>
   <div class="pp-marker" style="background:#b0413e"></div>
   <div class="pp-card" style="--pp-c:#b0413e">
@@ -1057,7 +1062,7 @@ blockquote.speakable > .speak-btn,
     </div>
   </div>
 </div>
-<div class="pp-p" data-cat="war">
+<div class="pp-p nr-card" data-cat="war">
   <div class="pp-year">1854</div>
   <div class="pp-marker" style="background:#7a8c5c"></div>
   <div class="pp-card" style="--pp-c:#7a8c5c">
@@ -1080,7 +1085,7 @@ blockquote.speakable > .speak-btn,
     </div>
   </div>
 </div>
-<div class="pp-p" data-cat="nation">
+<div class="pp-p nr-card" data-cat="nation">
   <div class="pp-year">1864</div>
   <div class="pp-marker" style="background:#b0413e"></div>
   <div class="pp-card" style="--pp-c:#b0413e">
@@ -1103,7 +1108,7 @@ blockquote.speakable > .speak-btn,
     </div>
   </div>
 </div>
-<div class="pp-p" data-cat="nation">
+<div class="pp-p nr-card" data-cat="nation">
   <div class="pp-year">1864</div>
   <div class="pp-marker" style="background:#b0413e"></div>
   <div class="pp-card" style="--pp-c:#b0413e">
@@ -1126,7 +1131,7 @@ blockquote.speakable > .speak-btn,
     </div>
   </div>
 </div>
-<div class="pp-p" data-cat="nation">
+<div class="pp-p nr-card" data-cat="nation">
   <div class="pp-year">1867</div>
   <div class="pp-marker" style="background:#b0413e"></div>
   <div class="pp-card" style="--pp-c:#b0413e">
@@ -1149,7 +1154,7 @@ blockquote.speakable > .speak-btn,
     </div>
   </div>
 </div>
-<div class="pp-p" data-cat="nation">
+<div class="pp-p nr-card" data-cat="nation">
   <div class="pp-year">1867</div>
   <div class="pp-marker" style="background:#b0413e"></div>
   <div class="pp-card" style="--pp-c:#b0413e">
@@ -1172,7 +1177,7 @@ blockquote.speakable > .speak-btn,
     </div>
   </div>
 </div>
-<div class="pp-p" data-cat="rights">
+<div class="pp-p nr-card" data-cat="rights">
   <div class="pp-year">1870</div>
   <div class="pp-marker" style="background:#9c5a9b"></div>
   <div class="pp-card" style="--pp-c:#9c5a9b">
@@ -1195,7 +1200,7 @@ blockquote.speakable > .speak-btn,
     </div>
   </div>
 </div>
-<div class="pp-p" data-cat="science">
+<div class="pp-p nr-card" data-cat="science">
   <div class="pp-year">1874</div>
   <div class="pp-marker" style="background:#2f7d8c"></div>
   <div class="pp-card" style="--pp-c:#2f7d8c">
@@ -1218,7 +1223,7 @@ blockquote.speakable > .speak-btn,
     </div>
   </div>
 </div>
-<div class="pp-p" data-cat="science">
+<div class="pp-p nr-card" data-cat="science">
   <div class="pp-year">1874</div>
   <div class="pp-marker" style="background:#2f7d8c"></div>
   <div class="pp-card" style="--pp-c:#2f7d8c">
@@ -1241,7 +1246,7 @@ blockquote.speakable > .speak-btn,
     </div>
   </div>
 </div>
-<div class="pp-p" data-cat="science">
+<div class="pp-p nr-card" data-cat="science">
   <div class="pp-year">1879</div>
   <div class="pp-marker" style="background:#2f7d8c"></div>
   <div class="pp-card" style="--pp-c:#2f7d8c">
@@ -1264,7 +1269,7 @@ blockquote.speakable > .speak-btn,
     </div>
   </div>
 </div>
-<div class="pp-p" data-cat="rights">
+<div class="pp-p nr-card" data-cat="rights">
   <div class="pp-year">1880 年代</div>
   <div class="pp-marker" style="background:#9c5a9b"></div>
   <div class="pp-card" style="--pp-c:#9c5a9b">
@@ -1287,7 +1292,7 @@ blockquote.speakable > .speak-btn,
     </div>
   </div>
 </div>
-<div class="pp-p" data-cat="nation">
+<div class="pp-p nr-card" data-cat="nation">
   <div class="pp-year">1885</div>
   <div class="pp-marker" style="background:#b0413e"></div>
   <div class="pp-card" style="--pp-c:#b0413e">
@@ -1310,7 +1315,7 @@ blockquote.speakable > .speak-btn,
     </div>
   </div>
 </div>
-<div class="pp-p" data-cat="sport">
+<div class="pp-p nr-card" data-cat="sport">
   <div class="pp-year">1891</div>
   <div class="pp-marker" style="background:#4f8f57"></div>
   <div class="pp-card" style="--pp-c:#4f8f57">
@@ -1333,7 +1338,7 @@ blockquote.speakable > .speak-btn,
     </div>
   </div>
 </div>
-<div class="pp-p" data-cat="sport">
+<div class="pp-p nr-card" data-cat="sport">
   <div class="pp-year">1892</div>
   <div class="pp-marker" style="background:#4f8f57"></div>
   <div class="pp-card" style="--pp-c:#4f8f57">
@@ -1356,7 +1361,7 @@ blockquote.speakable > .speak-btn,
     </div>
   </div>
 </div>
-<div class="pp-p" data-cat="nation">
+<div class="pp-p nr-card" data-cat="nation">
   <div class="pp-year">1896</div>
   <div class="pp-marker" style="background:#b0413e"></div>
   <div class="pp-card" style="--pp-c:#b0413e">
@@ -1379,7 +1384,7 @@ blockquote.speakable > .speak-btn,
     </div>
   </div>
 </div>
-<div class="pp-p" data-cat="science">
+<div class="pp-p nr-card" data-cat="science">
   <div class="pp-year">1900</div>
   <div class="pp-marker" style="background:#2f7d8c"></div>
   <div class="pp-card" style="--pp-c:#2f7d8c">
@@ -1402,7 +1407,7 @@ blockquote.speakable > .speak-btn,
     </div>
   </div>
 </div>
-<div class="pp-p" data-cat="sport">
+<div class="pp-p nr-card" data-cat="sport">
   <div class="pp-year">1909</div>
   <div class="pp-marker" style="background:#4f8f57"></div>
   <div class="pp-card" style="--pp-c:#4f8f57">
@@ -1425,7 +1430,7 @@ blockquote.speakable > .speak-btn,
     </div>
   </div>
 </div>
-<div class="pp-p" data-cat="arts">
+<div class="pp-p nr-card" data-cat="arts">
   <div class="pp-year">19–20 世紀</div>
   <div class="pp-marker" style="background:#c8813a"></div>
   <div class="pp-card" style="--pp-c:#c8813a">
@@ -1448,7 +1453,7 @@ blockquote.speakable > .speak-btn,
     </div>
   </div>
 </div>
-<div class="pp-p" data-cat="war">
+<div class="pp-p nr-card" data-cat="war">
   <div class="pp-year">1915</div>
   <div class="pp-marker" style="background:#7a8c5c"></div>
   <div class="pp-card" style="--pp-c:#7a8c5c">
@@ -1471,7 +1476,7 @@ blockquote.speakable > .speak-btn,
     </div>
   </div>
 </div>
-<div class="pp-p" data-cat="rights">
+<div class="pp-p nr-card" data-cat="rights">
   <div class="pp-year">1917</div>
   <div class="pp-marker" style="background:#9c5a9b"></div>
   <div class="pp-card" style="--pp-c:#9c5a9b">
@@ -1494,7 +1499,7 @@ blockquote.speakable > .speak-btn,
     </div>
   </div>
 </div>
-<div class="pp-p" data-cat="war">
+<div class="pp-p nr-card" data-cat="war">
   <div class="pp-year">1918</div>
   <div class="pp-marker" style="background:#7a8c5c"></div>
   <div class="pp-card" style="--pp-c:#7a8c5c">
@@ -1517,7 +1522,7 @@ blockquote.speakable > .speak-btn,
     </div>
   </div>
 </div>
-<div class="pp-p" data-cat="arts">
+<div class="pp-p nr-card" data-cat="arts">
   <div class="pp-year">1920</div>
   <div class="pp-marker" style="background:#c8813a"></div>
   <div class="pp-card" style="--pp-c:#c8813a">
@@ -1540,7 +1545,7 @@ blockquote.speakable > .speak-btn,
     </div>
   </div>
 </div>
-<div class="pp-p" data-cat="rights">
+<div class="pp-p nr-card" data-cat="rights">
   <div class="pp-year">1921</div>
   <div class="pp-marker" style="background:#9c5a9b"></div>
   <div class="pp-card" style="--pp-c:#9c5a9b">
@@ -1563,7 +1568,7 @@ blockquote.speakable > .speak-btn,
     </div>
   </div>
 </div>
-<div class="pp-p" data-cat="science">
+<div class="pp-p nr-card" data-cat="science">
   <div class="pp-year">1921</div>
   <div class="pp-marker" style="background:#2f7d8c"></div>
   <div class="pp-card" style="--pp-c:#2f7d8c">
@@ -1586,7 +1591,7 @@ blockquote.speakable > .speak-btn,
     </div>
   </div>
 </div>
-<div class="pp-p" data-cat="rights">
+<div class="pp-p nr-card" data-cat="rights">
   <div class="pp-year">1929</div>
   <div class="pp-marker" style="background:#9c5a9b"></div>
   <div class="pp-card" style="--pp-c:#9c5a9b">
@@ -1609,7 +1614,7 @@ blockquote.speakable > .speak-btn,
     </div>
   </div>
 </div>
-<div class="pp-p" data-cat="arts">
+<div class="pp-p nr-card" data-cat="arts">
   <div class="pp-year">1930 年代</div>
   <div class="pp-marker" style="background:#c8813a"></div>
   <div class="pp-card" style="--pp-c:#c8813a">
@@ -1632,7 +1637,7 @@ blockquote.speakable > .speak-btn,
     </div>
   </div>
 </div>
-<div class="pp-p" data-cat="science">
+<div class="pp-p nr-card" data-cat="science">
   <div class="pp-year">1934</div>
   <div class="pp-marker" style="background:#2f7d8c"></div>
   <div class="pp-card" style="--pp-c:#2f7d8c">
@@ -1655,7 +1660,7 @@ blockquote.speakable > .speak-btn,
     </div>
   </div>
 </div>
-<div class="pp-p" data-cat="arts">
+<div class="pp-p nr-card" data-cat="arts">
   <div class="pp-year">1935</div>
   <div class="pp-marker" style="background:#c8813a"></div>
   <div class="pp-card" style="--pp-c:#c8813a">
@@ -1678,7 +1683,7 @@ blockquote.speakable > .speak-btn,
     </div>
   </div>
 </div>
-<div class="pp-p" data-cat="science">
+<div class="pp-p nr-card" data-cat="science">
   <div class="pp-year">1937</div>
   <div class="pp-marker" style="background:#2f7d8c"></div>
   <div class="pp-card" style="--pp-c:#2f7d8c">
@@ -1701,7 +1706,7 @@ blockquote.speakable > .speak-btn,
     </div>
   </div>
 </div>
-<div class="pp-p" data-cat="arts">
+<div class="pp-p nr-card" data-cat="arts">
   <div class="pp-year">20 世紀前半</div>
   <div class="pp-marker" style="background:#c8813a"></div>
   <div class="pp-card" style="--pp-c:#c8813a">
@@ -1724,7 +1729,7 @@ blockquote.speakable > .speak-btn,
     </div>
   </div>
 </div>
-<div class="pp-p" data-cat="nation">
+<div class="pp-p nr-card" data-cat="nation">
   <div class="pp-year">1947</div>
   <div class="pp-marker" style="background:#b0413e"></div>
   <div class="pp-card" style="--pp-c:#b0413e">
@@ -1747,7 +1752,7 @@ blockquote.speakable > .speak-btn,
     </div>
   </div>
 </div>
-<div class="pp-p" data-cat="science">
+<div class="pp-p nr-card" data-cat="science">
   <div class="pp-year">1950</div>
   <div class="pp-marker" style="background:#2f7d8c"></div>
   <div class="pp-card" style="--pp-c:#2f7d8c">
@@ -1770,7 +1775,7 @@ blockquote.speakable > .speak-btn,
     </div>
   </div>
 </div>
-<div class="pp-p" data-cat="arts">
+<div class="pp-p nr-card" data-cat="arts">
   <div class="pp-year">1950 年代</div>
   <div class="pp-marker" style="background:#c8813a"></div>
   <div class="pp-card" style="--pp-c:#c8813a">
@@ -1793,7 +1798,7 @@ blockquote.speakable > .speak-btn,
     </div>
   </div>
 </div>
-<div class="pp-p" data-cat="arts">
+<div class="pp-p nr-card" data-cat="arts">
   <div class="pp-year">1960 年代</div>
   <div class="pp-marker" style="background:#c8813a"></div>
   <div class="pp-card" style="--pp-c:#c8813a">
@@ -1816,7 +1821,7 @@ blockquote.speakable > .speak-btn,
     </div>
   </div>
 </div>
-<div class="pp-p" data-cat="nation">
+<div class="pp-p nr-card" data-cat="nation">
   <div class="pp-year">1965</div>
   <div class="pp-marker" style="background:#b0413e"></div>
   <div class="pp-card" style="--pp-c:#b0413e">
@@ -1839,7 +1844,7 @@ blockquote.speakable > .speak-btn,
     </div>
   </div>
 </div>
-<div class="pp-p" data-cat="sport">
+<div class="pp-p nr-card" data-cat="sport">
   <div class="pp-year">1972</div>
   <div class="pp-marker" style="background:#4f8f57"></div>
   <div class="pp-card" style="--pp-c:#4f8f57">
@@ -1862,7 +1867,7 @@ blockquote.speakable > .speak-btn,
     </div>
   </div>
 </div>
-<div class="pp-p" data-cat="sport">
+<div class="pp-p nr-card" data-cat="sport">
   <div class="pp-year">1979–1988</div>
   <div class="pp-marker" style="background:#4f8f57"></div>
   <div class="pp-card" style="--pp-c:#4f8f57">
@@ -1885,7 +1890,7 @@ blockquote.speakable > .speak-btn,
     </div>
   </div>
 </div>
-<div class="pp-p" data-cat="arts">
+<div class="pp-p nr-card" data-cat="arts">
   <div class="pp-year">20 世紀後半起</div>
   <div class="pp-marker" style="background:#c8813a"></div>
   <div class="pp-card" style="--pp-c:#c8813a">
@@ -1908,7 +1913,7 @@ blockquote.speakable > .speak-btn,
     </div>
   </div>
 </div>
-<div class="pp-p" data-cat="sport">
+<div class="pp-p nr-card" data-cat="sport">
   <div class="pp-year">1980</div>
   <div class="pp-marker" style="background:#4f8f57"></div>
   <div class="pp-card" style="--pp-c:#4f8f57">
@@ -1931,7 +1936,7 @@ blockquote.speakable > .speak-btn,
     </div>
   </div>
 </div>
-<div class="pp-p" data-cat="nation">
+<div class="pp-p nr-card" data-cat="nation">
   <div class="pp-year">1982</div>
   <div class="pp-marker" style="background:#b0413e"></div>
   <div class="pp-card" style="--pp-c:#b0413e">
@@ -1954,7 +1959,7 @@ blockquote.speakable > .speak-btn,
     </div>
   </div>
 </div>
-<div class="pp-p" data-cat="science">
+<div class="pp-p nr-card" data-cat="science">
   <div class="pp-year">1971–1994</div>
   <div class="pp-marker" style="background:#2f7d8c"></div>
   <div class="pp-card" style="--pp-c:#2f7d8c">
@@ -1977,7 +1982,7 @@ blockquote.speakable > .speak-btn,
     </div>
   </div>
 </div>
-<div class="pp-p" data-cat="sport">
+<div class="pp-p nr-card" data-cat="sport">
   <div class="pp-year">1985</div>
   <div class="pp-marker" style="background:#4f8f57"></div>
   <div class="pp-card" style="--pp-c:#4f8f57">
@@ -2000,7 +2005,7 @@ blockquote.speakable > .speak-btn,
     </div>
   </div>
 </div>
-<div class="pp-p" data-cat="nation">
+<div class="pp-p nr-card" data-cat="nation">
   <div class="pp-year">1988</div>
   <div class="pp-marker" style="background:#b0413e"></div>
   <div class="pp-card" style="--pp-c:#b0413e">
@@ -2023,7 +2028,7 @@ blockquote.speakable > .speak-btn,
     </div>
   </div>
 </div>
-<div class="pp-p" data-cat="sport">
+<div class="pp-p nr-card" data-cat="sport">
   <div class="pp-year">1996</div>
   <div class="pp-marker" style="background:#4f8f57"></div>
   <div class="pp-card" style="--pp-c:#4f8f57">
@@ -2046,7 +2051,7 @@ blockquote.speakable > .speak-btn,
     </div>
   </div>
 </div>
-<div class="pp-p" data-cat="science">
+<div class="pp-p nr-card" data-cat="science">
   <div class="pp-year">1999</div>
   <div class="pp-marker" style="background:#2f7d8c"></div>
   <div class="pp-card" style="--pp-c:#2f7d8c">
@@ -2069,7 +2074,7 @@ blockquote.speakable > .speak-btn,
     </div>
   </div>
 </div>
-<div class="pp-p" data-cat="sport">
+<div class="pp-p nr-card" data-cat="sport">
   <div class="pp-year">2000 年代</div>
   <div class="pp-marker" style="background:#4f8f57"></div>
   <div class="pp-card" style="--pp-c:#4f8f57">
@@ -2092,7 +2097,7 @@ blockquote.speakable > .speak-btn,
     </div>
   </div>
 </div>
-<div class="pp-p" data-cat="rights">
+<div class="pp-p nr-card" data-cat="rights">
   <div class="pp-year">2005</div>
   <div class="pp-marker" style="background:#9c5a9b"></div>
   <div class="pp-card" style="--pp-c:#9c5a9b">
@@ -2115,7 +2120,7 @@ blockquote.speakable > .speak-btn,
     </div>
   </div>
 </div>
-<div class="pp-p" data-cat="nation">
+<div class="pp-p nr-card" data-cat="nation">
   <div class="pp-year">2006 / 2008</div>
   <div class="pp-marker" style="background:#b0413e"></div>
   <div class="pp-card" style="--pp-c:#b0413e">
@@ -2138,7 +2143,7 @@ blockquote.speakable > .speak-btn,
     </div>
   </div>
 </div>
-<div class="pp-p" data-cat="rights">
+<div class="pp-p nr-card" data-cat="rights">
   <div class="pp-year">2018</div>
   <div class="pp-marker" style="background:#9c5a9b"></div>
   <div class="pp-card" style="--pp-c:#9c5a9b">
@@ -2161,7 +2166,7 @@ blockquote.speakable > .speak-btn,
     </div>
   </div>
 </div>
-<div class="pp-p" data-cat="rights">
+<div class="pp-p nr-card" data-cat="rights">
   <div class="pp-year">2021</div>
   <div class="pp-marker" style="background:#9c5a9b"></div>
   <div class="pp-card" style="--pp-c:#9c5a9b">
@@ -2185,6 +2190,7 @@ blockquote.speakable > .speak-btn,
   </div>
 </div>
 </div>
+
 
 <script>
 (function () {
@@ -2234,7 +2240,8 @@ blockquote.speakable > .speak-btn,
     idleUI(txt || '已停止');
   }
   // The single-line 🔊 and the dictionary both call this, so two voices never overlap.
-  window.CIT_AUTOPLAY_STOP = function () { if (playing || idx >= 0) stop('已停止'); };
+  (window.CIT_AUTOPLAY_LIST = window.CIT_AUTOPLAY_LIST || []).push(function () { if (playing || idx >= 0) stop('已停止'); });
+  window.CIT_AUTOPLAY_STOP = function () { window.CIT_AUTOPLAY_LIST.forEach(function (f) { f(); }); };
 
   function speakFallback(btn, onDone) {
     if (!window.speechSynthesis) { onDone(); return; }
@@ -2255,7 +2262,7 @@ blockquote.speakable > .speak-btn,
     clearMarks();
     var line = btn.parentElement;
     if (line) line.classList.add('pp-cur');
-    var card = btn.closest('.pp-p');
+    var card = btn.closest('.nr-card');
     if (card) {
       card.classList.add('pp-reading');
       card.scrollIntoView({ block: 'center', behavior: 'smooth' });
