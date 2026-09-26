@@ -421,6 +421,7 @@ blockquote.speakable > .speak-btn,
 <h2>🧠 每章重點互動記憶</h2>
 <a href="../interactive/index.html">🎯 互動式入口</a>
 <a href="../interactive/history.html">📜 04 歷史時間軸</a>
+<a href="../interactive/people.html">👤 04–09 人物時間軸</a>
 <a href="../interactive/story-04.html">📖 04 故事聽學</a>
 <a href="../interactive/modern.html">🇨🇦 05 現代加拿大</a>
 <a href="../interactive/government.html">🏛️ 06 政府架構</a>
@@ -806,6 +807,8 @@ blockquote.speakable > .speak-btn,
     var b = e.target.closest && e.target.closest('.say');
     if (!b) return;
     e.stopPropagation();
+    // A hand-picked line wins over a running continuous read-through.
+    if (window.CIT_AUTOPLAY_STOP) window.CIT_AUTOPLAY_STOP();
     var wasPlaying = (b === playingBtn);
     stopLine();
     if (wasPlaying) return;
@@ -836,6 +839,7 @@ blockquote.speakable > .speak-btn,
   }
   function say(rate) {
     if (!ctx) return;
+    if (window.CIT_AUTOPLAY_STOP) window.CIT_AUTOPLAY_STOP();
     stopLine();
     var key = ctx.word.toLowerCase().replace(/’/g, "'");
     wordAudio.pause();

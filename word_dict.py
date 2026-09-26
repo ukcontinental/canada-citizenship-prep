@@ -115,6 +115,8 @@ def dict_js(word_base: str, line_base: str) -> str:
     var b = e.target.closest && e.target.closest('.say');
     if (!b) return;
     e.stopPropagation();
+    // A hand-picked line wins over a running continuous read-through.
+    if (window.CIT_AUTOPLAY_STOP) window.CIT_AUTOPLAY_STOP();
     var wasPlaying = (b === playingBtn);
     stopLine();
     if (wasPlaying) return;
@@ -145,6 +147,7 @@ def dict_js(word_base: str, line_base: str) -> str:
   }
   function say(rate) {
     if (!ctx) return;
+    if (window.CIT_AUTOPLAY_STOP) window.CIT_AUTOPLAY_STOP();
     stopLine();
     var key = ctx.word.toLowerCase().replace(/’/g, "'");
     wordAudio.pause();

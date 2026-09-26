@@ -421,6 +421,7 @@ blockquote.speakable > .speak-btn,
 <h2>🧠 每章重點互動記憶</h2>
 <a href="../interactive/index.html" class="current">🎯 互動式入口</a>
 <a href="../interactive/history.html">📜 04 歷史時間軸</a>
+<a href="../interactive/people.html">👤 04–09 人物時間軸</a>
 <a href="../interactive/story-04.html">📖 04 故事聽學</a>
 <a href="../interactive/modern.html">🇨🇦 05 現代加拿大</a>
 <a href="../interactive/government.html">🏛️ 06 政府架構</a>
@@ -487,6 +488,12 @@ blockquote.speakable > .speak-btn,
     <div class="iv-hub-chap">04 章</div>
     <div class="iv-hub-title">歷史時間軸</div>
     <div class="iv-hub-desc">1497 → 2021，41 事件，5 時代色標、可篩選</div>
+  </a>
+  <a href="people.html" class="iv-hub-card">
+    <span class="iv-hub-emoji">👤</span>
+    <div class="iv-hub-chap">04–09 章 · 人物</div>
+    <div class="iv-hub-title">人物時間軸</div>
+    <div class="iv-hub-desc">68 位人物：哪年、什麼人、哪國人、在哪裡、為何有名，可連續朗讀</div>
   </a>
   <a href="story-04.html" class="iv-hub-card">
     <span class="iv-hub-emoji">📖</span>
@@ -611,6 +618,8 @@ blockquote.speakable > .speak-btn,
     var b = e.target.closest && e.target.closest('.say');
     if (!b) return;
     e.stopPropagation();
+    // A hand-picked line wins over a running continuous read-through.
+    if (window.CIT_AUTOPLAY_STOP) window.CIT_AUTOPLAY_STOP();
     var wasPlaying = (b === playingBtn);
     stopLine();
     if (wasPlaying) return;
@@ -641,6 +650,7 @@ blockquote.speakable > .speak-btn,
   }
   function say(rate) {
     if (!ctx) return;
+    if (window.CIT_AUTOPLAY_STOP) window.CIT_AUTOPLAY_STOP();
     stopLine();
     var key = ctx.word.toLowerCase().replace(/’/g, "'");
     wordAudio.pause();

@@ -486,6 +486,7 @@ def make_sidebar(current: str) -> str:
 INTERACTIVE_ITEMS = [
     ("index.html", "🎯 互動式入口"),
     ("history.html", "📜 04 歷史時間軸"),
+    ("people.html", "👤 04–09 人物時間軸"),
     ("story-04.html", "📖 04 故事聽學"),
     ("modern.html", "🇨🇦 05 現代加拿大"),
     ("government.html", "🏛️ 06 政府架構"),
@@ -1185,6 +1186,7 @@ DAY_TOPICS = [
 INTERACTIVE_META = {
     "index.html": "所有圖解模組的入口",
     "history.html": "41 事件時間軸、5 時代色標",
+    "people.html": "68 位人物，可從頭連續朗讀",
     "story-04.html": "中文故事＋記憶卡＋小測驗",
     "modern.html": "14 位總理畫廊 + 11 件里程碑",
     "government.html": "三級政府、國會三部分、法案 7 步驟",
@@ -1370,6 +1372,7 @@ def build_single():
     iv_pages = [
         ("interactive/index.html", iv.build_interactive_index_body()),
         ("interactive/history.html", iv.build_history_body()),
+        ("interactive/people.html", iv.build_people_body()),
         ("interactive/story-04.html", iv.build_story_04_body()),
         ("interactive/modern.html", iv.build_modern_body()),
         ("interactive/government.html", iv.build_government_body()),
@@ -1853,6 +1856,7 @@ def build():
     interactive_pages = [
         ("interactive/index.html", "互動式入口", iv.build_interactive_index_body()),
         ("interactive/history.html", "歷史時間軸", iv.build_history_body()),
+        ("interactive/people.html", "人物時間軸", iv.build_people_body()),
         ("interactive/story-04.html", "歷史故事聽學", iv.build_story_04_body()),
         ("interactive/modern.html", "現代加拿大", iv.build_modern_body()),
         ("interactive/government.html", "政府架構", iv.build_government_body()),

@@ -33,7 +33,7 @@ VOICE = {"en": "com.apple.voice.premium.en-US.Ava",
 RATE = {"en": "0.47", "zh": "0.5"}
 WORKERS = 3
 
-MODULES = ["geography", "history", "modern", "government",
+MODULES = ["geography", "history", "people", "modern", "government",
            "elections", "justice", "symbols", "economy"]
 
 

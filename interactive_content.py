@@ -12,7 +12,7 @@ import word_dict as _wd
 from interactive_data import (PROVINCES, HISTORY_EVENTS, PRIME_MINISTERS, PARTIES, VOTE_STEPS,
                               MUST_KNOW_FACTS, JUSTICE_PRINCIPLES, RCMP_FACTS, SYMBOLS,
                               CURRENCY_FIGURES, NATIONAL_HOLIDAYS, COINS, INDUSTRIES, TRADE_FACTS,
-                              BILL_STEPS, GOV_LEGEND)
+                              BILL_STEPS, GOV_LEGEND, PEOPLE, PEOPLE_CATS)
 
 
 def _strong(t: str) -> str:
@@ -960,6 +960,12 @@ def build_interactive_index_body():
     <div class="iv-hub-title">歷史時間軸</div>
     <div class="iv-hub-desc">1497 → 2021，41 事件，5 時代色標、可篩選</div>
   </a>
+  <a href="people.html" class="iv-hub-card">
+    <span class="iv-hub-emoji">👤</span>
+    <div class="iv-hub-chap">04–09 章 · 人物</div>
+    <div class="iv-hub-title">人物時間軸</div>
+    <div class="iv-hub-desc">68 位人物：哪年、什麼人、哪國人、在哪裡、為何有名，可連續朗讀</div>
+  </a>
   <a href="story-04.html" class="iv-hub-card">
     <span class="iv-hub-emoji">📖</span>
     <div class="iv-hub-chap">04 章 · 邊聽邊玩</div>
@@ -1385,3 +1391,315 @@ def build_story_04_body():
         memory_cards=STORY_04_CARDS,
         quiz=STORY_04_QUIZ,
     )
+
+
+# ============================================================================
+# PEOPLE TIMELINE — 人物時間軸 + 連續朗讀
+#
+# 版面沿用歷史時間軸（年 / 圓點 / 卡片），卡片裡固定回答同六個問題。
+# 「像聽故事一樣」的部分不是瀏覽器合成音，而是把 bi() 已經錄好的人聲片段
+# 一段接一段串起來播 —— 和全站其他頁同一批 Ava／Meijia 錄音。
+# ============================================================================
+
+PEOPLE_CAT_COLOR = {c[0]: c[3] for c in PEOPLE_CATS}
+PEOPLE_CAT_ZH = {c[0]: c[1] for c in PEOPLE_CATS}
+
+
+def _people_field(label_zh: str, label_en: str, value: str) -> str:
+    if not value:
+        return ""
+    return (f'<div class="pp-f"><span class="pp-k">{label_zh}'
+            f'<span class="pp-k-en">{label_en}</span></span>'
+            f'<div class="pp-v">{bi(value)}</div></div>')
+
+
+def build_people_body():
+    cards = ""
+    for (year, _sort, name_en, name_zh, cat, src, role, origin, place, story, extras) in \
+            sorted(PEOPLE, key=lambda r: r[1]):
+        color = PEOPLE_CAT_COLOR[cat]
+        src_tag = ('<span class="pp-src pp-src-guide">教材</span>' if src == "guide"
+                   else '<span class="pp-src pp-src-extra">補充</span>')
+        extra_html = "".join(f'<div class="pp-extra">{bi(e)}</div>' for e in extras)
+        cards += f'''
+<div class="pp-p" data-cat="{cat}">
+  <div class="pp-year">{year}</div>
+  <div class="pp-marker" style="background:{color}"></div>
+  <div class="pp-card" style="--pp-c:{color}">
+    <div class="pp-head">
+      <h3 class="pp-name">{name_zh}</h3>
+      <div class="pp-name-en">{_wd.wrap_words(name_en)}</div>
+      <div class="pp-tags">
+        <span class="pp-tag" style="background:{color}">{PEOPLE_CAT_ZH[cat]}</span>{src_tag}
+      </div>
+    </div>
+    <div class="pp-fields">
+      {_people_field("什麼人", "who", role)}
+      {_people_field("哪國人 · 族裔", "origin", origin)}
+      {_people_field("在哪裡", "where", place)}
+    </div>
+    <div class="pp-why" data-narrate>
+      <span class="pp-k pp-k-why">做了什麼而有名<span class="pp-k-en">why famous</span></span>
+      <div class="pp-v">{bi(story)}</div>
+      {extra_html}
+    </div>
+  </div>
+</div>'''
+
+    cat_filters = "".join(
+        f'<button class="pp-cat-btn" data-cat="{cid}" style="--pp-c:{color}">'
+        f'<span class="cz">{zh}</span><span class="ce">{en}</span></button>'
+        for cid, zh, en, color in PEOPLE_CATS)
+
+    return f'''{IV_SHARED_CSS}
+<style>
+.pp-player {{
+  position: sticky; top: 0; z-index: 30;
+  background: #fffdf8; border: 1px solid var(--line); border-bottom-width: 2px;
+  border-radius: 10px; padding: 12px 14px; margin: 16px 0 20px;
+  display: flex; flex-wrap: wrap; align-items: center; gap: 8px 10px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}}
+.pp-btn {{
+  appearance: none; font: inherit; font-size: 14px; font-weight: 600;
+  font-family: -apple-system, system-ui, sans-serif;
+  border: 2px solid var(--accent); background: #fff; color: var(--accent);
+  padding: 7px 14px; border-radius: 20px; cursor: pointer;
+}}
+.pp-btn.main {{ background: var(--accent); color: #fff; }}
+.pp-btn.small {{ padding: 7px 11px; font-size: 13px; }}
+.pp-langs {{ display: flex; border: 1px solid var(--line); border-radius: 18px; overflow: hidden; }}
+.pp-langs button {{
+  appearance: none; font: inherit; font-size: 13px; border: none; background: #fff;
+  color: var(--muted); padding: 7px 12px; cursor: pointer;
+  font-family: -apple-system, system-ui, sans-serif;
+}}
+.pp-langs button + button {{ border-left: 1px solid var(--line); }}
+.pp-langs button.on {{ background: var(--accent-soft); color: var(--accent); font-weight: 700; }}
+.pp-prog {{ font-size: 13px; color: var(--muted); margin-left: auto; font-variant-numeric: tabular-nums; }}
+.pp-hint {{ flex-basis: 100%; font-size: 12px; color: var(--muted); margin: 0; }}
+
+.pp-cat-filter {{ display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 22px; }}
+.pp-cat-btn {{
+  appearance: none; padding: 6px 13px; border-radius: 14px; text-align: left; line-height: 1.3;
+  background: #fff; border: 2px solid var(--pp-c); color: var(--pp-c);
+  cursor: pointer; font-size: 13px; font-weight: 600;
+  font-family: -apple-system, system-ui, sans-serif;
+}}
+.pp-cat-btn .cz {{ display: block; }}
+.pp-cat-btn .ce {{ display: block; font-family: "Source Serif 4", Georgia, serif; font-weight: 400; font-size: 11px; opacity: 0.85; }}
+.pp-cat-btn.pp-on {{ background: var(--pp-c); color: #fff; }}
+
+.pp-tl {{ position: relative; padding: 4px 0 20px; }}
+.pp-tl::before {{
+  content: ''; position: absolute; left: 96px; top: 0; bottom: 0; width: 3px;
+  background: linear-gradient(to bottom, #4a6fa5 0%, #b0413e 22%, #7a8c5c 42%, #9c5a9b 60%, #2f7d8c 78%, #4f8f57 100%);
+  border-radius: 2px;
+}}
+.pp-p {{ display: grid; grid-template-columns: 86px 26px 1fr; align-items: start; gap: 10px; padding: 9px 0; }}
+.pp-p.pp-hidden {{ display: none; }}
+.pp-year {{ text-align: right; font-weight: 700; font-family: monospace; font-size: 13.5px; padding-top: 15px; color: var(--ink); }}
+.pp-marker {{ width: 13px; height: 13px; border-radius: 50%; border: 3px solid #fff; box-shadow: 0 0 0 2px rgba(0,0,0,0.12); margin: 17px 6px 0; }}
+.pp-card {{
+  background: #fff; border: 1px solid var(--line); border-left: 4px solid var(--pp-c);
+  border-radius: 8px; padding: 12px 16px; transition: box-shadow 0.15s, border-color 0.15s;
+}}
+.pp-card:hover {{ box-shadow: 0 2px 8px rgba(0,0,0,0.06); }}
+.pp-p.pp-reading .pp-card {{ box-shadow: 0 0 0 2px var(--accent); }}
+
+.pp-head {{ display: flex; flex-wrap: wrap; align-items: baseline; gap: 2px 10px; margin-bottom: 9px; }}
+.pp-name {{ margin: 0; font-size: 16.5px; }}
+.pp-name-en {{ font-size: 16.5px; color: #45403a; font-family: "Source Serif 4", Georgia, serif; }}
+.pp-tags {{ margin-left: auto; display: flex; gap: 5px; align-items: center; }}
+.pp-tag {{ font-size: 11px; color: #fff; padding: 2px 8px; border-radius: 10px; font-family: -apple-system, system-ui, sans-serif; white-space: nowrap; }}
+.pp-src {{ font-size: 11px; padding: 2px 7px; border-radius: 10px; font-family: -apple-system, system-ui, sans-serif; white-space: nowrap; }}
+.pp-src-guide {{ background: #eef2ea; color: #4a5c3a; }}
+.pp-src-extra {{ background: #fdf0e3; color: #8a5a22; }}
+
+.pp-fields {{ display: grid; gap: 5px; padding-bottom: 9px; border-bottom: 1px dashed var(--line); }}
+.pp-f {{ display: grid; grid-template-columns: 92px 1fr; gap: 10px; align-items: start; }}
+.pp-k {{
+  font-size: 12px; color: var(--muted); font-family: -apple-system, system-ui, sans-serif;
+  padding-top: 2px; line-height: 1.35;
+}}
+.pp-k-en {{ display: block; font-family: "Source Serif 4", Georgia, serif; font-size: 10.5px; opacity: 0.8; }}
+.pp-v {{ font-size: 14px; min-width: 0; }}
+.pp-why {{ padding-top: 9px; display: grid; grid-template-columns: 92px 1fr; gap: 10px; align-items: start; }}
+.pp-k-why {{ color: var(--accent); font-weight: 700; }}
+.pp-why .pp-v {{ font-size: 14.5px; }}
+.pp-extra {{ grid-column: 2; font-size: 13.5px; margin-top: 6px; color: #4a4540; }}
+.pp-cur {{ background: #ffe9b3; border-radius: 4px; }}
+
+@media (max-width: 640px) {{
+  /* 手機上這條是固定在頂端的，說明文字收起來，不要一直佔掉四分之一螢幕 */
+  .pp-player {{ padding: 8px 10px; gap: 6px 8px; }}
+  .pp-hint {{ display: none; }}
+  .pp-prog {{ flex-basis: 100%; margin-left: 0; text-align: right; }}
+  .pp-tl::before {{ left: 62px; }}
+  .pp-p {{ grid-template-columns: 54px 22px 1fr; gap: 5px; }}
+  .pp-year {{ font-size: 11.5px; }}
+  .pp-f, .pp-why {{ grid-template-columns: 1fr; gap: 2px; }}
+  .pp-extra {{ grid-column: 1; }}
+  .pp-k-en {{ display: inline; margin-left: 5px; }}
+  .pp-tags {{ margin-left: 0; }}
+}}
+</style>
+
+<div class="iv-hero">
+  <h1>👤 加拿大人物時間軸 <small>Who's Who in Canadian History</small></h1>
+  <p>1497 → 2021，{len(PEOPLE)} 位考試會碰到的人物。每一位都回答同樣六件事：<strong>哪一年、是誰、什麼人、哪國人／哪個族裔、在哪裡、做了什麼而有名</strong>。中英同字級，按 ▶ 可以從頭連續聽下去。</p>
+</div>
+
+<div class="pp-player" id="pp-player">
+  <button class="pp-btn main pp-play" type="button">▶ 從頭聽</button>
+  <button class="pp-btn small pp-prev" type="button" title="上一句">⏪</button>
+  <button class="pp-btn small pp-next" type="button" title="下一句">⏩</button>
+  <div class="pp-langs">
+    <button type="button" data-lang="zh" class="on">中文</button>
+    <button type="button" data-lang="en">English</button>
+    <button type="button" data-lang="both">中英對照</button>
+  </div>
+  <span class="pp-prog">尚未開始</span>
+  <p class="pp-hint">連續播放只唸「做了什麼而有名」那幾句，像聽故事。要單獨聽某一行，點那行後面的 🔊；英文字點下去可以查字典。</p>
+</div>
+
+<div class="pp-cat-filter">
+  <button class="pp-cat-btn pp-on" data-cat="all" style="--pp-c:#1f2328"><span class="cz">全部</span><span class="ce">All</span></button>
+  {cat_filters}
+</div>
+
+<div class="pp-tl" id="pp-tl">
+{cards}
+</div>
+
+<script>
+(function () {{
+  var tl = document.getElementById('pp-tl');
+  var player = document.getElementById('pp-player');
+  if (!tl || !player) return;
+
+  // Same clip folder the single-line 🔊 buttons use, derived from the words.js
+  // script tag so this works both in the per-page build (depth 1) and inside the
+  // single-file study.html (depth 0). Resolved lazily: dict_bundle() appends that
+  // tag AFTER this body, so at parse time it is not in the DOM yet.
+  var base = null;
+  function clipBase() {{
+    if (base === null) {{
+      var ws = document.querySelector('script[src$="dict/words.js"]');
+      base = ws ? ws.getAttribute('src').replace(/dict\\/words\\.js$/, 'audio/iv/') : 'audio/iv/';
+    }}
+    return base;
+  }}
+
+  var playBtn = player.querySelector('.pp-play');
+  var progEl = player.querySelector('.pp-prog');
+  var audio = new Audio();
+  var queue = [], idx = -1, playing = false, mode = 'zh';
+
+  function clearMarks() {{
+    tl.querySelectorAll('.pp-cur').forEach(function (n) {{ n.classList.remove('pp-cur'); }});
+    tl.querySelectorAll('.pp-reading').forEach(function (n) {{ n.classList.remove('pp-reading'); }});
+  }}
+  function buildQueue() {{
+    var all = Array.prototype.slice.call(tl.querySelectorAll('[data-narrate] .say'));
+    queue = all.filter(function (b) {{
+      if (b.closest('.pp-hidden')) return false;
+      return mode === 'both' || b.dataset.lang === mode;
+    }});
+  }}
+  function setProg(txt) {{ progEl.textContent = txt; }}
+  function idleUI(txt) {{
+    playing = false;
+    playBtn.textContent = '▶ 從頭聽';
+    setProg(txt);
+  }}
+  function stop(txt) {{
+    audio.pause();
+    if (window.speechSynthesis) window.speechSynthesis.cancel();
+    clearMarks();
+    idleUI(txt || '已停止');
+  }}
+  // The single-line 🔊 and the dictionary both call this, so two voices never overlap.
+  window.CIT_AUTOPLAY_STOP = function () {{ if (playing || idx >= 0) stop('已停止'); }};
+
+  function speakFallback(btn, onDone) {{
+    if (!window.speechSynthesis) {{ onDone(); return; }}
+    var host = btn.parentElement;
+    var txt = host ? host.textContent.replace(/🔊/g, '').trim() : '';
+    var u = new SpeechSynthesisUtterance(txt);
+    u.lang = (btn.dataset.lang === 'zh') ? 'zh-TW' : 'en-US';
+    u.rate = 0.9;
+    u.onend = onDone; u.onerror = onDone;
+    window.speechSynthesis.cancel();
+    window.speechSynthesis.speak(u);
+  }}
+
+  function play(i) {{
+    if (i < 0 || i >= queue.length) {{ clearMarks(); idleUI('聽完了 🎉'); idx = -1; return; }}
+    idx = i;
+    var btn = queue[i];
+    clearMarks();
+    var line = btn.parentElement;
+    if (line) line.classList.add('pp-cur');
+    var card = btn.closest('.pp-p');
+    if (card) {{
+      card.classList.add('pp-reading');
+      card.scrollIntoView({{ block: 'center', behavior: 'smooth' }});
+    }}
+    setProg('播放中 ' + (i + 1) + ' / ' + queue.length);
+    audio.onended = function () {{ if (playing) play(idx + 1); }};
+    audio.onerror = null;
+    audio.src = clipBase() + btn.dataset.lang + '/' + btn.dataset.k + '.m4a';
+    audio.play().catch(function () {{
+      // no recorded clip for this line — fall back to the browser voice and keep going
+      speakFallback(btn, function () {{ if (playing) play(idx + 1); }});
+    }});
+  }}
+
+  playBtn.addEventListener('click', function () {{
+    if (playing) {{ stop('已暫停'); return; }}
+    buildQueue();
+    if (!queue.length) {{ setProg('這個篩選下沒有可聽的內容'); return; }}
+    playing = true;
+    playBtn.textContent = '⏸ 暫停';
+    play(idx >= 0 && idx < queue.length ? idx : 0);
+  }});
+  player.querySelector('.pp-prev').addEventListener('click', function () {{
+    if (!queue.length) buildQueue();
+    playing = true; playBtn.textContent = '⏸ 暫停';
+    play(Math.max(0, (idx < 0 ? 0 : idx) - 1));
+  }});
+  player.querySelector('.pp-next').addEventListener('click', function () {{
+    if (!queue.length) buildQueue();
+    playing = true; playBtn.textContent = '⏸ 暫停';
+    play((idx < 0 ? 0 : idx) + 1);
+  }});
+  player.querySelectorAll('.pp-langs button').forEach(function (b) {{
+    b.addEventListener('click', function () {{
+      player.querySelectorAll('.pp-langs button').forEach(function (x) {{ x.classList.remove('on'); }});
+      b.classList.add('on');
+      mode = b.dataset.lang;
+      idx = -1;
+      stop('語言已切換，按 ▶ 重新開始');
+    }});
+  }});
+
+  // ---------- category filter ----------
+  var catBtns = tl.parentElement.querySelectorAll('.pp-cat-btn');
+  catBtns.forEach(function (btn) {{
+    btn.addEventListener('click', function () {{
+      catBtns.forEach(function (b) {{ b.classList.remove('pp-on'); }});
+      btn.classList.add('pp-on');
+      var cat = btn.dataset.cat;
+      tl.querySelectorAll('.pp-p').forEach(function (p) {{
+        if (cat === 'all' || p.dataset.cat === cat) p.classList.remove('pp-hidden');
+        else p.classList.add('pp-hidden');
+      }});
+      idx = -1;
+      stop('篩選已變更，按 ▶ 重新開始');
+    }});
+  }});
+
+  window.addEventListener('pagehide', function () {{ stop(''); }});
+}})();
+</script>'''
