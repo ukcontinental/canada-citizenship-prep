@@ -664,7 +664,7 @@ PEOPLE = [
      ["他後來逃到美國，雖然被選為國會議員，卻從來沒有就任。｜He fled to the United States and, though elected to Parliament, never took his seat.",
       "補充：1885 年第二次起義失敗後他被處決；今天很多人視他為曼尼托巴之父。｜Background: he was executed after the 1885 uprising failed, and many today regard him as the father of Manitoba."]),
 
-    ("1876", 1876, "Alexander Graham Bell", "亞歷山大・格拉漢・貝爾", "science", "guide",
+    ("1874", 1874, "Alexander Graham Bell", "亞歷山大・格拉漢・貝爾", "science", "guide",
      "發明家｜Inventor",
      "**蘇格蘭出生**，在加拿大與美國生活｜**Born in Scotland**, lived in Canada and the United States",
      "他在加拿大的避暑別墅｜At his summer house in Canada",
@@ -720,7 +720,7 @@ PEOPLE = [
      "費森登對**無線電**的發明有重要貢獻，他發出了世界上第一則無線語音訊息。｜Reginald Fessenden contributed to the invention of **radio**, sending the first wireless voice message in the world.",
      []),
 
-    ("1874", 1874, "Matthew Evans & Henry Woodward", "馬修・伊凡斯與亨利・伍德沃", "science", "guide",
+    ("1874", 1875, "Matthew Evans & Henry Woodward", "馬修・伊凡斯與亨利・伍德沃", "science", "guide",
      "發明家｜Inventors",
      "**加拿大人**｜**Canadian**",
      "多倫多｜Toronto",
