@@ -1,0 +1,1275 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="加拿大公民考">
+<meta name="theme-color" content="#c8102e">
+<title>陷阱字典 · 加拿大公民考試</title>
+<style>
+:root {
+  --bg: #faf8f4;
+  --panel: #ffffff;
+  --ink: #1f2328;
+  --muted: #5d646d;
+  --line: #e7e2d6;
+  --accent: #c8102e;        /* maple red */
+  --accent-soft: #fbe9ec;
+  --en-bg: #f3efe6;
+  --en-ink: #2b2620;
+  --zh-bg: #ffffff;
+  --quote: #8a6d3b;
+  --max: 1180px;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: "Source Serif 4","Source Serif Pro","Noto Serif TC","Noto Serif CJK TC","PingFang TC","Songti TC", Georgia, serif;
+  font-size: 17px;
+  line-height: 1.75;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+.layout {
+  display: grid;
+  grid-template-columns: 240px minmax(0, 1fr);
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 0 24px;
+  gap: 36px;
+}
+nav.sidebar {
+  position: sticky;
+  top: 0;
+  align-self: start;
+  height: 100vh;
+  overflow-y: auto;
+  padding: 28px 0 40px;
+  border-right: 1px solid var(--line);
+  font-family: -apple-system, "Helvetica Neue", "PingFang TC", system-ui, sans-serif;
+  font-size: 14px;
+  line-height: 1.45;
+}
+nav.sidebar h1 {
+  font-family: inherit;
+  font-size: 14px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin: 0 0 10px;
+}
+nav.sidebar h2 {
+  font-family: inherit;
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin: 22px 0 6px;
+  font-weight: 600;
+}
+nav.sidebar a {
+  display: block;
+  color: var(--ink);
+  text-decoration: none;
+  padding: 4px 10px 4px 0;
+  border-radius: 4px;
+}
+nav.sidebar a:hover { color: var(--accent); }
+nav.sidebar a.current {
+  color: var(--accent);
+  font-weight: 600;
+}
+nav.sidebar .home {
+  display: inline-block;
+  font-weight: 700;
+  font-size: 18px;
+  color: var(--ink);
+  text-decoration: none;
+  margin-bottom: 14px;
+}
+nav.sidebar .home::before { content: "🍁 "; }
+main {
+  padding: 36px 0 80px;
+  min-width: 0;
+}
+main h1, main h2, main h3, main h4 {
+  font-family: -apple-system, "Helvetica Neue", "PingFang TC", system-ui, sans-serif;
+  line-height: 1.3;
+  color: var(--ink);
+}
+main h1 {
+  font-size: 28px;
+  margin: 0 0 8px;
+  letter-spacing: -0.01em;
+}
+main > p:first-of-type {
+  color: var(--muted);
+  margin-top: 4px;
+}
+main h2 {
+  font-size: 21px;
+  margin: 40px 0 12px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid var(--line);
+}
+main h3 { font-size: 18px; margin: 28px 0 8px; }
+main h4 { font-size: 16px; margin: 22px 0 6px; color: var(--muted); }
+main p { margin: 0 0 12px; }
+main ul, main ol { margin: 0 0 14px; padding-left: 1.4em; }
+main li { margin: 4px 0; }
+main hr {
+  border: none;
+  border-top: 1px solid var(--line);
+  margin: 32px 0;
+}
+main a { color: var(--accent); text-decoration: none; }
+main a:hover { text-decoration: underline; }
+main code {
+  font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.9em;
+  background: #f3efe6;
+  padding: 1px 5px;
+  border-radius: 4px;
+}
+main blockquote {
+  margin: 14px 0;
+  padding: 12px 18px;
+  background: var(--accent-soft);
+  border-left: 3px solid var(--accent);
+  color: var(--ink);
+  border-radius: 0 6px 6px 0;
+}
+main blockquote p:last-child { margin-bottom: 0; }
+main table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 14px 0 22px;
+  font-size: 15px;
+}
+main th, main td {
+  text-align: left;
+  padding: 8px 12px;
+  border-bottom: 1px solid var(--line);
+  vertical-align: top;
+}
+main th {
+  background: #f3efe6;
+  font-family: -apple-system, "Helvetica Neue", "PingFang TC", system-ui, sans-serif;
+  font-weight: 600;
+}
+
+/* --- bilingual pairing --- */
+.bilingual {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  margin: 14px 0;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  overflow: hidden;
+  background: var(--zh-bg);
+}
+.bilingual .en, .bilingual .zh {
+  padding: 16px 20px;
+}
+.bilingual .en {
+  background: var(--en-bg);
+  color: var(--en-ink);
+  font-family: "Source Serif 4","Source Serif Pro", Georgia, serif;
+  font-style: normal;
+  border-right: 1px solid var(--line);
+}
+.bilingual .en p, .bilingual .zh p { margin: 0 0 8px; }
+.bilingual .en p:last-child, .bilingual .zh p:last-child { margin-bottom: 0; }
+.bilingual .en ul, .bilingual .en ol,
+.bilingual .zh ul, .bilingual .zh ol {
+  margin: 0 0 6px;
+  padding-left: 1.3em;
+}
+.bilingual .en em { font-style: italic; }
+.bilingual .label {
+  display: inline-block;
+  font-family: -apple-system, "Helvetica Neue", system-ui, sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 6px;
+  font-weight: 600;
+}
+
+/* --- callouts (⚠️ blocks) --- */
+.callout {
+  margin: 18px 0;
+  padding: 14px 18px;
+  background: #fff8e1;
+  border-left: 4px solid #f0a500;
+  border-radius: 0 6px 6px 0;
+}
+.callout p { margin: 0 0 6px; }
+.callout p:last-child { margin: 0; }
+
+/* --- collapsible answers --- */
+details.answers {
+  margin: 22px 0;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 0;
+  overflow: hidden;
+}
+details.answers > summary {
+  cursor: pointer;
+  padding: 14px 18px;
+  font-family: -apple-system, "Helvetica Neue", "PingFang TC", system-ui, sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  background: #f3efe6;
+  border-bottom: 1px solid transparent;
+  user-select: none;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+details.answers > summary::-webkit-details-marker { display: none; }
+details.answers > summary::after {
+  content: "▸";
+  color: var(--muted);
+  transition: transform 0.18s ease;
+  font-size: 14px;
+}
+details.answers[open] > summary {
+  border-bottom-color: var(--line);
+}
+details.answers[open] > summary::after { transform: rotate(90deg); }
+details.answers .answers-body { padding: 14px 22px 6px; }
+details.answers .answers-body ol { margin: 0; padding-left: 1.4em; }
+details.answers .answers-body li { margin: 8px 0; }
+
+/* --- dashboard cards on index --- */
+.dash {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+  margin: 24px 0;
+}
+.dash a {
+  display: block;
+  padding: 18px 20px;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  color: var(--ink);
+  text-decoration: none;
+  transition: border-color 0.15s, transform 0.15s;
+}
+.dash a:hover {
+  border-color: var(--accent);
+  transform: translateY(-1px);
+}
+.dash a .kicker {
+  font-family: -apple-system, system-ui, sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+  display: block;
+  margin-bottom: 6px;
+}
+.dash a .title {
+  font-weight: 600;
+  font-size: 17px;
+  line-height: 1.35;
+}
+.dash a .meta {
+  display: block;
+  margin-top: 8px;
+  font-size: 13px;
+  color: var(--muted);
+  font-family: -apple-system, system-ui, sans-serif;
+}
+
+/* --- speak (TTS) button --- */
+.speak-btn {
+  appearance: none;
+  background: rgba(255,255,255,0.85);
+  border: 1px solid var(--line);
+  color: var(--muted);
+  cursor: pointer;
+  padding: 4px 9px;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 12px;
+  font-family: -apple-system, "Helvetica Neue", system-ui, sans-serif;
+  transition: all 0.15s;
+  -webkit-tap-highlight-color: transparent;
+  min-width: 64px;
+  justify-content: center;
+}
+.speak-btn .speak-icon { display: inline-flex; }
+.speak-btn svg { display: block; }
+.speak-btn:hover { color: var(--accent); border-color: var(--accent); }
+.speak-btn:active { transform: scale(0.96); }
+.speak-btn.speaking {
+  background: var(--accent);
+  color: #fff;
+  border-color: var(--accent);
+  animation: speak-pulse 1.4s ease-in-out infinite;
+}
+.speak-btn.paused {
+  background: #f0a500;
+  color: #fff;
+  border-color: #f0a500;
+  animation: none;
+}
+@keyframes speak-pulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(200,16,46,0.5); }
+  50%      { box-shadow: 0 0 0 6px rgba(200,16,46,0); }
+}
+
+/* --- per-word highlight during TTS + click-to-play-from-here --- */
+.w {
+  border-radius: 3px;
+  padding: 0 1px;
+  transition: color 0.08s ease, background 0.08s ease;
+  cursor: pointer;
+  -webkit-tap-highlight-color: rgba(200, 16, 46, 0.15);
+}
+.w:hover {
+  background: rgba(200, 16, 46, 0.07);
+  text-decoration: underline;
+  text-decoration-color: rgba(200, 16, 46, 0.3);
+  text-decoration-style: dotted;
+  text-underline-offset: 3px;
+}
+.w.current {
+  color: var(--accent);
+  background: rgba(200, 16, 46, 0.14);
+  font-weight: 600;
+  text-decoration: none;
+}
+.bilingual .en { position: relative; }
+.bilingual .en > .speak-btn {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+}
+.bilingual .en > .label + .speak-btn { /* fallback positioning if absolute fails */ }
+blockquote.speakable, .callout.speakable {
+  position: relative;
+  padding-right: 60px;
+}
+blockquote.speakable > .speak-btn,
+.callout.speakable > .speak-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: #fff;
+}
+
+/* --- mobile --- */
+@media (max-width: 900px) {
+  .layout { grid-template-columns: 1fr; padding: 0 16px; gap: 0; }
+  nav.sidebar {
+    position: static;
+    height: auto;
+    border-right: none;
+    border-bottom: 1px solid var(--line);
+    padding: 18px 0;
+  }
+  .bilingual { grid-template-columns: 1fr; }
+  .bilingual .en { border-right: none; border-bottom: 1px solid var(--line); }
+}
+
+/* --- print --- */
+@media print {
+  nav.sidebar { display: none; }
+  .layout { display: block; padding: 0; }
+  main { padding: 0; }
+  details.answers { border: 1px solid #999; }
+  details.answers > summary { display: none; }
+  details.answers > .answers-body { display: block !important; }
+  .bilingual { break-inside: avoid; }
+}
+</style>
+</head>
+<body>
+<div class="layout">
+<nav class="sidebar">
+<a href="../index.html" class="home">加拿大公民考試</a>
+<h2>🎧 人聲朗讀對照</h2>
+<a href="../reading/00-intro-oath.html">00 · 公民誓詞與給讀者的話</a>
+<a href="../reading/01-applying-citizenship.html">01 · 申請公民身分</a>
+<a href="../reading/02-rights-responsibilities.html">02 · 公民的權利與責任</a>
+<a href="../reading/03-who-we-are.html">03 · 我們是誰</a>
+<a href="../reading/04-canadas-history.html">04 · 加拿大歷史</a>
+<a href="../reading/05-modern-canada.html">05 · 現代加拿大</a>
+<a href="../reading/06-how-canadians-govern.html">06 · 加拿大人如何治理自己</a>
+<a href="../reading/07-federal-elections.html">07 · 聯邦選舉</a>
+<a href="../reading/08-justice-system.html">08 · 司法系統</a>
+<a href="../reading/09-canadian-symbols.html">09 · 加拿大的象徵</a>
+<a href="../reading/10-canadas-economy.html">10 · 加拿大的經濟</a>
+<a href="../reading/11-canadas-regions.html">11 · 加拿大的各個地區</a>
+<a href="../reading/12-study-questions.html">12 · 官方練習題與解答</a>
+<h2>🧠 每章重點互動記憶</h2>
+<a href="../interactive/index.html">🎯 互動式入口</a>
+<a href="../interactive/history.html">📜 04 歷史時間軸</a>
+<a href="../interactive/people.html">👤 04–09 人物時間軸</a>
+<a href="../interactive/joining.html">🗺️ 04 聯邦擴張時間軸</a>
+<a href="../interactive/story-04.html">📖 04 故事聽學</a>
+<a href="../interactive/modern.html">🇨🇦 05 現代加拿大</a>
+<a href="../interactive/government.html">🏛️ 06 政府架構</a>
+<a href="../interactive/elections.html">🗳️ 07 聯邦選舉</a>
+<a href="../interactive/justice.html">⚖️ 08 司法系統</a>
+<a href="../interactive/symbols.html">🍁 09 國家象徵</a>
+<a href="../interactive/economy.html">💼 10 加拿大經濟</a>
+<a href="../interactive/geography.html">🗺️ 11 地圖與省份</a>
+<h2>📝 考題</h2>
+<a href="../quiz/practice.html">英文選擇題練習</a>
+<a href="../quiz/mock.html">⏱ 模擬考（20 題／30 分）</a>
+<a href="../reading/90-question-bank.html">220 題中英問答（人聲）</a>
+<a href="../quiz/trap-a.html">🎯 陷阱題 第一套</a>
+<a href="../quiz/trap-b.html">🎯 陷阱題 第二套</a>
+<a href="../quiz/trap-c.html">🎯 陷阱題 第三套</a>
+<a href="../quiz/wrong.html">📕 錯題本重練</a>
+<a href="../quiz/traps.html" class="current">🔤 陷阱字典</a>
+<a href="../daily-quiz/day-01.html">驗收 Day 01</a>
+<a href="../daily-quiz/day-02.html">驗收 Day 02</a>
+<a href="../daily-quiz/day-03.html">驗收 Day 03</a>
+<a href="../daily-quiz/day-04.html">驗收 Day 04</a>
+<a href="../daily-quiz/day-05.html">驗收 Day 05</a>
+<a href="../daily-quiz/day-06.html">驗收 Day 06</a>
+<a href="../daily-quiz/day-07.html">驗收 Day 07</a>
+<a href="../daily-quiz/day-08.html">驗收 Day 08</a>
+<a href="../daily-quiz/day-09.html">驗收 Day 09</a>
+<a href="../daily-quiz/day-10.html">驗收 Day 10</a>
+<a href="../daily-quiz/day-11.html">驗收 Day 11</a>
+<a href="../daily-quiz/day-12.html">驗收 Day 12</a>
+<a href="../daily-quiz/day-13.html">驗收 Day 13</a>
+<a href="../daily-quiz/day-14.html">驗收 Day 14</a>
+</nav>
+<main>
+<style>
+.iv-hero {
+  background: linear-gradient(135deg, #fff8f8 0%, #fef0e8 100%);
+  border-left: 4px solid var(--accent);
+  padding: 18px 22px; border-radius: 8px; margin: 16px 0 24px;
+}
+.iv-hero h1 { margin: 0 0 6px; border: none; padding: 0; }
+.iv-hero p { margin: 0; color: var(--muted); }
+.iv-hero h1 small, .iv-section-title small { font-size: 0.8em; font-weight: 400; color: #45403a; font-family: "Source Serif 4", Georgia, serif; margin-left: 8px; }
+
+.iv-section-title {
+  margin: 32px 0 14px; padding-bottom: 6px;
+  border-bottom: 2px solid var(--accent);
+  font-size: 19px; font-weight: 700;
+}
+
+.iv-card-grid { display: grid; gap: 12px; margin: 16px 0 24px; }
+.iv-card {
+  background: #fff; border: 1px solid var(--line);
+  border-radius: 10px; padding: 16px 18px;
+  transition: border-color 0.15s, transform 0.15s, box-shadow 0.15s;
+  cursor: pointer;
+}
+.iv-card:hover {
+  border-color: var(--accent);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+.iv-card.iv-active {
+  border-color: var(--accent);
+  background: linear-gradient(135deg, #fff 0%, #fff8f8 100%);
+}
+.iv-card h4 { margin: 0 0 6px; font-size: 16px; }
+.iv-card .meta { font-size: 12px; color: var(--muted); margin-bottom: 8px; }
+.iv-card p { margin: 0; font-size: 14px; line-height: 1.5; }
+
+.iv-detail-panel {
+  margin: 20px 0; padding: 20px 24px;
+  background: #fff; border: 1px solid var(--line);
+  border-radius: 12px; box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+}
+.iv-detail-panel h3 { margin-top: 0; }
+
+.iv-tag {
+  display: inline-block; padding: 2px 8px; border-radius: 12px;
+  background: #f3efe6; font-size: 11px; color: var(--muted);
+  font-family: -apple-system, system-ui, sans-serif;
+  letter-spacing: 0.04em; margin-right: 6px;
+}
+.iv-tag.accent { background: var(--accent-soft); color: var(--accent); font-weight: 600; }
+</style>
+
+.pp-player {
+  position: sticky; top: 0; z-index: 30;
+  background: #fffdf8; border: 1px solid var(--line); border-bottom-width: 2px;
+  border-radius: 10px; padding: 12px 14px; margin: 16px 0 20px;
+  display: flex; flex-wrap: wrap; align-items: center; gap: 8px 10px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+.pp-btn {
+  appearance: none; font: inherit; font-size: 14px; font-weight: 600;
+  font-family: -apple-system, system-ui, sans-serif;
+  border: 2px solid var(--accent); background: #fff; color: var(--accent);
+  padding: 7px 14px; border-radius: 20px; cursor: pointer;
+}
+.pp-btn.main { background: var(--accent); color: #fff; }
+.pp-btn.small { padding: 7px 11px; font-size: 13px; }
+.pp-langs { display: flex; border: 1px solid var(--line); border-radius: 18px; overflow: hidden; }
+.pp-langs button {
+  appearance: none; font: inherit; font-size: 13px; border: none; background: #fff;
+  color: var(--muted); padding: 7px 12px; cursor: pointer;
+  font-family: -apple-system, system-ui, sans-serif;
+}
+.pp-langs button + button { border-left: 1px solid var(--line); }
+.pp-langs button.on { background: var(--accent-soft); color: var(--accent); font-weight: 700; }
+.pp-prog { font-size: 13px; color: var(--muted); margin-left: auto; font-variant-numeric: tabular-nums; }
+.pp-hint { flex-basis: 100%; font-size: 12px; color: var(--muted); margin: 0; }
+
+@media (max-width: 640px) {
+  /* 手機上這條固定在頂端，說明文字收起來，不要一直佔掉四分之一螢幕 */
+  .pp-player { padding: 8px 10px; gap: 6px 8px; }
+  .pp-hint { display: none; }
+  .pp-prog { flex-basis: 100%; margin-left: 0; text-align: right; }
+}
+
+
+<style>
+.tp-steps { display: grid; gap: 8px; margin: 0 0 22px; }
+.tp-step { display: grid; grid-template-columns: 30px 1fr; gap: 10px; align-items: start; background: #fff; border: 1px solid var(--line); border-radius: 9px; padding: 10px 14px; }
+.tp-step u { text-decoration: none; width: 26px; height: 26px; border-radius: 50%; background: var(--accent); color: #fff; font-weight: 700; display: inline-flex; align-items: center; justify-content: center; font-family: -apple-system, system-ui, sans-serif; }
+.tp { background: #fff; border: 1px solid var(--line); border-radius: 10px; padding: 12px 16px; margin-bottom: 12px; }
+.tp.nr-reading { box-shadow: 0 0 0 2px var(--accent); }
+.tp-head { display: flex; flex-wrap: wrap; gap: 4px 10px; align-items: baseline; margin-bottom: 6px; }
+.tp-no { font-size: 11px; color: var(--muted); font-family: -apple-system, system-ui, sans-serif; }
+.tp-term { font-size: 19px; font-weight: 700; font-family: "Source Serif 4", Georgia, serif; color: #5a3200; }
+.tp-zh { font-size: 16px; font-weight: 700; }
+.tp-tip { font-size: 14px; padding-bottom: 8px; border-bottom: 1px dashed var(--line); }
+.tp-ex { padding-top: 8px; font-size: 14.5px; }
+.tp-exlab { display: inline-block; font-size: 11px; padding: 1px 8px; border-radius: 9px; background: #fdf0e3; color: #8a5a22; margin-bottom: 4px; font-family: -apple-system, system-ui, sans-serif; }
+mark.trap { background: #ffd28a; color: #5a3200; padding: 0 3px; border-radius: 3px; font-weight: 700; }
+</style>
+<div class="iv-hero">
+  <h1>🔤 陷阱字典 <small>Trap words on the test</small></h1>
+  <p>考試的答案沒有變，<strong>變的是問法</strong>。這 22 組字就是把人騙走的地方。每組有一句說明和一個例題，例題可以逐句聽，也可以按 ▶ 從頭聽到尾。</p>
+</div>
+
+<div class="tp-steps">
+  <div class="tp-step"><u>1</u><div><span class="bi"><span class="bi-zh">先把題目裡的「陷阱字」圈出來：NOT、EXCEPT、TRUE、FALSE、BEST、FIRST、LAST、ONLY。<button class="say" type="button" data-lang="zh" data-k="544773132fa4f7dc" aria-label="朗讀">🔊</button></span><span class="bi-en"><span class="w">First</span> <span class="w">circle</span> <span class="w">the</span> <span class="w">trap</span> <span class="w">word</span> <span class="w">in</span> <span class="w">the</span> <span class="w">question</span>: <span class="w">NOT</span>, <span class="w">EXCEPT</span>, <span class="w">TRUE</span>, <span class="w">FALSE</span>, <span class="w">BEST</span>, <span class="w">FIRST</span>, <span class="w">LAST</span>, <span class="w">ONLY</span>.<button class="say" type="button" data-lang="en" data-k="a556f9159a349bee" aria-label="朗讀">🔊</button></span></span></div></div>
+  <div class="tp-step"><u>2</u><div><span class="bi"><span class="bi-zh">四個選項全部讀完再答，不要看到熟的字就按。<button class="say" type="button" data-lang="zh" data-k="3bedf8fbff25ff6f" aria-label="朗讀">🔊</button></span><span class="bi-en"><span class="w">Read</span> <span class="w">all</span> <span class="w">four</span> <span class="w">options</span> <span class="w">before</span> <span class="w">answering</span> — <span class="w">never</span> <span class="w">pick</span> <span class="w">the</span> <span class="w">first</span> <span class="w">familiar</span> <span class="w">word</span>.<button class="say" type="button" data-lang="en" data-k="2a2df2d6c430489e" aria-label="朗讀">🔊</button></span></span></div></div>
+  <div class="tp-step"><u>3</u><div><span class="bi"><span class="bi-zh">在心裡把題目翻成中文，再回頭對照選項。<button class="say" type="button" data-lang="zh" data-k="dee1127449bc8431" aria-label="朗讀">🔊</button></span><span class="bi-en"><span class="w">Translate</span> <span class="w">the</span> <span class="w">question</span> <span class="w">into</span> <span class="w">Chinese</span> <span class="w">in</span> <span class="w">your</span> <span class="w">head</span>, <span class="w">then</span> <span class="w">go</span> <span class="w">back</span> <span class="w">to</span> <span class="w">the</span> <span class="w">options</span>.<button class="say" type="button" data-lang="en" data-k="1b9333c50dc65b03" aria-label="朗讀">🔊</button></span></span></div></div>
+</div>
+
+<div class="pp-player" id="tp-player">
+  <button class="pp-btn main pp-play" type="button">▶ 從頭聽</button>
+  <button class="pp-btn small pp-prev" type="button" title="上一句">⏪</button>
+  <button class="pp-btn small pp-next" type="button" title="下一句">⏩</button>
+  <div class="pp-langs">
+    <button type="button" data-lang="zh" class="on">中文</button>
+    <button type="button" data-lang="en">English</button>
+    <button type="button" data-lang="both">中英對照</button>
+  </div>
+  <span class="pp-prog">尚未開始</span>
+  <p class="pp-hint">連續播放唸的是每一組的例題，中英都可以。單獨聽某一句就點那句後面的 🔊。</p>
+</div>
+
+<div id="tp-tl">
+<div class="tp nr-card">
+  <div class="tp-head"><span class="tp-no">1</span><span class="tp-term"><span class="w">NOT</span></span><span class="tp-zh">不是</span></div>
+  <div class="tp-tip"><span class="bi"><span class="bi-zh">找「不屬於」的那一個。四個選項裡三個是對的，你要挑那個錯的——先把四個都看完再答。<button class="say" type="button" data-lang="zh" data-k="ec034bb48f10071b" aria-label="朗讀">🔊</button></span><span class="bi-en"><span class="w">Look</span> <span class="w">for</span> <span class="w">the</span> <span class="w">one</span> <span class="w">that</span> <span class="w">does</span> <span class="w">NOT</span> <span class="w">belong</span>. <span class="w">Three</span> <span class="w">options</span> <span class="w">are</span> <span class="w">true</span>; <span class="w">you</span> <span class="w">must</span> <span class="w">pick</span> <span class="w">the</span> <span class="w">odd</span> <span class="w">one</span> <span class="w">out</span>, <span class="w">so</span> <span class="w">read</span> <span class="w">all</span> <span class="w">four</span> <span class="w">before</span> <span class="w">answering</span>.<button class="say" type="button" data-lang="en" data-k="235cdf9a0e16b864" aria-label="朗讀">🔊</button></span></span></div>
+  <div class="tp-ex" data-narrate><span class="tp-exlab">考試可能這樣問</span><span class="bi"><span class="bi-zh">下列哪一項「不是」加拿大公民的責任？<button class="say" type="button" data-lang="zh" data-k="f35aa135cebe13f9" aria-label="朗讀">🔊</button></span><span class="bi-en"><span class="w">Which</span> <span class="w">of</span> <span class="w">the</span> <span class="w">following</span> <span class="w">is</span> <mark class="trap"><span class="w">NOT</span></mark> <span class="w">a</span> <span class="w">responsibility</span> <span class="w">of</span> <span class="w">Canadian</span> <span class="w">citizenship</span>?<button class="say" type="button" data-lang="en" data-k="b71556506859f07e" aria-label="朗讀">🔊</button></span></span></div>
+</div>
+<div class="tp nr-card">
+  <div class="tp-head"><span class="tp-no">2</span><span class="tp-term"><span class="w">EXCEPT</span></span><span class="tp-zh">除了……以外</span></div>
+  <div class="tp-tip"><span class="bi"><span class="bi-zh">跟 NOT 一模一樣的陷阱，只是換個字。三個對的裡面挑一個錯的。<button class="say" type="button" data-lang="zh" data-k="6f4cd33d552b080c" aria-label="朗讀">🔊</button></span><span class="bi-en"><span class="w">The</span> <span class="w">same</span> <span class="w">trap</span> <span class="w">as</span> <span class="w">NOT</span> <span class="w">with</span> <span class="w">a</span> <span class="w">different</span> <span class="w">word</span>: <span class="w">pick</span> <span class="w">the</span> <span class="w">one</span> <span class="w">that</span> <span class="w">does</span> <span class="w">not</span> <span class="w">fit</span>.<button class="say" type="button" data-lang="en" data-k="3ec709a3e95580f7" aria-label="朗讀">🔊</button></span></span></div>
+  <div class="tp-ex" data-narrate><span class="tp-exlab">考試可能這樣問</span><span class="bi"><span class="bi-zh">以下都是憲章保護的基本自由，「除了」哪一項？<button class="say" type="button" data-lang="zh" data-k="7df55512aeb6aaf7" aria-label="朗讀">🔊</button></span><span class="bi-en"><span class="w">All</span> <span class="w">of</span> <span class="w">the</span> <span class="w">following</span> <span class="w">are</span> <span class="w">fundamental</span> <span class="w">freedoms</span> <span class="w">protected</span> <span class="w">by</span> <span class="w">the</span> <span class="w">Charter</span> <mark class="trap"><span class="w">EXCEPT</span></mark>:<button class="say" type="button" data-lang="en" data-k="54e7c35055c1e285" aria-label="朗讀">🔊</button></span></span></div>
+</div>
+<div class="tp nr-card">
+  <div class="tp-head"><span class="tp-no">3</span><span class="tp-term"><span class="w">Which</span> <span class="w">statement</span> <span class="w">is</span> <span class="w">TRUE</span></span><span class="tp-zh">哪一句是對的</span></div>
+  <div class="tp-tip"><span class="bi"><span class="bi-zh">四句話只有一句是對的，其他三句都被動了一個字。逐句核對，不要看到熟悉的字就選。<button class="say" type="button" data-lang="zh" data-k="0f7d71a956d030d0" aria-label="朗讀">🔊</button></span><span class="bi-en"><span class="w">Only</span> <span class="w">one</span> <span class="w">of</span> <span class="w">the</span> <span class="w">four</span> <span class="w">sentences</span> <span class="w">is</span> <span class="w">right</span>; <span class="w">the</span> <span class="w">other</span> <span class="w">three</span> <span class="w">each</span> <span class="w">have</span> <span class="w">one</span> <span class="w">word</span> <span class="w">changed</span>. <span class="w">Check</span> <span class="w">every</span> <span class="w">sentence</span> — <span class="w">do</span> <span class="w">not</span> <span class="w">pick</span> <span class="w">the</span> <span class="w">one</span> <span class="w">that</span> <span class="w">merely</span> <span class="w">looks</span> <span class="w">familiar</span>.<button class="say" type="button" data-lang="en" data-k="d10d411f4f58f116" aria-label="朗讀">🔊</button></span></span></div>
+  <div class="tp-ex" data-narrate><span class="tp-exlab">考試可能這樣問</span><span class="bi"><span class="bi-zh">關於「遷徙權」，哪一句是「正確」的？<button class="say" type="button" data-lang="zh" data-k="e4402aafc23263ab" aria-label="朗讀">🔊</button></span><span class="bi-en"><span class="w">Which</span> <span class="w">statement</span> <span class="w">about</span> <mark class="trap"><span class="w">mobility</span> <span class="w">rights</span></mark> <span class="w">is</span> <mark class="trap"><span class="w">TRUE</span></mark>?<button class="say" type="button" data-lang="en" data-k="ba990dc9431b4745" aria-label="朗讀">🔊</button></span></span></div>
+</div>
+<div class="tp nr-card">
+  <div class="tp-head"><span class="tp-no">4</span><span class="tp-term"><span class="w">Which</span> <span class="w">statement</span> <span class="w">is</span> <span class="w">FALSE</span> / <span class="w">NOT</span> <span class="w">true</span></span><span class="tp-zh">哪一句是錯的</span></div>
+  <div class="tp-tip"><span class="bi"><span class="bi-zh">反過來：三句對、一句錯，要挑錯的那句。<button class="say" type="button" data-lang="zh" data-k="740f4f69e918c622" aria-label="朗讀">🔊</button></span><span class="bi-en"><span class="w">The</span> <span class="w">reverse</span>: <span class="w">three</span> <span class="w">sentences</span> <span class="w">are</span> <span class="w">right</span> <span class="w">and</span> <span class="w">one</span> <span class="w">is</span> <span class="w">wrong</span> — <span class="w">pick</span> <span class="w">the</span> <span class="w">wrong</span> <span class="w">one</span>.<button class="say" type="button" data-lang="en" data-k="47875dcde9470f11" aria-label="朗讀">🔊</button></span></span></div>
+  <div class="tp-ex" data-narrate><span class="tp-exlab">考試可能這樣問</span><span class="bi"><span class="bi-zh">關於參議院，哪一句是「錯」的？<button class="say" type="button" data-lang="zh" data-k="6819751da9359928" aria-label="朗讀">🔊</button></span><span class="bi-en"><span class="w">Which</span> <span class="w">statement</span> <span class="w">about</span> <span class="w">the</span> <span class="w">Senate</span> <span class="w">is</span> <mark class="trap"><span class="w">FALSE</span></mark>?<button class="say" type="button" data-lang="en" data-k="36f265fcef5241be" aria-label="朗讀">🔊</button></span></span></div>
+</div>
+<div class="tp nr-card">
+  <div class="tp-head"><span class="tp-no">5</span><span class="tp-term"><span class="w">BEST</span> <span class="w">describes</span></span><span class="tp-zh">最貼切的描述</span></div>
+  <div class="tp-tip"><span class="bi"><span class="bi-zh">可能不只一個選項沾得上邊，要挑最完整、最準確的那個。<button class="say" type="button" data-lang="zh" data-k="81fd5b356638e2e4" aria-label="朗讀">🔊</button></span><span class="bi-en"><span class="w">More</span> <span class="w">than</span> <span class="w">one</span> <span class="w">option</span> <span class="w">may</span> <span class="w">be</span> <span class="w">partly</span> <span class="w">right</span>; <span class="w">choose</span> <span class="w">the</span> <span class="w">most</span> <span class="w">complete</span> <span class="w">and</span> <span class="w">accurate</span> <span class="w">one</span>.<button class="say" type="button" data-lang="en" data-k="68f0e94451abc2aa" aria-label="朗讀">🔊</button></span></span></div>
+  <div class="tp-ex" data-narrate><span class="tp-exlab">考試可能這樣問</span><span class="bi"><span class="bi-zh">加拿大的政府制度「最好」的描述是：<button class="say" type="button" data-lang="zh" data-k="b68b95f6faac7460" aria-label="朗讀">🔊</button></span><span class="bi-en"><span class="w">Canada&#x27;s</span> <span class="w">system</span> <span class="w">of</span> <span class="w">government</span> <span class="w">is</span> <mark class="trap"><span class="w">BEST</span></mark> <span class="w">described</span> <span class="w">as</span>:<button class="say" type="button" data-lang="en" data-k="4e3cf124092647f1" aria-label="朗讀">🔊</button></span></span></div>
+</div>
+<div class="tp nr-card">
+  <div class="tp-head"><span class="tp-no">6</span><span class="tp-term"><span class="w">FIRST</span> / <span class="w">LAST</span></span><span class="tp-zh">第一個／最後一個</span></div>
+  <div class="tp-tip"><span class="bi"><span class="bi-zh">看清楚問的是哪一端。紐芬蘭是「最後」加入的省，曼尼托巴是「第一個」讓女性投票的省。<button class="say" type="button" data-lang="zh" data-k="802baf076fe1ec5e" aria-label="朗讀">🔊</button></span><span class="bi-en"><span class="w">Check</span> <span class="w">which</span> <span class="w">end</span> <span class="w">is</span> <span class="w">being</span> <span class="w">asked</span>. <span class="w">Newfoundland</span> <span class="w">was</span> <span class="w">the</span> <span class="w">LAST</span> <span class="w">province</span> <span class="w">to</span> <span class="w">join</span>; <span class="w">Manitoba</span> <span class="w">was</span> <span class="w">the</span> <span class="w">FIRST</span> <span class="w">province</span> <span class="w">to</span> <span class="w">let</span> <span class="w">women</span> <span class="w">vote</span>.<button class="say" type="button" data-lang="en" data-k="c64c39a3016efc45" aria-label="朗讀">🔊</button></span></span></div>
+  <div class="tp-ex" data-narrate><span class="tp-exlab">考試可能這樣問</span><span class="bi"><span class="bi-zh">哪一省「最後」加入聯邦（1949）？<button class="say" type="button" data-lang="zh" data-k="2967fa1ddf185cb2" aria-label="朗讀">🔊</button></span><span class="bi-en"><span class="w">Which</span> <span class="w">was</span> <span class="w">the</span> <mark class="trap"><span class="w">LAST</span></mark> <span class="w">province</span> <span class="w">to</span> <span class="w">join</span> <span class="w">Confederation</span> (1949)?<button class="say" type="button" data-lang="en" data-k="8b805c98613477fe" aria-label="朗讀">🔊</button></span></span></div>
+</div>
+<div class="tp nr-card">
+  <div class="tp-head"><span class="tp-no">7</span><span class="tp-term"><span class="w">ONLY</span> / <span class="w">LARGEST</span> / <span class="w">SMALLEST</span> / <span class="w">HIGHEST</span> / <span class="w">MOST</span></span><span class="tp-zh">唯一／最大／最小／最高／最多</span></div>
+  <div class="tp-tip"><span class="bi"><span class="bi-zh">這類字把範圍縮到一個答案。新布藍瑞克是「唯一」官方雙語省，愛德華王子島是「最小」的省。<button class="say" type="button" data-lang="zh" data-k="731fdcd302a206db" aria-label="朗讀">🔊</button></span><span class="bi-en"><span class="w">These</span> <span class="w">words</span> <span class="w">narrow</span> <span class="w">the</span> <span class="w">field</span> <span class="w">to</span> <span class="w">a</span> <span class="w">single</span> <span class="w">answer</span>. <span class="w">New</span> <span class="w">Brunswick</span> <span class="w">is</span> <span class="w">the</span> <span class="w">ONLY</span> <span class="w">officially</span> <span class="w">bilingual</span> <span class="w">province</span>; <span class="w">Prince</span> <span class="w">Edward</span> <span class="w">Island</span> <span class="w">is</span> <span class="w">the</span> <span class="w">SMALLEST</span> <span class="w">province</span>.<button class="say" type="button" data-lang="en" data-k="47887c65fad033ba" aria-label="朗讀">🔊</button></span></span></div>
+  <div class="tp-ex" data-narrate><span class="tp-exlab">考試可能這樣問</span><span class="bi"><span class="bi-zh">加拿大「唯一」的官方雙語省份是？<button class="say" type="button" data-lang="zh" data-k="378686425d5e1973" aria-label="朗讀">🔊</button></span><span class="bi-en"><span class="w">Which</span> <span class="w">is</span> <span class="w">Canada&#x27;s</span> <mark class="trap"><span class="w">only</span></mark> <span class="w">officially</span> <span class="w">bilingual</span> <span class="w">province</span>?<button class="say" type="button" data-lang="en" data-k="90d28d04dd16fd4f" aria-label="朗讀">🔊</button></span></span></div>
+</div>
+<div class="tp nr-card">
+  <div class="tp-head"><span class="tp-no">8</span><span class="tp-term"><span class="w">Head</span> <span class="w">of</span> <span class="w">State</span> ↔ <span class="w">Head</span> <span class="w">of</span> <span class="w">Government</span></span><span class="tp-zh">國家元首 ↔ 政府首腦</span></div>
+  <div class="tp-tip"><span class="bi"><span class="bi-zh">最常考的一組。國家元首是國王；政府首腦是總理。看到 State 想國王，看到 Government 想總理。<button class="say" type="button" data-lang="zh" data-k="e92dcca111bdc07b" aria-label="朗讀">🔊</button></span><span class="bi-en"><span class="w">The</span> <span class="w">most-tested</span> <span class="w">pair</span>. <span class="w">The</span> <span class="w">Head</span> <span class="w">of</span> <span class="w">State</span> <span class="w">is</span> <span class="w">the</span> <span class="w">King</span>; <span class="w">the</span> <span class="w">Head</span> <span class="w">of</span> <span class="w">Government</span> <span class="w">is</span> <span class="w">the</span> <span class="w">Prime</span> <span class="w">Minister</span>. <span class="w">State</span> → <span class="w">King</span>; <span class="w">Government</span> → <span class="w">Prime</span> <span class="w">Minister</span>.<button class="say" type="button" data-lang="en" data-k="98b7b117d0899ff2" aria-label="朗讀">🔊</button></span></span></div>
+  <div class="tp-ex" data-narrate><span class="tp-exlab">考試可能這樣問</span><span class="bi"><span class="bi-zh">誰是加拿大的「國家元首」？<button class="say" type="button" data-lang="zh" data-k="63dcf1001fe406ef" aria-label="朗讀">🔊</button></span><span class="bi-en"><span class="w">Who</span> <span class="w">is</span> <span class="w">Canada&#x27;s</span> <mark class="trap"><span class="w">Head</span> <span class="w">of</span> <span class="w">State</span></mark>?<button class="say" type="button" data-lang="en" data-k="9b1205226fceeaae" aria-label="朗讀">🔊</button></span></span></div>
+</div>
+<div class="tp nr-card">
+  <div class="tp-head"><span class="tp-no">9</span><span class="tp-term"><span class="w">represents</span></span><span class="tp-zh">代表</span></div>
+  <div class="tp-tip"><span class="bi"><span class="bi-zh">總督在聯邦「代表」國王；省督在省「代表」國王。問誰代表誰，先看是聯邦還是省。<button class="say" type="button" data-lang="zh" data-k="1d73bf31a8dc9f43" aria-label="朗讀">🔊</button></span><span class="bi-en"><span class="w">The</span> <span class="w">Governor</span> <span class="w">General</span> <span class="w">REPRESENTS</span> <span class="w">the</span> <span class="w">King</span> <span class="w">federally</span>; <span class="w">the</span> <span class="w">Lieutenant</span> <span class="w">Governor</span> <span class="w">represents</span> <span class="w">the</span> <span class="w">King</span> <span class="w">in</span> <span class="w">each</span> <span class="w">province</span>. <span class="w">First</span> <span class="w">check</span> <span class="w">whether</span> <span class="w">the</span> <span class="w">question</span> <span class="w">is</span> <span class="w">federal</span> <span class="w">or</span> <span class="w">provincial</span>.<button class="say" type="button" data-lang="en" data-k="baa44e1e23c7d232" aria-label="朗讀">🔊</button></span></span></div>
+  <div class="tp-ex" data-narrate><span class="tp-exlab">考試可能這樣問</span><span class="bi"><span class="bi-zh">在聯邦層級，誰「代表」君主？<button class="say" type="button" data-lang="zh" data-k="387215464a0a9eda" aria-label="朗讀">🔊</button></span><span class="bi-en"><span class="w">Who</span> <mark class="trap"><span class="w">represents</span></mark> <span class="w">the</span> <span class="w">Sovereign</span> <span class="w">in</span> <span class="w">Canada</span> <span class="w">at</span> <span class="w">the</span> <span class="w">federal</span> <span class="w">level</span>?<button class="say" type="button" data-lang="en" data-k="fb661df9737e4363" aria-label="朗讀">🔊</button></span></span></div>
+</div>
+<div class="tp nr-card">
+  <div class="tp-head"><span class="tp-no">10</span><span class="tp-term"><span class="w">appointed</span> ↔ <span class="w">elected</span></span><span class="tp-zh">任命 ↔ 選出</span></div>
+  <div class="tp-tip"><span class="bi"><span class="bi-zh">參議員是「任命」的，做到 75 歲；國會議員是「選出」的。題目把這兩個字對調就是陷阱。<button class="say" type="button" data-lang="zh" data-k="fd2c1e3e9f6f1cfc" aria-label="朗讀">🔊</button></span><span class="bi-en"><span class="w">Senators</span> <span class="w">are</span> <span class="w">APPOINTED</span> <span class="w">and</span> <span class="w">serve</span> <span class="w">until</span> 75; <span class="w">Members</span> <span class="w">of</span> <span class="w">Parliament</span> <span class="w">are</span> <span class="w">ELECTED</span>. <span class="w">Swapping</span> <span class="w">these</span> <span class="w">two</span> <span class="w">words</span> <span class="w">is</span> <span class="w">the</span> <span class="w">trap</span>.<button class="say" type="button" data-lang="en" data-k="e682715abb9c36d9" aria-label="朗讀">🔊</button></span></span></div>
+  <div class="tp-ex" data-narrate><span class="tp-exlab">考試可能這樣問</span><span class="bi"><span class="bi-zh">參議員是「任命」的，不是「選出」的。<button class="say" type="button" data-lang="zh" data-k="f3deddfacf9f2d70" aria-label="朗讀">🔊</button></span><span class="bi-en"><span class="w">Senators</span> <span class="w">are</span> <mark class="trap"><span class="w">appointed</span></mark>, <span class="w">not</span> <mark class="trap"><span class="w">elected</span></mark>.<button class="say" type="button" data-lang="en" data-k="df500b519ae26c2d" aria-label="朗讀">🔊</button></span></span></div>
+</div>
+<div class="tp nr-card">
+  <div class="tp-head"><span class="tp-no">11</span><span class="tp-term"><span class="w">federal</span> / <span class="w">provincial</span> / <span class="w">municipal</span></span><span class="tp-zh">聯邦／省／市</span></div>
+  <div class="tp-tip"><span class="bi"><span class="bi-zh">三級政府各管各的：國防、外交、貨幣、刑法＝聯邦；教育、醫療、公路＝省；除雪、垃圾、消防＝市。<button class="say" type="button" data-lang="zh" data-k="ff633ae72de1da08" aria-label="朗讀">🔊</button></span><span class="bi-en"><span class="w">Three</span> <span class="w">levels</span>, <span class="w">three</span> <span class="w">jobs</span>: <span class="w">defence</span>, <span class="w">foreign</span> <span class="w">affairs</span>, <span class="w">currency</span> <span class="w">and</span> <span class="w">criminal</span> <span class="w">law</span> <span class="w">are</span> <span class="w">FEDERAL</span>; <span class="w">education</span>, <span class="w">health</span> <span class="w">and</span> <span class="w">highways</span> <span class="w">are</span> <span class="w">PROVINCIAL</span>; <span class="w">snow</span> <span class="w">removal</span>, <span class="w">garbage</span> <span class="w">and</span> <span class="w">fire</span> <span class="w">services</span> <span class="w">are</span> <span class="w">MUNICIPAL</span>.<button class="say" type="button" data-lang="en" data-k="b4bca23c754cc60b" aria-label="朗讀">🔊</button></span></span></div>
+  <div class="tp-ex" data-narrate><span class="tp-exlab">考試可能這樣問</span><span class="bi"><span class="bi-zh">「除雪」是哪一級政府負責？<button class="say" type="button" data-lang="zh" data-k="710f1f900145755e" aria-label="朗讀">🔊</button></span><span class="bi-en"><span class="w">Which</span> <span class="w">level</span> <span class="w">of</span> <span class="w">government</span> <span class="w">is</span> <span class="w">responsible</span> <span class="w">for</span> <mark class="trap"><span class="w">snow</span> <span class="w">removal</span></mark>?<button class="say" type="button" data-lang="en" data-k="bcb09a8e32a7408c" aria-label="朗讀">🔊</button></span></span></div>
+</div>
+<div class="tp nr-card">
+  <div class="tp-head"><span class="tp-no">12</span><span class="tp-term"><span class="w">refers</span> <span class="w">to</span> / <span class="w">is</span> <span class="w">known</span> <span class="w">as</span> / <span class="w">means</span></span><span class="tp-zh">指的是／被稱為／意思是</span></div>
+  <div class="tp-tip"><span class="bi"><span class="bi-zh">三個說法都是在問「定義」。題目給你一個名詞，要你認出它是什麼。<button class="say" type="button" data-lang="zh" data-k="cd948045829426b6" aria-label="朗讀">🔊</button></span><span class="bi-en"><span class="w">All</span> <span class="w">three</span> <span class="w">ask</span> <span class="w">for</span> <span class="w">a</span> <span class="w">definition</span>: <span class="w">the</span> <span class="w">question</span> <span class="w">gives</span> <span class="w">you</span> <span class="w">a</span> <span class="w">term</span> <span class="w">and</span> <span class="w">wants</span> <span class="w">you</span> <span class="w">to</span> <span class="w">recognize</span> <span class="w">what</span> <span class="w">it</span> <span class="w">is</span>.<button class="say" type="button" data-lang="en" data-k="3a10ab9c1a7c0ec4" aria-label="朗讀">🔊</button></span></span></div>
+  <div class="tp-ex" data-narrate><span class="tp-exlab">考試可能這樣問</span><span class="bi"><span class="bi-zh">「大動盪」指的是：<button class="say" type="button" data-lang="zh" data-k="b585132b7fad1ace" aria-label="朗讀">🔊</button></span><span class="bi-en"><span class="w">The</span> &quot;<span class="w">Great</span> <span class="w">Upheaval</span>&quot; <mark class="trap"><span class="w">refers</span> <span class="w">to</span></mark>:<button class="say" type="button" data-lang="en" data-k="ae585d003d064097" aria-label="朗讀">🔊</button></span></span></div>
+</div>
+<div class="tp nr-card">
+  <div class="tp-head"><span class="tp-no">13</span><span class="tp-term"><span class="w">responsibility</span> ↔ <span class="w">right</span></span><span class="tp-zh">責任 ↔ 權利</span></div>
+  <div class="tp-tip"><span class="bi"><span class="bi-zh">守法、陪審、投票是「責任」；宗教自由、遷徙、語言是「權利」。看到 rather than（而不是）要把後半句反過來想。<button class="say" type="button" data-lang="zh" data-k="3f197a3250b30baa" aria-label="朗讀">🔊</button></span><span class="bi-en"><span class="w">Obeying</span> <span class="w">the</span> <span class="w">law</span>, <span class="w">jury</span> <span class="w">duty</span> <span class="w">and</span> <span class="w">voting</span> <span class="w">are</span> <span class="w">RESPONSIBILITIES</span>; <span class="w">freedom</span> <span class="w">of</span> <span class="w">religion</span>, <span class="w">mobility</span> <span class="w">and</span> <span class="w">language</span> <span class="w">are</span> <span class="w">RIGHTS</span>. <span class="w">When</span> <span class="w">you</span> <span class="w">see</span> &quot;<span class="w">rather</span> <span class="w">than</span>&quot;, <span class="w">flip</span> <span class="w">the</span> <span class="w">second</span> <span class="w">half</span> <span class="w">in</span> <span class="w">your</span> <span class="w">head</span>.<button class="say" type="button" data-lang="en" data-k="3144c43df1815dca" aria-label="朗讀">🔊</button></span></span></div>
+  <div class="tp-ex" data-narrate><span class="tp-exlab">考試可能這樣問</span><span class="bi"><span class="bi-zh">下列哪一項是「責任」而「不是」權利？<button class="say" type="button" data-lang="zh" data-k="c88740eadcb1fe14" aria-label="朗讀">🔊</button></span><span class="bi-en"><span class="w">Which</span> <span class="w">of</span> <span class="w">the</span> <span class="w">following</span> <span class="w">is</span> <span class="w">a</span> <mark class="trap"><span class="w">responsibility</span></mark> <span class="w">rather</span> <span class="w">than</span> <span class="w">a</span> <span class="w">right</span>?<button class="say" type="button" data-lang="en" data-k="71899b99fcdae31d" aria-label="朗讀">🔊</button></span></span></div>
+</div>
+<div class="tp nr-card">
+  <div class="tp-head"><span class="tp-no">14</span><span class="tp-term"><span class="w">compulsory</span></span><span class="tp-zh">強制的</span></div>
+  <div class="tp-tip"><span class="bi"><span class="bi-zh">加拿大服兵役「不是」強制的。這個字一出現，通常答案是「不是」。<button class="say" type="button" data-lang="zh" data-k="402b5757c565ab1b" aria-label="朗讀">🔊</button></span><span class="bi-en"><span class="w">Military</span> <span class="w">service</span> <span class="w">in</span> <span class="w">Canada</span> <span class="w">is</span> <span class="w">NOT</span> <span class="w">compulsory</span>. <span class="w">When</span> <span class="w">this</span> <span class="w">word</span> <span class="w">appears</span>, <span class="w">the</span> <span class="w">answer</span> <span class="w">is</span> <span class="w">usually</span> &quot;<span class="w">not</span>&quot;.<button class="say" type="button" data-lang="en" data-k="d921808dc0e54fba" aria-label="朗讀">🔊</button></span></span></div>
+  <div class="tp-ex" data-narrate><span class="tp-exlab">考試可能這樣問</span><span class="bi"><span class="bi-zh">加拿大服兵役不是「強制」的。<button class="say" type="button" data-lang="zh" data-k="1cef85427e840cb0" aria-label="朗讀">🔊</button></span><span class="bi-en"><span class="w">Military</span> <span class="w">service</span> <span class="w">in</span> <span class="w">Canada</span> <span class="w">is</span> <span class="w">not</span> <mark class="trap"><span class="w">compulsory</span></mark>.<button class="say" type="button" data-lang="en" data-k="363342553aba2b31" aria-label="朗讀">🔊</button></span></span></div>
+</div>
+<div class="tp nr-card">
+  <div class="tp-head"><span class="tp-no">15</span><span class="tp-term"><span class="w">Upper</span> ↔ <span class="w">Lower</span> <span class="w">Canada</span></span><span class="tp-zh">上加拿大 ↔ 下加拿大</span></div>
+  <div class="tp-tip"><span class="bi"><span class="bi-zh">照聖羅倫斯河的上下游分，不是地圖的上下。上加拿大＝安大略；下加拿大＝魁北克。<button class="say" type="button" data-lang="zh" data-k="d78269378af668b2" aria-label="朗讀">🔊</button></span><span class="bi-en"><span class="w">Named</span> <span class="w">for</span> <span class="w">the</span> <span class="w">St</span>. <span class="w">Lawrence</span> <span class="w">River&#x27;s</span> <span class="w">upstream</span> <span class="w">and</span> <span class="w">downstream</span>, <span class="w">not</span> <span class="w">the</span> <span class="w">map</span>. <span class="w">Upper</span> <span class="w">Canada</span> = <span class="w">Ontario</span>; <span class="w">Lower</span> <span class="w">Canada</span> = <span class="w">Quebec</span>.<button class="say" type="button" data-lang="en" data-k="52c8012d94a199e2" aria-label="朗讀">🔊</button></span></span></div>
+  <div class="tp-ex" data-narrate><span class="tp-exlab">考試可能這樣問</span><span class="bi"><span class="bi-zh">「上」加拿大後來成為安大略省。<button class="say" type="button" data-lang="zh" data-k="3d06585a1e8526ff" aria-label="朗讀">🔊</button></span><span class="bi-en"><mark class="trap"><span class="w">Upper</span></mark> <span class="w">Canada</span> <span class="w">later</span> <span class="w">became</span> <span class="w">the</span> <span class="w">province</span> <span class="w">of</span> <span class="w">Ontario</span>.<button class="say" type="button" data-lang="en" data-k="9a8e02987f852f32" aria-label="朗讀">🔊</button></span></span></div>
+</div>
+<div class="tp nr-card">
+  <div class="tp-head"><span class="tp-no">16</span><span class="tp-term"><span class="w">National</span> <span class="w">anthem</span> ↔ <span class="w">Royal</span> <span class="w">anthem</span></span><span class="tp-zh">國歌 ↔ 皇家頌歌</span></div>
+  <div class="tp-tip"><span class="bi"><span class="bi-zh">國歌是 O Canada；皇家頌歌是 God Save the King。看清楚是 National 還是 Royal。<button class="say" type="button" data-lang="zh" data-k="fdefa7679e8b85b9" aria-label="朗讀">🔊</button></span><span class="bi-en"><span class="w">The</span> <span class="w">national</span> <span class="w">anthem</span> <span class="w">is</span> <span class="w">O</span> <span class="w">Canada</span>; <span class="w">the</span> <span class="w">royal</span> <span class="w">anthem</span> <span class="w">is</span> <span class="w">God</span> <span class="w">Save</span> <span class="w">the</span> <span class="w">King</span>. <span class="w">Check</span> <span class="w">whether</span> <span class="w">the</span> <span class="w">question</span> <span class="w">says</span> <span class="w">National</span> <span class="w">or</span> <span class="w">Royal</span>.<button class="say" type="button" data-lang="en" data-k="2596168293bbd6c9" aria-label="朗讀">🔊</button></span></span></div>
+  <div class="tp-ex" data-narrate><span class="tp-exlab">考試可能這樣問</span><span class="bi"><span class="bi-zh">加拿大的「皇家」頌歌是什麼？<button class="say" type="button" data-lang="zh" data-k="d3d5be7772bcd14b" aria-label="朗讀">🔊</button></span><span class="bi-en"><span class="w">What</span> <span class="w">is</span> <span class="w">Canada&#x27;s</span> <mark class="trap"><span class="w">Royal</span></mark> <span class="w">anthem</span>?<button class="say" type="button" data-lang="en" data-k="2e867bd049a9d700" aria-label="朗讀">🔊</button></span></span></div>
+</div>
+<div class="tp nr-card">
+  <div class="tp-head"><span class="tp-no">17</span><span class="tp-term"><span class="w">winter</span> ↔ <span class="w">summer</span> <span class="w">sport</span></span><span class="tp-zh">冬季 ↔ 夏季運動</span></div>
+  <div class="tp-tip"><span class="bi"><span class="bi-zh">冬季國家運動是冰球；夏季是長曲棍球。看到 hockey 先別急，看題目問哪一季。<button class="say" type="button" data-lang="zh" data-k="c6206919bd6181be" aria-label="朗讀">🔊</button></span><span class="bi-en"><span class="w">The</span> <span class="w">national</span> <span class="w">winter</span> <span class="w">sport</span> <span class="w">is</span> <span class="w">hockey</span>; <span class="w">the</span> <span class="w">summer</span> <span class="w">sport</span> <span class="w">is</span> <span class="w">lacrosse</span>. <span class="w">Do</span> <span class="w">not</span> <span class="w">jump</span> <span class="w">at</span> &quot;<span class="w">hockey</span>&quot; — <span class="w">check</span> <span class="w">which</span> <span class="w">season</span> <span class="w">the</span> <span class="w">question</span> <span class="w">asks</span> <span class="w">about</span>.<button class="say" type="button" data-lang="en" data-k="56cf25ffb2f7dc89" aria-label="朗讀">🔊</button></span></span></div>
+  <div class="tp-ex" data-narrate><span class="tp-exlab">考試可能這樣問</span><span class="bi"><span class="bi-zh">加拿大官方的「夏季」運動是什麼？<button class="say" type="button" data-lang="zh" data-k="525b75e6d3b2e689" aria-label="朗讀">🔊</button></span><span class="bi-en"><span class="w">What</span> <span class="w">is</span> <span class="w">Canada&#x27;s</span> <span class="w">official</span> <mark class="trap"><span class="w">summer</span></mark> <span class="w">sport</span>?<button class="say" type="button" data-lang="en" data-k="5e0686b9cb577824" aria-label="朗讀">🔊</button></span></span></div>
+</div>
+<div class="tp nr-card">
+  <div class="tp-head"><span class="tp-no">18</span><span class="tp-term"><span class="w">entrenched</span> / <span class="w">amended</span></span><span class="tp-zh">寫入／修改</span></div>
+  <div class="tp-tip"><span class="bi"><span class="bi-zh">1982 年憲法「修改」成不需英國批准，同時把憲章「寫入」憲法。兩個字都指向 1982。<button class="say" type="button" data-lang="zh" data-k="20b5bc23fd0406d6" aria-label="朗讀">🔊</button></span><span class="bi-en"><span class="w">In</span> 1982 <span class="w">the</span> <span class="w">Constitution</span> <span class="w">was</span> <span class="w">AMENDED</span> <span class="w">so</span> <span class="w">it</span> <span class="w">could</span> <span class="w">change</span> <span class="w">without</span> <span class="w">Britain&#x27;s</span> <span class="w">approval</span>, <span class="w">and</span> <span class="w">the</span> <span class="w">Charter</span> <span class="w">was</span> <span class="w">ENTRENCHED</span> <span class="w">in</span> <span class="w">it</span>. <span class="w">Both</span> <span class="w">words</span> <span class="w">point</span> <span class="w">to</span> 1982.<button class="say" type="button" data-lang="en" data-k="ce95aafbc8dc9734" aria-label="朗讀">🔊</button></span></span></div>
+  <div class="tp-ex" data-narrate><span class="tp-exlab">考試可能這樣問</span><span class="bi"><span class="bi-zh">憲章在 1982 年「寫入」憲法。<button class="say" type="button" data-lang="zh" data-k="cb89f56887d97e08" aria-label="朗讀">🔊</button></span><span class="bi-en"><span class="w">The</span> <span class="w">Charter</span> <span class="w">was</span> <mark class="trap"><span class="w">entrenched</span></mark> <span class="w">in</span> <span class="w">the</span> <span class="w">Constitution</span> <span class="w">in</span> 1982.<button class="say" type="button" data-lang="en" data-k="3fb142deef334b19" aria-label="朗讀">🔊</button></span></span></div>
+</div>
+<div class="tp nr-card">
+  <div class="tp-head"><span class="tp-no">19</span><span class="tp-term"><span class="w">majority</span> ↔ <span class="w">minority</span></span><span class="tp-zh">多數 ↔ 少數</span></div>
+  <div class="tp-tip"><span class="bi"><span class="bi-zh">執政黨席次過半＝多數政府；不過半＝少數政府。題目常用 less than half（少於一半）代替 minority。<button class="say" type="button" data-lang="zh" data-k="29e13ff0336cd627" aria-label="朗讀">🔊</button></span><span class="bi-en"><span class="w">More</span> <span class="w">than</span> <span class="w">half</span> <span class="w">the</span> <span class="w">seats</span> = <span class="w">a</span> <span class="w">MAJORITY</span> <span class="w">government</span>; <span class="w">less</span> <span class="w">than</span> <span class="w">half</span> = <span class="w">a</span> <span class="w">MINORITY</span> <span class="w">government</span>. <span class="w">Questions</span> <span class="w">often</span> <span class="w">say</span> &quot;<span class="w">less</span> <span class="w">than</span> <span class="w">half</span>&quot; <span class="w">instead</span> <span class="w">of</span> &quot;<span class="w">minority</span>&quot;.<button class="say" type="button" data-lang="en" data-k="28f10fd5e118777b" aria-label="朗讀">🔊</button></span></span></div>
+  <div class="tp-ex" data-narrate><span class="tp-exlab">考試可能這樣問</span><span class="bi"><span class="bi-zh">席次「少於一半」的政黨組成「少數」政府。<button class="say" type="button" data-lang="zh" data-k="19047e2d3d279639" aria-label="朗讀">🔊</button></span><span class="bi-en"><span class="w">A</span> <span class="w">party</span> <span class="w">with</span> <mark class="trap"><span class="w">less</span> <span class="w">than</span> <span class="w">half</span></mark> <span class="w">the</span> <span class="w">seats</span> <span class="w">forms</span> <span class="w">a</span> <mark class="trap"><span class="w">minority</span></mark> <span class="w">government</span>.<button class="say" type="button" data-lang="en" data-k="889444d6e4f796c6" aria-label="朗讀">🔊</button></span></span></div>
+</div>
+<div class="tp nr-card">
+  <div class="tp-head"><span class="tp-no">20</span><span class="tp-term"><span class="w">because</span> / <span class="w">as</span> <span class="w">a</span> <span class="w">result</span> <span class="w">of</span></span><span class="tp-zh">因為／由於</span></div>
+  <div class="tp-tip"><span class="bi"><span class="bi-zh">問因果。先找事件，再找原因。卑詩省加入聯邦「因為」渥太華承諾蓋鐵路。<button class="say" type="button" data-lang="zh" data-k="bf9f922b5b21e7d7" aria-label="朗讀">🔊</button></span><span class="bi-en"><span class="w">Cause</span> <span class="w">and</span> <span class="w">effect</span>: <span class="w">find</span> <span class="w">the</span> <span class="w">event</span>, <span class="w">then</span> <span class="w">its</span> <span class="w">reason</span>. <span class="w">British</span> <span class="w">Columbia</span> <span class="w">joined</span> <span class="w">Confederation</span> <span class="w">BECAUSE</span> <span class="w">Ottawa</span> <span class="w">promised</span> <span class="w">a</span> <span class="w">railway</span>.<button class="say" type="button" data-lang="en" data-k="9ef5d0ce052d2712" aria-label="朗讀">🔊</button></span></span></div>
+  <div class="tp-ex" data-narrate><span class="tp-exlab">考試可能這樣問</span><span class="bi"><span class="bi-zh">卑詩省在 1871 年加入聯邦，「是因為」渥太華承諾要蓋鐵路。<button class="say" type="button" data-lang="zh" data-k="dda7865048f8d381" aria-label="朗讀">🔊</button></span><span class="bi-en"><span class="w">British</span> <span class="w">Columbia</span> <span class="w">joined</span> <span class="w">Confederation</span> <span class="w">in</span> 1871 <mark class="trap"><span class="w">because</span></mark> <span class="w">Ottawa</span> <span class="w">promised</span> <span class="w">a</span> <span class="w">railway</span>.<button class="say" type="button" data-lang="en" data-k="dd123640304eb47b" aria-label="朗讀">🔊</button></span></span></div>
+</div>
+<div class="tp nr-card">
+  <div class="tp-head"><span class="tp-no">21</span><span class="tp-term"><span class="w">forerunner</span></span><span class="tp-zh">前身</span></div>
+  <div class="tp-tip"><span class="bi"><span class="bi-zh">「前身」＝以前的名字。西北騎警是皇家騎警的前身。<button class="say" type="button" data-lang="zh" data-k="29ee8497f098a62e" aria-label="朗讀">🔊</button></span><span class="bi-en"><span class="w">The</span> <span class="w">earlier</span> <span class="w">form</span> <span class="w">of</span> <span class="w">something</span>. <span class="w">The</span> <span class="w">North</span> <span class="w">West</span> <span class="w">Mounted</span> <span class="w">Police</span> <span class="w">was</span> <span class="w">the</span> <span class="w">FORERUNNER</span> <span class="w">of</span> <span class="w">the</span> <span class="w">RCMP</span>.<button class="say" type="button" data-lang="en" data-k="fdc5eae459592583" aria-label="朗讀">🔊</button></span></span></div>
+  <div class="tp-ex" data-narrate><span class="tp-exlab">考試可能這樣問</span><span class="bi"><span class="bi-zh">西北騎警是皇家騎警的「前身」。<button class="say" type="button" data-lang="zh" data-k="2f7c47e98f765b9e" aria-label="朗讀">🔊</button></span><span class="bi-en"><span class="w">The</span> <span class="w">North</span> <span class="w">West</span> <span class="w">Mounted</span> <span class="w">Police</span> <span class="w">was</span> <span class="w">the</span> <mark class="trap"><span class="w">forerunner</span></mark> <span class="w">of</span> <span class="w">the</span> <span class="w">RCMP</span>.<button class="say" type="button" data-lang="en" data-k="feb7049c88cce031" aria-label="朗讀">🔊</button></span></span></div>
+</div>
+<div class="tp nr-card">
+  <div class="tp-head"><span class="tp-no">22</span><span class="tp-term"><span class="w">True</span> <span class="w">or</span> <span class="w">False</span></span><span class="tp-zh">是非題</span></div>
+  <div class="tp-tip"><span class="bi"><span class="bi-zh">整句只要有一個字錯，答案就是 False。把每個名詞、每個年份都核對一遍。<button class="say" type="button" data-lang="zh" data-k="771c6e87dd2d0cc7" aria-label="朗讀">🔊</button></span><span class="bi-en"><span class="w">If</span> <span class="w">even</span> <span class="w">one</span> <span class="w">word</span> <span class="w">in</span> <span class="w">the</span> <span class="w">sentence</span> <span class="w">is</span> <span class="w">wrong</span>, <span class="w">the</span> <span class="w">answer</span> <span class="w">is</span> <span class="w">False</span>. <span class="w">Check</span> <span class="w">every</span> <span class="w">name</span> <span class="w">and</span> <span class="w">every</span> <span class="w">year</span>.<button class="say" type="button" data-lang="en" data-k="43c1f30cfa898737" aria-label="朗讀">🔊</button></span></span></div>
+  <div class="tp-ex" data-narrate><span class="tp-exlab">考試可能這樣問</span><span class="bi"><span class="bi-zh">是非題：參議員是「選出」的。（錯——是任命的）<button class="say" type="button" data-lang="zh" data-k="003bb72c996ff73a" aria-label="朗讀">🔊</button></span><span class="bi-en"><span class="w">True</span> <span class="w">or</span> <span class="w">False</span>: <span class="w">Senators</span> <span class="w">are</span> <mark class="trap"><span class="w">elected</span></mark>. (<span class="w">False</span> — <span class="w">they</span> <span class="w">are</span> <span class="w">appointed</span>.)<button class="say" type="button" data-lang="en" data-k="4178bfba0ca9ee4f" aria-label="朗讀">🔊</button></span></span></div>
+</div></div>
+
+
+<script>
+(function () {
+  var tl = document.getElementById('tp-tl');
+  var player = document.getElementById('tp-player');
+  if (!tl || !player) return;
+
+  // Same clip folder the single-line 🔊 buttons use, derived from the words.js
+  // script tag so this works both in the per-page build (depth 1) and inside the
+  // single-file study.html (depth 0). Resolved lazily: dict_bundle() appends that
+  // tag AFTER this body, so at parse time it is not in the DOM yet.
+  var base = null;
+  function clipBase() {
+    if (base === null) {
+      var ws = document.querySelector('script[src$="dict/words.js"]');
+      base = ws ? ws.getAttribute('src').replace(/dict\/words\.js$/, 'audio/iv/') : 'audio/iv/';
+    }
+    return base;
+  }
+
+  var playBtn = player.querySelector('.pp-play');
+  var progEl = player.querySelector('.pp-prog');
+  var audio = new Audio();
+  var queue = [], idx = -1, playing = false, mode = 'zh';
+
+  function clearMarks() {
+    tl.querySelectorAll('.pp-cur').forEach(function (n) { n.classList.remove('pp-cur'); });
+    tl.querySelectorAll('.pp-reading').forEach(function (n) { n.classList.remove('pp-reading'); });
+  }
+  function buildQueue() {
+    var all = Array.prototype.slice.call(tl.querySelectorAll('[data-narrate] .say'));
+    queue = all.filter(function (b) {
+      if (b.closest('.pp-hidden')) return false;
+      return mode === 'both' || b.dataset.lang === mode;
+    });
+  }
+  function setProg(txt) { progEl.textContent = txt; }
+  function idleUI(txt) {
+    playing = false;
+    playBtn.textContent = '▶ 從頭聽';
+    setProg(txt);
+  }
+  function stop(txt) {
+    audio.pause();
+    if (window.speechSynthesis) window.speechSynthesis.cancel();
+    clearMarks();
+    idleUI(txt || '已停止');
+  }
+  // The single-line 🔊 and the dictionary both call this, so two voices never overlap.
+  (window.CIT_AUTOPLAY_LIST = window.CIT_AUTOPLAY_LIST || []).push(function () { if (playing || idx >= 0) stop('已停止'); });
+  window.CIT_AUTOPLAY_STOP = function () { window.CIT_AUTOPLAY_LIST.forEach(function (f) { f(); }); };
+
+  function speakFallback(btn, onDone) {
+    if (!window.speechSynthesis) { onDone(); return; }
+    var host = btn.parentElement;
+    var txt = host ? host.textContent.replace(/🔊/g, '').trim() : '';
+    var u = new SpeechSynthesisUtterance(txt);
+    u.lang = (btn.dataset.lang === 'zh') ? 'zh-TW' : 'en-US';
+    u.rate = 0.9;
+    u.onend = onDone; u.onerror = onDone;
+    window.speechSynthesis.cancel();
+    window.speechSynthesis.speak(u);
+  }
+
+  function play(i) {
+    if (i < 0 || i >= queue.length) { clearMarks(); idleUI('聽完了 🎉'); idx = -1; return; }
+    idx = i;
+    var btn = queue[i];
+    clearMarks();
+    var line = btn.parentElement;
+    if (line) line.classList.add('pp-cur');
+    var card = btn.closest('.nr-card');
+    if (card) {
+      card.classList.add('pp-reading');
+      card.scrollIntoView({ block: 'center', behavior: 'smooth' });
+    }
+    setProg('播放中 ' + (i + 1) + ' / ' + queue.length);
+    audio.onended = function () { if (playing) play(idx + 1); };
+    audio.onerror = null;
+    audio.src = clipBase() + btn.dataset.lang + '/' + btn.dataset.k + '.m4a';
+    audio.play().catch(function () {
+      // no recorded clip for this line — fall back to the browser voice and keep going
+      speakFallback(btn, function () { if (playing) play(idx + 1); });
+    });
+  }
+
+  playBtn.addEventListener('click', function () {
+    if (playing) { stop('已暫停'); return; }
+    buildQueue();
+    if (!queue.length) { setProg('這個篩選下沒有可聽的內容'); return; }
+    playing = true;
+    playBtn.textContent = '⏸ 暫停';
+    play(idx >= 0 && idx < queue.length ? idx : 0);
+  });
+  player.querySelector('.pp-prev').addEventListener('click', function () {
+    if (!queue.length) buildQueue();
+    playing = true; playBtn.textContent = '⏸ 暫停';
+    play(Math.max(0, (idx < 0 ? 0 : idx) - 1));
+  });
+  player.querySelector('.pp-next').addEventListener('click', function () {
+    if (!queue.length) buildQueue();
+    playing = true; playBtn.textContent = '⏸ 暫停';
+    play((idx < 0 ? 0 : idx) + 1);
+  });
+  player.querySelectorAll('.pp-langs button').forEach(function (b) {
+    b.addEventListener('click', function () {
+      player.querySelectorAll('.pp-langs button').forEach(function (x) { x.classList.remove('on'); });
+      b.classList.add('on');
+      mode = b.dataset.lang;
+      idx = -1;
+      stop('語言已切換，按 ▶ 重新開始');
+    });
+  });
+
+  // ---------- category filter ----------
+  var catBtns = tl.parentElement.querySelectorAll('.pp-cat-btn');
+  catBtns.forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      catBtns.forEach(function (b) { b.classList.remove('pp-on'); });
+      btn.classList.add('pp-on');
+      var cat = btn.dataset.cat;
+      tl.querySelectorAll('.pp-p').forEach(function (p) {
+        if (cat === 'all' || p.dataset.cat === cat) p.classList.remove('pp-hidden');
+        else p.classList.add('pp-hidden');
+      });
+      idx = -1;
+      stop('篩選已變更，按 ▶ 重新開始');
+    });
+  });
+
+  window.addEventListener('pagehide', function () { stop(''); });
+})();
+</script>
+<style>
+/* 中／英同級：夠寬就左右並排，不夠就自動上下堆疊 */
+.bi { display: flex; flex-wrap: wrap; gap: 3px 18px; align-items: flex-start; }
+.bi-zh, .bi-en { flex: 1 1 240px; min-width: 0; }
+.bi-en {
+  color: #45403a; font-family: "Source Serif 4", Georgia, serif;
+  line-height: 1.5; border-left: 2px solid var(--line); padding-left: 10px;
+}
+.say {
+  border: none; background: none; cursor: pointer; padding: 0 2px;
+  font-size: 0.82em; line-height: 1; opacity: 0.32; vertical-align: baseline;
+  transition: opacity 0.12s, transform 0.12s;
+}
+.say:hover { opacity: 0.85; }
+.say.playing { opacity: 1; transform: scale(1.25); }
+/* 名稱列：中文與英文同級並排（省名、總理、政黨、節日…） */
+.nm { display: inline-flex; flex-wrap: wrap; gap: 0 8px; align-items: baseline; }
+.nm-en { font-family: "Source Serif 4", Georgia, serif; color: #45403a; }
+
+.w { cursor: pointer; border-radius: 3px; padding: 0 0.5px; }
+.w:hover { background: #ffe9c7; }
+.wd-pop {
+  position: fixed; z-index: 90; width: min(340px, calc(100vw - 24px));
+  background: #fff; border: 1px solid var(--line); border-radius: 12px;
+  box-shadow: 0 8px 28px rgba(0,0,0,0.16); padding: 14px 16px 12px;
+}
+.wd-pop.hidden { display: none; }
+.wd-w { font-family: Georgia, "Source Serif 4", serif; font-size: 26px; font-weight: 700; color: #3f1a1f; padding-right: 24px; }
+.wd-p { font-size: 15px; color: var(--muted); margin: 2px 0 8px; font-family: "Charis SIL", "Doulos SIL", "Gentium Plus", Georgia, serif; }
+.wd-t { font-size: 14.5px; line-height: 1.6; white-space: pre-line; margin-bottom: 10px; color: var(--ink); }
+.wd-btns { display: flex; gap: 6px; flex-wrap: wrap; }
+.wd-btns button {
+  font: inherit; font-size: 12.5px; padding: 5px 10px; border-radius: 6px;
+  border: 1px solid var(--line); background: #fff; cursor: pointer; color: var(--ink);
+}
+.wd-btns button.main { background: var(--accent); color: #fff; border-color: var(--accent); }
+.wd-x { position: absolute; top: 6px; right: 10px; border: none; background: none; font-size: 20px; color: var(--muted); cursor: pointer; }
+.wd-note { font-size: 11px; color: var(--muted); margin-top: 8px; }
+</style>
+
+<div class="wd-pop hidden" role="dialog" aria-label="字典">
+  <button class="wd-x" type="button" aria-label="關閉">×</button>
+  <div class="wd-w"></div>
+  <div class="wd-p"></div>
+  <div class="wd-t"></div>
+  <div class="wd-btns">
+    <button class="wd-slow main" type="button">🔊 慢速再聽</button>
+    <button class="wd-normal" type="button">🔊 正常速</button>
+  </div>
+  <div class="wd-note">釋義來源：ECDICT 開源字典＋加拿大語境補充。點其他地方或按 Esc 關閉。</div>
+</div>
+<script src="../dict/words.js"></script>
+<script>
+(function () {
+  var WORD_BASE = '../audio/words/', LINE_BASE = '../audio/iv/';
+  var pop = document.querySelector('.wd-pop');
+  var wordAudio = new Audio(), lineAudio = new Audio();
+  var ctx = null, playingBtn = null;
+
+  // ---------- per-line narration (the 🔊 buttons next to 中文 / English) ----------
+  function stopLine() {
+    lineAudio.pause();
+    if (playingBtn) { playingBtn.classList.remove('playing'); playingBtn = null; }
+  }
+  lineAudio.addEventListener('ended', stopLine);
+  document.addEventListener('click', function (e) {
+    var b = e.target.closest && e.target.closest('.say');
+    if (!b) return;
+    e.stopPropagation();
+    // A hand-picked line wins over a running continuous read-through.
+    if (window.CIT_AUTOPLAY_STOP) window.CIT_AUTOPLAY_STOP();
+    var wasPlaying = (b === playingBtn);
+    stopLine();
+    if (wasPlaying) return;
+    lineAudio.src = LINE_BASE + b.dataset.lang + '/' + b.dataset.k + '.m4a';
+    lineAudio.playbackRate = 1;
+    playingBtn = b; b.classList.add('playing');
+    lineAudio.play().catch(function () {
+      // no clip for this line (content changed since the last audio build)
+      stopLine();
+      if (!window.speechSynthesis) return;
+      var host = b.parentElement;
+      var txt = host ? host.textContent.replace(/🔊/g, '').trim() : '';
+      var u = new SpeechSynthesisUtterance(txt);
+      u.lang = (b.dataset.lang === 'zh') ? 'zh-TW' : 'en-US'; u.rate = 0.85;
+      window.speechSynthesis.cancel(); window.speechSynthesis.speak(u);
+    });
+  });
+
+  // ---------- word dictionary ----------
+  if (!pop) return;
+  function lookup(w) {
+    var D = window.CIT_DICT || {};
+    var k = w.replace(/’/g, "'");
+    var tries = [k, k.toLowerCase()];
+    if (/'s$/i.test(k)) tries.push(k.slice(0, -2), k.slice(0, -2).toLowerCase());
+    for (var i = 0; i < tries.length; i++) if (D[tries[i]]) return D[tries[i]];
+    return null;
+  }
+  function say(rate) {
+    if (!ctx) return;
+    if (window.CIT_AUTOPLAY_STOP) window.CIT_AUTOPLAY_STOP();
+    stopLine();
+    var key = ctx.word.toLowerCase().replace(/’/g, "'");
+    wordAudio.pause();
+    wordAudio.src = WORD_BASE + encodeURIComponent(key) + '.m4a';
+    wordAudio.playbackRate = rate;
+    try { wordAudio.preservesPitch = true; wordAudio.mozPreservesPitch = true; } catch (err) {}
+    wordAudio.onerror = function () {
+      if (!window.speechSynthesis) return;
+      var u = new SpeechSynthesisUtterance(ctx.word);
+      u.lang = 'en-US'; u.rate = 0.7 * rate;
+      window.speechSynthesis.cancel(); window.speechSynthesis.speak(u);
+    };
+    wordAudio.play().catch(function () {});
+  }
+  function place(el) {
+    var r = el.getBoundingClientRect();
+    pop.style.top = Math.max(8, Math.min(r.bottom + 8, window.innerHeight - pop.offsetHeight - 8)) + 'px';
+    var maxLeft = document.documentElement.clientWidth - pop.offsetWidth - 12;
+    pop.style.left = Math.max(12, Math.min(r.left, maxLeft)) + 'px';
+  }
+  function show(el) {
+    var w = el.textContent.trim(), e = lookup(w);
+    pop.querySelector('.wd-w').textContent = w;
+    pop.querySelector('.wd-p').textContent = (e && e.p) ? '/' + e.p + '/' : '';
+    pop.querySelector('.wd-t').textContent = e ? (e.x ? e.t + '\n（原形：' + e.x + '）' : e.t) : '字典裡沒有這個字';
+    ctx = { word: w };
+    pop.classList.remove('hidden');
+    place(el);
+    say(1);
+  }
+  function hide() { pop.classList.add('hidden'); ctx = null; wordAudio.pause(); }
+  pop.querySelector('.wd-slow').addEventListener('click', function (e) { e.stopPropagation(); say(1); });
+  pop.querySelector('.wd-normal').addEventListener('click', function (e) { e.stopPropagation(); say(1.45); });
+  pop.querySelector('.wd-x').addEventListener('click', hide);
+  document.addEventListener('click', function (e) {
+    var wEl = e.target.closest && e.target.closest('.w');
+    if (wEl) { e.stopPropagation(); show(wEl); return; }
+    if (!pop.classList.contains('hidden') && !pop.contains(e.target)) hide();
+  });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') hide(); });
+})();
+</script>
+</main>
+</div>
+<script>
+(function() {
+  if (!('speechSynthesis' in window)) return;
+  var synth = window.speechSynthesis;
+  var voicesReady = false;
+
+  var ICON_SPEAKER = '<svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 10v4h4l5 4V6L7 10H3zm12.5 2c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM13 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg>';
+  var ICON_PAUSE = '<svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6 5h4v14H6zM14 5h4v14h-4z"/></svg>';
+  var ICON_PLAY = '<svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>';
+
+  // single global state — only one TTS session at a time
+  var state = {
+    btn: null, chunks: null, words: null, chunkIdx: 0, paused: false
+  };
+
+  function ensureVoices(cb) {
+    if (voicesReady) return cb();
+    var v = synth.getVoices();
+    if (v && v.length) { voicesReady = true; return cb(); }
+    synth.onvoiceschanged = function() { voicesReady = true; cb(); };
+    setTimeout(function(){ if (!voicesReady) { voicesReady = true; cb(); } }, 500);
+  }
+
+  function pickVoice() {
+    var voices = synth.getVoices();
+    function find(pred){ for (var i=0;i<voices.length;i++) if (pred(voices[i])) return voices[i]; return null; }
+    return find(function(v){return v.lang==='en-CA' && /Samantha|Karen|Tessa|Victoria|Allison|Siri/i.test(v.name);})
+        || find(function(v){return v.lang==='en-CA';})
+        || find(function(v){return v.lang==='en-US' && /Samantha|Karen|Allison|Ava|Siri/i.test(v.name);})
+        || find(function(v){return v.lang==='en-US';})
+        || find(function(v){return v.lang && v.lang.indexOf('en')===0;})
+        || null;
+  }
+
+  // Wrap each word in container in a <span class="w" data-idx="N"> for highlighting.
+  function wrapWords(container) {
+    if (container.dataset.wrapped === '1') return;
+    var walker = document.createTreeWalker(container, NodeFilter.SHOW_TEXT, null, false);
+    var nodes = [];
+    var n;
+    while ((n = walker.nextNode())) {
+      if (!n.parentElement) continue;
+      if (n.parentElement.closest('.speak-btn, .label')) continue;
+      if (!/\S/.test(n.nodeValue)) continue;
+      nodes.push(n);
+    }
+    var idx = 0;
+    nodes.forEach(function(tn) {
+      var text = tn.nodeValue;
+      var tokens = text.split(/(\s+)/);
+      var frag = document.createDocumentFragment();
+      tokens.forEach(function(tok) {
+        if (tok.length === 0) return;
+        if (/^\s+$/.test(tok)) {
+          frag.appendChild(document.createTextNode(tok));
+        } else {
+          var sp = document.createElement('span');
+          sp.className = 'w';
+          sp.setAttribute('data-idx', idx++);
+          sp.textContent = tok;
+          frag.appendChild(sp);
+        }
+      });
+      tn.parentNode.replaceChild(frag, tn);
+    });
+    container.dataset.wrapped = '1';
+  }
+
+  // Group words into chunks split on punctuation, with a pause duration after each chunk.
+  function buildChunks(words) {
+    var chunks = [];
+    var cur = { words: [] };
+    function commit(pauseMs) {
+      if (!cur.words.length) return;
+      cur.text = cur.words.map(function(w){ return w.text; }).join(' ');
+      cur.pauseAfterMs = pauseMs;
+      chunks.push(cur);
+      cur = { words: [] };
+    }
+    words.forEach(function(wEl, i) {
+      var text = wEl.textContent;
+      cur.words.push({ el: wEl, idx: i, text: text });
+      // sentence-ending punctuation → long pause
+      if (/[.!?]+["')\]]*$/.test(text) && text.length > 1) {
+        commit(420);
+      }
+      // semicolon / colon → medium pause
+      else if (/[;:]+["')\]]*$/.test(text)) {
+        commit(300);
+      }
+      // comma or em-dash → short pause
+      else if (/[,—–][")'\]]*$/.test(text)) {
+        commit(220);
+      }
+    });
+    commit(0);
+    return chunks;
+  }
+
+  function highlight(globalIdx) {
+    if (!state.words) return;
+    for (var i = 0; i < state.words.length; i++) {
+      if (i === globalIdx) state.words[i].classList.add('current');
+      else state.words[i].classList.remove('current');
+    }
+  }
+
+  function clearHighlight() {
+    if (!state.words) return;
+    state.words.forEach(function(w){ w.classList.remove('current'); });
+  }
+
+  function findWordAtChar(chunk, charIndex) {
+    var pos = 0;
+    for (var i = 0; i < chunk.words.length; i++) {
+      var len = chunk.words[i].text.length;
+      if (charIndex >= pos && charIndex < pos + len) return i;
+      pos += len + 1; // space
+    }
+    return -1;
+  }
+
+  function setBtnState(btn, s) {
+    if (!btn) return;
+    btn.classList.remove('speaking', 'paused');
+    if (s === 'speaking') btn.classList.add('speaking');
+    else if (s === 'paused') btn.classList.add('paused');
+    btn.setAttribute('data-state', s);
+    var icon = btn.querySelector('.speak-icon');
+    var label = btn.querySelector('.speak-label');
+    if (s === 'idle')     { if (icon) icon.innerHTML = ICON_SPEAKER; if (label) label.textContent = '朗讀'; }
+    else if (s === 'speaking') { if (icon) icon.innerHTML = ICON_PAUSE;   if (label) label.textContent = '暫停'; }
+    else if (s === 'paused')   { if (icon) icon.innerHTML = ICON_PLAY;    if (label) label.textContent = '繼續'; }
+  }
+
+  function stopAll() {
+    state.suppressNextEnd = true;  // ignore the cancel-induced end/error
+    synth.cancel();
+    if (state.btn) setBtnState(state.btn, 'idle');
+    clearHighlight();
+    state.btn = null; state.chunks = null; state.words = null;
+    state.chunkIdx = 0; state.paused = false;
+    // reset suppression on next tick
+    setTimeout(function(){ state.suppressNextEnd = false; }, 100);
+  }
+
+  function findChunkForWord(chunks, wordIdx) {
+    for (var i = 0; i < chunks.length; i++) {
+      for (var j = 0; j < chunks[i].words.length; j++) {
+        if (chunks[i].words[j].idx === wordIdx) return i;
+      }
+    }
+    return -1;
+  }
+
+  function speakFrom(chunkIdx) {
+    if (!state.chunks || chunkIdx >= state.chunks.length) { stopAll(); return; }
+    state.chunkIdx = chunkIdx;
+    var chunk = state.chunks[chunkIdx];
+    var u = new SpeechSynthesisUtterance(chunk.text);
+    u.lang = 'en-CA';
+    u.rate = 0.92;
+    u.pitch = 1.0;
+    var v = pickVoice();
+    if (v) u.voice = v;
+
+    u.onstart = function() {
+      if (chunk.words[0]) highlight(chunk.words[0].idx);
+    };
+    u.onboundary = function(e) {
+      if (e.name && e.name !== 'word') return;
+      var w = findWordAtChar(chunk, e.charIndex || 0);
+      if (w >= 0) highlight(chunk.words[w].idx);
+    };
+    u.onend = function() {
+      // ignore the end event if it was triggered by our own cancel (pause/jump/stop)
+      if (state.suppressNextEnd) { state.suppressNextEnd = false; return; }
+      if (state.paused) return;
+      var next = chunkIdx + 1;
+      if (next >= state.chunks.length) { stopAll(); return; }
+      setTimeout(function() {
+        if (!state.paused && state.chunks) speakFrom(next);
+      }, chunk.pauseAfterMs);
+    };
+    u.onerror = function() {
+      if (state.suppressNextEnd) { state.suppressNextEnd = false; return; }
+      if (state.paused) return; // user paused — keep state for resume
+      stopAll();
+    };
+
+    synth.speak(u);
+  }
+
+  // Start fresh speech for a container, optionally from a specific chunk index.
+  function startFresh(container, btn, fromChunk) {
+    stopAll();
+    wrapWords(container);
+    var words = Array.prototype.slice.call(container.querySelectorAll('.w'));
+    if (!words.length) return;
+    state.btn = btn;
+    state.words = words;
+    state.chunks = buildChunks(words);
+    state.chunkIdx = Math.max(0, Math.min(fromChunk || 0, state.chunks.length - 1));
+    state.paused = false;
+    setBtnState(btn, 'speaking');
+    speakFrom(state.chunkIdx);
+  }
+
+  // Jump speech to a specific word — restart the chunk containing it.
+  function jumpToWord(container, btn, wordIdx) {
+    // Same container that's currently speaking/paused → in-place jump
+    if (state.btn === btn && state.chunks && state.words) {
+      var ci = findChunkForWord(state.chunks, wordIdx);
+      if (ci < 0) return;
+      state.suppressNextEnd = true;
+      synth.cancel();
+      state.chunkIdx = ci;
+      state.paused = false;
+      setBtnState(btn, 'speaking');
+      setTimeout(function() {
+        state.suppressNextEnd = false;
+        if (state.chunks) speakFrom(ci);
+      }, 60);
+      return;
+    }
+    // Different container or fresh start — figure out chunk first
+    wrapWords(container);
+    var words = Array.prototype.slice.call(container.querySelectorAll('.w'));
+    if (!words.length) return;
+    var chunks = buildChunks(words);
+    var ci2 = findChunkForWord(chunks, wordIdx);
+    startFresh(container, btn, ci2 >= 0 ? ci2 : 0);
+  }
+
+  function speakableContainerOf(el) {
+    return el.closest && el.closest('.bilingual .en, blockquote.speakable, .callout.speakable');
+  }
+
+  document.addEventListener('click', function(e) {
+    // --- speak button ---
+    var btn = e.target.closest && e.target.closest('.speak-btn');
+    if (btn) {
+      e.preventDefault();
+      var s = btn.getAttribute('data-state') || 'idle';
+      if (s === 'speaking') {
+        // pause: set flag BEFORE cancel so onend/onerror preserve state
+        state.paused = true;
+        synth.cancel();
+        setBtnState(btn, 'paused');
+        return;
+      }
+      if (s === 'paused') {
+        // resume: restart current chunk
+        state.paused = false;
+        setBtnState(btn, 'speaking');
+        if (state.chunks) speakFrom(state.chunkIdx);
+        return;
+      }
+      // idle → new speech from start
+      ensureVoices(function() { startFresh(btn.parentElement, btn, 0); });
+      return;
+    }
+
+    // --- word click (play from here) ---
+    var w = e.target.closest && e.target.closest('.w');
+    if (!w) return;
+    // skip if user is selecting text
+    var sel = window.getSelection && window.getSelection();
+    if (sel && sel.toString && sel.toString().length > 0) return;
+    var container = speakableContainerOf(w);
+    if (!container) return;
+    var speakBtn = container.querySelector('.speak-btn');
+    if (!speakBtn) return;
+    e.preventDefault();
+    var widx = parseInt(w.getAttribute('data-idx'), 10);
+    if (isNaN(widx)) return;
+    ensureVoices(function() { jumpToWord(container, speakBtn, widx); });
+  });
+
+  // Pre-wrap all speakable containers during idle time so word-click works without first hitting the button
+  function preWrapAll() {
+    var containers = document.querySelectorAll('.bilingual .en, blockquote.speakable, .callout.speakable');
+    var i = 0;
+    function step() {
+      if (i >= containers.length) return;
+      try { wrapWords(containers[i]); } catch (e) {}
+      i++;
+      if (window.requestIdleCallback) requestIdleCallback(step, { timeout: 200 });
+      else setTimeout(step, 0);
+    }
+    step();
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', preWrapAll);
+  else preWrapAll();
+
+  window.addEventListener('hashchange', stopAll);
+  window.addEventListener('pagehide', stopAll);
+})();
+</script>
+</body>
+</html>

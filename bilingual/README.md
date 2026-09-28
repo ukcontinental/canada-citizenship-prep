@@ -54,6 +54,6 @@ PDF 是 2021 年版，以下是考試實際以新版為準的差異：
 | $10 鈔票人物 | Sir John A. Macdonald | **Viola Desmond**（2018 起） |
 | Ontario Premier | （隨時間變動） | **Doug Ford**（2018、2022、2025 連任） |
 | Ontario Lt. Governor | （隨時間變動） | **Edith Dumont**（2023 起；首位法裔安省人） |
-| Governor General | David Johnston（PDF 提及） | **Mary Simon**（2021 起；首位原住民總督） |
+| Governor General | David Johnston（PDF 提及） | **Louise Arbour**（第 31 任，2026-06-08 就任；前任 Mary Simon 2021–2026 為首位原住民總督） |
 
 > 上述差異會在各章節的中文翻譯中以 **「2026 更新」** 區塊明確標出。

@@ -33,7 +33,7 @@
 
 - 現任君主是 **King Charles III**｜The Sovereign today is **King Charles III**
 - 在加拿大由 **總督 Governor General** 代表｜He is represented in Canada by the **Governor General**
-- 現任總督是 **Mary Simon**，**史上首位原住民總督**，2021 年上任｜The Governor General is **Mary Simon**, the **first Aboriginal person to hold the office**, appointed in 2021
+- 現任總督是 **Louise Arbour**（第 31 任，2026 年 6 月 8 日就任）；前任 Mary Simon（2021–2026）是**史上首位原住民總督**｜The Governor General is **Louise Arbour**, the 31st, sworn in on June 8, 2026; her predecessor Mary Simon (2021–2026) was the **first Aboriginal person to hold the office**
 - 總督任期大約五年｜The Governor General usually serves about five years
 
 #### b) The Senate 參議院
@@ -130,7 +130,7 @@
 5. **君主、參議院、眾議院**。｜**The Sovereign, the Senate and the House of Commons.**
 6. **King Charles III**。｜**King Charles III.**
 7. **總督 Governor General**。｜**The Governor General.**
-8. **Mary Simon**，**史上首位原住民總督**，2021 年上任。｜**Mary Simon**, the **first Aboriginal Governor General**, appointed in 2021.
+8. **Louise Arbour**，第 31 任，2026 年 6 月就任；前任 **Mary Simon**（2021–2026）是**史上首位原住民總督**。｜**Louise Arbour**, the 31st, since June 2026; her predecessor **Mary Simon** (2021–2026) was the **first Aboriginal Governor General**.
 9. **由總理提名、總督任命**；可任職到 **75 歲**。｜**Appointed by the Governor General on the Prime Minister's advice**, serving until age **75.**
 10. **338 席**，任期最長 **四年**。｜**338 seats**, and a term of at most **four years.**
 11. **MP，Member of Parliament**。｜**MP, Member of Parliament.**

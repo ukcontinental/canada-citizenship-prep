@@ -324,7 +324,7 @@
 5. Sovereign、Senate、House of Commons
 6. King Charles III
 7. Governor General
-8. Mary Simon；首位原住民總督（2021）
+8. Louise Arbour（第 31 任，2026 年 6 月起）；前任 Mary Simon（2021–2026）是首位原住民總督
 9. 總理提名、總督任命；75 歲
 10. 338；最多 4 年
 11. MP

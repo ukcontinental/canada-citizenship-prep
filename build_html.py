@@ -475,6 +475,10 @@ def make_sidebar(current: str) -> str:
     parts.append(f'<a href="{up}reading/{QB_ITEM[0]}"' +
                  (' class="current"' if current == f"reading/{QB_ITEM[0]}" else "") +
                  f">{QB_ITEM[1]}</a>")
+    for fn, label in TRAP_ITEMS:
+        key = f"quiz/{fn}"
+        cls = ' class="current"' if current == key else ""
+        parts.append(f'<a href="{up}quiz/{fn}"{cls}>{label}</a>')
     for fn, label in quiz_items:
         key = f"daily-quiz/{fn}"
         cls = ' class="current"' if current == key else ""
@@ -482,6 +486,11 @@ def make_sidebar(current: str) -> str:
 
     return '<nav class="sidebar">\n' + "\n".join(parts) + "\n</nav>"
 
+
+TRAP_ITEMS = (
+    [(f"trap-{L.lower()}.html", f"🎯 陷阱題 {qz.SET_NAMES[L]}") for L in qz.trap_sets()]
+    + [("wrong.html", "📕 錯題本重練"), ("traps.html", "🔤 陷阱字典")]
+)
 
 INTERACTIVE_ITEMS = [
     ("index.html", "🎯 互動式入口"),
@@ -1139,6 +1148,21 @@ __INTERACTIVE_CARDS__
     <span class="title">⏱ 20 題 30 分鐘</span>
     <span class="meta">隨機抽題含安大略省題，15 題通過</span>
   </a>
+  <a href="quiz/trap-a.html">
+    <span class="kicker">陷阱題</span>
+    <span class="title">🎯 陷阱題 第一套／第二套／第三套</span>
+    <span class="meta">同樣的答案、換過的問法：NOT／EXCEPT／TRUE／BEST……逐題練習＋模擬考</span>
+  </a>
+  <a href="quiz/wrong.html">
+    <span class="kicker">錯題本</span>
+    <span class="title">📕 錯題本重練</span>
+    <span class="meta">答錯、不會、沒作答的題目，錯最多的排最前面</span>
+  </a>
+  <a href="quiz/traps.html">
+    <span class="kicker">陷阱字</span>
+    <span class="title">🔤 陷阱字典</span>
+    <span class="meta">考題裡把人騙走的那些字，每組附例題可朗讀</span>
+  </a>
   <a href="reading/90-question-bank.html">
     <span class="kicker">問答</span>
     <span class="title">220 題中英問答</span>
@@ -1338,6 +1362,8 @@ def make_single_sidebar() -> str:
     parts.append('<h2>📝 考題</h2>')
     parts.append('<a href="#quiz-practice">英文選擇題練習</a>')
     parts.append('<a href="#quiz-mock">⏱ 模擬考（20 題／30 分）</a>')
+    for fn, label in TRAP_ITEMS:
+        parts.append(f'<a href="#quiz-{fn[:-5]}">{label}</a>')
     parts.append(f'<a href="#reading-{QB_ITEM[0][:-5]}">{QB_ITEM[1]}</a>')
     for slug, label in quiz_items:
         parts.append(f'<a href="#daily-quiz-{slug}">驗收 {label}</a>')
@@ -1397,6 +1423,11 @@ def build_single():
     sections.append('<script src="quiz/questions.js"></script>')
     add_section("quiz/practice.html", qz.build_practice_body())
     add_section("quiz/mock.html", qz.build_mock_body())
+    sections.append('<script src="quiz/trap.js"></script>')
+    for L in qz.trap_sets():
+        add_section(f"quiz/trap-{L.lower()}.html", qz.build_trap_set_body(L))
+    add_section("quiz/wrong.html", qz.build_wrong_body())
+    add_section("quiz/traps.html", iv.build_traps_body())
 
     body_html = "\n".join(sections)
     sidebar = make_single_sidebar()
@@ -1879,11 +1910,16 @@ def build():
     # quiz pages
     (OUT / "quiz").mkdir(exist_ok=True)
     (OUT / "quiz" / "questions.js").write_text(qz.questions_js(), encoding="utf-8")
-    for rel, title, body in (("quiz/practice.html", "英文選擇題練習", qz.build_practice_body()),
-                             ("quiz/mock.html", "模擬考", qz.build_mock_body())):
-        (OUT / rel).write_text(
-            wrap_page(title, '<script src="questions.js"></script>' + body + dict_bundle(1), rel),
-            encoding="utf-8")
+    (OUT / "quiz" / "trap.js").write_text(qz.trap_js(), encoding="utf-8")
+    quiz_pages = [("quiz/practice.html", "英文選擇題練習", qz.build_practice_body(), "questions.js"),
+                  ("quiz/mock.html", "模擬考", qz.build_mock_body(), "questions.js")]
+    quiz_pages += [(f"quiz/trap-{L.lower()}.html", f"陷阱題 {qz.SET_NAMES[L]}", qz.build_trap_set_body(L), "trap.js")
+                   for L in qz.trap_sets()]
+    quiz_pages += [("quiz/wrong.html", "錯題本重練", qz.build_wrong_body(), "questions.js trap.js"),
+                   ("quiz/traps.html", "陷阱字典", iv.build_traps_body(), "")]
+    for rel, title, body, scripts in quiz_pages:
+        tags = "".join(f'<script src="{sname}"></script>' for sname in scripts.split())
+        (OUT / rel).write_text(wrap_page(title, tags + body + dict_bundle(1), rel), encoding="utf-8")
 
     # reading pages (human-voice bilingual, audio already in html/audio/)
     (OUT / "reading").mkdir(exist_ok=True)

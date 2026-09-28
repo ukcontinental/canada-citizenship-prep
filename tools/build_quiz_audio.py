@@ -19,6 +19,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT))
 from quiz_content import load_questions  # noqa: E402
+from tools.trap_bank import load_trap_bank  # noqa: E402
 
 OUT = ROOT / "html" / "audio" / "quiz"
 TOOL = ROOT / "tools" / "tts_align"
@@ -30,6 +31,8 @@ LETTERS = "ABCDE"
 
 
 def text_of(q: dict, lang: str) -> str:
+    # 陷阱題的 **粗體** 只是畫面上的橘標，唸的時候要拿掉
+    q = dict(q, q=q["q"].replace("**", ""))
     if lang == "zh":
         opts = "。".join(f"{LETTERS[i]}、{o}" for i, o in enumerate(q["zo"]))
         return f"{q['zq']} {opts}。"
@@ -59,7 +62,7 @@ def main():
     hpath = OUT / "hashes.json"
     hashes = json.loads(hpath.read_text()) if hpath.exists() else {}
     todo = []
-    for q in load_questions():
+    for q in load_questions() + load_trap_bank():
         for lang in ("en", "zh"):
             t = text_of(q, lang)
             hk = f"{q['id']}:{lang}"

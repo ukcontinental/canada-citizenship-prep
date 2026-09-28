@@ -363,7 +363,7 @@ SYMBOLS = [
     ("👑", "王權 / 君主", "The Crown", "King Charles III｜King Charles III",
      ["**2022 年 9 月 Elizabeth II 過世，Charles III 即位**｜**Elizabeth II died in September 2022; Charles III became King**",
       "王權象徵政府：國會、法院、警察、軍隊｜The Crown symbolizes government: Parliament, courts, police, the Forces",
-      "Governor General Mary Simon 代表君主｜Represented by Governor General Mary Simon"]),
+      "Governor General **Louise Arbour** 代表君主（第 31 任，2026 年 6 月 8 日就任；前任 Mary Simon 2021–2026 是首位原住民總督）｜Represented by Governor General **Louise Arbour**, the 31st, sworn in June 8, 2026 (her predecessor Mary Simon, 2021–2026, was the first Indigenous Governor General)"]),
     ("🦫", "海狸", "Beaver", "5 分硬幣上的勤勞動物｜The industrious animal on the five-cent coin",
      ["哈德遜灣公司的象徵｜Symbol of the Hudson's Bay Company",
       "1834 成為 St. Jean Baptiste Society 標誌｜Emblem of the St. Jean Baptiste Society from 1834",
@@ -959,12 +959,20 @@ PEOPLE = [
      "2018 年起，薇奧拉・戴斯蒙成為**第一位登上加拿大鈔票的非白人女性**，印在 $10 上。｜Since 2018 Viola Desmond has been **the first non-white woman on a Canadian banknote**, on the $10 bill.",
      ["**2021 版教材還是寫 Macdonald**，鈔票已經換了，教材沒跟上。｜**The 2021 guide still says Macdonald** — the note changed, the text did not."]),
 
-    ("2021", 2021, "Mary Simon", "瑪麗・西蒙", "rights", "extra",
-     "加拿大總督｜Governor General of Canada",
+    ("2021–2026", 2021, "Mary Simon", "瑪麗・西蒙", "rights", "extra",
+     "第 30 任加拿大總督（2021–2026）｜The 30th Governor General of Canada (2021–2026)",
      "**因紐特人（Inuit）**，**第一位原住民總督**｜**Inuk** — **the first Indigenous Governor General**",
      "渥太華｜Ottawa",
-     "2021 年，瑪麗・西蒙就任加拿大總督，是**第一位擔任這個職位的原住民**。｜In 2021 Mary Simon became Governor General — **the first Indigenous person to hold the office**.",
+     "2021 年，瑪麗・西蒙就任加拿大總督，是**第一位擔任這個職位的原住民**，任期到 2026 年。｜In 2021 Mary Simon became Governor General — **the first Indigenous person to hold the office** — and served until 2026.",
      ["**2021 版教材出版時還沒有這件事**，是本站補的。｜**This happened after the 2021 guide was written** — added here."]),
+
+    ("2026", 2026, "Louise Arbour", "露易絲・阿爾布爾", "rights", "extra",
+     "**現任加拿大總督**，第 31 任｜**The current Governor General of Canada**, the 31st",
+     "**法裔加拿大人**，蒙特婁出生；前最高法院大法官、前聯合國人權事務高級專員｜**French Canadian**, born in Montreal; a former Supreme Court justice and former UN High Commissioner for Human Rights",
+     "渥太華｜Ottawa",
+     "2026 年 6 月 8 日，露易絲・阿爾布爾宣誓就任第 31 任加拿大總督，**是現在代表國王的人**。｜On June 8, 2026, Louise Arbour was sworn in as the 31st Governor General — **the person who represents the King today**.",
+     ["**考試會問「現任總督是誰」，答 Louise Arbour**；教材上的名字已經過時。｜**If the test asks who the Governor General is, the answer is Louise Arbour** — the name in the guide is out of date.",
+      "來源：gg.ca 官方網站（2026-09-27 查證）。｜Source: gg.ca, checked September 27, 2026."]),
 ]
 
 

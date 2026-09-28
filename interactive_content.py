@@ -602,7 +602,7 @@ def build_government_body():
   <rect x="280" y="10" width="240" height="80" rx="10" fill="#7a4caf"/>
   <text x="400" y="38" text-anchor="middle" font-size="18" font-weight="700" fill="#fff">君主 Sovereign 👑</text>
   <text x="400" y="60" text-anchor="middle" font-size="13" fill="#fff">King Charles III</text>
-  <text x="400" y="78" text-anchor="middle" font-size="11" fill="#e0d0f0">由 Governor General Mary Simon 代表</text>
+  <text x="400" y="78" text-anchor="middle" font-size="11" fill="#e0d0f0">由 Governor General Louise Arbour 代表</text>
 
   <!-- Senate -->
   <rect x="60" y="150" width="280" height="100" rx="10" fill="#b0413e"/>
@@ -1879,3 +1879,125 @@ def build_joining_body():
 {tricks}
 
 {narration_player_js('jn')}'''
+
+
+# ============================================================================
+# TRAP DICTIONARY — 陷阱字典
+#
+# 考題答案沒變、問法變了：NOT / EXCEPT / TRUE / BEST / FIRST……這些字才是失分點。
+# 每條：字 ＋ 一句中文說明 ＋ 一個例題（橘標＝陷阱字），例題可朗讀、可連續聽。
+# ============================================================================
+
+# (英文字, 中文名, 說明「中｜英」, 例句「中｜英」（英文用 **…** 標陷阱字）)
+TRAP_WORDS = [
+    ("NOT", "不是",
+     "找「不屬於」的那一個。四個選項裡三個是對的，你要挑那個錯的——先把四個都看完再答。｜Look for the one that does NOT belong. Three options are true; you must pick the odd one out, so read all four before answering.",
+     "下列哪一項「不是」加拿大公民的責任？｜Which of the following is **NOT** a responsibility of Canadian citizenship?"),
+    ("EXCEPT", "除了……以外",
+     "跟 NOT 一模一樣的陷阱，只是換個字。三個對的裡面挑一個錯的。｜The same trap as NOT with a different word: pick the one that does not fit.",
+     "以下都是憲章保護的基本自由，「除了」哪一項？｜All of the following are fundamental freedoms protected by the Charter **EXCEPT**:"),
+    ("Which statement is TRUE", "哪一句是對的",
+     "四句話只有一句是對的，其他三句都被動了一個字。逐句核對，不要看到熟悉的字就選。｜Only one of the four sentences is right; the other three each have one word changed. Check every sentence — do not pick the one that merely looks familiar.",
+     "關於「遷徙權」，哪一句是「正確」的？｜Which statement about **mobility rights** is **TRUE**?"),
+    ("Which statement is FALSE / NOT true", "哪一句是錯的",
+     "反過來：三句對、一句錯，要挑錯的那句。｜The reverse: three sentences are right and one is wrong — pick the wrong one.",
+     "關於參議院，哪一句是「錯」的？｜Which statement about the Senate is **FALSE**?"),
+    ("BEST describes", "最貼切的描述",
+     "可能不只一個選項沾得上邊，要挑最完整、最準確的那個。｜More than one option may be partly right; choose the most complete and accurate one.",
+     "加拿大的政府制度「最好」的描述是：｜Canada's system of government is **BEST** described as:"),
+    ("FIRST / LAST", "第一個／最後一個",
+     "看清楚問的是哪一端。紐芬蘭是「最後」加入的省，曼尼托巴是「第一個」讓女性投票的省。｜Check which end is being asked. Newfoundland was the LAST province to join; Manitoba was the FIRST province to let women vote.",
+     "哪一省「最後」加入聯邦（1949）？｜Which was the **LAST** province to join Confederation (1949)?"),
+    ("ONLY / LARGEST / SMALLEST / HIGHEST / MOST", "唯一／最大／最小／最高／最多",
+     "這類字把範圍縮到一個答案。新布藍瑞克是「唯一」官方雙語省，愛德華王子島是「最小」的省。｜These words narrow the field to a single answer. New Brunswick is the ONLY officially bilingual province; Prince Edward Island is the SMALLEST province.",
+     "加拿大「唯一」的官方雙語省份是？｜Which is Canada's **only** officially bilingual province?"),
+    ("Head of State ↔ Head of Government", "國家元首 ↔ 政府首腦",
+     "最常考的一組。國家元首是國王；政府首腦是總理。看到 State 想國王，看到 Government 想總理。｜The most-tested pair. The Head of State is the King; the Head of Government is the Prime Minister. State → King; Government → Prime Minister.",
+     "誰是加拿大的「國家元首」？｜Who is Canada's **Head of State**?"),
+    ("represents", "代表",
+     "總督在聯邦「代表」國王；省督在省「代表」國王。問誰代表誰，先看是聯邦還是省。｜The Governor General REPRESENTS the King federally; the Lieutenant Governor represents the King in each province. First check whether the question is federal or provincial.",
+     "在聯邦層級，誰「代表」君主？｜Who **represents** the Sovereign in Canada at the federal level?"),
+    ("appointed ↔ elected", "任命 ↔ 選出",
+     "參議員是「任命」的，做到 75 歲；國會議員是「選出」的。題目把這兩個字對調就是陷阱。｜Senators are APPOINTED and serve until 75; Members of Parliament are ELECTED. Swapping these two words is the trap.",
+     "參議員是「任命」的，不是「選出」的。｜Senators are **appointed**, not **elected**."),
+    ("federal / provincial / municipal", "聯邦／省／市",
+     "三級政府各管各的：國防、外交、貨幣、刑法＝聯邦；教育、醫療、公路＝省；除雪、垃圾、消防＝市。｜Three levels, three jobs: defence, foreign affairs, currency and criminal law are FEDERAL; education, health and highways are PROVINCIAL; snow removal, garbage and fire services are MUNICIPAL.",
+     "「除雪」是哪一級政府負責？｜Which level of government is responsible for **snow removal**?"),
+    ("refers to / is known as / means", "指的是／被稱為／意思是",
+     "三個說法都是在問「定義」。題目給你一個名詞，要你認出它是什麼。｜All three ask for a definition: the question gives you a term and wants you to recognize what it is.",
+     "「大動盪」指的是：｜The \"Great Upheaval\" **refers to**:"),
+    ("responsibility ↔ right", "責任 ↔ 權利",
+     "守法、陪審、投票是「責任」；宗教自由、遷徙、語言是「權利」。看到 rather than（而不是）要把後半句反過來想。｜Obeying the law, jury duty and voting are RESPONSIBILITIES; freedom of religion, mobility and language are RIGHTS. When you see \"rather than\", flip the second half in your head.",
+     "下列哪一項是「責任」而「不是」權利？｜Which of the following is a **responsibility** rather than a right?"),
+    ("compulsory", "強制的",
+     "加拿大服兵役「不是」強制的。這個字一出現，通常答案是「不是」。｜Military service in Canada is NOT compulsory. When this word appears, the answer is usually \"not\".",
+     "加拿大服兵役不是「強制」的。｜Military service in Canada is not **compulsory**."),
+    ("Upper ↔ Lower Canada", "上加拿大 ↔ 下加拿大",
+     "照聖羅倫斯河的上下游分，不是地圖的上下。上加拿大＝安大略；下加拿大＝魁北克。｜Named for the St. Lawrence River's upstream and downstream, not the map. Upper Canada = Ontario; Lower Canada = Quebec.",
+     "「上」加拿大後來成為安大略省。｜**Upper** Canada later became the province of Ontario."),
+    ("National anthem ↔ Royal anthem", "國歌 ↔ 皇家頌歌",
+     "國歌是 O Canada；皇家頌歌是 God Save the King。看清楚是 National 還是 Royal。｜The national anthem is O Canada; the royal anthem is God Save the King. Check whether the question says National or Royal.",
+     "加拿大的「皇家」頌歌是什麼？｜What is Canada's **Royal** anthem?"),
+    ("winter ↔ summer sport", "冬季 ↔ 夏季運動",
+     "冬季國家運動是冰球；夏季是長曲棍球。看到 hockey 先別急，看題目問哪一季。｜The national winter sport is hockey; the summer sport is lacrosse. Do not jump at \"hockey\" — check which season the question asks about.",
+     "加拿大官方的「夏季」運動是什麼？｜What is Canada's official **summer** sport?"),
+    ("entrenched / amended", "寫入／修改",
+     "1982 年憲法「修改」成不需英國批准，同時把憲章「寫入」憲法。兩個字都指向 1982。｜In 1982 the Constitution was AMENDED so it could change without Britain's approval, and the Charter was ENTRENCHED in it. Both words point to 1982.",
+     "憲章在 1982 年「寫入」憲法。｜The Charter was **entrenched** in the Constitution in 1982."),
+    ("majority ↔ minority", "多數 ↔ 少數",
+     "執政黨席次過半＝多數政府；不過半＝少數政府。題目常用 less than half（少於一半）代替 minority。｜More than half the seats = a MAJORITY government; less than half = a MINORITY government. Questions often say \"less than half\" instead of \"minority\".",
+     "席次「少於一半」的政黨組成「少數」政府。｜A party with **less than half** the seats forms a **minority** government."),
+    ("because / as a result of", "因為／由於",
+     "問因果。先找事件，再找原因。卑詩省加入聯邦「因為」渥太華承諾蓋鐵路。｜Cause and effect: find the event, then its reason. British Columbia joined Confederation BECAUSE Ottawa promised a railway.",
+     "卑詩省在 1871 年加入聯邦，「是因為」渥太華承諾要蓋鐵路。｜British Columbia joined Confederation in 1871 **because** Ottawa promised a railway."),
+    ("forerunner", "前身",
+     "「前身」＝以前的名字。西北騎警是皇家騎警的前身。｜The earlier form of something. The North West Mounted Police was the FORERUNNER of the RCMP.",
+     "西北騎警是皇家騎警的「前身」。｜The North West Mounted Police was the **forerunner** of the RCMP."),
+    ("True or False", "是非題",
+     "整句只要有一個字錯，答案就是 False。把每個名詞、每個年份都核對一遍。｜If even one word in the sentence is wrong, the answer is False. Check every name and every year.",
+     "是非題：參議員是「選出」的。（錯——是任命的）｜True or False: Senators are **elected**. (False — they are appointed.)"),
+]
+
+
+def build_traps_body():
+    items = ""
+    for i, (term, zh, tip, example) in enumerate(TRAP_WORDS, 1):
+        ex_html = bi(example).replace("<strong>", '<mark class="trap">').replace("</strong>", "</mark>")
+        items += f'''
+<div class="tp nr-card">
+  <div class="tp-head"><span class="tp-no">{i}</span><span class="tp-term">{_wd.wrap_words(term)}</span><span class="tp-zh">{zh}</span></div>
+  <div class="tp-tip">{bi(tip)}</div>
+  <div class="tp-ex" data-narrate><span class="tp-exlab">考試可能這樣問</span>{ex_html}</div>
+</div>'''
+    return f'''{IV_SHARED_CSS}{NARRATION_CSS}
+<style>
+.tp-steps {{ display: grid; gap: 8px; margin: 0 0 22px; }}
+.tp-step {{ display: grid; grid-template-columns: 30px 1fr; gap: 10px; align-items: start; background: #fff; border: 1px solid var(--line); border-radius: 9px; padding: 10px 14px; }}
+.tp-step u {{ text-decoration: none; width: 26px; height: 26px; border-radius: 50%; background: var(--accent); color: #fff; font-weight: 700; display: inline-flex; align-items: center; justify-content: center; font-family: -apple-system, system-ui, sans-serif; }}
+.tp {{ background: #fff; border: 1px solid var(--line); border-radius: 10px; padding: 12px 16px; margin-bottom: 12px; }}
+.tp.nr-reading {{ box-shadow: 0 0 0 2px var(--accent); }}
+.tp-head {{ display: flex; flex-wrap: wrap; gap: 4px 10px; align-items: baseline; margin-bottom: 6px; }}
+.tp-no {{ font-size: 11px; color: var(--muted); font-family: -apple-system, system-ui, sans-serif; }}
+.tp-term {{ font-size: 19px; font-weight: 700; font-family: "Source Serif 4", Georgia, serif; color: #5a3200; }}
+.tp-zh {{ font-size: 16px; font-weight: 700; }}
+.tp-tip {{ font-size: 14px; padding-bottom: 8px; border-bottom: 1px dashed var(--line); }}
+.tp-ex {{ padding-top: 8px; font-size: 14.5px; }}
+.tp-exlab {{ display: inline-block; font-size: 11px; padding: 1px 8px; border-radius: 9px; background: #fdf0e3; color: #8a5a22; margin-bottom: 4px; font-family: -apple-system, system-ui, sans-serif; }}
+mark.trap {{ background: #ffd28a; color: #5a3200; padding: 0 3px; border-radius: 3px; font-weight: 700; }}
+</style>
+<div class="iv-hero">
+  <h1>🔤 陷阱字典 <small>Trap words on the test</small></h1>
+  <p>考試的答案沒有變，<strong>變的是問法</strong>。這 {len(TRAP_WORDS)} 組字就是把人騙走的地方。每組有一句說明和一個例題，例題可以逐句聽，也可以按 ▶ 從頭聽到尾。</p>
+</div>
+
+<div class="tp-steps">
+  <div class="tp-step"><u>1</u><div>{bi("先把題目裡的「陷阱字」圈出來：NOT、EXCEPT、TRUE、FALSE、BEST、FIRST、LAST、ONLY。｜First circle the trap word in the question: NOT, EXCEPT, TRUE, FALSE, BEST, FIRST, LAST, ONLY.")}</div></div>
+  <div class="tp-step"><u>2</u><div>{bi("四個選項全部讀完再答，不要看到熟的字就按。｜Read all four options before answering — never pick the first familiar word.")}</div></div>
+  <div class="tp-step"><u>3</u><div>{bi("在心裡把題目翻成中文，再回頭對照選項。｜Translate the question into Chinese in your head, then go back to the options.")}</div></div>
+</div>
+
+{narration_player_html('tp', '連續播放唸的是每一組的例題，中英都可以。單獨聽某一句就點那句後面的 🔊。')}
+
+<div id="tp-tl">{items}</div>
+
+{narration_player_js('tp')}'''

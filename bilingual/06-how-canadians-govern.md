@@ -198,7 +198,7 @@
 
 ### 聯邦
 - **國家元首 (Head of State)**：His Majesty King Charles the Third
-- **加拿大總督 (Governor General)**：Mary Simon
+- **加拿大總督 (Governor General)**：Louise Arbour（第 31 任，2026 年 6 月 8 日就任；前任 Mary Simon 2021–2026）
 - **總理 (Prime Minister)**：（你寫考試當下的姓名）
 - **執政黨**：（同上）
 - **官方反對黨領袖**：（同上）
