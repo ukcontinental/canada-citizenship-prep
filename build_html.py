@@ -397,15 +397,25 @@ blockquote.speakable > .speak-btn,
 }
 
 /* --- mobile --- */
+.navjump {
+  display: none; position: fixed; right: 12px; top: 10px; z-index: 40;
+  align-items: center; gap: 4px; padding: 6px 11px; border-radius: 16px;
+  background: #fff; border: 1px solid var(--line); box-shadow: 0 2px 8px rgba(0,0,0,.08);
+  font: 600 13px -apple-system, system-ui, sans-serif; color: var(--ink); text-decoration: none;
+}
 @media (max-width: 900px) {
   .layout { grid-template-columns: 1fr; padding: 0 16px; gap: 0; }
+  /* 手機：內容先、目錄放最後，不然每一頁都要先滑過整份目錄 */
   nav.sidebar {
     position: static;
     height: auto;
+    order: 2;
     border-right: none;
-    border-bottom: 1px solid var(--line);
-    padding: 18px 0;
+    border-top: 1px solid var(--line);
+    margin-top: 28px;
+    padding: 18px 0 40px;
   }
+  .navjump { display: inline-flex; }
   .bilingual { grid-template-columns: 1fr; }
   .bilingual .en { border-right: none; border-bottom: 1px solid var(--line); }
 }
@@ -484,7 +494,7 @@ def make_sidebar(current: str) -> str:
         cls = ' class="current"' if current == key else ""
         parts.append(f'<a href="{up}daily-quiz/{fn}"{cls}>驗收 {label}</a>')
 
-    return '<nav class="sidebar">\n' + "\n".join(parts) + "\n</nav>"
+    return '<a class="navjump" href="#sitenav">≡ 目錄</a><nav class="sidebar" id="sitenav">\n' + "\n".join(parts) + "\n</nav>"
 
 
 TRAP_ITEMS = (
@@ -1351,7 +1361,7 @@ def make_single_sidebar() -> str:
     ]
     quiz_items = [(f"day-{i:02d}", f"Day {i:02d}") for i in range(1, 15)]
 
-    parts = ['<nav class="sidebar">']
+    parts = ['<a class="navjump" href="#sitenav">≡ 目錄</a><nav class="sidebar" id="sitenav">']
     parts.append('<a href="#home" class="home">加拿大公民考試</a>')
     parts.append('<h2>🎧 人聲朗讀對照</h2>')
     for fn, label in READING_ITEMS:
