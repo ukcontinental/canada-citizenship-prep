@@ -1429,6 +1429,7 @@ def _people_field(label_zh: str, label_en: str, value: str) -> str:
 # ----------------------------------------------------------------------------
 
 NARRATION_CSS = """
+<style>
 .pp-player {
   position: sticky; top: 0; z-index: 30;
   background: #fffdf8; border: 1px solid var(--line); border-bottom-width: 2px;
@@ -1462,6 +1463,7 @@ NARRATION_CSS = """
   .pp-prog { flex-basis: 100%; margin-left: 0; text-align: right; }
 }
 
+</style>
 """
 
 
