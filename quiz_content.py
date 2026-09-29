@@ -61,9 +61,21 @@ def questions_js() -> str:
     return "window.CIT_QUIZ=" + json.dumps(qs, ensure_ascii=False, separators=(",", ":")) + ";"
 
 
+_TRAP_CACHE: list[dict] | None = None
+
+
+def load_trap_bank_cached() -> list[dict]:
+    """單次建置只解析一次 data/trap-questions*.js，其他呼叫端都共用這份。"""
+    global _TRAP_CACHE
+    if _TRAP_CACHE is None:
+        from tools.trap_bank import load_trap_bank
+        _TRAP_CACHE = load_trap_bank()
+    return _TRAP_CACHE
+
+
 def trap_js() -> str:
-    from tools.trap_bank import load_trap_bank, bank_js
-    return bank_js(load_trap_bank())
+    from tools.trap_bank import bank_js
+    return bank_js(load_trap_bank_cached())
 
 
 QUIZ_CSS = r"""
@@ -515,13 +527,11 @@ def build_mock_body() -> str:
 
 # ---------------------------------------------------------------- 陷阱題
 def trap_sets() -> list[str]:
-    from tools.trap_bank import load_trap_bank
-    return sorted({q["set"] for q in load_trap_bank()})
+    return sorted({q["set"] for q in load_trap_bank_cached()})
 
 
 def build_trap_set_body(letter: str) -> str:
-    from tools.trap_bank import load_trap_bank
-    qs = [q for q in load_trap_bank() if q["set"] == letter]
+    qs = [q for q in load_trap_bank_cached() if q["set"] == letter]
     name = SET_NAMES.get(letter, letter)
     from collections import Counter
     types = Counter(q["t"] for q in qs)

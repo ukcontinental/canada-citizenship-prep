@@ -1,14 +1,20 @@
-"""陷阱題題庫：data/trap-questions.js → 站內格式。
+"""陷阱題題庫：data/trap-questions*.js → 站內格式。
 
 來源檔是 JS 物件字面量（單引號、鍵不加引號），不是 JSON，所以這裡自己寫一個
-小型解析器，不動原檔——原檔保持 ChatGPT 給的樣子，方便日後對照。
+小型解析器，不動原檔——原檔保持給的樣子，方便日後對照。
+
+兩批來源，分開處理但共用同一套稽核／分套邏輯：
+  data/trap-questions.js       — 第一批 134 題（Q1+Q2），**題號釘死在 A/B/C**，
+                                  這批絕對不重新分配，換頁重刷題號也不會變。
+  data/trap-questions-more.js  — 追加批（QM1+QM2+QM3），分進 D/E 兩套；
+                                  之後再加新內容就繼續往 F、G… 疊，不動前面的字母。
 
 做的事：
-  1. 解析 Q1/Q2 兩個陣列 → list[dict]
-  2. 稽核：欄位齊全、a 在選項範圍內、是非題 f=1、題目不重複
+  1. 解析每批來源 → list[dict]
+  2. 稽核：欄位齊全、a 在選項範圍內、是非題 f=1、題目不重複（跨批一起查重）
   3. 中文地名／人名改成站上既有的台灣寫法（新布藍瑞克、薩克其萬、蒙特婁…）
-  4. 「每章輪流分配」拆成 N 套，題號固定（A01…、B01…），只要原檔順序不變就不會變
-  5. 章節代碼 rights/people/… 對到站上的章號 02/03/…
+  4. 「每章輪流分配」拆成每批各自的套數，題號固定；只要來源檔順序不變就不會變
+  5. 章節代碼 rights/people/… 對到站上的章號 02/03/…（含 00/01/12 三個原本缺的章）
 
 用法：
   python3 tools/trap_bank.py            # 印稽核報告
@@ -23,18 +29,27 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 SRC = ROOT / "data" / "trap-questions.js"
+SRC_MORE = ROOT / "data" / "trap-questions-more.js"
 
-N_SETS = 3
-SET_LETTERS = "ABCDEF"
+SET_LETTERS = "ABCDEFGHIJ"
 
 # 章節代碼 → 站上章號（對應 reading/ 與 CHAPTER_NAMES）
 CH_MAP = {"rights": "02", "people": "03", "history": "04", "modern": "05",
           "gov": "06", "vote": "07", "justice": "08", "symbols": "09",
-          "economy": "10", "regions": "11"}
-CH_ORDER = list(CH_MAP)
+          "economy": "10", "regions": "11", "oath": "00", "apply": "01", "ontario": "12"}
+
+# 分套用的「每章輪流」順序。CH_ORDER_BASE 是原始 134 題的十個章節，**永遠不准改動
+# 順序或增減**——A/B/C 的題號是照這個順序算出來的，動了這行等於讓題號全部重排。
+# 新章節（oath/apply/ontario）只接在後面給追加批（D/E…）用，不影響 A/B/C。
+CH_ORDER_BASE = ["rights", "people", "history", "modern", "gov", "vote",
+                 "justice", "symbols", "economy", "regions"]
+CH_ORDER_ALL = CH_ORDER_BASE + ["oath", "apply", "ontario"]
 
 TYPE_NAMES = {"N": "否定題 NOT / EXCEPT", "R": "反問題", "S": "換字題", "T": "是非題",
               "W": "找正確句 TRUE / FALSE", "C": "情境題", "F": "最／第一"}
+
+SET_NAMES = {"A": "第一套", "B": "第二套", "C": "第三套", "D": "第四套", "E": "第五套",
+             "F": "第六套", "G": "第七套", "H": "第八套"}
 
 # 站上既有的台灣寫法；來源檔混用港／陸譯名
 ZH_FIX = [
@@ -150,11 +165,9 @@ def fix_zh(s: str) -> str:
     return s
 
 
-def load_trap_bank(n_sets: int = N_SETS) -> list[dict]:
-    src = SRC.read_text(encoding="utf-8")
-    raw = _extract_array(src, "Q1") + _extract_array(src, "Q2")
-    problems = []
-    seen = set()
+def _normalize(raw: list[dict], seen: set[str], problems: list[str], tag: str) -> list[dict]:
+    """單一來源檔的原始物件 → 站內格式，順便做欄位稽核；seen 跨來源共用才能抓到
+    兩批之間互相重複的題目。"""
     qs = []
     for i, r in enumerate(raw):
         q = {
@@ -163,33 +176,34 @@ def load_trap_bank(n_sets: int = N_SETS) -> list[dict]:
             "o": [o[0] for o in r["o"]], "zo": [fix_zh(o[1]) for o in r["o"]],
             "a": int(r.get("a", 0)), "f": int(r.get("f", 0)),
             "e": fix_zh(r["e"]), "k": [[k[0], fix_zh(k[1])] for k in r.get("k", [])],
-            "src_index": i,
         }
-        # 「否定題」必須真的有 NOT / EXCEPT，否則按換字題處理（來源有一題標錯）
+        # 「否定題」必須真的有 NOT / EXCEPT，否則按換字題處理
         if q["t"] == "N" and not re.search(r"\b(NOT|EXCEPT)\b", q["q"]):
             q["t"] = "S"
+        loc = f"{tag}#{i}"
         if q["ch"] is None:
-            problems.append(f"#{i} 未知章節 {r['c']}")
+            problems.append(f"{loc} 未知章節 {r['c']}")
         if not (0 <= q["a"] < len(q["o"])):
-            problems.append(f"#{i} 答案索引 {q['a']} 超出 {len(q['o'])} 個選項")
+            problems.append(f"{loc} 答案索引 {q['a']} 超出 {len(q['o'])} 個選項")
         if q["t"] == "T" and q["f"] != 1:
-            problems.append(f"#{i} 是非題沒標 f=1")
+            problems.append(f"{loc} 是非題沒標 f=1")
         if len(q["o"]) < 2:
-            problems.append(f"#{i} 選項不足")
+            problems.append(f"{loc} 選項不足")
         key = re.sub(r"\W+", " ", q["q"].lower()).strip()
         if key in seen:
-            problems.append(f"#{i} 題目重複：{q['q'][:50]}")
+            problems.append(f"{loc} 題目重複：{q['q'][:50]}")
         seen.add(key)
         qs.append(q)
-    if problems:
-        raise SystemExit("陷阱題稽核失敗：\n  " + "\n  ".join(problems))
+    return qs
 
-    # 每章輪流分配到 N 套；每章從不同套起手，套與套題數才會平均
-    buckets: dict[str, list[dict]] = {L: [] for L in SET_LETTERS[:n_sets]}
-    for ci, c in enumerate(CH_ORDER):
+
+def _assign_sets(qs: list[dict], letters: str, order: list[str]) -> list[dict]:
+    """每章輪流分配到 letters 指定的幾套；每章從不同套起手，套與套題數才會平均。"""
+    buckets: dict[str, list[dict]] = {L: [] for L in letters}
+    for ci, c in enumerate(order):
         chapter_qs = [q for q in qs if q["c"] == c]
         for j, q in enumerate(chapter_qs):
-            L = SET_LETTERS[(ci + j) % n_sets]
+            L = letters[(ci + j) % len(letters)]
             buckets[L].append(q)
     out = []
     for L, items in buckets.items():
@@ -200,6 +214,33 @@ def load_trap_bank(n_sets: int = N_SETS) -> list[dict]:
     return out
 
 
+def load_trap_bank() -> list[dict]:
+    problems: list[str] = []
+    seen: set[str] = set()
+
+    base_src = SRC.read_text(encoding="utf-8")
+    base_raw = _extract_array(base_src, "Q1") + _extract_array(base_src, "Q2")
+    base_qs = _normalize(base_raw, seen, problems, "base")
+    # 第一批釘死在 A/B/C —— 這裡的字母與數量永遠不變
+    base_assigned = _assign_sets(base_qs, "ABC", CH_ORDER_BASE)
+
+    more_qs: list[dict] = []
+    if SRC_MORE.exists():
+        more_src = SRC_MORE.read_text(encoding="utf-8")
+        more_raw = []
+        for name in re.findall(r"const\s+(QM\d+)\s*=", more_src):
+            more_raw += _extract_array(more_src, name)
+        more_qs = _normalize(more_raw, seen, problems, "more")
+
+    if problems:
+        raise SystemExit("陷阱題稽核失敗：\n  " + "\n  ".join(problems))
+
+    # 追加批接著往後排字母（目前 D/E），以後再加檔案就繼續往 F、G 疊，
+    # 不會動到已經釘死的 A/B/C 或既有的 D/E 題號。
+    more_assigned = _assign_sets(more_qs, "DE", CH_ORDER_ALL) if more_qs else []
+    return base_assigned + more_assigned
+
+
 def bank_js(qs: list[dict]) -> str:
     slim = [{k: q[k] for k in ("id", "set", "ch", "t", "q", "zq", "o", "zo", "a", "f", "e", "k")} for q in qs]
     return "window.CIT_TRAP=" + json.dumps(slim, ensure_ascii=False, separators=(",", ":")) + ";"
@@ -208,8 +249,9 @@ def bank_js(qs: list[dict]) -> str:
 if __name__ == "__main__":
     qs = load_trap_bank()
     from collections import Counter
-    print(f"共 {len(qs)} 題，{N_SETS} 套")
-    for L in SET_LETTERS[:N_SETS]:
+    sets_present = sorted({q["set"] for q in qs})
+    print(f"共 {len(qs)} 題，{len(sets_present)} 套：{sets_present}")
+    for L in sets_present:
         s = [q for q in qs if q["set"] == L]
         chs = Counter(q["ch"] for q in s)
         types = Counter(q["t"] for q in s)
@@ -218,3 +260,5 @@ if __name__ == "__main__":
     print("類型總計：", dict(sorted(Counter(q["t"] for q in qs).items())))
     left = [q["zq"][:40] for q in qs if re.search(r"新布倫瑞克|薩斯喀徹溫|蒙特利爾|新斯科舍|努納武特", q["zq"] + q["e"] + "".join(q["zo"]))]
     print("殘留非台灣譯名：", left or "無")
+    missing_ch = [q["c"] for q in qs if q["ch"] is None]
+    print("章節對不到的：", missing_ch or "無")

@@ -1160,8 +1160,8 @@ __INTERACTIVE_CARDS__
   </a>
   <a href="quiz/trap-a.html">
     <span class="kicker">陷阱題</span>
-    <span class="title">🎯 陷阱題 第一套／第二套／第三套</span>
-    <span class="meta">同樣的答案、換過的問法：NOT／EXCEPT／TRUE／BEST……逐題練習＋模擬考</span>
+    <span class="title">🎯 陷阱題 __TRAP_SET_NAMES__</span>
+    <span class="meta">同樣的答案、換過的問法：NOT／EXCEPT／TRUE／BEST……逐題練習＋模擬考，共 __TRAP_TOTAL__ 題</span>
   </a>
   <a href="quiz/wrong.html">
     <span class="kicker">錯題本</span>
@@ -1257,7 +1257,12 @@ def build_index_body() -> str:
             f'<span class="meta">{INTERACTIVE_META.get(fn, "")}</span>'
             f'</a>\n'
         )
-    intro = INDEX_INTRO.replace("__READING_CARDS__", reading_cards).replace("__INTERACTIVE_CARDS__", interactive_cards)
+    trap_qs = qz.load_trap_bank_cached()
+    trap_set_names = "／".join(qz.SET_NAMES[L] for L in sorted({q["set"] for q in trap_qs}))
+    intro = (INDEX_INTRO.replace("__READING_CARDS__", reading_cards)
+             .replace("__INTERACTIVE_CARDS__", interactive_cards)
+             .replace("__TRAP_SET_NAMES__", trap_set_names)
+             .replace("__TRAP_TOTAL__", str(len(trap_qs))))
     parts = [intro]
     for i, (day, title, meta) in enumerate(DAY_TOPICS, start=1):
         parts.append(
