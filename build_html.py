@@ -21,6 +21,7 @@ import markdown as md
 import interactive_content as iv
 import quiz_content as qz
 import word_dict as wd
+import cloud_sync as cs
 
 ROOT = Path(__file__).parent
 OUT = ROOT / "html"
@@ -494,6 +495,9 @@ def make_sidebar(current: str) -> str:
         cls = ' class="current"' if current == key else ""
         parts.append(f'<a href="{up}daily-quiz/{fn}"{cls}>驗收 {label}</a>')
 
+    parts.append('<h2>🔗 另一個網站</h2>')
+    parts.append(cs.QUIZ_SITE_LINK)
+
     return '<a class="navjump" href="#sitenav">≡ 目錄</a><nav class="sidebar" id="sitenav">\n' + "\n".join(parts) + "\n</nav>"
 
 
@@ -861,6 +865,7 @@ def wrap_page(title: str, body: str, current: str) -> str:
 <main>{body}</main>
 </div>
 <script>{SPEAK_JS}</script>
+{cs.SYNC_JS}
 </body>
 </html>
 """
@@ -1382,6 +1387,8 @@ def make_single_sidebar() -> str:
     parts.append(f'<a href="#reading-{QB_ITEM[0][:-5]}">{QB_ITEM[1]}</a>')
     for slug, label in quiz_items:
         parts.append(f'<a href="#daily-quiz-{slug}">驗收 {label}</a>')
+    parts.append('<h2>🔗 另一個網站</h2>')
+    parts.append(cs.QUIZ_SITE_LINK)
     parts.append('</nav>')
     return "\n".join(parts)
 
@@ -1467,6 +1474,7 @@ def build_single():
 </div>
 <script>{SPEAK_JS}</script>
 <script>{SINGLE_ROUTER_JS}</script>
+{cs.SYNC_JS}
 </body>
 </html>
 """

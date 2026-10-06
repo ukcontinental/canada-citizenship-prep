@@ -13,7 +13,8 @@ Options are shuffled per render unless f=1; data-i keeps the ORIGINAL index so
 Wrong-book (localStorage cit_wrong_v2): { id: {n: times wrong, last: what was
 picked, t: epoch ms, bank: 'quiz'|'trap'} }. Wrong answers, 「我不會」 and unanswered
 exam questions all land here; a correct answer in practice removes the entry.
-v1 (a plain id list) is migrated on first load.
+v1 (a plain id list) is migrated on first load. Every save is mirrored to the
+cloud by cloud_sync.SYNC_JS (per-person book, synced across devices).
 
 Audio: html/audio/quiz/{en,zh}/<id>.m4a from tools/build_quiz_audio.py.
 """
@@ -187,7 +188,7 @@ QUIZ_JS = r"""
     } catch (e) {}
     return book;
   }
-  function saveBook(b) { try { localStorage.setItem(LS, JSON.stringify(b)); } catch (e) {} }
+  function saveBook(b) { try { localStorage.setItem(LS, JSON.stringify(b)); } catch (e) {} if (window.CIT_SYNC) window.CIT_SYNC.push(); }
   function wrongSet() { return new Set(Object.keys(loadBook())); }
   function addWrong(id, last) {
     var b = loadBook(); var e = b[id] || { n: 0, last: '', t: 0, bank: /^q\d/.test(id) ? 'quiz' : 'trap' };
